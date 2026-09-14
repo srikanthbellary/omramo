@@ -68,18 +68,54 @@ public enum EntitlementGate {
 /// Result of a purchase attempt the UI can act on without knowing StoreKit.
 public enum PurchaseOutcome: Equatable, Sendable {
     case subscribed(EntitlementState)
+    /// Waiting on Ask to Buy or a payment method. Entitlement arrives later.
     case pending
     case cancelled
 }
 
+/// A purchasable plan with store supplied display strings. Prices are never
+/// hardcoded in the app; they come from StoreKit or the simulator stand in.
+public struct SubscriptionOffer: Hashable, Sendable, Identifiable {
+    public var plan: SubscriptionPlan
+    public var displayName: String
+    public var displayPrice: String
+    public var periodDescription: String
+
+    public init(plan: SubscriptionPlan, displayName: String, displayPrice: String, periodDescription: String) {
+        self.plan = plan
+        self.displayName = displayName
+        self.displayPrice = displayPrice
+        self.periodDescription = periodDescription
+    }
+
+    public var id: SubscriptionPlan { plan }
+}
+
+/// Failures from the store layer with copy the paywall can show directly.
+public enum EntitlementError: Error, Equatable, Sendable, LocalizedError {
+    case productUnavailable(SubscriptionPlan)
+    case verificationFailed
+    case storeUnavailable(String)
+
+    public var errorDescription: String? {
+        switch self {
+        case .productUnavailable:
+            return "That plan is not available right now. Please try again in a moment."
+        case .verificationFailed:
+            return "We could not verify this purchase with the App Store."
+        case .storeUnavailable:
+            return "The App Store is not reachable right now. Please check your connection and try again."
+        }
+    }
+}
+
 /// Store facade the app talks to. StoreKit 2 and the simulator only stand in
 /// both implement this, so the paywall and reader never import StoreKit.
-@MainActor
-public protocol EntitlementProviding: AnyObject {
-    var state: EntitlementState { get }
-    var isBusy: Bool { get }
-    var lastErrorMessage: String? { get }
-    func refresh() async
-    func purchase(_ plan: SubscriptionPlan) async -> PurchaseOutcome
-    func restorePurchases() async
+public protocol EntitlementBackend: Sendable {
+    func loadOffers() async throws -> [SubscriptionOffer]
+    func currentEntitlement() async -> EntitlementState
+    func purchase(_ plan: SubscriptionPlan) async throws -> PurchaseOutcome
+    func restore() async throws -> EntitlementState
+    /// Emits whenever the store reports a change (renewal, revocation, Ask to Buy approval).
+    func entitlementUpdates() -> AsyncStream<EntitlementState>
 }

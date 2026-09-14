@@ -1,7 +1,7 @@
 import Foundation
 
 /// Stable identifier for a title. Matches the folder name under `Content/books`.
-public struct BookID: RawRepresentable, Hashable, Codable, Sendable, CustomStringConvertible {
+public struct BookID: RawRepresentable, Hashable, Codable, Sendable, Identifiable, CustomStringConvertible {
     public let rawValue: String
 
     public init(rawValue: String) {
@@ -12,6 +12,7 @@ public struct BookID: RawRepresentable, Hashable, Codable, Sendable, CustomStrin
         self.rawValue = rawValue
     }
 
+    public var id: String { rawValue }
     public var description: String { rawValue }
 }
 
