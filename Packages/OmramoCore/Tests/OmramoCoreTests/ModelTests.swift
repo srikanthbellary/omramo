@@ -47,6 +47,19 @@ final class ModelTests: XCTestCase {
         }
     }
 
+    func testEditionLimitedToPageCountKeepsOnlyTheOpeningPages() {
+        let edition = Edition(bookID: BookID("x"), language: .telugu, pages: [
+            Page(number: 1, text: "అ"), Page(number: 2, text: "ఆ"), Page(number: 3, text: "ఇ")
+        ])
+        let sample = edition.limited(toPageCount: 2)
+        XCTAssertEqual(sample.pageCount, 2)
+        XCTAssertEqual(sample.pages.map(\.number), [1, 2])
+        XCTAssertNil(sample.page(at: 2))
+        XCTAssertEqual(edition.limited(toPageCount: 0).pageCount, 0)
+        XCTAssertEqual(edition.limited(toPageCount: 9).pageCount, 3)
+        XCTAssertEqual(edition.limited(toPageCount: -1).pageCount, 0)
+    }
+
     func testLoadStateAccessors() {
         let loaded: LoadState<Int> = .loaded(3)
         XCTAssertEqual(loaded.value, 3)
@@ -57,5 +70,7 @@ final class ModelTests: XCTestCase {
         XCTAssertNil(failed.value)
         XCTAssertEqual(failed.failure?.message, "no")
         XCTAssertTrue(LoadState<Int>.loading.isLoading)
+        XCTAssertTrue(LoadState<Int>.idle.isIdle)
+        XCTAssertFalse(LoadState<Int>.loading.isIdle)
     }
 }

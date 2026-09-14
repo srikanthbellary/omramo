@@ -7,6 +7,7 @@ import OmramoCore
 struct AppEnvironment {
     let catalog: CatalogStore
     let entitlements: EntitlementStore
+    /// Preview helper. The live app gives each window its own navigator.
     let navigator: AppNavigator
     let settings: AppSettings
 
@@ -18,7 +19,7 @@ struct AppEnvironment {
         let arguments = ProcessInfo.processInfo.arguments
         let backend: any EntitlementBackend
         if arguments.contains(simulatedStoreArgument) {
-            backend = SimulatedEntitlementBackend()
+            backend = SimulatedEntitlementBackend(persistTo: .standard)
         } else {
             backend = StoreKitEntitlementBackend()
         }

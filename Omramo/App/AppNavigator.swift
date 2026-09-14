@@ -20,24 +20,35 @@ final class AppNavigator {
     /// Set when the paywall ends in a subscription so `onDismiss` can push the reader.
     private var pendingReaderBookID: BookID?
 
+    /// Catalog tap. Sample first when browsing free; all access opens the reader.
+    func openTitle(for bookID: BookID, state: EntitlementState) {
+        switch EntitlementGate.destinationFromCatalog(for: state) {
+        case .reader:
+            revealReader(for: bookID)
+        case .sample, .paywall, .wait:
+            showSample(for: bookID)
+        }
+    }
+
     func showSample(for bookID: BookID) {
+        if case .sample(bookID) = path.last { return }
         path.append(.sample(bookID))
     }
 
-    /// The hard paywall. Allowed readers go straight in; everyone else sees
-    /// the paywall and, if they subscribe, lands in the reader afterwards.
-    func openReader(for bookID: BookID, decision: AccessDecision) {
-        switch decision {
-        case .allow:
-            path.append(.reader(bookID))
-        case .showPaywall:
-            paywallBookID = bookID
-        case .wait:
+    /// Continue from the sample. Allowed readers go straight in; everyone else
+    /// sees the paywall and, if they subscribe, lands in the reader afterwards.
+    func openReader(for bookID: BookID, state: EntitlementState) {
+        switch EntitlementGate.destinationFromSample(for: state) {
+        case .reader:
+            revealReader(for: bookID)
+        case .paywall:
+            presentPaywall(for: bookID)
+        case .sample, .wait:
             break
         }
     }
 
-    func presentPaywall(for bookID: BookID?) {
+    func presentPaywall(for bookID: BookID) {
         paywallBookID = bookID
     }
 
@@ -54,7 +65,17 @@ final class AppNavigator {
     func paywallDidDismiss() {
         guard let bookID = pendingReaderBookID else { return }
         pendingReaderBookID = nil
+        revealReader(for: bookID)
+    }
+
+    /// Puts the full reader on top. If the sample of the same title is already
+    /// showing, it is replaced so Back returns to the catalog.
+    func revealReader(for bookID: BookID) {
         if case .reader(bookID) = path.last { return }
+        if case .sample(bookID) = path.last {
+            path[path.count - 1] = .reader(bookID)
+            return
+        }
         path.append(.reader(bookID))
     }
 

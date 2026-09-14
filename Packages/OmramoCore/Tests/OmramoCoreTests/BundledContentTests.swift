@@ -75,6 +75,20 @@ final class BundledContentTests: XCTestCase {
         }
     }
 
+    func testSampleSliceNeverIncludesPaidPages() async throws {
+        let catalog = try await repository.loadCatalog()
+        for book in catalog.books {
+            let telugu = try await repository.loadEdition(bookID: book.id, language: .telugu)
+            let english = try await repository.loadEdition(bookID: book.id, language: .english)
+            let teSample = telugu.limited(toPageCount: book.sample.pageCount)
+            let enSample = english.limited(toPageCount: book.sample.pageCount)
+            XCTAssertEqual(teSample.pageCount, book.sample.pageCount, "\(book.id) te sample")
+            XCTAssertEqual(enSample.pageCount, book.sample.pageCount, "\(book.id) en sample")
+            XCTAssertNil(teSample.page(at: book.sample.pageCount), "\(book.id) must not leak page \(book.sample.pageCount + 1)")
+            XCTAssertTrue(teSample.pages.allSatisfy { $0.index < book.sample.pageCount })
+        }
+    }
+
     func testPlannedEditionIsReportedNotCrashed() async throws {
         let catalog = try await repository.loadCatalog()
         let book = try XCTUnwrap(catalog.books.first)

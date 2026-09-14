@@ -45,4 +45,33 @@ final class EntitlementGateTests: XCTestCase {
         XCTAssertNil(SubscriptionPlan(productID: "com.omramo.book.single"))
         XCTAssertEqual(SubscriptionPlan.productIDs.count, 2)
     }
+
+    func testCatalogOpensSampleUntilSubscribedThenOpensReader() {
+        XCTAssertEqual(EntitlementGate.destinationFromCatalog(for: .unknown), .sample)
+        XCTAssertEqual(EntitlementGate.destinationFromCatalog(for: .notSubscribed), .sample)
+        XCTAssertEqual(EntitlementGate.destinationFromCatalog(for: .subscribed(plan: .yearly, renewsOn: nil)), .reader)
+    }
+
+    func testSampleContinueIsTheHardGate() {
+        XCTAssertEqual(EntitlementGate.destinationFromSample(for: .unknown), .wait)
+        XCTAssertEqual(EntitlementGate.destinationFromSample(for: .notSubscribed), .paywall)
+        XCTAssertEqual(EntitlementGate.destinationFromSample(for: .subscribed(plan: .monthly, renewsOn: nil)), .reader)
+    }
+
+    func testPersistedEntitlementSurvivesRoundTripAndSkipsUnknown() throws {
+        XCTAssertNil(EntitlementState.unknown.persistedData)
+        XCTAssertNil(EntitlementState.fromPersisted(nil))
+        XCTAssertNil(EntitlementState.fromPersisted(Data("not-json".utf8)))
+
+        let notSubscribed = try XCTUnwrap(EntitlementState.notSubscribed.persistedData)
+        XCTAssertEqual(EntitlementState.fromPersisted(notSubscribed), .notSubscribed)
+
+        let renewsOn = Date(timeIntervalSince1970: 1_800_000_000)
+        let subscribed = EntitlementState.subscribed(plan: .yearly, renewsOn: renewsOn)
+        let data = try XCTUnwrap(subscribed.persistedData)
+        XCTAssertEqual(EntitlementState.fromPersisted(data), subscribed)
+
+        let untitled = EntitlementState.subscribed(plan: nil, renewsOn: nil)
+        XCTAssertEqual(EntitlementState.fromPersisted(untitled.persistedData), untitled)
+    }
 }

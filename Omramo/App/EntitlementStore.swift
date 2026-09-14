@@ -23,8 +23,13 @@ final class EntitlementStore {
     /// outside `#if` so the Observable macro tracks it.
     private(set) var debugOverride: EntitlementState?
 
+    private static let debugOverrideKey = "omramo.debug.entitlement"
+
     init(backend: any EntitlementBackend) {
         self.backend = backend
+        #if DEBUG
+        debugOverride = EntitlementState.fromPersisted(UserDefaults.standard.data(forKey: Self.debugOverrideKey))
+        #endif
     }
 
     var decision: AccessDecision {
@@ -112,6 +117,11 @@ final class EntitlementStore {
     #if DEBUG
     func setDebugOverride(_ override: EntitlementState?) {
         debugOverride = override
+        if let data = override?.persistedData {
+            UserDefaults.standard.set(data, forKey: Self.debugOverrideKey)
+        } else {
+            UserDefaults.standard.removeObject(forKey: Self.debugOverrideKey)
+        }
     }
     #endif
 }
