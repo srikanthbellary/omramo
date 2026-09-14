@@ -1,12 +1,20 @@
 import SwiftUI
 import OmramoCore
 
+/// The same page in a second edition, shown under the first when only one
+/// pane is available. This is how bilingual reading survives the fold closing.
+struct CompanionPage: Equatable {
+    let page: Page
+    let language: Language
+}
+
 /// One printed page: optional illustration band, the text, a caption and the
 /// page number. Used identically in the sample and the reader.
 struct PageView: View {
     let page: Page
     let language: Language
     var showsIllustration: Bool = true
+    var companion: CompanionPage? = nil
 
     var body: some View {
         ScrollView {
@@ -24,6 +32,17 @@ struct PageView: View {
                         .font(OmramoType.pageCaption)
                         .foregroundStyle(OmramoPalette.inkSoft)
                 }
+                if let companion {
+                    Divider()
+                        .overlay(OmramoPalette.inkSoft.opacity(0.4))
+                        .padding(.vertical, 4)
+                    Text(companion.language.nativeName)
+                        .font(OmramoType.pageNumber)
+                        .foregroundStyle(OmramoPalette.inkSoft)
+                    Text(companion.page.text)
+                        .pageTextStyle()
+                        .fixedSize(horizontal: false, vertical: true)
+                }
                 Spacer(minLength: 0)
             }
             .padding(24)
@@ -31,7 +50,11 @@ struct PageView: View {
         .scrollBounceBehavior(.basedOnSize)
         .safeAreaInset(edge: .bottom) {
             HStack {
-                Text(language.nativeName)
+                if let companion {
+                    Text("\(language.nativeName) | \(companion.language.nativeName)")
+                } else {
+                    Text(language.nativeName)
+                }
                 Spacer()
                 Text("\(page.number)")
             }

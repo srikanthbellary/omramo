@@ -7,6 +7,10 @@ import OmramoCore
 /// outer display and regular width for the inner display, decided by size
 /// class rather than pose or hinge angle. `SpreadLayoutPolicy` applies that
 /// rule to the measured width and this view hands the result to its content.
+/// Regular width always yields two panes (no rotation needed), a wide compact
+/// canvas also does (never one stretched column), and everything narrower is
+/// a real single pane layout. Every screen in the app lays out through this
+/// view, so the fold region is treated as a separator everywhere.
 ///
 /// Xcode 27.1 seam: when the iOS 27.1 SDK is available, the dual branch can be
 /// expressed as `ArrangementView { left } secondary: { right }

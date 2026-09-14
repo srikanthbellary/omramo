@@ -4,14 +4,58 @@ import XCTest
 final class SpreadLayoutTests: XCTestCase {
     private let policy = SpreadLayoutPolicy.standard
 
-    func testCompactWidthIsAlwaysSinglePane() {
-        XCTAssertEqual(policy.arrangement(availableWidth: 900, isRegularWidth: false), .single)
+    func testNarrowCompactIsARealSinglePaneReader() {
         XCTAssertEqual(policy.arrangement(availableWidth: 390, isRegularWidth: false), .single)
+        XCTAssertEqual(policy.arrangement(availableWidth: 699, isRegularWidth: false), .single)
     }
 
-    func testRegularWidthNeedsRoomForTwoPages() {
-        XCTAssertEqual(policy.arrangement(availableWidth: 400, isRegularWidth: true), .single)
+    func testWideCompactCanvasIsNeverOneStretchedColumn() {
+        XCTAssertEqual(policy.arrangement(availableWidth: 700, isRegularWidth: false), .dual(spineWidth: policy.spineWidth))
+        XCTAssertEqual(policy.arrangement(availableWidth: 900, isRegularWidth: false), .dual(spineWidth: policy.spineWidth))
+    }
+
+    func testRegularWidthGetsTwoPanesInAnyOrientation() {
+        // Inner display portrait and landscape are both regular width; no
+        // rotation is ever required to see a spread.
+        XCTAssertEqual(policy.arrangement(availableWidth: 520, isRegularWidth: true), .dual(spineWidth: policy.spineWidth))
         XCTAssertEqual(policy.arrangement(availableWidth: 820, isRegularWidth: true), .dual(spineWidth: policy.spineWidth))
+        XCTAssertEqual(policy.arrangement(availableWidth: 1024, isRegularWidth: true), .dual(spineWidth: policy.spineWidth))
+        XCTAssertEqual(policy.arrangement(availableWidth: 380, isRegularWidth: true), .single, "only degenerate frames fall back")
+    }
+
+    func testReadingPositionSurvivesArrangementChanges() {
+        // Reader is on page 6 (index 5) with two panes: spread 4 | 5.
+        let dual = PaneArrangement.dual(spineWidth: 28)
+        let position = ReadingPosition(pageIndex: 5, mode: .facingPages)
+        XCTAssertEqual(SpreadPager.spread(containing: position.pageIndex, pageCount: 10, arrangement: dual, mode: position.mode), Spread(leftIndex: 4, rightIndex: 5))
+        // Fold closes: same index, one pane, still page 6.
+        XCTAssertEqual(SpreadPager.spread(containing: position.pageIndex, pageCount: 10, arrangement: .single, mode: position.mode), Spread(leftIndex: 5, rightIndex: nil))
+        // Fold opens again: back to the same spread, nothing lost.
+        XCTAssertEqual(SpreadPager.spread(containing: position.pageIndex, pageCount: 10, arrangement: dual, mode: position.mode), Spread(leftIndex: 4, rightIndex: 5))
+    }
+
+    func testReadingPositionValidationClampsAndDropsUnavailableModes() {
+        let teluguOnly = Book(
+            id: BookID("t"),
+            title: LocalizedText([.telugu: "అ"]),
+            author: LocalizedText([.telugu: "అ"]),
+            description: LocalizedText([.telugu: "అ"]),
+            poster: Artwork(motif: .river, colors: []),
+            pageCount: 4,
+            editions: [EditionManifest(language: .telugu, status: .ready, file: "te.json")],
+            sample: SampleSpec(pageCount: 2)
+        )
+        let restored = ReadingPosition(pageIndex: 9, mode: .synced(secondary: .english)).validated(for: teluguOnly)
+        XCTAssertEqual(restored, ReadingPosition(pageIndex: 3, mode: .facingPages))
+        XCTAssertEqual(ReadingPosition(pageIndex: -2, mode: .illustrated).validated(for: teluguOnly), ReadingPosition(pageIndex: 0, mode: .illustrated))
+    }
+
+    func testSpreadModeStorageKeyRoundTrips() {
+        for mode in [SpreadMode.facingPages, .synced(secondary: .english), .synced(secondary: .hindi), .illustrated] {
+            XCTAssertEqual(SpreadMode(storageKey: mode.storageKey), mode)
+        }
+        XCTAssertNil(SpreadMode(storageKey: "synced:xx"))
+        XCTAssertNil(SpreadMode(storageKey: "garbage"))
     }
 
     func testPageWidthLeavesRoomForTheSpine() {

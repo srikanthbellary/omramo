@@ -3,6 +3,10 @@ import OmramoCore
 
 /// Free browsing. Posters, titles and descriptions only; tapping opens the
 /// two page sample, never the full book.
+///
+/// On the inner display the shelf is two panes, like everything else in the
+/// app: titles alternate left and right and the fold region stays empty. On
+/// the outer display it is one adaptive grid.
 struct CatalogView: View {
     @Environment(CatalogStore.self) private var catalog
     @Environment(EntitlementStore.self) private var entitlements
@@ -36,19 +40,25 @@ struct CatalogView: View {
                     }
                 }
             case .loaded(let books):
-                ScrollView {
-                    LazyVGrid(columns: columns, spacing: 28) {
-                        ForEach(books) { book in
-                            Button {
-                                navigator.showSample(for: book.id)
-                            } label: {
-                                BookCard(book: book)
+                OpenBookSpread { arrangement, pageWidth in
+                    ScrollView {
+                        switch arrangement {
+                        case .single:
+                            shelf(books)
+                                .padding(20)
+                        case .dual(let spineWidth):
+                            HStack(alignment: .top, spacing: 0) {
+                                shelf(Self.pane(books, side: 0))
+                                    .padding(20)
+                                    .frame(width: pageWidth)
+                                Spacer()
+                                    .frame(width: spineWidth)
+                                shelf(Self.pane(books, side: 1))
+                                    .padding(20)
+                                    .frame(width: pageWidth)
                             }
-                            .buttonStyle(.plain)
-                            .accessibilityHint(Text("Opens a two page sample"))
                         }
                     }
-                    .padding(20)
                 }
                 .background(OmramoPalette.paper)
             }
@@ -59,6 +69,25 @@ struct CatalogView: View {
                 AccessBadge(state: entitlements.effectiveState)
             }
         }
+    }
+
+    private func shelf(_ books: [Book]) -> some View {
+        LazyVGrid(columns: columns, alignment: .leading, spacing: 28) {
+            ForEach(books) { book in
+                Button {
+                    navigator.showSample(for: book.id)
+                } label: {
+                    BookCard(book: book)
+                }
+                .buttonStyle(.plain)
+                .accessibilityHint(Text("Opens a two page sample"))
+            }
+        }
+    }
+
+    /// Alternate titles between the two panes so both shelves fill evenly.
+    private static func pane(_ books: [Book], side: Int) -> [Book] {
+        books.enumerated().filter { $0.offset % 2 == side }.map(\.element)
     }
 }
 

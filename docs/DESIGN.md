@@ -66,8 +66,9 @@ Paper background. Mark closed, then open. Wordmark and the line
 
 ### Catalog (free)
 
-- Adaptive grid, cards 170 to 240pt wide. One column on the outer display,
-  three or more on the inner display.
+- Adaptive grid, cards 170 to 240pt wide. One pane on the outer display; two
+  panes on the inner display with titles alternating left and right and the
+  fold left empty.
 - Card: 2:3 poster with the Telugu title set into the lower left, English title,
   author, three lines of Telugu description, edition chips (`TE EN HI`; solid
   when bundled, outlined when planned), page count.
@@ -83,11 +84,14 @@ Paper background. Mark closed, then open. Wordmark and the line
   28pt spine. Left is page 1 in Telugu. Right is page 2 in Telugu, or page 1
   in English when the segmented control is set to `తెలుగు | English`.
 - **Compact width (outer display, phones)**: one page with the paging tab view
-  and page dots; swipe between the two sample pages.
+  and page dots; swipe between the two sample pages. The same segmented
+  control is present; `తెలుగు | English` stacks the English page under the
+  Telugu one.
 - Footer: "You have read the free sample of <title>", one line about the
   subscription, and a saffron button reading "Subscribe to continue reading",
   "Continue reading" once subscribed, or a spinner while the store is still
-  answering.
+  answering. With two panes the message sits under the left page and the
+  control plus button under the right.
 - Pages are `PageView`: paper gradient, optional 120pt illustration band, text,
   italic caption, and a foot row with the edition name and page number.
 
@@ -103,8 +107,9 @@ Paper background. Mark closed, then open. Wordmark and the line
   secondary "Restore purchases", inline error copy in red.
 - Legal footnote about auto renewal in `.caption2`.
 - Debug only "Developer" disclosure to simulate a subscription.
-- Column is capped at 560pt on regular width so the form never stretches across
-  both panes.
+- Two panes on regular width: the pitch (mark, headline, benefits) on the left,
+  the decision (plans, actions, legal) on the right, each column capped at
+  480pt inside its pane. One scrolling column on compact width.
 
 ### Reader
 
@@ -112,22 +117,45 @@ Paper background. Mark closed, then open. Wordmark and the line
 - Toolbar menu "Spread" switches `Pages`, `తెలుగు | English`, `Art`.
   Modes appear only when the editions exist for that title.
 - Under the book: previous chevron, "Pages 3 and 4 of 10", next chevron.
-  44pt targets. Horizontal swipe on the book also turns pages.
+  44pt targets. With two panes, back and the position sit under the left page
+  and next under the right so nothing crosses the fold. Horizontal swipe on
+  the book also turns pages.
+- Position and mode are saved per title and restored on reopen; folding or
+  unfolding mid read keeps the same page.
 - Facing pages keep even indices on the left so a page stays on its side while
   turning; an odd last page shows a blank right leaf with a closed book glyph.
 - Every pane passes through the entitlement gate. A locked pane is
   `LockedPageView`: lock glyph, "Page n is part of the full book", one line,
   saffron "Subscribe to keep reading".
 
+## Foldable reader P0 locks
+
+Source: RNDB foldable reader brief, research library topic "Foldable reader
+apps Android -> Duo". The bar is set by Google Play Books and the Surface Duo
+reader samples, which are fold native (two panes by default, position kept
+across postures, fold as separator). Kindle on foldables is compatible but not
+fold native: it stretches a phone column across the inner display and only
+shows two pages after a rotate to landscape. Omramo takes the stronger bar.
+
+| # | Lock | Where it is enforced |
+| --- | --- | --- |
+| 1 | Default inner layout is two related panes, for the sample and the reader. Never a single stretched phone column. | `SpreadLayoutPolicy`: regular width always yields `.dual`. Catalog, sample, paywall and reader all lay out through `OpenBookSpread`. |
+| 2 | Reading position and pane mode persist across size changes (outer to inner, compact to regular). | `ReadingPosition` is a value independent of arrangement; `SpreadPager` re-derives the spread. `ReaderModel` saves it per title through `ReadingProgressStore`. Sample mode is view state that survives the change. |
+| 3 | Never letterbox or stretch a phone layout to fill a wide canvas. | Wide compact canvases (>= 700pt, landscape phones) also get two panes. The paywall form is two panes on regular width, not a centred column. |
+| 4 | Compact and outer is a real compact reader, not an afterthought. | Single pane keeps every mode: synced stacks the second edition under the first (`CompanionPage`), illustrated keeps the art band inline, the mode picker is present, paging dots in the sample and 44pt chevrons in the reader. |
+| 5 | The hinge and fold region is a separator. No critical text or chrome through the middle. | `BookSpine` gap of 28pt holds nothing. Reader controls split under their pages (back and position left, next right). Sample footer splits message left, controls right. Paywall and catalog leave the gap empty. The only element on the fold by design is the spine tile of the mark on the splash. |
+| 6 | Never require a landscape rotate to get two pages. | `.dual` depends on regular width only, not on orientation or aspect ratio. Portrait on the inner display is a spread. |
+
 ## Duo behaviour, in one table
 
 | Situation | Size class | What the reader sees |
 | --- | --- | --- |
-| Closed, outer display | compact width | One page, paging dots in the sample, chevrons in the reader |
-| Open, inner display, portrait | regular width | Two pages around the spine; controls below the book |
-| Open, landscape | regular width | Two pages; system moves bars to the outer edge, book content stays centred |
+| Closed, outer display | compact width | One page, paging dots in the sample, chevrons in the reader, synced mode stacked |
+| Open, inner display, portrait | regular width | Two pages around the spine; controls split under each page |
+| Open, inner display, landscape | regular width | Two pages; system moves bars to the outer edge, book content stays put |
+| Phone in landscape | compact width, >= 700pt | Two pages (wide compact rule) |
 | Split View, narrow | compact width | One page |
-| Split View, wide (>= 560pt) | regular width | Two pages |
+| Split View, regular | regular width | Two pages |
 
 Rules followed from Apple's Duo guidance:
 

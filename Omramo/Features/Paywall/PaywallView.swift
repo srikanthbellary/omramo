@@ -4,27 +4,61 @@ import OmramoCore
 /// The hard paywall. One subscription, two plans, no per title purchase.
 /// Presented full screen over the sample or the reader; closing without a
 /// plan returns to where the reader was.
+///
+/// Two panes on the inner display: the pitch (mark, headline, benefits) on
+/// the left, the decision (plans, actions, legal) on the right, nothing on
+/// the fold. One scrolling column on the outer display.
 struct PaywallView: View {
     @Environment(EntitlementStore.self) private var entitlements
     @Environment(AppNavigator.self) private var navigator
-    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     @State private var selectedPlan: SubscriptionPlan = .yearly
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 28) {
-                    header
-                    benefits
-                    plans
-                    actions
-                    footer
+            OpenBookSpread { arrangement, pageWidth in
+                switch arrangement {
+                case .single:
+                    ScrollView {
+                        VStack(spacing: 28) {
+                            header
+                            benefits
+                            plans
+                            actions
+                            footer
+                        }
+                        .padding(.horizontal, 24)
+                        .padding(.vertical, 20)
+                    }
+                case .dual(let spineWidth):
+                    HStack(alignment: .top, spacing: 0) {
+                        ScrollView {
+                            VStack(spacing: 28) {
+                                header
+                                benefits
+                            }
+                            .padding(.horizontal, 24)
+                            .padding(.vertical, 20)
+                            .frame(maxWidth: 480)
+                            .frame(maxWidth: .infinity)
+                        }
+                        .frame(width: pageWidth)
+                        Spacer()
+                            .frame(width: spineWidth)
+                        ScrollView {
+                            VStack(spacing: 24) {
+                                plans
+                                actions
+                                footer
+                            }
+                            .padding(.horizontal, 24)
+                            .padding(.vertical, 20)
+                            .frame(maxWidth: 480)
+                            .frame(maxWidth: .infinity)
+                        }
+                        .frame(width: pageWidth)
+                    }
                 }
-                .padding(.horizontal, 24)
-                .padding(.vertical, 20)
-                .frame(maxWidth: horizontalSizeClass == .regular ? 560 : .infinity)
-                .frame(maxWidth: .infinity)
             }
             .background(OmramoPalette.paper.ignoresSafeArea())
             .toolbar {

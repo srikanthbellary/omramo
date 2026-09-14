@@ -18,22 +18,36 @@ public enum PaneArrangement: Equatable, Sendable {
 /// Pure layout rule. The SwiftUI layer feeds it the size class and measured
 /// width; when the Xcode 27.1 SDK is available the same decision can be handed
 /// to `ArrangementView(.split)` without changing callers.
+///
+/// P0 locks this encodes (see DESIGN.md, "Foldable reader P0 locks"):
+/// - Regular width is the inner display. It always gets two panes, in any
+///   orientation, so nobody has to rotate to landscape to see a spread.
+/// - A compact canvas that is nonetheless wide (a phone in landscape) also
+///   gets two panes rather than one column stretched across it.
+/// - Anything narrower is a real single pane reader, not a shrunken spread.
 public struct SpreadLayoutPolicy: Equatable, Sendable {
-    /// Below this width two readable Telugu pages do not fit even in regular width.
+    /// Sanity floor for regular width. Real regular width canvases are far
+    /// wider than this; it only guards against degenerate frames.
     public var minimumDualWidth: Double
+    /// Compact width canvases at least this wide (landscape phones) still fit
+    /// two pages and must not show one stretched column.
+    public var wideCompactWidth: Double
     /// Reserved gap around the spine. Sized so text never sits on the fold.
     public var spineWidth: Double
 
-    public init(minimumDualWidth: Double = 560, spineWidth: Double = 28) {
+    public init(minimumDualWidth: Double = 400, wideCompactWidth: Double = 700, spineWidth: Double = 28) {
         self.minimumDualWidth = minimumDualWidth
+        self.wideCompactWidth = wideCompactWidth
         self.spineWidth = spineWidth
     }
 
     public static let standard = SpreadLayoutPolicy()
 
     public func arrangement(availableWidth: Double, isRegularWidth: Bool) -> PaneArrangement {
-        guard isRegularWidth, availableWidth >= minimumDualWidth else { return .single }
-        return .dual(spineWidth: spineWidth)
+        if isRegularWidth {
+            return availableWidth >= minimumDualWidth ? .dual(spineWidth: spineWidth) : .single
+        }
+        return availableWidth >= wideCompactWidth ? .dual(spineWidth: spineWidth) : .single
     }
 
     /// Width of one page given the total width and arrangement.
@@ -70,6 +84,52 @@ public enum SpreadMode: Hashable, Sendable {
         case .synced(let secondary): return "\(Language.primary.nativeName) | \(secondary.nativeName)"
         case .illustrated: return "Art"
         }
+    }
+
+    /// Stable string form for persisting the chosen mode per title.
+    public var storageKey: String {
+        switch self {
+        case .facingPages: return "facing"
+        case .synced(let secondary): return "synced:\(secondary.rawValue)"
+        case .illustrated: return "illustrated"
+        }
+    }
+
+    public init?(storageKey: String) {
+        switch storageKey {
+        case "facing":
+            self = .facingPages
+        case "illustrated":
+            self = .illustrated
+        default:
+            guard storageKey.hasPrefix("synced:"),
+                  let language = Language(rawValue: String(storageKey.dropFirst("synced:".count))) else { return nil }
+            self = .synced(secondary: language)
+        }
+    }
+}
+
+/// Where the reader is in a title and how the panes are set. Kept as a plain
+/// value so it can be saved, restored, and carried unchanged across a
+/// compact to regular size change; `SpreadPager` re-derives the spread.
+public struct ReadingPosition: Equatable, Sendable {
+    public var pageIndex: Int
+    public var mode: SpreadMode
+
+    public init(pageIndex: Int = 0, mode: SpreadMode = .facingPages) {
+        self.pageIndex = pageIndex
+        self.mode = mode
+    }
+
+    /// Clamps to the title's real page count and drops modes the title
+    /// cannot offer (for example a synced edition that is still planned).
+    public func validated(for book: Book) -> ReadingPosition {
+        var position = self
+        position.pageIndex = min(max(0, pageIndex), max(0, book.pageCount - 1))
+        if !SpreadMode.available(for: book).contains(mode) {
+            position.mode = .facingPages
+        }
+        return position
     }
 }
 

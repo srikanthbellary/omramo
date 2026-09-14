@@ -162,16 +162,33 @@ EntitlementGate.decision(for:)                 OmramoCore    (pure function)
 ## Duo layout
 
 `OpenBookSpread` is the single place that decides between one pane and two.
-It measures its width and asks `SpreadLayoutPolicy`:
+Every screen (catalog, sample, paywall, reader) lays out through it. It
+measures its width and asks `SpreadLayoutPolicy`:
 
 ```
-dual  iff horizontalSizeClass == .regular && width >= 560
+regular width  -> dual   (any orientation; width >= 400 sanity floor)
+compact width  -> dual   if width >= 700 (landscape phones), else single
 ```
 
-This follows Apple's guidance for iPhone Duo: a compact width foundation for
+This follows Apple's guidance for iPhone Duo (a compact width foundation for
 the outer display and a regular width foundation for the inner display, no
-pose or hinge angle checks. The dual branch renders `BookPanes`, two pages
-around a `BookSpine` gap of 28pt that stands in for the reserved fold region.
+pose or hinge angle checks) and the foldable reader P0 locks in `DESIGN.md`:
+two panes by default on the inner display, no rotation needed, never a
+stretched phone column. The dual branch renders `BookPanes`, two pages around
+a `BookSpine` gap of 28pt that stands in for the reserved fold region; other
+screens leave the same gap empty.
+
+### Reading position
+
+`ReadingPosition { pageIndex, mode }` is a value in the core that knows
+nothing about panes. `SpreadPager` turns it into a `Spread` for whichever
+arrangement is current, so a compact to regular change re-derives the spread
+from the same index instead of resetting it. `ReaderModel` owns the position,
+validates it against the title (`validated(for:)` clamps the index and drops
+modes the title cannot offer), and saves it per title through
+`ReadingProgressStore` (`UserDefaults`, two keys per book) on every turn or
+mode change. On a single pane, `synced` renders a `CompanionPage` stacked
+under the primary page so the mode still means something.
 
 `SpreadPager` (core) maps a page index to a `Spread { leftIndex, rightIndex? }`
 for the current arrangement and `SpreadMode`:

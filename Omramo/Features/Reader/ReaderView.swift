@@ -30,10 +30,14 @@ struct ReaderView: View {
 }
 
 private struct ReaderContentView: View {
-    @Bindable var model: ReaderModel
+    let model: ReaderModel
 
     @Environment(EntitlementStore.self) private var entitlements
     @Environment(AppNavigator.self) private var navigator
+
+    private var modeBinding: Binding<SpreadMode> {
+        Binding(get: { model.mode }, set: { model.setMode($0) })
+    }
 
     var body: some View {
         Group {
@@ -59,6 +63,9 @@ private struct ReaderContentView: View {
                 }
                 .foregroundStyle(OmramoPalette.paper)
             case .loaded(let content):
+                // The position lives in the model, not in this layout, so a
+                // compact <-> regular change re-derives the spread from the
+                // same page index and mode instead of resetting either.
                 OpenBookSpread { arrangement, pageWidth in
                     VStack(spacing: 12) {
                         spread(content, arrangement: arrangement, pageWidth: pageWidth)
@@ -66,7 +73,7 @@ private struct ReaderContentView: View {
                             .shadow(color: .black.opacity(0.4), radius: 24, y: 12)
                             .contentShape(Rectangle())
                             .gesture(turnGesture(in: arrangement))
-                        ReaderControls(model: model, arrangement: arrangement)
+                        ReaderControls(model: model, arrangement: arrangement, pageWidth: pageWidth)
                     }
                     .padding(.horizontal, 12)
                     .padding(.top, 12)
@@ -80,7 +87,7 @@ private struct ReaderContentView: View {
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 Menu {
-                    Picker("Spread", selection: $model.mode) {
+                    Picker("Spread", selection: modeBinding) {
                         ForEach(model.availableModes, id: \.self) { mode in
                             Text(mode.title).tag(mode)
                         }
@@ -98,7 +105,15 @@ private struct ReaderContentView: View {
         if let spread = model.spread(for: arrangement) {
             switch arrangement {
             case .single:
-                pane(content, index: spread.leftIndex, language: .primary, showsIllustration: true)
+                // A real compact reader: the chosen mode still applies. Synced
+                // stacks both editions on one page; illustrated keeps the art
+                // band inline.
+                switch model.mode {
+                case .synced(let secondary):
+                    pane(content, index: spread.leftIndex, language: .primary, showsIllustration: true, companion: secondary)
+                case .facingPages, .illustrated:
+                    pane(content, index: spread.leftIndex, language: .primary, showsIllustration: true)
+                }
             case .dual(let spineWidth):
                 BookPanes(pageWidth: pageWidth, spineWidth: spineWidth) {
                     pane(content, index: spread.leftIndex, language: .primary, showsIllustration: model.mode != .illustrated)
@@ -133,16 +148,26 @@ private struct ReaderContentView: View {
 
     /// Every page passes through the gate. Sample pages are always free.
     @ViewBuilder
-    private func pane(_ content: ReaderContent, index: Int, language: Language, showsIllustration: Bool) -> some View {
+    private func pane(_ content: ReaderContent, index: Int, language: Language, showsIllustration: Bool, companion: Language? = nil) -> some View {
         if !isUnlocked(index) {
             LockedPageView(pageNumber: index + 1) {
                 navigator.presentPaywall(for: content.book.id)
             }
         } else if let edition = content.edition(for: language), let page = edition.page(at: index) {
-            PageView(page: page, language: language, showsIllustration: showsIllustration)
+            PageView(
+                page: page,
+                language: language,
+                showsIllustration: showsIllustration,
+                companion: companionPage(content, index: index, language: companion)
+            )
         } else {
             BlankPageView()
         }
+    }
+
+    private func companionPage(_ content: ReaderContent, index: Int, language: Language?) -> CompanionPage? {
+        guard let language, let page = content.edition(for: language)?.page(at: index) else { return nil }
+        return CompanionPage(page: page, language: language)
     }
 
     private func isUnlocked(_ index: Int) -> Bool {
@@ -164,41 +189,73 @@ private struct ReaderContentView: View {
 }
 
 /// Previous, position, next. Sits under the book so thumbs reach it in
-/// either hand; on the Duo outer display the system moves bars to the edge
-/// and this row stays with the content.
+/// either hand. With two panes the row is split the same way as the pages:
+/// back and the position label under the left page, next under the right,
+/// and nothing over the fold.
 private struct ReaderControls: View {
     let model: ReaderModel
     let arrangement: PaneArrangement
+    let pageWidth: CGFloat
 
     var body: some View {
-        HStack {
-            Button {
-                withAnimation(.easeInOut(duration: 0.25)) { model.turnBack(in: arrangement) }
-            } label: {
-                Image(systemName: "chevron.left")
-                    .frame(width: 44, height: 44)
+        switch arrangement {
+        case .single:
+            HStack {
+                backButton
+                Spacer()
+                positionLabel
+                Spacer()
+                forwardButton
             }
-            .disabled(!model.canTurnBack(in: arrangement))
-            .accessibilityLabel(Text("Previous page"))
-
-            Spacer()
-            Text(model.positionLabel(for: arrangement))
-                .font(OmramoType.pageNumber)
-                .foregroundStyle(OmramoPalette.paper)
-                .monospacedDigit()
-            Spacer()
-
-            Button {
-                withAnimation(.easeInOut(duration: 0.25)) { model.turnForward(in: arrangement) }
-            } label: {
-                Image(systemName: "chevron.right")
-                    .frame(width: 44, height: 44)
+            .padding(.horizontal, 8)
+        case .dual(let spineWidth):
+            HStack(spacing: 0) {
+                HStack {
+                    backButton
+                    positionLabel
+                    Spacer()
+                }
+                .frame(width: pageWidth)
+                Spacer()
+                    .frame(width: spineWidth)
+                HStack {
+                    Spacer()
+                    forwardButton
+                }
+                .frame(width: pageWidth)
             }
-            .disabled(!model.canTurnForward(in: arrangement))
-            .accessibilityLabel(Text("Next page"))
         }
+    }
+
+    private var backButton: some View {
+        Button {
+            withAnimation(.easeInOut(duration: 0.25)) { model.turnBack(in: arrangement) }
+        } label: {
+            Image(systemName: "chevron.left")
+                .frame(width: 44, height: 44)
+        }
+        .disabled(!model.canTurnBack(in: arrangement))
         .foregroundStyle(OmramoPalette.paper)
-        .padding(.horizontal, 8)
+        .accessibilityLabel(Text("Previous page"))
+    }
+
+    private var forwardButton: some View {
+        Button {
+            withAnimation(.easeInOut(duration: 0.25)) { model.turnForward(in: arrangement) }
+        } label: {
+            Image(systemName: "chevron.right")
+                .frame(width: 44, height: 44)
+        }
+        .disabled(!model.canTurnForward(in: arrangement))
+        .foregroundStyle(OmramoPalette.paper)
+        .accessibilityLabel(Text("Next page"))
+    }
+
+    private var positionLabel: some View {
+        Text(model.positionLabel(for: arrangement))
+            .font(OmramoType.pageNumber)
+            .foregroundStyle(OmramoPalette.paper)
+            .monospacedDigit()
     }
 }
 
