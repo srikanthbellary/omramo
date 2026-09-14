@@ -66,7 +66,7 @@ struct ReaderContent: Equatable, Sendable {
 
     func limitedToSample() -> ReaderContent {
         let count = book.sample.pageCount
-        ReaderContent(
+        return ReaderContent(
             book: book,
             primary: primary.limited(toPageCount: count),
             secondary: secondary.mapValues { $0.limited(toPageCount: count) }
