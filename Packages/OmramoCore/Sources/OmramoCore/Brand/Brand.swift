@@ -19,6 +19,15 @@ public enum Brand {
         URL(string: "https://\(domain)")!
     }
 
+    /// Stub pages on the brand domain until the real documents are written.
+    public static var privacyURL: URL {
+        URL(string: "https://\(domain)/privacy")!
+    }
+
+    public static var termsURL: URL {
+        URL(string: "https://\(domain)/terms")!
+    }
+
     /// Name of the single subscription that unlocks the catalog, as shown in
     /// the simulated store and in copy. The App Store name is set in
     /// App Store Connect and the local StoreKit configuration.

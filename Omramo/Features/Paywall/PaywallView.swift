@@ -164,7 +164,7 @@ struct PaywallView: View {
             } label: {
                 Group {
                     if entitlements.isPurchasing {
-                        ProgressView().tint(OmramoPalette.paper)
+                        ProgressView().tint(OmramoPalette.onShelf)
                     } else {
                         Text("Subscribe and keep reading")
                     }

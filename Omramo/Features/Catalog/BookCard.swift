@@ -13,7 +13,7 @@ struct BookCard: View {
                 .overlay(alignment: .bottomLeading) {
                     Text(book.title.resolved(in: .telugu))
                         .font(OmramoType.displayTitle)
-                        .foregroundStyle(OmramoPalette.paper)
+                        .foregroundStyle(OmramoPalette.onShelf)
                         .shadow(color: .black.opacity(0.5), radius: 6, y: 2)
                         .padding(14)
                         .minimumScaleFactor(0.7)
@@ -63,7 +63,7 @@ struct EditionRow: View {
                             RoundedRectangle(cornerRadius: 5, style: .continuous)
                                 .strokeBorder(OmramoPalette.indigo.opacity(edition.isReady ? 0 : 0.5), lineWidth: 1)
                         }
-                        .foregroundStyle(edition.isReady ? OmramoPalette.paper : OmramoPalette.inkSoft)
+                        .foregroundStyle(edition.isReady ? OmramoPalette.onShelf : OmramoPalette.inkSoft)
                         .accessibilityLabel(Text("\(language.englishName) edition \(edition.isReady ? "ready" : "planned")"))
                 }
             }

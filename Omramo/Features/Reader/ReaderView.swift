@@ -44,12 +44,12 @@ private struct ReaderContentView: View {
             switch model.content {
             case .idle, .loading:
                 ProgressView("Opening the book")
-                    .tint(OmramoPalette.paper)
-                    .foregroundStyle(OmramoPalette.paper)
+                    .tint(OmramoPalette.onShelf)
+                    .foregroundStyle(OmramoPalette.onShelf)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             case .empty:
                 ContentUnavailableView("This title has no pages yet.", systemImage: "doc")
-                    .foregroundStyle(OmramoPalette.paper)
+                    .foregroundStyle(OmramoPalette.onShelf)
             case .failed(let failure):
                 ContentUnavailableView {
                     Label("The book did not open", systemImage: "exclamationmark.triangle")
@@ -61,7 +61,7 @@ private struct ReaderContentView: View {
                             .buttonStyle(.borderedProminent)
                     }
                 }
-                .foregroundStyle(OmramoPalette.paper)
+                .foregroundStyle(OmramoPalette.onShelf)
             case .loaded(let content):
                 // The position lives in the model, not in this layout, so a
                 // compact <-> regular change re-derives the spread from the
@@ -235,7 +235,7 @@ private struct ReaderControls: View {
                 .frame(width: 44, height: 44)
         }
         .disabled(!model.canTurnBack(in: arrangement))
-        .foregroundStyle(OmramoPalette.paper)
+        .foregroundStyle(OmramoPalette.onShelf)
         .accessibilityLabel(Text("Previous page"))
     }
 
@@ -247,14 +247,14 @@ private struct ReaderControls: View {
                 .frame(width: 44, height: 44)
         }
         .disabled(!model.canTurnForward(in: arrangement))
-        .foregroundStyle(OmramoPalette.paper)
+        .foregroundStyle(OmramoPalette.onShelf)
         .accessibilityLabel(Text("Next page"))
     }
 
     private var positionLabel: some View {
         Text(model.positionLabel(for: arrangement))
             .font(OmramoType.pageNumber)
-            .foregroundStyle(OmramoPalette.paper)
+            .foregroundStyle(OmramoPalette.onShelf)
             .monospacedDigit()
     }
 }

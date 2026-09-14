@@ -7,6 +7,7 @@ struct RootView: View {
     @Environment(AppNavigator.self) private var navigator
     @Environment(CatalogStore.self) private var catalog
     @Environment(EntitlementStore.self) private var entitlements
+    @Environment(AppSettings.self) private var settings
 
     @State private var showsSplash = true
 
@@ -36,6 +37,7 @@ struct RootView: View {
         .fullScreenCover(item: $navigator.paywallBookID, onDismiss: { navigator.paywallDidDismiss() }) { _ in
             PaywallView()
         }
+        .preferredColorScheme(settings.appearance.colorScheme)
         .task {
             await catalog.loadIfNeeded()
             try? await Task.sleep(for: .seconds(1.6))
@@ -80,4 +82,5 @@ struct SplashView: View {
         .environment(environment.catalog)
         .environment(environment.entitlements)
         .environment(environment.navigator)
+        .environment(environment.settings)
 }

@@ -55,6 +55,9 @@ open Omramo.xcodeproj
   test purchase, no charge). The reader opens on the same title.
 - Every other title is now readable too. Use the toolbar **Spread** menu to
   switch Pages, `తెలుగు | English`, or Art.
+- Back on the catalog, tap the gear. Switch Appearance, tap Restore Purchases
+  (the status row stays on all access), and open Manage Subscription for the
+  StoreKit system sheet.
 
 ### Without StoreKit
 

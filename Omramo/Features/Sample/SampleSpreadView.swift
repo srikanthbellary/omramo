@@ -35,12 +35,12 @@ struct SampleSpreadView: View {
             switch content {
             case .idle, .loading:
                 ProgressView("Opening the book")
-                    .tint(OmramoPalette.paper)
-                    .foregroundStyle(OmramoPalette.paper)
+                    .tint(OmramoPalette.onShelf)
+                    .foregroundStyle(OmramoPalette.onShelf)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
             case .empty:
                 ContentUnavailableView("This title has no pages yet.", systemImage: "doc")
-                    .foregroundStyle(OmramoPalette.paper)
+                    .foregroundStyle(OmramoPalette.onShelf)
             case .failed(let failure):
                 ContentUnavailableView {
                     Label("The sample did not open", systemImage: "exclamationmark.triangle")
@@ -52,7 +52,7 @@ struct SampleSpreadView: View {
                             .buttonStyle(.borderedProminent)
                     }
                 }
-                .foregroundStyle(OmramoPalette.paper)
+                .foregroundStyle(OmramoPalette.onShelf)
             case .loaded(let reader):
                 // Footer lives inside the spread so it can split around the
                 // fold the same way the pages do. The chosen mode is view
@@ -181,7 +181,7 @@ private struct SampleFooter: View {
         }
         .padding(.vertical, 18)
         .frame(maxWidth: .infinity)
-        .background(OmramoPalette.ink.opacity(0.25))
+        .background(Color.black.opacity(0.25))
     }
 
     @ViewBuilder
@@ -201,11 +201,11 @@ private struct SampleFooter: View {
         VStack(alignment: alignment == .center ? .center : .leading, spacing: 6) {
             Text("You have read the free sample of \(book.title.resolved(in: .english))")
                 .font(OmramoType.cardTitle)
-                .foregroundStyle(OmramoPalette.paper)
+                .foregroundStyle(OmramoPalette.onShelf)
                 .multilineTextAlignment(alignment)
             Text("Subscribe once and read every title in \(Brand.displayName), in every edition.")
                 .font(OmramoType.cardSubtitle)
-                .foregroundStyle(OmramoPalette.paper.opacity(0.8))
+                .foregroundStyle(OmramoPalette.onShelf.opacity(0.8))
                 .multilineTextAlignment(alignment)
         }
         .frame(maxWidth: .infinity, alignment: alignment == .center ? .center : .leading)
@@ -217,7 +217,7 @@ private struct SampleFooter: View {
                 switch decision {
                 case .wait:
                     ProgressView()
-                        .tint(OmramoPalette.paper)
+                        .tint(OmramoPalette.onShelf)
                 case .showPaywall:
                     Text("Subscribe to continue reading")
                 case .allow:

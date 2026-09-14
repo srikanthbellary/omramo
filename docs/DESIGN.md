@@ -41,8 +41,12 @@ values to rebrand; a core test fails if they disagree. See the README section
 | Spine | `#3E2723` | Spine tile, fold gap |
 | Shelf | `#211A17` | Backdrop behind open books |
 
-Content colours come from each `Artwork` descriptor and never from code, so
-posters and illustrations carry their own story.
+Paper, paper shade, ink and ink soft adapt to the appearance setting. Dark is
+warm night paper (`#1E1B18`) with cream ink, like a reading lamp turned down,
+not a grey system dark. Text that sits on the shelf, on poster art, on mark
+tiles or on saffron buttons uses the fixed light `onShelf` so it stays legible
+in both modes. Content colours come from each `Artwork` descriptor and never
+from code, so posters and illustrations carry their own story.
 
 ## Type
 
@@ -127,6 +131,24 @@ Paper background. Mark closed, then open. Wordmark and the line
 - Every pane passes through the entitlement gate. A locked pane is
   `LockedPageView`: lock glyph, "Page n is part of the full book", one line,
   saffron "Subscribe to keep reading".
+
+### Settings
+
+Reached from the gear at the top leading edge of the catalog, presented as a
+sheet, closed with Done. It is the whole account surface for v1 because there
+is no account: payment is the Apple Account through StoreKit.
+
+- **Appearance**: segmented System / Light / Dark. Applies at once, app wide,
+  and persists.
+- **Subscription**: a status row ("Browsing free", or "All access, yearly"
+  with the renewal date), **Restore Purchases** (spinner while running, result
+  in the footer), **Manage Subscription** (StoreKit's system sheet for cancel
+  and plan changes). Footer explains billing is through the App Store.
+- **About**: Privacy Policy and Terms of Use as links to the brand domain,
+  marked with the domain and an outward arrow, plus the version. No in app
+  legal text.
+
+Nothing else. No profile, no avatar, no sign in.
 
 ## Foldable reader P0 locks
 

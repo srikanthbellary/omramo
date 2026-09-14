@@ -25,6 +25,11 @@
 - Splash/logo concept: OM | RA | MO (left / spine / right). Closed = Omramo. Open = the book.
 - Do not invent another mark.
 
+## Account and payment (v1)
+- Pay only through StoreKit 2 auto-renewable subscription to the Apple Account. No email signup, phone OTP, card form or separate checkout.
+- No profile or social page. Settings (gear on the catalog) is the account-adjacent surface: Appearance (System / Light / Dark), Restore Purchases, Manage Subscription (system sheet), Privacy Policy and Terms links.
+- Loop that must work: splash → catalog → sample → paywall → reader → catalog → Settings → entitlement still valid.
+
 ## Non-goals for scaffold
 - Stylepipe is ops backend only — not in the app binary
 - No real catalog pipeline in-app

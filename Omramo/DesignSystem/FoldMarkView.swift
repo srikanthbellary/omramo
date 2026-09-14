@@ -23,7 +23,7 @@ struct FoldMarkView: View {
                     if isOpen {
                         Text(mark.spine)
                             .font(.system(size: 12 * scale, weight: .heavy, design: .rounded))
-                            .foregroundStyle(OmramoPalette.paper.opacity(0.9))
+                            .foregroundStyle(OmramoPalette.onShelf.opacity(0.9))
                             .rotationEffect(.degrees(-90))
                             .transition(.opacity)
                     }
@@ -43,7 +43,7 @@ struct FoldMarkView: View {
             .overlay {
                 Text(letters)
                     .font(.system(size: 34 * scale, weight: .heavy, design: .rounded))
-                    .foregroundStyle(OmramoPalette.paper)
+                    .foregroundStyle(OmramoPalette.onShelf)
                     .opacity(hidesLettersWhenOpen && isOpen ? 0 : 1)
                     .minimumScaleFactor(0.4)
                     .lineLimit(1)

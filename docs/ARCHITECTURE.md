@@ -15,12 +15,14 @@ Omramo/                     App target (SwiftUI, StoreKit 2). Synchronized folde
     Sample/                 Two page open book sample
     Paywall/                Hard paywall
     Reader/                 Full reader
+    Settings/               Appearance, restore, manage subscription, legal links
   Layout/                   Duo pane abstraction and page surfaces
   DesignSystem/             Palette, type, placeholder art, FoldMarkView (OM | RA | MO)
   Store/                    EntitlementBackend implementations
   Assets.xcassets           App icon slot and accent colour only
 Packages/OmramoCore/        Swift package, no UI. Builds and tests on Linux.
-  Brand/                    Brand (display name, domain, derived FoldMark, tagline)
+  Brand/                    Brand (display name, domain, legal URLs, derived FoldMark, tagline)
+  Settings/                 AppearanceMode
   Model/                    Book, Edition, Page, Artwork, Language
   Content/                  ContentRepository, LoadState, ContentError
   Entitlement/              SubscriptionPlan, EntitlementState, EntitlementGate
@@ -149,6 +151,24 @@ EntitlementGate.decision(for:)                 OmramoCore    (pure function)
   message and resolves through the update stream.
 - No secrets. StoreKit 2 verifies transactions on device; the app never talks
   to a server for entitlement.
+
+### No custom account system
+
+Identity is the Apple Account. There is no sign up, sign in, email, phone or
+card form, and no server. Restore is `AppStore.sync()`; cancel and plan
+changes go through StoreKit's `manageSubscriptionsSheet` from Settings. If a
+server ever needs to know about entitlements, App Store Server Notifications
+are the path, not an app side login.
+
+### Settings and appearance
+
+`AppSettings` (`@Observable`, `MainActor`) holds `AppearanceMode` from the
+core, persisted in `UserDefaults` under `AppearanceMode.storageKey`.
+`RootView` applies `preferredColorScheme(settings.appearance.colorScheme)`
+so the choice reaches every scene, and `OmramoPalette` resolves paper and ink
+through dynamic `UIColor` providers so the reading surface itself changes.
+`SettingsView` is a sheet from the catalog toolbar; it is the only view that
+imports StoreKit besides the backend, and only for the system sheet.
 
 ### Testing the gate without App Store Connect
 

@@ -12,6 +12,8 @@ struct CatalogView: View {
     @Environment(EntitlementStore.self) private var entitlements
     @Environment(AppNavigator.self) private var navigator
 
+    @State private var showsSettings = false
+
     private let columns = [GridItem(.adaptive(minimum: 170, maximum: 240), spacing: 20, alignment: .top)]
 
     var body: some View {
@@ -65,9 +67,19 @@ struct CatalogView: View {
         }
         .navigationTitle(Brand.displayName)
         .toolbar {
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    showsSettings = true
+                } label: {
+                    Label("Settings", systemImage: "gearshape")
+                }
+            }
             ToolbarItem(placement: .topBarTrailing) {
                 AccessBadge(state: entitlements.effectiveState)
             }
+        }
+        .sheet(isPresented: $showsSettings) {
+            SettingsView()
         }
     }
 
@@ -121,5 +133,6 @@ struct AccessBadge: View {
     .environment(environment.catalog)
     .environment(environment.entitlements)
     .environment(environment.navigator)
+    .environment(environment.settings)
     .task { await environment.catalog.load() }
 }

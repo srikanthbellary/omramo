@@ -62,8 +62,8 @@ struct BookSpine: View {
         ZStack {
             OmramoPalette.spine
             HStack(spacing: 0) {
-                LinearGradient(colors: [OmramoPalette.ink.opacity(0.35), .clear], startPoint: .trailing, endPoint: .leading)
-                LinearGradient(colors: [OmramoPalette.ink.opacity(0.35), .clear], startPoint: .leading, endPoint: .trailing)
+                LinearGradient(colors: [Color.black.opacity(0.35), .clear], startPoint: .trailing, endPoint: .leading)
+                LinearGradient(colors: [Color.black.opacity(0.35), .clear], startPoint: .leading, endPoint: .trailing)
             }
             .blendMode(.multiply)
         }
