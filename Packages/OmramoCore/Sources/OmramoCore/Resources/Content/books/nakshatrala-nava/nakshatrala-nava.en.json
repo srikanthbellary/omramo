@@ -1,0 +1,60 @@
+{
+  "bookID": "nakshatrala-nava",
+  "language": "en",
+  "pages": [
+    {
+      "number": 1,
+      "text": "Chinnu loved the sky. Every night he lay on the terrace and counted the stars. The count never came out finished.",
+      "illustration": { "motif": "stars", "colors": ["#0D0B2E", "#3D2C8D", "#F9E79F"] },
+      "caption": "Chinnu on the terrace"
+    },
+    {
+      "number": 2,
+      "text": "One day his mother took a page from an old book and folded a boat. \"This is not an ordinary boat,\" she said with a smile. \"Tell it a wish and set it on the water, and it will go anywhere.\"",
+      "illustration": { "motif": "boat", "colors": ["#1A237E", "#5C6BC0", "#FFF9C4"] },
+      "caption": "The paper boat"
+    },
+    {
+      "number": 3,
+      "text": "That night Chinnu went to the pond. He set the boat on the water and whispered, \"Take me to the stars.\""
+    },
+    {
+      "number": 4,
+      "text": "The boat moved. First on the water, then on the air. Chinnu's eyes went wide. The reflection of the stars in the pond lifted up and became the real sky.",
+      "illustration": { "motif": "stars", "colors": ["#050416", "#2E1A6E", "#B39DDB"] },
+      "caption": "From the pond to the sky"
+    },
+    {
+      "number": 5,
+      "text": "The first star he met was small and yellow. \"I am not the Pole Star,\" it said shyly. \"Nobody counts me.\" Chinnu said, \"I will count you as number one.\"",
+      "illustration": { "motif": "lantern", "colors": ["#0D0B2E", "#F9A825", "#FFF8E1"] },
+      "caption": "The small yellow star"
+    },
+    {
+      "number": 6,
+      "text": "The boat sailed on. A great red star roared, \"What is a child doing here?\" Chinnu was not afraid. \"I came to finish the count,\" he said.",
+      "illustration": { "motif": "stars", "colors": ["#1A0000", "#B71C1C", "#FF8A65"] },
+      "caption": "The red star"
+    },
+    {
+      "number": 7,
+      "text": "The red star laughed. \"The count never finishes, little one. Every night a new star is born.\" Hearing that did not make Chinnu sad. It made him glad."
+    },
+    {
+      "number": 8,
+      "text": "Far away a cluster of stars was turning in a circle. It looked like a festival. Chinnu stood in the middle of the boat and clapped.",
+      "illustration": { "motif": "festival", "colors": ["#0D0B2E", "#7B1FA2", "#FFECB3"] },
+      "caption": "A festival of stars"
+    },
+    {
+      "number": 9,
+      "text": "Dawn came. The boat drifted gently down. The pond was ordinary water again. In Chinnu's hand was the paper boat, slightly damp."
+    },
+    {
+      "number": 10,
+      "text": "From that night on Chinnu stopped counting stars. Instead, every night he names one new star. The first name he gave: Small Yellow Star, Number One.",
+      "illustration": { "motif": "stars", "colors": ["#0D0B2E", "#3D2C8D", "#FFF59D"] },
+      "caption": "Number one"
+    }
+  ]
+}

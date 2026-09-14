@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "books": [
+    {
+      "id": "godavari-oddu",
+      "title": {
+        "te": "గోదావరి ఒడ్డున",
+        "en": "On the Banks of the Godavari",
+        "hi": "गोदावरी के तट पर"
+      },
+      "author": {
+        "te": "కమల భాస్కర్",
+        "en": "Kamala Bhaskar"
+      },
+      "description": {
+        "te": "పండుగ వేళ నది మారుతోంది. పదేళ్ల లక్ష్మి తాతయ్య చెప్పిన మాట గుర్తు చేసుకుంటుంది. నదిని వినడం.",
+        "en": "The river is changing on the eve of the festival. Ten year old Lakshmi remembers what her grandfather taught her. Listen to the river."
+      },
+      "poster": {
+        "motif": "river",
+        "colors": ["#0B2E4F", "#1F7A8C", "#F4A259"]
+      },
+      "pageCount": 10,
+      "editions": [
+        { "language": "te", "status": "ready", "file": "godavari-oddu.te.json" },
+        { "language": "en", "status": "ready", "file": "godavari-oddu.en.json" },
+        { "language": "hi", "status": "planned" }
+      ],
+      "sample": { "pageCount": 2 }
+    },
+    {
+      "id": "nakshatrala-nava",
+      "title": {
+        "te": "నక్షత్రాల నావ",
+        "en": "The Boat of Stars",
+        "hi": "तारों की नाव"
+      },
+      "author": {
+        "te": "ఆనంద్ వర్మ",
+        "en": "Anand Varma"
+      },
+      "description": {
+        "te": "చిన్ను ప్రతి రాత్రి నక్షత్రాలను లెక్కపెడతాడు. అమ్మ చేసిన కాగితం నావ అతన్ని ఆకాశానికి తీసుకెళ్తుంది.",
+        "en": "Chinnu counts the stars every night. A paper boat folded by his mother carries him up to meet them."
+      },
+      "poster": {
+        "motif": "stars",
+        "colors": ["#0D0B2E", "#3D2C8D", "#F9E79F"]
+      },
+      "pageCount": 10,
+      "editions": [
+        { "language": "te", "status": "ready", "file": "nakshatrala-nava.te.json" },
+        { "language": "en", "status": "ready", "file": "nakshatrala-nava.en.json" },
+        { "language": "hi", "status": "planned" }
+      ],
+      "sample": { "pageCount": 2 }
+    },
+    {
+      "id": "konaseema-rahasyam",
+      "title": {
+        "te": "కోనసీమ రహస్యం",
+        "en": "The Konaseema Secret",
+        "hi": "कोनसीमा का रहस्य"
+      },
+      "author": {
+        "te": "మీనాక్షి రావు",
+        "en": "Meenakshi Rao"
+      },
+      "description": {
+        "te": "కొబ్బరి తోటల మధ్య ఒక పాత గుడి గంట వందేళ్లుగా మోగలేదు. ఒక తాటాకు పటం, ఒక పాత బావి, ఇద్దరు పిల్లలు.",
+        "en": "A temple bell among the coconut groves has not rung in a hundred years. A palm leaf map, an old well, and two children who want to know why."
+      },
+      "poster": {
+        "motif": "map",
+        "colors": ["#2C1A0E", "#8C4A1F", "#E8C170"]
+      },
+      "pageCount": 10,
+      "editions": [
+        { "language": "te", "status": "ready", "file": "konaseema-rahasyam.te.json" },
+        { "language": "en", "status": "ready", "file": "konaseema-rahasyam.en.json" },
+        { "language": "hi", "status": "planned" }
+      ],
+      "sample": { "pageCount": 2 }
+    }
+  ]
+}

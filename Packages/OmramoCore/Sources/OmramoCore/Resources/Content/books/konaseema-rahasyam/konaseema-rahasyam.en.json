@@ -1,0 +1,60 @@
+{
+  "bookID": "konaseema-rahasyam",
+  "language": "en",
+  "pages": [
+    {
+      "number": 1,
+      "text": "Among the coconut groves of Konaseema stands an old temple. Its bell had not rung in a hundred years. Nobody knew why.",
+      "illustration": { "motif": "temple", "colors": ["#2C1A0E", "#8C4A1F", "#E8C170"] },
+      "caption": "The temple among the groves"
+    },
+    {
+      "number": 2,
+      "text": "To Anusha and Bharat, a sister and brother visiting for the summer holidays, it sounded like a challenge. \"Let's find out why the bell does not ring,\" said Anusha.",
+      "illustration": { "motif": "village", "colors": ["#33691E", "#8BC34A", "#FFF3E0"] },
+      "caption": "Anusha and Bharat"
+    },
+    {
+      "number": 3,
+      "text": "In an old trunk at their grandmother's house they found a palm leaf map. Groves, canals, the temple. Near the temple, a small mark: three lines and a circle.",
+      "illustration": { "motif": "map", "colors": ["#3E2723", "#A1887F", "#F5E6C8"] },
+      "caption": "The palm leaf map"
+    },
+    {
+      "number": 4,
+      "text": "The two of them walked along the canal bank. Every turn on the map was really there. The wind moved through the coconut palms as if it were telling a secret.",
+      "illustration": { "motif": "forest", "colors": ["#1B5E20", "#4CAF50", "#C8E6C9"] },
+      "caption": "The canal bank"
+    },
+    {
+      "number": 5,
+      "text": "Behind the temple was an old well. On the stones of the well, the same mark: three lines and a circle. Bharat said eagerly, \"There is something here.\""
+    },
+    {
+      "number": 6,
+      "text": "There was no water in the well, only steps. Anusha switched on her torch. At the bottom was a small room, and on its wall, old Telugu letters.",
+      "illustration": { "motif": "lantern", "colors": ["#1A1A1A", "#5D4037", "#FFCC80"] },
+      "caption": "Inside the well"
+    },
+    {
+      "number": 7,
+      "text": "They needed their grandmother to read the letters. She came and read slowly. \"For the bell to ring, the village must come as one.\""
+    },
+    {
+      "number": 8,
+      "text": "Anusha understood. The bell was not broken. One person's strength was not enough to ring it. The bell rope was very heavy and needed ten people pulling together."
+    },
+    {
+      "number": 9,
+      "text": "That evening every child in the village came to the temple. The elders watched, smiling. They pulled the rope. Once, twice, a third time.",
+      "illustration": { "motif": "festival", "colors": ["#4E342E", "#E65100", "#FFE0B2"] },
+      "caption": "All together"
+    },
+    {
+      "number": 10,
+      "text": "The bell rang. The sound rolled over the coconut groves all the way to the canals. Now everyone knew the secret. When we stand together, the bell rings.",
+      "illustration": { "motif": "temple", "colors": ["#2C1A0E", "#E8C170", "#FFF8E1"] },
+      "caption": "The bell rings"
+    }
+  ]
+}

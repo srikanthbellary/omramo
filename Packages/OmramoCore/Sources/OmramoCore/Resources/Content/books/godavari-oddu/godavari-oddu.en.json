@@ -1,0 +1,60 @@
+{
+  "bookID": "godavari-oddu",
+  "language": "en",
+  "pages": [
+    {
+      "number": 1,
+      "text": "The little village on the bank of the Godavari was called Kotturu. In the hour when the morning sun scattered gold across the river, ten year old Lakshmi ran down to her grandfather's boat.",
+      "illustration": { "motif": "river", "colors": ["#0B2E4F", "#1F7A8C", "#F4A259"] },
+      "caption": "The Godavari at dawn"
+    },
+    {
+      "number": 2,
+      "text": "Grandfather Venkayya had rowed this river for forty years. \"The river talks to us, Lakshmi. You have to learn to listen,\" he always said.",
+      "illustration": { "motif": "boat", "colors": ["#123C5A", "#2A9D8F", "#E9C46A"] },
+      "caption": "Grandfather's boat"
+    },
+    {
+      "number": 3,
+      "text": "That day the water was not itself. The waves ran fast and turned the colour of clay. Grandfather's face grew serious. \"It is raining up in the hills,\" he said.",
+      "illustration": { "motif": "monsoon", "colors": ["#1B2631", "#5D6D7E", "#AEB6BF"] },
+      "caption": "Water the colour of clay"
+    },
+    {
+      "number": 4,
+      "text": "Everyone in the village was busy with festival preparations. Lamps along the bank, garlands of flowers, the smell of sweets frying. Nobody was thinking about a flood.",
+      "illustration": { "motif": "festival", "colors": ["#4A1C40", "#C2185B", "#FFB74D"] },
+      "caption": "Getting ready for the festival"
+    },
+    {
+      "number": 5,
+      "text": "Lakshmi remembered what her grandfather had told her. Listen to the river. She sat on the bank and listened to the sound of the water. It sounded like a warning."
+    },
+    {
+      "number": 6,
+      "text": "She ran to the elders and told them. At first nobody believed her. \"Children's talk,\" they laughed. But her grandfather came and stood beside her.",
+      "illustration": { "motif": "village", "colors": ["#3E2723", "#8D6E63", "#FFE0B2"] },
+      "caption": "The village elders"
+    },
+    {
+      "number": 7,
+      "text": "By evening the water had reached the steps. Then the village woke up. Leaving the lamps and flowers behind, everyone moved to higher ground."
+    },
+    {
+      "number": 8,
+      "text": "Grandfather ferried the children and the old people one boatload at a time to the temple hill. On every crossing Lakshmi sat at the prow holding a lamp.",
+      "illustration": { "motif": "lantern", "colors": ["#0B1D33", "#1F4E79", "#FFD166"] },
+      "caption": "A lamp at the prow"
+    },
+    {
+      "number": 9,
+      "text": "It rained all night. By dawn the river had calmed. The village was soaked, but nobody was lost. The elders looked at Lakshmi and bowed their heads."
+    },
+    {
+      "number": 10,
+      "text": "That year the festival was held a week late. Lakshmi lit the first lamp. The river flowed slowly past, as if it were talking to her.",
+      "illustration": { "motif": "river", "colors": ["#0B2E4F", "#F4A259", "#FFF3E0"] },
+      "caption": "The first lamp"
+    }
+  ]
+}
