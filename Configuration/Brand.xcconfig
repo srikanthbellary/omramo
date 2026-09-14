@@ -1,0 +1,5 @@
+// Product identity for build settings. Must match Brand.displayName in
+// Packages/OmramoCore/Sources/OmramoCore/Brand/Brand.swift; the core tests
+// fail if they drift. The bundle id and product ids are not part of the brand.
+BRAND_DISPLAY_NAME = Omramo
+BRAND_DOMAIN = omramo.com
