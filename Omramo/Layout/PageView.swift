@@ -83,7 +83,7 @@ struct LockedPageView: View {
                 .font(OmramoType.cardTitle)
                 .foregroundStyle(OmramoPalette.ink)
                 .multilineTextAlignment(.center)
-            Text("One subscription opens every title in Omramo.")
+            Text("One subscription opens every title in \(Brand.displayName).")
                 .font(OmramoType.cardSubtitle)
                 .foregroundStyle(OmramoPalette.inkSoft)
                 .multilineTextAlignment(.center)

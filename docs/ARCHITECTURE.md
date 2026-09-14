@@ -16,17 +16,30 @@ Omramo/                     App target (SwiftUI, StoreKit 2). Synchronized folde
     Paywall/                Hard paywall
     Reader/                 Full reader
   Layout/                   Duo pane abstraction and page surfaces
-  DesignSystem/             Palette, type, placeholder art, OM | RA | MO mark
+  DesignSystem/             Palette, type, placeholder art, FoldMarkView (OM | RA | MO)
   Store/                    EntitlementBackend implementations
   Assets.xcassets           App icon slot and accent colour only
 Packages/OmramoCore/        Swift package, no UI. Builds and tests on Linux.
+  Brand/                    Brand (display name, domain, derived FoldMark, tagline)
   Model/                    Book, Edition, Page, Artwork, Language
   Content/                  ContentRepository, LoadState, ContentError
   Entitlement/              SubscriptionPlan, EntitlementState, EntitlementGate
   Layout/                   SpreadLayoutPolicy, SpreadMode, SpreadPager
   Resources/Content/        The bundled prototype catalog (JSON)
 Configuration/Omramo.storekit   Local StoreKit configuration for the simulator
+Configuration/Brand.xcconfig    BRAND_DISPLAY_NAME and BRAND_DOMAIN for build settings
 ```
+
+## Brand
+
+`Brand` in the core is the only place the product is named. Views interpolate
+`Brand.displayName`; the fold mark view takes `Brand.mark`, a `FoldMark`
+derived from the name; `ContentError` copy and the simulated store's offer
+names use it too. The app target's build configurations inherit
+`Configuration/Brand.xcconfig`, and `INFOPLIST_KEY_CFBundleDisplayName` is
+`$(BRAND_DISPLAY_NAME)`. `BrandTests` asserts the constant and the xcconfig
+agree. Identifiers that must never change with a rename (bundle id, product
+ids, module names) are kept out of `Brand` on purpose.
 
 Dependency direction is one way: `Omramo` imports `OmramoCore`; the core
 imports Foundation only. Anything that can be expressed without SwiftUI,

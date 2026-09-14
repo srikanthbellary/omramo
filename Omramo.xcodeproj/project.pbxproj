@@ -13,6 +13,7 @@
 /* Begin PBXFileReference section */
 		0A0000000000000000000006 /* Omramo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Omramo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A0000000000000000000019 /* Omramo.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Omramo.storekit; sourceTree = "<group>"; };
+		0A0000000000000000000021 /* Brand.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Brand.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -55,6 +56,7 @@
 		0A0000000000000000000020 /* Configuration */ = {
 			isa = PBXGroup;
 			children = (
+				0A0000000000000000000021 /* Brand.xcconfig */,
 				0A0000000000000000000019 /* Omramo.storekit */,
 			);
 			path = Configuration;
@@ -265,6 +267,7 @@
 		};
 		0A0000000000000000000012 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A0000000000000000000021 /* Brand.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -272,7 +275,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Omramo;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(BRAND_DISPLAY_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -299,6 +302,7 @@
 		};
 		0A0000000000000000000013 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0A0000000000000000000021 /* Brand.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -306,7 +310,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = Omramo;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(BRAND_DISPLAY_NAME)";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.books";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

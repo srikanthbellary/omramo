@@ -46,7 +46,7 @@ struct RootView: View {
     }
 }
 
-/// OM | RA | MO opening into a book, then out of the way. Kept short: the
+/// The fold mark opening into a book, then out of the way. Kept short: the
 /// wow moment is the sample, not the splash.
 struct SplashView: View {
     @State private var isOpen = false
@@ -55,12 +55,12 @@ struct SplashView: View {
         ZStack {
             OmramoPalette.paper.ignoresSafeArea()
             VStack(spacing: 28) {
-                OmRaMoMark(isOpen: isOpen)
-                Text("Omramo")
+                FoldMarkView(isOpen: isOpen)
+                Text(Brand.displayName)
                     .font(OmramoType.displayTitle)
                     .foregroundStyle(OmramoPalette.ink)
                     .opacity(isOpen ? 1 : 0)
-                Text("తెలుగు కథలు, తెరిచిన పుస్తకంలా")
+                Text(Brand.tagline)
                     .font(OmramoType.cardSubtitle)
                     .foregroundStyle(OmramoPalette.inkSoft)
                     .opacity(isOpen ? 1 : 0)

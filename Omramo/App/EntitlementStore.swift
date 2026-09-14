@@ -17,11 +17,11 @@ final class EntitlementStore {
     private let backend: any EntitlementBackend
     private var updatesTask: Task<Void, Never>?
 
-    #if DEBUG
     /// Developer override used from the paywall footer to walk the locked
-    /// loop on a simulator without a StoreKit configuration. Never ships.
+    /// loop on a simulator without a StoreKit configuration. Only Debug
+    /// builds compile a setter, so Release can never leave `nil`. Declared
+    /// outside `#if` so the Observable macro tracks it.
     private(set) var debugOverride: EntitlementState?
-    #endif
 
     init(backend: any EntitlementBackend) {
         self.backend = backend
@@ -32,10 +32,7 @@ final class EntitlementStore {
     }
 
     var effectiveState: EntitlementState {
-        #if DEBUG
-        if let debugOverride { return debugOverride }
-        #endif
-        return state
+        debugOverride ?? state
     }
 
     /// Call once at launch. Safe to call again; it just refreshes.

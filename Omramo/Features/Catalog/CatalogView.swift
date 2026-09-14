@@ -53,7 +53,7 @@ struct CatalogView: View {
                 .background(OmramoPalette.paper)
             }
         }
-        .navigationTitle("Omramo")
+        .navigationTitle(Brand.displayName)
         .toolbar {
             ToolbarItem(placement: .topBarTrailing) {
                 AccessBadge(state: entitlements.effectiveState)

@@ -12,10 +12,21 @@ Three tiles. `OM` is the left pane, `RA` is the spine, `MO` is the right pane.
   on the y axis, anchored at the spine), `RA` narrows to a spine and its
   letters turn vertical.
 
-`OmRaMoMark(isOpen:scale:)` draws both states and animates between them with a
-single spring. The splash plays closed to open once (about 1.5 seconds), then
-fades to the catalog. The paywall header shows the open mark at half scale.
-Do not invent a second mark or wordmark.
+`FoldMarkView(isOpen:scale:)` draws both states and animates between them with
+a single spring. The tile letters are `Brand.mark`, derived from
+`Brand.displayName` by splitting the name into three near equal upper case
+tiles with the spine narrowest. The splash plays closed to open once (about
+1.5 seconds), then fades to the catalog. The paywall header shows the open
+mark at half scale. Do not invent a second mark or wordmark.
+
+### Brand is one constant
+
+Nothing in the UI spells the product name. All copy reads `Brand.displayName`
+(and `Brand.allAccessName`, `Brand.tagline`, `Brand.domain`) from
+`OmramoCore/Brand/Brand.swift`; the home screen label reads
+`BRAND_DISPLAY_NAME` from `Configuration/Brand.xcconfig`. Change those two
+values to rebrand; a core test fails if they disagree. See the README section
+"Renaming the product".
 
 ## Palette
 

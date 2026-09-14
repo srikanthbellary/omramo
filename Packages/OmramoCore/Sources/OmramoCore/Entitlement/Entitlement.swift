@@ -1,7 +1,7 @@
 import Foundation
 
 /// The one subscription that unlocks the whole catalog. There is no per title
-/// purchase in Omramo by design; both plans belong to a single subscription
+/// purchase by design; both plans belong to a single subscription
 /// group so upgrading or downgrading never double bills.
 public enum SubscriptionPlan: String, CaseIterable, Hashable, Sendable, Identifiable {
     case monthly

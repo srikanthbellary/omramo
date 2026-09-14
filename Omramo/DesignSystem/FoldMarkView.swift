@@ -1,11 +1,14 @@
 import SwiftUI
+import OmramoCore
 
-/// The mark: OM | RA | MO. Closed, the three tiles sit flush and read Omramo.
-/// Open, OM and MO swing out as the two panes of a book and RA becomes the
-/// spine. The same geometry is used for the splash and the paywall header.
-struct OmRaMoMark: View {
+/// The fold mark: left pane | spine | right pane. Closed, the three tiles sit
+/// flush and read the product name. Open, the outer tiles swing out as the
+/// two covers of a book and the middle tile becomes the spine. Tile letters
+/// come from `Brand.mark`, so the mark follows a rename automatically.
+struct FoldMarkView: View {
     var isOpen: Bool
     var scale: CGFloat = 1
+    var mark: FoldMark = Brand.mark
 
     private var tileHeight: CGFloat { 88 * scale }
     private var paneWidth: CGFloat { 92 * scale }
@@ -13,27 +16,27 @@ struct OmRaMoMark: View {
 
     var body: some View {
         HStack(spacing: isOpen ? 6 * scale : 0) {
-            tile("OM", color: OmramoPalette.indigo, width: paneWidth)
+            tile(mark.left, color: OmramoPalette.indigo, width: paneWidth, hidesLettersWhenOpen: false)
                 .rotation3DEffect(.degrees(isOpen ? 28 : 0), axis: (x: 0, y: 1, z: 0), anchor: .trailing, perspective: 0.6)
-            tile("RA", color: OmramoPalette.spine, width: spineWidth)
+            tile(mark.spine, color: OmramoPalette.spine, width: spineWidth, hidesLettersWhenOpen: true)
                 .overlay {
                     if isOpen {
-                        Text("RA")
+                        Text(mark.spine)
                             .font(.system(size: 12 * scale, weight: .heavy, design: .rounded))
                             .foregroundStyle(OmramoPalette.paper.opacity(0.9))
                             .rotationEffect(.degrees(-90))
                             .transition(.opacity)
                     }
                 }
-            tile("MO", color: OmramoPalette.saffron, width: paneWidth)
+            tile(mark.right, color: OmramoPalette.saffron, width: paneWidth, hidesLettersWhenOpen: false)
                 .rotation3DEffect(.degrees(isOpen ? -28 : 0), axis: (x: 0, y: 1, z: 0), anchor: .leading, perspective: 0.6)
         }
         .animation(.spring(duration: 0.9, bounce: 0.18), value: isOpen)
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text("Omramo"))
+        .accessibilityLabel(Text(Brand.displayName))
     }
 
-    private func tile(_ letters: String, color: Color, width: CGFloat) -> some View {
+    private func tile(_ letters: String, color: Color, width: CGFloat, hidesLettersWhenOpen: Bool) -> some View {
         RoundedRectangle(cornerRadius: 10 * scale, style: .continuous)
             .fill(color)
             .frame(width: width, height: tileHeight)
@@ -41,7 +44,7 @@ struct OmRaMoMark: View {
                 Text(letters)
                     .font(.system(size: 34 * scale, weight: .heavy, design: .rounded))
                     .foregroundStyle(OmramoPalette.paper)
-                    .opacity(letters == "RA" && isOpen ? 0 : 1)
+                    .opacity(hidesLettersWhenOpen && isOpen ? 0 : 1)
                     .minimumScaleFactor(0.4)
                     .lineLimit(1)
                     .padding(.horizontal, 4 * scale)
@@ -51,9 +54,10 @@ struct OmRaMoMark: View {
 
 #Preview("Closed and open") {
     VStack(spacing: 40) {
-        OmRaMoMark(isOpen: false)
-        OmRaMoMark(isOpen: true)
-        OmRaMoMark(isOpen: true, scale: 0.5)
+        FoldMarkView(isOpen: false)
+        FoldMarkView(isOpen: true)
+        FoldMarkView(isOpen: true, scale: 0.5)
+        FoldMarkView(isOpen: false, mark: FoldMark.derived(from: "Kathalu"))
     }
     .padding()
     .background(OmramoPalette.paper)

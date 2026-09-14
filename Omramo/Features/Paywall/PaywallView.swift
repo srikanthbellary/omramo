@@ -50,9 +50,9 @@ struct PaywallView: View {
 
     private var header: some View {
         VStack(spacing: 16) {
-            OmRaMoMark(isOpen: true, scale: 0.55)
+            FoldMarkView(isOpen: true, scale: 0.55)
                 .padding(.top, 8)
-            Text("Read every book in Omramo")
+            Text("Read every book in \(Brand.displayName)")
                 .font(OmramoType.displayTitle)
                 .foregroundStyle(OmramoPalette.ink)
                 .multilineTextAlignment(.center)
@@ -237,7 +237,7 @@ private struct DeveloperOverride: View {
                 Button("Clear simulated subscription") {
                     entitlements.setDebugOverride(nil)
                 }
-                Text("Debug builds only. Use the Omramo.storekit configuration in the scheme for real StoreKit 2 testing.")
+                Text("Debug builds only. Use the StoreKit configuration attached to the scheme for real StoreKit 2 testing.")
                     .font(.caption2)
                     .foregroundStyle(OmramoPalette.inkSoft)
             }

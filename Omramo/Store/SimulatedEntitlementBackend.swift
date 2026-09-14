@@ -16,8 +16,8 @@ actor SimulatedEntitlementBackend: EntitlementBackend {
 
     func loadOffers() async throws -> [SubscriptionOffer] {
         [
-            SubscriptionOffer(plan: .monthly, displayName: "Omramo All Access", displayPrice: "Sample price", periodDescription: "per month"),
-            SubscriptionOffer(plan: .yearly, displayName: "Omramo All Access", displayPrice: "Sample price", periodDescription: "per year")
+            SubscriptionOffer(plan: .monthly, displayName: Brand.allAccessName, displayPrice: "Sample price", periodDescription: "per month"),
+            SubscriptionOffer(plan: .yearly, displayName: Brand.allAccessName, displayPrice: "Sample price", periodDescription: "per year")
         ]
     }
 

@@ -67,7 +67,7 @@
       "localizations" : [
 
       ],
-      "name" : "Omramo All Access",
+      "name" : "All Access",
       "subscriptions" : [
         {
           "adHocOffers" : [
@@ -83,7 +83,7 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Every title in Omramo, all editions.",
+              "description" : "Every title in the catalog, all editions.",
               "displayName" : "All Access Monthly",
               "locale" : "en_US"
             }
@@ -111,7 +111,7 @@
           "introductoryOffer" : null,
           "localizations" : [
             {
-              "description" : "Every title in Omramo, all editions. Two months free.",
+              "description" : "Every title in the catalog, all editions. Two months free.",
               "displayName" : "All Access Yearly",
               "locale" : "en_US"
             }

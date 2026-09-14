@@ -91,6 +91,14 @@ Configuration/           Omramo.storekit for local StoreKit testing
 docs/                    PRODUCT.md (lock), ARCHITECTURE.md, DESIGN.md
 ```
 
+## Renaming the product
+
+The display name is atomically swappable. The current value is Omramo.
+
+1. Set `Brand.displayName` in `Packages/OmramoCore/Sources/OmramoCore/Brand/Brand.swift`. Every in app string, the splash wordmark and the fold mark tiles (OM | RA | MO today) derive from it.
+2. Set `BRAND_DISPLAY_NAME` in `Configuration/Brand.xcconfig` to the same value. It feeds `CFBundleDisplayName`; the core tests fail if the two drift.
+3. Optionally set `Brand.domain` and `BRAND_DOMAIN`. Bundle id and product ids are App Store keys, not brand, and stay as they are.
+
 ## Adding a title
 
 1. Add a folder `Packages/OmramoCore/Sources/OmramoCore/Resources/Content/books/<id>/`

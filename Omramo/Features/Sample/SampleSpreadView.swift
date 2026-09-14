@@ -157,7 +157,7 @@ private struct SampleFooter: View {
                     .font(OmramoType.cardTitle)
                     .foregroundStyle(OmramoPalette.paper)
                     .multilineTextAlignment(.center)
-                Text("Subscribe once and read every title in Omramo, in every edition.")
+                Text("Subscribe once and read every title in \(Brand.displayName), in every edition.")
                     .font(OmramoType.cardSubtitle)
                     .foregroundStyle(OmramoPalette.paper.opacity(0.8))
                     .multilineTextAlignment(.center)

@@ -14,7 +14,7 @@ public enum ContentError: Error, Equatable, Sendable {
     public var userMessage: String {
         switch self {
         case .missingResource, .unreadable, .unsupportedSchema:
-            return "This copy of Omramo could not load its library. Please reinstall the app."
+            return "This copy of \(Brand.displayName) could not load its library. Please reinstall the app."
         case .unknownBook:
             return "That title is not in the library right now."
         case .editionNotAvailable(_, let language):

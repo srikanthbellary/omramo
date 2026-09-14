@@ -1,6 +1,6 @@
 import Foundation
 
-/// The literary editions Omramo ships. Telugu is the core edition; Hindi and
+/// The literary editions the app ships. Telugu is the core edition; Hindi and
 /// English are preloaded translations of the same title, never live machine
 /// translation. Conforming to `CodingKeyRepresentable` lets `[Language: String]`
 /// encode as a plain JSON object keyed by the language code.
