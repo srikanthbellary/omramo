@@ -115,7 +115,7 @@ struct StoreKitEntitlementBackend: EntitlementBackend {
         case (.year, let n): return "every \(n) years"
         case (.week, let n): return "every \(n) weeks"
         case (.day, let n): return "every \(n) days"
-        @unknown default: return ""
+        default: return ""
         }
     }
 }

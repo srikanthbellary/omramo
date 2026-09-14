@@ -58,14 +58,11 @@ struct EditionRow: View {
                         .font(.caption2.weight(.bold))
                         .padding(.horizontal, 7)
                         .padding(.vertical, 3)
-                        .background(
-                            RoundedRectangle(cornerRadius: 5, style: .continuous)
-                                .fill(edition.isReady ? OmramoPalette.indigo : .clear)
-                        )
-                        .overlay(
+                        .background(edition.isReady ? OmramoPalette.indigo : .clear, in: RoundedRectangle(cornerRadius: 5, style: .continuous))
+                        .overlay {
                             RoundedRectangle(cornerRadius: 5, style: .continuous)
                                 .strokeBorder(OmramoPalette.indigo.opacity(edition.isReady ? 0 : 0.5), lineWidth: 1)
-                        )
+                        }
                         .foregroundStyle(edition.isReady ? OmramoPalette.paper : OmramoPalette.inkSoft)
                         .accessibilityLabel(Text("\(language.englishName) edition \(edition.isReady ? "ready" : "planned")"))
                 }

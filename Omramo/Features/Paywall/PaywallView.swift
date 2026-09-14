@@ -210,14 +210,11 @@ private struct PlanCard: View {
                 }
             }
             .padding(16)
-            .background(
-                RoundedRectangle(cornerRadius: 14, style: .continuous)
-                    .fill(OmramoPalette.paperShade)
-            )
-            .overlay(
+            .background(OmramoPalette.paperShade, in: RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .overlay {
                 RoundedRectangle(cornerRadius: 14, style: .continuous)
                     .strokeBorder(isSelected ? OmramoPalette.saffron : .clear, lineWidth: 2)
-            )
+            }
         }
         .buttonStyle(.plain)
         .accessibilityAddTraits(isSelected ? [.isSelected] : [])
