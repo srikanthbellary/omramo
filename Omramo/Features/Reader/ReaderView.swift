@@ -17,15 +17,29 @@ struct ReaderView: View {
         Group {
             if let model {
                 ReaderContentView(model: model)
-            } else if let book = catalog.book(id: bookID) {
-                Color.clear.onAppear {
-                    model = ReaderModel(book: book, catalog: catalog)
-                }
+            } else if catalog.state.isIdle || catalog.state.isLoading {
+                ProgressView("Opening the book")
+                    .tint(OmramoPalette.onShelf)
+                    .foregroundStyle(OmramoPalette.onShelf)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            } else if catalog.book(id: bookID) != nil {
+                ProgressView("Opening the book")
+                    .tint(OmramoPalette.onShelf)
+                    .foregroundStyle(OmramoPalette.onShelf)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 ContentUnavailableView("That title is not in the library right now.", systemImage: "book.closed")
             }
         }
         .background(BookshelfBackground())
+        .task(id: bookID) {
+            await catalog.loadIfNeeded()
+            guard let book = catalog.book(id: bookID) else { return }
+            if model?.book.id != bookID {
+                model = ReaderModel(book: book, catalog: catalog)
+            }
+            await model?.load()
+        }
     }
 }
 
@@ -97,7 +111,6 @@ private struct ReaderContentView: View {
                 }
             }
         }
-        .task { await model.load() }
     }
 
     @ViewBuilder

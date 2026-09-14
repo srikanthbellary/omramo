@@ -4,11 +4,12 @@ import OmramoCore
 /// Splash, then the catalog. The paywall is presented from here as a full
 /// screen cover so it can interrupt either the sample or the reader.
 struct RootView: View {
-    @Environment(AppNavigator.self) private var navigator
     @Environment(CatalogStore.self) private var catalog
     @Environment(EntitlementStore.self) private var entitlements
     @Environment(AppSettings.self) private var settings
 
+    /// Per window so a second Duo scene does not share the path.
+    @State private var navigator = AppNavigator()
     @State private var showsSplash = true
 
     var body: some View {
@@ -34,13 +35,17 @@ struct RootView: View {
                     .zIndex(1)
             }
         }
+        .environment(navigator)
         .fullScreenCover(item: $navigator.paywallBookID, onDismiss: { navigator.paywallDidDismiss() }) { _ in
             PaywallView()
         }
         .preferredColorScheme(settings.appearance.colorScheme)
         .task {
+            let minimumSplash = Task {
+                try? await Task.sleep(for: .seconds(1.6))
+            }
             await catalog.loadIfNeeded()
-            try? await Task.sleep(for: .seconds(1.6))
+            await minimumSplash.value
             withAnimation(.easeOut(duration: 0.45)) {
                 showsSplash = false
             }
@@ -81,6 +86,5 @@ struct SplashView: View {
     return RootView()
         .environment(environment.catalog)
         .environment(environment.entitlements)
-        .environment(environment.navigator)
         .environment(environment.settings)
 }

@@ -41,6 +41,13 @@ public struct Edition: Codable, Hashable, Sendable {
         return pages[index]
     }
 
+    /// Opening pages only. The sample screen holds this so the rest of the
+    /// book never sits in that view's memory.
+    public func limited(toPageCount maxPages: Int) -> Edition {
+        let count = min(max(0, maxPages), pages.count)
+        return Edition(bookID: bookID, language: language, pages: Array(pages.prefix(count)))
+    }
+
     /// Pages are expected to be numbered 1...n in order. Content authored by
     /// hand can drift, so the repository validates before handing pages out.
     public func validateNumbering() throws {

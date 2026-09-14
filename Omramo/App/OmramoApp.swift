@@ -13,7 +13,6 @@ struct OmramoApp: App {
             RootView()
                 .environment(environment.catalog)
                 .environment(environment.entitlements)
-                .environment(environment.navigator)
                 .environment(environment.settings)
                 .task {
                     await environment.entitlements.start()

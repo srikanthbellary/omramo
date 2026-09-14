@@ -44,6 +44,12 @@ final class CatalogStore {
         }
         return ReaderContent(book: book, primary: primary, secondary: secondary)
     }
+
+    /// Same pairing as the reader, clipped to the free sample so the sample
+    /// screen cannot page into the rest of the book.
+    func loadSampleContent(for book: Book) async throws -> ReaderContent {
+        try await loadReaderContent(for: book).limitedToSample()
+    }
 }
 
 /// Everything a spread needs for one title, already paired page for page.
@@ -57,4 +63,13 @@ struct ReaderContent: Equatable, Sendable {
     }
 
     var pageCount: Int { primary.pageCount }
+
+    func limitedToSample() -> ReaderContent {
+        let count = book.sample.pageCount
+        ReaderContent(
+            book: book,
+            primary: primary.limited(toPageCount: count),
+            secondary: secondary.mapValues { $0.limited(toPageCount: count) }
+        )
+    }
 }

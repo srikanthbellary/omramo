@@ -1,8 +1,8 @@
 import SwiftUI
 import OmramoCore
 
-/// Free browsing. Posters, titles and descriptions only; tapping opens the
-/// two page sample, never the full book.
+/// Free browsing. Posters, titles and descriptions only. Tapping opens the
+/// two page sample unless the reader already has all access.
 ///
 /// On the inner display the shelf is two panes, like everything else in the
 /// app: titles alternate left and right and the fold region stays empty. On
@@ -87,12 +87,12 @@ struct CatalogView: View {
         LazyVGrid(columns: columns, alignment: .leading, spacing: 28) {
             ForEach(books) { book in
                 Button {
-                    navigator.showSample(for: book.id)
+                    navigator.openTitle(for: book.id, state: entitlements.effectiveState)
                 } label: {
                     BookCard(book: book)
                 }
                 .buttonStyle(.plain)
-                .accessibilityHint(Text("Opens a two page sample"))
+                .accessibilityHint(Text(entitlements.effectiveState.allowsReading ? "Opens the book" : "Opens a two page sample"))
             }
         }
     }

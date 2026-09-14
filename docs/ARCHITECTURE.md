@@ -51,7 +51,7 @@ without a Mac.
 ## Navigation
 
 ```
-RootView
+RootView  (owns a per-window AppNavigator)
   NavigationStack(path: navigator.path)
     CatalogView                        root
       -> .sample(BookID)  SampleSpreadView
@@ -59,24 +59,34 @@ RootView
   .fullScreenCover(item: navigator.paywallBookID)  PaywallView
 ```
 
-`AppNavigator` is an `@Observable` object in the environment. It owns the
-path and the paywall presentation, so the entitlement gate is applied in one
-method:
+`AppNavigator` is an `@Observable` object created by `RootView` so a second
+Duo window does not share the path. Catalog and entitlement stores stay
+shared. The gate lives in `EntitlementGate` and the navigator only applies it:
 
 ```swift
-func openReader(for bookID: BookID, decision: AccessDecision)
-    .allow        -> push .reader
-    .showPaywall  -> present paywall for bookID
-    .wait         -> do nothing (the button shows a spinner)
+EntitlementGate.destinationFromCatalog(for:)
+    .allow        -> .reader     (Netflix all access)
+    .showPaywall  -> .sample     (free two page open book)
+    .wait         -> .sample     (sample is free; do not block the shelf)
+
+EntitlementGate.destinationFromSample(for:)
+    .allow        -> .reader
+    .showPaywall  -> .paywall
+    .wait         -> .wait       (the button shows a spinner)
 ```
 
-When the paywall ends in a subscription it calls `finishPaywall(subscribed:
-true)`; the reader is pushed from the cover's `onDismiss` so the two
-transitions never overlap. `finishPaywall` is idempotent because a purchase
-can report success through both the button and the entitlement stream.
+`openTitle` is the catalog tap. `openReader` is continue-from-sample. Neither
+pushes the full reader without `.allow`. After a successful subscribe,
+`revealReader` replaces the sample of that title so Back returns to the
+catalog. `finishPaywall` is idempotent because a purchase can report success
+through both the button and the entitlement stream; the reader is revealed
+from the cover's `onDismiss` so the two transitions never overlap.
 
-The splash is an overlay on the root, not a route, and is dismissed after the
-catalog has loaded.
+The sample loads `loadSampleContent`, which clips every edition to
+`book.sample.pageCount` so pages past the sample never sit in that screen.
+
+The splash is an overlay on the root, not a route. It stays up for at least
+1.6s and until the catalog has loaded, then fades to the shelf.
 
 ## Content model
 
@@ -175,9 +185,11 @@ imports StoreKit besides the backend, and only for the system sheet.
 1. The shared scheme attaches `Configuration/Omramo.storekit`, so Run in the
    simulator gives real StoreKit 2 purchases against local products.
 2. Launch argument `-OmramoSimulatedStore` swaps in
-   `SimulatedEntitlementBackend` (purchases succeed after a short delay).
+   `SimulatedEntitlementBackend` (purchases succeed after a short delay and
+   the resulting state is persisted so entitlement survives relaunch).
 3. Debug builds have a "Developer" disclosure at the bottom of the paywall
-   that sets an override on `EntitlementStore`. It compiles out of Release.
+   that sets an override on `EntitlementStore`. It persists in Debug
+   `UserDefaults` and compiles out of Release.
 
 ## Duo layout
 

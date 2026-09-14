@@ -48,25 +48,32 @@ open Omramo.xcodeproj
 
 ### Walking the loop
 
-- Catalog shows three titles. Tap one.
-- The sample opens on pages 1 and 2. On a wide layout, switch the segmented
-  control to `తెలుగు | English` to see the synced editions.
+- Catalog shows three titles. While browsing free, tap one. The sample opens
+  on pages 1 and 2 only; the rest of the book is not held on that screen.
+- On a wide layout, switch the segmented control to `తెలుగు | English` to see
+  the synced editions.
 - Tap **Subscribe to continue reading**. Pick a plan and subscribe (StoreKit
-  test purchase, no charge). The reader opens on the same title.
-- Every other title is now readable too. Use the toolbar **Spread** menu to
-  switch Pages, `తెలుగు | English`, or Art.
-- Back on the catalog, tap the gear. Switch Appearance, tap Restore Purchases
-  (the status row stays on all access), and open Manage Subscription for the
-  StoreKit system sheet.
+  test purchase, no charge). The paywall dismisses and the reader replaces
+  the sample on the same title.
+- All access is now on. Back on the catalog, tap any title and it opens in
+  the reader, not the sample. Use the toolbar **Spread** menu to switch
+  Pages, `తెలుగు | English`, or Art.
+- Tap the gear. Switch Appearance (System / Light / Dark), tap Restore
+  Purchases (the status row stays on all access), and open Manage Subscription
+  for the StoreKit system sheet. Quit and reopen: entitlement is still valid
+  (StoreKit transactions, or the simulated store if you launched with
+  `-OmramoSimulatedStore`).
 
 ### Without StoreKit
 
 Two other ways to get past the paywall while developing:
 
 - Add the launch argument `-OmramoSimulatedStore` in the scheme to use an in
-  memory store where purchases always succeed.
+  memory store where purchases always succeed. That stand-in writes its
+  entitlement to `UserDefaults` so a relaunch still has all access.
 - In Debug builds, open the **Developer** disclosure at the bottom of the
-  paywall and tap **Simulate an active subscription**.
+  paywall and tap **Simulate an active subscription**. That override is also
+  persisted so the loop stays unlocked until you clear it.
 
 Both compile out of, or are ignored by, Release builds.
 
@@ -81,8 +88,9 @@ swift test
 
 It checks the content contract (3 titles, 10 pages each, editions paired page
 for page, Telugu script present, no em dashes in English copy), the
-entitlement gate, and the pane layout rules. In Xcode, Cmd+U on the Omramo
-scheme runs the same tests.
+entitlement gate and loop destinations, sample page clipping, persisted
+entitlement round trip, and the pane layout rules. In Xcode, Cmd+U on the
+Omramo scheme runs the same tests.
 
 ## Layout
 

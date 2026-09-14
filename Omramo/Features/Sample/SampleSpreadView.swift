@@ -19,6 +19,11 @@ struct SampleSpreadView: View {
         Group {
             if let book = catalog.book(id: bookID) {
                 spreadBody(for: book)
+            } else if catalog.state.isIdle || catalog.state.isLoading {
+                ProgressView("Opening the book")
+                    .tint(OmramoPalette.onShelf)
+                    .foregroundStyle(OmramoPalette.onShelf)
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
             } else {
                 ContentUnavailableView("That title is not in the library right now.", systemImage: "book.closed")
             }
@@ -26,7 +31,10 @@ struct SampleSpreadView: View {
         .background(BookshelfBackground())
         .navigationBarTitleDisplayMode(.inline)
         .toolbarBackground(.visible, for: .navigationBar)
-        .task(id: bookID) { await load() }
+        .task(id: bookID) {
+            await catalog.loadIfNeeded()
+            await load()
+        }
     }
 
     @ViewBuilder
@@ -71,7 +79,7 @@ struct SampleSpreadView: View {
                             arrangement: arrangement,
                             pageWidth: pageWidth
                         ) {
-                            navigator.openReader(for: book.id, decision: entitlements.decision)
+                            navigator.openReader(for: book.id, state: entitlements.effectiveState)
                         }
                     }
                 }
@@ -134,7 +142,7 @@ struct SampleSpreadView: View {
         guard let book = catalog.book(id: bookID) else { return }
         content = .loading
         do {
-            let reader = try await catalog.loadReaderContent(for: book)
+            let reader = try await catalog.loadSampleContent(for: book)
             content = reader.pageCount == 0 ? .empty : .loaded(reader)
         } catch {
             content = .failed(LoadFailure(error))

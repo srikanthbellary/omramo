@@ -29,7 +29,7 @@ public enum SubscriptionPlan: String, CaseIterable, Hashable, Sendable, Identifi
 }
 
 /// What the reader is allowed to do right now.
-public enum EntitlementState: Equatable, Sendable {
+public enum EntitlementState: Equatable, Sendable, Codable {
     /// Not yet checked with the store. Views wait instead of flashing a paywall.
     case unknown
     case notSubscribed
@@ -39,6 +39,20 @@ public enum EntitlementState: Equatable, Sendable {
         if case .subscribed = self { return true }
         return false
     }
+
+    /// Encodes a known state for `UserDefaults`. `.unknown` is never written
+    /// so a relaunch does not freeze the gate on "wait".
+    public var persistedData: Data? {
+        guard self != .unknown else { return nil }
+        return try? JSONEncoder().encode(self)
+    }
+
+    /// Restores a persisted state. Bad or missing data is `nil` so the caller
+    /// can fall back to its default.
+    public static func fromPersisted(_ data: Data?) -> EntitlementState? {
+        guard let data else { return nil }
+        return try? JSONDecoder().decode(EntitlementState.self, from: data)
+    }
 }
 
 /// The hard paywall rule, kept as a pure function so it is testable and used
@@ -46,6 +60,15 @@ public enum EntitlementState: Equatable, Sendable {
 public enum AccessDecision: Equatable, Sendable {
     case allow
     case showPaywall
+    case wait
+}
+
+/// The next screen in the locked loop. Catalog, sample and paywall all ask
+/// the gate instead of choosing a destination themselves.
+public enum LoopDestination: Equatable, Sendable {
+    case sample
+    case paywall
+    case reader
     case wait
 }
 
@@ -62,6 +85,24 @@ public enum EntitlementGate {
     public static func canRead(pageIndex: Int, in book: Book, state: EntitlementState) -> Bool {
         if pageIndex < book.sample.pageCount { return true }
         return decision(for: state) == .allow
+    }
+
+    /// Catalog tap. Sample pages are free, so an unknown store still opens
+    /// the sample instead of blocking the shelf. All access opens the reader.
+    public static func destinationFromCatalog(for state: EntitlementState) -> LoopDestination {
+        switch decision(for: state) {
+        case .allow: return .reader
+        case .showPaywall, .wait: return .sample
+        }
+    }
+
+    /// Continue from the sample. This is the hard gate: paywall, reader, or wait.
+    public static func destinationFromSample(for state: EntitlementState) -> LoopDestination {
+        switch decision(for: state) {
+        case .allow: return .reader
+        case .showPaywall: return .paywall
+        case .wait: return .wait
+        }
     }
 }
 
