@@ -39,3 +39,6 @@
 ## Docs for agents
 - Apple hub: https://developer.apple.com/iphone-duo/
 - HIG: https://developer.apple.com/design/human-interface-guidelines/designing-for-iphone-duo
+
+## Branding
+- Display name is **atomically swappable** via a single Brand/AppIdentity constant. Current value: Omramo. Do not hardcode the name across UI; change one place to rebrand.
