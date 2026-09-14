@@ -70,5 +70,8 @@ final class EntitlementGateTests: XCTestCase {
         let subscribed = EntitlementState.subscribed(plan: .yearly, renewsOn: renewsOn)
         let data = try XCTUnwrap(subscribed.persistedData)
         XCTAssertEqual(EntitlementState.fromPersisted(data), subscribed)
+
+        let untitled = EntitlementState.subscribed(plan: nil, renewsOn: nil)
+        XCTAssertEqual(EntitlementState.fromPersisted(untitled.persistedData), untitled)
     }
 }
