@@ -1,0 +1,14 @@
+[
+  {"name": "01-splash", "title": "Splash — OM | RA | MO across the fold"},
+  {"name": "02-library-home", "title": "Library home"},
+  {"name": "03-read-low", "title": "Reading — Low tier"},
+  {"name": "04-read-medium", "title": "Reading — Medium tier"},
+  {"name": "05-read-advanced", "title": "Reading — Advanced tier"},
+  {"name": "06-tap-to-see-open", "title": "Tap-to-see open on the facing pane"},
+  {"name": "06b-tap-to-see-return", "title": "Tap-to-see closed — back at the same line"},
+  {"name": "07-character-card", "title": "Character card"},
+  {"name": "08-parent-view", "title": "For grown-ups — pages read"},
+  {"name": "09-sample-paywall", "title": "End of free sample → parental gate"},
+  {"name": "09b-family-subscription", "title": "Family subscription (price TBD)"},
+  {"name": "10-folded", "title": "Folded — single-screen reading", "folded": true}
+]
