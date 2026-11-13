@@ -9,3 +9,9 @@
 ## v2 design pass (Srikanth feedback, 13 Nov 2026)
 - `claude -p --model claude-fable-5-2` (NO fallback model), acceptEdits, tools: Read Write Edit Glob Grep WebFetch WebSearch + Bash(google-chrome/python3/ls/mkdir/pdftotext/cp/cat/curl/unzip/fc-list/base64/mv), prompt `prompt-designs-v2.md` (feedback verbatim). Output `designs-v2/`, result `run-designs-v2.json`.
 - Ran ~10:35–11:34 AM ET, 136 turns, ~51 min. modelUsage: claude-fable-5-2 only (174,795 output tokens). v1 `designs/` untouched.
+
+## Build runs (13 Nov 2026, branch feat/global-english-v2)
+- Command for each: `claude -p --model claude-fable-5-2 --permission-mode acceptEdits --allowedTools "<Read/Write/Edit/Glob/Grep/WebFetch/WebSearch + read-only git + ls/mkdir/cat/python3/cp/wc/file/find (+rm/mv/swift in phase 2)>" --add-dir /workspace/srikanth/duo --output-format json "$(cat <prompt>)"`, run from the repo root. No fallback model.
+- Phase 1 docs (`prompt-build-phase1-docs.md`): 4:08–4:22 PM ET, 59 turns; modelUsage claude-fable-5-2 only.
+- Phase 1b content plan + landmarks (`prompt-build-phase1b-content.md`): 4:22–5:20 PM ET, 75 turns; modelUsage claude-fable-5-2 only. Summary: `run-phase1b-content-summary.txt`.
+- Phase 2 M1 code (`prompt-build-phase2-m1.md`): 5:20–6:25 PM ET; modelUsage claude-fable-5-2 only. Summary: `run-phase2-m1-summary.txt`.

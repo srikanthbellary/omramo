@@ -1,0 +1,112 @@
+success False 75 3172881 4.613308999999999
+{'claude-fable-5-2': 107181}
+The content plan is written and the three other docs are updated; no app code was written and no git state was changed. The catalog has 32 stories and 37 landmarks. It is a proposal: nothing is written, illustrated, reviewed or cleared yet.
+
+## Files changed
+
+| File | Change |
+|---|---|
+| `docs/CONTENT_PLAN.md` (new) | Story catalog, how the three education pillars appear per tier, landmark table, story → landmark map, rights notes, review list, open questions |
+| `docs/PRD.md` | New §4a (catalog and landmark requirements), features T8 and C7–C11, four risks, assumptions A12–A14, questions Q22–Q31 |
+| `docs/ARCHITECTURE.md` | Story schema gains `region`, `setting`, `provenance`, `culturalReview`, `education`; new `Landmark` catalog (§6.5) with per-tier fact cards; tap targets reference landmarks by id with an optional `framingDevice`; both JSON examples updated and parse cleanly |
+| `docs/IMPLEMENTATION_PLAN.md` | M1 coding scope unchanged, but its model and JSON carry the new fields and one framed landmark; new content milestone C1 with acceptance criteria |
+
+`docs/DESIGN.md` is untouched. No new screens: a landmark is the existing tap-to-see card.
+
+## Region × tier matrix
+
+| Region | Low | Medium | Advanced |
+|---|---|---|---|
+| Indian | Monkey and the Crocodile | Tiger, Brahman and Jackal (Punjab) | Savitri and Satyavan |
+| Egyptian | Shipwrecked Sailor | King Khufu and the Magician | Eloquent Peasant |
+| Japanese | Tongue-Cut Sparrow | Bamboo-Cutter and the Moon-Child | Urashima Taro |
+| Chinese | Old Man Who Moved the Mountains | Herd Boy and the Weaving Maiden | Ballad of Mulan |
+| Native American / First Nations | Why the Possum's Tail Is Bare (Cherokee) | Iktomi and the Muskrat (Dakota) | The Two Sisters (Squamish) |
+| Arctic | The Snow House (Inuit, Nunavut) — original | The Long Day at Fish Camp (Yup'ik, Alaska) — original | The Woman Who Raised a Bear (Greenland) |
+| Russian | Peasant and the Bear | Sadko | Fire-Bird and the Horse of Power |
+| European | Bremen Town Musicians (German); North Wind and the Sun (Greek) | Androcles and the Lion (Roman); Horse and the Olive (Greek) | Daedalus and Icarus (Greek) |
+| African | Why the Sun and the Moon Live in the Sky (Efik, Nigeria) | Anansi wisdom story (Akan, Ghana) | The Griot's Apprentice (Mande, Mali) — original |
+| Persian / Arabian | Lion and the Hare (Persian) | Sindbad's Second Voyage (Arabic) | Zal and the Simurgh (Persian) |
+
+- **Counts:** Low 11, Medium 11, Advanced 10. The two extra European stories are Greek and give the Ancient Wonders a natural home.
+- **Provenance:** 29 public-domain retellings, 3 originals.
+- **Source checks:** for 27 of the 29 retellings I confirmed the Project Gutenberg ebook exists and contains the tale. The two exceptions are the *Liezi* fable and the Mulan ballad, which are ancient public-domain works with no verified English edition. The printed title of the Russian Low tale inside its book is also unconfirmed.
+- **Arctic accuracy:** the snow-house story is Canadian Inuit; the Alaskan Yup'ik story is set in summer with no snow house and teaches that their homes were sod and driftwood.
+
+## Stories flagged for required cultural review (12)
+
+- **Indigenous:** Cherokee, Dakota, Squamish, Inuit, Yup'ik and Greenlandic stories.
+- **Living oral traditions:** Efik, Akan and Mande stories.
+- **Scripture or religious text:** Monkey and the Crocodile (Buddhist Jataka), Savitri (Hindu epic), Lion and the Hare (from Rumi's Sufi poem; light review).
+
+The Squamish story needs the Nation's permission; if it declines, the plan is to replace it with an original.
+
+## Landmarks (37)
+
+- **Ancient Seven:** Great Pyramid, Hanging Gardens, Statue of Zeus, Temple of Artemis, Mausoleum at Halicarnassus, Colossus of Rhodes, Lighthouse of Alexandria. All but the pyramid are shown as labelled reconstructions; the Hanging Gardens are marked unproven.
+- **New7Wonders:** Great Wall, Petra, Christ the Redeemer, Machu Picchu, Chichén Itzá, Colosseum, Taj Mahal.
+- **Other, historical:** Knossos, Persepolis, Parthenon, Hagia Sophia, Novgorod Kremlin, Angkor Wat, Bremen Town Hall and Roland, Forbidden City, Saint Basil's, Himeji Castle, Kizhi, Asante Traditional Buildings.
+- **Other, modern and contemporary:** Statue of Liberty, Eiffel Tower, Great Mosque of Djenné, Golden Gate Bridge, Lions Gate Bridge, Sydney Opera House, Bibliotheca Alexandrina, Burj Khalifa, Tokyo Skytree.
+- **Natural:** Mount Fuji, Ilulissat Icefjord.
+
+All dates, sizes and coordinates in the table are from general knowledge and need fact-checking in production.
+
+## Story → landmark map
+
+Every tier has both historical and modern or contemporary landmarks. At most two per story.
+
+- **Natural fits (6):** Bremen Town Hall, Great Pyramid, Mount Fuji, Novgorod, Asante buildings, and Parthenon and Knossos (each with a short "built or linked later" note).
+- **Everything else is framed** by one of four named devices: `thenAndNow`, `mapMoment`, `worldLink`, `presentDayNarrator`. A framed landmark appears only on its card, never in the scene art.
+- **No landmark, by design:** the Cherokee, Dakota and Yup'ik stories. Attaching another nation's site would be lumping, and Mount Rushmore is excluded because it sits on land sacred to the Lakota and Dakota. The Efik and Punjab stories also have none, because no honest link exists.
+
+## Anachronism flags
+
+| Tier | Story → landmark | Device |
+|---|---|---|
+| Low | Monkey and Crocodile → Taj Mahal (about 2,000 years later; the M1 sample) | `thenAndNow` |
+| Low | Shipwrecked Sailor → Lighthouse of Alexandria | `thenAndNow` |
+| Low | Shipwrecked Sailor → Sydney Opera House | `worldLink` |
+| Low | Tongue-Cut Sparrow → Himeji Castle | `thenAndNow` |
+| Low | Peasant and the Bear → Saint Basil's | `thenAndNow` |
+| Low | North Wind and the Sun → Colossus of Rhodes | `thenAndNow` |
+| Low | North Wind and the Sun → Statue of Liberty | `worldLink` |
+| Low | Old Man Who Moved the Mountains → Great Wall | `mapMoment` |
+| Low | Old Man Who Moved the Mountains → Machu Picchu | `worldLink` |
+| Low | The Snow House → Hagia Sophia | `worldLink` |
+| Low | Lion and the Hare → Petra | `mapMoment` |
+| Medium | Khufu → Chichén Itzá | `worldLink` |
+| Medium | Herd Boy → Golden Gate Bridge | `worldLink` |
+| Medium | Sadko → Christ the Redeemer | `worldLink` |
+| Medium | Androcles → Colosseum (tale is set about 40 years before it opened) | `thenAndNow` |
+| Medium | Androcles → Temple of Artemis | `mapMoment` |
+| Medium | Horse and the Olive → Statue of Zeus | `thenAndNow` |
+| Medium | Sindbad → Hanging Gardens | `mapMoment` |
+| Medium | Sindbad → Burj Khalifa | `thenAndNow` |
+| Advanced | Savitri → Angkor Wat | `worldLink` |
+| Advanced | Eloquent Peasant → Bibliotheca Alexandrina | `thenAndNow` |
+| Advanced | Urashima → Tokyo Skytree | `thenAndNow` |
+| Advanced | Mulan → Great Wall (today's stone wall is about 1,000 years later) | `thenAndNow` |
+| Advanced | Mulan → Forbidden City | `thenAndNow` |
+| Advanced | Two Sisters → Lions Gate Bridge | `presentDayNarrator` |
+| Advanced | Woman Who Raised a Bear → Ilulissat Icefjord | `mapMoment` |
+| Advanced | Fire-Bird → Kizhi | `mapMoment` |
+| Advanced | Daedalus → Eiffel Tower | `thenAndNow` |
+| Advanced | Griot's Apprentice → Great Mosque of Djenné (present building 1907) | `thenAndNow` |
+| Advanced | Zal → Persepolis | `mapMoment` |
+| Advanced | Zal → Mausoleum at Halicarnassus | `mapMoment` |
+
+- **Loose links:** Sydney Opera House, Statue of Liberty, Golden Gate Bridge and Christ the Redeemer are thin; I marked them for possible dropping. Christ the Redeemer in *Sadko* is the weakest.
+- **Outside the 10 regions:** Machu Picchu, Chichén Itzá, Christ the Redeemer, Sydney Opera House, Angkor Wat and the three sites in Türkiye come in only through `worldLink` or `mapMoment`. I did not add regions silently; that is Q26.
+
+## New open questions (PRD Q22–Q31)
+
+- **Q22 — Retellings:** confirm fresh Omramo retellings replace "story text unaltered". This contradicts PRD assumption A5 and a "Decided" line in DESIGN §8; M1 keeps the 1912 Babbitt text as a placeholder.
+- **Q23 — Rights outside the US:** some cited translators are still in copyright in life + 70 countries (Arthur Ransome d. 1967, Lionel Giles d. 1958; several death dates unverified); trademark check on Mulan and Sindbad.
+- **Q24 — Cultural consultants:** who finds and pays them, whether sign-off blocks a story (assumed yes), and what happens if a community declines.
+- **Q25 — Originals:** may the three be co-written with Inuit, Yup'ik and Mande writers?
+- **Q26 — More regions:** add Latin America, South-East Asia and Oceania, or keep the world-link device?
+- **Q27 — Education surfacing:** a reflection question on story finish, "Talk about it" in the parent view, landmark pins on the map, "Wonders you have seen". None is in the locked design; proposed as P1/P2.
+- **Q28 — Landmark scope:** is 37 right, keep or drop the loose links, confirm two per story.
+- **Q29 — Landmark image rights:** Eiffel Tower night lighting, Sydney Opera House, Burj Khalifa, Christ the Redeemer, Tokyo Skytree, recent buildings.
+- **Q30 — Sensitive content:** gods, religious buildings shown as architecture, slavery, war, death, abandonment, hunting, per tier.
+- **Q31 — Launch size:** all 32 on day one, or in waves?
