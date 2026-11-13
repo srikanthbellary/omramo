@@ -1,0 +1,73 @@
+{
+  "schemaVersion": 1,
+  "landmarks": [
+    {
+      "id": "taj-mahal",
+      "name": "Taj Mahal",
+      "era": "earlyModern",
+      "built": { "from": 1632, "to": 1653, "circa": true },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "India",
+      "place": "Agra, on the River Yamuna",
+      "coordinates": { "lat": 27.175, "lon": 78.042 },
+      "region": "indian",
+      "lists": ["new7Wonders"],
+      "factCards": {
+        "low": {
+          "line": "A great white building of shining stone, built to remember a queen who was loved."
+        },
+        "medium": {
+          "line": "An emperor named Shah Jahan built it about 400 years ago to remember his wife, Mumtaz Mahal.",
+          "note": "It took about 20 years to build."
+        },
+        "advanced": {
+          "line": "Shah Jahan's marble tomb for Mumtaz Mahal, finished about 1653 beside the River Yamuna.",
+          "note": "The white marble seems to change colour through the day."
+        }
+      },
+      "art": {
+        "file": "art/taj-mahal.heic",
+        "alt": "A white domed building with four slim towers, mirrored in a long pool.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#12305A",
+      "rights": "Our own illustration; no photograph. Not yet drawn (placeholder). Landmark image rights review pending (PRD Q29).",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "lighthouse-of-alexandria",
+      "name": "Lighthouse of Alexandria",
+      "era": "ancient",
+      "built": { "from": -280, "circa": true },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Egypt",
+      "place": "Alexandria",
+      "coordinates": { "lat": 31.214, "lon": 29.885 },
+      "region": "egyptian",
+      "lists": ["ancientSeven"],
+      "factCards": {
+        "low": {
+          "line": "A tall tower with a fire on top, to guide ships home."
+        },
+        "medium": {
+          "line": "It guided ships into Alexandria for about 1,500 years."
+        },
+        "advanced": {
+          "line": "Earthquakes ruined it by the 1300s; divers have found its stones on the sea floor."
+        }
+      },
+      "art": {
+        "file": "art/lighthouse-of-alexandria.heic",
+        "alt": "A drawing of how the lighthouse may have looked: a three-level stone tower on a small island.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0B2A4A",
+      "rights": "Our own reconstruction drawing, not traced from any modern artist's reconstruction. Not yet drawn (placeholder).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ]
+}
