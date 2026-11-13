@@ -53,7 +53,7 @@ v1 used cream paper, a serif and a book spine. v2 ("the page is a place") remove
 ## 5. Repo and branch state
 
 - Repo: `github.com/srikanthbellary/omramo` (private). Default branch `main` (only the original README + `docs/PRODUCT.md`).
-- **`feat/global-english-v2`** — this work: docs, design, content plan, business docs, M1 scaffold. PR: see §9.
+- **`feat/global-english-v2`** — this work: docs, design, content plan, business docs, M1 scaffold. **PR #3** (open, not merged): https://github.com/srikanthbellary/omramo/pull/3
 - **PR #1** (`cursor/omramo-ios-scaffold-93a4`, draft) and **PR #2** (`cursor/omramo-mvp-loop-db0a`, open), Sept 2026: the Telugu-first scaffold (OmramoCore package with Telugu/English editions, hand-written `.pbxproj`, StoreKit 2 entitlement backend, open-book spread layout). Left untouched. They **overlap and would conflict** with this branch on `README.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md` and `Packages/OmramoCore/` (same paths, different content). `docs/ARCHITECTURE.md` §16 lists what was reused as ideas and what was replaced. Whether to close them is open question Q17.
 
 ## 6. Where things are
