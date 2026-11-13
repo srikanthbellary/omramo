@@ -1,3 +1,5 @@
+> **Superseded (13 Nov 2026).** This is the Telugu-first v1 product lock. Omramo is now a global English product; the current requirements are in [`docs/PRD.md`](PRD.md). The content below is kept unchanged for history. Two points still hold and are carried into v2: the OM | RA | MO mark, and the atomically swappable display name.
+
 # Omramo product lock (seed for scaffold)
 
 **Domain:** omramo.com  
