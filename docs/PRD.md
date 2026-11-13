@@ -1,7 +1,7 @@
 # Omramo — Product Requirements (v2, global English)
 
 **Status:** v2 design approved and locked by Srikanth, 13 Nov 2026. This document supersedes `docs/PRODUCT.md` (the Telugu-first v1 lock, kept for history).
-**Companions:** `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md`.
+**Companions:** `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/CONTENT_PLAN.md` (launch story catalog and landmarks).
 **Sources:** business case v5 (13 Nov 2026), the 16-point discussion brief, the locked designs-v2 (12 screens in `docs/design/`), the expert assessment of 13 Nov 2026, and `stories/SOURCES.md`.
 
 Conventions used in all four documents:
@@ -63,9 +63,39 @@ Assumption A1: the app also runs, in single-pane mode, on an ordinary iPhone, be
 | **Medium** | Confident readers; a bigger idea | 19.5 / 32 pt, about 90 words a page, text on one pane | *How Wisdom Became the Property of the Human Race* — Anansi, Akan people of Ghana |
 | **Advanced** | Strong readers; deeper meaning, longer text | 16.5 / 27 pt, about 190 words a page, text on both panes | *The Story of Urashima Taro* — Japan |
 
-Each story also carries its **origin** (civilization or culture, shown as a map pin and label) because the catalog is meant to teach children about the world's cultures by reading (brief point 16).
+Each story also carries its **origin** (civilization or culture, shown as a map pin and label) because the catalog is meant to teach children about the world's cultures by reading (brief point 16). The launch catalog built on this is in §4a.
 
 Known tension, recorded and not resolved here: the assessment measured the three prototype texts at 952, 384 and 4,229 words, so length does not rise with tier, and it recommends renaming "Low" on child-facing surfaces. The locked design uses the names Low / Medium / Advanced on child-facing screens. This PRD follows the locked design; see Q3.
+
+## 4a. Global launch catalog and landmarks (owner requirements, 13 Nov 2026)
+
+The full catalog, sources, landmark table and story → landmark map are in **`docs/CONTENT_PLAN.md`**. The requirements it must meet:
+
+**Catalog**
+
+- **Decided:** the launch catalog covers **10 regions × 3 tiers, with at least one story in every cell** (30 stories minimum). Regions: Indian, Egyptian, Japanese, Chinese, Native American / First Nations, Arctic (Inuit / Yupik / Iñupiat), Russian, European, African, Persian / Arabian. The content plan proposes 32 stories.
+- **Decided:** **public-domain first.** A story is a retelling of a traditional tale with a cited public-domain source (published before 1931, US public domain), or, where no clean source exists, an **original story written by us (Omramo)** and labelled as such. Every story records its provenance.
+- **Assumption A12:** the app text is our own fresh retelling, not the old translator's wording. This changes A5 (Q22).
+- A region is a shelf label. Every story names a specific people and place (for example "Akan · Ghana"), never a continent.
+- **Wording:** the owner's "native red indians" is written as Native American / First Nations, with the nation named; "Alaska igloos" as Arctic (Inuit / Yupik / Iñupiat). The app teaches accurately that the snow-house iglu is mainly a Canadian Inuit tradition and not typical housing of Alaskan Yup'ik or Iñupiat people.
+
+**Three education pillars — decided.** Every story carries, as data and as tap-to-see content:
+
+| Pillar | Meaning | Shown through (locked design) |
+|---|---|---|
+| Geography | Where the story lives: land, water, climate, the map | Origin chip, map pin, *place* cards, landmark cards |
+| Culture | How people there live, make and celebrate | Culture notes on tap-to-see cards, character cards |
+| Moral | What the story is about | The story itself; never a printed "Moral:", never a quiz |
+
+**Cultural care — decided in principle, process open (Q24).** No sacred, ceremonial or restricted narratives. Every Native American / First Nations, Arctic and other living-oral-tradition story, and every scripture-derived story, needs sign-off from a community consultant before release. The content plan flags 12 such stories.
+
+**Landmarks — decided.** Famous landmarks are woven into stories as **tap-to-see moments, not lectures**: the Seven Wonders of the Ancient World, the New7Wonders, and wider landmarks from ancient to contemporary (the content plan proposes 37). Each tier spreads across historical and modern landmarks.
+
+- Landmarks live in one shared catalog with a fact card worded for each tier.
+- Lost wonders are shown as labelled reconstructions.
+- A landmark that does not belong to a story's time or place may appear only through a named **framing device** ("then and now", a child-reader map moment, a world link, or a present-day narrator), and only on its card — never in the story's scene art.
+- Landmarks outside the 10 regions (Machu Picchu, Chichén Itzá, Christ the Redeemer, Sydney Opera House, Angkor Wat and others) enter through a framing device for now; adding regions is Q26.
+- A story may have no landmark. Some Indigenous stories have none by design.
 
 ## 5. Core loop
 
@@ -112,6 +142,7 @@ Everything a child earns comes from reading: a page counts when it is turned aft
 | T5 | Character card from a dotted-underlined name, same mechanics | P0 | Screen 07 |
 | T6 | On Advanced spreads (text on both panes) the card covers the far pane, never the line being read | P0 | |
 | T7 | Folded tap-to-see | P0 | Not designed — design gap G4. Assumption A2: a card rises from the bottom over at most the art area and the tapped line stays visible |
+| T8 | Landmark card: a tap-to-see card whose content comes from the shared landmark catalog, in the wording for the story's tier, with the framing-device label when the landmark is outside the story's time or place | P0 (mechanism), P1 (full landmark set) | Same card layout as T3; no new screen. Assumption A13 |
 
 ### Library and rewards
 
@@ -150,6 +181,11 @@ Everything a child earns comes from reading: a page counts when it is turned aft
 | C4 | Downloadable story packs | P2 | |
 | C5 | VoiceOver through a whole story, Reduce Motion, contrast checks, text scaling | P1 | System accessibility is never disabled, including spoken text |
 | C6 | Real Duo SDK hookup (posture and hinge geometry) | P0 for Duo release, blocked on Q4 | Until then the app uses its own pane abstraction and a simulated Duo layout |
+| C7 | Story metadata: region (one of 10, plus specific culture and place), provenance (public-domain retelling with citation, or original), cultural-review status, and education lessons (geography, culture, moral) | P0 | `docs/ARCHITECTURE.md` §6.3 |
+| C8 | Shared landmark catalog with per-tier fact cards; stories reference landmarks by id; the validator enforces the framing-device rule | P0 (model and one landmark), P1 (full set) | `docs/ARCHITECTURE.md` §6.5 |
+| C9 | Global launch catalog: 10 regions × 3 tiers, written, illustrated, reviewed and cleared | P1 (before public release) | `docs/CONTENT_PLAN.md`; plan milestone C1. Whether it may ship in waves: Q31 |
+| C10 | Release gate: a story whose required cultural review is not approved cannot be in a release build | P1 | Validator error in release mode |
+| C11 | Reflection question on story finish; "Talk about it" in the parent view; landmark pins on the map; "Wonders you have seen" | P1 / P2 proposals | Not in the locked design — Q27 |
 
 ## 7. Screens
 
@@ -228,6 +264,10 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 | **Small Duo install base; the child is not the device owner.** | Habit cannot form on a borrowed phone. | Single-pane mode works on any iPhone if Srikanth chooses to ship there (Q1). |
 | **No Swift toolchain on the development box.** | M1 code is checked by reading, not compiling. | Pure-Swift core with tests that run the moment a Mac is available; `docs/BUILD.md`; small, conventional code. |
 | **Thin catalog behind a subscription.** | "Ongoing value" is weak with three books. | Q8. |
+| **Catalog scale.** 32 stories and 37 landmarks need writing, art, cultural review and legal review; art for three prototypes was already the long pole. | Launch slips, or quality drops. | Content is its own milestone (C1), parallel to code; launching in waves is Q31. |
+| **Cultural harm from Indigenous and religious material.** | Serious reputational and ethical harm; a community may decline a story. | No sacred narratives; required consultant sign-off per flagged story; originals instead of risky retellings; a replacement path if a community says no (Q24). |
+| **Forced landmark links.** An ancient tale beside a modern tower can read as a lecture or teach false history. | Breaks "tap-to-see, not lectures"; misinforms. | Framing device required and labelled; loose links marked for review (Q28); at most two landmarks a story. |
+| **Landmark image and name rights** (for example Eiffel Tower night lighting, Sydney Opera House, Burj Khalifa). | Legal exposure in some stores. | Own illustrations only; legal check before art is commissioned (Q29). |
 | **Fixed tier type sizes versus accessibility text sizes.** | Larger text may not fit a designed page. | Pages are authored units; overflow continues on a continuation screen of the same page (see `docs/ARCHITECTURE.md` §12). |
 
 ## 11. Assumptions (consolidated)
@@ -238,13 +278,16 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 | A2 | Folded tap-to-see is a bottom card that keeps the tapped line visible. |
 | A3 | Folded library stacks the two panes into one scroll. |
 | A4 | A "page" in all counts and in the page indicator is one authored spread. |
-| A5 | The prototype stories use the public-domain texts unaltered (typographic quotes and dashes only), as in the locked design, until Q5 is answered. |
+| A5 | The prototype stories use the public-domain texts unaltered (typographic quotes and dashes only), as in the locked design, until Q5 and Q22 are answered. For the launch catalog this is replaced by A12; M1 keeps the unaltered Babbitt text as a placeholder. |
 | A6 | Page counts in the designs (14, 6, 19) and all numbers in the library and parent view are sample data; real counts come from the authored content. |
 | A7 | Minimum iOS is 18.0 until the Duo SDK says otherwise (see `docs/ARCHITECTURE.md` §2). |
 | A8 | Bundle identifier stays `com.omramo.app` as in the earlier scaffold; product identifiers are placeholders until Q7. |
 | A9 | One child per device for the MVP (no profiles). |
 | A10 | Streak follows the locked design ("5 days in a row") rather than the assessment's "reading days". |
 | A11 | Inter in the designs stands in for the system font; the shipped app uses San Francisco for system chrome, as the design notes say. See Q15. |
+| A12 | Launch-catalog text is a fresh Omramo retelling of each public-domain tale; the cited edition is the documented source, not the text. |
+| A13 | A landmark is shown with the existing tap-to-see card (picture, title, one line, one note, "Back to my line"); the note's label carries the place or the framing device. No new screen. |
+| A14 | At most two landmarks per story; a required cultural review blocks that story's release, not the whole app. |
 
 ## 12. Open questions for Srikanth (consolidated)
 
@@ -264,6 +307,16 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 
 - **Q5. Text, art and review.** Ship the public-domain texts as written, or commission original retellings? Who illustrates (human, AI-assisted, mixed), who directs art, and is there budget for a cultural reviewer per story and a rights check outside the US? For Urashima: keep the death ending, the closing moral, and the tobacco and sake passages?
 - **Q8. Catalog and cadence.** How many stories per tier at launch, and what publishing cadence can the subscription promise?
+- **Q22. Retellings.** Confirm that launch stories are fresh Omramo retellings of public-domain tales, replacing "story text unaltered" (A5; DESIGN §8). Who writes and who edits them?
+- **Q23. Rights outside the US, and names.** A lawyer's check of each cited source for non-US stores (some translators are still in copyright in life + 70 countries, for example Arthur Ransome and Lionel Giles; several death dates are unverified); a trademark check on titles and names (Mulan, Sindbad); ownership of our originals.
+- **Q24. Cultural consultants.** Who finds and pays community reviewers for the 12 flagged stories (list in `docs/CONTENT_PLAN.md` §7)? Is their sign-off launch-blocking for that story (assumed yes)? If a community declines, do we replace the story with an original?
+- **Q25. Authors of originals.** May the three originals (Inuit, Yup'ik and Mande settings) be co-written with or commissioned from writers of those communities?
+- **Q26. More regions.** Add Latin America, South-East Asia and Oceania so that Machu Picchu, Chichén Itzá, Christ the Redeemer, Angkor Wat and the Sydney Opera House have stories of their own, or keep bringing them in through a "world link" card?
+- **Q27. Education surfacing.** Approve, reject or redesign: a reflection question on the story-finished moment, "Talk about it" in the parent view, landmark pins on the story map, a "Wonders you have seen" row (feature C11).
+- **Q28. Landmark scope.** Is 37 the right launch set? Keep or drop the loose links (Sydney Opera House, Statue of Liberty, Golden Gate Bridge, Christ the Redeemer)? Confirm at most two per story and that some stories have none.
+- **Q29. Landmark image rights.** Legal review before art is commissioned: Eiffel Tower night lighting, Sydney Opera House, Burj Khalifa, Christ the Redeemer, Tokyo Skytree, recent buildings, and the differing national rules on depicting buildings.
+- **Q30. Sensitive content.** Confirm handling per tier of gods in ancient and living religions, religious buildings (shown as architecture), slavery, war, death, abandonment and hunting in the proposed stories; tied to the ages in Q2.
+- **Q31. Launch size and order.** Must the whole 10 × 3 catalog ship on day one, or may it launch in waves? (Sharpens Q8.)
 - **Q18. Page breaks.** May engineering paginate the three prototype texts (about 55 / 90 / 190 words a page), or will an editor supply the page breaks, tap words and card texts? M1 needs this for the Low story only.
 
 **Monetisation**

@@ -27,9 +27,10 @@
 | M6 | Splash, motion, accessibility, privacy manifest, release hardening | M3–M5 | 01, all |
 | M7 | Duo hardware and SDK hookup | Duo SDK + device (PRD Q4); can start any time after M2 | all |
 | M8 | Pilot build and owner hand-off (TestFlight is an owner action) | M6, M7 | — |
+| C1 | **Content production** (parallel workstream, not code): the global launch catalog and landmarks — writing, illustration, cultural review, legal review | PRD Q22–Q31; schema from M1 | — |
 | Later | Downloadable packs, authoring tool, profiles | — | — |
 
-M3, M4 and M7 are independent of each other after M2 and can be reordered.
+M3, M4 and M7 are independent of each other after M2 and can be reordered. C1 runs alongside the code milestones; it is the long pole for a public release.
 
 ---
 
@@ -42,8 +43,8 @@ M3, M4 and M7 are independent of each other after M2 and can be reordered.
    - `Configuration/Base.xcconfig`, `Configuration/Brand.xcconfig`; `.gitignore` (generated `Omramo.xcodeproj`, `.build/`, `DerivedData/`, `*.local.xcconfig`).
 2. **`OmramoCore` package** (Foundation only; folders per `docs/ARCHITECTURE.md` §4.1, M1 subset):
    - `Brand`, `FoldMark`.
-   - `Model`: `Story`, `Tier`, `Origin`, `Part`, `Spread`, `TextBlock`, `TextRun`, `TapTarget`, `Character`, `ArtRef`, `StoryTheme`, `Catalog`, typed IDs.
-   - `Content`: `StoryDecoder` with schema-version check, `StoryValidator`, `ContentRepository`, `DirectoryContentRepository`, `ContentError`, `LoadState`.
+   - `Model`: `Story`, `Tier`, `Region` (the ten-region `RegionID` enum plus `culture`, `place`, `label`, optional pin), `Setting`, `Provenance` (`publicDomainRetelling` with source citations, or `original`), `CulturalReview`, `Education` (geography, culture, moral), `Part`, `Spread`, `TextBlock`, `TextRun`, `TapTarget` (including `kind: landmark`), `LandmarkRef`, `FramingDevice`, `Character`, `ArtRef`, `StoryTheme`, `Catalog`, `Landmark`, `LandmarkCatalog`, typed IDs — as in `docs/ARCHITECTURE.md` §6.3 and §6.5.
+   - `Content`: `StoryDecoder` with schema-version check, landmark-catalog decoding, `StoryValidator` (including the region, provenance, education and landmark rules and the anachronism rule), `ContentRepository`, `DirectoryContentRepository`, `ContentError`, `LoadState`.
    - `Layout`: `DisplayPosture`, `PaneLayout`, `PaneLayoutInput`, `PaneLayoutResolver`.
    - `Reading`: `ReadingPosition`, `Pager` (next/previous spread only; continuation screens come in M2).
    - `DesignTokens`: colours, tier colours, gradients as stop lists, radii, spacing, `ReadingTypeScale` (all three tiers, unfolded and the folded Low values), UI type roles — values from `docs/DESIGN.md` §3–4.
@@ -54,18 +55,21 @@ M3, M4 and M7 are independent of each other after M2 and can be reordered.
    - `Content/catalog.json`.
    - `Content/sources/monkey-and-crocodile.txt` (the Babbitt text from `stories/text/`, with its source header).
    - `Content/stories/monkey-and-crocodile/story.json`: the **whole** story (Part I and Part II), Low tier, paginated into spreads of about 55 words, with lead sentences, voices, character names and the tap words shown in the designs ("river bank", "ripe fruit") marked. Text unaltered apart from typographic quotes and dashes (assumption A5). Tap-target and character-card entries may exist in the JSON, but their cards are not shown until M3.
+   - The same `story.json` carries the new required metadata: `region` (`indian`; culture "Buddhist Jataka tradition"; place; pin), `setting`, `provenance` (`publicDomainRetelling`, Babbitt 1912, Gutenberg #62514, `textBasis: sourceVerbatim`), `culturalReview` (`required`, `pending`, with its reason) and `education` (geography, culture and moral lessons, with a reflection question). All lesson wording is placeholder copy marked for review.
+   - `Content/landmarks/landmarks.json` with at least one landmark, `taj-mahal`, complete with all three tier fact cards (placeholder wording), and a placeholder picture in `Content/landmarks/art/`.
+   - **The sample story references that landmark.** The Taj Mahal does not occur naturally in this tale (it was built about 2,000 years later, on another river), so the tap target is `kind: landmark` with `appearance: framed` and a `thenAndNow` framing device. It is attached to an existing word of the unaltered text ("river", on a spread other than page 1 if the editor prefers), so no wording changes. Like the other cards, it is not shown until M3.
    - Placeholder art: the concept river scene and ride scene rendered from the design sources by `tools/render_placeholder_art.py` (headless Chrome, already used by the designs) into the sizes in `docs/ARCHITECTURE.md` §7.2, plus face chips and a cover. Spreads may share a scene. Every image is labelled concept art in its alt-text review status (`review.art: pending`).
    - `tools/validate_content.py`.
 5. **Screens**
    - **Library** (screen 02, M1 subset): wordmark, "Stories by level" filter (All / Low / Medium / Advanced, working), story cards from the catalog, "Keep reading" card when a position exists, tab bar drawn with only Library active. The right pane shows the story map card with real pins from the catalog; streak, shelf and friends cards are deferred to M4 (drawn empty-state or omitted — listed as a deviation).
    - **Reading, Low** (screen 03): scene across both panes, text on the leading pane with all word-level styles drawn (lead sentence, voice colour and face chip, name underline, tap-word highlight with underline and spark — visual only, not yet interactive), crumb, tier and origin chips, page chip, page-turn button moving through all spreads, back to the library, position saved and restored.
    - `PaneLayoutReader`, `TwoPane`, `DerivedPaneLayoutProvider`, `SimulatedDuoProvider` (`-OmramoPosture unfolded|folded`). In M1 the folded posture shows a simple single-pane reading layout (art on top, text below) without the full screen-10 polish, which lands in M2.
-6. **Tests** (`OmramoCoreTests`): model decoding of the bundled story and of fixtures; rejection of a newer `schemaVersion`; rejection of unknown tier, dangling `tap` / `name` / `say` / `part` references, duplicate IDs, a run with both `tap` and `name`, missing alt text; text-fidelity check passes for the bundled story and fails for a fixture with a changed word; `PaneLayoutResolver` cases; `Pager` next/previous and bounds; `FoldMark` derives OM | RA | MO; token checks (Low 23.5 / 37, Medium 19.5 / 32, Advanced 16.5 / 27; tier hex values).
+6. **Tests** (`OmramoCoreTests`): model decoding of the bundled story and of fixtures; rejection of a newer `schemaVersion`; rejection of unknown tier, dangling `tap` / `name` / `say` / `part` references, duplicate IDs, a run with both `tap` and `name`, missing alt text; text-fidelity check passes for the bundled story and fails for a fixture with a changed word; rejection of an unknown region id, an empty `region.culture`, a `publicDomainRetelling` with no source, an `original` with no premise, a missing education pillar, a required cultural review with no reason; landmark catalog decoding; rejection of a dangling landmark id, a landmark missing a tier fact card, a later-built landmark marked `natural`, an out-of-region landmark without a `worldLink` or `mapMoment` device, and a lost landmark not marked as a reconstruction; the fact card chosen for a Low story is the Low wording; `PaneLayoutResolver` cases; `Pager` next/previous and bounds; `FoldMark` derives OM | RA | MO; token checks (Low 23.5 / 37, Medium 19.5 / 32, Advanced 16.5 / 27; tier hex values).
 7. **`docs/BUILD.md`**: prerequisites (macOS, Xcode version, `brew install xcodegen`), `xcodegen generate`, `swift test --package-path Packages/OmramoCore`, building and running the app, simulated-Duo launch arguments and which simulator to pick, running the Python content check, how to regenerate placeholder art, a "first compile checklist", and troubleshooting for fonts not loading.
 
 ### Not in M1
 
-Tap-to-see interaction, character cards, Medium and Advanced stories, text-size control, bookmark, streak/shelf/friends data, parent view, gate, StoreKit, splash animation, real Duo SDK.
+Tap-to-see interaction, character cards, landmark cards on screen (the data and validation are in M1; the card appears in M3), any story beyond the one sample, Medium and Advanced stories, text-size control, bookmark, streak/shelf/friends data, parent view, gate, StoreKit, splash animation, real Duo SDK.
 
 ### Deliverables
 
@@ -92,6 +96,9 @@ Tap-to-see interaction, character cards, Medium and Advanced stories, text-size 
 | 1.15 | The page-turn button reaches the last page; relaunching the app offers "Keep reading" at the saved page | *[Mac]* |
 | 1.16 | On an ordinary iPhone simulator with no launch argument the app shows the single-pane layout and is usable | *[Mac]* |
 | 1.17 | The `TextRenderer` approach (`docs/ARCHITECTURE.md` §8.2) is confirmed or the fallback decision is recorded in `docs/BUILD.md` | *[Mac]* |
+| 1.18 | `story.json` contains `region`, `setting`, `provenance`, `culturalReview` and `education` exactly as specified in `docs/ARCHITECTURE.md` §6.3, and the validator fails on each of the invalid metadata fixtures | *[box]* |
+| 1.19 | `Content/landmarks/landmarks.json` validates; the sample story has one `landmark` tap target that resolves to it, marked `framed` with a `thenAndNow` device; changing it to `natural` makes the validator fail | *[box]* |
+| 1.20 | The Swift model types match the JSON field for field (`Region`, `Provenance`, `CulturalReview`, `Education`, `Landmark`, `LandmarkRef`, `FramingDevice`), and the Python and Swift validators list the same rules | *[inspect]* |
 
 Known deviations allowed at M1: placeholder art; right-pane library cards incomplete; word spacing not applied; folded layout basic; no animations.
 
@@ -135,6 +142,7 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 - Folded variant (assumption A2, pending gap G4).
 - Card stays open and re-places itself across a posture change.
 - Card content for the two designed examples (Rin Gin, the Monkey) plus at least one tap target per story; all concept wording flagged `review: pending`.
+- Landmark card: the same tap-to-see card, filled from the landmark catalog in the story's tier wording, with the framing-device label and line in the note box and the reconstruction subtitle for lost wonders (`docs/ARCHITECTURE.md` §6.5). One landmark per prototype story (Example (not a decision): Taj Mahal, Asante Traditional Buildings, Tokyo Skytree, per `docs/CONTENT_PLAN.md` §6).
 
 ### Acceptance criteria
 | # | Criterion |
@@ -146,6 +154,7 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 | 3.5 | The page cannot be turned while a card is open *[Mac]* |
 | 3.6 | After closing, the tapped word shows the seen style and still opens its card; state survives relaunch *[Mac]* |
 | 3.7 | VoiceOver: a marked word can be opened by a custom action; focus moves to the card title and returns to the paragraph *[Mac]* |
+| 3.8 | A landmark card uses the tap-to-see layout unchanged, shows the fact line for the story's tier, and shows the framing label when the landmark is framed (unit test on the card model; by eye on screen) *[Mac]* |
 
 ---
 
@@ -245,7 +254,7 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 ## M8 — Pilot build and hand-off
 
 ### Scope
-- Content status review: `review` fields; cultural and rights sign-off status per story (owner decision whether pilot may use `pending` content).
+- Content status review: `review` and `culturalReview` fields; cultural and rights sign-off status per story and per landmark from C1 (owner decision whether a private pilot may use `pending` content; a public release may not).
 - Optional test-build event log for the pilot metrics, if PRD Q12/Q14 ask for it.
 - Hand-off document: how to archive, what to enter in App Store Connect, the expected privacy-label answers, the Kids Category age band chosen, known issues.
 
@@ -257,6 +266,44 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 | 8.3 | No release-blocking open question remains unanswered (list in §"Blocking questions" below) |
 
 **Future owner actions (not performed by this plan):** Apple developer organisation enrolment, signing and provisioning, App Store Connect app record, TestFlight upload and tester invitations, age rating and Kids Category selection, privacy label, App Review submission, legal review, publishing `omramo.com/privacy` and `/terms`.
+
+---
+
+## C1 — Content production: global launch catalog and landmarks
+
+A parallel workstream run by people (writers, an editor, illustrators, community consultants, a lawyer). It is not engineering work and has no dates here. The catalog, sources and landmark map are in `docs/CONTENT_PLAN.md`. It can start as soon as PRD Q22–Q25 are answered; it needs the M1 schema and validator to deliver into.
+
+### Scope
+
+1. **Tier specification** (PRD Q3): word counts, sentence length and vocabulary guidance per tier, agreed before writing starts.
+2. **Writing:** fresh Omramo retellings of the 29 public-domain tales and the 3 originals, each with its manuscript in `Content/sources/`, page breaks, tap words, card copy, character cards, the three education lessons and a reflection question. Each retelling fixes the dated or offensive framing noted for its source.
+3. **Landmarks:** fact cards in three tier wordings for each of the 37 landmarks, fact-checked against two reliable sources (dates, sizes, coordinates, status); framing lines for every framed appearance.
+4. **Illustration:** covers, scenes (unfolded and folded), tap-to-see pictures, character portraits and face chips per story; one picture per landmark, with lost wonders drawn as our own reconstructions. All to the sizes in `docs/ARCHITECTURE.md` §7.2.
+5. **Cultural review:** community consultant sign-off for the 12 flagged stories (text, art and cards), and a standard accuracy read for the rest; results recorded in `culturalReview`.
+6. **Legal review:** public-domain status of each cited source for the stores we ship to; trademark check on names; landmark image and name rights; ownership of originals and commissioned art.
+7. **Delivery:** `story.json`, art and landmark entries that pass the validator.
+
+### Acceptance criteria
+
+| # | Criterion |
+|---|---|
+| C1.1 | Every region has at least one story in each tier in `Content/catalog.json` (a validator report prints the region × tier matrix with no empty cell) *[box]* |
+| C1.2 | Every story names a specific culture and place, has a provenance record (a cited source, or the "Original story written by us (Omramo)" credit with its premise) and all three education lessons *[box]* |
+| C1.3 | No story text matches its cited source's wording (retelling check by the editor; M1's placeholder Babbitt text is replaced or explicitly kept by decision on Q22) |
+| C1.4 | Every story with `culturalReview.level: required` is `approved`, with the reviewer and date recorded; a story that is not approved is absent from the release catalog *[box]* |
+| C1.5 | No sacred, ceremonial or restricted narrative is in the catalog (confirmed by each consultant for their community) |
+| C1.6 | Every landmark has three tier fact cards, a fact-check record, a picture with alt text, and `review.facts` and `review.art` approved *[box]* |
+| C1.7 | Every landmark appearance passes the anachronism rule; every lost or unproven wonder is shown as a labelled reconstruction *[box]* |
+| C1.8 | Each tier's stories reference both historical (ancient to early-modern) and modern or contemporary landmarks (validator report) *[box]* |
+| C1.9 | Legal sign-off recorded per story (`provenance.rights`) and per landmark (`rights`) for the stores chosen; anything unresolved is removed or replaced |
+| C1.10 | All content passes `tools/validate_content.py` in release mode, and every image meets the size and contrast rules *[box]* |
+| C1.11 | No concept or placeholder art remains in the release catalog |
+
+### Risks
+
+- Consultants may ask for changes or decline a story; each flagged story needs a replacement path (PRD Q24).
+- Art volume: 32 stories and 37 landmarks. Launching in waves (PRD Q31) is the main lever.
+- App size with all art bundled may force downloadable packs earlier (`docs/ARCHITECTURE.md` §6.7).
 
 ---
 
@@ -281,12 +328,13 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 | M6 | Q2 (age band), Q15 (font), motion approval | Unset age band; Inter for system rows; proposed motion |
 | M7 | Q4 (Duo SDK and device), Q1 (devices) | Cannot proceed |
 | M8 | Q5 (review and rights), Q12 (testing), Q20 (legal, account) | Cannot proceed to a pilot |
+| C1 | Q22 (retellings), Q23 (rights), Q24 (consultants), Q25 (authors of originals), Q3 (tier specification); then Q26–Q31 | Cannot start writing. Engineering is not blocked: M1–M6 use the three prototype stories |
 
 ## Assumptions (plan)
 
 1. A Mac with Xcode becomes available after M1 is written; until then verification is by inspection.
 2. Headless Chrome on the dev box can render the concept scenes to PNG for placeholders (it produced the designs); HEIC conversion may have to happen on the Mac, so M1 may ship PNG placeholders and switch format later.
-3. The three prototype stories use the public-domain texts unaltered.
+3. The three prototype stories use the public-domain texts unaltered during M1–M3, as placeholders. The launch catalog uses fresh retellings (PRD A12, Q22).
 4. Milestones are sequential for one engineer; no staffing or duration is assumed.
 
 ## Open questions (plan)
@@ -296,3 +344,4 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 3. May M2 start before M1 is verified on a Mac? (Recommended: no — fix the first compile first.)
 4. Should PRs #1 and #2 be closed when M1 lands (PRD Q17)?
 5. Is the art workstream (illustrator, direction, review) being started in parallel, and who owns it (PRD Q5)?
+6. Who owns C1 (an editor or content lead), and may it launch in waves (PRD Q31)?

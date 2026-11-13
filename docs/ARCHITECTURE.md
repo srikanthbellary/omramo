@@ -56,7 +56,7 @@ Rules that keep the build reproducible:
 | Folder | Contents |
 |---|---|
 | `Brand/` | `Brand` (display name, domain, legal URLs), `FoldMark` (OM \| RA \| MO split). One place names the product |
-| `Model/` | `Story`, `Tier`, `Origin`, `Part`, `Spread`, `TextBlock`, `TextRun`, `TapTarget`, `Character`, `ArtRef`, `StoryTheme`, `Catalog`, typed IDs |
+| `Model/` | `Story`, `Tier`, `Region` (with `RegionID`), `Setting`, `Provenance`, `CulturalReview`, `Education`, `Part`, `Spread`, `TextBlock`, `TextRun`, `TapTarget`, `LandmarkRef`, `FramingDevice`, `Character`, `ArtRef`, `StoryTheme`, `Catalog`, `Landmark`, `LandmarkCatalog`, typed IDs |
 | `Content/` | `StoryDecoder` (schema-version check), `StoryValidator`, `ContentRepository` protocol, `DirectoryContentRepository` (reads any folder with the standard layout), `ContentError`, `LoadState` |
 | `Layout/` | `DisplayPosture`, `PaneLayout`, `PaneLayoutResolver`, `CardPlacement` (which pane a card opens on) |
 | `Reading/` | `ReadingPosition` (story, spread, block anchor), `Pager` (next/previous, continuation screens), `SampleGate` |
@@ -183,12 +183,18 @@ In `unfolded` simulation the app draws the 892 × 720 reference canvas — two p
 - **Text as runs.** Each paragraph is an ordered list of runs. Concatenating the run texts gives the paragraph exactly; the validator checks that against the source text so wording is never changed by markup.
 - **Art by reference.** JSON names image files relative to the story folder. No image data in JSON.
 - **One tier per story**, stored on the story.
+- **Every story says where it is from, where its text came from, and what it teaches** (`region`, `provenance`, `culturalReview`, `education`). These are required fields, not notes (PRD §4a; `docs/CONTENT_PLAN.md`).
+- **Landmarks are shared, not copied.** One landmark catalog holds each landmark once, with a fact card worded for each tier. Stories point to a landmark by id from a tap-to-see target. A landmark outside the story's time or place must name its framing device.
 
 ### 6.2 Folder layout
 
 ```
 Content/
   catalog.json                       # ordered list of story ids + catalog version
+  landmarks/
+    landmarks.json                   # the shared landmark catalog (§6.5)
+    art/
+      taj-mahal.heic                 # one tap-to-see picture per landmark
   stories/
     monkey-and-crocodile/
       story.json
@@ -206,15 +212,20 @@ Content/
 
 | Object | Fields |
 |---|---|
-| **Story** | `schemaVersion`, `id`, `contentVersion`, `title`, `subtitle?`, `tier` (`low` \| `medium` \| `advanced`), `language` (`en`), `origin`, `source`, `review`, `sample`, `theme`, `cover`, `parts[]`, `characters[]`, `tapTargets[]`, `spreads[]` |
-| **Origin** | `label` ("Ancient India"), `pin` { `lat`, `lon` }, `pinColor` |
-| **Source** | `tradition`, `edition`, `url`, `rights` (free text; per-territory notes) |
-| **Review** | `text`, `art`, `culture`: each `pending` \| `approved`, with `by?` and `date?` |
+| **Story** | `schemaVersion`, `id`, `contentVersion`, `title`, `subtitle?`, `tier` (`low` \| `medium` \| `advanced`), `language` (`en`), `region`, `setting`, `provenance`, `review`, `culturalReview`, `education`, `sample`, `theme`, `cover`, `parts[]`, `characters[]`, `tapTargets[]`, `spreads[]` |
+| **Region** (replaces the earlier `origin`) | `id` — one of `indian` \| `egyptian` \| `japanese` \| `chinese` \| `nativeAmericanFirstNations` \| `arctic` \| `russian` \| `european` \| `african` \| `persianArabian`; `culture` (specific people or tradition, e.g. "Akan (Asante/Fante)" — required, never a continent); `place` (e.g. "Ghana, West Africa" — required); `label` (the origin chip text, e.g. "Akan · Ghana"); `pin?` { `lat`, `lon` } (optional, for the map moment and story map); `pinColor` |
+| **Setting** | `period` (free text, e.g. "Ancient India, over 2,000 years ago"); `latestYear?` (integer, negative = BCE; the latest year the story's world could be; omitted for present-day stories and set to a best estimate for "once upon a time" tales). Used only to check landmark anachronisms |
+| **Provenance** (replaces the earlier `source`) | `kind` — `publicDomainRetelling` \| `original`. For `publicDomainRetelling`: `tradition`, `sources[]` { `author`, `title`, `publisher?`, `year`, `gutenbergId?`, `url?`, `verified` (bool) } (at least one), `textBasis` (`sourceVerbatim` \| `omramoRetelling`), `rights` (free text; per-territory notes). For `original`: `credit` ("Original story written by us (Omramo)"), `premise`, `authors[]?`, `rights` |
+| **Review** | `text`, `art`: each { `status`: `pending` \| `approved`, `by?`, `date?` } |
+| **CulturalReview** | `level` (`required` \| `standard`), `status` (`pending` \| `inReview` \| `changesRequested` \| `approved`), `reason` (why this level — required when `level` is `required`), `community?` (who should review, e.g. "Cherokee consultant"), `by?`, `date?`, `notes?` |
+| **Education** | `geography`, `culture`, `moral` — all three required. Each: `lesson` (one or two sentences, for editors and the parent view), `factCards[]?` (ids of this story's tap targets that teach it). `moral` also has `reflectionQuestion?` (one question; not shown until PRD Q27 is decided) |
 | **Sample** | `freeSpreads` (integer; 2 by decision, per story so short stories can differ) |
 | **Theme** | `textColor`, `chrome` { `leading`, `trailing`, `folded`: `light` \| `dark` }, `accent` (`coral` \| `amber` \| `red` — the page-turn button), `tap` { `fill`, `fill2`, `line`, `spark` }, `chipGlass` |
 | **Part** | `id`, `title` ("Part I") |
 | **Character** | `id`, `name`, `color` (voice and underline colour), `face` (ArtRef), `chipBackground?`, `card?` { `label`, `title`, `traits[]` { `text`, `fill`, `ink` }, `body`, `portrait` (ArtRef), `background[]` } |
-| **TapTarget** | `id`, `kind` (`place` \| `object` \| `creature` \| `idea`), `title`, `subtitle?`, `line` (the one line to read), `cultureNote?` { `label`, `text` }, `picture` (ArtRef), `background` (hex) |
+| **TapTarget** | `id`, `kind` (`place` \| `object` \| `creature` \| `idea` \| `landmark`), `title`, `subtitle?`, `line` (the one line to read), `cultureNote?` { `label`, `text` }, `picture` (ArtRef), `background` (hex). For `kind: landmark`: `landmark` (LandmarkRef) is required, and `title`, `line`, `cultureNote` and `picture` are **omitted** — the card takes them from the landmark catalog in the story's tier wording (§6.5) |
+| **LandmarkRef** | `id` (landmark id in `landmarks.json`), `appearance` (`natural` \| `framed`), `framingDevice?` — required when `appearance` is `framed` |
+| **FramingDevice** | `kind` (`thenAndNow` \| `mapMoment` \| `worldLink` \| `presentDayNarrator`), `label` (the note label on the card, e.g. "LONG AFTER THIS STORY"), `line` (one bridging sentence shown before the landmark's fact, written for this story) |
 | **Spread** | `id`, `part`, `scene` { `unfolded`: ArtRef, `folded`: ArtRef, `fallbackColors[]` }, `chrome?` (overrides theme), `blocks[]` |
 | **TextBlock** | `id`, `pane` (`leading` \| `trailing`; ignored when folded, where blocks flow in order), `kind` (`paragraph` \| `pathText`), `runs[]`, `path?` (for `pathText`: an SVG-style curve in a 400 × 96 box) |
 | **TextRun** | `t` (text, required), plus optional: `lead` (bool — display-face lead sentence), `say` (character id — voice colour and weight), `chip` (bool — draw the speaker's face chip before this run), `name` (character id — dotted underline, opens the character card), `tap` (tap-target id — opens tap-to-see), `fx` (`pop` \| `stretch`), `scale` (number, for `pop`) |
@@ -222,7 +233,17 @@ Content/
 
 Colours are strings in `#RRGGBB` or `#RRGGBBAA` form.
 
-Constraints checked by the validator (§7.3): IDs unique; every `tap`, `name`, `say` and `part` resolves; a run has at most one of `tap` / `name`; every ArtRef file exists with the stated pixel size; `alt` is present; `freeSpreads` ≤ spread count; the story's text equals the source text.
+Constraints checked by the validator (§7.3): IDs unique; every `tap`, `name`, `say` and `part` resolves; a run has at most one of `tap` / `name`; every ArtRef file exists with the stated pixel size; `alt` is present; `freeSpreads` ≤ spread count; the story's text equals its manuscript in `Content/sources/` (the public-domain text while `textBasis` is `sourceVerbatim`; our approved retelling when it is `omramoRetelling`).
+
+Constraints added for region, provenance, education and landmarks:
+
+- `region.id` is one of the ten values; `region.culture` and `region.place` are non-empty.
+- `provenance.kind` is valid; a `publicDomainRetelling` has at least one source with author, title and year; an `original` has a `credit` and a `premise`.
+- `culturalReview.level: required` has a `reason`. In a release build, a required review that is not `approved` is an error (the story cannot ship); a standard review still `pending` is a warning.
+- `education.geography`, `.culture` and `.moral` each have a `lesson`; every id in `factCards[]` resolves to a tap target of this story.
+- Every `landmark.id` resolves in the landmark catalog. `appearance: framed` has a `framingDevice`.
+- **Anachronism rule:** if the story has `setting.latestYear` and the landmark's `built.from` is later, `appearance` must be `framed`. If the landmark's `region` differs from the story's `region.id`, `appearance` must be `framed` with kind `worldLink` or `mapMoment`. A landmark with `status: lost` or `unproven` must have `depiction: reconstruction`.
+- Warning: more than two landmark targets in one story.
 
 ### 6.4 Example (abridged, from screen 03)
 
@@ -234,17 +255,55 @@ Constraints checked by the validator (§7.3): IDs unique; every `tap`, `name`, `
   "title": "The Monkey and the Crocodile",
   "tier": "low",
   "language": "en",
-  "origin": { "label": "Ancient India", "pin": { "lat": 23, "lon": 79 }, "pinColor": "#19C7A2" },
-  "source": {
+  "region": {
+    "id": "indian",
+    "culture": "Buddhist Jataka tradition",
+    "place": "Northern India",
+    "label": "Ancient India",
+    "pin": { "lat": 23, "lon": 79 },
+    "pinColor": "#19C7A2"
+  },
+  "setting": { "period": "Ancient India, over 2,000 years ago", "latestYear": -200 },
+  "provenance": {
+    "kind": "publicDomainRetelling",
     "tradition": "Buddhist Jataka tales",
-    "edition": "Ellen C. Babbitt, Jataka Tales, The Century Co., 1912",
-    "url": "https://www.gutenberg.org/ebooks/62514",
+    "sources": [
+      {
+        "author": "Ellen C. Babbitt",
+        "title": "Jataka Tales",
+        "publisher": "The Century Co.",
+        "year": 1912,
+        "gutenbergId": 62514,
+        "url": "https://www.gutenberg.org/ebooks/62514",
+        "verified": true
+      }
+    ],
+    "textBasis": "sourceVerbatim",
     "rights": "US public domain (published before 1931). Other territories not verified."
   },
   "review": {
     "text": { "status": "pending" },
-    "art": { "status": "pending" },
-    "culture": { "status": "pending" }
+    "art": { "status": "pending" }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Derived from Buddhist scripture (the Jataka collection).",
+    "community": "Buddhist reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The great rivers of northern India, where monkeys and crocodiles live side by side.",
+      "factCards": ["river-bank", "taj-mahal-moment"]
+    },
+    "culture": {
+      "lesson": "The Jatakas are very old teaching stories about wise animals, told by Buddhists across Asia.",
+      "factCards": ["river-bank"]
+    },
+    "moral": {
+      "lesson": "When you are in trouble, think. A calm, clever answer beats a bigger foe.",
+      "reflectionQuestion": "What would you have said to the Crocodile?"
+    }
   },
   "sample": { "freeSpreads": 2 },
   "theme": {
@@ -285,6 +344,19 @@ Constraints checked by the validator (§7.3): IDs unique; every `tap`, `name`, `
       "cultureNote": { "label": "From ancient India", "text": "TBD — to be written and reviewed." },
       "picture": { "file": "art/see-river-bank.heic", "alt": "A grassy bank beside a wide river.", "width": 1296, "height": 1212 },
       "background": "#0A6585"
+    },
+    {
+      "id": "taj-mahal-moment", "kind": "landmark",
+      "landmark": {
+        "id": "taj-mahal",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "Rivers like this one cross northern India. Long after this story, people built something beside one of them."
+        }
+      },
+      "background": "#12305A"
     }
   ],
   "spreads": [
@@ -302,7 +374,9 @@ Constraints checked by the validator (§7.3): IDs unique; every `tap`, `name`, `
           { "t": ".", "lead": true }
         ] },
         { "id": "s01-b2", "pane": "leading", "kind": "paragraph", "runs": [
-          { "t": "In the river there were many Crocodiles." }
+          { "t": "In the " },
+          { "t": "river", "tap": "taj-mahal-moment" },
+          { "t": " there were many Crocodiles." }
         ] },
         { "id": "s01-b3", "pane": "leading", "kind": "paragraph", "runs": [
           { "t": "A " },
@@ -316,26 +390,104 @@ Constraints checked by the validator (§7.3): IDs unique; every `tap`, `name`, `
 }
 ```
 
-The card texts above marked TBD, and the tap-target line, are placeholders, not approved copy.
+The card texts above marked TBD, the tap-target line, the education lessons, the reflection question and the framing line are placeholders, not approved copy. `setting.latestYear` is an estimate. The landmark tap is shown on the first spread to keep the example short; in the authored story the editor may place it on a later "river" so that page 1 keeps a single marked word. The Taj Mahal does not occur naturally in this tale (it was built about 2,000 years later, on another river), which is why it is `framed`.
 
-### 6.5 Catalog
+### 6.5 Landmark catalog
 
-`catalog.json`: `{ "schemaVersion": 1, "catalogVersion": 1, "stories": ["monkey-and-crocodile", …] }`. The library reads each story's header fields (title, tier, origin, cover, spread count). If loading whole story files for the library becomes slow with a larger catalog, a generated `index.json` with just the headers is added; not needed for three stories.
+`Content/landmarks/landmarks.json`: `{ "schemaVersion": 1, "landmarks": [ … ] }`. Loaded once by `ContentRepository` and held as `LandmarkCatalog` (lookup by id).
 
-### 6.6 Open questions (content)
+| Object | Fields |
+|---|---|
+| **Landmark** | `id`, `name`, `localName?`, `era` (`ancient` \| `medieval` \| `earlyModern` \| `modern` \| `contemporary` \| `natural`), `built` { `from` (integer year, negative = BCE), `to?`, `circa` (bool), `note?` } (omitted for `natural`), `status` (`standing` \| `ruins` \| `lost` \| `unproven` \| `natural`), `depiction` (`asIs` \| `reconstruction`), `country`, `place?`, `coordinates` { `lat`, `lon` }, `region?` (one of the ten region ids; omitted when outside them), `lists[]` (`ancientSeven` \| `new7Wonders` \| `other`; at least one), `factCards` { `low`, `medium`, `advanced` } — each { `line` (the one line to read), `note?` } and all three required, `art` (ArtRef: the tap-to-see picture, 1296 × 1212), `background` (hex), `rights?` (free text: image or name concerns), `review` { `facts`, `art`: `pending` \| `approved` } |
+
+How a landmark card is built (no new screen — the tap-to-see card of `docs/DESIGN.md` §5.9):
+
+| Card part | Comes from |
+|---|---|
+| Picture, background | `landmark.art`, `landmark.background` (the tap target may override `background`) |
+| Title | `landmark.name` |
+| Subtitle | place and date, e.g. "Agra, India · about 400 years old"; for `depiction: reconstruction`, "An artist's idea — this wonder is gone" |
+| The one line to read | `landmark.factCards[story.tier].line` |
+| Note box | Label: `framingDevice.label` when framed, otherwise "WHERE IN THE WORLD". Text: `framingDevice.line` when framed, followed by `factCards[tier].note` if there is room |
+| Button | "Back to my line", as on every card |
+
+The era boundaries (ancient before 500 CE; medieval 500–1500; early-modern 1500–1800; modern 1800–1945; contemporary after 1945) are an assumption recorded in `docs/CONTENT_PLAN.md` §5.
+
+Example entry (abridged). Fact-card wording is **Example (not a decision)** and unreviewed:
+
+```json
+{
+  "schemaVersion": 1,
+  "landmarks": [
+    {
+      "id": "taj-mahal",
+      "name": "Taj Mahal",
+      "era": "earlyModern",
+      "built": { "from": 1632, "to": 1653, "circa": true },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "India",
+      "place": "Agra, on the River Yamuna",
+      "coordinates": { "lat": 27.175, "lon": 78.042 },
+      "region": "indian",
+      "lists": ["new7Wonders"],
+      "factCards": {
+        "low": { "line": "A white stone palace for remembering someone loved." },
+        "medium": { "line": "An emperor built it about 400 years ago for his wife, Mumtaz Mahal.", "note": "It took about 20 years to build." },
+        "advanced": { "line": "Shah Jahan's tomb for Mumtaz Mahal, finished about 1653.", "note": "The white marble seems to change colour through the day." }
+      },
+      "art": { "file": "art/taj-mahal.heic", "alt": "A white domed building with four slim towers, mirrored in a long pool.", "width": 1296, "height": 1212 },
+      "background": "#12305A",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "lighthouse-of-alexandria",
+      "name": "Lighthouse of Alexandria",
+      "era": "ancient",
+      "built": { "from": -280, "circa": true },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Egypt",
+      "coordinates": { "lat": 31.214, "lon": 29.885 },
+      "region": "egyptian",
+      "lists": ["ancientSeven"],
+      "factCards": {
+        "low": { "line": "A tall tower with a fire on top, to guide ships home." },
+        "medium": { "line": "It guided ships into Alexandria for about 1,500 years." },
+        "advanced": { "line": "Earthquakes ruined it by the 1300s; divers have found its stones on the sea floor." }
+      },
+      "art": { "file": "art/lighthouse-of-alexandria.heic", "alt": "A drawing of how the lighthouse may have looked: a three-level stone tower on a small island.", "width": 1296, "height": 1212 },
+      "background": "#0B2A4A",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ]
+}
+```
+
+### 6.6 Catalog
+
+`catalog.json`: `{ "schemaVersion": 1, "catalogVersion": 1, "stories": ["monkey-and-crocodile", …] }`. The library reads each story's header fields (title, tier, region, cover, spread count). If loading whole story files for the library becomes slow with a larger catalog, a generated `index.json` with just the headers is added; not needed for three stories.
+
+### 6.7 Open questions (content)
 
 1. Who supplies page breaks, tap words and card copy (PRD Q18)?
 2. Runs versus stand-off ranges: runs are chosen because they are easy to hand-author and validate for three stories. A future authoring tool may prefer ranges; the model can load either behind `StoryDecoder`.
 3. Does a story need per-spread text colour (a scene that changes from light to dark mid-story)? The schema allows a `chrome` override per spread; a `textColor` override can be added the same way.
+4. Region filter: the ten region ids make a "by region" library filter possible, but the locked design filters by level only. Not built unless asked.
+5. Where the reflection question and the moral lesson are shown, if anywhere (PRD Q27). Until decided they are data only.
+6. Should a landmark's "seen" state be shared across stories (seen once, marked seen everywhere)? Assumption: seen state stays per story tap target, as for every other card.
+7. `setting.latestYear` for "once upon a time" tales is an editor's estimate; if that proves unreliable, replace it with an explicit `era` on the story and compare eras.
+8. With 32 stories the library needs the generated `index.json` of headers mentioned in §6.6, and bundling every story's art may exceed a sensible app size, which brings downloadable packs (§11) forward. Needs real art sizes to decide.
 
 ## 7. Tap-to-see asset pipeline: authoring → validation → bundling
 
 ### 7.1 Authoring (outside the app)
 
 1. Editor fixes the story text and marks: page breaks, lead sentences, voices, names, sound words, and the tap-to-see words (design rule: few per page; a hard cap is an open question).
-2. For each tap target, the editor writes the title, the one line to read, the culture note and the alt text; a cultural reviewer signs off (`review.culture`).
-3. Illustrator delivers masters per the size table below. Layered source files stay in the art team's storage, not in this repo.
-4. JSON is hand-written for the three prototype stories. An internal authoring tool is a later project (not in this plan).
+2. For each tap target, the editor writes the title, the one line to read, the culture note and the alt text; a cultural reviewer signs off (`culturalReview`). The editor also fills `region`, `provenance` and the three `education` lessons, and links each lesson to the tap targets that teach it.
+3. Landmarks: the editor picks at most two per story from `docs/CONTENT_PLAN.md` §6, marks the tap word, and writes the framing device when the landmark is outside the story's time or place. Landmark facts, the three tier wordings and the picture are written once in `Content/landmarks/landmarks.json`, fact-checked, and reused by every story.
+4. Illustrator delivers masters per the size table below. Layered source files stay in the art team's storage, not in this repo.
+5. JSON is hand-written for the three prototype stories. An internal authoring tool is a later project (not in this plan).
 
 ### 7.2 Image formats and sizes (@3x of the 432 × 720 pt reference pane)
 
@@ -344,6 +496,7 @@ The card texts above marked TBD, and the tap-target line, are placeholders, not 
 | Scene, unfolded | 2676 × 2160 | HEIC (lossy, high quality), sRGB | Spans both panes and the 84 px hinge strip. Keep faces and essentials out of the strip and out of the text area |
 | Scene, folded | 1296 × 2160 | HEIC | Picture in the top ~47% (to about 1020 px), calm pale area below for text. May be a recomposition, not a crop |
 | Tap-to-see picture | 1296 × 1212 (432 × 404 pt) | HEIC | Bottom ~320 px fades into the card background colour |
+| Landmark picture | 1296 × 1212 (same as a tap-to-see picture) | HEIC | One per landmark, in `Content/landmarks/art/`. Our own illustration, never a photograph. Lost wonders are drawn as reconstructions. Rights notes: `docs/CONTENT_PLAN.md` §6.6 |
 | Character portrait | 1296 × 1200 (432 × 400 pt) | HEIC | |
 | Face chip / avatar | 144 × 144 | PNG with alpha | Shown from about 18 pt (inline chip) to 48 pt (avatar) |
 | Cover | 720 × 900 (4:5; shown up to 372 × 186 pt cropped, and 116 × 134 pt) | HEIC | No title baked in |
@@ -357,7 +510,7 @@ Two checkers with the same rules:
 - **`StoryValidator` in `OmramoCore`** — the authority. Used by unit tests (every bundled story must validate) and at load time in debug builds.
 - **`tools/validate_content.py`** — Python 3, standard library only. Exists because the development box has no Swift toolchain; lets content be checked on Linux and in any CI. If the two ever disagree, the Swift one wins and the script is fixed.
 
-Checks: schema shape and version; unique IDs; all references resolve; every image exists with the declared pixel size and required dimensions for its role; alt text present; no run with both `tap` and `name`; text fidelity (concatenated runs equal the source text after normalising typographic quotes, dashes and whitespace — sources live in `Content/sources/`); warnings for tap targets per spread above a threshold, words per spread outside the tier's range, and `review` fields still `pending` (an error for a release build).
+Checks: schema shape and version; unique IDs; all references resolve; every image exists with the declared pixel size and required dimensions for its role; alt text present; no run with both `tap` and `name`; text fidelity (concatenated runs equal the manuscript after normalising typographic quotes, dashes and whitespace — manuscripts live in `Content/sources/`); the region, provenance, cultural-review, education and landmark rules listed in §6.3, including the anachronism rule; the landmark catalog itself (unique ids, valid era and lists, all three tier fact cards present, coordinates in range, picture present, lost or unproven landmarks marked as reconstructions); warnings for tap targets per spread above a threshold, words per spread outside the tier's range, and `review` fields still `pending` (an error for a release build, as is a required cultural review not yet approved).
 
 ### 7.4 Bundling
 
@@ -554,7 +707,7 @@ Day boundaries for the streak and the 7-day chart use the device's current calen
 
 | Layer | What | Where it runs |
 |---|---|---|
-| **Core unit tests** (`swift test`) | Decoding of valid and invalid stories; schema-version refusal; validator rules, including text fidelity against sources; every bundled story validates; `PaneLayoutResolver` for folded, unfolded, reported hinge, simulation and edge sizes; `CardPlacement`; `Pager` including continuation screens; `SampleGate` and `EntitlementGate` truth tables; `StreakCalculator` and `WeekSummary` across day and week boundaries; `GateChallenge`; token sanity (tier sizes equal the design values) | Mac, or Linux with a Swift toolchain. **Not runnable on the current dev box** |
+| **Core unit tests** (`swift test`) | Decoding of valid and invalid stories; schema-version refusal; validator rules, including text fidelity against sources; region, provenance, cultural-review and education rules; landmark catalog decoding, landmark reference resolution, the anachronism rule (a later-built or out-of-region landmark without a framing device is rejected) and per-tier fact-card selection; every bundled story validates; `PaneLayoutResolver` for folded, unfolded, reported hinge, simulation and edge sizes; `CardPlacement`; `Pager` including continuation screens; `SampleGate` and `EntitlementGate` truth tables; `StreakCalculator` and `WeekSummary` across day and week boundaries; `GateChallenge`; token sanity (tier sizes equal the design values) | Mac, or Linux with a Swift toolchain. **Not runnable on the current dev box** |
 | **Content check** | `python3 tools/validate_content.py Content` | Anywhere, including the current dev box |
 | **App unit tests** | Feature models with in-memory stores and the simulated store: reader flow, sample end, gate before purchase, restore, offline cache | Mac (Xcode) |
 | **StoreKit tests** | StoreKit Test with the local `.storekit` file: purchase, pending, cancel, renewal, expiry, revocation, family-shared ownership | Mac (Xcode) |
@@ -592,13 +745,14 @@ Packages/
       Fixtures/                     # small valid and invalid story files
 Content/
   catalog.json
-  sources/                          # the public-domain source texts, for the fidelity check
+  sources/                          # manuscripts for the fidelity check (PD text or our retelling)
+  landmarks/landmarks.json, art/…   # shared landmark catalog
   stories/<story-id>/story.json, art/…
 tools/
   validate_content.py
   render_placeholder_art.py         # renders concept scenes from the design sources (see plan, M1)
 docs/
-  PRD.md  ARCHITECTURE.md  DESIGN.md  IMPLEMENTATION_PLAN.md  BUILD.md (M1)  PRODUCT.md (superseded)
+  PRD.md  ARCHITECTURE.md  DESIGN.md  IMPLEMENTATION_PLAN.md  CONTENT_PLAN.md  BUILD.md (M1)  PRODUCT.md (superseded)
   design/                           # the 12 locked screenshots
 ```
 
@@ -650,6 +804,8 @@ Inspected read-only with `git ls-tree` / `git show` on `origin/cursor/omramo-ios
 8. Bundle identifier `com.omramo.app`; product identifiers `com.omramo.family.*` are placeholders.
 9. System font (San Francisco) for system-style rows; Inter is bundled only if PRD Q15 says so. Until answered, M1 bundles Inter because it is one of the three locked families, and uses it for those rows so screenshots match.
 10. One child per device.
+11. A landmark card reuses the tap-to-see card; no new screen or component (PRD A13).
+12. The content schema stays at `schemaVersion` 1 with the region, provenance, education and landmark fields added, because no content has shipped under the earlier draft.
 
 ## 18. Open questions (architecture)
 
@@ -666,3 +822,4 @@ Inspected read-only with `git ls-tree` / `git show` on `origin/cursor/omramo-ios
 11. **Inter versus system font** (PRD Q15).
 12. **Folded reading: paging only, or scrolling allowed** (§8.3).
 13. **Cap on tap-to-see words per page** (§7.1).
+14. **Content metadata and landmarks** (§6.7 items 4–8): region filter, where the moral and reflection question appear (PRD Q27), shared "seen" state for landmarks, and app size with a 32-story catalog.
