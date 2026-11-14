@@ -27,6 +27,11 @@ settings:
   configs:
     Debug:
       ONLY_ACTIVE_ARCH: YES
+      # Set explicitly: an XcodeGen install without its SettingPresets folder ("No \"iOS\"
+      # settings found") leaves Debug at -O without testability, and @testable import fails.
+      ENABLE_TESTABILITY: YES
+      SWIFT_OPTIMIZATION_LEVEL: "-Onone"
+      GCC_OPTIMIZATION_LEVEL: "0"
 
 # No remote packages, by rule (Kids Category: no third-party SDKs). The only package is our own
 # pure-Swift core, referenced by path.
@@ -80,6 +85,10 @@ targets:
       base:
         # Placeholder, TBD with the app's bundle identifier (PRD Q20).
         PRODUCT_BUNDLE_IDENTIFIER: com.omramo.app.tests
+        PRODUCT_NAME: OmramoTests
+        # Normally from XcodeGen's presets; set explicitly so @testable symbols link.
+        TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Omramo.app/Omramo"
+        BUNDLE_LOADER: "$(TEST_HOST)"
         GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.0"
         SWIFT_STRICT_CONCURRENCY: complete
