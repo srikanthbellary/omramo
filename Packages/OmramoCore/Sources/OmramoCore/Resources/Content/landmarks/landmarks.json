@@ -1,0 +1,147 @@
+{
+  "schemaVersion": 1,
+  "landmarks": [
+    {
+      "id": "taj-mahal",
+      "name": "Taj Mahal",
+      "era": "earlyModern",
+      "built": { "from": 1632, "to": 1653, "circa": true },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "India",
+      "place": "Agra, on the River Yamuna",
+      "coordinates": { "lat": 27.175, "lon": 78.042 },
+      "region": "indian",
+      "lists": ["new7Wonders"],
+      "factCards": {
+        "low": {
+          "line": "A great white building of shining stone, built to remember a queen who was loved."
+        },
+        "medium": {
+          "line": "An emperor named Shah Jahan built it about 400 years ago to remember his wife, Mumtaz Mahal.",
+          "note": "It took about 20 years to build."
+        },
+        "advanced": {
+          "line": "Shah Jahan's marble tomb for Mumtaz Mahal, finished about 1653 beside the River Yamuna.",
+          "note": "The white marble seems to change colour through the day."
+        }
+      },
+      "art": {
+        "file": "art/taj-mahal.heic",
+        "alt": "A white domed building with four slim towers, mirrored in a long pool.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#12305A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "lighthouse-of-alexandria",
+      "name": "Lighthouse of Alexandria",
+      "era": "ancient",
+      "built": { "from": -280, "circa": true },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Egypt",
+      "place": "Alexandria",
+      "coordinates": { "lat": 31.214, "lon": 29.885 },
+      "region": "egyptian",
+      "lists": ["ancientSeven"],
+      "factCards": {
+        "low": {
+          "line": "A tall tower with a fire on top, to guide ships home."
+        },
+        "medium": {
+          "line": "It guided ships into Alexandria for about 1,500 years."
+        },
+        "advanced": {
+          "line": "Earthquakes ruined it by the 1300s; divers have found its stones on the sea floor."
+        }
+      },
+      "art": {
+        "file": "art/lighthouse-of-alexandria.heic",
+        "alt": "A drawing of how the lighthouse may have looked: a three-level stone tower on a small island.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0B2A4A",
+      "rights": "Our own reconstruction drawing, not traced from any modern artist's reconstruction. Concept art drawn in code (see ART_PLACEHOLDERS.md).",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "asante-traditional-buildings",
+      "name": "Asante Traditional Buildings",
+      "era": "modern",
+      "built": {
+        "from": 1800,
+        "circa": true,
+        "note": "The buildings still standing date from the 1800s; the way of building is older. Dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Ghana",
+      "place": "Villages near Kumasi, Ghana",
+      "coordinates": { "lat": 6.7, "lon": -1.6 },
+      "region": "african",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "Houses with thick earth walls, covered in patterns that mean something."
+        },
+        "medium": {
+          "line": "Earth-walled houses near Kumasi, with patterns pressed into the walls. Each pattern stands for a saying.",
+          "note": "Only a few of these old buildings are left, and people look after them with great care."
+        },
+        "advanced": {
+          "line": "The last buildings of the old Asante kingdom: earth walls, steep thatched roofs, and symbols that each carry a proverb.",
+          "note": "They are on the World Heritage List; rain is their greatest enemy."
+        }
+      },
+      "art": {
+        "file": "art/asante-traditional-buildings.heic",
+        "alt": "A low house with a steep thatched roof. Its lower walls are red earth and its upper walls are white, with curling patterns pressed into them.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A1F4D",
+      "rights": "Our own illustration; no photograph. The wall patterns are drawn in the style of the buildings, not copied from one wall. Akan reader to review the drawing and the wording (CONTENT_PLAN §7).",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "tokyo-skytree",
+      "name": "Tokyo Skytree",
+      "era": "contemporary",
+      "built": { "from": 2008, "to": 2012, "circa": false },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Japan",
+      "place": "Tokyo, Japan",
+      "coordinates": { "lat": 35.71, "lon": 139.811 },
+      "region": "japanese",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A very, very tall tower in Tokyo. It stays standing even when the ground shakes."
+        },
+        "medium": {
+          "line": "A tower 634 metres tall in Tokyo, built to stay standing in earthquakes.",
+          "note": "It sends out television and radio signals across the city."
+        },
+        "advanced": {
+          "line": "At 634 metres, the tallest tower in Japan, finished in 2012 and built to ride out earthquakes.",
+          "note": "A central column steadies it, an idea borrowed from Japan's old wooden pagodas."
+        }
+      },
+      "art": {
+        "file": "art/tokyo-skytree.heic",
+        "alt": "A slim, pale lattice tower rising far above a city of low buildings beside a river, in evening light.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#14254F",
+      "rights": "Our own illustration; no photograph. The tower's operator licenses commercial use of its name and image (CONTENT_PLAN §6.6): legal review needed before release (PRD Q29).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ]
+}

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Omramo — designs v2</title>
+<style>
+  @font-face{font-family:"Bricolage";src:url("fonts/BricolageGrotesque.ttf") format("truetype");font-weight:200 800;font-stretch:75% 100%}
+  @font-face{font-family:"Atkinson";src:url("fonts/AtkinsonHyperlegibleNext.ttf") format("truetype");font-weight:200 800}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:"Atkinson",sans-serif;background:#F4F2FF;color:#16123D;padding:56px 5vw 96px}
+  h1{font-family:"Bricolage",sans-serif;font-weight:800;font-size:44px;letter-spacing:-1.5px}
+  h1 span{color:#FF5B3D}
+  p.lede{max-width:760px;margin-top:12px;font-size:17px;line-height:27px;color:rgba(22,18,61,.72)}
+  p.lede a{color:#5A3FE0}
+  main{display:grid;grid-template-columns:repeat(auto-fill,minmax(520px,1fr));gap:36px;margin-top:44px}
+  figure{background:#fff;border-radius:28px;overflow:hidden;box-shadow:0 14px 34px rgba(60,40,140,.10)}
+  figure img{display:block;width:100%;height:auto}
+  figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:16px 22px 18px;font-family:"Bricolage",sans-serif;font-weight:650;font-size:16px}
+  figcaption a{font-family:"Atkinson",sans-serif;font-weight:500;font-size:14px;color:#5A3FE0;text-decoration:none;white-space:nowrap}
+  figure.folded img{width:64%;margin:0 auto}
+</style>
+</head>
+<body>
+<h1>OM<span>RA</span>MO — designs v2</h1>
+<p class="lede">Twelve screens for the iPhone Duo, rendered at device resolution (@3x). Each card shows the presentation version; “Raw screenshot” opens the frameless capture. Direction, fonts, type scale and the per-screen review are in <a href="design-notes.md">design-notes.md</a>. Illustrations are code-drawn concept art.</p>
+<main id="grid"></main>
+<script>
+  var screens = [
+    ["01-splash", "Splash — OM | RA | MO across the fold"],
+    ["02-library-home", "Library home"],
+    ["03-read-low", "Reading — Low tier"],
+    ["04-read-medium", "Reading — Medium tier"],
+    ["05-read-advanced", "Reading — Advanced tier"],
+    ["06-tap-to-see-open", "Tap-to-see open on the facing pane"],
+    ["06b-tap-to-see-return", "Tap-to-see closed — back at the same line"],
+    ["07-character-card", "Character card"],
+    ["08-parent-view", "For grown-ups — pages read"],
+    ["09-sample-paywall", "End of free sample → parental gate"],
+    ["09b-family-subscription", "Family subscription (price TBD)"],
+    ["10-folded", "Folded — single-screen reading", true]
+  ];
+  document.getElementById('grid').innerHTML = screens.map(function (s) {
+    return '<figure class="' + (s[2] ? 'folded' : '') + '"><a href="png-framed/' + s[0] + '.png"><img loading="lazy" src="png-framed/' + s[0] + '.png" alt="' + s[1] + '"></a><figcaption><span>' + s[0].split('-')[0] + ' · ' + s[1] + '</span><a href="png/' + s[0] + '.png">Raw screenshot</a></figcaption></figure>';
+  }).join('');
+</script>
+</body>
+</html>

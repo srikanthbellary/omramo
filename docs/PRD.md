@@ -1,0 +1,342 @@
+# Omramo — Product Requirements (v2, global English)
+
+**Status:** v2 design approved and locked by Srikanth, 13 Nov 2026. This document supersedes `docs/PRODUCT.md` (the Telugu-first v1 lock, kept for history).
+**Companions:** `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/CONTENT_PLAN.md` (launch story catalog and landmarks).
+**Decisions, 13 Nov 2026 evening:** Q1 resolved — universal app (iPhone, Duo, iPad). No accounts or sign-in; purchases use the Apple ID via StoreKit 2. **Q2 resolved later the same evening (8:46 PM ET):** the app is not listed in the App Store Kids Category. It uses a normal App Store age rating and is marketed as ages 6 to 14 and up. Child-safety rules from Review Guidelines 1.3 and 5.1.4 are still followed (no ads, no third-party analytics or tracking, parental gate, privacy manifest, no accounts). See §8, §11 A1 and §12 Q1–Q2.
+**Sources:** business case v5 (13 Nov 2026), the 16-point discussion brief, the locked designs-v2 (12 screens in `docs/design/`), the expert assessment of 13 Nov 2026, and `stories/SOURCES.md`.
+
+Conventions used in all four documents:
+
+- **Decided** means it comes from Srikanth's brief, business case v5 or the locked design.
+- **Assumption** means I chose it to keep work moving; it can be overturned.
+- **TBD — open question** means a number or decision only Srikanth can give. No prices, dates, conversion rates, revenue or user counts are invented anywhere.
+
+---
+
+## 1. Problem
+
+Children who can read are choosing not to. Games and short video are instant and endless, and a page of text loses to them. Most "story" apps respond by turning books into narrated video, which holds attention but replaces reading. Plain ebooks keep the reading but give a child nothing to pull them in: when a story mentions something they have never seen, the moment passes.
+
+Omramo's answer is a **magical book that the child reads**. Illustration and tap-to-see visuals exist only to pull the child into the text and send them back to it.
+
+**Governing rule (decided):** the child reading words on the page is the product. No narrated video, no autoplay, no read-aloud control, and a page turns only when the child presses the page-turn button. If a feature lets a child skip reading, it does not ship.
+
+## 2. Audience
+
+| | Who | What they want |
+|---|---|---|
+| **Reader** | A child anywhere in the world who can already read English, **ages 6 to 14 and up**. Tiers are ability bands, not locks: Low 6–8, Medium 8–10, Advanced 10–12+ (a 13- or 14-year-old still building reading skills should not feel this is a little-kid app). Decided (Q2). | Stories worth reading, pictures, things to tap, a shelf that fills up. |
+| **Buyer** | The parent (teachers and schools later, not in this scope). | Screen time that is real reading; proof of it in pages read, not minutes; no ads, no tracking. |
+| **Device** | A **universal** iOS app: ordinary iPhone (single-pane), Apple's foldable iPhone Duo (two panes either side of a hinge, plus the folded outer screen), and iPad (two-pane spread on the larger canvas, including Split View and Stage Manager size classes). | — |
+
+**Decided (Q1, 13 Nov 2026):** ship on all three. The folded iPhone layout is the single-pane mode; the open Duo and a sufficiently wide iPad use the two-pane spread. The same `PaneLayout` resolver drives every size class. Full iPad layout polish is milestone Mi, not Milestone 1.
+
+## 3. Goals and non-goals
+
+### Goals
+
+1. A child can open a story at their tier and read it from first page to last on the open Duo and on the folded screen, with reading position carried between the two.
+2. Tapping a marked word opens a visual on the facing pane, and one button returns the child to the exact line.
+3. Tapping a character name opens a character card the same way.
+4. A parent can see what was read (pages, stories, level progress), with no time metric.
+5. Anyone can browse every cover and read a two-page sample of any story; a grown-up, behind a gate, can subscribe the family to unlock everything.
+6. The app looks and behaves like a modern app, exactly as the 12 locked screens show. It never looks like a hardcover book: no paper, no spine, no serif.
+7. The app collects no personal data and contains no third-party code.
+
+### Non-goals (for the MVP)
+
+- Narration, read-aloud, video, autoplay, mini-games, points, currency, timers.
+- Accounts, sign-in, a server, remote analytics, push notifications.
+- Any language other than English. (The v1 Telugu/Hindi editions are dropped.)
+- Simplified or expanded versions of a story in another tier.
+- School licences, classroom rosters, teacher reporting.
+- A content authoring tool inside the app; the art pipeline itself (ops side).
+- App Store submission or App Store Connect set-up. These are future owner actions and are only described, never performed, by this plan.
+- Final illustration. The code-drawn art in the designs is concept art and must be replaced by commissioned work (see risks).
+
+## 4. Tiers
+
+**Decided:** three tiers, Low, Medium and Advanced. Every story is unique and belongs to exactly one tier, set by its message and complexity when it is written. A tier is never locked behind its own payment: one subscription covers all tiers. A child may read at any tier at any time.
+
+| Tier | Meaning (business case v5) | Reading type (locked design) | Prototype story |
+|---|---|---|---|
+| **Low** | Newer independent readers; basic morals | 23.5 / 37 pt, about 55 words a page, text on one pane | *The Monkey and the Crocodile* — Jataka, ancient India |
+| **Medium** | Confident readers; a bigger idea | 19.5 / 32 pt, about 90 words a page, text on one pane | *How Wisdom Became the Property of the Human Race* — Anansi, Akan people of Ghana |
+| **Advanced** | Strong readers; deeper meaning, longer text | 16.5 / 27 pt, about 190 words a page, text on both panes | *The Story of Urashima Taro* — Japan |
+
+Each story also carries its **origin** (civilization or culture, shown as a map pin and label) because the catalog is meant to teach children about the world's cultures by reading (brief point 16). The launch catalog built on this is in §4a.
+
+Known tension, recorded and not resolved here: the assessment measured the three prototype texts at 952, 384 and 4,229 words, so length does not rise with tier, and it recommends renaming "Low" on child-facing surfaces. The locked design uses the names Low / Medium / Advanced on child-facing screens. This PRD follows the locked design; see Q3.
+
+## 4a. Global launch catalog and landmarks (owner requirements, 13 Nov 2026)
+
+The full catalog, sources, landmark table and story → landmark map are in **`docs/CONTENT_PLAN.md`**. The requirements it must meet:
+
+**Catalog**
+
+- **Decided:** the launch catalog covers **10 regions × 3 tiers, with at least one story in every cell** (30 stories minimum). Regions: Indian, Egyptian, Japanese, Chinese, Native American / First Nations, Arctic (Inuit / Yupik / Iñupiat), Russian, European, African, Persian / Arabian. The content plan proposes 32 stories.
+- **Decided:** **public-domain first.** A story is a retelling of a traditional tale with a cited public-domain source (published before 1931, US public domain), or, where no clean source exists, an **original story written by us (Omramo)** and labelled as such. Every story records its provenance.
+- **Assumption A12:** the app text is our own fresh retelling, not the old translator's wording. This changes A5 (Q22).
+- A region is a shelf label. Every story names a specific people and place (for example "Akan · Ghana"), never a continent.
+- **Wording:** the owner's "native red indians" is written as Native American / First Nations, with the nation named; "Alaska igloos" as Arctic (Inuit / Yupik / Iñupiat). The app teaches accurately that the snow-house iglu is mainly a Canadian Inuit tradition and not typical housing of Alaskan Yup'ik or Iñupiat people.
+
+**Three education pillars — decided.** Every story carries, as data and as tap-to-see content:
+
+| Pillar | Meaning | Shown through (locked design) |
+|---|---|---|
+| Geography | Where the story lives: land, water, climate, the map | Origin chip, map pin, *place* cards, landmark cards |
+| Culture | How people there live, make and celebrate | Culture notes on tap-to-see cards, character cards |
+| Moral | What the story is about | The story itself; never a printed "Moral:", never a quiz |
+
+**Cultural care — decided in principle, process open (Q24).** No sacred, ceremonial or restricted narratives. Every Native American / First Nations, Arctic and other living-oral-tradition story, and every scripture-derived story, needs sign-off from a community consultant before release. The content plan flags 12 such stories.
+
+**Landmarks — decided.** Famous landmarks are woven into stories as **tap-to-see moments, not lectures**: the Seven Wonders of the Ancient World, the New7Wonders, and wider landmarks from ancient to contemporary (the content plan proposes 37). Each tier spreads across historical and modern landmarks.
+
+- Landmarks live in one shared catalog with a fact card worded for each tier.
+- Lost wonders are shown as labelled reconstructions.
+- A landmark that does not belong to a story's time or place may appear only through a named **framing device** ("then and now", a child-reader map moment, a world link, or a present-day narrator), and only on its card — never in the story's scene art.
+- Landmarks outside the 10 regions (Machu Picchu, Chichén Itzá, Christ the Redeemer, Sydney Opera House, Angkor Wat and others) enter through a framing device for now; adding regions is Q26.
+- A story may have no landmark. Some Indigenous stories have none by design.
+
+## 5. Core loop
+
+```
+Open app → Splash (OM | RA | MO across the fold)
+        → Library: "Keep reading" or pick a story by level
+        → Read a page → (tap a marked word → visual on the facing pane → "Back to my line")
+        → press the round button → next page … → story finished
+        → shelf fills, friends met, streak day counted, map pin turns "read"
+Not subscribed: pages 1–2 of any story are free → "The free sample ends here"
+        → "Ask a grown-up to unlock" → grown-up gate → Family subscription
+Parent: Grown-ups tab → gate → pages read, level progress, settings
+```
+
+Everything a child earns comes from reading: a page counts when it is turned after reading; a day counts toward the streak when at least one page is read that day; a story joins the shelf when its last page is turned; a character becomes a "friend you have met" when the child first meets them in the text.
+
+## 6. Features and priority
+
+**P0** = required for the MVP (first family TestFlight). **P1** = required before a public release. **P2** = later.
+
+### Reading
+
+| # | Feature | Priority | Notes |
+|---|---|---|---|
+| R1 | Two-pane reading spread: one continuous scene under both panes and the hinge; text in the calm part of the scene | P0 | Screens 03, 04, 05 |
+| R2 | Three tier type systems (size, line height, weight, lead sentence) | P0 | `docs/DESIGN.md` §3 |
+| R3 | Word-level styling: lead sentence, voice colour with face chip, character names, sound and motion words | P0 | Wording is never changed; only typographic quotes and dashes |
+| R4 | Page turn only by the round button (and a back control); no swipe-through autoplay | P0 | Whether a swipe gesture also turns the page: Q13 |
+| R5 | Folded single-screen reading with art above the text | P0 | Screen 10 |
+| R6 | Reading position kept across fold/unfold and across launches, anchored to story + page + paragraph | P0 | |
+| R7 | Page indicator ("1 / 14") and tier and origin chips | P0 | |
+| R8 | Text-size control ("Aa") | P1 | Shown in design as a button; the panel itself is not designed — design gap G1 |
+| R9 | Bookmark | P1 | Button shown; behaviour not designed — design gap G2 |
+| R10 | "Story finished" moment | P1 | Not designed — design gap G3 |
+
+### Tap-to-see and characters
+
+| # | Feature | Priority | Notes |
+|---|---|---|---|
+| T1 | Marked words (soft highlight, underline, spark) open a visual on the **facing pane**; the text pane does not move | P0 | Screen 06 |
+| T2 | While open: the tapped paragraph stays at full strength with an orange place marker; other paragraphs dim | P0 | |
+| T3 | Card content: one picture, a title, one line to read, one culture note with a pin, one button "Back to my line". No onward links | P0 | |
+| T4 | Return: card closes, marker and a brief toast show the same line, the word is marked as seen | P0 | Screen 06b |
+| T5 | Character card from a dotted-underlined name, same mechanics | P0 | Screen 07 |
+| T6 | On Advanced spreads (text on both panes) the card covers the far pane, never the line being read | P0 | |
+| T7 | Folded tap-to-see | P0 | Not designed — design gap G4. Assumption A2: a card rises from the bottom over at most the art area and the tapped line stays visible |
+| T8 | Landmark card: a tap-to-see card whose content comes from the shared landmark catalog, in the wording for the story's tier, with the framing-device label when the landmark is outside the story's time or place | P0 (mechanism), P1 (full landmark set) | Same card layout as T3; no new screen. Assumption A13 |
+
+### Library and rewards
+
+| # | Feature | Priority | Notes |
+|---|---|---|---|
+| L1 | Library home: "Keep reading" card, stories filtered by level, story cards with tier pill and origin | P0 | Screen 02 left |
+| L2 | Story map ("Where the stories come from") with read / reading-now / later pins | P1 | Screen 02 right |
+| L3 | Streak: a day counts when a page is read; week row | P1 | Assessment recommends "reading days" with no penalty; locked design shows a streak. See Q10 |
+| L4 | My shelf: finished and in-progress stories | P1 | Card is designed; the full "My shelf" tab is not — design gap G5 |
+| L5 | Friends you have met | P1 | |
+| L6 | Tab bar: Library, My shelf, Grown-ups | P0 | |
+| L7 | Folded library | P0 | Not designed — design gap G6. Assumption A3: the two panes stack into one scroll |
+| L8 | Splash with the OM \| RA \| MO mark across the hinge | P1 | Screen 01. M1 may use a plain launch screen |
+
+### Parents, sample and subscription
+
+| # | Feature | Priority | Notes |
+|---|---|---|---|
+| S1 | Grown-up gate (adult-level task) in front of the parent view, purchase, and every external link | P0 | Mechanic in the design (type three numbers given as words) is a concept — Q9 |
+| S2 | Parent view: pages read in the last 7 days, stories finished, cultures visited, days in a row, level progress. **No time metric of any kind** | P0 | Screen 08 |
+| S3 | Settings rows: Appearance, Manage Subscription, Restore Purchases, Privacy, Terms and legal | P0 | Dark appearance is not designed — design gap G7 |
+| S4 | Free sample: browse all covers; read the first two pages of any story | P0 | Screen 09 left. Assessment recommends a whole free book per tier — Q6 |
+| S5 | End-of-sample card: "Ask a grown-up to unlock". The child never sees a price or a buy button | P0 | |
+| S6 | Family subscription screen behind the gate: plan card with StoreKit price, Subscribe, Restore Purchases, renewal terms, Terms of Use, Privacy Policy | P0 | Screen 09b |
+| S7 | Family Sharing on the subscription | P0 | Enabled in App Store Connect by the owner (future action) |
+| S8 | Entitlement cached for offline reading | P0 | |
+| S9 | Local reader profiles for siblings on one device | P2 | Not in the design — Q11 |
+
+### Content and platform
+
+| # | Feature | Priority | Notes |
+|---|---|---|---|
+| C1 | Versioned JSON story format with tiers, spreads, text runs, tap targets, character cards, art references | P0 | `docs/ARCHITECTURE.md` §6 |
+| C2 | Three prototype stories bundled in the app; fully offline | P0 | One per tier |
+| C3 | Content validator (text matches source, every tap target has a card and alt text) | P0 | |
+| C4 | Downloadable story packs | P2 | |
+| C5 | VoiceOver through a whole story, Reduce Motion, contrast checks, text scaling | P1 | System accessibility is never disabled, including spoken text |
+| C6 | Real Duo SDK hookup (posture and hinge geometry) | P0 for Duo release, blocked on Q4 | Until then the app uses its own pane abstraction and a simulated Duo layout |
+| C7 | Story metadata: region (one of 10, plus specific culture and place), provenance (public-domain retelling with citation, or original), cultural-review status, and education lessons (geography, culture, moral) | P0 | `docs/ARCHITECTURE.md` §6.3 |
+| C8 | Shared landmark catalog with per-tier fact cards; stories reference landmarks by id; the validator enforces the framing-device rule | P0 (model and one landmark), P1 (full set) | `docs/ARCHITECTURE.md` §6.5 |
+| C9 | Global launch catalog: 10 regions × 3 tiers, written, illustrated, reviewed and cleared | P1 (before public release) | `docs/CONTENT_PLAN.md`; plan milestone C1. Whether it may ship in waves: Q31 |
+| C10 | Release gate: a story whose required cultural review is not approved cannot be in a release build | P1 | Validator error in release mode |
+| C11 | Reflection question on story finish; "Talk about it" in the parent view; landmark pins on the map; "Wonders you have seen" | P1 / P2 proposals | Not in the locked design — Q27 |
+
+## 7. Screens
+
+All 12 locked screens. Detailed specs are in `docs/DESIGN.md` §6.
+
+| # | Screen | File | Purpose |
+|---|---|---|---|
+| 01 | Splash | `docs/design/01-splash.png` | OM \| RA \| MO mark split by the hinge; "A magical book / that you read." |
+| 02 | Library home | `docs/design/02-library-home.png` | Keep reading, stories by level, story map, streak, shelf, friends |
+| 03 | Reading, Low | `docs/design/03-read-low.png` | Text left, scene across both panes |
+| 04 | Reading, Medium | `docs/design/04-read-medium.png` | Twilight scene, light text |
+| 05 | Reading, Advanced | `docs/design/05-read-advanced.png` | Text on both panes; text on a path |
+| 06 | Tap-to-see open | `docs/design/06-tap-to-see-open.png` | Visual on the facing pane, line held |
+| 06b | Tap-to-see return | `docs/design/06b-tap-to-see-return.png` | Back at the same line, word marked seen |
+| 07 | Character card | `docs/design/07-character-card.png` | Card for a named character |
+| 08 | Parent view | `docs/design/08-parent-view.png` | Pages read, level progress, settings |
+| 09 | End of sample → gate | `docs/design/09-sample-paywall.png` | "Ask a grown-up", grown-up gate |
+| 09b | Family subscription | `docs/design/09b-family-subscription.png` | Plan card (price TBD), subscribe, restore |
+| 10 | Folded reading | `docs/design/10-folded.png` | Single-screen reading, Low tier |
+
+### Design gaps (screens or states the locked set does not cover)
+
+These need either a design pass or Srikanth's agreement that engineering derives them from the existing components.
+
+| ID | Gap |
+|---|---|
+| G1 | The "Aa" text-size panel |
+| G2 | Bookmark behaviour and where bookmarks are listed |
+| G3 | Story-finished screen, and the last page's button state |
+| G4 | Folded tap-to-see and folded character card |
+| G5 | The full "My shelf" tab |
+| G6 | Folded library, folded parent view, folded gate and subscription |
+| G7 | Dark appearance for the library and parent view ("Appearance: Automatic" row exists) |
+| G8 | Folded type for Medium and Advanced (only Low, 22.5 / 35 pt, is drawn) |
+| G9 | Story opening: whether tapping a cover goes straight to page 1 or to a cover/detail page |
+| G10 | Loading, empty and error states; "purchase pending" (Ask to Buy) state |
+| G11 | Motion: no animation is specified by static screenshots |
+| G12 | App icon |
+
+## 8. Monetisation shape
+
+- **Decided:** one auto-renewing **family subscription** through StoreKit 2, unlocking the whole library across all tiers. Identity for the purchase is the **Apple ID only** — there is no Omramo account, no sign-in screen and no server. Family Sharing is on. Restore Purchases is required and sits behind the grown-up gate with the paywall. Free: browse every cover, read the first two pages of any story. No ads. Purchases, external links and settings that leave the child experience sit behind the grown-up gate, following the child-safety rules in App Store Review Guidelines 1.3 and 5.1.4 (no ads, no third-party analytics, parental gate, privacy manifest). The app is **not** listed in the Kids Category (Q2).
+- **Price:** TBD — open question (Q7). The app never hardcodes a price; it shows the localized price StoreKit returns. The design shows "TBD".
+- **Plan structure:** TBD — open question (Q7): one plan or monthly + yearly; free trial or not. The locked screen shows a single plan card.
+- **Publishing cadence** that justifies a subscription ("new stories added"): TBD — open question (Q8).
+- **Later, not committed:** school licences, story packs.
+
+## 9. Success metrics (definitions only; no targets set)
+
+The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured in consented, moderated family tests by reading the on-device log, and from Apple's own aggregate App Store reports. Targets: TBD — open question (Q12).
+
+| Metric | Definition |
+|---|---|
+| **Pages read per session** | Count of pages turned forward after being displayed, per app session, per child. A "page" is one authored spread (the unit the page indicator counts), so it is the same folded and unfolded and at any text size. |
+| **Story completion rate** | Stories whose last page was turned ÷ stories whose first page was turned, per child. |
+| **Unprompted return days** | Days in a take-home period on which at least one page was read. |
+| **Novelty decay** | Pages read in week 2 ÷ pages read in week 1 of a take-home test. |
+| **Return-to-text rate** | Tap-to-see openings that are followed by a forward page turn on the same page ÷ all tap-to-see openings. |
+| **Taps per page** | Tap-to-see and character-card openings ÷ pages read. Watched for "tapping instead of reading". |
+| **Fast-flip share** | Pages turned sooner than a plausible minimum reading time for their word count ÷ pages turned. The minimum is a parameter to set with an educator: TBD. Used only in tests, never shown as a time to parents. |
+| **Sample-to-gate rate** | Sessions that reach the end-of-sample card and tap "Ask a grown-up" ÷ sessions that reach the card. Local test metric only. |
+| **Paid conversion** | Read from App Store Connect aggregates by the owner. No in-app measurement. |
+| **Comprehension guardrail** | In tests: unprompted retelling scored by an educator, with and without tap-to-see. |
+
+## 10. Risks
+
+| Risk | Effect | Mitigation in this plan |
+|---|---|---|
+| **Duo developer API is unknown to this team.** Pane sizes (432 × 720 pt), the 28 pt hinge gap and the status-bar split in the designs are assumptions, not Apple specifications. | Layout could be wrong on hardware. | A `PaneLayout` abstraction with a fallback and a simulated Duo mode; all geometry read from one place; hardware check is its own milestone. |
+| **Art is concept only.** Every illustration in the designs is code-drawn SVG. | The app cannot ship with it; commissioned art is the long pole and the main cost. | Asset pipeline and sizes specified now; placeholder art in M1; art production tracked outside the code plan. |
+| **Cultural accuracy.** Kente and Adinkra drawings, the Urashima palace, and the culture note in screen 06 are unreviewed. The source texts are 1908–1917 retellings with period wording. | Reputational harm to a children's brand. | `review` fields in the content format; release checklist blocks unreviewed content. Reviewer budget: Q5. |
+| **Rights outside the US.** US public-domain status is recorded for all three texts; outside the US only Ozaki (d. 1932) is confirmed. | A global launch of the exact texts is not cleared. | Per-story `source` and `rights` record; Q5. |
+| **Tier calibration.** The three prototype texts do not rise in length with tier; the Medium story is 384 words, so a two-page sample is a large share of it. | Tiers may not mean what parents expect; sample gives away too much of short stories. | Sample length is a per-story field; Q3 and Q6. |
+| **"Pages read" can be inflated by flipping.** | Parents lose trust in the one metric shown. | Honest wording in the parent view; fast-flip share measured in tests; a minimum-dwell rule is an open question (Q14). |
+| **Children's privacy (COPPA, GDPR-K) and App Review.** | Rejection or legal exposure. | Stay out of the Kids Category, but still collect nothing, use no third-party SDKs, and gate purchases and links; legal review is an owner action. The exact age rating (4+ or 9+) waits on Q30. |
+| **Small Duo install base; the child is not the device owner.** | Habit cannot form on a borrowed phone. | Single-pane mode works on any iPhone if Srikanth chooses to ship there (Q1). |
+| **No Swift toolchain on the development box.** | M1 code is checked by reading, not compiling. | Pure-Swift core with tests that run the moment a Mac is available; `docs/BUILD.md`; small, conventional code. |
+| **Thin catalog behind a subscription.** | "Ongoing value" is weak with three books. | Q8. |
+| **Catalog scale.** 32 stories and 37 landmarks need writing, art, cultural review and legal review; art for three prototypes was already the long pole. | Launch slips, or quality drops. | Content is its own milestone (C1), parallel to code; launching in waves is Q31. |
+| **Cultural harm from Indigenous and religious material.** | Serious reputational and ethical harm; a community may decline a story. | No sacred narratives; required consultant sign-off per flagged story; originals instead of risky retellings; a replacement path if a community says no (Q24). |
+| **Forced landmark links.** An ancient tale beside a modern tower can read as a lecture or teach false history. | Breaks "tap-to-see, not lectures"; misinforms. | Framing device required and labelled; loose links marked for review (Q28); at most two landmarks a story. |
+| **Landmark image and name rights** (for example Eiffel Tower night lighting, Sydney Opera House, Burj Khalifa). | Legal exposure in some stores. | Own illustrations only; legal check before art is commissioned (Q29). |
+| **Fixed tier type sizes versus accessibility text sizes.** | Larger text may not fit a designed page. | Pages are authored units; overflow continues on a continuation screen of the same page (see `docs/ARCHITECTURE.md` §12). |
+
+## 11. Assumptions (consolidated)
+
+| ID | Assumption |
+|---|---|
+| A1 | **Decided 13 Nov 2026 (Q1).** Universal app: iPhone single-pane, Duo two-pane, iPad two-pane on the larger canvas (Split View and Stage Manager included via the same pane-layout logic). `TARGETED_DEVICE_FAMILY = 1,2`. Full iPad layout acceptance is milestone Mi. |
+| A2 | Folded tap-to-see is a bottom card that keeps the tapped line visible. |
+| A3 | Folded library stacks the two panes into one scroll. |
+| A4 | A "page" in all counts and in the page indicator is one authored spread. |
+| A5 | The prototype stories use the public-domain texts unaltered (typographic quotes and dashes only), as in the locked design, until Q5 and Q22 are answered. For the launch catalog this is replaced by A12; M1 keeps the unaltered Babbitt text as a placeholder. |
+| A6 | Page counts in the designs (14, 6, 19) and all numbers in the library and parent view are sample data; real counts come from the authored content. |
+| A7 | Minimum iOS is 18.0 until the Duo SDK says otherwise (see `docs/ARCHITECTURE.md` §2). |
+| A8 | Bundle identifier stays `com.omramo.app` as in the earlier scaffold; product identifiers are placeholders until Q7. |
+| A9 | One child per device for the MVP (no profiles). |
+| A10 | Streak follows the locked design ("5 days in a row") rather than the assessment's "reading days". |
+| A11 | Inter in the designs stands in for the system font; the shipped app uses San Francisco for system chrome, as the design notes say. See Q15. |
+| A12 | Launch-catalog text is a fresh Omramo retelling of each public-domain tale; the cited edition is the documented source, not the text. |
+| A13 | A landmark is shown with the existing tap-to-see card (picture, title, one line, one note, "Back to my line"); the note's label carries the place or the framing device. No new screen. |
+| A14 | At most two landmarks per story; a required cultural review blocks that story's release, not the whole app. |
+
+## 12. Open questions for Srikanth (consolidated)
+
+**Device and platform**
+
+- **Q1. Devices. DECIDED 13 Nov 2026.** Universal app: ordinary iPhone (single-pane), Duo (two-pane), iPad (two-pane spread, including Split View / Stage Manager). Srikanth asked for the best approach for this kind of app, following Apple guidelines. Minimum iOS stays 18.0 (A7) until the Duo SDK requires a higher floor behind `#available`.
+- **Q4. Duo hardware and SDK.** Is a Duo available to the team? Which Xcode and iOS SDK version carries the Duo APIs, and what are the real pane sizes, hinge width and posture API? The earlier scaffold refers to `ArrangementView` and `GeometryProxy.reservedRegions(kind: .division)` in an "iOS 27.1 SDK"; I could not verify these. Has the earlier scaffold ever been run on a device?
+- **Q16. Mac build machine. PARTLY ANSWERED 13 Nov 2026.** First M1 compile was on the Mac Studio (user `sholu`), macOS 26.7.1, Xcode 26.6 (17F113), XcodeGen 2.46.0, iPhone 17 Pro Max simulator (iOS 26.5). Agents can run further builds there. Who signs TestFlight archives remains an owner action.
+- **Q17. Earlier PRs.** May PRs #1 and #2 (the Telugu-first scaffold) be closed once the v2 scaffold lands? Nothing is merged from them; ideas reused are listed in `docs/ARCHITECTURE.md` §16.
+
+**Audience and tiers**
+
+- **Q2. Ages. DECIDED 13 Nov 2026, 8:46 PM ET.** Stay out of the App Store Kids Category (Apple only offers 5 and under, 6–8, or 9–11, and any of those would cap the listing at 11 and make the app look like a little-kid product to older struggling readers). Use a normal App Store age rating; market the app as **ages 6 to 14 and up** in the store description, screenshots and on omramo.com. Keep all kid-safety rules anyway: no ads, no third-party analytics or tracking, a parental gate before purchases and external links, a privacy manifest, and no accounts. Reading tiers (from `docs/research/AGE_RANGE.md`) stand as ability bands: Low 6–8, Medium 8–10, Advanced 10–12+. Advanced typography and art should look grown-up enough that a 13- or 14-year-old is not babied. **Still open, under Q30:** the exact age rating (4+ or 9+), which depends on sensitive content in Advanced.
+- **Q3. Tier names and calibration.** The locked design prints "Low" on child-facing screens; the assessment advises a neutral name. Keep Low / Medium / Advanced? Is a written tier specification (word counts, sentence length) wanted before more stories are written?
+
+**Content**
+
+- **Q5. Text, art and review.** Ship the public-domain texts as written, or commission original retellings? Who illustrates (human, AI-assisted, mixed), who directs art, and is there budget for a cultural reviewer per story and a rights check outside the US? For Urashima: keep the death ending, the closing moral, and the tobacco and sake passages?
+- **Q8. Catalog and cadence.** How many stories per tier at launch, and what publishing cadence can the subscription promise?
+- **Q22. Retellings.** Confirm that launch stories are fresh Omramo retellings of public-domain tales, replacing "story text unaltered" (A5; DESIGN §8). Who writes and who edits them?
+- **Q23. Rights outside the US, and names.** A lawyer's check of each cited source for non-US stores (some translators are still in copyright in life + 70 countries, for example Arthur Ransome and Lionel Giles; several death dates are unverified); a trademark check on titles and names (Mulan, Sindbad); ownership of our originals.
+- **Q24. Cultural consultants.** Who finds and pays community reviewers for the 12 flagged stories (list in `docs/CONTENT_PLAN.md` §7)? Is their sign-off launch-blocking for that story (assumed yes)? If a community declines, do we replace the story with an original?
+- **Q25. Authors of originals.** May the three originals (Inuit, Yup'ik and Mande settings) be co-written with or commissioned from writers of those communities?
+- **Q26. More regions.** Add Latin America, South-East Asia and Oceania so that Machu Picchu, Chichén Itzá, Christ the Redeemer, Angkor Wat and the Sydney Opera House have stories of their own, or keep bringing them in through a "world link" card?
+- **Q27. Education surfacing.** Approve, reject or redesign: a reflection question on the story-finished moment, "Talk about it" in the parent view, landmark pins on the story map, a "Wonders you have seen" row (feature C11).
+- **Q28. Landmark scope.** Is 37 the right launch set? Keep or drop the loose links (Sydney Opera House, Statue of Liberty, Golden Gate Bridge, Christ the Redeemer)? Confirm at most two per story and that some stories have none.
+- **Q29. Landmark image rights.** Legal review before art is commissioned: Eiffel Tower night lighting, Sydney Opera House, Burj Khalifa, Christ the Redeemer, Tokyo Skytree, recent buildings, and the differing national rules on depicting buildings.
+- **Q30. Sensitive content.** Confirm handling per tier of gods in ancient and living religions, religious buildings (shown as architecture), slavery, war, death, abandonment and hunting in the proposed stories; tied to the ages in Q2 (decided: Low 6–8, Medium 8–10, Advanced 10–12+, marketed 6 to 14 and up). This also decides the exact App Store age rating (**4+** or **9+**).
+- **Q31. Launch size and order.** Must the whole 10 × 3 catalog ship on day one, or may it launch in waves? (Sharpens Q8.)
+- **Q18. Page breaks.** May engineering paginate the three prototype texts (about 55 / 90 / 190 words a page), or will an editor supply the page breaks, tap words and card texts? M1 needs this for the Low story only.
+
+**Monetisation**
+
+- **Q6. Sample.** Keep the two-page sample for every story (locked), or move to one free whole story per tier as the assessment recommends? Should very short stories have a shorter sample?
+- **Q7. Price and plans.** Price: TBD. One plan or monthly + yearly? Free trial? Final product identifiers and subscription group name? Does "family subscription" mean one plan with Apple Family Sharing on (my reading), or a separate family tier?
+
+**Behaviour**
+
+- **Q9. Grown-up gate.** Is "type three numbers written as words" the final mechanic? It must count as an adult-level task for App Review.
+- **Q10. Streaks.** Keep "days in a row" as designed, or switch to non-punishing "reading days"?
+- **Q11. Siblings.** Are local reader profiles needed for the MVP, or is one child per device acceptable?
+- **Q13. Page turn.** Button only (as designed), or also a swipe?
+- **Q14. Counting a page.** Count every forward turn (as the parent view says: "A page counts when your child turns it after reading"), or require a minimum time on the page? A minimum must never surface as a clock.
+- **Q19. Read-aloud.** Does "no read-aloud" hold absolutely, or is on-request single-word or single-sentence audio acceptable later? (System VoiceOver is never blocked either way.)
+
+**Measurement and legal**
+
+- **Q12. Targets and testing.** Who sets the success thresholds, and can 8–12 families be recruited for moderated tests? Is "no remote analytics at all" accepted?
+- **Q15. System font.** Confirm San Francisco (system) for settings rows and the keypad in the shipped app, with Inter bundled only if you want pixel parity with the screenshots.
+- **Q20. Legal and identity.** Who writes the Privacy Policy and Terms (the app links to `omramo.com/privacy` and `/terms`)? Has a children's-privacy lawyer been engaged? Is the Apple developer organisation account in place, and is `com.omramo.app` the bundle identifier to keep?
+- **Q21. Design gaps G1–G12** (§7): another design pass, or derive from existing components and review in the build?

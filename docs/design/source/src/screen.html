@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Omramo v2 screen loader</title>
+<script>
+  // Minimal module registry so the lib files can be shared, plain <script> files.
+  window.__mods = {};
+  window.OMDEF = function (name, fn) { var m = { exports: {} }; fn(function (n) { return window.__mods[n]; }, m); window.__mods[name] = m.exports; };
+</script>
+<script src="lib/base.js"></script>
+<script src="lib/art-jataka.js"></script>
+<script src="lib/art-anansi.js"></script>
+<script src="lib/art-urashima.js"></script>
+<script src="lib/art-brand.js"></script>
+<script src="screens.js"></script>
+<script src="screens-ui.js"></script>
+</head>
+<body>
+<script>
+  // screen.html?s=03-read-low  → replaces this document with the generated screen.
+  var name = new URLSearchParams(location.search).get('s');
+  var all = (window.__mods['./screens'] || []).concat(window.__mods['./screens-ui'] || []);
+  var s = all.find(function (x) { return x.name === name; });
+  if (!s) { document.body.innerHTML = '<pre>Screens:\n' + all.map(function (x) { return x.name; }).join('\n') + '</pre>'; }
+  else { var html = s.html(); document.open(); document.write(html); document.close(); }
+</script>
+</body>
+</html>

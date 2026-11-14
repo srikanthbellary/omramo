@@ -1,0 +1,1296 @@
+{
+  "schemaVersion": 1,
+  "id": "monkey-and-crocodile",
+  "contentVersion": 1,
+  "title": "The Monkey and the Crocodile",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "indian",
+    "culture": "Buddhist Jataka tradition",
+    "place": "Northern India",
+    "label": "Ancient India",
+    "pin": {
+      "lat": 23,
+      "lon": 79
+    },
+    "pinColor": "#19C7A2"
+  },
+  "setting": {
+    "period": "Ancient India, over 2,000 years ago",
+    "latestYear": -200
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Buddhist Jataka tales",
+    "sources": [
+      {
+        "author": "Ellen C. Babbitt",
+        "title": "Jataka Tales",
+        "publisher": "The Century Co.",
+        "year": 1912,
+        "gutenbergId": 62514,
+        "url": "https://www.gutenberg.org/ebooks/62514",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Jataka tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Derived from Buddhist scripture (the Jataka collection).",
+    "community": "Buddhist reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The great rivers of northern India, where monkeys and crocodiles live side by side.",
+      "factCards": [
+        "river-bank",
+        "taj-mahal-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "The Jatakas are very old teaching stories about wise animals, told by Buddhists across Asia.",
+      "factCards": [
+        "river-bank"
+      ]
+    },
+    "moral": {
+      "lesson": "When you are in trouble, think. A calm, clever answer beats a bigger foe.",
+      "reflectionQuestion": "What would you have said to the Crocodile?"
+    }
+  },
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#10283A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "dark",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A monkey riding on a crocodile's back across a river.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "monkey",
+      "name": "Monkey",
+      "color": "#A8501C",
+      "face": {
+        "file": "art/face-monkey.png",
+        "alt": "The Monkey.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Monkey",
+        "traits": [
+          {
+            "text": "Quick thinker",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Lives in a tall tree",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Cannot swim",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He loves ripe fruit a little too much. When he is in trouble, he does not fight. He thinks.",
+        "portrait": {
+          "file": "art/char-monkey.card.heic",
+          "alt": "The Monkey waving from a branch.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFD35A",
+          "#FFAE45",
+          "#FF8A4D"
+        ]
+      }
+    },
+    {
+      "id": "crocodile",
+      "name": "Crocodile",
+      "color": "#17694A",
+      "face": {
+        "file": "art/face-crocodile.png",
+        "alt": "The little Crocodile.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#BDEFE0"
+    },
+    {
+      "id": "mother-crocodile",
+      "name": "Mother Crocodile",
+      "color": "#0E5A55",
+      "face": {
+        "file": "art/face-mother-crocodile.png",
+        "alt": "The Mother Crocodile.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "river-bank",
+      "kind": "place",
+      "title": "River bank",
+      "line": "The land at the edge of a river.",
+      "cultureNote": {
+        "label": "From ancient India",
+        "text": "This story was first told in India a very long time ago. India is a land of great rivers."
+      },
+      "picture": {
+        "file": "art/see-river-bank.heic",
+        "alt": "A grassy bank beside a wide river, with a tall tree leaning over the water.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0A6585"
+    },
+    {
+      "id": "ripe-fruit",
+      "kind": "object",
+      "title": "Ripe fruit",
+      "line": "Fruit that is soft, sweet and ready to eat.",
+      "cultureNote": {
+        "label": "From ancient India",
+        "text": "Mangoes and figs grow on big trees in India. Monkeys love them."
+      },
+      "picture": {
+        "file": "art/see-ripe-fruit.heic",
+        "alt": "A branch heavy with golden fruit.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F6B50"
+    },
+    {
+      "id": "taj-mahal-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "taj-mahal",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "Rivers like this one cross northern India. Long after this story, people built something beside one of them."
+        }
+      },
+      "background": "#12305A"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "A monkey sits on a branch of a great tree above a wide river in the morning. A small crocodile watches from the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "A monkey sits on a branch above a river in the morning.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BDEFE9",
+          "#FFF2B5",
+          "#1596A0"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "High in a tree on a ",
+              "lead": true
+            },
+            {
+              "t": "river bank",
+              "lead": true,
+              "tap": "river-bank"
+            },
+            {
+              "t": " lived a clever Monkey.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All day he ate sweet fruit and watched the wide river go by."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In that river lived a hungry "
+            },
+            {
+              "t": "Mother Crocodile",
+              "name": "mother-crocodile"
+            },
+            {
+              "t": " and her son."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My son,”",
+              "say": "mother-crocodile",
+              "chip": true
+            },
+            {
+              "t": " she said one day, "
+            },
+            {
+              "t": "“I want a Monkey’s heart for my supper. Go and fetch me one.”",
+              "say": "mother-crocodile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "A monkey sits on a branch of a great tree above a wide river in the morning. A small crocodile watches from the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "A monkey sits on a branch above a river in the morning.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BDEFE9",
+          "#FFF2B5",
+          "#1596A0"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The little "
+            },
+            {
+              "t": "Crocodile",
+              "name": "crocodile"
+            },
+            {
+              "t": " blinked. "
+            },
+            {
+              "t": "“How can I catch a Monkey? I cannot climb, and he never swims.”",
+              "say": "crocodile",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Use your head,”",
+              "say": "mother-crocodile",
+              "chip": true
+            },
+            {
+              "t": " said his mother. "
+            },
+            {
+              "t": "“You will find a way.”",
+              "say": "mother-crocodile"
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the little Crocodile floated in the warm water. He thought, and he thought, and he "
+            },
+            {
+              "t": "thought",
+              "fx": "stretch"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "A monkey sits on a branch of a great tree above a wide river in the morning. A small crocodile watches from the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "A monkey sits on a branch above a river in the morning.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BDEFE9",
+          "#FFF2B5",
+          "#1596A0"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last he had an idea. He swam to the tall tree."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Friend Monkey!”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " he called. "
+            },
+            {
+              "t": "“There is ",
+              "say": "crocodile"
+            },
+            {
+              "t": "ripe fruit",
+              "say": "crocodile",
+              "tap": "ripe-fruit"
+            },
+            {
+              "t": " on the island, the sweetest you ever tasted. Come and see!”",
+              "say": "crocodile"
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The "
+            },
+            {
+              "t": "Monkey",
+              "name": "monkey"
+            },
+            {
+              "t": " looked across the water. The island was far away."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I would love to,”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“but I cannot swim.”",
+              "say": "monkey"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ride.unfolded.heic",
+          "alt": "A monkey rides on a crocodile's back across the middle of a wide river. An island with fruit trees is far ahead.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ride.folded.heic",
+          "alt": "A monkey rides on a crocodile's back in the river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFE9F2",
+          "#FFE9A8",
+          "#178FA6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I can,”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " said the Crocodile. "
+            },
+            {
+              "t": "“Sit on my back and I will carry you.”",
+              "say": "crocodile"
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Monkey did love ripe fruit. Down he jumped, onto the Crocodile’s bumpy back."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Off we go!”",
+              "say": "crocodile",
+              "fx": "pop",
+              "scale": 1.42
+            },
+            {
+              "t": " said the Crocodile, and he pushed out into the river."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“What a fine ride!”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " laughed the Monkey."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ride.unfolded.heic",
+          "alt": "A monkey rides on a crocodile's back across the middle of a wide river. An island with fruit trees is far ahead.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ride.folded.heic",
+          "alt": "A monkey rides on a crocodile's back in the river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFE9F2",
+          "#FFE9A8",
+          "#178FA6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But in the middle of the river, the Crocodile began to sink. Lower and lower he went."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Water splashed over the Monkey’s toes, then his knees, then his tummy."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Stop, stop!”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " he cried. "
+            },
+            {
+              "t": "“Why are you going under? I told you, I cannot swim!”",
+              "say": "monkey"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ride.unfolded.heic",
+          "alt": "A monkey rides on a crocodile's back across the middle of a wide river. An island with fruit trees is far ahead.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ride.folded.heic",
+          "alt": "A monkey rides on a crocodile's back in the river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFE9F2",
+          "#FFE9A8",
+          "#178FA6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I am sorry, Monkey,”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " said the Crocodile. "
+            },
+            {
+              "t": "“My mother wants your heart for her supper. I am taking you to her.”",
+              "say": "crocodile"
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Monkey was very frightened. But he did not scream, and he did not fight. He sat still and thought fast."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ride.unfolded.heic",
+          "alt": "A monkey rides on a crocodile's back across the middle of a wide river. An island with fruit trees is far ahead.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ride.folded.heic",
+          "alt": "A monkey rides on a crocodile's back in the river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFE9F2",
+          "#FFE9A8",
+          "#178FA6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My heart?”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“What a pity! I never take it on rides. I keep it safe at home, in my tree.”",
+              "say": "monkey"
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then we must go back and get it,”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " said the Crocodile."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So he turned around and swam all the way back to the river bank."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "A monkey sits on a branch of a great tree above a wide river in the morning. A small crocodile watches from the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "A monkey sits on a branch above a river in the morning.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BDEFE9",
+          "#FFF2B5",
+          "#1596A0"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Whisk!",
+              "fx": "pop",
+              "scale": 1.25
+            },
+            {
+              "t": " The moment they touched the bank, the Monkey shot up his tree, right to the very top."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My heart is up here!”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " he called down. "
+            },
+            {
+              "t": "“It was with me all the time. Come and get it, if you can!”",
+              "say": "monkey"
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Crocodile could only snap his teeth and swim home."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-island.unfolded.heic",
+          "alt": "A monkey in a new tree looks at a rock in the river and an island of fruit trees beyond it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-island.folded.heic",
+          "alt": "A rock in a river, with an island of fruit trees behind it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C9F0DC",
+          "#FFE7A0",
+          "#1C8E96"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "After that day, the Monkey moved to a new tree, far down the ",
+              "lead": true
+            },
+            {
+              "t": "river",
+              "lead": true,
+              "tap": "taj-mahal-moment"
+            },
+            {
+              "t": ".",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "From there he could reach an island full of fruit trees. A big rock stood halfway across, like a stepping stone."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Hop to the rock, hop to the island. Easy!"
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the Crocodile found him, and watched."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-island.unfolded.heic",
+          "alt": "A monkey in a new tree looks at a rock in the river and an island of fruit trees beyond it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-island.folded.heic",
+          "alt": "A rock in a river, with an island of fruit trees behind it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C9F0DC",
+          "#FFE7A0",
+          "#1C8E96"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One day the Monkey feasted on the island until the sun went down."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "While he ate, the Crocodile climbed onto the rock. He lay very flat and very still."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“When he jumps on me in the dark,”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " he thought, "
+            },
+            {
+              "t": "“I will catch him.”",
+              "say": "crocodile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dusk.unfolded.heic",
+          "alt": "At dusk a monkey stands at the edge of a river. A crocodile lies flat on a rock in the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dusk.folded.heic",
+          "alt": "At dusk a crocodile lies flat on a rock in a river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7C9A8",
+          "#FFD98A",
+          "#2B5C8A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At dusk the Monkey came to the water’s edge. He stopped."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“That is odd,”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " he thought. "
+            },
+            {
+              "t": "“My rock looks taller tonight.”",
+              "say": "monkey"
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So he tried a trick. "
+            },
+            {
+              "t": "“Hello, Rock!”",
+              "say": "monkey"
+            },
+            {
+              "t": " he called. The rock said nothing."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Rock, my friend, why do you not answer me tonight?”",
+              "say": "monkey",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dusk.unfolded.heic",
+          "alt": "At dusk a monkey stands at the edge of a river. A crocodile lies flat on a rock in the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dusk.folded.heic",
+          "alt": "At dusk a crocodile lies flat on a rock in a river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7C9A8",
+          "#FFD98A",
+          "#2B5C8A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Oh dear,”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " thought the Crocodile. "
+            },
+            {
+              "t": "“The rock must talk to him every night. I had better answer.”",
+              "say": "crocodile"
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Yes, Monkey! What is it?”",
+              "say": "crocodile"
+            },
+            {
+              "t": " he called."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Monkey laughed. "
+            },
+            {
+              "t": "“So it is you, Crocodile!”",
+              "say": "monkey",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It is,”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " said the Crocodile. "
+            },
+            {
+              "t": "“And this time I will catch you.”",
+              "say": "crocodile"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dusk.unfolded.heic",
+          "alt": "At dusk a monkey stands at the edge of a river. A crocodile lies flat on a rock in the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dusk.folded.heic",
+          "alt": "At dusk a crocodile lies flat on a rock in a river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7C9A8",
+          "#FFD98A",
+          "#2B5C8A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then you have won,”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " said the Monkey. "
+            },
+            {
+              "t": "“Open your mouth wide, and I will jump right in.”",
+              "say": "monkey"
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now, the Monkey knew a secret. When a crocodile opens its mouth very wide, its eyes squeeze shut."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Crocodile opened his mouth. His eyes closed tight."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dusk.unfolded.heic",
+          "alt": "At dusk a monkey stands at the edge of a river. A crocodile lies flat on a rock in the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dusk.folded.heic",
+          "alt": "At dusk a crocodile lies flat on a rock in a river.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7C9A8",
+          "#FFD98A",
+          "#2B5C8A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Monkey jumped. But not into the mouth! He landed on the Crocodile’s head, bounced to the bank, and ran up his tree."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Monkey,”",
+              "say": "crocodile",
+              "chip": true
+            },
+            {
+              "t": " called the Crocodile, "
+            },
+            {
+              "t": "“you are too clever for me. I will leave you alone.”",
+              "say": "crocodile"
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Thank you,”",
+              "say": "monkey",
+              "chip": true
+            },
+            {
+              "t": " said the Monkey. "
+            },
+            {
+              "t": "“But I will keep one eye open, all the same.”",
+              "say": "monkey"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

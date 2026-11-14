@@ -1,0 +1,38 @@
+// Omramo app target — build settings shared by Debug and Release.
+// project.yml points both configurations here.
+
+#include "Brand.xcconfig"
+
+// PLACEHOLDER — TBD (PRD Q20). Not registered anywhere. Do not create this identifier in
+// the Apple developer portal or App Store Connect until the owner confirms it.
+PRODUCT_BUNDLE_IDENTIFIER = com.omramo.app
+
+// Fixed, not the brand variable: the module name (`@testable import Omramo`) and the test
+// host path depend on it. Only CFBundleDisplayName in Info.plist follows the brand.
+PRODUCT_NAME = Omramo
+MARKETING_VERSION = 0.1.0
+CURRENT_PROJECT_VERSION = 1
+
+// Assumption A7: iOS 18.0. Device family is universal (PRD Q1, 13 Nov 2026): iPhone + iPad.
+IPHONEOS_DEPLOYMENT_TARGET = 18.0
+TARGETED_DEVICE_FAMILY = 1,2
+
+// App target: Swift 5 language mode with complete strict-concurrency checking.
+// (The core package is checked on its own; see Packages/OmramoCore/Package.swift.)
+SWIFT_VERSION = 5.0
+SWIFT_STRICT_CONCURRENCY = complete
+
+// Signing: intentionally empty. Simulator builds need no team. For a device build, put
+// DEVELOPMENT_TEAM = XXXXXXXXXX in Configuration/Signing.local.xcconfig (git-ignored).
+DEVELOPMENT_TEAM =
+CODE_SIGN_STYLE = Automatic
+
+ENABLE_USER_SCRIPT_SANDBOXING = YES
+
+// Silence the Xcode 26 headermap warning. Also required so command-line
+// xcodebuild does not fall back to the legacy 'traditional headermap' style.
+ALWAYS_SEARCH_USER_PATHS = NO
+
+// Last, so it can override DEVELOPMENT_TEAM above. Optional include: the file is untracked
+// and absent by default (see docs/BUILD.md).
+#include? "Signing.local.xcconfig"

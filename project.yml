@@ -1,0 +1,151 @@
+# Omramo — XcodeGen project definition. This file is the source of truth for the Xcode project.
+#
+#   brew install xcodegen
+#   xcodegen generate        # writes Omramo.xcodeproj (git-ignored; never edit or commit it)
+#
+# See docs/BUILD.md. First Mac Studio build (Xcode 26.6, XcodeGen 2.46.0) succeeded
+# after setting ONLY_ACTIVE_ARCH=YES for Debug. Do not edit Omramo.xcodeproj by hand.
+
+name: Omramo
+
+options:
+  minimumXcodeGenVersion: 2.38.0
+  xcodeVersion: "16.0"
+  deploymentTarget:
+    iOS: "18.0"
+  developmentLanguage: en
+  createIntermediateGroups: true
+  groupSortPosition: top
+  generateEmptyDirectories: true
+
+# Project-level settings. Command-line xcodebuild defaults ONLY_ACTIVE_ARCH to NO, which
+# tried to compile the app for x86_64 while the local package emitted only arm64 and failed
+# with "unable to resolve module dependency: 'OmramoCore'".
+settings:
+  base:
+    ALWAYS_SEARCH_USER_PATHS: NO
+  configs:
+    Debug:
+      ONLY_ACTIVE_ARCH: YES
+
+# No remote packages, by rule (Kids Category: no third-party SDKs). The only package is our own
+# pure-Swift core, referenced by path.
+packages:
+  OmramoCore:
+    path: Packages/OmramoCore
+
+targets:
+  Omramo:
+    type: application
+    platform: iOS
+    deploymentTarget: "18.0"
+    configFiles:
+      Debug: Configuration/Base.xcconfig
+      Release: Configuration/Base.xcconfig
+    sources:
+      - path: App/Sources
+      # Fonts (4 TTF + 3 OFL licence texts), asset catalog, privacy manifest, Info.plist.
+      # XcodeGen keeps a file named Info.plist out of the Copy Bundle Resources phase.
+      - path: App/Resources
+    dependencies:
+      # Brings the bundled story content with it (a resource of the package).
+      - package: OmramoCore
+        product: OmramoCore
+    settings:
+      base:
+        INFOPLIST_FILE: App/Resources/Info.plist
+        GENERATE_INFOPLIST_FILE: NO
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        # No app icon yet (design gap G12). Empty, so the asset compiler does not look for
+        # an "AppIcon" set. TODO(M6): add AppIcon.appiconset and set this to AppIcon.
+        ASSETCATALOG_COMPILER_APPICON_NAME: ""
+        ENABLE_PREVIEWS: YES
+        SWIFT_EMIT_LOC_STRINGS: NO
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+          # Simulated Duo and other debug overrides are compiled only into Debug.
+
+  OmramoTests:
+    type: bundle.unit-test
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: App/Tests
+    dependencies:
+      - target: Omramo
+      - package: OmramoCore
+        product: OmramoCore
+    settings:
+      base:
+        # Placeholder, TBD with the app's bundle identifier (PRD Q20).
+        PRODUCT_BUNDLE_IDENTIFIER: com.omramo.app.tests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"
+        SWIFT_STRICT_CONCURRENCY: complete
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+
+  # Screenshot helper only. Run with the OmramoShots scheme, not Cmd-U on Omramo.
+  OmramoUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    deploymentTarget: "18.0"
+    sources:
+      - path: App/UITests
+    dependencies:
+      - target: Omramo
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.omramo.app.uitests
+        PRODUCT_NAME: OmramoUITests
+        GENERATE_INFOPLIST_FILE: YES
+        SWIFT_VERSION: "5.0"
+        DEVELOPMENT_TEAM: ""
+        CODE_SIGN_STYLE: Automatic
+        TEST_TARGET_NAME: Omramo
+
+schemes:
+  Omramo:
+    build:
+      targets:
+        Omramo: all
+        OmramoTests: [test]
+    run:
+      config: Debug
+      # Tick one of these in Product ▸ Scheme ▸ Edit Scheme ▸ Run ▸ Arguments to draw the
+      # reference Duo canvas on any simulator (Debug builds only). See docs/BUILD.md.
+      commandLineArguments:
+        "-OmramoPosture unfolded": false
+        "-OmramoPosture folded": false
+        "-OmramoOpenStory monkey-and-crocodile": false
+        "-OmramoOpenStory anansi-wisdom": false
+        "-OmramoOpenStory urashima-taro": false
+        "-OmramoOpenCard river-bank": false
+        "-OmramoOrientation landscape": false
+        "-OmramoOrientation portrait": false
+    test:
+      config: Debug
+      targets:
+        - name: OmramoTests
+        # The core package's own tests, so one Cmd-U runs everything.
+        # If your XcodeGen version rejects this entry, delete it and run
+        # `swift test --package-path Packages/OmramoCore` instead.
+        - package: OmramoCore/OmramoCoreTests
+    profile:
+      config: Release
+    analyze:
+      config: Debug
+    archive:
+      config: Release
+  OmramoShots:
+    build:
+      targets:
+        Omramo: all
+        OmramoUITests: [test]
+    test:
+      config: Debug
+      targets:
+        - name: OmramoUITests
+      environmentVariables:
+        OMRAMO_SHOT_DIR: /tmp/omramo-shots

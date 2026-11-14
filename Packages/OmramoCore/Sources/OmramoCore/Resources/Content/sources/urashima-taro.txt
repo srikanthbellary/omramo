@@ -1,0 +1,175 @@
+# The Story of Urashima Taro
+# Omramo retelling, Advanced tier. Manuscript for the text-fidelity check.
+#
+# This is our own retelling, written for Omramo, of a traditional Japanese legend
+# (Urashima Tarō, a legend of the Tango coast). It is not the wording of any earlier edition.
+# Documented source for the tale: Yei Theodora Ozaki, "Japanese Fairy Tales" (Tokyo, 1908;
+# first published 1903), Project Gutenberg ebook #4018, https://www.gutenberg.org/ebooks/4018
+# (US public domain; other territories not verified).
+#
+# Editor's note on the ending (PRD Q5 is open): this retelling ends with Urashima old and
+# white-haired on the shore, understanding what the box had held. It does not tell his death,
+# and it leaves out the source's closing sermon, its tobacco and sake passage and the wedding.
+# These are editorial choices awaiting the owner's decision on Q5, not settled policy.
+#
+# Status: DRAFT. Text review pending. Cultural review (standard) pending.
+#
+# Format: lines starting with "#" are notes and are not story text. One paragraph per line.
+# A blank line separates paragraphs; a "# --- page" note marks a page (spread) break.
+# The line “Urashima, Urashima!” on page 4 is story text; the reader draws it along a curve.
+
+# Part I — The Fisher Lad
+
+# --- page 1
+Long ago, on the Tango coast of Japan, there lived a young fisherman.
+
+His name was Urashima Taro. His father had fished those waters before him, and his grandfather before that, and the sea seemed to know the family; no one in the village read the tides so well, or came home with a fuller boat.
+
+Yet it was not for his skill that people spoke of him. It was for his gentleness. As a boy he had never once thrown a stone at a bird or teased a crab on the rocks, and the other children had laughed at him for it. He had let them laugh.
+
+He was a grown man now, strong and browned by the sun, and he still lived with his mother and father in the house where he was born. Each evening he carried his catch up the beach to them, and each evening they were waiting at the door.
+
+# --- page 2
+One summer evening, walking home, he heard shouting on the sand.
+
+A knot of boys had gathered at the water’s edge, and in the middle of them, turned on its back and helpless, lay a small tortoise. They were baiting it for sport, as bored children sometimes will, and its legs paddled uselessly at the air.
+
+Urashima did not scold them. He knew that scolding only makes a cruel game last longer. “That is a fine tortoise,” he said instead. “I should like to have it. Will you sell it to me?”
+
+The boys looked at one another. He drew from his sleeve a string of copper coins — more than his day’s fish would fetch — and held it out. The eldest hesitated, then took the money, and the whole band ran off up the beach, already quarrelling over how to spend it.
+
+# --- page 3
+Urashima lifted the tortoise and carried it out along the rocks.
+
+Its shell was scratched, and it had drawn in its head so far that only the tip of its nose could be seen. He ran his thumb gently along the ridged back.
+
+“There, now. It is over,” he said. “They say the crane lives a thousand years and the tortoise ten thousand. You have a long road ahead of you, old one, and it would have been a pity to end it here. Go home — and keep well away from boys.”
+
+He set it down in the shallows. For a moment the tortoise lay still, and it seemed to him that one dark eye regarded him steadily. Then a wave slid over it and it was gone. The sun had set. Urashima walked home in the dusk and thought no more about it.
+
+# --- page 4
+Next morning he rowed out early, as he always did.
+
+A haze lay on the water, so that sea and sky were one pale colour and the sun hung in it like a red lantern. He passed the other fishing boats one by one, and their voices faded behind him, until he was alone with the creak of his oar and the slap of small waves.
+
+He let down his line and waited. He was thinking, idly, of the tortoise and its ten thousand years — how strange it must be to have so much time — when he was startled by a voice, close at hand, calling his name:
+
+“Urashima, Urashima!”
+
+The voice was clear and soft, and it seemed to come from nowhere. He stood and turned right round. No boat was near. There was only the haze, and the water — and a tortoise, looking up at him.
+
+# --- page 5
+It was the very tortoise he had saved.
+
+“Was it you who called me?” he asked, feeling rather foolish to be questioning a tortoise.
+
+“It was,” the creature answered, in the same clear voice. “Yesterday you gave me back my life. I have come to thank you — and to ask you something. Have you ever seen Rin Gin, the palace of the Dragon King, which lies at the bottom of the sea?”
+
+Urashima laughed. “I have heard of it all my life, as everyone has. I never supposed it was a place a man could go.”
+
+“It is far, but not for me. Climb on my back, and I will carry you.” And as it spoke the tortoise grew — or the sea made it seem so — until its shell was broad enough to seat a man. Urashima thought of his nets, and of his parents’ supper. Then he stepped out of the boat.
+
+# Part II — The Dragon Palace
+
+# --- page 6
+Down they went, and the daylight followed them down.
+
+Urashima had held his breath, and now found he had no need to. The water closed over his head as gently as a curtain, and he breathed it as easily as air, and his clothes were not even wet. Above him the hull of his empty boat grew small and dark, like a leaf on a pond, and then he could not see it at all.
+
+The sea was pale green at first, then blue, then a deeper blue he had no name for. Shoals of silver fish parted to let them through and closed again behind.
+
+He could not have said how long they travelled. Time was already behaving strangely, though he did not notice it. He noticed only the cool, bright silence, and the slow, steady strokes of the tortoise, and far below — growing as he watched — a glimmer like a lamp left burning in a window.
+
+# --- page 7
+The glimmer became a gate.
+
+It stood taller than the tallest cedar, its pillars red, its roof tiles green as deep water, and behind it roof rose above roof, curving upward at the corners, as far as he could see. “Rin Gin,” said the tortoise. “Some call it Ryūgū-jō. We have arrived, and from here you must walk.”
+
+The gatekeeper was a fish — a grave, whiskered fish in a stiff robe — and he bowed so low to the fisherman that Urashima, who had never been bowed to in his life, bowed back lower still.
+
+Then the courtyard filled. Bream came, and flounder, and sole, and cuttlefish trailing their long sleeves — all the lords of the Dragon King’s court — and every one of them greeted him by name. He turned to thank the tortoise. But the tortoise was no longer there.
+
+# --- page 8
+At the door of the inner hall a princess was waiting.
+
+She was Princess Otohime, the Dragon King’s daughter. Her robes were the colours of coral and of shallow water, and her black hair fell loose to her waist. When she spoke, he knew the voice at once, for he had heard it that morning across the sea.
+
+“Urashima Taro,” she said, “yesterday I wished to see the world of air. I went up in a tortoise’s shape, and I would have died on your beach if you had not come. You asked nothing for it. Let me give you something all the same.”
+
+Urashima meant to bow, and to say something fitting, and found he could do neither. He simply stood there, a fisherman with salt in his hair, in a hall built of coral and hung with pearls. The princess only smiled, and showed him to the highest place at her table.
+
+# --- page 9
+Then the feast began, and it seemed to have no end.
+
+Fish in trailing silk carried in dish after dish on trays of coral — things he had no names for, each more delicate than the last. Musicians played on instruments of shell. Dancers came in like a tide, their scales flashing, and went out again; and the lamps, which were pearls, never burned low.
+
+Urashima ate, and listened, and laughed. Otohime sat beside him and asked about the world above: what rain felt like, and how woodsmoke smelled, and whether it was true that people there grew old. He answered as well as he could.
+
+If, somewhere at the back of his mind, a small voice asked how long he had been sitting there, the music covered it. In Rin Gin there was no dawn and no dusk to count by. There was only the soft, unchanging light, and the next wonder.
+
+# --- page 10
+The greatest wonder of all was the garden.
+
+The princess led him there herself. “Look to the east,” she said — and to the east it was spring: plum and cherry in full blossom, and a warbler singing somewhere among the petals. He turned south, and it was high summer, the trees heavy and green and loud with cicadas.
+
+To the west the maples burned red and gold, and chrysanthemums stood in drifts along the paths. And to the north — he caught his breath — lay winter: bamboo bowed under snow, a pond sealed with ice, and a silence so deep he could hear his own heart.
+
+“Here nothing passes,” said Otohime. “No blossom falls. No one grows old. Stay, Urashima, as long as you wish.” And he stayed. One day went by in that garden, or so it seemed to him; and then another; and then a third.
+
+# --- page 11
+It was the snow that reminded him.
+
+On the third day he stood at the garden’s northern edge and thought, for no reason, of his father mending nets by the fire in winter — and all at once he remembered everything. His mother. The door where they waited each evening. The boat he had left drifting, empty, for the others to find.
+
+He went to the princess and knelt. “You have given me more happiness than I knew there was,” he said. “But my parents are old, and they will think I have drowned. Let me see them, only for a day, and I will come back.”
+
+Otohime was silent for a long moment. Around them the garden kept its four seasons, and not one petal fell. “Only for a day,” she repeated softly, as if the words belonged to a language she had half forgotten. “I cannot keep you, Urashima. I will not try.”
+
+# Part III — The Box
+
+# --- page 12
+Before he left, she put a box into his hands.
+
+It was small, of black lacquer, bound with a cord of red silk, and it weighed almost nothing. “This is the tamate-bako,” she said. “It holds something of yours — the most precious thing you have. Carry it with you, and you may yet find your way back to me.”
+
+She closed his fingers over the lid. “But you must never open it. Whatever happens, whatever you find up there — never. Promise me.”
+
+“I promise,” said Urashima; and he meant it with his whole heart.
+
+The tortoise that carried him up was only a tortoise, and did not speak. He looked back until the red gate was a spark, and then nothing. Then he turned his face to the brightening water overhead and thought of home, and of how much he would have to tell.
+
+# --- page 13
+He waded ashore in the bay he had known all his life.
+
+The hills had the same shape. The rocks where he had set the tortoise free were the same rocks. But the pines along the ridge were not the pines he remembered, and the path up from the beach ran a different way, and where his neighbours’ houses should have stood there were other houses, built in a fashion he had never seen.
+
+People passed him and stared. He searched their faces for one he knew. In a village where he could have named every child, every face was strange.
+
+He ran to his own house. A house stood there, but the door was wrong, and the man who came out of it was no one he knew. “Father!” Urashima called past him, into the dark doorway. “Mother! I am home!” Nobody answered.
+
+# --- page 14
+An old man had stopped in the road to watch.
+
+“Grandfather,” said Urashima, as steadily as he could, “I am Urashima Taro. I lived in this house until three days ago. Where have my parents gone?”
+
+The old man looked at him for a long time. “Urashima Taro,” he said slowly. “I know that name. Every child here knows it. He was a fisherman who rowed out one summer morning and never came back. They found his boat. It is written in the village records.” He shook his head. “But that was three hundred years ago.”
+
+Urashima heard the words, and for a while they meant nothing. Then they meant everything. Three days in the garden where no blossom fell; three hundred years on the shore where every blossom did. His mother and father had waited at the door, and grown old waiting, and were gone.
+
+# --- page 15
+He went down to the beach, because there was nowhere else to go.
+
+The sea, at least, had not changed. He sat on the rocks with the box in his lap and watched the evening come on, and he understood that not one person was left alive who remembered his face. He had never imagined a loneliness so complete.
+
+He thought of Otohime. She had said the box might bring him back to her; she had said never to open it. But the promise had been made in another world, by a man who still had a home — and what was left, now, to lose?
+
+His fingers found the knot of the red cord and loosened it. He lifted the lid. The box was empty — or nearly. A thin violet mist rose out of it, curled once about his face, soft and cool as a hand laid against the cheek in farewell, and drifted away over the water.
+
+# --- page 16
+Then the years came home to him, all at once.
+
+His back bent. His hands, resting on the open box, grew thin and spotted as he watched them, and the black hair that blew across his eyes turned white as foam. In the space of a few breaths the young fisherman was a very old man.
+
+And he understood, at last, what the princess had given him. It was time itself she had shut inside the box: his own three hundred years, folded small and kept from him for as long as the lid stayed closed. He had let them out.
+
+He did not weep; he was too old now, and too tired. He sat on the shore with the empty box beside him, and listened. The waves came in and went out, as they had always done, and the sea, which forgets nothing, went on quietly saying his name.

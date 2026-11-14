@@ -1,0 +1,111 @@
+success False 6 87191 18.838140199999998
+{'claude-fable-5-2': 413225}
+Milestone 1 is written but unverified: no Swift file has been compiled or run, because this box has no toolchain. What did run here: the Python content check (0 errors, 7 pending-review warnings) and its 46 tests. Two independent read-throughs of the Swift (core package, app target) found no definite compile errors; I applied the fixes they suggested, and those last edits have not been re-read by a second reviewer.
+
+## File tree created
+
+```
+.gitignore                         generated .xcodeproj, .build, DerivedData, *.local.xcconfig, __pycache__
+README.md                          status and Build section updated
+project.yml                        XcodeGen: app, app tests, local core package, scheme with launch args
+Configuration/
+  Base.xcconfig                    bundle id placeholder (TBD), iOS 18.0, empty DEVELOPMENT_TEAM
+  Brand.xcconfig                   display name
+App/
+  Resources/
+    Info.plist                     UIAppFonts, no permission keys
+    PrivacyInfo.xcprivacy          tracking false, nothing collected
+    Fonts/                         4 TTF + 3 OFL licence texts
+    Assets.xcassets/               AccentColor + 18 SVG icons ported from base.js
+  Sources/
+    App/        OmramoApp.swift, AppEnvironment.swift
+    Layout/     PaneLayoutProvider.swift, PaneLayoutReader.swift (+ TwoPane)
+    DesignSystem/ ColorAndFont.swift, Components.swift
+    Art/        PlaceholderArt.swift
+    Text/       StoryText.swift
+    Features/Library/  LibraryScreen.swift, LibraryComponents.swift, StoryMapCard.swift
+    Features/Reader/   ReaderScreen.swift, ReaderModel.swift
+    Persistence/       ReadingProgressStore.swift
+  Tests/OmramoAppTests.swift
+Packages/OmramoCore/
+  Package.swift
+  Sources/OmramoCore/
+    Brand/      Brand.swift (+ FoldMark)
+    Model/      Identifiers, RGBA, Tier, Region, Provenance, Story, Landmark, Catalog
+    Content/    ContentDecoder, ContentError, ContentRepository, StoryValidator,
+                TextFidelity, ValidationIssue
+    Layout/     PaneLayout.swift (DisplayPosture, PaneLayout, resolver)
+    Reading/    Pager.swift (ReadingPosition, Pager, PageDashes)
+    DesignTokens/ ColorTokens.swift, TypeTokens.swift
+    Resources/Content/
+      catalog.json
+      stories/monkey-and-crocodile/story.json
+      sources/monkey-and-crocodile.txt
+      landmarks/landmarks.json
+      ART_PLACEHOLDERS.md
+  Tests/OmramoCoreTests/  TestSupport, Decoding, Validation, Landmark, LayoutAndPager, TokenAndBrand
+tools/
+  validate_content.py              mirrors the Swift validator, same rule codes
+  test_validate_content.py
+docs/BUILD.md
+```
+
+## Implemented
+
+- **Project:** XcodeGen `project.yml`, no hand-written `.pbxproj`, no remote packages, `DEVELOPMENT_TEAM` empty, bundle id `com.omramo.app` marked placeholder/TBD. No App Store or signing action was taken.
+- **Core package (Foundation only):**
+  - Content model, schema version 1: tiers, spreads, text runs, tap targets, character cards, art refs, `region`, `provenance`, `culturalReview`, `education`.
+  - `Landmark` catalog with era, built range, coordinates, lists and per-tier fact cards, referenced by id with optional `framingDevice`.
+  - Decoder with a schema-version check and field-naming errors.
+  - Validator, including the anachronism and out-of-region landmark rules and a text-fidelity check against the manuscript.
+  - Library model, pane layout resolver, pager, and design tokens with the tier type metrics as data.
+- **Sample content:** *The Monkey and the Crocodile*, Low tier, 14 pages in two parts, in our own draft retelling. It references `taj-mahal` as a framed `thenAndNow` landmark on the word "river". The landmark catalog also holds the Lighthouse of Alexandria, to exercise the lost-wonder rule.
+- **Tests:** decoding, schema version, each validation error, tier metrics, education metadata, every landmark id resolving, layout, pager, and brand.
+- **App:**
+  - Design-system wrappers, variable-axis fonts and font registration.
+  - `PaneLayoutReader` and `TwoPane`, with a normal-iPhone fallback and a simulated Duo (`-OmramoPosture unfolded|folded`, Debug only).
+  - Library: wordmark, Keep reading, level filter, story cards, tab bar, story map with real pins.
+  - Reading (Low): scene across both panes and hinge, glass chips, word-level styles, round page-turn button through all pages, position saved and restored.
+
+## Stubbed (marked `TODO(Mx)`)
+
+- Tap words and names are drawn but not tappable; no tap-to-see, character or landmark cards (M3).
+- The "Aa" and bookmark capsule is inert; there is no back-a-page control and no continuation screens. Folded reading is a basic picture-over-text layout whose text scrolls as an interim (M2).
+- No sample gate, paywall or StoreKit: all 14 pages are readable (M5).
+- Streak, shelf, friends, finished ticks, the My shelf and Grown-ups tabs, the gate and the parent view (M4).
+- Splash, motion, app icon, loading and error designs (M6).
+- All art is SwiftUI shapes and gradients. No image file exists; `ART_PLACEHOLDERS.md` lists each one, and a real file dropped at the named path is picked up without a code change.
+
+## Least sure it compiles or behaves
+
+`docs/BUILD.md` §8 has the full list and §7 the first-compile checklist. The top items:
+
+1. **`TextRenderer` usage** in `StoryText.swift`: run iteration, the attribute subscript, `typographicBounds`, `context.draw(run)`. A one-line switch (`usesTextRenderer = false`) falls back to plain underlines.
+2. **Inline face chips** via `Text(Image(uiImage:))` joined into paragraphs.
+3. **Variable-font axes** through a `UIFontDescriptor`. The PostScript names were read from the TTFs and are re-read at launch.
+4. **`GeometryProxy.safeAreaInsets`** inside a reader that ignores the safe area.
+5. **XcodeGen details:** the scheme entry for the package's tests, and `Info.plist` staying out of resources.
+6. **SVG template icons**, and `Bundle.module` finding the copied `Content` folder.
+
+Expect visual tuning too: glass, line breaks and the exact text position will not match the screenshots on the first run.
+
+## Deviations from the written M1 plan
+
+- **Retelling, not Babbitt verbatim.** Your brief asked for a fresh retelling; the plan still says the unaltered 1912 text. So page 1 cannot match `03-read-low.png` word for word.
+- **Content is a package resource**, not a top-level `Content/` folder.
+- **No placeholder image files and no `render_placeholder_art.py`**; placeholders are drawn in SwiftUI.
+- **Added a 600 pt minimum height** to the size-derived two-pane rule, so an ordinary iPhone in landscape does not split into two tiny panes.
+- **Page chip position:** left-aligned at 28 pt on the trailing pane, following `screens.js`; `docs/DESIGN.md` words it differently.
+- **Renamed types:** `StoryCharacter` (avoids shadowing `Swift.Character`) and `ContentDecoder`.
+
+## Open questions for Srikanth
+
+1. **Retelling (PRD Q22):** is the draft retelling the direction, and who edits it? I kept the "heart for supper" trick but dropped "I am going to kill you". All story, card, lesson and fact-card wording is unreviewed, and the required Buddhist-reader review is pending.
+2. **Mac (PRD Q16):** who runs the first build, and on which Xcode? `BUILD.md` has TBD slots for the Xcode and XcodeGen versions.
+3. **Landscape:** it is allowed so the simulated Duo canvas can be viewed, but an ordinary iPhone in landscape is not a designed layout. Lock the shipping app to portrait until hardware exists?
+4. **iPad for review (PRD Q1):** the simulated canvas is about 0.61 scale on the largest iPhone. Allowing iPad in Debug would show it at full size. Want that?
+5. **Taj Mahal Low fact card:** I wrote "a great white building … built to remember a queen" rather than the plan's "palace", since it is a tomb. OK?
+6. **Origin-chip pin colour:** the design source draws it coral on every story; `DESIGN.md` says the story's pin colour. I followed the source. Which wins?
+7. **Planning docs:** should `IMPLEMENTATION_PLAN.md` and `ARCHITECTURE.md` be updated to match the deviations above, or left until Q22 is answered?
+
+I also noticed `docs/AGENT_HANDOFF.md` appear during the run; I did not create or edit it.
