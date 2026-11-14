@@ -25,9 +25,15 @@ struct ReaderMetrics: Equatable {
     let trailingCapacity: CGFloat
     /// Height of the picture band at the top of a single pane; 0 with two panes.
     let pictureHeight: CGFloat
-    /// The tier's typography at the chosen text size.
+    /// The tier's typography at the chosen text size (and the tall-pane boost, if any).
     let typeScale: ReadingTypeScale
     let textSize: TextSizeStep
+    /// Height the pane has beyond the design's proportions (`PageFit.extraHeight`): an iPad in
+    /// portrait, a tall phone. Zero on the reference pane.
+    let extraHeight: CGFloat
+    /// Factor by which the tier's type grows on a tall two-pane layout (`PageFit.typeBoost`).
+    /// 1 on the Duo, on one pane, and wherever the design's proportions hold.
+    let typeBoost: CGFloat
 
     init(layout: PaneLayout, safeArea: EdgeInsets, story: Story, spread: Spread, textSize: TextSizeStep) {
         let s = CGFloat(layout.referenceScale)
@@ -48,7 +54,8 @@ struct ReaderMetrics: Equatable {
         paneSize = CGSize(width: width, height: height)
         self.textSize = textSize
         let base = story.tier.readingScale(posture: layout.posture)
-        typeScale = base.scaled(to: textSize)
+        let extra = CGFloat(PageFit.extraHeight(paneHeight: layout.leading.height, scale: layout.referenceScale))
+        extraHeight = extra
         let button = CGFloat(Tokens.Size.roundGlassButton) * s
         let inset = CGFloat(Tokens.Spacing.insetText) * s
         columnX = contentInset + inset
@@ -62,8 +69,23 @@ struct ReaderMetrics: Equatable {
             let gap = CGFloat(unfoldedTop - Tokens.Spacing.topControl - Tokens.Size.roundGlassButton) * s
             textTop = top + button + gap
             let hingeMargin = max(contentInset, CGFloat(Tokens.Spacing.hingeClearance) * s)
-            columnWidth = max(0, min(CGFloat(base.column) * s, width - contentInset - inset - hingeMargin))
+            let column = max(0, min(CGFloat(base.column) * s, width - contentInset - inset - hingeMargin))
+            columnWidth = column
             pictureHeight = 0
+            // A pane much taller than the design's (a 13-inch iPad in portrait): the type
+            // grows a little, within the tier's measure, so the page is not a small block of
+            // words under a tall sky.
+            let boost = CGFloat(PageFit.typeBoost(
+                tier: story.tier,
+                posture: .unfolded,
+                baseFontSize: base.body.size,
+                paneScale: layout.referenceScale,
+                columnWidth: Double(column),
+                extraHeight: Double(extra),
+                maximumScale: layout.maximumReferenceScale
+            ))
+            typeBoost = boost
+            typeScale = base.scaled(by: textSize.scale * Double(boost))
 
             // The scene's art is anchored to the bottom of the pane, so the text area ends a
             // fixed distance above the bottom edge — and above the footer chrome in any case.
@@ -83,9 +105,17 @@ struct ReaderMetrics: Equatable {
             // Screen 10: the picture fills the top 340 pt of the 720 pt pane. A wide single
             // pane (an 11-inch iPad in portrait) gets a taller band, so the picture keeps a
             // generous shape; larger text sizes give some of the picture's room to the words.
-            let designed = ReaderMetrics.foldedPictureHeight * s
-            let roomy = min(width * 0.62, height * 0.5)
-            let band = max(designed, roomy) * ReaderMetrics.pictureFactor(for: textSize)
+            // A screen taller than the design's (every current iPhone) gives the picture a
+            // share of the extra height and the words the rest (`PageFit`).
+            let fitted = CGFloat(PageFit.foldedPictureHeight(
+                designed: Double(ReaderMetrics.foldedPictureHeight * s),
+                paneWidth: Double(width),
+                paneHeight: Double(height),
+                extra: Double(extra)
+            ))
+            let band = fitted * ReaderMetrics.pictureFactor(for: textSize)
+            typeBoost = 1
+            typeScale = base.scaled(to: textSize)
             pictureHeight = max(band, top + button + 16 * s)
             textTop = pictureHeight + ReaderMetrics.foldedTextGap * s
             columnWidth = max(0, min(CGFloat(base.column) * s, width - contentInset * 2 - inset - 26 * s))
@@ -138,6 +168,8 @@ struct ReaderPageLayout {
     let plan: ScreenPlan?
 
     private let blocksByID: [BlockID: TextBlock]
+    /// Measured heights of this layout's paragraphs and sentence groups.
+    private let heights: [BlockID: CGFloat]
 
     init(spread: Spread, metrics: ReaderMetrics, measurements: [TextMeasureKey: [BlockID: CGFloat]]) {
         self.spread = spread
@@ -147,7 +179,8 @@ struct ReaderPageLayout {
             columnWidth: metrics.columnWidth,
             textSize: metrics.textSize,
             paneScale: metrics.scale,
-            posture: metrics.posture
+            posture: metrics.posture,
+            typeBoost: metrics.typeBoost
         )
         self.key = key
         let twoColumns = metrics.posture == .unfolded && spread.blocks.contains { $0.pane == .trailing }
@@ -200,6 +233,7 @@ struct ReaderPageLayout {
 
         blocksToMeasure = toMeasure
         blocksByID = byID
+        self.heights = heights
         if complete {
             plan = ScreenPlanner.plan(
                 items: items,
@@ -220,6 +254,44 @@ struct ReaderPageLayout {
         guard let plan, index >= 0, index < plan.screenCount else { return [] }
         let ids = pane == .leading ? plan.screens[index].leading : plan.screens[index].trailing
         return TextBlock.rejoiningFragments(ids.compactMap { blocksByID[$0] })
+    }
+
+    /// Height of the text one column of one screen shows, from the measured paragraphs: their
+    /// heights and the gaps between them (none inside a paragraph that was split and rejoined).
+    func textHeight(in pane: TextBlock.Pane, onScreen index: Int) -> CGFloat {
+        guard let plan, index >= 0, index < plan.screenCount else { return 0 }
+        let ids = pane == .leading ? plan.screens[index].leading : plan.screens[index].trailing
+        var total: CGFloat = 0
+        var previous: BlockID?
+        for id in ids {
+            if let previous {
+                let continues = id.isFragment && previous.isFragment && id.fragmentParent == previous.fragmentParent
+                if !continues {
+                    total += metrics.paragraphGap
+                }
+            }
+            total += heights[id] ?? 0
+            previous = id
+        }
+        return total
+    }
+
+    /// How far below the designed top this screen's text is set (`PageFit.balancedOffset`):
+    /// on a tall two-pane window a page shorter than its column sits lower, toward the scene,
+    /// rather than at the top with an empty band beneath it. Both columns move together, by
+    /// what the fuller one allows. Zero on one pane, on the reference pane, for a column that
+    /// scrolls, and until the page is measured.
+    func balancedOffset(onScreen index: Int) -> CGFloat {
+        guard metrics.posture == .unfolded, metrics.extraHeight > 0,
+              let plan, index >= 0, index < plan.screenCount else { return 0 }
+        if needsScrolling(in: .leading, onScreen: index) || needsScrolling(in: .trailing, onScreen: index) {
+            return 0
+        }
+        var free = metrics.leadingCapacity - textHeight(in: .leading, onScreen: index)
+        if twoColumns, !plan.screens[index].trailing.isEmpty {
+            free = min(free, metrics.trailingCapacity - textHeight(in: .trailing, onScreen: index))
+        }
+        return CGFloat(PageFit.balancedOffset(free: Double(free), extra: Double(metrics.extraHeight)))
     }
 
     /// True when a column holds a single piece that is taller than the column even after

@@ -324,7 +324,7 @@ extension JatakaArt {
         var shine = Path()
         shine.move(to: CGPoint(x: x - rx * 0.8, y: y - ry * 0.2))
         shine.addQuadCurve(to: CGPoint(x: x + rx * 0.4, y: y - ry * 0.8), control: CGPoint(x: x - rx * 0.45, y: y - ry * 1.0))
-        Art.stroke(&context, shine, vein.opacity(0.8), width: 1.5)
+        Art.stroke(&context, shine, vein.opacity(0.8), width: ArtStyle.detailLine)
         guard flower else { return }
         let fx = x - rx * 0.2
         let fy = y - ry * 0.6
@@ -578,6 +578,11 @@ extension JatakaArt {
             center: CGPoint(x: sunX, y: H - 26),
             radius: glowRadius
         )
+        // The shared warm band on the horizon (pale gold in the morning, peach at dusk),
+        // behind the sun's disc and the far hills.
+        let bandColor = mood.isDusk ? mood.glowEdge : ArtStyle.jataka.glowColor
+        let bandRise = min(150, max(40, H * 0.3))
+        ArtStyle.horizonGlow(&context, width: w, y: H, rise: bandRise, color: bandColor, alpha: 0.5)
         Art.fill(&context, Art.circle(sunX, H - 30, sunRadius), mood.sun)
 
         let far = hills(width: w, y: H - 22 * hillScale, amp: 26 * hillScale, seed: 4, bottom: H + 8)
@@ -595,6 +600,16 @@ extension JatakaArt {
         let depth = max(1, h - H)
         Art.fillLinear(&context, Art.rect(0, H, w, depth), mood.water, from: CGPoint(x: 0, y: H), to: CGPoint(x: 0, y: h))
         Art.fill(&context, Art.rect(0, H, w, 9), mood.waterEdge.opacity(0.35))
+        // The same warm light, lying on the first stretch of water under the horizon.
+        let reflection: [(Color, CGFloat)] = [(bandColor.opacity(0.22), 0), (bandColor.opacity(0), 1)]
+        let reflectionDepth = min(depth, 34)
+        Art.fillLinear(
+            &context,
+            Art.rect(0, H + 9, w, reflectionDepth),
+            reflection,
+            from: CGPoint(x: 0, y: H + 9),
+            to: CGPoint(x: 0, y: H + 9 + reflectionDepth)
+        )
 
         // The sun's path on the water.
         var random = ArtRandom(8)
@@ -608,7 +623,7 @@ extension JatakaArt {
             Art.fill(&context, bar, mood.glint.opacity(alpha))
         }
         waterRipples(&context, x0: 0, x1: w, y0: H + 8, y1: h, count: rippleCount, seed: 31)
-        Art.stipple(&context, in: CGRect(x: 0, y: H + 10, width: w, height: depth), count: 160, seed: 77, color: .white, alpha: 0.06)
+        ArtStyle.tooth(&context, in: CGRect(x: 0, y: H + 10, width: w, height: depth), seed: 77)
     }
 
     // MARK: Bank, rock, trees
@@ -670,7 +685,7 @@ extension JatakaArt {
         let fit = CGAffineTransform(translationX: cx, y: waterY).scaledBy(x: width / 2, y: height)
         let shape = Art.svg(flat ? tableData : roundData).applying(fit)
 
-        let shadow = dusk ? Art.color(0x3A2F66, 0.38) : Art.color(0x0B5B6E, 0.34)
+        let shadow = ArtStyle.coolShade.opacity(dusk ? 0.32 : 0.26)
         Art.fill(&context, Art.ellipse(cx + width * 0.04, waterY + height * 0.16, width * 0.58, height * 0.2 + 3), shadow)
 
         let morningStops: [(Color, CGFloat)] = [
@@ -706,15 +721,13 @@ extension JatakaArt {
                 to: CGPoint(x: cx + width * 0.3, y: waterY - height * 0.3),
                 control: CGPoint(x: cx + width * 0.3, y: waterY - height * 0.48)
             )
-            Art.stroke(&g, lines, crack, width: 1.4)
-            Art.stipple(
+            Art.stroke(&g, lines, crack, width: ArtStyle.detailLine)
+            ArtStyle.tooth(
                 &g,
                 in: CGRect(x: cx - width / 2, y: waterY - height, width: width, height: height),
-                count: 60,
                 seed: 23,
                 color: crack,
-                alpha: 0.25,
-                size: 0.5...1.4
+                alpha: 0.25
             )
         }
         ripples(&context, cx, waterY + 3, width * 1.02, count: 3, color: .white, opacity: 0.6)
@@ -766,7 +779,7 @@ extension JatakaArt {
             control1: pt(816, baseY - span * 0.36),
             control2: pt(778, top + span * 0.4)
         )
-        Art.stroke(&context, edge, Art.color(0xFFE2BD, 0.45), width: 3)
+        Art.stroke(&context, edge, Art.color(0xFFE2BD, 0.45), width: ArtStyle.contourLine)
         var rings = Path()
         let marks: [CGFloat] = [0.22, 0.4, 0.58, 0.76]
         for t in marks {
@@ -775,7 +788,8 @@ extension JatakaArt {
             rings.move(to: pt(806 + lean, y))
             rings.addQuadCurve(to: pt(836 + lean, y + 2), control: pt(820 + lean, y + 6))
         }
-        Art.stroke(&context, rings, Art.color(0x3A2230, 0.3), width: 1.6)
+        let ringColor = dusk ? Art.color(0x4A3350, 0.4) : Art.color(0x5E4038, 0.4)
+        Art.stroke(&context, rings, ringColor, width: ArtStyle.detailLine)
         var feet = Path()
         feet.move(to: pt(790, baseY - 6))
         feet.addQuadCurve(to: pt(752, baseY + 12), control: pt(776, baseY + 6))

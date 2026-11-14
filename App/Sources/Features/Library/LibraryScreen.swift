@@ -1,37 +1,55 @@
 import SwiftUI
 import OmramoCore
 
-/// Library home (docs/DESIGN.md §6, screen 02) — the M1 subset.
+/// Library home (docs/DESIGN.md §6, screen 02).
 ///
-/// Implemented: wordmark, "Keep reading" card when a position is saved, "Stories by level"
-/// filter, story cards from the catalog, the tab bar (Library only), and the story map with
-/// real pins from the catalog.
+/// Leading pane: wordmark and streak chip, "Keep reading", "Stories by level" with the filter
+/// and the covers (finished stories carry a tick), the tab bar. Trailing pane: the story map,
+/// the streak card, the shelf card (keep reading at the saved place, stories finished) and
+/// "Friends you have met". One pane (an iPhone, the folded Duo): the same column with "Keep
+/// reading" on top, then the map, the streak card and the friends.
 ///
-/// Not in M1 (TODO(M4)): streak chip and card, shelf card, friends row, finished ticks,
-/// the My shelf and Grown-ups tabs. They need the reading log and the grown-up gate.
+/// Every number comes from the stores (`ReadingProgressStore`, `ReadingLogStore`,
+/// `ReaderMemoryStore`); with empty stores each card shows its empty state.
+///
+/// Still stubbed (M4): the "My shelf" and "Grown-ups" tabs, the grown-up gate and the parent
+/// view. Nothing here shows a time of day, a duration or a timer.
 struct LibraryScreen: View {
     @Environment(AppRouter.self) private var router
     @Environment(ReadingProgressStore.self) private var progress
+    @Environment(ReaderMemoryStore.self) private var memory
+    @Environment(ReadingLogStore.self) private var log
     let library: Library
     @State private var filter: LibraryFilter = .all
 
     var body: some View {
-        let keepReading = KeepReading(library: library, position: progress.lastPosition)
+        let router = self.router
+        let home = LibraryHome(
+            library: library,
+            keepReading: KeepReading(library: library, position: progress.lastPosition),
+            shelf: ShelfState(stories: library.stories, progress: progress.file, log: log.file),
+            streak: log.streak,
+            friends: FriendMet.all(stories: library.stories, memory: memory.file),
+            finished: Set(log.file.finished),
+            open: { storyID, source in router.open(storyID, from: source) }
+        )
         let stories = library.stories.filter { filter.includes($0.tier) }
-        let open: @MainActor (StoryID) -> Void = { router.open($0) }
 
         TwoPane {
             AuroraBackdrop(aurora: .light)
         } leading: {
-            LibraryMainPane(keepReading: keepReading, stories: stories, filter: $filter, open: open) {
+            LibraryMainPane(home: home, stories: stories, filter: $filter) {
                 EmptyView()
             }
         } trailing: {
-            LibrarySidePane(library: library, readingNow: keepReading?.story.id)
+            LibrarySidePane(home: home)
         } folded: {
-            // One pane: the same column, scrolling, with the story map after the stories.
-            LibraryMainPane(keepReading: keepReading, stories: stories, filter: $filter, open: open) {
-                StoryMapSection(library: library, readingNow: keepReading?.story.id)
+            // One pane: the same column, scrolling, with the map, the streak card and the
+            // friends after the stories. "Keep reading" is already on top.
+            LibraryMainPane(home: home, stories: stories, filter: $filter) {
+                StoryMapSection(library: library, readingNow: home.keepReading?.story.id)
+                LibrarySideCards(home: home, showsShelf: false)
+                    .padding(.top, 14)
             }
         }
     }
@@ -57,15 +75,26 @@ struct KeepReading {
     }
 }
 
+/// Everything the library shows, read from the stores once per render.
+struct LibraryHome {
+    let library: Library
+    let keepReading: KeepReading?
+    let shelf: ShelfState
+    let streak: StreakSummary
+    let friends: [FriendMet]
+    let finished: Set<StoryID>
+    /// Opens a story at its saved place, growing out of the thing that was tapped.
+    let open: @MainActor (StoryID, HeroSource) -> Void
+}
+
 // MARK: - Main column (leading pane, or the whole folded pane)
 
 private struct LibraryMainPane<Extra: View>: View {
     @Environment(\.pane) private var pane
-    let keepReading: KeepReading?
+    let home: LibraryHome
     let stories: [Story]
     @Binding var filter: LibraryFilter
-    let open: @MainActor (StoryID) -> Void
-    /// Extra sections after the stories (the story map, when folded).
+    /// Extra sections after the stories (the map and cards, when folded).
     @ViewBuilder var extra: () -> Extra
 
     var body: some View {
@@ -87,26 +116,36 @@ private struct LibraryMainPane<Extra: View>: View {
     }
 
     private func column(inset: CGFloat, cardWidth: CGFloat, fade: CGFloat) -> some View {
-        ScrollView(.vertical) {
+        let keepReading = home.keepReading
+        let open = home.open
+        return ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 0) {
-                WordmarkView()
-                    .padding(.leading, inset)
-                // TODO(M4): streak chip ("5 days") at the top right.
+                HStack(alignment: .center, spacing: 0) {
+                    WordmarkView()
+                    Spacer(minLength: pane.pt(8))
+                    if let text = home.streak.chipText {
+                        StreakChip(text: text)
+                    }
+                }
+                .frame(width: cardWidth)
+                .padding(.leading, inset)
 
                 if let keepReading {
                     SectionLabel(text: "Keep reading")
                         .padding(.leading, inset)
-                        .padding(.top, pane.pt(26))
+                        .padding(.top, pane.pt(22))
                     Button {
-                        open(keepReading.story.id)
+                        open(keepReading.story.id, .keepReading)
                     } label: {
                         KeepReadingCard(keepReading: keepReading)
                             .frame(width: cardWidth, height: pane.pt(Tokens.Size.keepReadingHeight))
                     }
                     .buttonStyle(PressScaleButtonStyle())
+                    .heroSource(.keepReading)
                     .padding(.leading, inset)
                     .padding(.top, pane.pt(9))
                     .accessibilityLabel(Text(verbatim: "Continue \(keepReading.story.title), page \(keepReading.page) of \(keepReading.pageCount)"))
+                    .accessibilityIdentifier("library.keepReading")
                 }
 
                 SectionLabel(text: "Stories by level")
@@ -130,11 +169,12 @@ private struct LibraryMainPane<Extra: View>: View {
                         HStack(alignment: .top, spacing: pane.pt(12)) {
                             ForEach(stories) { story in
                                 Button {
-                                    open(story.id)
+                                    open(story.id, .cover(story.id))
                                 } label: {
-                                    StoryCardView(story: story)
+                                    StoryCardView(story: story, isFinished: home.finished.contains(story.id))
                                 }
                                 .buttonStyle(PressScaleButtonStyle())
+                                .accessibilityIdentifier("library.story.\(story.id.rawValue)")
                             }
                         }
                         .padding(.horizontal, inset)
@@ -169,18 +209,24 @@ private struct LibraryMainPane<Extra: View>: View {
 
 private struct LibrarySidePane: View {
     @Environment(\.pane) private var pane
-    let library: Library
-    let readingNow: StoryID?
+    let home: LibraryHome
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 0) {
-            StoryMapSection(library: library, readingNow: readingNow)
-            // TODO(M4): streak card (top 312), shelf card (top 430), "Friends you have met"
-            // (top 580). Omitted in M1: they need the reading log (listed deviation).
-            Spacer(minLength: 0)
+        // The column scrolls only if it must (a short window, the largest text): on the Duo
+        // and on an iPad the map, the streak, the shelf and the friends fit as designed.
+        ScrollView(.vertical) {
+            VStack(alignment: .leading, spacing: 0) {
+                StoryMapSection(library: home.library, readingNow: home.keepReading?.story.id)
+                LibrarySideCards(home: home, showsShelf: true)
+                    .padding(.top, pane.pt(Tokens.Spacing.cardGap))
+            }
+            // The label sits at top 60; StoryMapSection adds its own 26 pt above the label.
+            .padding(.top, max(pane.pt(60 - 26), pane.safeArea.top + pane.pt(8) - pane.pt(26)))
+            .padding(.bottom, pane.bottomInset(22))
+            .frame(maxWidth: .infinity, alignment: .topLeading)
         }
-        // The label sits at top 60; StoryMapSection adds its own 26 pt above the label.
-        .padding(.top, max(pane.pt(60 - 26), pane.safeArea.top + pane.pt(8) - pane.pt(26)))
+        .scrollIndicators(.hidden)
+        .scrollBounceBehavior(.basedOnSize)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }

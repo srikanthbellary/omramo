@@ -28,12 +28,12 @@ extension AnansiArt {
             let body = Art.svg("M-4,-58 C6,-64 16,-60 18,-52 C22,-36 16,-14 12,2 C8,10 -6,12 -12,4 C-18,-14 -16,-44 -4,-58Z")
             kente(&g, in: body, scale: 0.5)
             let shade: [(Color, CGFloat)] = [
-                (kBlack.opacity(0.45), 0), (kBlack.opacity(0), 0.6), (Art.color(0xFFE9A8, 0.25), 1),
+                (ArtStyle.coolShade.opacity(0.4), 0), (ArtStyle.coolShade.opacity(0), 0.6), (Art.color(0xFFE9A8, 0.25), 1),
             ]
             Art.fillLinear(&g, body, shade, from: pt(-16, 0), to: pt(20, 0))
             let back = Art.svg("M-10,-52 C-22,-40 -24,-12 -18,10 C-14,16 -8,14 -8,6 C-12,-14 -10,-36 -2,-56Z")
             kente(&g, in: back, scale: 0.5)
-            Art.fill(&g, back, kBlack.opacity(0.35))
+            Art.fill(&g, back, ArtStyle.coolShade.opacity(0.32))
 
             // Near leg.
             limb(&g, "M2,2 C12,-12 24,-14 32,-6", 11, skin)
@@ -59,34 +59,33 @@ extension AnansiArt {
             Art.fill(&g, Art.circle(40, -51, 5.2), skin)
             Art.fill(&g, Art.circle(42, -69, 5), skinDark)
 
-            // Head.
+            // Head: a little larger than the design's, so he stands about 3 heads tall like
+            // the front-view Anansi. The shared eye, cheek and mouth; a raised, friendly brow.
             let tilt: CGFloat = lookingDown ? 8 : -14
-            Art.group(&g, x: 6, y: -76, rotate: rad(tilt)) { hd in
+            Art.group(&g, x: 6, y: -78, rotate: rad(tilt), scale: 1.2) { hd in
                 let tone: [(Color, CGFloat)] = [(skinLight, 0), (skinDark, 1)]
-                Art.fillRadial(&hd, Art.ellipse(0, 0, 14.5, 15.5), tone, center: pt(5.8, -6.2), radius: 27)
+                Art.fillRadial(&hd, Art.ellipse(0, 0, 14.5, 15.5), tone, center: pt(-4.6, -6.6), radius: 27)
                 Art.fill(&hd, Art.svg("M-14,-2 C-16,-14 -6,-19 4,-17 C-2,-14 -6,-10 -7,-4 C-8,2 -11,4 -14,-2Z"), hairWhite)
                 Art.fill(&hd, Art.svg("M-2,13 C4,17 11,14 13,6 C13,12 10,20 2,20 C-2,20 -4,16 -2,13Z"), hairWhite)
                 Art.fill(&hd, Art.ellipse(-5, 2, 3, 4), skinDark)
-                Art.fill(&hd, Art.ellipse(7, -3, 3.6, 3.2), Color.white)
-                if lookingDown {
-                    Art.fill(&hd, Art.circle(8, -1.9, 1.9), Art.color(0x1B0F0A))
-                } else {
-                    Art.fill(&hd, Art.circle(8.4, -3.6, 1.9), Art.color(0x1B0F0A))
-                }
-                Art.stroke(&hd, Art.line(2, -8, 11, -9.5), hairWhite, width: 2.2)
+                let eyeLook = CGPoint(x: 0.7, y: lookingDown ? 0.9 : -0.5)
+                let eyeY: CGFloat = lookingDown ? -2.2 : -3.2
+                ArtStyle.eye(&hd, 7.4, eyeY, 2.7, look: eyeLook, iris: eyeTone, showsWhite: false)
+                Art.stroke(&hd, Art.svg("M2.6,-8.6 Q7,-11.6 11.6,-8.9"), hairWhite, width: 1.8)
+                ArtStyle.cheek(&hd, 5.5, 4.4, 4.6, alpha: 0.3)
                 let nose = Art.svg("M14,0 C17,2 17,5 13.5,5")
                 Art.fill(&hd, nose, skin)
-                Art.stroke(&hd, nose, skinDark, width: 0.8, cap: .butt)
+                Art.stroke(&hd, nose, skinDark, width: 0.8)
                 if lookingDown {
-                    Art.fill(&hd, Art.ellipse(10, 9.6, 1.9, 2.3), Art.color(0x2B140C))
+                    Art.fill(&hd, Art.ellipse(10, 9.6, 1.9, 2.3), mouthTone)
                 } else {
-                    Art.stroke(&hd, Art.svg("M6,9 Q10,7.5 13,9.5"), Art.color(0x2B140C), width: 1.6)
+                    ArtStyle.smile(&hd, 9.6, 8.8, width: 6.4, curve: 0.9, color: mouthTone, lineWidth: 1.5)
                 }
             }
 
             // Drops of effort while he struggles with the pot.
             if withPot {
-                let drops = Art.svg("M-14,-90 q-3,5 0,8 q3,-3 0,-8Z M-20,-78 q-3,5 0,8 q3,-3 0,-8Z")
+                let drops = Art.svg("M-19,-95 q-3,5 0,8 q3,-3 0,-8Z M-25,-82 q-3,5 0,8 q3,-3 0,-8Z")
                 Art.fill(&g, drops, Art.color(0xBFE6FF, 0.9))
             }
         }
@@ -94,9 +93,35 @@ extension AnansiArt {
 
     // MARK: Faces
 
+    /// The skin of a front-view face, lit from the upper left like everything in the app.
     static func faceSkin(_ g: inout GraphicsContext) {
         let tone: [(Color, CGFloat)] = [(skinLight, 0), (skinWarm, 1)]
-        Art.fillRadial(&g, Art.ellipse(0, 0, 26, 28), tone, center: pt(5.2, -11.2), radius: 48.6)
+        Art.fillRadial(&g, Art.ellipse(0, 0, 26, 28), tone, center: pt(-5.2, -11.2), radius: 48.6)
+    }
+
+    /// The two eyes of a front-view face (the shared `ArtStyle.eye`). Scenes and the cover
+    /// use the plain dark eye of the Medium tier; the portrait cards and face chips pass
+    /// `showsWhite: true` for a modest white, the same for both characters.
+    /// `lookX` / `lookY` are in face units (about −3…3), as in the design.
+    static func faceEyes(_ g: inout GraphicsContext, lookX: CGFloat, lookY: CGFloat, showsWhite: Bool) {
+        let look = CGPoint(x: lookX / 3, y: lookY / 3)
+        let centres: [CGFloat] = [-10, 10]
+        for ex in centres {
+            if showsWhite {
+                ArtStyle.eye(&g, ex, -1, 5.6, look: look, iris: eyeTone, showsWhite: true)
+            } else {
+                let cx: CGFloat = ex + lookX * 0.3
+                let cy: CGFloat = -1 + lookY * 0.3
+                ArtStyle.eye(&g, cx, cy, 3.9, look: look, iris: eyeTone, showsWhite: false)
+            }
+        }
+    }
+
+    /// The soft blush and the nose of a front-view face.
+    static func faceCheeksAndNose(_ g: inout GraphicsContext) {
+        ArtStyle.cheek(&g, -15, 9.5, 6.5, alpha: 0.3)
+        ArtStyle.cheek(&g, 15, 9.5, 6.5, alpha: 0.3)
+        Art.stroke(&g, Art.svg("M-2.5,8 q2.5,2.4 5,0"), skinDark, width: 1.8)
     }
 
     static func ears(_ g: inout GraphicsContext) {
@@ -107,55 +132,52 @@ extension AnansiArt {
     }
 
     /// Kweku Tsin's face, front view. Origin is the middle of the face (52 × 56 units).
-    static func kwekuHead(_ g: inout GraphicsContext, lookX: CGFloat, lookY: CGFloat, mouthOpen: Bool) {
+    static func kwekuHead(
+        _ g: inout GraphicsContext,
+        lookX: CGFloat, lookY: CGFloat,
+        mouthOpen: Bool,
+        showsWhite: Bool = false
+    ) {
         ears(&g)
         faceSkin(&g)
-        Art.fill(&g, Art.svg("M-26,-4 C-28,-26 -12,-34 0,-34 C12,-34 28,-26 26,-4 C22,-16 12,-21 0,-21 C-12,-21 -22,-16 -26,-4Z"), Art.color(0x17101C))
-        let eyes: [CGFloat] = [-10, 10]
-        for ex in eyes {
-            Art.fill(&g, Art.ellipse(ex, -1, 6.8, 7.6), Color.white)
-            Art.fill(&g, Art.circle(ex + lookX, -1 + lookY, 4.3), Art.color(0x24120B))
-            Art.fill(&g, Art.circle(ex + lookX - 1.4, -2.8 + lookY, 1.5), Color.white)
-        }
-        Art.stroke(&g, Art.svg("M-16,-12 q6,-4 11,-1 M5,-13 q6,-3 11,1"), Art.color(0x17101C), width: 2)
-        Art.stroke(&g, Art.svg("M-2.5,8 q2.5,2.4 5,0"), skinDark, width: 2)
+        Art.fill(&g, Art.svg("M-26,-4 C-28,-26 -12,-34 0,-34 C12,-34 28,-26 26,-4 C22,-16 12,-21 0,-21 C-12,-21 -22,-16 -26,-4Z"), hairDark)
+        faceEyes(&g, lookX: lookX, lookY: lookY, showsWhite: showsWhite)
+        // Soft, lifted brows: curious, never cross.
+        Art.stroke(&g, Art.svg("M-15.5,-11.5 q5.5,-3.4 10.5,-1 M5,-12.5 q5,-2.4 10.5,1"), browTone, width: 1.8)
+        faceCheeksAndNose(&g)
         if mouthOpen {
-            Art.fill(&g, Art.ellipse(0, 16.5, 3.6, 4.4), Art.color(0x3A160E))
+            Art.fill(&g, Art.ellipse(0, 16.5, 3.4, 4), mouthTone)
         } else {
-            Art.stroke(&g, Art.svg("M-7,14.5 Q0,21 8,13.5"), Art.color(0x3A160E), width: 2.2)
+            ArtStyle.smile(&g, 0.5, 14.5, width: 14, curve: 2.8, color: mouthTone, lineWidth: 2)
         }
-        Art.fill(&g, Art.ellipse(-15, 10, 4.5, 3), Art.color(0xE8674A, 0.3))
-        Art.fill(&g, Art.ellipse(15, 10, 4.5, 3), Art.color(0xE8674A, 0.3))
     }
 
     /// Father Anansi's face, front view. Origin is the middle of the face.
     /// `detail` adds ears and a little modelling for the larger drawings.
-    static func anansiHead(_ g: inout GraphicsContext, detail: Bool = false) {
+    /// Warm and wise, a little pleased with himself: one brow sits a touch higher.
+    static func anansiHead(_ g: inout GraphicsContext, detail: Bool = false, showsWhite: Bool = false) {
         if detail {
             ears(&g)
         }
         faceSkin(&g)
         if detail {
-            // Soft shade under the hairline and along the jaw.
+            // Soft shade under the hairline and along the jaw, away from the light.
             Art.clipped(&g, to: Art.ellipse(0, 0, 26, 28)) { c in
-                Art.fill(&c, Art.ellipse(0, -20, 27, 9), skinDark.opacity(0.35))
-                Art.fill(&c, Art.ellipse(-22, 12, 9, 16), skinDark.opacity(0.25))
+                Art.fill(&c, Art.ellipse(0, -20, 27, 9), skinDark.opacity(0.3))
+                Art.fill(&c, Art.ellipse(22, 12, 9, 16), skinDark.opacity(0.22))
             }
         }
         Art.fill(&g, Art.svg("M-26,-2 C-29,-24 -14,-33 0,-33 C14,-33 29,-24 26,-2 C22,-15 12,-20 0,-20 C-12,-20 -22,-15 -26,-2Z"), hairWhite)
         Art.fill(&g, Art.svg("M-20,12 C-17,27 -8,31 0,31 C8,31 17,27 20,12 C15,21 8,24 0,24 C-8,24 -15,21 -20,12Z"), hairWhite)
-        Art.fill(&g, Art.ellipse(-10, -1, 5.6, 6), Color.white)
-        Art.fill(&g, Art.circle(-9, -1, 3.6), Art.color(0x24120B))
-        Art.fill(&g, Art.ellipse(10, -1, 5.6, 6), Color.white)
-        Art.fill(&g, Art.circle(11, -1, 3.6), Art.color(0x24120B))
+        faceEyes(&g, lookX: 0, lookY: 0, showsWhite: showsWhite)
         if detail {
-            Art.fill(&g, Art.circle(-10.2, -2.4, 1.2), Color.white)
-            Art.fill(&g, Art.circle(9.8, -2.4, 1.2), Color.white)
-            Art.stroke(&g, Art.svg("M-18,3.5 q-2,1.5 -2.5,4 M18,3.5 q2,1.5 2.5,4"), skinDark.opacity(0.6), width: 0.9)
+            // Smile lines at the corners of the eyes.
+            Art.stroke(&g, Art.svg("M-18,3.5 q-2,1.5 -2.5,4 M18,3.5 q2,1.5 2.5,4"), skinDark.opacity(0.5), width: 1)
         }
-        Art.stroke(&g, Art.svg("M-16,-9.5 q5,-2.5 10,0 M16,-9.5 q-5,-2.5 -10,0"), hairWhite, width: 2.4)
-        Art.stroke(&g, Art.svg("M-2.5,8 q2.5,2.4 5,0"), skinDark, width: 2)
-        Art.stroke(&g, Art.svg("M-6,15 Q0,19 6,15"), Art.color(0x3A160E), width: 2.2)
+        // White brows in high, round arcs; the one on the right a touch higher.
+        Art.stroke(&g, Art.svg("M-16,-10.5 q5,-3 10,-0.5 M16,-12 q-5,-3 -10,-0.5"), hairWhite, width: 2.2)
+        faceCheeksAndNose(&g)
+        ArtStyle.smile(&g, 0, 14.5, width: 13, curve: 2.4, color: mouthTone, lineWidth: 2)
     }
 
     // MARK: Kweku Tsin
@@ -166,14 +188,18 @@ extension AnansiArt {
         _ g: inout GraphicsContext,
         lookX: CGFloat, lookY: CGFloat,
         mouthOpen: Bool,
-        tilt: CGFloat = 8
+        tilt: CGFloat = 8,
+        showsWhite: Bool = false
     ) {
         Art.fill(&g, Art.svg("M-40,110 C-44,50 -30,26 0,24 C30,26 46,50 42,110Z"), Art.color(0x8A4F33))
         let wrap = Art.svg("M-42,110 C-44,60 -30,30 -6,24 L34,66 L44,110Z")
         kente(&g, in: wrap, scale: 0.42)
-        Art.fill(&g, wrap, kBlack.opacity(0.2))
+        let fall: [(Color, CGFloat)] = [
+            (ArtStyle.coolShade.opacity(0.06), 0), (ArtStyle.coolShade.opacity(0.3), 1),
+        ]
+        Art.fillLinear(&g, wrap, fall, from: pt(-44, 0), to: pt(44, 0))
         Art.group(&g, rotate: rad(tilt)) { hd in
-            kwekuHead(&hd, lookX: lookX, lookY: lookY, mouthOpen: mouthOpen)
+            kwekuHead(&hd, lookX: lookX, lookY: lookY, mouthOpen: mouthOpen, showsWhite: showsWhite)
         }
     }
 
@@ -181,7 +207,7 @@ extension AnansiArt {
     static func kwekuHands(_ g: inout GraphicsContext) {
         Art.fill(&g, Art.ellipse(-34, 36, 9, 7), skin)
         Art.fill(&g, Art.ellipse(40, 44, 9, 7), skin)
-        Art.stroke(&g, Art.svg("M-38,33 q4,-2 8,0 M36,41 q4,-2 8,0"), skinDark.opacity(0.5), width: 0.9)
+        Art.stroke(&g, Art.svg("M-38,33 q4,-2 8,0 M36,41 q4,-2 8,0"), skinDark.opacity(0.5), width: 1)
     }
 
     /// Kweku peeking from the leaves at the bottom right of the leading pane (screen 04).
@@ -209,7 +235,7 @@ extension AnansiArt {
     // MARK: Father Anansi, standing
 
     /// Father Anansi standing, front view, in a cloth draped over one shoulder. Origin is the
-    /// ground between his feet; he is about 132 units tall at scale 1.
+    /// ground between his feet; he is about 140 units tall at scale 1 — a little over 3 heads.
     /// `withPot` hangs the pot round his neck; `gesture` raises his open hand as he speaks.
     static func anansiStanding(
         _ context: inout GraphicsContext,
@@ -218,8 +244,8 @@ extension AnansiArt {
         gesture: Bool
     ) {
         Art.group(&context, x: x, y: y, scale: s) { g in
-            // Soft shadow on the ground.
-            Art.fill(&g, Art.ellipse(0, 1, 24, 4), kBlack.opacity(0.35))
+            // The shared contact shadow on the ground.
+            ArtStyle.contactShadow(&g, 2, 1, 28, 5, alpha: 0.34)
 
             // Legs and feet.
             limb(&g, "M-7,-30 C-8,-20 -8,-12 -8,-4", 8, skinDark)
@@ -234,14 +260,18 @@ extension AnansiArt {
             let cloth = Art.svg("M-20,-74 C-8,-78 6,-87 13,-97 C21,-93 25,-82 25,-66 C26,-50 25,-38 23,-24 L-22,-24 C-24,-42 -24,-60 -20,-74Z")
             kente(&g, in: cloth, scale: 0.5)
             let shade: [(Color, CGFloat)] = [
-                (kBlack.opacity(0.4), 0), (kBlack.opacity(0), 0.55), (Art.color(0xFFE9A8, 0.22), 1),
+                (ArtStyle.coolShade.opacity(0.36), 0), (ArtStyle.coolShade.opacity(0), 0.55), (Art.color(0xFFE9A8, 0.22), 1),
             ]
             Art.fillLinear(&g, cloth, shade, from: pt(-24, 0), to: pt(26, 0))
             let fold = Art.svg("M9,-98 C18,-97 25,-90 26,-78 C27,-60 25,-46 21,-36 C18,-38 16,-42 15,-46 C17,-62 15,-80 7,-93Z")
-            Art.fill(&g, fold, kBlack.opacity(0.26))
-            Art.stroke(&g, Art.svg("M7,-93 C15,-80 17,-62 15,-46"), Art.color(0xFFE9A8, 0.35), width: 0.8)
-            Art.stroke(&g, Art.svg("M-12,-70 C-10,-54 -12,-40 -14,-25 M2,-78 C4,-60 2,-42 3,-25"), kBlack.opacity(0.22), width: 1)
-            Art.stroke(&g, Art.line(-22, -24, 23, -24), kBlack.opacity(0.55), width: 1.6, cap: .butt)
+            Art.fill(&g, fold, ArtStyle.coolShade.opacity(0.24))
+            Art.stroke(&g, Art.svg("M7,-93 C15,-80 17,-62 15,-46"), Art.color(0xFFE9A8, 0.35), width: 1)
+            Art.stroke(
+                &g,
+                Art.svg("M-12,-70 C-10,-54 -12,-40 -14,-25 M2,-78 C4,-60 2,-42 3,-25"),
+                ArtStyle.coolShade.opacity(0.22), width: 1
+            )
+            Art.stroke(&g, Art.line(-21, -24, 22, -24), ArtStyle.coolShade.opacity(0.45), width: ArtStyle.detailLine)
 
             if withPot {
                 Art.stroke(
@@ -264,7 +294,7 @@ extension AnansiArt {
 
             // Neck and head.
             Art.fill(&g, Art.rect(-5, -102, 10, 10, radius: 3), skinDark)
-            Art.group(&g, x: 0, y: -113, scale: 0.56) { hd in
+            Art.group(&g, x: 0, y: -117, scale: 0.78) { hd in
                 anansiHead(&hd, detail: true)
             }
         }
@@ -272,7 +302,8 @@ extension AnansiArt {
 
     // MARK: Village
 
-    /// A listener in silhouette, lit warmly from the right. Origin is the ground under them.
+    /// A listener turned toward Father Anansi, lit warmly by the doorway on the right, with
+    /// the same small eye, cheek and smile as everyone else. Origin is the ground under them.
     static func villager(
         _ context: inout GraphicsContext,
         _ x: CGFloat, _ y: CGFloat, _ s: CGFloat,
@@ -283,17 +314,22 @@ extension AnansiArt {
             let seatedShape = "M-9,-27 C-13,-17 -15,-7 -16,0 L16,0 C15,-5 13,-9 10,-11 C11,-17 10,-23 7,-27 C3,-30 -5,-30 -9,-27Z"
             let standingShape = "M-9,-45 C-12,-31 -12,-13 -10,0 L10,0 C12,-14 12,-31 8,-45 C4,-49 -5,-49 -9,-45Z"
             let body = Art.svg(seated ? seatedShape : standingShape)
-            let headY: CGFloat = seated ? -37 : -55
-            let head = Art.circle(0, headY, 7.5)
+            let headY: CGFloat = seated ? -39 : -57
+            let head = Art.circle(0, headY, 9)
+            ArtStyle.contactShadow(&g, 1, 0.5, 18, 3, alpha: 0.28)
             Art.fill(&g, body, cloth)
-            Art.fill(&g, head, Art.color(0x2A1530))
+            Art.fill(&g, head, skinDark)
             let warm: [(Color, CGFloat)] = [
                 (Art.color(0xFFB45A, 0), 0), (Art.color(0xFFB45A, 0), 0.55), (Art.color(0xFFB45A, 0.4), 1),
             ]
             Art.fillLinear(&g, body, warm, from: pt(-16, 0), to: pt(16, 0))
             Art.clipped(&g, to: head) { c in
-                Art.glow(&c, 7, headY - 1, 9, Art.color(0xFFB45A), alpha: 0.6)
+                Art.fill(&c, Art.ellipse(-4, headY - 5, 10, 7), hairDark)
+                Art.glow(&c, 8, headY - 1, 11, Art.color(0xFFB45A), alpha: 0.45)
             }
+            ArtStyle.eye(&g, 4.2, headY + 0.4, 1.3, iris: eyeTone, showsWhite: false)
+            ArtStyle.cheek(&g, 3.6, headY + 3.4, 2.6, alpha: 0.3)
+            ArtStyle.smile(&g, 5.2, headY + 4.4, width: 3, curve: 0.5, color: mouthTone, lineWidth: 0.8)
         }
     }
 

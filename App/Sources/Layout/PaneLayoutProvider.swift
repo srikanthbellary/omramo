@@ -17,11 +17,21 @@ struct DerivedPaneLayoutProvider: PaneLayoutProvider {
 
 /// Debug only: draws the reference Duo canvas (two panes and a black hinge band, or one pane)
 /// scaled to fit any window, so layouts can be checked against docs/design/ before hardware.
+///
+/// `folded` on a window that is one pane anyway — any iPhone, a narrow iPad window — is not
+/// drawn as a small picture of a device: the folded Duo *is* an ordinary phone screen, so the
+/// app lays out the real window, edge to edge, with its real safe areas. Only a window wide
+/// enough for two panes (an iPad in landscape) gets the letterboxed reference pane, which is
+/// what to compare with `10-folded.png`.
 struct SimulatedDuoProvider: PaneLayoutProvider {
     let simulation: PaneLayoutInput.Simulation
 
     func input(for size: CGSize) -> PaneLayoutInput {
-        PaneLayoutInput(
+        let plain = PaneLayoutInput(canvasWidth: Double(size.width), canvasHeight: Double(size.height))
+        if simulation == .folded, PaneLayoutResolver().resolve(plain).posture == .folded {
+            return plain
+        }
+        return PaneLayoutInput(
             canvasWidth: Double(size.width),
             canvasHeight: Double(size.height),
             simulation: simulation

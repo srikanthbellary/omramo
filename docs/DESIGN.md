@@ -165,20 +165,64 @@ SwiftUI mapping (estimate): a tinted fill over `.ultraThinMaterial`, an inner st
 | `tapOn` | ring 3 pt `rgba(255,196,61,.35)` + `0 6 16 rgba(255,150,30,.35)` |
 | `sheet` | `0 -12 40 rgba(0,0,0,.3)` |
 
-### 3.7 Motion (estimates — the locked designs are static screenshots and specify no animation; design gap G11)
+### 3.7 Motion (as implemented in round 3 — the locked designs are static screenshots and specify no animation; design gap G11)
 
-Proposed defaults, to be tuned on device:
+The values below are what the app does today. They are ours, written without a device in hand
+(`App/Sources/DesignSystem/Motion.swift` is the only place they live), and still need
+Srikanth's eyes and approval (§9, question 2).
 
-| Token | Proposal |
-|---|---|
-| `motion.quick` | 0.18 s ease-out — button press, chip state |
-| `motion.standard` | 0.30 s spring (response 0.35, damping 0.85) — card open/close, paragraph dim |
-| `motion.page` | 0.35 s cross-fade of text with a short horizontal drift of the scene (no page-curl, no paper flip) |
-| `motion.toast` | appears 0.2 s, stays 1.6 s, fades 0.3 s |
-| Press feedback | scale to 0.96 plus a light haptic on the page-turn button |
-| Reduce Motion | all of the above become opacity-only cross-fades; no drift, no scale |
+**Rules.** Nothing moves unless the child acts. No idle shimmer on tap words, nothing loops.
+Movement is short and calm: critically damped springs (damping 1.0 — no overshoot, no bounce).
+Only transforms and opacity are animated, never layout, and every picture is a cached image
+while it moves (`docs/ART_DIRECTION.md` §8). No page curl, no paper, no book edges.
 
-Nothing moves unless the child acts. No idle shimmer on tap words.
+| Token (`Motion.…`) | Value | Used for |
+|---|---|---|
+| `quick` | 0.18 s ease-out | Button press, the text-size panel, new text fading in once it is laid out |
+| `page` | 0.42 s, critically damped spring | A page turn |
+| `card` | 0.38 s, critically damped spring | A tap-to-see, landmark or character card opening and closing; paragraph dimming |
+| `hero` | 0.45 s, critically damped spring | Library cover → reader, and back |
+| `toast` | appears 0.2 s, stays 1.6 s, fades 0.3 s | "You are back at your line", bookmark messages |
+| `pageTextTravel` | 30 pt × pane scale | How far the words travel on a page turn |
+| `pageSceneTravel` | 12 pt × pane scale | How far the picture drifts when it changes |
+| `cardStartScale` | 0.94 | A card starts this much smaller |
+| `pressScale` | 0.96 | A pressed control |
+| Reduce Motion | 0.22 s ease-in-out cross-fade for `page`, `card` and `hero`; a pressed control dims to 82% instead of shrinking | Everything |
+
+**Page turn.** The round button gives a press response (it shrinks to 0.96 and comes back) and
+a light haptic. The words on screen slide 30 pt toward the side the reader came from and fade;
+the next words arrive from the other side and settle, fading in as soon as they are laid out.
+When the picture changes too, it cross-fades with a 12 pt drift in the same direction — less
+than the words, so the picture reads as further away. Going back mirrors going forward. The
+page-turn controls (round button, back control, → / ← / space) ignore presses until the turn
+has finished (0.42 s; 0.22 s with Reduce Motion). There is no swipe (PRD Q13 is still open).
+Pages that share a scene keep the picture perfectly still; only the words move.
+
+**Card open and close.** The tapped word turns solid sun at once (§4.3). A sun-coloured glow
+leaves the word's rectangle and grows into the card's rectangle, brightest mid-way and gone at
+both ends, while the card itself grows from 0.94 to full size, anchored on the tapped word
+(the word is on the other pane, so the card seems to come out of the hinge edge at the height
+of the line) and fades in. The other paragraphs dim to 42–45% with the same spring. Closing
+runs the same motion backwards into the word. The text pane does not move or re-wrap at any
+point. Folded, the card rises from the bottom edge while the glow travels from the word to it.
+A card opened without a tap on the word (VoiceOver's action, a launch argument) grows from the
+edge it shares with the text.
+
+**Library → story.** The reader opens out of the cover that was tapped (the "Keep reading"
+card, a story's cover, or the shelf row): the whole reading screen starts scaled into the
+cover's rectangle with the cover's rounded corners, and grows to fill the window, fading in
+over the first third so the cover seems to become the scene. The back button reverses it into
+the same cover, wherever that cover is by then (the library stays laid out underneath). If
+there is no cover to go to — the story was opened by a launch argument, or its cover has
+scrolled out of sight — it is a cross-fade.
+
+**Reduce Motion.** Every one of the three becomes a plain cross-fade: no slide, no drift, no
+scaling, no glow travelling across the screen. Press feedback becomes a slight dim.
+
+**Haptics.** One light impact when a page turns. Nothing else vibrates.
+
+**Not animated on purpose:** tap words at rest, covers, the map, the streak card, the scene
+while reading. The app never plays an animation to attract attention.
 
 ## 4. Typography
 
@@ -450,7 +494,7 @@ The folded page number is the same page as unfolded (5 of 14), so position carri
 ## 9. Open questions (design)
 
 1. Design gaps G1–G12 listed in `docs/PRD.md` §7: who designs them (PRD Q21)?
-2. Motion values in §3.7 are proposals. Approve or supply.
+2. Motion values in §3.7 are implemented as proposals (round 3). Approve, or supply others, after seeing them on a device.
 3. System font versus bundled Inter for settings and keypad (PRD Q15).
 4. When does the place marker clear after returning from a card (§5.8)?
 5. How does a child go back one page? No control is placed in the locked screens (§5.6).

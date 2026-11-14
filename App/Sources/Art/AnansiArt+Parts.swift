@@ -19,6 +19,11 @@ extension AnansiArt {
     static let kGreen = Art.color(0x128A4E)
     static let kRed = Art.color(0xD8342B)
     static let kBlack = Art.color(0x17121F)
+    /// Hair, mouth and brow tones: dark, warm tones of the skin, never black.
+    static let hairDark = Art.color(0x241624)
+    static let mouthTone = Art.color(0x3A1A10)
+    static let browTone = Art.color(0x3A2016)
+    static let eyeTone = Art.color(0x2A1A12)
     static let moteGold = Art.color(0xFFD25A)
     static let leafRim = Art.color(0x7FE0C0)
 
@@ -248,7 +253,7 @@ extension AnansiArt {
             var rib = Path()
             rib.move(to: CGPoint.zero)
             rib.addQuadCurve(to: tip, control: pt(len * 0.5, -len * 0.05))
-            Art.stroke(&g, rib, rim.opacity(0.7), width: 1.4, cap: .butt)
+            Art.stroke(&g, rib, rim.opacity(0.7), width: ArtStyle.detailLine)
 
             var veins = Path()
             let places: [CGFloat] = [0.25, 0.42, 0.58, 0.74]
@@ -313,7 +318,7 @@ extension AnansiArt {
         let y2 = y - h * 0.72
         boughs.move(to: pt(x, y2))
         boughs.addQuadCurve(to: pt(x + 34 * s, y2 - h * 0.26), control: pt(x + 18 * s, y2 - 12 * s))
-        Art.stroke(&context, boughs, color, width: 2.2 * s, cap: .butt)
+        Art.stroke(&context, boughs, color, width: 2.2 * s)
 
         Art.fill(&context, crown, color)
     }
@@ -341,7 +346,7 @@ extension AnansiArt {
             var edge = Path()
             edge.move(to: pt(x + a * 0.84, 6))
             edge.addCurve(to: pt(x + a * 0.98, yF), control1: pt(x + a * 0.78, base * 0.3), control2: pt(x + a * 1.04, base * 0.6))
-            Art.stroke(&context, edge, Art.color(0xFFE9D2, rim), width: 1.6)
+            Art.stroke(&context, edge, Art.color(0xFFE9D2, rim), width: ArtStyle.detailLine)
         }
     }
 
@@ -359,7 +364,7 @@ extension AnansiArt {
         var stem = Path()
         stem.move(to: p0)
         stem.addCurve(to: p1, control1: c1, control2: c2)
-        Art.stroke(&context, stem, color, width: 1.6)
+        Art.stroke(&context, stem, color, width: ArtStyle.detailLine)
 
         var leaves = Path()
         let count = max(2, min(40, Int(max(0, len) / 26)))
@@ -450,8 +455,10 @@ extension AnansiArt {
     /// The small spider of the design, hanging head up. Origin is the middle of its body.
     static func spider(_ context: inout GraphicsContext, _ x: CGFloat, _ y: CGFloat, _ s: CGFloat) {
         Art.group(&context, x: x, y: y, scale: s) { g in
-            Art.fill(&g, Art.ellipse(0, 0, 4, 5), kBlack)
-            Art.fill(&g, Art.circle(0, -5, 2.6), kBlack)
+            // A small, round, friendly spider in the story's deep indigo (not black).
+            let tone = ArtStyle.anansi.deepColor
+            Art.fill(&g, Art.ellipse(0, 0, 4, 5), tone)
+            Art.fill(&g, Art.circle(0, -5, 2.6), tone)
             var legs = Path()
             let sides: [CGFloat] = [-1, 1]
             let shapes: [(CGFloat, CGFloat)] = [(-4, 9), (-1, 10), (3, 9), (6, 6)]
@@ -461,7 +468,8 @@ extension AnansiArt {
                     legs.addQuadCurve(to: pt(side * shape.1, shape.0 + 3), control: pt(side * 6, shape.0 - 3))
                 }
             }
-            Art.stroke(&g, legs, kBlack, width: 1, cap: .butt)
+            Art.stroke(&g, legs, tone, width: 1)
+            Art.fill(&g, Art.circle(-1.2, -1.6, 1.1), ArtStyle.warmLight.opacity(0.35))
         }
     }
 
@@ -469,7 +477,9 @@ extension AnansiArt {
     static func moon(_ context: inout GraphicsContext, _ cx: CGFloat, _ cy: CGFloat, _ r: CGFloat, alpha: Double = 1) {
         let k = r / 52
         let halo: [(Color, CGFloat)] = [
-            (Art.color(0xFFF4C8, 0.6 * alpha), 0), (Art.color(0xF6D9FF, 0.2 * alpha), 0.35), (Art.color(0xF6D9FF, 0), 1),
+            (Art.color(0xFFF4C8, 0.6 * alpha), 0),
+            (ArtStyle.warmLight.opacity(0.2 * alpha), 0.35),
+            (ArtStyle.warmLight.opacity(0), 1),
         ]
         Art.fillRadial(&context, Art.circle(cx, cy, 150 * k), halo, center: pt(cx, cy), radius: 150 * k)
         let disc: [(Color, CGFloat)] = [(Art.color(0xFFFBE6, alpha), 0), (Art.color(0xFFE08A, alpha), 1)]
@@ -582,10 +592,13 @@ extension AnansiArt {
         Art.fillLinear(&context, Art.rect(0, 0, w, h), stops, from: pt(0, 0), to: pt(0, h))
     }
 
-    /// Paint tooth over a finished picture.
-    static func tooth(_ context: inout GraphicsContext, _ w: CGFloat, _ h: CGFloat, count: Int = 300) {
-        let box = CGRect(x: 0, y: 0, width: w, height: h)
-        Art.stipple(&context, in: box, count: count, seed: 7, color: Color.white, alpha: 0.045)
-        Art.stipple(&context, in: box, count: count, seed: 19, color: kBlack, alpha: 0.07)
+    /// The last pass of every scene, picture, portrait and cover (not the face chips): the
+    /// shared paint tooth, light and indigo, then the shared finish. A dark story takes a
+    /// little less warm wash than the default.
+    static func finishPicture(_ context: inout GraphicsContext, _ size: CGSize) {
+        let box = CGRect(x: 0, y: 0, width: size.width, height: size.height)
+        ArtStyle.tooth(&context, in: box, seed: 7, alpha: 0.05)
+        ArtStyle.tooth(&context, in: box, seed: 19, color: ArtStyle.coolShade, alpha: 0.08)
+        ArtStyle.finish(&context, size, wash: 0.07, vignette: 0.10)
     }
 }

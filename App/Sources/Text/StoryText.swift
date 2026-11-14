@@ -10,8 +10,11 @@ import OmramoCore
 // open and seen states.
 //
 // Marked words are tappable (M3): the paragraph reads the laid-out text back through
-// `Text.LayoutKey` and lays an invisible button, at least 44 × 44 pt, over each marked word.
-// The same words are offered to VoiceOver as custom actions on the paragraph.
+// `Text.LayoutKey` and lays an invisible button, at least 44 × 44 pt, over each marked word
+// (`HitTargets` in the core shares the room between neighbouring words). Each button has the
+// stable accessibility identifier `word.<cardID>` and is a real accessibility element, so
+// VoiceOver, Switch Control and UI tests can reach it; the same words are also offered as
+// custom actions on the paragraph. Words that are not marked have no gesture at all.
 //
 // Opening or closing a card never changes a font, a size or a width — only colours and what the
 // renderer paints — so the text does not move or re-wrap (criterion 3.2).
@@ -69,7 +72,9 @@ struct StoryTextInteraction {
     var markState: @MainActor (StoryCardRef) -> MarkState = { _ in .idle }
     var canOpen: @MainActor (StoryCardRef) -> Bool = { _ in false }
     var actionName: @MainActor (StoryCardRef) -> String? = { _ in nil }
-    var open: @MainActor (StoryCardRef, BlockID) -> Void = { _, _ in }
+    /// The third value is the word's rectangle in window coordinates when the card is opened
+    /// by a tap on the word (the card's opening motion starts there), else nil.
+    var open: @MainActor (StoryCardRef, BlockID, CGRect?) -> Void = { _, _, _ in }
     var hold: @MainActor (BlockID) -> ParagraphHold = { _ in .none }
     /// The beam of a held paragraph brightens toward the pane's trailing edge (the card is on
     /// the trailing pane) or its leading edge.
@@ -489,28 +494,52 @@ private enum MarkRegions {
 }
 
 /// Invisible buttons over the marked words of one paragraph, each at least 44 × 44 pt (§7).
+/// Neighbouring words share the room between them (`HitTargets.resolve`), so a tap always
+/// opens the nearer word. Each button is `word.<cardID>` for assistive technology and tests.
 private struct MarkButtons: View {
     let layouts: [Text.LayoutKey.AnchoredLayout]
+    /// The paragraph's cards, in reading order: the fallback when no layout is reported.
+    let refs: [StoryCardRef]
     let canOpen: @MainActor (StoryCardRef) -> Bool
-    let open: @MainActor (StoryCardRef) -> Void
+    let actionName: @MainActor (StoryCardRef) -> String?
+    /// The card to open and the word's rectangle in window coordinates.
+    let open: @MainActor (StoryCardRef, CGRect?) -> Void
 
     var body: some View {
         GeometryReader { proxy in
             let regions = MarkRegions.find(in: layouts, proxy: proxy).filter { canOpen($0.ref) }
-            let minimum = CGFloat(Tokens.Size.minimumHitTarget)
-            ForEach(regions) { region in
-                Button {
-                    open(region.ref)
-                } label: {
-                    Color.clear.contentShape(Rectangle())
+            let areas = HitTargets.resolve(
+                regions.map { LayoutRect(x: Double($0.rect.minX), y: Double($0.rect.minY), width: Double($0.rect.width), height: Double($0.rect.height)) },
+                minimum: Tokens.Size.minimumHitTarget
+            )
+            let window = proxy.frame(in: .global).origin
+            if regions.isEmpty, let first = refs.first {
+                // The text layout was not reported (see `usesLayoutKey`): the whole paragraph
+                // opens its first marked word, so a marked word is never dead.
+                wordButton(first, word: nil)
+                    .frame(width: proxy.size.width, height: proxy.size.height)
+            } else {
+                // `areas` has one entry for each region, in the same order.
+                ForEach(Array(regions.enumerated()), id: \.offset) { item in
+                    let area = areas[item.offset]
+                    let word = item.element.rect.offsetBy(dx: window.x, dy: window.y)
+                    wordButton(item.element.ref, word: word)
+                        .frame(width: CGFloat(area.width), height: CGFloat(area.height))
+                        .position(x: CGFloat(area.x + area.width / 2), y: CGFloat(area.y + area.height / 2))
                 }
-                .buttonStyle(.plain)
-                .frame(width: max(minimum, region.rect.width + 8), height: max(minimum, region.rect.height))
-                .position(x: region.rect.midX, y: region.rect.midY)
             }
         }
-        // VoiceOver reaches the same words through the paragraph's custom actions.
-        .accessibilityHidden(true)
+    }
+
+    private func wordButton(_ ref: StoryCardRef, word: CGRect?) -> some View {
+        Button {
+            open(ref, word)
+        } label: {
+            Color.clear.contentShape(Rectangle())
+        }
+        .buttonStyle(.plain)
+        .accessibilityLabel(Text(verbatim: actionName(ref) ?? "Show more"))
+        .accessibilityIdentifier(ref.wordIdentifier)
     }
 }
 
@@ -704,23 +733,11 @@ private struct StoryParagraph: View {
         let blockID = block.id.fragmentParent
         let hold = interaction.hold(blockID)
         let refs = openableRefs
-        let open: @MainActor (StoryCardRef) -> Void = { ref in
-            interaction.open(ref, blockID)
+        let open: @MainActor (StoryCardRef, CGRect?) -> Void = { ref, rect in
+            interaction.open(ref, blockID, rect)
         }
 
-        content(open: open, refs: refs)
-            // One accessibility element per paragraph, labelled with the plain text. Marked
-            // words are custom actions ("Show picture: Rin Gin", "About: The Monkey").
-            .accessibilityElement(children: .ignore)
-            .accessibilityLabel(Text(verbatim: block.plainText))
-            .accessibilityActions {
-                ForEach(Array(refs.enumerated()), id: \.offset) { item in
-                    Button(interaction.actionName(item.element) ?? "Show more") {
-                        open(item.element)
-                    }
-                }
-            }
-            .modifier(ReaderFocusModifier(binding: interaction.focus, value: .block(blockID)))
+        content(open: open, refs: refs, blockID: blockID)
             // Dimming is opacity only: nothing moves (45% on Low, 42% elsewhere).
             .opacity(hold == .dimmed ? (builder.story.tier == .low ? 0.45 : 0.42) : 1)
             .background(alignment: .leading) {
@@ -741,10 +758,42 @@ private struct StoryParagraph: View {
         block.cardRefs.filter { builder.interaction.canOpen($0) }
     }
 
+    /// One accessibility element per paragraph, labelled with the plain text. Marked words
+    /// are custom actions ("Show picture: Rin Gin", "About: The Monkey"); the word buttons
+    /// laid over the text afterwards are separate elements (`word.<cardID>`).
+    private func readable<V: View>(
+        _ view: V,
+        open: @escaping @MainActor (StoryCardRef, CGRect?) -> Void,
+        refs: [StoryCardRef],
+        blockID: BlockID
+    ) -> some View {
+        let interaction = builder.interaction
+        return view
+            .accessibilityElement(children: .ignore)
+            .accessibilityLabel(Text(verbatim: block.plainText))
+            .accessibilityActions {
+                ForEach(Array(refs.enumerated()), id: \.offset) { item in
+                    Button(interaction.actionName(item.element) ?? "Show more") {
+                        open(item.element, nil)
+                    }
+                }
+            }
+            .modifier(ReaderFocusModifier(binding: interaction.focus, value: .block(blockID)))
+    }
+
     @ViewBuilder
-    private func content(open: @escaping @MainActor (StoryCardRef) -> Void, refs: [StoryCardRef]) -> some View {
+    private func content(
+        open: @escaping @MainActor (StoryCardRef, CGRect?) -> Void,
+        refs: [StoryCardRef],
+        blockID: BlockID
+    ) -> some View {
         if block.kind == .pathText {
-            PathTextView(story: builder.story, block: block, textScale: textScale)
+            readable(
+                PathTextView(story: builder.story, block: block, textScale: textScale),
+                open: open,
+                refs: refs,
+                blockID: blockID
+            )
         } else {
             let lineSpacing = builder.lineSpacing(for: block)
             let text = builder.text(for: block)
@@ -754,19 +803,23 @@ private struct StoryParagraph: View {
                 .frame(maxWidth: .infinity, alignment: .leading)
             Group {
                 if StoryTextStyle.usesTextRenderer && StoryTextStyle.usesLayoutKey && builder.interaction.measure == nil {
-                    text
-                        .textRenderer(renderer)
+                    readable(text.textRenderer(renderer), open: open, refs: refs, blockID: blockID)
                         .overlayPreferenceValue(Text.LayoutKey.self) { layouts in
                             if !refs.isEmpty {
-                                MarkButtons(layouts: layouts, canOpen: builder.interaction.canOpen, open: open)
+                                MarkButtons(
+                                    layouts: layouts,
+                                    refs: refs,
+                                    canOpen: builder.interaction.canOpen,
+                                    actionName: builder.interaction.actionName,
+                                    open: open
+                                )
                             }
                         }
                 } else if StoryTextStyle.usesTextRenderer {
-                    text
-                        .textRenderer(renderer)
+                    readable(text.textRenderer(renderer), open: open, refs: refs, blockID: blockID)
                         .modifier(ParagraphTapFallback(ref: builder.interaction.measure == nil ? refs.first : nil, open: open))
                 } else {
-                    text
+                    readable(text, open: open, refs: refs, blockID: blockID)
                         .modifier(ParagraphTapFallback(ref: builder.interaction.measure == nil ? refs.first : nil, open: open))
                 }
             }
@@ -781,13 +834,14 @@ private struct StoryParagraph: View {
 /// Fallback when per-word buttons are switched off: the whole paragraph opens its first mark.
 private struct ParagraphTapFallback: ViewModifier {
     let ref: StoryCardRef?
-    let open: @MainActor (StoryCardRef) -> Void
+    let open: @MainActor (StoryCardRef, CGRect?) -> Void
 
     func body(content: Content) -> some View {
         if let ref, !StoryTextStyle.usesLayoutKey || !StoryTextStyle.usesTextRenderer {
             content
                 .contentShape(Rectangle())
-                .onTapGesture { open(ref) }
+                .onTapGesture { open(ref, nil) }
+                .accessibilityIdentifier(ref.wordIdentifier)
         } else {
             content
         }

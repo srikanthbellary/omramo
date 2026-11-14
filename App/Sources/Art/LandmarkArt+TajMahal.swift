@@ -37,8 +37,9 @@ extension LandmarkArt {
             stars(&g, count: 26, seed: 11, maxY: 110, color: Art.color(0xFFFFFF))
         }
 
-        // The low sun, just clear of the far trees.
-        Art.glow(&context, 44, 242, 190, Art.color(0xFFD3A0), alpha: 0.7)
+        // The shared horizon band, then the low sun, just clear of the far trees.
+        horizon(&context, y: 249, rise: 70, hex: 0xFFD9B0, alpha: 0.35)
+        Art.glow(&context, 44, 242, 190, Art.color(0xFFD3A0), alpha: 0.6)
         Art.glow(&context, 44, 241, 46, Art.color(0xFFF1D2), alpha: 0.9)
         Art.fill(&context, Art.circle(44, 240, 8), Art.color(0xFFF8E2))
 
@@ -175,6 +176,8 @@ extension LandmarkArt {
     }
 
     private static func tajPlinth(_ context: inout GraphicsContext) {
+        // The tomb's contact shadow, falling a little to the right, away from the sun.
+        ArtStyle.contactShadow(&context, 224, 251, 152, 5, alpha: 0.26)
         let plinth = Art.rect(76, 232, 280, 18)
         tajMarble(&context, plinth, from: 76, to: 356)
         Art.fill(&context, Art.rect(74, 231, 284, 2.2), Art.color(0xFFFFFF, 0.9))
@@ -406,5 +409,6 @@ extension LandmarkArt {
     private static func tajFinish(_ context: inout GraphicsContext) {
         bottomFade(&context, 0x12305A, from: 300, alpha: 0.85)
         tooth(&context, seed: 301, light: 0.06, dark: 0.05)
+        finish(&context, wash: 0.08, vignette: 0.07)
     }
 }

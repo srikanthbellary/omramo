@@ -44,8 +44,8 @@ extension LandmarkArt {
             stars(&g, count: 30, seed: 37, maxY: 150, color: Art.color(0xFFFFFF))
         }
 
-        // A pale moon.
-        Art.glow(&context, 322, 76, 64, Art.color(0xE8E4FF), alpha: 0.34)
+        // A pale moon, its halo warmed a little by the evening.
+        Art.glow(&context, 322, 76, 64, Art.color(0xFFEBD8), alpha: 0.32)
         let moon = Art.circle(322, 76, 13)
         let moonStops: [(Color, CGFloat)] = [
             (Art.color(0xFFFEF6), 0),
@@ -67,6 +67,9 @@ extension LandmarkArt {
             clouds.addEllipse(in: CGRect(x: 60, y: 210, width: 90, height: 6))
             Art.fill(&g, clouds, Art.color(0xF0B0B8))
         }
+        // The shared horizon band, where the city meets the sky (it replaces the old blurred
+        // haze of the finish, so the picture has one blur layer fewer).
+        horizon(&context, y: 299, rise: 80, hex: 0xFFC9A4, alpha: 0.4)
     }
 
     private static func skytreeGround(_ context: inout GraphicsContext) {
@@ -357,6 +360,8 @@ extension LandmarkArt {
     private static func skytreeTower(_ context: inout GraphicsContext) {
         let cx = skytreeX
         Art.glow(&context, cx, 150, 100, Art.color(0xCFC8FF), alpha: 0.22)
+        // The tower's contact shadow, falling a little to the right.
+        ArtStyle.contactShadow(&context, cx + 5, 301, 28, 4, alpha: 0.3)
 
         let shaftStops: [(Color, CGFloat)] = [
             (Art.color(0xF6F3FF, 0.78), 0),
@@ -454,11 +459,9 @@ extension LandmarkArt {
     // MARK: Finish
 
     private static func skytreeFinish(_ context: inout GraphicsContext) {
-        // Evening haze where the city meets the sky.
-        Art.blurred(&context, radius: 7, opacity: 0.3) { g in
-            Art.fill(&g, Art.ellipse(216, 300, 250, 9), Art.color(0xF4BEA8))
-        }
         bottomFade(&context, 0x14254F, from: 312, alpha: 0.82)
         tooth(&context, seed: 631, light: 0.05, dark: 0.05)
+        // An evening picture: a little less wash.
+        finish(&context, wash: 0.06, vignette: 0.08)
     }
 }

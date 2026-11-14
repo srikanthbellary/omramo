@@ -365,6 +365,7 @@ struct PreviousPageButton: View {
             fill: fill,
             action: action
         )
+        .accessibilityIdentifier("reader.previous")
         // Hardware keyboard: ← goes back (Mi).
         .keyboardShortcut(.leftArrow, modifiers: [])
         .disabled(!isEnabled)

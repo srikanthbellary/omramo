@@ -37,10 +37,10 @@ extension JatakaArt {
     // MARK: Monkey
 
     private static func monkeyEye(_ context: inout GraphicsContext, _ x: CGFloat, _ lookX: CGFloat, _ lookY: CGFloat) {
-        Art.fill(&context, Art.ellipse(x, -3, 7.4, 8.6), .white)
-        Art.fill(&context, Art.circle(x + lookX, -2.4 + lookY, 5.2), Art.color(0x2B160D))
-        Art.fill(&context, Art.circle(x + lookX - 1.8, -4.6 + lookY, 1.9), .white)
-        Art.fill(&context, Art.circle(x + lookX + 2, -0.4 + lookY, 0.9), Art.color(0xFFFFFF, 0.8))
+        // The shared eye (ArtStyle): large, with a white, catchlight on the upper left.
+        // `lookX` / `lookY` are the design's offsets in head units (about −3…3).
+        let look = CGPoint(x: lookX / 3, y: lookY / 3)
+        ArtStyle.eye(&context, x, -3, 8.2, look: look, iris: Art.color(0x2B160D), showsWhite: true)
     }
 
     /// The Monkey's head, centred on (0, 0); about 92 wide with the ears and 78 tall.
@@ -54,10 +54,10 @@ extension JatakaArt {
         let earLine = Art.color(0xC97D5E)
         Art.fill(&context, Art.circle(-33, -3, 13), fur)
         Art.fill(&context, Art.circle(-33, -3, 8), earPink)
-        Art.stroke(&context, Art.svg("M-37,-6 q5,3 3,9"), earLine, width: 1.8)
+        Art.stroke(&context, Art.svg("M-37,-6 q5,3 3,9"), earLine, width: ArtStyle.detailLine)
         Art.fill(&context, Art.circle(33, -3, 13), fur)
         Art.fill(&context, Art.circle(33, -3, 8), earPink)
-        Art.stroke(&context, Art.svg("M37,-6 q-5,3 -3,9"), earLine, width: 1.8)
+        Art.stroke(&context, Art.svg("M37,-6 q-5,3 -3,9"), earLine, width: ArtStyle.detailLine)
 
         // Tuft.
         Art.fill(&context, Art.svg("M-6,-33 C-8,-42 -2,-46 -1,-40 C1,-48 8,-46 6,-38 C11,-43 14,-38 10,-32Z"), furDark)
@@ -69,21 +69,20 @@ extension JatakaArt {
         Art.fillRadial(&context, face, faceStops(), center: CGPoint(x: -2.7, y: -5.5), radius: 38)
 
         if blush {
-            let pink = Art.color(0xFF8A7A, 0.5)
-            Art.fill(&context, Art.ellipse(-17, 9, 5.5, 3.6), pink)
-            Art.fill(&context, Art.ellipse(17, 9, 5.5, 3.6), pink)
+            ArtStyle.cheek(&context, -17.5, 9.5, 7.5, alpha: 0.62)
+            ArtStyle.cheek(&context, 17.5, 9.5, 7.5, alpha: 0.62)
         }
         monkeyEye(&context, -11, lookX, lookY)
         monkeyEye(&context, 11, lookX, lookY)
 
         // Brows and nose.
-        Art.stroke(&context, Art.svg("M-17,-14 q6,-4 11,-1"), furDark, width: 2)
-        Art.stroke(&context, Art.svg("M6,-15 q6,-3 11,1"), furDark, width: 2)
-        Art.stroke(&context, Art.svg("M-2.6,7 q2.6,2.2 5.2,0"), Art.color(0x8A4A2C), width: 2)
+        Art.stroke(&context, Art.svg("M-17,-14.5 q6,-4 11,-1"), furDark, width: ArtStyle.contourLine)
+        Art.stroke(&context, Art.svg("M6,-15.5 q6,-3 11,1"), furDark, width: ArtStyle.contourLine)
+        Art.stroke(&context, Art.svg("M-2.6,7 q2.6,2.2 5.2,0"), Art.color(0x8A4A2C), width: ArtStyle.detailLine)
 
         switch mouth {
         case .smile:
-            Art.stroke(&context, Art.svg("M-9,12.5 Q0,21 9,12.5"), mouthBrown, width: 2.4)
+            ArtStyle.smile(&context, 0, 12.5, width: 18, curve: 4.25, color: mouthBrown, lineWidth: ArtStyle.contourLine)
         case .grin:
             Art.fill(&context, Art.svg("M-11,11 Q0,25 11,11 Q0,15 -11,11Z"), mouthBrown)
             Art.fill(&context, Art.svg("M-7,13.2 Q0,16 7,13.2 L6,15 Q0,18 -6,15Z"), .white)
@@ -93,7 +92,7 @@ extension JatakaArt {
         case .oh:
             Art.fill(&context, Art.ellipse(0, 16, 4.6, 5.6), mouthBrown)
         case .smirk:
-            Art.stroke(&context, Art.svg("M-7,14 Q2,19 10,11"), mouthBrown, width: 2.4)
+            Art.stroke(&context, Art.svg("M-7,14 Q2,19 10,11"), mouthBrown, width: ArtStyle.contourLine)
         }
 
         // Soft light on the brow.
@@ -247,7 +246,8 @@ extension JatakaArt {
 
     /// The Crocodile, facing left, snout tip at (0, 0). Everything below `waterline` is
     /// washed with `water`, so the animal sits in the river. `elder` adds a heavy brow and
-    /// the lines of age.
+    /// the lines of age. Pass `mirrored: true` when the caller flips the animal left to right
+    /// (`scaleX: -1`), so the eye's catchlight stays on the upper left of the picture.
     static func croc(
         _ context: inout GraphicsContext,
         skin: CrocSkin,
@@ -258,7 +258,8 @@ extension JatakaArt {
         water: Color = Art.color(0x19A39E),
         waterOpacity: Double = 0.78,
         tooth: Bool = true,
-        elder: Bool = false
+        elder: Bool = false,
+        mirrored: Bool = false
     ) {
         // Ridges along the back, behind the body.
         var scutes = Path()
@@ -272,7 +273,7 @@ extension JatakaArt {
             sx += 14.5
         }
         Art.fill(&context, scutes, skin.scute)
-        Art.stroke(&context, scutes, skin.line, width: 0.8)
+        Art.stroke(&context, scutes, skin.line.opacity(0.6), width: ArtStyle.detailLine)
 
         let body = Art.svg(crocBody)
         let skinStops: [(Color, CGFloat)] = [(skin.top, 0), (skin.mid, 0.45), (skin.low, 1)]
@@ -304,23 +305,23 @@ extension JatakaArt {
             }
         }
 
-        // Mouth line, teeth, nostril.
-        Art.stroke(&context, Art.svg("M-3,7 C30,8 70,8.5 94,7 C100,6 104,2 106,-3"), skin.jaw, width: 2)
+        // Mouth: the shared round-capped curve along the jaw, and a friendly upturned corner.
+        ArtStyle.smile(&context, 44, 7, width: 94, curve: 0.75, color: skin.jaw, lineWidth: ArtStyle.contourLine)
+        Art.stroke(&context, Art.svg("M91,7 C98,6.6 104,2 106,-3"), skin.jaw, width: ArtStyle.contourLine)
+        // Teeth: small round bumps, comic rather than sharp.
         var teeth = Path()
-        var tx: CGFloat = 8
+        var tx: CGFloat = 9
         while tx < 82 {
-            let ty = 6 - tx * 0.012
+            let ty = 7.2 - tx * 0.004
             teeth.move(to: CGPoint(x: tx, y: ty))
-            teeth.addLine(to: CGPoint(x: tx + 3.2, y: ty + 6.5))
-            teeth.addLine(to: CGPoint(x: tx + 6.4, y: ty))
+            teeth.addQuadCurve(to: CGPoint(x: tx + 5.6, y: ty), control: CGPoint(x: tx + 2.8, y: ty + 9))
             teeth.closeSubpath()
             tx += 9
         }
         Art.fill(&context, teeth, .white)
         if tooth {
-            let fang = Art.svg("M22,8.5 l3.5,-8 l3.5,8Z")
-            Art.fill(&context, fang, .white)
-            Art.stroke(&context, fang, Art.color(0xDCE8C0), width: 0.5)
+            // The one tooth that sticks up over the lip, rounded too.
+            Art.fill(&context, Art.svg("M21.6,7.6 q3.4,-13 6.8,0Z"), .white)
         }
         Art.fill(&context, Art.ellipse(11, -5.5, 2.6, 1.8), skin.jaw)
         if elder {
@@ -333,27 +334,41 @@ extension JatakaArt {
             Art.fill(&context, bumps, skin.line.opacity(0.45))
         }
 
+        // A soft blush under the eye, quieter on the old mother.
+        ArtStyle.cheek(&context, 101, -3.5, 7, alpha: elder ? 0.26 : 0.4)
+
         // Eye.
         Art.fill(&context, Art.svg("M78,-17 C82,-30 104,-34 112,-20 C104,-9 84,-8 78,-17Z"), skin.socket)
         if lid == .shut {
             Art.fill(&context, Art.circle(95, -19, 9), skin.socket)
         } else {
+            // A yellow rim (the crocodile's own colour) around the shared eye of ArtStyle.
             Art.fill(&context, Art.circle(95, -19, 9), skin.eye)
-            Art.stroke(&context, Art.circle(95, -19, 9), skin.line, width: 1.4)
-            Art.fill(&context, Art.ellipse(95 + lookX, -18.5 + lookY, 2.8, 6), Art.color(0x1D2B1D))
-            Art.fill(&context, Art.circle(93 + lookX, -22 + lookY, 1.7), .white)
+            Art.stroke(&context, Art.circle(95, -19, 9), skin.line, width: ArtStyle.detailLine)
+            let eyeRadius: CGFloat = 7.6
+            let crocIris = Art.color(0x1D2B1D)
+            let look = CGPoint(x: lookX / 2.5, y: lookY / 2.5)
+            if mirrored {
+                // Un-flip the eye so its catchlight is on the upper left of the picture.
+                let flipped = CGPoint(x: -look.x, y: look.y)
+                Art.group(&context, x: 95, y: -19, scaleX: -1) { e in
+                    ArtStyle.eye(&e, 0, 0, eyeRadius, look: flipped, iris: crocIris, showsWhite: true)
+                }
+            } else {
+                ArtStyle.eye(&context, 95, -19, eyeRadius, look: look, iris: crocIris, showsWhite: true)
+            }
         }
         switch lid {
         case .sleepy:
             Art.fill(&context, Art.svg("M84,-22 Q94,-33 106,-23 Q95,-25 84,-22Z"), skin.scute)
-            Art.stroke(&context, Art.svg("M84.5,-21 Q95,-25 105.5,-22"), skin.line, width: 1.6)
+            Art.stroke(&context, Art.svg("M84.5,-21 Q95,-25 105.5,-22"), skin.line, width: ArtStyle.detailLine)
         case .sly:
             Art.fill(&context, Art.svg("M83,-26 Q96,-34 107,-22 Q96,-27 83,-24Z"), skin.scute)
-            Art.stroke(&context, Art.svg("M83.5,-24 Q96,-27 106,-21"), skin.line, width: 1.8)
+            Art.stroke(&context, Art.svg("M83.5,-24 Q96,-27 106,-21"), skin.line, width: ArtStyle.detailLine)
         case .wide:
             break
         case .shut:
-            Art.stroke(&context, Art.svg("M85,-19 Q95,-13 105,-19"), skin.line, width: 2.2)
+            ArtStyle.smile(&context, 95, -19, width: 20, curve: 3, color: skin.line, lineWidth: ArtStyle.contourLine)
         }
         if elder {
             // A heavy brow and the creases of age under the eye.
@@ -362,7 +377,7 @@ extension JatakaArt {
             creases.addPath(Art.svg("M82,-8 Q94,-3 108,-9"))
             creases.addPath(Art.svg("M86,-4 Q95,0 104,-4"))
             creases.addPath(Art.svg("M112,-14 Q118,-10 124,-12"))
-            Art.stroke(&context, creases, skin.line.opacity(0.6), width: 1.3)
+            Art.stroke(&context, creases, skin.line.opacity(0.5), width: ArtStyle.detailLine)
         }
     }
 }

@@ -11,6 +11,10 @@ private struct WindowSafeAreaKey: EnvironmentKey {
     static let defaultValue = EdgeInsets()
 }
 
+private struct WindowSizeKey: EnvironmentKey {
+    static let defaultValue = CGSize.zero
+}
+
 private struct PaneContextKey: EnvironmentKey {
     static let defaultValue = PaneContext(side: .single, size: .zero, scale: 1, safeArea: EdgeInsets(), source: .derived)
 }
@@ -26,6 +30,12 @@ extension EnvironmentValues {
     var windowSafeArea: EdgeInsets {
         get { self[WindowSafeAreaKey.self] }
         set { self[WindowSafeAreaKey.self] = newValue }
+    }
+
+    /// The whole window's size, safe areas included. Set by `PaneLayoutReader`.
+    var windowSize: CGSize {
+        get { self[WindowSizeKey.self] }
+        set { self[WindowSizeKey.self] = newValue }
     }
 
     /// The pane a view is drawn in. Set by `TwoPane`.
@@ -107,6 +117,7 @@ struct PaneLayoutReader<Content: View>: View {
             content()
                 .environment(\.paneLayout, layout)
                 .environment(\.windowSafeArea, safeArea)
+                .environment(\.windowSize, proxy.size)
                 .frame(width: proxy.size.width, height: proxy.size.height, alignment: .topLeading)
         }
         // Scenes are full-bleed: the canvas is the whole window, as in the designs, where

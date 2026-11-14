@@ -39,8 +39,9 @@ extension LandmarkArt {
         backdrop(&context, sky)
         stars(&context, count: 40, seed: 7, maxY: 150, color: Art.color(0xFFF3DC))
 
-        // The last of the sunset, low on the left.
-        Art.glow(&context, 52, 268, 170, Art.color(0xFFB56C), alpha: 0.6)
+        // The shared horizon band, then the last of the sunset, low on the left.
+        horizon(&context, y: 267, rise: 70, hex: 0xFFC482, alpha: 0.35)
+        Art.glow(&context, 52, 268, 170, Art.color(0xFFB56C), alpha: 0.5)
 
         Art.blurred(&context, radius: 4, opacity: 0.5) { g in
             var clouds = Path()
@@ -208,7 +209,8 @@ extension LandmarkArt {
         let surf = Art.svg("M168,274 C176,277 184,275 192,277 M202,279 C214,281 226,279 238,281 M300,280 C314,281 330,279 344,277 M350,275 L360,276")
         Art.stroke(&context, surf, Art.color(0xFFFFFF, 0.5), width: 0.9)
 
-        // The walled court the tower stands in.
+        // The walled court the tower stands in, with its contact shadow on the rock.
+        ArtStyle.contactShadow(&context, cx + 6, 249, 54, 4, alpha: 0.3)
         let court = Art.polygon([pt(cx - 46, 248), pt(cx - 42, 235), pt(cx + 42, 235), pt(cx + 46, 248)])
         let courtStops: [(Color, CGFloat)] = [
             (Art.color(0xF0D2AC), 0),
@@ -411,7 +413,7 @@ extension LandmarkArt {
             (Art.color(0xDCAA82), 1),
         ]
         Art.group(&context, x: x, y: y, scale: scale, scaleX: mirror) { g in
-            Art.fill(&g, Art.ellipse(0, 3.4, 25, 2.2), Art.color(0x0A1C38, 0.4))
+            ArtStyle.contactShadow(&g, 2, 3.4, 26, 2.6, alpha: 0.4)
             ripples(&g, in: CGRect(x: -16, y: 5, width: 32, height: 12), count: 7, seed: 61, color: Art.color(0xFCE8C6, 0.3), width: 0.8, length: 4...12)
 
             Art.stroke(&g, Art.line(-18, -4, -26, 4.5), Art.color(0x2A1E30), width: 1)
@@ -442,5 +444,7 @@ extension LandmarkArt {
         tooth(&context, seed: 411, light: 0.08, dark: 0.08)
         let paper = CGRect(x: 0, y: 0, width: unitWidth, height: 300)
         Art.stipple(&context, in: paper, count: 180, seed: 433, color: Art.color(0xFFE9C8), alpha: 0.07, size: 0.4...1)
+        // A dusk picture: a little less wash.
+        finish(&context, wash: 0.06, vignette: 0.08)
     }
 }

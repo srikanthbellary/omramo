@@ -23,6 +23,7 @@ extension JatakaArt {
             (Art.color(0xFFF7C2, 0.95), 0), (Art.color(0xFFEE9E, 0.5), 0.45), (Art.color(0xFFEE9E, 0), 1),
         ]
         Art.fillRadial(&context, Art.circle(96, H - 30, 150), glowStops, center: CGPoint(x: 96, y: H - 30), radius: 150)
+        ArtStyle.horizonGlow(&context, width: w, y: H, rise: 70, color: ArtStyle.jataka.glowColor, alpha: 0.5)
         Art.fill(&context, Art.circle(96, H - 34, 30), Art.color(0xFFF9D6))
         cloud(&context, 30, 70, scale: 0.9, color: Art.color(0xFFFFFF, 0.55))
 
@@ -104,29 +105,31 @@ extension JatakaArt {
             (Art.color(0x9A6549), 0), (Art.color(0x6B4138), 0.45), (Art.color(0x3E2532), 1),
         ]
         Art.fillLinear(&context, trunk, bark, from: CGPoint(x: 280, y: 120), to: CGPoint(x: 372, y: 170))
-        Art.stroke(&context, Art.svg("M344,206 C336,166 314,124 276,90"), Art.color(0xC68A62, 0.55), width: 2.6)
+        Art.stroke(&context, Art.svg("M344,206 C336,166 314,124 276,90"), Art.color(0xC68A62, 0.55), width: ArtStyle.contourLine)
         var limbs = Path()
         limbs.addPath(Art.svg("M300,112 C262,104 226,104 176,96"))
         limbs.addPath(Art.svg("M322,134 C340,104 350,84 356,56"))
         Art.stroke(&context, limbs, Art.color(0x6B4138), width: 9)
         Art.stroke(&context, Art.svg("M352,238 C340,250 326,254 310,256 M388,240 C396,250 408,254 420,254"), Art.color(0x5B3B36), width: 6)
         let hanging = Art.svg("M196,96 q4,34 -2,70 M232,100 q-4,26 2,52 M158,92 q3,22 -1,44")
-        Art.stroke(&context, hanging, Art.color(0x5B3B36, 0.85), width: 1.8)
+        Art.stroke(&context, hanging, Art.color(0x5B3B36, 0.85), width: ArtStyle.detailLine)
         let crown: [Blob] = [
             (240, 58, 58), (160, 80, 44), (304, 30, 50), (108, 108, 30), (200, 22, 40), (356, 56, 38), (136, 46, 30),
             (400, 22, 34), (84, 78, 22),
         ]
         canopy(&context, crown, seed: 7)
 
-        lotusPad(&context, 70, 300, 26, flower: true)
-        lotusPad(&context, 132, 318, 18)
+        // Kept above the bottom quarter, which the card fades into its own colour.
+        lotusPad(&context, 74, 272, 24, flower: true)
+        lotusPad(&context, 136, 288, 17)
         dragonfly(&context, 150, 226, scale: 0.9)
         ripples(&context, 250, 292, 90, count: 2, color: .white, opacity: 0.45)
 
         // Sink into the card.
         let sink: [(Color, CGFloat)] = [(cardBlue.opacity(0), 0), (cardBlue.opacity(0.9), 1)]
         Art.fillLinear(&context, Art.rect(0, h - 120, w, 120), sink, from: CGPoint(x: 0, y: h - 120), to: CGPoint(x: 0, y: h))
-        Art.stipple(&context, in: CGRect(x: 0, y: 0, width: w, height: h), count: 220, seed: 5, color: .white, alpha: 0.05)
+        ArtStyle.tooth(&context, in: CGRect(x: 0, y: 0, width: w, height: h), seed: 5, alpha: 0.05)
+        ArtStyle.finish(&context, size)
     }
 
     /// One ripe mango hanging at (x, y), turned by `rotate` degrees.
@@ -232,7 +235,8 @@ extension JatakaArt {
         // Sink into the card.
         let sink: [(Color, CGFloat)] = [(cardGreen.opacity(0), 0), (cardGreen.opacity(0.9), 1)]
         Art.fillLinear(&context, Art.rect(0, h - 110, w, 110), sink, from: CGPoint(x: 0, y: h - 110), to: CGPoint(x: 0, y: h))
-        Art.stipple(&context, in: CGRect(x: 0, y: 0, width: w, height: h), count: 220, seed: 9, color: .white, alpha: 0.05)
+        ArtStyle.tooth(&context, in: CGRect(x: 0, y: 0, width: w, height: h), seed: 9, alpha: 0.05)
+        ArtStyle.finish(&context, size)
     }
 
     // MARK: Character card (432 × 400)
@@ -265,14 +269,15 @@ extension JatakaArt {
         let branch = Art.svg("M-10,338 C100,326 300,330 442,318 L442,346 C300,352 100,352 -10,362Z")
         let bark: [(Color, CGFloat)] = [(Art.color(0x8E5B45), 0), (Art.color(0x5B3A36), 1)]
         Art.fillLinear(&context, branch, bark, from: CGPoint(x: -10, y: 0), to: CGPoint(x: 442, y: 0))
-        Art.stroke(&context, Art.svg("M-10,338 C100,326 300,330 442,318"), Art.color(0xC68A62, 0.7), width: 3, cap: .butt)
-        Art.fill(&context, Art.ellipse(220, 336, 64, 7), Art.color(0x3A2230, 0.3))
+        Art.stroke(&context, Art.svg("M-10,338 C100,326 300,330 442,318"), Art.color(0xC68A62, 0.7), width: ArtStyle.contourLine, cap: .butt)
+        ArtStyle.contactShadow(&context, 222, 338, 84, 10, alpha: 0.32)
 
         Art.group(&context, x: 220, y: 330, scale: 2.15) { g in
             monkey(&g, pose: .wave, lookX: 0, lookY: 0.5, mouth: .grin)
         }
         let front: [Blob] = [(70, 348, 26), (36, 330, 20), (392, 326, 24)]
         canopy(&context, front, seed: 18)
+        ArtStyle.finish(&context, size)
     }
 
     // MARK: Faces (100 × 100)
@@ -325,6 +330,7 @@ extension JatakaArt {
                 (Art.color(0x7FE3D3), 0), (Art.color(0xD9F7C8), 0.8), (Art.color(0xFFF0A0), 1),
             ]
             Art.fillLinear(&g, Art.rect(0, 0, 240, hd), sky, from: CGPoint(x: 0, y: 0), to: CGPoint(x: 0, y: H))
+            ArtStyle.horizonGlow(&g, width: 240, y: H, rise: 44 * k, color: ArtStyle.jataka.glowColor, alpha: 0.5)
             Art.fill(&g, Art.circle(176, H - 50 * k, 80 * k), Art.color(0xFFF3A8, 0.4))
             Art.fill(&g, Art.circle(176, H - 50 * k, 46 * k), Art.color(0xFFF9D6))
             Art.fill(&g, hills(width: 240, y: H - 4, amp: 14 * k, seed: 6, bottom: H + 4), Art.color(0x7CCAB2))
@@ -339,6 +345,7 @@ extension JatakaArt {
             let skin = youngCrocSkin()
             Art.group(&g, x: crocX, y: crocY, scale: 0.62 * k) { c in
                 croc(&c, skin: skin, lid: .sleepy, waterline: 12, water: Art.color(0x1596A0))
+                ArtStyle.contactShadow(&c, 204, -19, 44, 6, alpha: 0.26)
                 Art.group(&c, x: 206, y: -26, scale: 1.15) { m in
                     monkey(&m, pose: .ride, lookX: -1.5, lookY: 0, mouth: .grin)
                 }
@@ -348,5 +355,6 @@ extension JatakaArt {
             let leaves: [Blob] = [(20 * k, 6 * k, 44 * k), (80 * k, -8 * k, 34 * k), (-6 * k, 60 * k, 26 * k), (240 - 10 * k, 0, 30 * k)]
             canopy(&g, leaves, seed: 4)
         }
+        ArtStyle.finish(&context, size)
     }
 }

@@ -33,12 +33,27 @@ extension View {
     }
 }
 
-/// Press feedback: scale to 0.96 (§3.7, proposal). TODO(M6): haptic and Reduce Motion variant.
+/// Press feedback (§3.7): the control shrinks a little under the finger and comes back.
+/// With Reduce Motion nothing changes size: the control dims slightly instead.
 struct PressScaleButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
-        configuration.label
-            .scaleEffect(configuration.isPressed ? 0.96 : 1)
-            .animation(.easeOut(duration: 0.18), value: configuration.isPressed)
+        PressResponse(isPressed: configuration.isPressed) {
+            configuration.label
+        }
+    }
+}
+
+/// The body of `PressScaleButtonStyle`, as a view so it can read Reduce Motion.
+private struct PressResponse<Label: View>: View {
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    let isPressed: Bool
+    @ViewBuilder var label: () -> Label
+
+    var body: some View {
+        label()
+            .scaleEffect(isPressed && !reduceMotion ? Motion.pressScale : 1)
+            .opacity(isPressed && reduceMotion ? Motion.pressDim : 1)
+            .animation(Motion.quick, value: isPressed)
     }
 }
 
@@ -59,6 +74,8 @@ struct OmramoIcon: View {
         case spark = "icon-spark"
         case previous = "icon-prev"
         case returnArrow = "icon-ret"
+        case flame = "icon-flame"
+        case chevronRight = "icon-chevR"
 
         /// Size in the design, in reference points.
         var size: CGSize {
@@ -75,6 +92,8 @@ struct OmramoIcon: View {
             case .spark: return CGSize(width: 14, height: 14)
             case .previous: return CGSize(width: 15, height: 13)
             case .returnArrow: return CGSize(width: 18, height: 16)
+            case .flame: return CGSize(width: 15, height: 19)
+            case .chevronRight: return CGSize(width: 8, height: 13)
             }
         }
     }
@@ -261,6 +280,9 @@ struct RoundGlassButton: View {
 
 /// The only forward control. A page turns only when the child presses it.
 struct PageTurnButton: View {
+    /// Smallest touch area of the app's primary control, in points.
+    static let minimumTouchSide: CGFloat = 56
+
     @Environment(\.pane) private var pane
     let accent: StoryTheme.Accent
     /// 60 unfolded, 54 folded.
@@ -306,7 +328,9 @@ struct PageTurnButton: View {
                     .foregroundStyle(Color(rgba: Tokens.Gradients.pageTurnArrow(accent)))
             }
             .frame(width: size, height: size)
-            .frame(minWidth: CGFloat(Tokens.Size.minimumHitTarget), minHeight: CGFloat(Tokens.Size.minimumHitTarget))
+            // The primary control: never less than 56 × 56 pt to touch, however small the
+            // pane is drawn (the design's 60 pt button is about 52 pt on a small iPhone).
+            .frame(minWidth: PageTurnButton.minimumTouchSide, minHeight: PageTurnButton.minimumTouchSide)
             .contentShape(Circle())
         }
         .buttonStyle(PressScaleButtonStyle())
@@ -314,6 +338,7 @@ struct PageTurnButton: View {
         .hoverEffect(.lift)
         .accessibilityLabel(Text(verbatim: label))
         .accessibilityValue(Text(verbatim: value))
+        .accessibilityIdentifier("reader.next")
     }
 }
 

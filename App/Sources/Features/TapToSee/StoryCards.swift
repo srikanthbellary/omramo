@@ -166,6 +166,7 @@ struct TapToSeeCard: View {
         }
         .accessibilityElement(children: .contain)
         .accessibilityAddTraits(.isModal)
+        .accessibilityIdentifier(StoryCardRef.tapTarget(content.targetID).cardIdentifier)
     }
 
     /// The culture note, or — for a landmark outside the story's time or place — the framing
@@ -308,6 +309,7 @@ struct CharacterCard: View {
         }
         .accessibilityElement(children: .contain)
         .accessibilityAddTraits(.isModal)
+        .accessibilityIdentifier(StoryCardRef.character(content.characterID).cardIdentifier)
     }
 }
 
