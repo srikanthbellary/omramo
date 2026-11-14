@@ -86,6 +86,9 @@ targets:
         # Placeholder, TBD with the app's bundle identifier (PRD Q20).
         PRODUCT_BUNDLE_IDENTIFIER: com.omramo.app.tests
         PRODUCT_NAME: OmramoTests
+        # Without presets this defaults to iPhone only, and the runner opens in iPhone
+        # compatibility mode on an iPad (idiom .phone, no iPad shots).
+        TARGETED_DEVICE_FAMILY: "1,2"
         # Normally from XcodeGen's presets; set explicitly so @testable symbols link.
         TEST_HOST: "$(BUILT_PRODUCTS_DIR)/Omramo.app/Omramo"
         BUNDLE_LOADER: "$(TEST_HOST)"
@@ -109,6 +112,9 @@ targets:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.omramo.app.uitests
         PRODUCT_NAME: OmramoUITests
+        # Without presets this defaults to iPhone only, and the runner opens in iPhone
+        # compatibility mode on an iPad (idiom .phone, no iPad shots).
+        TARGETED_DEVICE_FAMILY: "1,2"
         GENERATE_INFOPLIST_FILE: YES
         SWIFT_VERSION: "5.0"
         DEVELOPMENT_TEAM: ""
