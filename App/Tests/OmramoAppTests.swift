@@ -58,6 +58,13 @@ final class OmramoAppTests: XCTestCase {
         XCTAssertNil(PaneLayoutProviders.simulation(from: ["Omramo"]))
     }
 
+    func testOpenStoryLaunchArgument() {
+        XCTAssertEqual(DebugLaunch.storyID(from: ["Omramo", "-OmramoOpenStory", "monkey-and-crocodile"]), StoryID("monkey-and-crocodile"))
+        XCTAssertNil(DebugLaunch.storyID(from: ["Omramo", "-OmramoOpenStory"]))
+        XCTAssertNil(DebugLaunch.storyID(from: ["Omramo", "-OmramoOpenStory", "-OmramoPosture"]))
+        XCTAssertNil(DebugLaunch.storyID(from: ["Omramo"]))
+    }
+
     func testReaderModelTurnsPagesAndSavesThePosition() throws {
         let library = try BundledContent.repository().loadLibrary()
         let story = try XCTUnwrap(library.stories.first)

@@ -3,8 +3,8 @@
 #   brew install xcodegen
 #   xcodegen generate        # writes Omramo.xcodeproj (git-ignored; never edit or commit it)
 #
-# See docs/BUILD.md. Nothing here has been run yet: the project was written on a Linux box
-# with no Xcode. Items to check on the first generate are listed in docs/BUILD.md.
+# See docs/BUILD.md. First Mac Studio build (Xcode 26.6, XcodeGen 2.46.0) succeeded
+# after setting ONLY_ACTIVE_ARCH=YES for Debug. Do not edit Omramo.xcodeproj by hand.
 
 name: Omramo
 
@@ -17,6 +17,16 @@ options:
   createIntermediateGroups: true
   groupSortPosition: top
   generateEmptyDirectories: true
+
+# Project-level settings. Command-line xcodebuild defaults ONLY_ACTIVE_ARCH to NO, which
+# tried to compile the app for x86_64 while the local package emitted only arm64 and failed
+# with "unable to resolve module dependency: 'OmramoCore'".
+settings:
+  base:
+    ALWAYS_SEARCH_USER_PATHS: NO
+  configs:
+    Debug:
+      ONLY_ACTIVE_ARCH: YES
 
 # No remote packages, by rule (Kids Category: no third-party SDKs). The only package is our own
 # pure-Swift core, referenced by path.
@@ -89,6 +99,7 @@ schemes:
       commandLineArguments:
         "-OmramoPosture unfolded": false
         "-OmramoPosture folded": false
+        "-OmramoOpenStory monkey-and-crocodile": false
     test:
       config: Debug
       targets:

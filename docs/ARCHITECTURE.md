@@ -24,8 +24,8 @@ Dependency direction is one way: `Omramo` (app) → `OmramoCore`. The core never
 | Language | Swift 6 toolchain. Core package in Swift 6 language mode; app target in Swift 5 mode with complete strict-concurrency checking | Same split the earlier scaffold used; keeps the core strict and the app pragmatic |
 | State | Observation (`@Observable`), `@MainActor` stores | Needs iOS 17+ |
 | **Minimum iOS** | **18.0 — assumption A7** | (1) `TextRenderer` and `Text.Layout` (iOS 18) give per-run glyph rectangles, which the reader needs for tap-word highlights, hit areas, the place marker and text on a path. (2) Observation and `SubscriptionStoreView`-era StoreKit need 17. (3) The app must run on an ordinary iPhone and the simulator today, before the Duo SDK is in hand. |
-| Device family | iPhone (assumption). iPad is an open question (PRD Q1) | |
-| Xcode | Version on the build Mac: open question (PRD Q16). Xcode 16 or later is assumed | |
+| Device family | **Universal (PRD Q1, decided 13 Nov 2026):** iPhone, Duo and iPad (`TARGETED_DEVICE_FAMILY = 1,2`) | iPhone uses the single-pane (folded) layout; Duo uses two panes and the hinge; iPad uses the two-pane spread on the larger canvas, including Split View and Stage Manager, via the same `PaneLayout` resolver. Full iPad layout polish is milestone Mi. |
+| Xcode | First verified: Xcode 26.6 (17F113) on the Mac Studio, 13 Nov 2026. Xcode 16 or later is the floor (PRD Q16). | |
 
 **Open question (depends on the Duo SDK):** if the app ships Duo-only, the true floor is whatever iOS the Duo runs, and raising the deployment target costs nothing. If the Duo posture API exists only in a newer SDK, it is called behind `#available` from the adapter in §5 so the minimum can stay at 18.0 for other iPhones. Both the Duo's OS version and the API names are **unverified** here.
 
@@ -133,7 +133,7 @@ Resolution order — a pure function, fully unit-tested:
 1. **Simulation set** (debug only) → build exactly the requested layout (see 5.4).
 2. **SDK reported a hinge rectangle** → panes are the canvas areas either side of it; posture unfolded.
 3. **SDK reported a posture but no hinge** → unfolded splits the canvas in half around a zero-width hinge; folded is one pane.
-4. **No SDK information** → derive from size: if `canvasWidth ≥ 2 × minimumPaneWidth + virtualGutter` **and** `canvasWidth > canvasHeight`, treat as unfolded with a centred virtual gutter; otherwise folded. An ordinary iPhone in portrait therefore gets the folded layout, and a landscape iPad (if ever supported) gets two panes.
+4. **No SDK information** → derive from size: if `canvasWidth ≥ 2 × minimumPaneWidth + virtualGutter` **and** `canvasWidth > canvasHeight`, treat as unfolded with a centred virtual gutter; otherwise folded. An ordinary iPhone in portrait therefore gets the folded layout. A landscape iPad, or an iPad window wide enough in Split View / Stage Manager, gets two panes. Milestone Mi tightens size-class behaviour (narrow Split View should fall back to single-pane cleanly).
 
 ### 5.3 App-side provider
 
@@ -567,7 +567,7 @@ Reading text never scrolls freely (assumption, consistent with "a page turns onl
 ### 9.1 Design
 
 - **One subscription group**, family plan. Product identifiers are placeholders until PRD Q7: `com.omramo.family.monthly` and, if a yearly plan is wanted, `com.omramo.family.yearly` (assumption A8). The app lists whatever products of the group StoreKit returns, so adding a plan needs no layout rewrite beyond a second plan card.
-- **No server at M1 or for the MVP.** StoreKit 2 verifies transactions on the device. Identity is the Apple Account. No Omramo account, no receipt upload.
+- **No server at M1 or for the MVP.** StoreKit 2 verifies transactions on the device. Identity is the **Apple ID only**. There is no Omramo account, no sign-in screen and no receipt upload. Restore Purchases calls `AppStore.sync()` and is offered on the paywall, behind the grown-up gate.
 - **Prices are never in the app.** The plan card shows `Product.displayPrice` and the subscription period from StoreKit. With no product available it shows the designed "TBD — price not set yet" state in debug, and "Not available right now" with Restore still working in release.
 
 ```
@@ -605,7 +605,7 @@ EntitlementGate / SampleGate (pure, core)    every screen asks these; none decid
 
 ### 10.1 Position
 
-**Collect nothing.** No account, no child profile data leaving the device, no analytics, no advertising, no third-party SDK, no network calls by app code at all in the MVP. The only network activity is the operating system's own StoreKit traffic and, behind the grown-up gate, opening the legal pages.
+**Collect nothing.** No account, no sign-in, no child profile data leaving the device, no analytics, no advertising, no third-party SDK, no network calls by app code at all in the MVP. The only network activity is the operating system's own StoreKit traffic and, behind the grown-up gate, opening the legal pages. This is the required position for an App Store **Kids Category** app under Review Guidelines **1.3** (Kids Category) and **5.1.4** (Kids): no third-party analytics or ads; a parental gate before purchases, external links and settings; a privacy manifest; and no behavioural advertising or cross-app tracking.
 
 ### 10.2 Constraints and how the build meets them
 
@@ -794,7 +794,7 @@ Inspected read-only with `git ls-tree` / `git show` on `origin/cursor/omramo-ios
 
 ## 17. Assumptions (architecture)
 
-1. Minimum iOS 18.0; iPhone device family (A7).
+1. Minimum iOS 18.0 (A7). Universal device family: iPhone, Duo and iPad (Q1 decided 13 Nov 2026; `TARGETED_DEVICE_FAMILY = 1,2`).
 2. `TextRenderer` can supply run rectangles for highlights and hit areas; a link-based fallback exists if not.
 3. Reference pane 432 × 720 pt and a 28 pt gutter until hardware says otherwise.
 4. Unfolded use is with the hinge vertical (landscape-like canvas).
@@ -810,8 +810,8 @@ Inspected read-only with `git ls-tree` / `git show` on `origin/cursor/omramo-ios
 ## 18. Open questions (architecture)
 
 1. **Duo SDK:** API names, SDK and OS version, pane and hinge geometry, per-pane safe areas, window spanning, postures (§5.6; PRD Q4).
-2. **Minimum iOS and device family** once Q1/Q4 are answered.
-3. **Build Mac and Xcode version**; who runs the first compile (PRD Q16).
+2. **Minimum iOS and device family.** Device family is decided (universal, Q1). Minimum iOS stays 18.0 (A7) unless the Duo SDK (Q4) forces a higher floor behind `#available`.
+3. **Build Mac and Xcode version.** First compile recorded: Mac Studio, Xcode 26.6 (17F113), 13 Nov 2026 (PRD Q16). Who signs TestFlight archives remains an owner action.
 4. **`TextRenderer` capability** — to be proven at first compile; decides §8.2 plan versus fallback.
 5. **Product identifiers, plans, trial, price** (PRD Q7); **entitlement cache grace period** (§9.2).
 6. **Bundle identifier and Apple developer team** (PRD Q20).

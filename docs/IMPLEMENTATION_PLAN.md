@@ -26,11 +26,12 @@
 | M5 | Sample gating, subscription, StoreKit 2 | M4 (gate) | 09, 09b |
 | M6 | Splash, motion, accessibility, privacy manifest, release hardening | M3–M5 | 01, all |
 | M7 | Duo hardware and SDK hookup | Duo SDK + device (PRD Q4); can start any time after M2 | all |
-| M8 | Pilot build and owner hand-off (TestFlight is an owner action) | M6, M7 | — |
+| Mi | iPad two-pane and size classes | M2; can run in parallel with M3–M7 | — |
+| M8 | Pilot build and owner hand-off (TestFlight is an owner action) | M6, M7, Mi | — |
 | C1 | **Content production** (parallel workstream, not code): the global launch catalog and landmarks — writing, illustration, cultural review, legal review | PRD Q22–Q31; schema from M1 | — |
 | Later | Downloadable packs, authoring tool, profiles | — | — |
 
-M3, M4 and M7 are independent of each other after M2 and can be reordered. C1 runs alongside the code milestones; it is the long pole for a public release.
+M3, M4, M7 and Mi are independent of each other after M2 and can be reordered. C1 runs alongside the code milestones; it is the long pole for a public release.
 
 ---
 
@@ -246,7 +247,7 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 | 7.1 | On a Duo, unfolded reading shows the scene continuous across the hinge and no text or control inside or within 20 pt of it |
 | 7.2 | Folding and unfolding mid-page keeps the page and paragraph and keeps an open card open |
 | 7.3 | Only one source file references Duo-specific API |
-| 7.4 | The app still runs in single-pane mode on an ordinary iPhone (if PRD Q1 keeps that in scope) |
+| 7.4 | The app still runs in single-pane mode on an ordinary iPhone, and in two-pane mode on iPad when the window is wide enough (Q1 decided; full iPad acceptance is Mi) |
 | 7.5 | Deviations between the device and the locked screenshots are listed and signed off by Srikanth |
 
 ---
@@ -266,6 +267,29 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 | 8.3 | No release-blocking open question remains unanswered (list in §"Blocking questions" below) |
 
 **Future owner actions (not performed by this plan):** Apple developer organisation enrolment, signing and provisioning, App Store Connect app record, TestFlight upload and tester invitations, age rating and Kids Category selection, privacy label, App Review submission, legal review, publishing `omramo.com/privacy` and `/terms`.
+
+---
+
+## Mi — iPad two-pane and size classes
+
+**Decided 13 Nov 2026 (PRD Q1).** The app is universal (`TARGETED_DEVICE_FAMILY = 1,2`). Milestone 1 only flips the device family and confirms the existing pane resolver still builds and launches on an iPad simulator. This milestone is the designed iPad experience.
+
+### Scope
+- Two-pane spread on a full-size iPad canvas (11-inch and 13-inch), using the same `PaneLayout` resolver as the simulated Duo — not a third layout system.
+- Split View and Stage Manager: a window wide enough for two panes plus the virtual gutter uses the two-pane spread; a narrow window falls back to the single-pane (folded) layout without clipped chrome or unusable hit targets.
+- Pointer and keyboard: page-turn and back should work with a click and with the expected keys; no hover-only essential control.
+- Safe areas, status bar, home indicator / multitasking chrome, and Stage Manager window resize (live, not just on end of gesture).
+- Any iPad-specific art or type adjustments stay within the locked v2 tokens; deviations from `docs/design/` are listed for Srikanth.
+- Do not require a dedicated iPad design set unless the running layout cannot reach the same grace as the Duo screens.
+
+### Acceptance criteria
+| # | Criterion |
+|---|---|
+| i.1 | Library and Low-tier Reading use two panes on iPad Pro 11-inch and 13-inch in landscape, and remain usable in portrait *[Mac]* |
+| i.2 | A Split View / Stage Manager window below the two-pane threshold uses the single-pane layout with no clipped tab bar, page-turn button or unreadable type *[Mac]* |
+| i.3 | Resizing across that threshold mid-page keeps the current page, paragraph and any open card *[Mac]* |
+| i.4 | Pointer click and hardware keyboard can turn the page and go back; there is no hover-only essential control *[Mac]* |
+| i.5 | Visual gaps versus the locked Duo screenshots (type, spacing, art, motion) are listed; nothing is shipped that looks like a stretched iPhone layout *[Mac]* |
 
 ---
 
@@ -312,7 +336,6 @@ A parallel workstream run by people (writers, an editor, illustrators, community
 - Downloadable story packs and a remote catalog (`docs/ARCHITECTURE.md` §11).
 - Internal authoring and preview tool.
 - Local reader profiles (PRD Q11).
-- iPad two-pane layout (PRD Q1).
 - Commissioned art replacing all concept art — a parallel content workstream, the long pole for any public release.
 
 ## Blocking questions by milestone
@@ -320,13 +343,14 @@ A parallel workstream run by people (writers, an editor, illustrators, community
 | Milestone | Needs an answer to | If unanswered, the plan proceeds with |
 |---|---|---|
 | M1 | Q18 (who paginates and marks the Low story) | Engineering paginates at about 55 words a page and marks the words shown in the designs |
-| M1 → done | Q16 (a Mac to build on) | M1 stays "code complete, unverified" |
+| M1 → done | Q16 (a Mac to build on) | First compile recorded 13 Nov 2026 on the Mac Studio, Xcode 26.6. Remaining *[Mac]* visual checks still apply. |
 | M2 | Q5 (texts as written?), Q13 (swipe?), Q21 (design gaps G1, G8) | Unaltered public-domain texts; button only; interim Aa panel |
 | M3 | Q21 (gap G4) | Bottom card when folded |
 | M4 | Q9 (gate mechanic), Q10 (streak), Q14 (page counting), Q11 (profiles) | Three digits as words; streak as designed; every forward turn counts; one child |
 | M5 | Q6 (sample), Q7 (plans, identifiers, price), Q20 (bundle id) | Two-page sample; one placeholder product; `com.omramo.app` |
 | M6 | Q2 (age band), Q15 (font), motion approval | Unset age band; Inter for system rows; proposed motion |
-| M7 | Q4 (Duo SDK and device), Q1 (devices) | Cannot proceed |
+| M7 | Q4 (Duo SDK and device) | Cannot proceed (Q1 is decided: universal) |
+| Mi | none blocking; visual sign-off of i.5 | Proceed with the pane resolver and list deviations |
 | M8 | Q5 (review and rights), Q12 (testing), Q20 (legal, account) | Cannot proceed to a pilot |
 | C1 | Q22 (retellings), Q23 (rights), Q24 (consultants), Q25 (authors of originals), Q3 (tier specification); then Q26–Q31 | Cannot start writing. Engineering is not blocked: M1–M6 use the three prototype stories |
 

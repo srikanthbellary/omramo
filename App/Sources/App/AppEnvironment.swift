@@ -24,6 +24,13 @@ final class AppEnvironment {
         for problem in fontProblems {
             print("[Omramo] font problem: \(problem)")
         }
+        if let storyID = DebugLaunch.storyID() {
+            if case .loaded(let loaded) = library, loaded.story(id: storyID) != nil {
+                router.open(storyID)
+            } else {
+                print("[Omramo] -OmramoOpenStory: '\(storyID.rawValue)' is not in the catalog")
+            }
+        }
         #endif
     }
 
@@ -59,3 +66,19 @@ final class AppRouter {
         route = .library
     }
 }
+
+#if DEBUG
+/// Debug launch arguments used from `simctl launch` or the scheme's Arguments tab.
+enum DebugLaunch {
+    /// Opens a story at launch: `-OmramoOpenStory monkey-and-crocodile`.
+    static let openStoryArgument = "-OmramoOpenStory"
+
+    static func storyID(from arguments: [String] = ProcessInfo.processInfo.arguments) -> StoryID? {
+        guard let index = arguments.firstIndex(of: openStoryArgument),
+              index + 1 < arguments.count else { return nil }
+        let raw = arguments[index + 1]
+        guard !raw.isEmpty, !raw.hasPrefix("-") else { return nil }
+        return StoryID(raw)
+    }
+}
+#endif

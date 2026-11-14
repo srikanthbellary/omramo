@@ -71,18 +71,29 @@ v1 used cream paper, a serif and a book spine. v2 ("the page is a place") remove
 | `docs/content/source-texts/` | Public-domain source texts (Gutenberg) for the first three stories, `SOURCES.md` |
 | `docs/agent-runs/` | Fable 5.2 run log and the exact prompts used |
 
+## 6a. Decisions recorded 13 Nov 2026 (evening)
+
+Srikanth: "go with whatever the best approach is for this kind of app. Follow best practices and Apple guidelines." And earlier: Apple ID for purchases, no sign-in screen.
+
+1. **Universal app (PRD Q1 decided).** iPhone (single-pane), Duo (two-pane), iPad (two-pane spread on the larger canvas, including Split View and Stage Manager, via the same `PaneLayout` resolver). `TARGETED_DEVICE_FAMILY = 1,2`. Full iPad layout polish is **milestone Mi** (acceptance criteria in `docs/IMPLEMENTATION_PLAN.md`); do not treat a first iPad simulator launch as that milestone.
+2. **No accounts or sign-in.** Purchases go through the **Apple ID** with a StoreKit 2 family subscription, Family Sharing on, and Restore Purchases. No Omramo account, no sign-in screen, no server. Reading progress stays on the device.
+3. **Kids Category.** Follow App Store Review Guidelines **1.3** and **5.1.4**: no third-party analytics or ads, a parental gate before purchases, external links and settings, and a privacy manifest.
+
 ## 7. Build setup
 
-- Dev box (Linux) has **no Swift toolchain or Xcode**; M1 code was written and checked by inspection only.
-- **Mac Studio** (user `sholu`): macOS 26.7.1, **Xcode 26.6**. Claude Code 2.1.325 installed there (13 Nov 2026); Srikanth signs it in with `claude auth login --claudeai` (Max account). Plan: move build/fix/simulator iteration to the Mac with Fable 5.2.
-- Build: `brew install xcodegen && xcodegen generate`, open the project, run; `swift test` in the core package. Details in `docs/BUILD.md`.
+- Dev box (Linux) has **no Swift toolchain or Xcode** for compiling the iOS app; the first compile was done on the Mac Studio.
+- **Mac Studio** (user `sholu`): macOS 26.7.1, **Xcode 26.6** (17F113), Swift 6.3.3, XcodeGen **2.46.0** at `~/development/bin/xcodegen` (Homebrew was not writable). Claude Code 2.1.325 is installed; Srikanth has not yet signed it in (`claude auth login --claudeai`, Max account). Repo path on the Mac: `~/development/omramo` (synced by git bundle; do not log `gh` in or copy credentials there).
+- First simulator used: iPhone 17 Pro Max, iOS 26.5, UDID `416D3327-A123-4748-8ABF-9E8D27B48610`.
+- Command-line `xcodebuild` must use Debug `ONLY_ACTIVE_ARCH=YES` (set in `project.yml`); otherwise the app compiles for x86_64 against an arm64 `OmramoCore` module and fails with `unable to resolve module dependency: 'OmramoCore'`.
+- Debug launch arguments: `-OmramoPosture unfolded|folded`, `-OmramoOpenStory <story-id>` (e.g. `monkey-and-crocodile`).
+- Details in `docs/BUILD.md`.
 
 ## 8. Next milestones
 
-See `docs/IMPLEMENTATION_PLAN.md`. Immediate next steps:
-1. First real build of M1 on the Mac Studio; fix compile errors; run `swift test`.
-2. Srikanth answers the blocking open questions (PRD §12; especially Q1 devices, Q4 Duo SDK, Q7 pricing/plans, Q18 page breaks, Q22 retellings, Q23–Q24 rights and cultural reviewers).
-3. M2 complete reader, M3 tap-to-see + character cards, …; content milestone C1 in parallel.
+See `docs/IMPLEMENTATION_PLAN.md`. Immediate next steps after the first green Mac build:
+1. Visual check of Library and Low-tier Reading against `docs/design/` (including `TextRenderer`, item 1.17 / BUILD §7.9). List every gap versus Apple Design Award / locked v2 quality.
+2. Srikanth still needs to answer remaining blocking questions (PRD §12; especially Q4 Duo SDK, Q7 pricing/plans, Q18 page breaks, Q22 retellings, Q23–Q24 rights and cultural reviewers). Q1 is decided.
+3. M2 complete reader, M3 tap-to-see + character cards, Mi iPad layout (parallel after M2), …; content milestone C1 in parallel.
 
 ## 9. Status log
 
@@ -91,5 +102,8 @@ See `docs/IMPLEMENTATION_PLAN.md`. Immediate next steps:
 - **M1 implemented (uncompiled):** XcodeGen `project.yml` (iOS 18.0, bundle id `com.omramo.app` = placeholder/TBD, empty `DEVELOPMENT_TEAM`); `Packages/OmramoCore` (Foundation-only: schema v1 story model with tiers/spreads/text runs/tap targets/character cards/art refs + `region`, `provenance`, `culturalReview`, `education`; `Landmark` catalog with per-tier fact cards and `framingDevice`; decoder, validator incl. anachronism rules, pager, pane-layout resolver, design tokens; XCTest suites); sample *The Monkey and the Crocodile* (Low, 14 pages, our draft retelling, Taj Mahal via `thenAndNow`); SwiftUI app with design system, bundled OFL fonts, `PaneLayoutReader` with normal-iPhone fallback and Debug-only simulated Duo (`-OmramoPosture unfolded|folded`), Library and Low-tier Reading screens; `tools/validate_content.py` (46 tests pass on the box).
 - **Stubbed (`TODO(Mx)`):** tap-to-see / character / landmark cards (M3); Aa/bookmark, back-a-page, continuation screens, proper folded reading (M2); sample gate, paywall, StoreKit 2 (M5); streak, shelf, parent view, grown-up gate (M4); splash, motion, app icon (M6); all art is SwiftUI placeholder shapes (`ART_PLACEHOLDERS.md`).
 - **Riskiest compile items:** `TextRenderer` use in `StoryText.swift` (switch `usesTextRenderer = false` to fall back), inline face chips, variable-font axes via `UIFontDescriptor`, XcodeGen scheme/Info.plist details, SVG template icons, `Bundle.module` content lookup. See `docs/BUILD.md` §7–8.
-- **Next action:** first `xcodegen generate` + build + `swift test` on the Mac Studio, ideally by Fable 5.2 in Claude Code there once Srikanth signs it in.
+- **Next action (updated same evening):** first Mac build is in progress / landing on this branch. `swift test --package-path Packages/OmramoCore` passed **116 tests, 0 failures**. An iPhone 17 Pro Max simulator build succeeded after `ONLY_ACTIVE_ARCH=YES`. Remaining: confirm launch screenshots, iPad family flag, and the visual-gap list.
 
+### 13 Nov 2026 — first Mac Studio compile and product decisions
+- First `xcodebuild` of M1 on the Mac Studio (Xcode 26.6, iPhone 17 Pro Max / iOS 26.5). Package tests: 116 passed. The first failing command-line build was an arch mismatch (app x86_64 vs `OmramoCore` arm64), not a missing package reference; fixed in `project.yml` / `Base.xcconfig`. Debug argument `-OmramoOpenStory` added so the reader can be opened from `simctl`.
+- **Q1 decided (universal app).** **No accounts / no sign-in; Apple ID + StoreKit 2 for purchases.** **Kids Category guidelines 1.3 and 5.1.4** adopted. Recorded in `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/IMPLEMENTATION_PLAN.md` (new milestone Mi) and here.

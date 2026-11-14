@@ -2,6 +2,7 @@
 
 **Status:** v2 design approved and locked by Srikanth, 13 Nov 2026. This document supersedes `docs/PRODUCT.md` (the Telugu-first v1 lock, kept for history).
 **Companions:** `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/CONTENT_PLAN.md` (launch story catalog and landmarks).
+**Decisions, 13 Nov 2026 evening:** Q1 resolved — universal app (iPhone, Duo, iPad). No accounts or sign-in; purchases use the Apple ID via StoreKit 2. The app follows App Store Kids Category guidelines 1.3 and 5.1.4. See §8, §11 A1 and §12 Q1.
 **Sources:** business case v5 (13 Nov 2026), the 16-point discussion brief, the locked designs-v2 (12 screens in `docs/design/`), the expert assessment of 13 Nov 2026, and `stories/SOURCES.md`.
 
 Conventions used in all four documents:
@@ -26,9 +27,9 @@ Omramo's answer is a **magical book that the child reads**. Illustration and tap
 |---|---|---|
 | **Reader** | A child anywhere in the world who can already read English, roughly early to middle grades. Exact ages per tier: TBD — open question (Q2). | Stories worth reading, pictures, things to tap, a shelf that fills up. |
 | **Buyer** | The parent (teachers and schools later, not in this scope). | Screen time that is real reading; proof of it in pages read, not minutes; no ads, no tracking. |
-| **Device** | Apple's foldable iPhone Duo: two panes either side of a hinge, plus the folded outer screen. | — |
+| **Device** | A **universal** iOS app: ordinary iPhone (single-pane), Apple's foldable iPhone Duo (two panes either side of a hinge, plus the folded outer screen), and iPad (two-pane spread on the larger canvas, including Split View and Stage Manager size classes). | — |
 
-Assumption A1: the app also runs, in single-pane mode, on an ordinary iPhone, because the folded layout is the same layout. Whether that is *shipped* to non-Duo devices is an open question (Q1).
+**Decided (Q1, 13 Nov 2026):** ship on all three. The folded iPhone layout is the single-pane mode; the open Duo and a sufficiently wide iPad use the two-pane spread. The same `PaneLayout` resolver drives every size class. Full iPad layout polish is milestone Mi, not Milestone 1.
 
 ## 3. Goals and non-goals
 
@@ -227,7 +228,7 @@ These need either a design pass or Srikanth's agreement that engineering derives
 
 ## 8. Monetisation shape
 
-- **Decided:** one auto-renewing **family subscription** through StoreKit 2 and the Apple Account, unlocking the whole library across all tiers. Family Sharing on. Free: browse every cover, read the first two pages of any story. No ads. Purchases only behind the grown-up gate.
+- **Decided:** one auto-renewing **family subscription** through StoreKit 2, unlocking the whole library across all tiers. Identity for the purchase is the **Apple ID only** — there is no Omramo account, no sign-in screen and no server. Family Sharing is on. Restore Purchases is required and sits behind the grown-up gate with the paywall. Free: browse every cover, read the first two pages of any story. No ads. Purchases, external links and settings that leave the child experience sit behind the grown-up gate, per App Store Review Guidelines 1.3 (Kids Category) and 5.1.4 (Kids).
 - **Price:** TBD — open question (Q7). The app never hardcodes a price; it shows the localized price StoreKit returns. The design shows "TBD".
 - **Plan structure:** TBD — open question (Q7): one plan or monthly + yearly; free trial or not. The locked screen shows a single plan card.
 - **Publishing cadence** that justifies a subscription ("new stories added"): TBD — open question (Q8).
@@ -274,7 +275,7 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 
 | ID | Assumption |
 |---|---|
-| A1 | The app runs in single-pane mode on an ordinary iPhone and in the simulator; whether it is distributed to non-Duo devices is Q1. |
+| A1 | **Decided 13 Nov 2026 (Q1).** Universal app: iPhone single-pane, Duo two-pane, iPad two-pane on the larger canvas (Split View and Stage Manager included via the same pane-layout logic). `TARGETED_DEVICE_FAMILY = 1,2`. Full iPad layout acceptance is milestone Mi. |
 | A2 | Folded tap-to-see is a bottom card that keeps the tapped line visible. |
 | A3 | Folded library stacks the two panes into one scroll. |
 | A4 | A "page" in all counts and in the page indicator is one authored spread. |
@@ -293,9 +294,9 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 
 **Device and platform**
 
-- **Q1. Devices.** Is the release Duo-only, or may the single-pane mode ship on ordinary iPhones (and a two-pane mode on iPad)? This sets the device family and the minimum iOS version.
+- **Q1. Devices. DECIDED 13 Nov 2026.** Universal app: ordinary iPhone (single-pane), Duo (two-pane), iPad (two-pane spread, including Split View / Stage Manager). Srikanth asked for the best approach for this kind of app, following Apple guidelines. Minimum iOS stays 18.0 (A7) until the Duo SDK requires a higher floor behind `#available`.
 - **Q4. Duo hardware and SDK.** Is a Duo available to the team? Which Xcode and iOS SDK version carries the Duo APIs, and what are the real pane sizes, hinge width and posture API? The earlier scaffold refers to `ArrangementView` and `GeometryProxy.reservedRegions(kind: .division)` in an "iOS 27.1 SDK"; I could not verify these. Has the earlier scaffold ever been run on a device?
-- **Q16. Mac build machine.** Which Mac and Xcode version will build and test M1, and who runs it?
+- **Q16. Mac build machine. PARTLY ANSWERED 13 Nov 2026.** First M1 compile was on the Mac Studio (user `sholu`), macOS 26.7.1, Xcode 26.6 (17F113), XcodeGen 2.46.0, iPhone 17 Pro Max simulator (iOS 26.5). Agents can run further builds there. Who signs TestFlight archives remains an owner action.
 - **Q17. Earlier PRs.** May PRs #1 and #2 (the Telugu-first scaffold) be closed once the v2 scaffold lands? Nothing is merged from them; ideas reused are listed in `docs/ARCHITECTURE.md` §16.
 
 **Audience and tiers**

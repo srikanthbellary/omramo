@@ -1,9 +1,9 @@
 # Omramo — Build and run (Milestone 1)
 
-**Status: code complete, unverified.** Everything in this milestone was written on a Linux box
-with no Swift toolchain and no Xcode. **No Swift file here has ever been compiled or run.**
-The JSON content and the Python tools *were* run and pass. The first build on a Mac will
-surface compile errors; §8 lists where to expect them and §7 is the checklist to work through.
+**Status: Milestone 1 first-compiled on the Mac Studio, 13 Nov 2026.** The Swift package
+tests and an iPhone 17 Pro Max (iOS 26.5) simulator build both succeeded. The app launches.
+See §7 item 10 for the compile fixes. §8 items (especially `TextRenderer` and art) still
+need a visual check against `docs/design/`.
 
 Reads with: `docs/IMPLEMENTATION_PLAN.md` (M1 scope and acceptance criteria),
 `docs/ARCHITECTURE.md`, `docs/DESIGN.md`.
@@ -14,9 +14,9 @@ Reads with: `docs/IMPLEMENTATION_PLAN.md` (M1 scope and acceptance criteria),
 
 | Tool | Version | Notes |
 |---|---|---|
-| macOS | Whatever your Xcode needs | |
-| Xcode | **16.0 or later** (iOS 18 SDK, Swift 6 toolchain) | The app's minimum iOS is 18.0 (`TextRenderer`). Which Xcode is on the build Mac is PRD Q16 — **record the version here once known: TBD** |
-| XcodeGen | 2.38.0 or later | `brew install xcodegen`. **Record the version you used here: TBD** |
+| macOS | macOS 26.7.1 (Mac Studio, Apple M4 Max) | Recorded 13 Nov 2026 |
+| Xcode | **16.0 or later** (iOS 18 SDK, Swift 6 toolchain) | First verified build: **Xcode 26.6** (17F113), Swift 6.3.3, iOS 26.5 Simulator. PRD Q16. |
+| XcodeGen | 2.38.0 or later | First verified build: **2.46.0**, installed at `~/development/bin/xcodegen` (Homebrew was not writable). |
 | Python 3 | 3.8 or later, standard library only | For the content check. Already on macOS with the Xcode command-line tools |
 
 There are no third-party dependencies and nothing to resolve. No Apple developer account is
@@ -93,14 +93,27 @@ landscape** (⌘→) and pick the largest iPhone you have (iPhone 16 Pro Max: 95
 canvas is drawn at about 0.61 scale). Everything scales with the pane, so proportions match the
 screenshots even though the picture is small.
 
-The app target is iPhone-only (`TARGETED_DEVICE_FAMILY = 1`, assumption A7). An iPad simulator
-would show the canvas larger; that needs the device family changed to `1,2`, which is an open
-question (PRD Q1), so it is not done here.
+The app is **universal** (`TARGETED_DEVICE_FAMILY = 1,2`; PRD Q1 decided 13 Nov 2026). Ordinary
+iPhones use the single-pane layout. A landscape iPad (or a window wide enough in Split View)
+uses two panes via the same resolver. Full iPad layout polish is milestone Mi; Milestone 1
+only needs the family flag set and a launch check on an iPad simulator.
 
 From the command line:
 
 ```sh
 xcrun simctl launch booted com.omramo.app -OmramoPosture unfolded
+# Open the sample story (Debug only), alone or combined with a posture:
+xcrun simctl launch booted com.omramo.app -OmramoOpenStory monkey-and-crocodile
+xcrun simctl launch booted com.omramo.app -OmramoPosture unfolded -OmramoOpenStory monkey-and-crocodile
+```
+
+Command-line builds must keep `ONLY_ACTIVE_ARCH=YES` (already set for Debug in `project.yml`).
+Without it, `xcodebuild` tries to compile the app for x86_64 while the local `OmramoCore`
+package emits only arm64, and the build fails with `unable to resolve module dependency: 'OmramoCore'`.
+An explicit destination on Apple Silicon is enough once that setting is present:
+
+```sh
+xcodebuild -project Omramo.xcodeproj -scheme Omramo   -destination 'platform=iOS Simulator,id=<booted-simulator-udid>'   -derivedDataPath build/dd build
 ```
 
 ## 5. Content
@@ -227,6 +240,19 @@ Work through these in order; each depends on the one before.
    `StoryTextStyle.usesTextRenderer = false` in `App/Sources/Text/StoryText.swift` (plain
    underlines) and record the decision here: **TBD**.
 10. Record the Xcode and XcodeGen versions in §1, and list any fixes you had to make.
+    **Done, 13 Nov 2026, Mac Studio (M4 Max):**
+    - Xcode 26.6 (17F113), XcodeGen 2.46.0, iPhone 17 Pro Max simulator (iOS 26.5, UDID
+      `416D3327-A123-4748-8ABF-9E8D27B48610`).
+    - `swift test --package-path Packages/OmramoCore`: **116 tests, 0 failures**.
+    - First `xcodebuild` without `ONLY_ACTIVE_ARCH=YES` failed: the app compiled for x86_64
+      against an arm64 `OmramoCore.swiftmodule` (`unable to resolve module dependency:
+      'OmramoCore'` / "built for incompatible target"). Fixed by setting `ONLY_ACTIVE_ARCH=YES`
+      on the Debug configuration and `ALWAYS_SEARCH_USER_PATHS=NO` (silences the traditional
+      headermap warning). No Swift source changes were required for the first green build.
+    - Added Debug launch argument `-OmramoOpenStory <story-id>` so the reader can be opened
+      from `simctl` without UI automation.
+    - `TextRenderer` decision (item 9) is still **TBD** pending a visual check of the
+      Low-tier reading screen.
 
 ## 8. Known unverified items
 
