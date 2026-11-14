@@ -52,11 +52,12 @@ final class AppEnvironment {
         for problem in fontProblems {
             print("[Omramo] font problem: \(problem)")
         }
-        if let storyID = DebugLaunch.storyID() {
+        // `-OmramoOpenFinished <id>` opens that story too, on its finished moment.
+        if let storyID = DebugLaunch.finishedStoryID() ?? DebugLaunch.storyID() {
             if case .loaded(let content) = loaded, content.story(id: storyID) != nil {
                 router.open(storyID)
             } else {
-                print("[Omramo] -OmramoOpenStory: '\(storyID.rawValue)' is not in the catalog")
+                print("[Omramo] -OmramoOpenStory / -OmramoOpenFinished: '\(storyID.rawValue)' is not in the catalog")
             }
         }
         #endif
@@ -163,6 +164,14 @@ enum DebugLaunch {
     /// in progress, friends met), so the library can be photographed with its cards filled.
     static let demoStateArgument = "-OmramoDemoState"
 
+    /// Opens a story on its story-finished moment (nothing is written to the reading log):
+    /// `-OmramoOpenFinished monkey-and-crocodile`.
+    static let openFinishedArgument = "-OmramoOpenFinished"
+    /// With `-OmramoOpenStory`: starts on this page (1-based): `-OmramoOpenPage 14`.
+    static let openPageArgument = "-OmramoOpenPage"
+    /// Keeps the splash on screen until the app is closed, for screenshots.
+    static let showSplashArgument = "-OmramoShowSplash"
+
     static func value(after flag: String, in arguments: [String] = ProcessInfo.processInfo.arguments) -> String? {
         guard let index = arguments.firstIndex(of: flag),
               index + 1 < arguments.count else { return nil }
@@ -182,6 +191,39 @@ enum DebugLaunch {
 
     static func cardID(from arguments: [String] = ProcessInfo.processInfo.arguments) -> String? {
         value(after: openCardArgument, in: arguments)
+    }
+
+    static func finishedStoryID(from arguments: [String] = ProcessInfo.processInfo.arguments) -> StoryID? {
+        value(after: openFinishedArgument, in: arguments).map { StoryID($0) }
+    }
+
+    /// The 1-based page of `-OmramoOpenPage`, if it is a number of 1 or more.
+    static func pageNumber(from arguments: [String] = ProcessInfo.processInfo.arguments) -> Int? {
+        guard let raw = value(after: openPageArgument, in: arguments), let number = Int(raw), number >= 1 else {
+            return nil
+        }
+        return number
+    }
+
+    /// True when the launch goes straight to a story (or its finished moment): the splash is
+    /// skipped, so UI tests and screenshots are not held up by it.
+    static func opensAStory(_ arguments: [String] = ProcessInfo.processInfo.arguments) -> Bool {
+        storyID(from: arguments) != nil || finishedStoryID(from: arguments) != nil
+    }
+
+    /// The orientation to ask for at launch: what `-OmramoOrientation` says, else landscape
+    /// when an iPhone simulates the unfolded Duo (which is wider than it is tall).
+    static func requestedOrientation(
+        from arguments: [String] = ProcessInfo.processInfo.arguments,
+        isPhone: Bool
+    ) -> String? {
+        if let explicit = orientation(from: arguments) {
+            return explicit
+        }
+        if isPhone, PaneLayoutProviders.simulationValue(from: arguments) == PaneLayoutInput.Simulation.unfolded.rawValue {
+            return "landscape"
+        }
+        return nil
     }
 
     /// "landscape" or "portrait", if passed.

@@ -410,7 +410,9 @@ class PrototypeStories(unittest.TestCase):
         for spread in story["spreads"]:
             panes = {b["pane"] for b in spread["blocks"]}
             self.assertEqual(panes, {"leading", "trailing"}, spread["id"])
-            self.assertEqual(spread["scene"]["textArea"], {"trailingBottom": 420}, spread["id"])
+            # Round 4: the words on the leading pane stop at the horizon of the recomposed
+            # sea scenes (470), as well as above the picture on the trailing pane (420).
+            self.assertEqual(spread["scene"]["textArea"], {"leadingBottom": 470, "trailingBottom": 420}, spread["id"])
         paths = [b for s in story["spreads"] for b in s["blocks"] if b["kind"] == "pathText"]
         self.assertEqual(len(paths), 1)
         self.assertEqual(paths[0]["pane"], "trailing")

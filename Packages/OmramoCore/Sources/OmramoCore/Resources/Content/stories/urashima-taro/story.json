@@ -71,6 +71,7 @@
       "reflectionQuestion": "Urashima broke his promise when he had lost everything else. Was he wrong to open the box — and what would you have done?"
     }
   },
+  "moral": "Kindness matters and so does a promise, but time that has passed cannot be taken back.",
   "sample": {
     "freeSpreads": 2
   },
@@ -339,6 +340,7 @@
           "#5E9FCB"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -415,6 +417,7 @@
           "#5E9FCB"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -503,6 +506,7 @@
           "#5E9FCB"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -581,6 +585,7 @@
           "#4F97D0"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -675,6 +680,7 @@
           "#4F97D0"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -787,6 +793,7 @@
           "#5FB3B8"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -856,6 +863,7 @@
           "#5FB3B8"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -937,6 +945,7 @@
           "#4E86C6"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1022,6 +1031,7 @@
           "#4E86C6"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1091,6 +1101,7 @@
           "#4E86C6"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1180,6 +1191,7 @@
           "#4E86C6"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1277,6 +1289,7 @@
           "#4E86C6"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1387,6 +1400,7 @@
           "#6C8FB8"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1478,6 +1492,7 @@
           "#6C8FB8"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1563,6 +1578,7 @@
           "#6C8FB8"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },
@@ -1639,6 +1655,7 @@
           "#6C8FB8"
         ],
         "textArea": {
+          "leadingBottom": 470,
           "trailingBottom": 420
         }
       },

@@ -7,8 +7,10 @@ import SwiftUI
 // Not traced from any modern reconstruction. Card background #0B2A4A.
 
 extension LandmarkArt {
-    /// The tower's centre line.
-    private static let pharosX: CGFloat = 262
+    /// The tower's centre line: the middle of the picture.
+    private static let pharosX: CGFloat = 216
+    /// The island was first drawn round x 262; it moves with the tower.
+    private static let pharosShift: CGFloat = 216 - 262
     /// The height of the fire.
     private static let pharosFireY: CGFloat = 57
 
@@ -20,8 +22,9 @@ extension LandmarkArt {
         pharosIsland(&context)
         pharosTower(&context)
         pharosInk(&context)
-        pharosShip(&context, x: 96, y: 298, scale: 1, flipped: false)
-        pharosShip(&context, x: 384, y: 286, scale: 0.66, flipped: true)
+        // Two ships balance the centred tower: a nearer one on the lit side, a far one beyond.
+        pharosShip(&context, x: 70, y: 298, scale: 0.94, flipped: false)
+        pharosShip(&context, x: 368, y: 284, scale: 0.58, flipped: true)
         pharosFinish(&context)
     }
 
@@ -43,17 +46,26 @@ extension LandmarkArt {
         horizon(&context, y: 267, rise: 70, hex: 0xFFC482, alpha: 0.35)
         Art.glow(&context, 52, 268, 170, Art.color(0xFFB56C), alpha: 0.5)
 
-        Art.blurred(&context, radius: 4, opacity: 0.5) { g in
+        Art.blurred(&context, radius: 3, opacity: 0.5) { g in
             var clouds = Path()
-            clouds.addEllipse(in: CGRect(x: -10, y: 214, width: 150, height: 8))
-            clouds.addEllipse(in: CGRect(x: 96, y: 232, width: 110, height: 6))
-            clouds.addEllipse(in: CGRect(x: 330, y: 206, width: 120, height: 7))
+            clouds.addPath(cloudBand(-14, 224, width: 160, height: 10))
+            clouds.addPath(cloudBand(250, 240, width: 120, height: 7))
+            clouds.addPath(cloudBand(322, 214, width: 130, height: 9))
             Art.fill(&g, clouds, Art.color(0x8E5A86))
+            // The undersides nearest the sunset catch its colour.
+            var lit = Path()
+            lit.addPath(cloudBand(-10, 225, width: 110, height: 4))
+            lit.addPath(cloudBand(254, 241, width: 70, height: 3))
+            Art.fill(&g, lit, Art.color(0xFFB98A, 0.7))
         }
 
-        // The far shore and the city, very faint.
+        // The far plane: the far shore and the city on the left, a low headland on the right,
+        // both very faint and veiled with the sky's own colour.
         let shore = Art.svg("M-12,268 L-12,258 L18,256 L30,251 L38,256 L66,257 L82,253 L92,257 L120,259 L150,262 L182,267 Z")
         Art.fill(&context, shore, Art.color(0x5E4C80, 0.75))
+        let headland = Art.svg("M444,268 L444,257 C430,255 420,257 408,254 C396,251 386,257 372,259 C356,261 342,264 326,267 Z")
+        Art.fill(&context, headland, Art.color(0x5E4C80, 0.6))
+        haze(&context, top: 240, bottom: 268, hex: 0xF4AA69, alpha: 0.3)
     }
 
     private static func pharosBeams(_ context: inout GraphicsContext) {
@@ -102,21 +114,31 @@ extension LandmarkArt {
         ripples(&context, in: firePath, count: 30, seed: 21, color: Art.color(0xFFD796, 0.42), width: 1, length: 4...18)
 
         // The causeway to the island: a low stone mole on little arches.
-        let mole = Art.polygon([pt(-12, 267), pt(206, 259), pt(206, 265), pt(-12, 274)])
+        let mole = Art.polygon([pt(-12, 267), pt(160, 259), pt(160, 265), pt(-12, 274)])
         let moleStops: [(Color, CGFloat)] = [
             (Art.color(0x8E7A96), 0),
             (Art.color(0xD9BC9E), 1),
         ]
-        fillHorizontal(&context, mole, moleStops, from: 0, to: 206)
+        fillHorizontal(&context, mole, moleStops, from: 0, to: 160)
         var openings = Path()
-        for index in 0..<12 {
+        for index in 0..<9 {
             let x = 14 + CGFloat(index) * 16
-            let y = 271.6 - x * 0.039
+            let y = 271.4 - x * 0.049
             openings.addEllipse(in: CGRect(x: x - 2.4, y: y - 1.6, width: 4.8, height: 4.4))
         }
         Art.fill(&context, openings, Art.color(0x2A3560, 0.6))
-        let moleTop = Art.line(-12, 267, 206, 259)
+        let moleTop = Art.line(-12, 267, 160, 259)
         Art.stroke(&context, moleTop, Art.color(0xFFE9C8, 0.6), width: 0.6)
+
+        // The near plane: two long, quiet swells, a little darker than the sea, their crests
+        // just catching the evening. Low contrast: the card fades this part into its colour.
+        let swells = Art.svg(
+            "M-24,318 C40,310 96,324 160,316 C230,308 290,324 456,314 L456,330 "
+                + "C300,338 220,324 150,331 C90,337 40,326 -24,333 Z"
+        )
+        Art.fill(&context, swells, Art.color(0x0B2A4A, 0.3))
+        let crests = Art.svg("M-24,318 C40,310 96,324 160,316 C230,308 290,324 456,314 M-24,350 C60,343 130,356 216,348 C300,341 370,354 456,346")
+        Art.stroke(&context, crests, Art.color(0xBFD3F2, 0.14), width: 0.9)
     }
 
     // MARK: The sketch
@@ -190,23 +212,31 @@ extension LandmarkArt {
 
     private static func pharosIsland(_ context: inout GraphicsContext) {
         let cx = pharosX
+        let shift = CGAffineTransform(translationX: pharosShift, y: 0)
+        // The island's reflection: a soft dark shape lying under it on the water.
+        ArtStyle.contactShadow(&context, cx + 10, 281, 104, 7, alpha: 0.34)
         let rocks = Art.svg(
             "M170,273 C180,263 190,263 197,256 L205,250 L213,252 L221,246 L304,246 L311,251 L320,249 L328,257 "
                 + "C338,260 348,266 356,275 C322,281 206,281 170,273 Z"
         )
+            .applying(shift)
         let rockStops: [(Color, CGFloat)] = [
             (Art.color(0x9A7E8C), 0),
             (Art.color(0x5A4E72), 0.5),
             (Art.color(0x2C3256), 1),
         ]
         fillVertical(&context, rocks, rockStops, from: 246, to: 279)
+        let facets = Art.svg("M197,256 L204,272 M213,252 L220,270 M311,251 L306,268 M328,257 L322,274 M236,262 L246,276 M288,260 L282,277")
+            .applying(shift)
         Art.clipped(&context, to: rocks) { g in
-            Art.fill(&g, Art.rect(160, 244, 70, 40), Art.color(0xFFC68E, 0.2))
-            let facets = Art.svg("M197,256 L204,272 M213,252 L220,270 M311,251 L306,268 M328,257 L322,274 M236,262 L246,276 M288,260 L282,277")
+            Art.fill(&g, Art.rect(cx - 102, 244, 70, 40), Art.color(0xFFC68E, 0.2))
             Art.stroke(&g, facets, Art.color(0x241E40, 0.4), width: 0.7)
         }
+        // The one light on the rock: warm on its left shoulder, indigo to the lower right.
+        model(&context, rocks, light: 0.22, shade: 0.3, rim: 0.5)
         // Surf at the foot of the rocks.
         let surf = Art.svg("M168,274 C176,277 184,275 192,277 M202,279 C214,281 226,279 238,281 M300,280 C314,281 330,279 344,277 M350,275 L360,276")
+            .applying(shift)
         Art.stroke(&context, surf, Art.color(0xFFFFFF, 0.5), width: 0.9)
 
         // The walled court the tower stands in, with its contact shadow on the rock.
@@ -218,6 +248,7 @@ extension LandmarkArt {
             (Art.color(0x7C6C8E), 1),
         ]
         fillHorizontal(&context, court, courtStops, from: cx - 46, to: cx + 46)
+        model(&context, court, light: 0.18, shade: 0.24)
         var merlons = Path()
         for index in 0..<14 {
             let x = cx - 41 + CGFloat(index) * 6.2
@@ -357,6 +388,27 @@ extension LandmarkArt {
         ]
         fillHorizontal(&context, cone, coneStops, from: cx - 9.5, to: cx + 9.5)
         Art.fill(&context, Art.rect(cx - 9.5, 51.2, 19, 1.4), Art.color(0xFFD796, 0.8))
+
+        // The one light, from the upper left: a warm edge up the left of every level, and the
+        // indigo core shadow gathering low on the shaded faces.
+        var rim = Art.line(cx - 29.2, 237, cx - 23.3, 143.5)
+        rim.move(to: pt(cx - 14.3, 137))
+        rim.addLine(to: pt(cx - 11.9, 93))
+        rim.move(to: pt(cx - 7.4, 88))
+        rim.addLine(to: pt(cx - 6.4, 67))
+        Art.stroke(&context, rim, ArtStyle.warmLight.opacity(0.85), width: 1.3)
+        let core: [(Color, CGFloat)] = [
+            (ArtStyle.coolShade.opacity(0), 0),
+            (ArtStyle.coolShade.opacity(0.1), 0.5),
+            (ArtStyle.coolShade.opacity(0.3), 1),
+        ]
+        fillVertical(&context, shadeFace, core, from: 142, to: 238)
+        fillVertical(&context, faceRight, core, from: 92, to: 138)
+        // The terraces throw a little shade onto the lit wall below them.
+        var underTerrace = Path()
+        underTerrace.addRect(CGRect(x: cx - 24, y: 143, width: 29, height: 3.2))
+        underTerrace.addRect(CGRect(x: cx - 12.5, y: 93, width: 18, height: 2.4))
+        Art.fill(&context, underTerrace, ArtStyle.coolShade.opacity(0.16))
 
         // Only a hint of the statue: a standing figure with a staff. Nobody knows whose it was.
         let figure = Art.polygon([pt(cx - 1.7, 42), pt(cx - 1.1, 34), pt(cx + 1.1, 34), pt(cx + 1.7, 42)])

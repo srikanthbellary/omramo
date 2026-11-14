@@ -1,6 +1,14 @@
-# Omramo — Build and run (Milestones 1, 2, 3, Mi and round 3)
+# Omramo — Build and run (Milestones 1, 2, 3, Mi and rounds 3 and 4)
 
-**Round 3 (14 Nov 2026) — polish: code complete, NOT compiled, NOT seen.** Written on the
+**Round 4 (14 Nov 2026) — polish: code complete, NOT compiled, NOT seen.** Written on the
+Linux box (no Swift toolchain) on branch `feat/r4-polish`, checked by inspection, by scripts
+(brace balance, duplicate declarations, the argument labels of all 3,407 calls into the art
+kit) and by "be the compiler" reviewer passes. Rounds 1–3 build and pass on the Mac (247 core
+tests, 52 app tests, 7 `WordTapTests`, the `ShotTests`). §6 "Implemented in round 4" says what
+is in it; **§7c is the first-compile checklist** and §8c lists where compile errors are most
+likely.
+
+**Round 3 (14 Nov 2026) — polish (since compiled, run and merged as PR #4).** Written on the
 Linux box (no Swift toolchain), checked by inspection and reviewer passes only. §6 "Implemented
 in round 3" says what is in it; **§7b is the first-compile checklist** and §8b lists where
 compile errors are most likely. The round-3 brief states that M1, M2, M3 and Mi build and run
@@ -94,7 +102,8 @@ abstraction (`docs/ARCHITECTURE.md` §5):
 | How you run | What you get |
 |---|---|
 | Any iPhone simulator, portrait, no launch argument | **Folded** layout: one pane. This is the normal-iPhone fallback |
-| Launch argument `-OmramoPosture unfolded` (Debug builds only) | The **reference Duo canvas**: two 432 × 720 pt panes and a black 28 pt hinge band, scaled to fit the window. This is what to compare with `docs/design/02-library-home.png` and `03-read-low.png` |
+| Launch argument `-OmramoPosture unfolded` (Debug builds only) | **Two panes over the whole window** (round 4): the scene runs edge to edge, a thin 12 pt gutter stands for the hinge, the panes start inside the side safe areas and the real top and bottom safe areas apply. **On an iPhone the app turns itself to landscape** (an unfolded Duo is wider than tall). The panes are then shorter than the design's (about 410 × 440 pt on an iPhone 17 Pro Max), so the design is held at about 0.85 × and each screen shows less of a page (`PaneLayout.isSquat`); a page simply takes more screens. On an iPad it fills the window at the pane's own scale |
+| Launch argument `-OmramoPosture reference` (Debug builds only) | The **reference Duo canvas**, letterboxed as before round 4: two 432 × 720 pt panes and a black 28 pt hinge band, scaled to fit the window. This is what to compare with `docs/design/02-library-home.png` and `03-read-low.png` |
 | Launch argument `-OmramoPosture folded` (Debug only) on an iPhone, or on any window that is one pane anyway | **The real screen, edge to edge**, with its real safe areas — the folded Duo is an ordinary phone screen, so it is not drawn as a small picture of a device (round 3). The scene bleeds under the status bar and Dynamic Island; controls keep clear of them and of the home indicator |
 | Launch argument `-OmramoPosture folded` on a window wide enough for two panes (an iPad in landscape) | One 432 × 720 pt reference pane, scaled to fit (compare with `10-folded.png`) |
 | A window at least 748 pt wide, at least 600 pt tall and wider than tall, no argument (iPad Pro 11-inch and 13-inch in landscape; a large Stage Manager window) | Two panes with a 28 pt virtual gutter (rule 4 of the resolver). An ordinary iPhone in landscape is too short and stays single-pane |
@@ -107,11 +116,12 @@ proportions and gains room: the text column and cards sit in a centred band, the
 the whole window, and glass chrome stays at the pane's edges. The thresholds (748, 600, 980,
 1.3) are assumptions in `PaneLayoutResolver`, to tune by eye on the Mac (milestone Mi).
 
-To set the argument: **Product ▸ Scheme ▸ Edit Scheme… ▸ Run ▸ Arguments**. Both arguments are
-already listed there (unticked); tick one. For `unfolded`, **rotate the simulator to
-landscape** (⌘→) and pick the largest iPhone you have (iPhone 16 Pro Max: 956 × 440 pt, so the
-canvas is drawn at about 0.61 scale). Everything scales with the pane, so proportions match the
-screenshots even though the picture is small.
+To set the argument: **Product ▸ Scheme ▸ Edit Scheme… ▸ Run ▸ Arguments**. The arguments are
+already listed there (unticked); tick one. For `unfolded` on an iPhone the app asks for
+landscape itself (`-OmramoOrientation portrait` overrides that; two narrow panes result). For
+`reference`, **rotate the simulator to landscape** (⌘→) and pick the largest iPhone you have
+(956 × 440 pt, so the canvas is drawn at about 0.61 scale): everything scales with the pane, so
+proportions match the locked screenshots even though the picture is small.
 
 The app is **universal** (`TARGETED_DEVICE_FAMILY = 1,2`; PRD Q1 decided 13 Nov 2026). Ordinary
 iPhones use the single-pane layout; iPads use the table above, through the same resolver —
@@ -141,14 +151,27 @@ starts with a small made-up reading history in memory (a three-day streak, one s
 one in progress on page 5, friends met) so the library can be photographed with its cards
 filled.
 
-### Screenshots and UI tests (the `OmramoShots` scheme)
-
-The `OmramoUITests` target holds two XCUITest classes. They are not part of ⌘U on the `Omramo`
-scheme.
+Three more since round 4: `-OmramoOpenFinished <story-id>` opens that story on its
+story-finished moment (nothing is written to the reading log); `-OmramoOpenPage <n>` (with
+`-OmramoOpenStory`) starts on page n, clamped to the story's pages; `-OmramoShowSplash` keeps
+the splash on screen until the app is closed. The splash is skipped whenever a launch argument
+opens a story.
 
 ```sh
-# Round-3 screenshots → $OMRAMO_SHOT_DIR (default /tmp/omramo-shots), named r3-ipad-*.png
-# or r3-iphone-*.png after the simulator they ran on.
+xcrun simctl launch booted com.omramo.app -- -OmramoOpenFinished monkey-and-crocodile
+xcrun simctl launch booted com.omramo.app -- -OmramoOpenStory monkey-and-crocodile -OmramoOpenPage 14
+xcrun simctl launch booted com.omramo.app -- -OmramoShowSplash
+xcrun simctl launch booted com.omramo.app -- -OmramoShowSplash -OmramoPosture unfolded
+```
+
+### Screenshots and UI tests (the `OmramoShots` scheme)
+
+The `OmramoUITests` target holds three XCUITest classes. They are not part of ⌘U on the
+`Omramo` scheme.
+
+```sh
+# Round-4 screenshots → $OMRAMO_SHOT_DIR (default /tmp/omramo-shots), named r4-ipad-*.png
+# or r4-iphone-*.png after the simulator they ran on.
 xcodebuild test -project Omramo.xcodeproj -scheme OmramoShots \
   -destination 'platform=iOS Simulator,id=<ipad-udid>' -only-testing:OmramoUITests/ShotTests
 xcodebuild test -project Omramo.xcodeproj -scheme OmramoShots \
@@ -160,12 +183,38 @@ xcodebuild test -project Omramo.xcodeproj -scheme OmramoShots \
 ```
 
 `ShotTests` on an iPad writes, in landscape **and** portrait: `library`, `library-reading`
-(with `-OmramoDemoState`), `reader-monkey`, `reader-anansi`, `reader-urashima` and
-`tap-to-see` (the river-bank card). On an iPhone it writes the portrait set plus
-`reader-monkey-folded` and `library-folded` (launched with `-OmramoPosture folded`). Each shot
-waits for a known accessibility identifier (`reader.next`, `library.streak`,
-`card.river-bank`) and then 1.5 s for the transition to come to rest. To change the folder,
-edit `OMRAMO_SHOT_DIR` in the scheme (`project.yml`) and run `xcodegen generate`.
+(with `-OmramoDemoState`), `reader-monkey`, `reader-anansi`, `reader-urashima`, `tap-to-see`
+(the river-bank card) and, new in round 4, `finished` (the story-finished moment) and
+`splash`. On an iPhone it writes the portrait set, the folded-posture set
+(`reader-monkey-folded`, `library-folded`, `tap-to-see-folded` — the partial card with the
+tapped line above it) and the unfolded-posture set, taken in landscape (`library-unfolded`,
+`reader-monkey-unfolded`, `reader-anansi-unfolded`, `reader-urashima-unfolded`,
+`tap-to-see-unfolded`, `splash-unfolded`). Each shot waits for a known accessibility
+identifier (`reader.next`, `library.streak`, `card.river-bank`, `finished.moment`, `splash`)
+and then 2.2 s for the splash, the rotation and the transition to come to rest. To change the
+folder, edit `OMRAMO_SHOT_DIR` in the scheme (`project.yml`) and run `xcodegen generate`.
+
+`MotionDemoTests` (round 4) are slow walks for screen recordings — they assert only that the
+controls they need exist:
+
+```sh
+xcrun simctl io <udid> recordVideo --codec h264 demo-page-turn.mov &
+xcodebuild test -project Omramo.xcodeproj -scheme OmramoShots \
+  -destination 'platform=iOS Simulator,id=<udid>' \
+  -only-testing:OmramoUITests/MotionDemoTests/testDemoPageTurn
+kill -INT %1
+```
+
+| Test | What it shows |
+|---|---|
+| `testDemoLibraryToStory` | Splash, the library (1.5 s), the Monkey cover opens into the reader (2 s), "Library" closes it back into the cover (1.5 s) |
+| `testDemoPageTurn` | The Monkey story: three presses of the round button, 1.5 s apart, then one press of the previous-page arrow |
+| `testDemoTapToSee` | `word.river-bank` opens its card (2 s), "Back to my line" closes it (1.5 s) |
+| `testDemoFinished` | The last page (`-OmramoOpenPage 14`), the round button until the story-finished moment arrives, 3 s on it |
+
+They run on an iPhone (portrait, the real full screen) and on an iPad (portrait); every step
+waits for its control by identifier (`library.story.<id>`, `reader.next`, `reader.previous`,
+`reader.library`, `word.<id>`, `card.<id>`, `finished.moment`) before using it.
 
 `WordTapTests` opens each story on page 1, taps a marked word by identifier
 (`word.river-bank`, `word.village-houses`, `word.urashima`), expects its card
@@ -213,8 +262,13 @@ Schema additions in this round (still `schemaVersion` 1; both are optional or on
 
 - `spread.scene.textArea { leadingBottom?, trailingBottom? }` — where the calm part of the
   scene ends on each pane, as a y position on the 720-point reference pane (200…720). The
-  Advanced story sets `trailingBottom: 420`: the picture keeps the lower part of the trailing
-  pane. Rule `text-area-range`.
+  Advanced story sets `trailingBottom: 420` (the picture keeps the lower part of the trailing
+  pane) and, since round 4, `leadingBottom: 470` (the words on the leading pane stop at the
+  sea's horizon). Rule `text-area-range`. Since round 4 an authored text area is a share of
+  the pane's height at any shape (`ReaderMetrics.pictureReserve`).
+- Round 4: `story.moral` — one child-facing sentence for the story-finished moment. Optional
+  in the file, required by the validators: present, not blank, at most 120 characters, exactly
+  one sentence. Rule `moral-incomplete` (`MoralRule` in the core).
 - A `pathText` block must carry a `path` of absolute `M`, `L`, `Q`, `C` commands (the subset
   the app draws), and a paragraph must not carry one. Rule `path-text-incomplete`.
 
@@ -405,6 +459,81 @@ word instead of being dead. `WordTapTests` (above).
 - UI (`OmramoShots` scheme): `WordTapTests` (7), `ShotTests` (14).
 - Python: unchanged, 62 tests, run on the box and passing.
 
+### Implemented in round 4 — polish (code complete, **not yet compiled or seen**)
+
+**1. Illustration pass** — every painter under `App/Sources/Art/` re-worked toward
+illustration (`docs/ART_DIRECTION.md` §3a, §5a; new helpers `ArtStyle.form`, `rimEdge`,
+`atmosphere`): Urashima and Otohime redrawn at 3 heads; the Anansi climb scene and the Skytree
+relit from the upper left; `see-river-bank` and `see-forest` given one centred subject (and
+three more tap-to-see pictures and two landmarks re-framed); the crocodiles' eyes back to
+locked screen 03; **thirteen folded scenes composed for the phone's band** instead of cropped;
+every unfolded scene **recomposed for a tall window** (horizon up to 64–70% of the height,
+subject and planes grown) and for a squat one; the Urashima sea brought under both panes to
+fill the empty lower-left. What changed per picture and what still falls short:
+`Content/ART_PLACEHOLDERS.md`. The reader keeps the words out of the picture's part of the
+pane to match (`ReaderMetrics.pictureReserve`; Urashima's pages now carry
+`textArea.leadingBottom` 470). **None of it has been rendered.**
+
+**2. Unfolded iPhone** — `-OmramoPosture unfolded` fills the window (§4): the one
+`PaneLayoutResolver` gained a filled variant of the simulation (`PaneLayoutInput
+.simulationFillsWindow`, side safe-area insets, a 12 pt gutter) and `PaneLayout` a
+`minimumReferenceScale` (the design is not shrunk below what a 520 pt-tall pane would give) and
+`isSquat`. The letterboxed reference canvas is unchanged and still reachable
+(`-OmramoPosture reference`); the core tests that pin it are untouched.
+
+**3. The folded card no longer covers the tapped line** — `CardSheet` is a partial sheet
+(60% of the pane; `PageFit.foldedCardHeight`) with no scrim; the page slides up, as one
+transform, until the tapped line is 14 pt above the card (`PageFit.foldedLineShift`, from the
+word's own rectangle, or from the paragraph's measured place when the card was not opened by
+a tap); the paragraph keeps its beam and marker, the others dim. `docs/DESIGN.md` §5.9a.
+
+**4. Story-finished moment** — `StoryFinishedView` over the last page: cover with a tick, a
+soft glow and seven sparks (once), "The end", the title, the story's **moral** (new optional
+`Story.moral`, required by both validators as rule `moral-incomplete`: one sentence of at most
+120 characters; all three stories have one), "Next story" (primary, 56 pt; chosen by
+`NextStory` in the core), "Read again", "Library". The story is recorded finished, with its
+last page, when the button is pressed. `docs/DESIGN.md` §6 "Story finished".
+
+**5. Splash and app icon** — `SplashView` (screen 01's wordmark across the hinge on two panes,
+one line on one pane; 0.65 s + a 0.3 s cross-fade; launch-screen colour `LaunchBackground`).
+App icon: `docs/brand/app-icon.svg` → `tools/make_app_icon.py` (headless Chrome + Pillow) →
+`App/Resources/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png` (1024 × 1024, RGB, no
+alpha; one universal size) and `docs/brand/app-icon-1024.png`;
+`ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon` in `project.yml`.
+
+**6. "Aa" panel and back controls** — the finished panel (live preview line, five sizes in one
+track with 52 pt buttons, the sound switch, the bookmark row); a "Library" capsule with a
+house in place of the bare back chevron; a 46 pt round previous-page arrow beside the page
+chip. `docs/DESIGN.md` §5.1a, §5.1b, §5.2a.
+
+**7. Optional sound** — two short sounds synthesised by `tools/make_sounds.py`
+(`App/Resources/Sounds/page-turn.wav`, `card-open.wav`; no samples from anywhere),
+`ReaderSound` (AVAudioPlayer; audio session `.ambient`, so the silent switch applies and other
+audio is not interrupted; no session is opened unless sounds are on), **off by default**, a
+switch in the "Aa" panel, remembered in `reader-memory.json` (`soundOn`, optional).
+
+**8. Motion demos** and **9. round-4 screenshots** — `MotionDemoTests`, `ShotTests` (§4).
+
+**Tests added in round 4 (none run)**
+
+- Core (`swift test`): `Round4Tests.swift` — `FilledSimulationTests` (10), `FoldedCardFitTests`
+  (6), `MoralTests` (7), `NextStoryTests` (7), `SoundSettingTests` (2): 32 test methods on top
+  of the 247.
+- App (⌘U): `App/Tests/Round4Tests.swift` — `UnfoldedSimulationAppTests` (5),
+  `StoryFinishedTests` (5), `Round4LaunchTests` (5), `Round4ControlTests` (2), `SoundTests`
+  (4): 21 test methods on top of the 52.
+- UI (`OmramoShots` scheme): `MotionDemoTests` (4); `ShotTests` now 25 tests (was 14),
+  writing `r4-*.png`.
+- Python: still 62 tests, passing on the box. One assertion was **updated, not weakened**:
+  `test_urashima_is_advanced_with_text_on_both_panes_and_a_wave` now expects
+  `{"leadingBottom": 470, "trailingBottom": 420}` on every Urashima page (it pinned
+  `{"trailingBottom": 420}`); the change of content is intended (goal 1, the sea under both
+  panes). The new rule `moral-incomplete` is covered by the Swift tests and by the
+  same-rule-codes test; no Python test was added, to keep the count the brief names.
+- No existing Swift test was edited. `FoldedSimulationTests.testUnfoldedSimulationIsUnchanged`
+  (round 3) still holds as written — the provider still asks for the unfolded simulation and
+  the posture is still unfolded — although the layout behind it now fills the window.
+
 ### Short of the acceptance criteria (precise leftovers)
 
 Everything marked *[Mac]* in `docs/IMPLEMENTATION_PLAN.md` for M2, M3 and Mi is **unverified**
@@ -418,9 +547,9 @@ until this round compiles and is looked at. Beyond that, known gaps:
 | 3.1 | The **inlet glow** on the card's hinge edge at the height of the held paragraph (DESIGN §5.8) is not drawn |
 | 3.2 | "Pixel-identical" needs a screenshot diff on the Mac |
 | 3.7 | Focus moves are expressed with `AccessibilityFocusState`; whether VoiceOver honours them at the right moment needs a device |
-| A2 / G4 | Folded: the bottom card covers the pane from just below the top controls down, so the tapped line is usually *not* visible behind it (A2 asks that it stay visible). The marker, wash and toast show on return. Needs a design answer |
-| G1 | The "Aa" panel is an interim design |
-| G3 | The back control's place and look are interim; the last page's button still shows a tick and returns to the library |
+| A2 / G4 | Round 4: the folded card is a 60% sheet and the page slides so the tapped line stays visible above it (our design, unseen; DESIGN §5.9a). A paragraph taller than the gap above the card shows only its first lines |
+| G1 | Round 4: a finished "Aa" panel (our design, unseen; DESIGN §5.2a) |
+| G3 | Round 4: a "Library" capsule, a previous-page arrow and a story-finished moment (our designs, unseen; DESIGN §5.1a, §5.1b, §6). They change the look of locked screens 03–07 and 10 slightly — to confirm |
 | i.1–i.5 | Thresholds and the 1.3 × cap are assumptions, untested on a simulator |
 | Art | All pictures are concept art drawn in code, unseen; see `ART_PLACEHOLDERS.md` |
 
@@ -431,21 +560,26 @@ until this round compiles and is looked at. Beyond that, known gaps:
 2. **Art:** the three "ported" scenes (`scene-river`, `scene-climb`, `scene-sea`) and the Rin
    Gin and Monkey cards should be close to the PNGs; every *new* composition (ten scenes, six
    tap-to-see pictures, five portraits, four landmarks, three covers) is unseen and will need
-   art direction. Folded scenes are crops of the unfolded scene, not compositions of their
-   own (one exception: the folded `scene-ride` is drawn separately, after screen 10). The design's SVG grain is approximated by a tiled noise overlay and light stipple.
+   art direction. Since round 4 all thirteen folded scenes are compositions of their own
+   (`*Art+Folded.swift`) and every wide scene recomposes for tall and squat windows — all
+   unseen. The design's SVG grain is approximated by a tiled noise overlay and light stipple.
 3. **Type:** line breaks, hanging punctuation, "pretty" wrapping and word spacing are not
    matched; exact line height relies on `lineSpacing` arithmetic; the text-on-a-path letters
    are set one by one without kerning pairs.
 4. **Glass:** material + tint is an estimate of the design's blur and saturation.
-5. **Motion:** implemented in round 3 (`docs/DESIGN.md` §3.7) and unseen. The values are our
-   proposals; the story-finished moment and the splash are still M6.
+5. **Motion:** implemented in rounds 3 and 4 (`docs/DESIGN.md` §3.7). The round-4 additions
+   (the story-finished moment, the splash, the folded page sliding under a card) are unseen;
+   all values are our proposals.
 6. **Hold state:** no inlet glow; the beam is the paragraph's height plus 8 pt above and
    below (the design source draws a fixed 66 pt band on screen 06 — matched approximately).
 7. **iPad:** round 3 sets short pages lower and lets Low and Medium type grow on a 13-inch
-   portrait screen (`PageFit`), and fills the library's trailing pane. The scene itself still
-   stretches its sky on a tall window (the picture is anchored top and bottom, not recomposed
-   for portrait), so there is still open sky above and below the words — balanced now, but
-   whether it reads as graceful needs eyes.
+   portrait screen (`PageFit`), and fills the library's trailing pane. Round 4 recomposes
+   every scene for a tall window (the horizon rises, the picture grows) and keeps the words
+   above the picture's part of the pane — by arithmetic only: whether a portrait page now
+   reads as designed needs eyes, and a real portrait composition is an illustrator's job.
+7a. **Unfolded on an iPhone (round 4):** the panes are squat (about 410 × 440 pt), so a Low
+   page takes two or three screens and the scene is drawn at about 410–500 units of height, which no
+   locked screen shows. It is a simulation aid, not a designed layout.
 8. **Library:** covers are new code drawings; the Anansi and Urashima covers follow the brief
    (Anansi on the tree; Urashima in his boat), not the exact covers of screen 02.
 9. **Page chip:** a page with continuation screens fills its coral dash step by step; this is
@@ -455,11 +589,10 @@ until this round compiles and is looked at. Beyond that, known gaps:
 
 | What | Where | Lands in |
 |---|---|---|
-| Last page: the button shows a tick and returns to the library (no finished moment) | `NextPageButton` | M6 (gap G3) |
 | Sample gate, end-of-sample card, paywall, StoreKit: **every page of all three stories is readable** | `ReaderModel.turnPage` | M5 |
 | "My shelf" and "Grown-ups" tabs are drawn but inert; no grown-up gate, no parent view, no week summary | `LibraryTabBar` | M4 (the reading log, streak, shelf card, finished ticks and friends row landed in round 3) |
 | Map legend says "Read", but a finished story's pin does not yet look different | `StoryMapCard.swift` | M4 |
-| Splash, the story-finished moment, loading and error designs, app icon | several | M6 (page-turn, card and library motion and the page-turn haptic landed in round 3) |
+| Loading and error designs | `RootView`, `ContentFailureView` | M6 (page-turn, card and library motion landed in round 3; the splash, the story-finished moment, the app icon and optional sounds in round 4) |
 | Duo SDK adapter | `Layout/PaneLayoutProvider.swift` | M7 |
 | Real illustrations | `App/Sources/Art/` (`TODO(art)`) | C1 |
 
@@ -591,6 +724,48 @@ Nothing in round 3 has been compiled or seen. Work in this order.
 10. Go through every picture against `docs/ART_DIRECTION.md` and the "to check" table in
     `ART_PLACEHOLDERS.md`: faces and portraits first.
 
+## 7c. First-compile checklist for round 4
+
+Nothing in round 4 has been compiled or seen. Work in this order.
+
+1. `swift test --package-path Packages/OmramoCore` — the 247 from before plus 32 in
+   `Round4Tests.swift`. Fix the core first (`PaneLayout.swift`, `PageFit.swift`,
+   `MoralRule.swift`, `NextStory.swift`).
+2. `python3 tools/validate_content.py` and `python3 tools/test_validate_content.py`
+   (0 errors; 62 tests).
+3. `xcodegen generate` — **required**: new source files, the `Sounds` folder, the app icon set,
+   the `LaunchBackground` colour and the `ASSETCATALOG_COMPILER_APPICON_NAME` setting. Then
+   build. §8c says where errors are most likely; the art files are by far the largest risk
+   (about 11,800 lines, most of them rewritten). If a painter fights back, make its `paint`
+   return `false` for that picture (a calm gradient stand-in is drawn) and come back to it.
+4. ⌘U: `App/Tests/Round4Tests.swift` and the existing suites (`ArtCoverageTests` draws every
+   picture once — a crash there is an inverted range or a bad index in a painter).
+5. Launch on an iPhone: the splash (dark, the wordmark, under a second), then the library; the
+   new icon on the home screen. `-OmramoShowSplash` holds it; add `-OmramoPosture unfolded` to
+   see the wordmark across the hinge.
+6. iPhone, a story, page 1: the "Library" capsule top left; tap "Aa" — the panel (preview
+   line, five sizes, Sounds off); switch sounds on, turn a page, open a card; flip the silent
+   switch (hardware) — silence. Turn a page: the previous-page arrow appears beside the page
+   chip.
+7. iPhone, tap `river bank`: the card rises to about 60% and the lead sentence slides to just
+   above it, with its beam; "Back to my line" slides it back. Try a word low on the page and a
+   word in a long paragraph; then with Reduce Motion.
+8. `-OmramoOpenStory monkey-and-crocodile -OmramoOpenPage 14`, press the round button (twice
+   if the page has two screens): the story-finished moment. "Read again", then finish again
+   and "Next story", then "Library" (the cover carries its tick). `-OmramoOpenFinished
+   <id>` for each story; on an iPad in both orientations.
+9. `-OmramoPosture unfolded` on an iPhone: it turns to landscape and fills the screen — two
+   panes, a thin black gutter, nothing under the Dynamic Island. Library, each story (a page
+   takes two or three screens), a card. `-OmramoPosture reference` still gives the letterboxed
+   canvas.
+10. Art, in this order: the redrawn Urashima and Otohime; the Anansi climb scene's light; each
+    story on an iPad in portrait (is the picture recomposed, do the words stay clear of it?);
+    each story on an iPhone in portrait (the folded band); the tap-to-see cards; the
+    crocodile's eye against `03-read-low.png`; the Urashima sea on an iPad in landscape.
+    `ART_PLACEHOLDERS.md` lists what to look for.
+11. `WordTapTests`, `MotionDemoTests`, then `ShotTests` on an iPad and an iPhone simulator
+    (§4). Compare the `r4-*.png` set with `r3-*.png`.
+
 ## 8. Known unverified items
 
 Milestone 1 compiled and ran (13 Nov 2026). The table below is the M1 list, kept for the
@@ -650,6 +825,25 @@ Nothing in round 3 was compiled. Most likely to need a fix, first:
 | 9 | Word bloom rectangle and card anchor use window (`.global`) coordinates; correct only because `PaneLayoutReader` ignores the safe area and fills the window | `ReaderScreen.swift`, `StoryText.swift` | Use a named coordinate space on `TwoPane` |
 | 10 | `PageFit` numbers (42% optical share, half the extra height, 40% of a folded screen's extra to the picture, the measures per tier, 0.5 em average character) are estimates | `PageFit.swift` | Tune by eye; the tests state the rules, not the taste |
 | 11 | The `@Observable` composition root assigns its stores in `#if DEBUG` branches | `AppEnvironment.swift` | Assign defaults first, then override |
+
+### 8c. Unverified in round 4
+
+Nothing in round 4 was compiled. Most likely to need a fix, first:
+
+| # | Item | File | If it fails |
+|---|---|---|---|
+| 1 | **The art painters** — most of `App/Sources/Art/` was rewritten by authors with no compiler and no renderer: type-checker time on long arithmetic, `CGFloat` / `Double` slips, locals shadowing helpers, nested `inout GraphicsContext` closures, `Stage` structs. Scripts confirmed balanced braces, no duplicate declarations and correct argument labels on every `Art.*` / `ArtStyle.*` call; types were checked by reading only | `JatakaArt*`, `AnansiArt*`, `UrashimaArt*`, `LandmarkArt*` | Split the reported expression into typed `let`s; or return `false` from `paint` for that picture |
+| 2 | `GraphicsContext.clipToLayer` used as a mask (`ArtStyle.rimEdge`; `UrashimaArt.leadingMist`) | `ArtStyle.swift`, `UrashimaArt.swift` | Replace the body of `rimEdge` with a plain clipped stroke; drop the mask in `leadingMist` |
+| 3 | **Folded card**: `.offset(y:)` on the picture-and-words group while the card's overlay rises; whether the word rectangle (window coordinates, captured at the tap) puts the line where the arithmetic says; whether the clear layer above the card really swallows touches | `ReaderScreen.swift` (`ReaderFoldedPane`, `ReaderPage.foldedShift`), `StoryCards.swift` (`CardSheet`) | Fall back to the paragraph's measured place (`blockSpan`) by ignoring `wordRect` in `heldLine` |
+| 4 | **Story-finished overlay**: an `.overlay` with a transition on the reader's `TwoPane`, a second `TwoPane` inside it, `.allowsHitTesting(false)` on the page beneath, `.sensoryFeedback(.success, …)`, `AccessibilityNotification.ScreenChanged` | `ReaderScreen.swift`, `StoryFinishedView.swift` | Remove the transition first; then the feedback |
+| 5 | **Splash**: `@State` initialised from `SplashView.plan()`, a `.task` that sleeps and then animates the removal, text filled with a `LinearGradient` (`foregroundStyle`), the 158 pt variable-font wordmark scaled per pane | `OmramoApp.swift`, `SplashView.swift` | Shorten to a plain fade of a solid colour; fix sizes by eye |
+| 6 | `UILaunchScreen` → `UIColorName` `LaunchBackground`; the single-size `AppIcon.appiconset` (`"idiom": "universal", "platform": "ios", "size": "1024x1024"`) with XcodeGen and Xcode 26 | `Info.plist`, `Assets.xcassets`, `project.yml` | Xcode will say what the icon set lacks; add the sizes it names |
+| 7 | **Sound**: `AVAudioSession.setCategory(.ambient, mode: .default, options: [.mixWithOthers])`, `AVAudioPlayer` kept in a `@MainActor` singleton; WAV files found by `Bundle.main.url(forResource:withExtension:)` (XcodeGen must copy `App/Resources/Sounds/*.wav` flat into the bundle) | `Sound.swift`, `project.yml` | `SoundTests.testBothSoundsAreBundledAndSilentWhenOff` says if the files are missing; sounds are off by default, so nothing else depends on them |
+| 8 | Filled unfolded simulation on a real iPhone: `requestGeometryUpdate(.iOS(interfaceOrientations: .landscape))` at launch, safe-area insets read in landscape, panes starting at x = 62 | `OmramoApp.swift`, `PaneLayoutReader.swift` | Pass `-OmramoOrientation landscape` and rotate the simulator by hand |
+| 9 | `ReaderMetrics.pictureReserve`: a nested function inside `init` before every stored property is set (it captures only locals); the 37% tall-pane share and the proportional text area are estimates | `ReaderLayout.swift` | Inline the function; tune `tallSceneShare` by eye |
+| 10 | `.accessibilityAddTraits(.isToggle)` (iOS 17+); `SpeakerShape`; the panel's 260-reference-point rows (about 288 with its padding; never under 5 × 48 pt) on the smallest phone, and its height on a squat pane once the bookmark row shows | `ReaderChrome.swift` | Drop the trait; scale the panel |
+| 11 | XCUITest: `finished.moment` and `splash` identifiers on containers (`.accessibilityElement(children: .contain / .ignore)`); `XCUIDevice.shared.orientation = .landscapeLeft` on an iPhone together with the app's own request for landscape | `MotionDemoTests.swift`, `ShotTests.swift` | Put the identifier on the title text instead |
+| 12 | `NextStory.suggestion` compares `(Int, Int, Int)` tuples with `<` (standard library, up to six elements) | `NextStory.swift` | Write the comparison out |
 
 Not verifiable at all without hardware: everything about the real Duo (pane sizes, hinge,
 posture API, per-pane safe areas). The app does not reference any Duo API.

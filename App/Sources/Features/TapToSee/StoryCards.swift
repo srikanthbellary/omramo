@@ -8,7 +8,8 @@ import OmramoCore
 // only a close action, never the reader's `open`.
 //
 // With two panes a card fills the pane facing the tapped word. Folded, the same card rises
-// from the bottom of the pane (`CardSheet`; assumption A2, design gap G4).
+// from the bottom of the pane as a partial sheet (`CardSheet`, about 60% of the height), and
+// the page slides so the tapped line stays in view above it (round 4; was design gap G4).
 
 // MARK: - Wrapping row (trait pills)
 
@@ -94,7 +95,7 @@ struct TapToSeeCard: View {
             let width = proxy.size.width
             let height = proxy.size.height
             // The picture is 432 × 404 on the reference pane and fades into the card.
-            let pictureHeight = min(width * 404 / 432, height * (isSheet ? 0.44 : 0.6))
+            let pictureHeight = min(width * 404 / 432, height * (isSheet ? 0.46 : 0.6))
             let side = pane.contentInset
             let buttonZone = pane.bottomInset(26) + pane.pt(Tokens.Size.primaryButtonHeight) + pane.pt(18)
 
@@ -333,17 +334,19 @@ struct OpenCardView: View {
     }
 }
 
-// MARK: - Folded: the card as a bottom sheet (assumption A2, design gap G4)
+// MARK: - Folded: the card as a partial bottom sheet (assumption A2)
 
-/// One pane: the card rises from the bottom and the scene's top stays in view above it. The
-/// rest of the pane is dimmed and does not respond, so the page cannot be turned and no other
-/// word can be tapped while the card is open.
+/// One pane: the card rises from the bottom to `height` (about 60% of the pane) and the page
+/// above it stays in view — the tapped line with its beam and place marker, the other
+/// paragraphs dimmed by the text itself. The rest of the pane does not respond, so the page
+/// cannot be turned and no other word can be tapped while the card is open. The card has its
+/// close button and "Back to my line", and nothing else.
 struct CardSheet: View {
     @Environment(\.pane) private var pane
     let content: StoryCardContent
     let storyID: StoryID
-    /// Space kept clear above the sheet (the top controls and a strip of the scene).
-    let topGap: CGFloat
+    /// Height of the card, from the bottom of the pane.
+    let height: CGFloat
     let focus: AccessibilityFocusState<ReaderFocus?>.Binding
     let onClose: @MainActor () -> Void
 
@@ -354,14 +357,17 @@ struct CardSheet: View {
             style: .continuous
         )
         ZStack(alignment: .bottom) {
-            // rgba(12,8,40,.46), the design's dim behind a sheet (§5.18).
-            Color(rgba: RGBA(red: 12.0 / 255, green: 8.0 / 255, blue: 40.0 / 255, alpha: 0.46))
+            // No dim over the page: the tapped line must stay bright. This clear layer only
+            // takes the touches, so nothing behind the card can be pressed.
+            Color.clear
+                .contentShape(Rectangle())
+                .onTapGesture {}
                 .accessibilityHidden(true)
 
             OpenCardView(content: content, storyID: storyID, isSheet: true, focus: focus, onClose: onClose)
-                .frame(height: max(0, pane.size.height - topGap))
+                .frame(height: max(0, height))
                 .clipShape(shape)
-                .shadow(color: Color.black.opacity(0.3), radius: pane.pt(20), x: 0, y: -pane.pt(12))
+                .shadow(color: Color(rgba: RGBA(red: 12.0 / 255, green: 8.0 / 255, blue: 40.0 / 255, alpha: 0.3)), radius: pane.pt(14), x: 0, y: -pane.pt(6))
         }
     }
 }

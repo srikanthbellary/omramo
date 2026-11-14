@@ -40,6 +40,7 @@ public enum ValidationCode: String, CaseIterable, Hashable, Sendable {
     case reviewPending = "review-pending"
     case educationIncomplete = "education-incomplete"
     case educationFactCardDangling = "education-fact-card-dangling"
+    case moralIncomplete = "moral-incomplete"
 
     // Tap targets and landmarks in a story
     case tapTargetIncomplete = "tap-target-incomplete"

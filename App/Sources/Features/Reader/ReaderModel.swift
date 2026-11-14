@@ -36,6 +36,8 @@ final class ReaderModel {
     let story: Story
     let landmarks: LandmarkCatalog
     let pager: Pager
+    /// Every story of the library, in catalog order: where "Next story" is chosen from.
+    let catalog: [Story]
 
     /// The page.
     private(set) var spreadID: SpreadID?
@@ -48,8 +50,10 @@ final class ReaderModel {
     /// until the child moves on (§5.8 "Returned").
     private(set) var returnedCard: OpenCard?
     private(set) var toast: ReaderToast?
-    /// The interim "Aa" panel (design gap G1).
+    /// The "Aa" panel: text size, sounds, the way back to a bookmark.
     var isTextPanelOpen = false
+    /// The story-finished moment is showing (after the last page; DESIGN §6 "Story finished").
+    private(set) var isFinishedShown = false
 
     /// Measured paragraph heights, by the layout they were measured for. The screens of a page
     /// are derived from these in the view (`ReaderPageLayout`); nothing here is a pixel position.
@@ -80,10 +84,12 @@ final class ReaderModel {
         progress: ReadingProgressStore,
         memory: ReaderMemoryStore? = nil,
         landmarks: LandmarkCatalog = LandmarkCatalog(),
-        log: ReadingLogStore? = nil
+        log: ReadingLogStore? = nil,
+        catalog: [Story] = []
     ) {
         self.story = story
         self.landmarks = landmarks
+        self.catalog = catalog
         self.progress = progress
         // No store given (tests, previews): remember in memory only.
         self.memory = memory ?? ReaderMemoryStore(fileURL: nil)
@@ -133,13 +139,30 @@ final class ReaderModel {
     func didOpen() {
         savePosition()
         #if DEBUG
+        if let page = DebugLaunch.pageNumber() {
+            openLaunchPage(page)
+        }
         if let raw = DebugLaunch.cardID() {
             openLaunchCard(raw)
+        }
+        if DebugLaunch.finishedStoryID() == story.id {
+            // Screenshots of the finished moment: shown, not recorded in the log.
+            isFinishedShown = true
         }
         #endif
     }
 
     #if DEBUG
+    /// Debug launch helper: start on page `number` (1-based; clamped to the story's pages).
+    func openLaunchPage(_ number: Int) {
+        let ids = pager.spreadIDs
+        guard !ids.isEmpty else { return }
+        spreadID = ids[min(max(number, 1), ids.count) - 1]
+        anchor = .start
+        measurements.removeAll()
+        savePosition()
+    }
+
     /// Debug launch helper: open a named tap-to-see or character card, jumping to its page if needed.
     func openLaunchCard(_ raw: String) {
         let tap = StoryCardRef.tapTarget(TapTargetID(raw))
@@ -195,7 +218,7 @@ final class ReaderModel {
     /// card is open. `plan` is the current page's screens as laid out now (nil = one screen).
     func turnPage(in plan: ScreenPlan? = nil) {
         // TODO(M5): ask SampleGate before showing a spread beyond `story.sample.freeSpreads`.
-        guard openCard == nil, let spreadID else { return }
+        guard openCard == nil, !isFinishedShown, let spreadID else { return }
         let count = plan?.screenCount ?? 1
         let screen = plan?.index(for: anchor) ?? 0
         guard let move = pager.forward(from: spreadID, screen: screen, screenCount: count) else { return }
@@ -210,7 +233,7 @@ final class ReaderModel {
 
     /// The child pressed the back-one-page control.
     func goBack(in plan: ScreenPlan? = nil) {
-        guard openCard == nil, let spreadID else { return }
+        guard openCard == nil, !isFinishedShown, let spreadID else { return }
         let count = plan?.screenCount ?? 1
         let screen = plan?.index(for: anchor) ?? 0
         guard let move = pager.backward(from: spreadID, screen: screen, screenCount: count) else { return }
@@ -264,14 +287,49 @@ final class ReaderModel {
     }
 
     /// The child pressed the button on the last screen of the last page: the last page has
-    /// been read and the story is finished (a tick on its cover, a place on the shelf).
-    /// TODO(M6): the story-finished moment (design gap G3).
+    /// been read and the story is finished (a tick on its cover, a place on the shelf), and
+    /// the story-finished moment is shown. Pressing it again there does nothing.
     func finish() {
+        guard !isFinishedShown else { return }
         if let spreadID {
             log.recordPageRead(storyID: story.id, spreadID: spreadID)
         }
         log.markFinished(story.id)
         progress.clear(storyID: story.id)
+        openCard = nil
+        isTextPanelOpen = false
+        dismissToast()
+        isFinishedShown = true
+    }
+
+    /// "Read again" on the story-finished moment: back to the first page. The story stays
+    /// finished in the log; the saved place is the first page again.
+    func readAgain() {
+        guard let first = pager.first else { return }
+        if spreadID != first {
+            measurements.removeAll()
+        }
+        turnDirection = .backward
+        spreadID = first
+        anchor = .start
+        openCard = nil
+        returnedCard = nil
+        isTextPanelOpen = false
+        dismissToast()
+        isFinishedShown = false
+        pageToken += 1
+        savePosition()
+    }
+
+    /// The story to offer next (`NextStory`): unread before read, the same level first.
+    var nextStory: Story? {
+        NextStory.suggestion(after: story.id, in: catalog, finished: Set(log.file.finished))
+    }
+
+    /// The line shown on the story-finished moment.
+    var moral: String? {
+        let text = story.moral?.trimmingCharacters(in: .whitespacesAndNewlines) ?? ""
+        return text.isEmpty ? nil : text
     }
 
     private var currentPosition: ReadingPosition? {
@@ -313,6 +371,20 @@ final class ReaderModel {
     func toggleTextPanel() {
         guard openCard == nil else { return }
         isTextPanelOpen.toggle()
+    }
+
+    // MARK: Sounds (off until switched on in the "Aa" panel)
+
+    var isSoundOn: Bool {
+        memory.isSoundOn
+    }
+
+    func setSound(on: Bool) {
+        memory.setSound(on: on)
+        if on {
+            // Let the child hear what was switched on.
+            ReaderSound.shared.play(.card, enabled: true)
+        }
     }
 
     // MARK: Bookmark

@@ -15,9 +15,15 @@ import OmramoCore
 ///   bottom card when folded); the text pane holds the place and never re-wraps.
 /// - Round 3: page-turn, card and library motion (`Motion`), the reading log, and short pages
 ///   set lower on tall windows (`PageFit`).
-/// - Still stubbed: the sample gate and paywall (M5) and the story-finished moment (M6).
+/// - Round 4: the folded card is a partial sheet and the page slides so the tapped line stays
+///   in view above it; the story-finished moment after the last page (`StoryFinishedView`);
+///   the finished "Aa" panel, the "Library" control and the previous-page control; optional
+///   sounds (off by default).
+/// - Still stubbed: the sample gate and paywall (M5).
 struct ReaderScreen: View {
     private let story: Story
+    /// The library's stories in catalog order, for "Next story".
+    private let stories: [Story]
     private let landmarks: LandmarkCatalog
     private let progress: ReadingProgressStore
     private let memory: ReaderMemoryStore
@@ -28,6 +34,7 @@ struct ReaderScreen: View {
 
     init(
         story: Story,
+        stories: [Story] = [],
         landmarks: LandmarkCatalog,
         progress: ReadingProgressStore,
         memory: ReaderMemoryStore,
@@ -35,6 +42,7 @@ struct ReaderScreen: View {
         router: AppRouter
     ) {
         self.story = story
+        self.stories = stories
         self.landmarks = landmarks
         self.progress = progress
         self.memory = memory
@@ -52,7 +60,14 @@ struct ReaderScreen: View {
         }
         .onAppear {
             if model == nil {
-                let created = ReaderModel(story: story, progress: progress, memory: memory, landmarks: landmarks, log: log)
+                let created = ReaderModel(
+                    story: story,
+                    progress: progress,
+                    memory: memory,
+                    landmarks: landmarks,
+                    log: log,
+                    catalog: stories
+                )
                 created.didOpen()
                 model = created
             }
@@ -173,9 +188,52 @@ private struct ReaderPage {
         )
     }
 
-    /// Top of the folded card: it leaves the top controls and a strip of the scene in view.
-    var sheetTop: CGFloat {
+    /// Bottom of the strip the top controls take on one pane: where the folded toast sits,
+    /// and the highest the tapped line may be moved to.
+    var foldedVisibleTop: CGFloat {
         metrics.controlTop + CGFloat(Tokens.Size.roundGlassButton) * metrics.scale + 14 * metrics.scale
+    }
+
+    /// Height of the folded card: a partial sheet (about 60% of the pane), so the tapped line
+    /// stays in view above it (`PageFit.foldedCardHeight`).
+    var sheetHeight: CGFloat {
+        CGFloat(PageFit.foldedCardHeight(
+            paneHeight: Double(metrics.paneSize.height),
+            topReserved: Double(foldedVisibleTop),
+            lineBand: Double(96 * metrics.scale)
+        ))
+    }
+
+    /// Top edge of the folded card, from the top of the pane.
+    var sheetTop: CGFloat {
+        max(0, metrics.paneSize.height - sheetHeight)
+    }
+
+    /// Where the tapped line is on the single pane, before the page moves: the word's own
+    /// rectangle when the card was opened by a tap in this layout, else the whole paragraph
+    /// (VoiceOver, a launch argument, a rotation since the tap).
+    var heldLine: (top: CGFloat, bottom: CGFloat)? {
+        guard metrics.posture == .folded, let card = model.openCard else { return nil }
+        if let word = wordRect {
+            let paneTop = CGFloat(panes.leading.y)
+            return (word.minY - paneTop, word.maxY - paneTop)
+        }
+        guard let span = layout.blockSpan(of: card.blockID, in: .leading, onScreen: screenIndex) else { return nil }
+        return (metrics.textTop + span.top, metrics.textTop + span.bottom)
+    }
+
+    /// How far the page (picture and words) slides up while the folded card is open, so the
+    /// tapped line sits just above the card (`PageFit.foldedLineShift`). Zero with two panes,
+    /// with no card open, and when the line is already clear of the card.
+    var foldedShift: CGFloat {
+        guard placement == .bottomSheet, let line = heldLine else { return 0 }
+        return CGFloat(PageFit.foldedLineShift(
+            lineTop: Double(line.top),
+            lineBottom: Double(line.bottom),
+            visibleTop: Double(foldedVisibleTop),
+            cardTop: Double(sheetTop),
+            margin: Double(14 * metrics.scale)
+        ))
     }
 
     /// The open card's rectangle in window coordinates.
@@ -192,7 +250,7 @@ private struct ReaderPage {
         case .bottomSheet:
             var sheet = rect(panes.leading)
             sheet.origin.y += sheetTop
-            sheet.size.height = max(1, sheet.height - sheetTop)
+            sheet.size.height = max(1, sheetHeight)
             return sheet
         }
     }
@@ -240,11 +298,15 @@ private struct ReaderPage {
     func next() {
         // Not while a card is open, not in the instant before the page is laid out, and not
         // while the last turn is still moving.
-        guard !isCardOpen, isReady, !model.isTurning else { return }
+        guard !isCardOpen, isReady, !model.isTurning, !model.isFinishedShown else { return }
         if isAtEnd {
-            model.beginTurn(lockFor: Motion.heroDuration)
-            model.finish()
-            router.showLibrary()
+            // The last page has been read: the story-finished moment (the library is one
+            // press away from there).
+            let model = self.model
+            model.beginTurn(lockFor: Motion.finishedDuration)
+            withAnimation(Motion.finished(reduceMotion: reduceMotion)) {
+                model.finish()
+            }
         } else {
             let model = self.model
             let plan = layout.plan
@@ -254,7 +316,7 @@ private struct ReaderPage {
 
     func back() {
         let model = self.model
-        guard !isCardOpen, isReady, !model.isTurning else { return }
+        guard !isCardOpen, isReady, !model.isTurning, !model.isFinishedShown else { return }
         let plan = layout.plan
         turn(.backward) { model.goBack(in: plan) }
     }
@@ -359,6 +421,15 @@ private struct ReaderContent: View {
             .background {
                 ReaderKeyCommands(page: page)
             }
+            // Under the story-finished moment the page is out of reach.
+            .allowsHitTesting(!model.isFinishedShown)
+            .accessibilityHidden(model.isFinishedShown)
+            .overlay {
+                if model.isFinishedShown {
+                    StoryFinishedView(model: model, router: router)
+                        .transition(.finishedReveal(reduceMotion: reduceMotion))
+                }
+            }
             .overlay(alignment: .topLeading) {
                 // The tapped word's highlight opens into the card and folds back into the
                 // word when the card closes (§3.7). Drawn only while the card is moving.
@@ -376,6 +447,11 @@ private struct ReaderContent: View {
             .animation(Motion.card(reduceMotion: reduceMotion), value: model.openCard)
             .animation(Motion.toast, value: model.toast)
             .animation(Motion.quick, value: model.isTextPanelOpen)
+            .animation(Motion.finished(reduceMotion: reduceMotion), value: model.isFinishedShown)
+            // Optional sounds (off by default; "Aa" panel): a soft page turn, a soft card chime.
+            .onChange(of: model.pageToken) { _, _ in
+                ReaderSound.shared.play(.page, enabled: model.isSoundOn)
+            }
             // A light tap under the finger each time the page turns.
             .sensoryFeedback(.impact(weight: .light, intensity: 0.7), trigger: model.pageToken)
             .onChange(of: page.shown, initial: true) { _, _ in
@@ -387,6 +463,7 @@ private struct ReaderContent: View {
                 // a modal card) is in the accessibility tree.
                 let target: ReaderFocus
                 if new != nil {
+                    ReaderSound.shared.play(.card, enabled: model.isSoundOn)
                     target = ReaderFocus.cardTitle
                 } else if let old {
                     target = ReaderFocus.block(old.blockID)
@@ -565,7 +642,7 @@ private struct ReaderPageRow: View {
     }
 }
 
-/// "Aa" + bookmark, with the interim text-size panel hanging beneath it.
+/// "Aa" + bookmark, with the "Aa" panel hanging beneath it.
 private struct ReaderTextControls: View {
     @Environment(\.pane) private var pane
     let page: ReaderPage
@@ -635,7 +712,7 @@ private struct ReaderLeadingPane: View {
                 .transition(page.textTransition)
 
             HStack(alignment: .top, spacing: pane.pt(10)) {
-                RoundGlassButton(icon: .back, chrome: chrome, label: "Back to the library", action: { page.close() })
+                LibraryButton(chrome: chrome, action: { page.close() })
                 StoryCrumb(title: story.title, subtitle: model.crumbSubtitle, chrome: chrome)
                     .padding(.top, pane.pt(Tokens.Spacing.crumbTop - Tokens.Spacing.topControl))
                 Spacer(minLength: 0)
@@ -834,22 +911,28 @@ private struct ReaderFoldedPane: View {
         let chrome = page.chrome.folded
         let model = page.model
         let controlLeading = pane.pt(Tokens.Spacing.insetControlFolded)
-        // The sheet leaves the top controls and a strip of the scene in view.
-        let sheetTop = page.sheetTop
+        // While the card is open the page slides up, so the tapped line sits above the card.
+        let shift = page.foldedShift
+        let cardOpen = page.isCardOpen
 
         ZStack(alignment: .topLeading) {
             Color.clear
-            FoldedPictureBand(
-                storyID: story.id,
-                spread: page.spread,
-                height: metrics.pictureHeight,
-                chrome: chrome,
-                transition: page.sceneTransition
-            )
-            // The origin chip and the crumb are omitted when folded, as designed.
-            ReaderColumn(page: page, column: .leading, focus: focus)
-                .id(model.pageToken)
-                .transition(page.textTransition)
+            ZStack(alignment: .topLeading) {
+                FoldedPictureBand(
+                    storyID: story.id,
+                    spread: page.spread,
+                    height: metrics.pictureHeight,
+                    chrome: chrome,
+                    transition: page.sceneTransition
+                )
+                // The origin chip and the crumb are omitted when folded, as designed.
+                ReaderColumn(page: page, column: .leading, focus: focus)
+                    .id(model.pageToken)
+                    .transition(page.textTransition)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
+            // A transform only: nothing is laid out again and no line re-wraps (§3.7).
+            .offset(y: -shift)
             PanelDismissLayer(model: model)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
@@ -857,9 +940,11 @@ private struct ReaderFoldedPane: View {
             ReaderMeasurer(page: page)
         }
         .overlay(alignment: .topLeading) {
-            RoundGlassButton(icon: .back, chrome: chrome, label: "Back to the library", action: { page.close() })
+            LibraryButton(chrome: chrome, action: { page.close() })
                 .padding(.leading, controlLeading)
                 .padding(.top, metrics.controlTop)
+                // Out of reach while a card is open (the card's layer takes every touch).
+                .opacity(cardOpen ? 0.5 : 1)
         }
         .overlay(alignment: .topTrailing) {
             ReaderTextControls(page: page, chrome: chrome)
@@ -886,13 +971,13 @@ private struct ReaderFoldedPane: View {
         .overlay(alignment: .top) {
             if let toast = model.toast, !page.isCardOpen {
                 ReaderToastView(toast: toast)
-                    .padding(.top, sheetTop)
+                    .padding(.top, page.foldedVisibleTop)
                     .transition(.opacity)
             }
         }
         .overlay {
             if page.placement == .bottomSheet, let content = page.cardContent {
-                CardSheet(content: content, storyID: story.id, topGap: sheetTop, focus: focus, onClose: { page.closeCard() })
+                CardSheet(content: content, storyID: story.id, height: page.sheetHeight, focus: focus, onClose: { page.closeCard() })
                     .transition(.cardRise(reduceMotion: page.reduceMotion))
             }
         }

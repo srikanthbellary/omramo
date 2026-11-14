@@ -18,6 +18,12 @@ enum Motion {
     static let cardDuration: Double = 0.38
     /// Library cover → reader, and back.
     static let heroDuration: Double = 0.45
+    /// The story-finished moment arriving over the last page.
+    static let finishedDuration: Double = 0.5
+    /// The splash: on screen for `splashHold`, then a `splashFade` cross-fade to the library.
+    /// Together under one second: the splash never keeps a child waiting.
+    static let splashHold: Double = 0.65
+    static let splashFade: Double = 0.3
     /// Every transition under Reduce Motion: one short cross-fade.
     static let reducedDuration: Double = 0.22
     /// The toast: appears in 0.2 s, stays 1.6 s, fades in 0.3 s.
@@ -64,6 +70,15 @@ enum Motion {
         reduceMotion ? fade() : settle(heroDuration)
     }
 
+    static func finished(reduceMotion: Bool) -> Animation {
+        reduceMotion ? fade() : settle(finishedDuration)
+    }
+
+    /// The small celebration on the story-finished moment: one slow, soft ease, played once.
+    static let celebration = Animation.easeOut(duration: 1.1)
+
+    static let splash = Animation.easeInOut(duration: splashFade)
+
     static let toast = Animation.easeOut(duration: toastIn)
 
     /// How long the page-turn controls stay locked after a press, so a second press cannot
@@ -109,6 +124,13 @@ extension AnyTransition {
     static func cardReveal(anchor: UnitPoint, reduceMotion: Bool) -> AnyTransition {
         guard !reduceMotion else { return .opacity }
         return .scale(scale: Motion.cardStartScale, anchor: anchor).combined(with: .opacity)
+    }
+
+    /// The story-finished moment: a fade with the slightest growth (0.97 → 1), so it arrives
+    /// like a breath out rather than a jump. A cross-fade with Reduce Motion.
+    static func finishedReveal(reduceMotion: Bool) -> AnyTransition {
+        guard !reduceMotion else { return .opacity }
+        return .scale(scale: 0.97, anchor: .center).combined(with: .opacity)
     }
 
     /// The folded card: rises from the bottom edge.

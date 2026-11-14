@@ -350,6 +350,10 @@ public struct StoryValidator: Sendable {
                                     "\"\(id)\" is not a tap target of this story"))
             }
         }
+        // The line shown to the child when the story is finished.
+        if let problem = MoralRule.problem(in: story.moral) {
+            issues.append(.init(.error, .moralIncomplete, at: "moral", problem))
+        }
     }
 
     private func checkTapTargets(

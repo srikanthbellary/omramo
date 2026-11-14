@@ -17,6 +17,8 @@ extension LandmarkArt {
         tajMinaret(&context, x: 85, base: 234, top: 106, width: 11)
         tajMinaret(&context, x: 347, base: 234, top: 106, width: 11)
         tajCypresses(&context)
+        // The near plane: a dark spray of garden leaves in the top-right corner.
+        cornerSpray(&context, seed: 211, dark: Art.color(0x16305A, 0.94), lit: Art.color(0xFFD9B0, 0.3))
         tajFinish(&context)
     }
 
@@ -43,12 +45,12 @@ extension LandmarkArt {
         Art.glow(&context, 44, 241, 46, Art.color(0xFFF1D2), alpha: 0.9)
         Art.fill(&context, Art.circle(44, 240, 8), Art.color(0xFFF8E2))
 
-        Art.blurred(&context, radius: 5, opacity: 0.55) { g in
+        Art.blurred(&context, radius: 4, opacity: 0.55) { g in
             var clouds = Path()
-            clouds.addEllipse(in: CGRect(x: 20, y: 191, width: 140, height: 10))
-            clouds.addEllipse(in: CGRect(x: 214, y: 206, width: 180, height: 8))
-            clouds.addEllipse(in: CGRect(x: 160, y: 147, width: 120, height: 7))
-            clouds.addEllipse(in: CGRect(x: 312, y: 117, width: 100, height: 6))
+            clouds.addPath(cloudBand(14, 202, width: 150, height: 12))
+            clouds.addPath(cloudBand(250, 214, width: 190, height: 10))
+            clouds.addPath(cloudBand(96, 156, width: 120, height: 8))
+            clouds.addPath(cloudBand(300, 150, width: 110, height: 7))
             Art.fill(&g, clouds, Art.color(0xFFD6CC))
         }
 
@@ -64,9 +66,11 @@ extension LandmarkArt {
         }
         Art.stroke(&context, birds, Art.color(0x2E3F6E, 0.55), width: 0.7)
 
-        // The far bank of trees, hazy.
+        // The far plane: the far bank of trees, then a veil of the dawn sky over it, so it
+        // sits back behind the marble.
         let far = canopy(from: -12, to: 444, baseY: 249, height: 12, bump: 16, depth: 10, seed: 5)
         Art.fill(&context, far, Art.color(0x7483AE, 0.75))
+        haze(&context, top: 226, bottom: 252, hex: 0xF9DCBE, alpha: 0.32)
     }
 
     // MARK: Garden and pool
@@ -180,6 +184,7 @@ extension LandmarkArt {
         ArtStyle.contactShadow(&context, 224, 251, 152, 5, alpha: 0.26)
         let plinth = Art.rect(76, 232, 280, 18)
         tajMarble(&context, plinth, from: 76, to: 356)
+        model(&context, plinth, light: 0.14, shade: 0.24)
         Art.fill(&context, Art.rect(74, 231, 284, 2.2), Art.color(0xFFFFFF, 0.9))
 
         // A blind arcade along the plinth, and the steps in the middle.
@@ -202,6 +207,10 @@ extension LandmarkArt {
         let shaftTop = top + width * 2.2
         let shaft = Art.polygon([pt(x - half, base), pt(x - slim, shaftTop), pt(x + slim, shaftTop), pt(x + half, base)])
         tajMarble(&context, shaft, from: x - half, to: x + half)
+        // The one light: warm high on the shaft, indigo low on its right, a warm left edge.
+        model(&context, shaft, light: 0.2, shade: 0.24)
+        let litEdge = Art.line(x - half + 0.4, base, x - slim + 0.4, shaftTop)
+        Art.stroke(&context, litEdge, ArtStyle.warmLight.opacity(0.75), width: 0.9, cap: .butt)
 
         // Three balconies.
         var rings = Path()
@@ -287,6 +296,8 @@ extension LandmarkArt {
             Art.fillLinear(&g, Art.rect(170, 60, 92, 84), domeShade, from: CGPoint(x: 196, y: 84), to: CGPoint(x: 258, y: 140))
             Art.fill(&g, Art.rect(170, 133, 92, 6), Art.color(0x7F90BC, 0.3))
         }
+        // The dome turns: an indigo core shadow low on its right, a thin warm rim upper left.
+        model(&context, dome, light: 0.1, shade: 0.2, rim: 0.7)
         // The lotus cap and the finial.
         Art.fill(&context, Art.ellipse(cx, 71.5, 5.2, 2.2), Art.color(0xF4F2FA))
         Art.stroke(&context, Art.line(cx, 70, cx, 46), Art.color(0xE9C983), width: 1.3)
@@ -303,6 +314,13 @@ extension LandmarkArt {
         // The body, with its cut corners turning away from the light.
         let body = Art.rect(141, 160, 150, 72)
         tajMarble(&context, body, from: 141, to: 291)
+        model(&context, body, light: 0.16, shade: 0.2)
+        // The dome and its kiosks throw a soft shade onto the roof line, to the right.
+        let roofShade: [(Color, CGFloat)] = [
+            (ArtStyle.coolShade.opacity(0.2), 0),
+            (ArtStyle.coolShade.opacity(0), 1),
+        ]
+        fillVertical(&context, Art.rect(200, 160, 91, 9), roofShade, from: 160, to: 169)
         Art.fill(&context, Art.rect(141, 160, 19, 72), Art.color(0xE2B9B4, 0.22))
         Art.fill(&context, Art.rect(272, 160, 19, 72), Art.color(0x6F84B8, 0.3))
         Art.fill(&context, Art.rect(139, 158, 154, 3), Art.color(0xFFFFFF, 0.95))
@@ -391,6 +409,8 @@ extension LandmarkArt {
             let width = 3 + eased * 9
             for side in sides {
                 let x = 216 + side * offset
+                // Each tree's shadow lies on the lawn to its right, away from the sun.
+                ArtStyle.contactShadow(&context, x + width * 1.1, baseY - 0.5, width * 2.2, max(1, width * 0.32), alpha: 0.26)
                 dark.addPath(tajCypress(x, baseY, height: height, width: width))
                 lit.addPath(tajCypress(x - width * 0.2, baseY - height * 0.05, height: height * 0.88, width: width * 0.42))
             }

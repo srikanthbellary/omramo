@@ -165,7 +165,7 @@ SwiftUI mapping (estimate): a tinted fill over `.ultraThinMaterial`, an inner st
 | `tapOn` | ring 3 pt `rgba(255,196,61,.35)` + `0 6 16 rgba(255,150,30,.35)` |
 | `sheet` | `0 -12 40 rgba(0,0,0,.3)` |
 
-### 3.7 Motion (as implemented in round 3 — the locked designs are static screenshots and specify no animation; design gap G11)
+### 3.7 Motion (as implemented in rounds 3 and 4 — the locked designs are static screenshots and specify no animation; design gap G11)
 
 The values below are what the app does today. They are ours, written without a device in hand
 (`App/Sources/DesignSystem/Motion.swift` is the only place they live), and still need
@@ -183,6 +183,9 @@ while it moves (`docs/ART_DIRECTION.md` §8). No page curl, no paper, no book ed
 | `card` | 0.38 s, critically damped spring | A tap-to-see, landmark or character card opening and closing; paragraph dimming |
 | `hero` | 0.45 s, critically damped spring | Library cover → reader, and back |
 | `toast` | appears 0.2 s, stays 1.6 s, fades 0.3 s | "You are back at your line", bookmark messages |
+| `finished` (round 4) | 0.5 s, critically damped spring | The story-finished moment arriving over the last page (a fade with a growth from 0.97) |
+| `celebration` (round 4) | 1.1 s ease-out, once | The glow and the seven sparks of the story-finished moment settling |
+| `splashHold` + `splashFade` (round 4) | 0.65 s + 0.3 s | The splash: on screen, then a cross-fade to the library. Under one second together |
 | `pageTextTravel` | 30 pt × pane scale | How far the words travel on a page turn |
 | `pageSceneTravel` | 12 pt × pane scale | How far the picture drifts when it changes |
 | `cardStartScale` | 0.94 | A card starts this much smaller |
@@ -204,22 +207,43 @@ both ends, while the card itself grows from 0.94 to full size, anchored on the t
 (the word is on the other pane, so the card seems to come out of the hinge edge at the height
 of the line) and fades in. The other paragraphs dim to 42–45% with the same spring. Closing
 runs the same motion backwards into the word. The text pane does not move or re-wrap at any
-point. Folded, the card rises from the bottom edge while the glow travels from the word to it.
+point. Folded, the card is a partial sheet (about 60% of the screen, §5.9a): it rises from
+the bottom edge while the glow travels from the word to it, and the page above it — picture
+and words together, as one transform, nothing re-wrapped — slides up just far enough for the
+tapped line to sit 14 pt above the card; closing slides it back.
 A card opened without a tap on the word (VoiceOver's action, a launch argument) grows from the
 edge it shares with the text.
 
 **Library → story.** The reader opens out of the cover that was tapped (the "Keep reading"
 card, a story's cover, or the shelf row): the whole reading screen starts scaled into the
 cover's rectangle with the cover's rounded corners, and grows to fill the window, fading in
-over the first third so the cover seems to become the scene. The back button reverses it into
+over the first third so the cover seems to become the scene. The "Library" control reverses it into
 the same cover, wherever that cover is by then (the library stays laid out underneath). If
 there is no cover to go to — the story was opened by a launch argument, or its cover has
 scrolled out of sight — it is a cross-fade.
 
-**Reduce Motion.** Every one of the three becomes a plain cross-fade: no slide, no drift, no
-scaling, no glow travelling across the screen. Press feedback becomes a slight dim.
+**Story finished (round 4).** Pressing the round button on the last screen of the last page
+brings the story-finished moment in over the page: a 0.5 s fade with the slightest growth
+(0.97 → 1). Once it is there, a soft sun-coloured glow behind the cover eases in and seven
+small sparks drift a few points outward and stay — one movement, 1.1 s, played once. Nothing
+loops, nothing falls, nothing counts up. "Read again" turns back to page 1 with the ordinary
+backward page turn under the same fade.
 
-**Haptics.** One light impact when a page turns. Nothing else vibrates.
+**Splash (round 4).** Nothing on the splash moves. It is shown for 0.65 s and cross-fades to
+the library in 0.3 s; it never waits for anything, so it cannot hold a child up for a second.
+
+**Reduce Motion.** Every one of these becomes a plain cross-fade: no slide, no drift, no
+scaling, no glow travelling across the screen, no sparks travelling (they fade in where they
+stay). The folded page still changes place under an open card, as a cross-fade-length ease.
+Press feedback becomes a slight dim.
+
+**Haptics.** One light impact when a page turns; one soft "success" tap as the story-finished
+moment arrives. Nothing else vibrates.
+
+**Sound (round 4, optional).** Off until switched on in the "Aa" panel. Two sounds, both our
+own and synthesised (`tools/make_sounds.py`): a 0.22 s soft swish when a page turns and a
+0.42 s two-note chime when a card opens. Audio session category `.ambient`: the silent switch
+silences them and they never interrupt other audio.
 
 **Not animated on purpose:** tap words at rest, covers, the map, the streak card, the scene
 while reading. The app never plays an animation to attract attention.
@@ -322,8 +346,23 @@ Rule: marked words are never signalled by colour alone — the tap word always h
 ### 5.1 Round glass button
 40 × 40, radius 20, glass (light or dark by pane), icon centred. Icons: back chevron (12 × 20, stroke 2.6), close ✕ (13 × 13, stroke 2.3). Hit area at least 44 × 44. Position: left 20, top 50 on the reference pane (left 18, top 56 folded).
 
+### 5.1a "Library" control (round 4 — closes the first half of gap G3)
+The way out of a story is no longer a bare "<" (which young children read as "the page before"). It is a **glass capsule, 40 high, in the back button's place: the little house icon and the word "Library"** (Bricolage 13.5, wght 650; padding 13 left, 15 right; gap 7). Hit area at least 44 pt. VoiceOver: "Back to the library". Identifier `reader.library`. The locked screens 03–07 and 10 show the round chevron; this is a deliberate change for clarity, to confirm with Srikanth (§9, question 5).
+
+### 5.1b Previous-page control (round 4 — closes the second half of gap G3)
+The page-turn button's quiet twin: a **round glass button, 46 pt, with the page-turn arrow mirrored**, immediately left of the page chip (trailing pane; in the footer row when folded). Never less than 44 pt to touch. Hidden on the very first screen. ← on a hardware keyboard. VoiceOver: "Previous page". Identifier `reader.previous`. Two arrows of one family: the big coloured one goes on, the small glass one goes back.
+
 ### 5.2 Capsule glass control ("Aa" + bookmark)
 Height 40, radius 20, horizontal padding 15, gap 14 between items. Position: right 20, top 50 (right 18, top 56 folded). Two separate hit targets, each at least 44 pt wide.
+
+### 5.2a "Aa" panel (round 4 — closes gap G1)
+Hangs under the capsule, 10 pt below it; glass with a near-opaque fill (white 93%, or deep indigo `#1E1446` at 90% on dark chrome); radius 26; padding 14 / 16 / 12. A tap anywhere else closes it. From top to bottom, 12 pt apart, all 260 pt wide (5 × 52):
+1. **Header row:** label "TEXT SIZE" (section label, 60%) and, right-aligned, the current step's name ("Standard").
+2. **Live preview:** a well (content colour at 6%, 12% on dark; radius 18) of fixed height — the largest size fits, so the panel never changes shape — with one line, "Once upon a time", in the story's own reading face at the chosen size. The page behind the panel re-sets live as well.
+3. **Five sizes in one track** (the same well): five "A"s of rising size (14 / 17 / 20 / 23.5 / 27, Atkinson wght 700), each a button 52 × 52 (never under 48); the chosen one sits on a filled violet (`#5A3FE0`) rounded square (radius 15, inset 4) in white. Steps: Small 0.9 ×, Standard 1 ×, Large 1.15 ×, Larger 1.3 ×, Largest 1.5 ×.
+4. **Sounds row** (at least 48 high): loudspeaker icon, "Sounds", "On" / "Off", and a 52 × 30 switch (violet when on). Off by default.
+5. **Bookmark row**, only when the story has a bookmark on another page: bookmark icon, "Go to my bookmark · page N".
+Nothing else is in the panel. Identifiers: `reader.textPanel`, `reader.textSize.0…4`, `reader.sound`.
 
 ### 5.3 Chip
 Height 28, radius 14, padding 9 left / 11 right, icon gap 6, Bricolage 12 wght 650. Variants:
@@ -341,7 +380,7 @@ Dashes 10 × 4, radius 2, gap 3, current colour at 22%; read pages at 60%; curre
 
 ### 5.6 Round page-turn button
 60 × 60 (54 × 54 folded), radius 30, gradient per story (§3.3), shadow `pageTurn`, white arrow 26 × 22 stroke 3.2 (dark `#3A1B08` on the amber variant), outer ring. Position: right 24, bottom 24. It is the only forward control. Accessibility label "Next page".
-A "previous page" control exists in the source CSS (`.prev`, left 24, bottom 34) but is not placed on any screen; going back a page is a design gap (covered by G3).
+A "previous page" control exists in the source CSS (`.prev`, left 24, bottom 34) but is not placed on any screen; round 4 places one beside the page chip (§5.1b). On the last screen of the last page the button shows a tick ("Finish the story") and leads to the story-finished moment (§6, "Story finished").
 
 ### 5.7 Story crumb
 Title (one line, truncating) and subtitle (part or series, plus "· Free sample" when sampling) to the right of the back button: left 70, top 53, right 22.
@@ -356,6 +395,9 @@ When the marker and wash clear after a return is not specified (estimate: on the
 
 ### 5.9 Tap-to-see card (facing pane)
 Full pane, background from the card's own palette (Rin Gin: `#06204A`). Picture fills the top 404 pt and fades into the background over 300–406 pt. Close button (round glass) top-left. Title (40 pt) at top 372 with an optional subtitle; one line to read (19 / 29) at top 446; culture note box at top 520 (inset 20, radius 22, fill white 10%, edge white 22%, label with pin "FROM JAPAN"); primary button "Back to my line" (52 high, inset 20, bottom 26) with the return-arrow icon. No other controls.
+
+### 5.9a The card on one pane (round 4 — closes gap G4)
+Folded, or on any one-pane window, the same card (tap-to-see, landmark or character) is a **partial sheet from the bottom edge: 60% of the pane's height** (less on a very short pane, so that at least 96 pt stay free under the top controls; never under 45%), top radius 34, a soft indigo shadow upward. The page above it is **not dimmed by a scrim**: the tapped paragraph keeps its beam and place marker at full strength and the other paragraphs dim as on two panes (§5.8), and the whole page — picture band and words as one — slides up until the tapped line's bottom is 14 pt above the card (never so far that the line's top would go under the top controls; a line already clear of the card does not move). The top controls stay where they are, faded to 50%, and nothing behind the card responds. Inside the sheet the picture takes at most 46% of the sheet's height; the copy scrolls if it must. Controls: the close button and "Back to my line" — nothing else. Rule in code: `PageFit.foldedCardHeight`, `PageFit.foldedLineShift`.
 
 ### 5.10 Character card (facing pane)
 Full pane. Top: character portrait on a warm gradient with a sunburst, 400 pt high. Bottom sheet from top 372: fill `#FFFBF4`, top radius 34, shadow `0 -10 30 rgba(160,60,0,.18)`. Inside (inset 28, top 26): label "CHARACTER · IN PART I AND PART II" (`#C2571C`), name (38 pt), up to three trait pills (height 30, radius 15; e.g. `#FFE9B8`/`#8A4A00`, `#D9F5E4`/`#0B6B4A`, `#FFE0D6`/`#B33A1C`), a short description (19 / 29). Primary coral button "Back to my line" (inset 20, bottom 26). Text-pane behaviour is the same as tap-to-see: marker, dimming, the name shown in its open state.
@@ -395,6 +437,7 @@ The price string always comes from StoreKit. Until a product exists the card sho
 ### 5.20 Splash wordmark across the hinge
 `OM` + `R` right-aligned 9 pt from the hinge edge of the left pane; `A` + `MO` left-aligned 9 pt from the hinge edge of the right pane; top 214; so the hinge runs through the middle of "RA". R and A carry the `wordmark.ra` gradient. Each pane has a 60 pt warm edge glow (`rgba(255,150,90,.22)`) and a 2 pt seam line on its hinge edge from top 150 to bottom 150. Tagline at top 404: "A magical book" right-aligned on the left pane, "that you read." left-aligned on the right. Bottom-left: three overlapping 40 pt cover discs. Bottom-right: three origin chips (white 9% fill). Small four-point "motes" in `#FFD25A`.
 Folded splash is not drawn (estimate: the full word "OMRAMO" on one line scaled to the pane width with the same gradient on "RA").
+**As built (round 4):** two panes — the wordmark, the tagline halves, the 60 pt edge glow, the 2 pt seam and ten still motes, placed as above (the wordmark keeps its 214 / 720 place in proportion on a pane of another height, and scales down on a pane too narrow for half the word). The cover discs and origin chips of screen 01 are left out: the splash is on screen for under a second and they would only flicker. One pane — "OMRAMO" on one line across the text width, a soft warm glow behind "RA" where the hinge would be, the whole tagline beneath, a little above the middle.
 
 ### 5.21 Story map card
 372 × 214, `mapCard` gradient. Dotted world map (dots white 30%, radius 1.5, every 5°). Pins: read (solid dot with white edge and a white label pill), reading now (same with a pulsing-looking halo: 13 pt 22% disc and 8 pt ring), later (3.6 pt dashed white ring, no label, no title promised). Legend row at the bottom.
@@ -413,6 +456,8 @@ Positions are on the 432 × 720 reference pane unless stated. "L" and "R" are th
 
 ### 01 Splash — `docs/design/01-splash.png`
 Dark aurora across both panes. Wordmark, seam, tagline, cover discs and origin chips as in §5.20. Light status bar and home indicators. No buttons; the app moves to the library when content is ready. The minimum display time is not specified (estimate: about 1.2 s, skipped under Reduce Motion to a plain fade).
+
+**As built (round 4):** shown for 0.65 s, then a 0.3 s cross-fade (§3.7). The launch screen behind it is the dark aurora's base colour (`#110C33`), so there is no white flash. Skipped when a debug argument opens a story directly; `-OmramoShowSplash` holds it for screenshots.
 
 ### 02 Library home — `docs/design/02-library-home.png`
 Light aurora.
@@ -471,6 +516,13 @@ As §5.19. L dark aurora, R `#F4F2FF`. Close returns to the story at the sample 
 One pane with Dynamic Island. Scene fills the pane; the picture occupies the top (to about y 340) and ends in a wave edge over a pale text area. Back button (left 18, top 56); Aa capsule (right 18, top 56). Text left 30, top 366, width 376, Low at 22.5 / 35 with 12 pt paragraph gaps: name "Monkey", tap word "ripe fruit", "“Off we go!”" as a 1.42 em sound word in the crocodile's colour, voices with face chips. Footer: Low chip left, page chip "5 / 14" right (ends 92 pt from the right edge); page-turn button 54 pt at right 22, bottom 22. The origin chip and the crumb are omitted when folded.
 The folded page number is the same page as unfolded (5 of 14), so position carries across the fold.
 
+### Story finished (round 4 — not in the locked screens; gap G3, our design)
+Lies over the last page, on the same panes. **Backdrop:** the last scene, blurred (thin material) and deepened into night (`#1F1856` 78% → `#130F36` 90%), with the one warm light as a soft glow from the upper left.
+**L (the words), centred in a 372 pt column:** the story's cover (96 × 120, radius 16, tilted −4°) with a sun-gradient tick badge (38 pt, white 2.5 pt ring) on its lower-right corner, a soft sun glow behind it and seven small sparks around it; label "THE END" in sun; the story's title (screen title, white, centred); the **moral** — one sentence from the content (`story.moral`) — in the reading face (19 / 29, `#F4F0FF`, centred) in a quiet glass box (white 10%, edge white 20%, radius 22, padding 18 / 16).
+**R (the choices), centred in a 372 pt column, 14 pt apart:** a white card (94%) with the next story's cover (72 × 90), label "NEXT STORY", its title (19 pt), tier pill and origin, and the **primary button "Next story"** — the coral capsule, full width, 56 high (never under 56 to touch); under the card two glass capsules side by side, 48 high: **"Read again"** (return arrow) and **"Library"** (house). When the library holds no other story the card is omitted and the primary button is "Back to the library".
+**One pane:** the words, then the choices, in one centred column that scrolls only if it must.
+Which story is "next" is a rule, not a guess (`NextStory` in the core): an unread story before a read one; the same level first, then one level up, then down; then catalog order. The story is recorded as finished (and its last page as read) the moment the button is pressed, before the moment appears. No score, no stars, no streak talk, no timer. Identifiers: `finished.moment`, `finished.moral`, `finished.next`, `finished.again`, `finished.library`.
+
 ## 7. Accessibility requirements that are part of the design
 
 - Minimum hit target 44 × 44 pt, including tap words (expand the hit area beyond the glyphs).
@@ -494,10 +546,12 @@ The folded page number is the same page as unfolded (5 of 14), so position carri
 ## 9. Open questions (design)
 
 1. Design gaps G1–G12 listed in `docs/PRD.md` §7: who designs them (PRD Q21)?
-2. Motion values in §3.7 are implemented as proposals (round 3). Approve, or supply others, after seeing them on a device.
+2. Motion values in §3.7 are implemented as proposals (rounds 3 and 4, including the story-finished moment and the splash timing). Approve, or supply others, after seeing them on a device.
 3. System font versus bundled Inter for settings and keypad (PRD Q15).
 4. When does the place marker clear after returning from a card (§5.8)?
-5. How does a child go back one page? No control is placed in the locked screens (§5.6).
+5. How does a child go back one page? No control is placed in the locked screens (§5.6). Round 4 answers with a small round glass arrow beside the page chip (§5.1b) and replaces the bare back chevron with a "Library" capsule (§5.1a) — both change the look of the locked screens 03–07 and 10 slightly: confirm or redirect.
 6. Page-dash rule for long stories (§5.5).
-7. Folded splash layout (§5.20).
+7. Folded splash layout (§5.20): built as one line with a warm glow behind "RA" (round 4) — confirm. And: should the splash keep the cover discs and origin chips of screen 01, given it is shown for under a second?
+9. The "Aa" panel (§5.2a), the one-pane card at 60% (§5.9a) and the story-finished moment (§6) are our designs for gaps G1, G4 and G3: confirm or redirect after seeing them.
+10. Sounds (§3.7): keep, change or remove? They are off by default.
 8. Are tier names "Low / Medium / Advanced" final on child-facing chips (PRD Q3)?

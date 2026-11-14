@@ -15,6 +15,10 @@ public struct Story: Codable, Hashable, Sendable, Identifiable {
     public var review: Review
     public var culturalReview: CulturalReview
     public var education: Education
+    /// What the story leaves the reader with, in the child's own words: one short sentence,
+    /// shown on the story-finished moment (round 4). `education.moral.lesson` is the longer
+    /// note for editors and the parent view. Required by the validator (`moral-incomplete`).
+    public var moral: String?
     public var sample: Sample
     public var theme: StoryTheme
     public var cover: ArtRef

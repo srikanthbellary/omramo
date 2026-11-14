@@ -3,13 +3,16 @@ import OmramoCore
 
 /// Concept art for "The Story of Urashima Taro", drawn in code.
 ///
-/// Ported from the locked design source (docs/design/source/src/lib/art-urashima.js): flat graded
+/// Started from the locked design source (docs/design/source/src/lib/art-urashima.js): flat graded
 /// haze, layered wave bands with seigaiha texture and foam fingers, a limited palette. The wave
 /// bands are our own design. Concept art only; final art is to be commissioned and reviewed.
 ///
-/// This file holds the entry point, the palette, the sea (wave bands) and the figures.
-/// The scenes are in `UrashimaArt+Scenes.swift`, the tap-to-see pictures, portraits, faces and
-/// cover in `UrashimaArt+Pictures.swift`.
+/// This file holds the entry point, the palette, the stages (how a scene grows with its
+/// height), the sea (wave bands) and the landscape parts (sun, headlands, pines, houses).
+/// - Figures (tortoise, Urashima, Otohime, boat, lacquer box): `UrashimaArt+Figures.swift`.
+/// - The five unfolded scenes: `UrashimaArt+Scenes.swift`.
+/// - The five folded scenes (their own compositions): `UrashimaArt+Folded.swift`.
+/// - Palace parts, tap-to-see pictures, portraits, face chips, cover: `UrashimaArt+Pictures.swift`.
 enum UrashimaArt {
     /// Draws the picture called `name`. Returns false for a name this story does not have.
     static func paint(_ name: String, role: ArtRole, in context: inout GraphicsContext, size: CGSize) -> Bool {
@@ -17,36 +20,26 @@ enum UrashimaArt {
         let h = max(size.height, 1)
         switch (name, role) {
         case ("scene-shore", .sceneUnfolded):
-            sceneBeach(&context, h: h, folded: false, later: false)
+            sceneBeach(&context, h: h, later: false)
         case ("scene-sea", .sceneUnfolded):
-            sceneSea(&context, h: h, folded: false)
+            sceneSea(&context, h: h)
         case ("scene-deep", .sceneUnfolded):
-            sceneDeep(&context, h: h, folded: false)
+            sceneDeep(&context, h: h)
         case ("scene-palace", .sceneUnfolded):
-            scenePalace(&context, h: h, folded: false)
+            scenePalace(&context, h: h)
         case ("scene-return", .sceneUnfolded):
-            sceneBeach(&context, h: h, folded: false, later: true)
+            sceneBeach(&context, h: h, later: true)
 
         case ("scene-shore", .sceneFolded):
-            foldedScene(&context, width: w, height: h, tail: dayFills[4], crest: true) { g, vh in
-                sceneBeach(&g, h: vh, folded: true, later: false)
-            }
+            foldedBeach(&context, w: w, h: h, later: false)
         case ("scene-sea", .sceneFolded):
-            foldedScene(&context, width: w, height: h, tail: dayFills[5], crest: true) { g, vh in
-                sceneSea(&g, h: vh, folded: true)
-            }
+            foldedSea(&context, w: w, h: h)
         case ("scene-deep", .sceneFolded):
-            foldedScene(&context, width: w, height: h, tail: deepFloor, crest: false) { g, vh in
-                sceneDeep(&g, h: vh, folded: true)
-            }
+            foldedDeep(&context, w: w, h: h)
         case ("scene-palace", .sceneFolded):
-            foldedScene(&context, width: w, height: h, tail: palaceFloor, crest: false) { g, vh in
-                scenePalace(&g, h: vh, folded: true)
-            }
+            foldedPalace(&context, w: w, h: h)
         case ("scene-return", .sceneFolded):
-            foldedScene(&context, width: w, height: h, tail: duskFills[4], crest: true) { g, vh in
-                sceneBeach(&g, h: vh, folded: true, later: true)
-            }
+            foldedBeach(&context, w: w, h: h, later: true)
 
         case ("see-fishing-boats", .picture):
             seeFishingBoats(&context, w: w, h: h)
@@ -93,10 +86,11 @@ enum UrashimaArt {
         Art.color(0x2B6BB3), Art.color(0x1B4C93), Art.color(0x12356F),
     ]
 
-    /// The same bands under a grey-lavender haze (the changed shore).
-    static let duskFills: [Color] = [
-        Art.color(0xDCDEEC), Art.color(0xC3C9DF), Art.color(0xA3ADCD), Art.color(0x8290BA),
-        Art.color(0x6272A5), Art.color(0x4A5A8E), Art.color(0x364476),
+    /// The same bands three hundred years on: still the story's blues, only quieter and a
+    /// little cooler (round 3 used a grey-lavender here, which left the story's ramp).
+    static let laterFills: [Color] = [
+        Art.color(0xD6E4EC), Art.color(0xBBD0DF), Art.color(0x9DBAD0), Art.color(0x7C9FC0),
+        Art.color(0x5C82AD), Art.color(0x45689A), Art.color(0x325084),
     ]
 
     static let daySky: [(Color, CGFloat)] = [
@@ -108,10 +102,10 @@ enum UrashimaArt {
         (Art.color(0xEAF4FB), 0), (Art.color(0xF4F1EC), 0.5), (Art.color(0xFCE8DC), 0.8), (Art.color(0xFBDCCB), 1),
     ]
 
-    /// The changed shore: a lavender haze above, but the low sky still ends in the story's peach
-    /// (the ending is sad, never cold).
-    static let duskSky: [(Color, CGFloat)] = [
-        (Art.color(0xECEBF5), 0), (Art.color(0xF3EEF0), 0.5), (Art.color(0xF8E6E0), 0.8), (Art.color(0xFBDDD0), 1),
+    /// The changed shore: a cooler, paler haze above, but the low sky still ends in the
+    /// story's peach (the ending is sad, never cold).
+    static let laterSky: [(Color, CGFloat)] = [
+        (Art.color(0xE9F0F5), 0), (Art.color(0xF2EFEC), 0.5), (Art.color(0xF9E7DD), 0.8), (Art.color(0xFBDDCE), 1),
     ]
 
     /// The peach of the horizon band (the `glow` step of the story's ramp).
@@ -152,39 +146,66 @@ enum UrashimaArt {
         path.addCurve(to: pt(cx + r, cy), control1: pt(cx - r, cy - lift), control2: pt(cx + r, cy - lift))
     }
 
-    // MARK: - Folded scenes
+    // MARK: - Stages
 
-    /// Draws an unfolded scene's trailing-pane picture into the folded picture band. The scene is
-    /// drawn in its own 892-wide space, anchored to the bottom-right, and scaled down when the band
-    /// is short. The last 20 units are plain `tail` colour for the caller's wave cut.
-    static func foldedScene(
-        _ context: inout GraphicsContext,
-        width: CGFloat,
-        height: CGFloat,
-        tail: Color,
-        crest: Bool,
-        _ scene: (inout GraphicsContext, CGFloat) -> Void
-    ) {
-        let tailHeight: CGFloat = 20
-        let usable = max(height - tailHeight, 60)
-        let k = min(1, usable / 330)
-        let virtualHeight = usable / k
-        let shift = 892 - width / k
-        Art.fill(&context, Art.rect(0, 0, width, height), tail)
-        let frame = Art.rect(0, 0, width, usable)
-        Art.clipped(&context, to: frame) { g in
-            Art.group(&g, x: -shift * k, y: 0, scale: k) { inner in
-                scene(&inner, virtualHeight)
-            }
+    /// How an unfolded scene (892 units wide, 400…1300 tall) is laid out.
+    ///
+    /// The picture is one block anchored to the bottom edge. It is designed 240 units deep
+    /// (horizon to bottom edge) and grows with the canvas: the horizon always sits about 64%
+    /// of the way down, so a tall iPad window gets a deeper sea, larger waves, trees and
+    /// figures instead of a stretched sky, and a short window gets a smaller picture in
+    /// which nothing collides. Positions are given in "units above the bottom at scale 1".
+    struct Stage {
+        let h: CGFloat
+        /// Scale of the picture block: 1 at a height of about 667, 0.62…1.8.
+        let s: CGFloat
+        /// Scale of the figures: follows `s` but stops growing sooner.
+        let fig: CGFloat
+        /// The y of the horizon.
+        let horizon: CGFloat
+
+        init(_ height: CGFloat) {
+            let depth: CGFloat = max(150, height * 0.36)
+            let scale: CGFloat = min(1.8, max(0.62, depth / 240))
+            h = height
+            s = scale
+            fig = min(scale, 1.5)
+            horizon = height - 240 * scale
         }
-        if crest {
-            let line = usable - 5
-            waveBand(
-                &context, x0: 0, x1: width, bottom: height, amp: 6, length: 48, phase: 9,
-                fill: tail, foamOpacity: 0.85
-            ) { _ in line }
+
+        /// The y of a point `up` design units above the bottom edge.
+        func y(_ up: CGFloat) -> CGFloat {
+            h - up * s
         }
-        finish(&context, width, height)
+    }
+
+    /// How a folded scene (432 units wide, 240…520 tall) is laid out: its own composition,
+    /// anchored to the bottom above the caller's wave cut, scaled with the height.
+    struct FoldedStage {
+        let h: CGFloat
+        /// 1 at a height of 420; 0.57…1.2.
+        let s: CGFloat
+        /// The lowest y that holds anything essential (the caller's wave cut is below it).
+        let base: CGFloat
+
+        init(_ height: CGFloat) {
+            h = height
+            s = min(1.2, max(0.57, height / 420))
+            base = height - 24
+        }
+
+        /// The y of a point `up` design units above `base`.
+        func y(_ up: CGFloat) -> CGFloat {
+            base - up * s
+        }
+
+        /// The scale of a figure whose feet are at `footY` and whose face is `face` units
+        /// above its feet (at scale 1): `preferred` × `s`, or less when the face would
+        /// otherwise sit under the top controls (the top 118 units).
+        func figure(_ preferred: CGFloat, footY: CGFloat, face: CGFloat) -> CGFloat {
+            let room: CGFloat = (footY - 118) / max(face, 1)
+            return max(0.3, min(preferred * s, room))
+        }
     }
 
     // MARK: - Sea
@@ -209,26 +230,31 @@ enum UrashimaArt {
         BandSpec(offset: 200, amp: 13, length: 96, foamOpacity: 0.92, fingers: true, texture: 2),
     ]
 
-    /// The swell of the design's `seaScene`: band crests sit at `low` where the sea is calm and
-    /// rise by `lift` between `riseStart` and `riseEnd`.
+    /// How much of a swell each band takes: none at the horizon (which stays a straight,
+    /// calm line), all of it in the nearest band.
+    static let swellShare: [CGFloat] = [0, 0, 0.1, 0.35, 0.6, 0.8, 1]
+
+    /// A sea of seven bands under a level horizon at `low`. The near bands may rise by
+    /// `swell` between `riseStart` and `riseEnd` (the swell under the boat).
     struct Sea {
         var low: CGFloat
-        var lift: CGFloat = 0
-        var riseStart: CGFloat = 300
-        var riseEnd: CGFloat = 640
-        /// Scales band spacing, crest height and crest length (small pictures).
+        /// Scales band spacing, crest height and crest length.
         var scale: CGFloat = 1
+        var swell: CGFloat = 0
+        var riseStart: CGFloat = 470
+        var riseEnd: CGFloat = 760
 
         func top(_ index: Int, _ x: CGFloat) -> CGFloat {
             let last = UrashimaArt.bandSpecs.count - 1
-            let spec = UrashimaArt.bandSpecs[min(max(index, 0), last)]
+            let i = min(max(index, 0), last)
+            let spec = UrashimaArt.bandSpecs[i]
             var rise: CGFloat = 0
             let span = riseEnd - riseStart
-            if lift != 0, span > 0 {
-                rise = lift * UrashimaArt.smooth((x - riseStart) / span)
+            if swell != 0, span > 0, i < UrashimaArt.swellShare.count {
+                let share: CGFloat = UrashimaArt.swellShare[i]
+                rise = swell * share * UrashimaArt.smooth((x - riseStart) / span)
             }
-            let share = 1 - CGFloat(index) * 0.09
-            return low + spec.offset * scale - rise * share
+            return low + spec.offset * scale - rise
         }
     }
 
@@ -251,7 +277,7 @@ enum UrashimaArt {
             nextOffset = bandSpecs[index + 1].offset
         }
         let gap = (nextOffset - spec.offset) * sea.scale
-        let depth = gap + sea.lift * 0.09 + 10
+        let depth = gap + 10
         return waveBand(
             &context, x0: x0, x1: x1, bottom: bottom,
             amp: spec.amp * sea.scale, length: spec.length * sea.scale, phase: CGFloat(index) * 17,
@@ -391,6 +417,40 @@ enum UrashimaArt {
         return shape
     }
 
+    /// The veil over the leading pane of an unfolded sea scene, so that the sea can run under
+    /// the words as one place and stay calm: a side-to-side haze that is gone before the
+    /// trailing pane's picture, and a second veil that is strongest on the horizon (the far
+    /// bands and the far shore stay close to the sky's value) and gone by the near bands
+    /// (the bottom third keeps its stronger forms).
+    static func leadingMist(
+        _ context: inout GraphicsContext,
+        _ w: CGFloat,
+        _ h: CGFloat,
+        _ tint: Color,
+        horizon: CGFloat,
+        s: CGFloat
+    ) {
+        let side: [(Color, CGFloat)] = [
+            (tint.opacity(0.42), 0), (tint.opacity(0.28), 0.3), (tint.opacity(0), 0.6), (tint.opacity(0), 1),
+        ]
+        Art.fillLinear(&context, Art.rect(0, 0, w, h), side, from: pt(0, 0), to: pt(w, 0))
+
+        let top: CGFloat = horizon - 40 * s
+        let bottom: CGFloat = horizon + 150 * s
+        let band = Art.rect(0, top, w, bottom - top)
+        let maskStops: [(Color, CGFloat)] = [
+            (Color.white.opacity(0), 0), (Color.white, 0.21), (Color.white.opacity(0.8), 0.45), (Color.white.opacity(0), 1),
+        ]
+        let across: [(Color, CGFloat)] = [
+            (tint.opacity(0.5), 0), (tint.opacity(0.4), 0.35), (tint.opacity(0), 0.62), (tint.opacity(0), 1),
+        ]
+        var veil = context
+        veil.clipToLayer { mask in
+            Art.fillLinear(&mask, band, maskStops, from: CGPoint(x: 0, y: top), to: CGPoint(x: 0, y: bottom))
+        }
+        Art.fillLinear(&veil, band, across, from: pt(0, 0), to: pt(w, 0))
+    }
+
     /// The red sun in haze (design `rsun` / `rsung` and the three haze strips).
     static func sun(_ context: inout GraphicsContext, _ cx: CGFloat, _ cy: CGFloat, _ r: CGFloat, strips: Bool = true) {
         let halo = Art.color(0xFFB199)
@@ -409,289 +469,46 @@ enum UrashimaArt {
         if strips {
             let k = r / 50
             let haze = Art.color(0xFFF1E6)
-            Art.fill(&context, Art.rect(cx - 100 * k, cy - 12 * k, 192 * k, 4 * k), haze.opacity(0.7))
-            Art.fill(&context, Art.rect(cx - 70 * k, cy + 4 * k, 162 * k, 3 * k), haze.opacity(0.6))
-            Art.fill(&context, Art.rect(cx - 60 * k, cy - 26 * k, 130 * k, 3 * k), haze.opacity(0.5))
+            Art.fill(&context, Art.rect(cx - 100 * k, cy - 12 * k, 192 * k, 4 * k, radius: 2 * k), haze.opacity(0.7))
+            Art.fill(&context, Art.rect(cx - 70 * k, cy + 4 * k, 162 * k, 3 * k, radius: 1.5 * k), haze.opacity(0.6))
+            Art.fill(&context, Art.rect(cx - 60 * k, cy - 26 * k, 130 * k, 3 * k, radius: 1.5 * k), haze.opacity(0.5))
         }
     }
 
-    // MARK: - Tortoise
+    /// The pale sun of the changed shore: warm rather than white, no strips.
+    static func paleSun(_ context: inout GraphicsContext, _ cx: CGFloat, _ cy: CGFloat, _ r: CGFloat) {
+        Art.glow(&context, cx, cy, r * 3.8, Art.color(0xFFE9DC), alpha: 0.8)
+        Art.fill(&context, Art.circle(cx, cy, r), Art.color(0xFFF3E6, 0.92))
+    }
 
-    /// The tortoise (design `tortoise`): an old sea tortoise trailing a seaweed tail. Faces left;
-    /// the origin is the shell centre at the waterline.
-    static func tortoise(
-        _ context: inout GraphicsContext,
-        tail: Bool = true,
-        lookX: CGFloat = 0,
-        lookY: CGFloat = 0,
-        smile: Bool = true
-    ) {
-        if tail {
-            for i in 0..<5 {
-                let f = CGFloat(i)
-                var strand = Path()
-                strand.move(to: pt(34, -4 + f * 2))
-                strand.addCurve(to: pt(92, -2 + f * 5), control1: pt(54, -10 + f * 4), control2: pt(70, 6 + f * 3))
-                strand.addCurve(to: pt(124, f * 5), control1: pt(104, -6 + f * 4), control2: pt(112, 4 + f * 3))
-                let tint = i % 2 == 1 ? Art.color(0x3F8F5E, 0.9) : Art.color(0x2F7A52, 0.9)
-                Art.stroke(&context, strand, tint, width: 2.2)
-            }
-        }
-        // Flippers.
-        Art.fill(&context, Art.svg("M-30,6 C-44,10 -52,20 -50,26 C-40,26 -30,18 -24,10Z"), Art.color(0x6E9A54))
-        Art.fill(&context, Art.svg("M20,8 C30,16 34,24 30,28 C22,26 14,18 12,10Z"), Art.color(0x5E8A4A))
-        // Neck and head.
-        let skinStops: [(Color, CGFloat)] = [(Art.color(0xA9C873), 0), (Art.color(0x6E9A54), 1)]
-        Art.fillLinear(
-            &context,
-            Art.svg("M-30,-2 C-42,-8 -48,-22 -50,-34 C-44,-40 -36,-38 -34,-30 C-32,-20 -26,-12 -20,-8Z"),
-            skinStops, from: pt(-50, -40), to: pt(-20, -2)
+    // MARK: - Far shore, pines, gulls, houses
+
+    /// A far headland sitting on the line `base`: one asymmetric rise between `x0` and `x1`,
+    /// `rise` units high, its summit `peak` of the way along.
+    static func headland(_ x0: CGFloat, _ x1: CGFloat, _ base: CGFloat, _ rise: CGFloat, peak: CGFloat = 0.4) -> Path {
+        let span: CGFloat = x1 - x0
+        let px: CGFloat = x0 + span * peak
+        let after: CGFloat = x1 - px
+        var land = Path()
+        land.move(to: pt(x0, base + 2))
+        land.addCurve(
+            to: pt(px, base - rise),
+            control1: pt(x0 + span * peak * 0.35, base - rise * 0.35),
+            control2: pt(x0 + span * peak * 0.6, base - rise * 1.05)
         )
-        Art.stroke(&context, Art.svg("M-42,-18 q5,-1 8,2 M-44,-26 q5,-2 9,1"), Art.color(0x4F7A3E, 0.5), width: ArtStyle.detailLine)
-        Art.group(&context, x: -52, y: -40, rotate: rad(-14)) { g in
-            Art.fillLinear(&g, Art.ellipse(0, 0, 14, 11), skinStops, from: pt(-14, -11), to: pt(14, 11))
-        }
-        // The shared eye, with its white, at the modest size of design screen 05. The design's
-        // iris rests one unit toward the nose; `lookX` / `lookY` move it from there.
-        let eyeLook = CGPoint(x: (lookX - 1) / 1.44, y: lookY / 1.44)
-        ArtStyle.eye(&context, -56, -43, 4.2, look: eyeLook, iris: Art.color(0x1B2B1D), showsWhite: true)
-        ArtStyle.cheek(&context, -49, -35.5, 3.6, alpha: 0.3)
-        Art.stroke(&context, Art.svg("M-61,-48 q5,-4 10,-1"), Art.color(0x3F6B35), width: ArtStyle.detailLine)
-        if smile {
-            Art.stroke(&context, Art.svg("M-65,-36 q5,5 12,2"), Art.color(0x2F5A3A), width: ArtStyle.detailLine)
-        }
-        Art.fill(&context, Art.circle(-64.5, -41, 0.9), Art.color(0x2F5A3A))
-        // Shell.
-        let shell = Art.svg("M-38,4 C-38,-22 -16,-34 4,-34 C24,-34 40,-20 40,4 C24,10 -22,10 -38,4Z")
-        Art.fillLinear(&context, shell, [(Art.color(0x7FB05A), 0), (Art.color(0x3F6B45), 1)], from: pt(0, -34), to: pt(0, 9))
-        let centres: [(CGFloat, CGFloat)] = [(-14, -16), (6, -18), (-24, -6), (-4, -7), (16, -8), (-14, 2), (6, 1), (26, 0)]
-        var hexes = Path()
-        for (hx, hy) in centres {
-            hexes.move(to: pt(hx - 7, hy))
-            hexes.addLine(to: pt(hx - 3.5, hy - 5))
-            hexes.addLine(to: pt(hx + 3.5, hy - 5))
-            hexes.addLine(to: pt(hx + 7, hy))
-            hexes.addLine(to: pt(hx + 3.5, hy + 5))
-            hexes.addLine(to: pt(hx - 3.5, hy + 5))
-            hexes.closeSubpath()
-        }
-        let hexPath = hexes
-        Art.clipped(&context, to: shell) { g in
-            Art.stroke(&g, hexPath, Art.color(0x2F5A3A, 0.7), width: ArtStyle.detailLine)
-            // The key light on the upper left of the shell.
-            Art.stroke(&g, Art.svg("M-34,-8 C-24,-26 -6,-32 8,-31"), Art.color(0xC7E88A, 0.4), width: 4)
-            Art.glow(&g, -16, -24, 26, ArtStyle.warmLight, alpha: 0.22)
-        }
-        Art.fill(
-            &context,
-            Art.svg("M-38,4 C-22,10 24,10 40,4 C40,8 38,10 34,11 C16,15 -16,15 -34,11 C-37,10 -38,8 -38,4Z"),
-            Art.color(0xE8C76A)
+        land.addCurve(
+            to: pt(x1, base + 2),
+            control1: pt(px + after * 0.35, base - rise * 0.95),
+            control2: pt(px + after * 0.6, base - rise * 0.18)
         )
+        land.closeSubpath()
+        return land
     }
 
-    // MARK: - Urashima
-
-    enum Rod {
-        /// No rod.
-        case absent
-        /// Held out over the water, as in the design.
-        case cast
-        /// Resting on his shoulder (the portrait).
-        case shoulder
-    }
-
-    enum Pose {
-        case standing
-        case kneeling
-    }
-
-    /// Urashima's head (design `urashimaHead`, and the tilted head of `urashima`), centred on the face.
-    static func urashimaHead(_ context: inout GraphicsContext, frontal: Bool) {
-        Art.fill(&context, Art.ellipse(0, 0, 13, 14), skin)
-        Art.fill(
-            &context,
-            Art.svg("M-13,-2 C-15,-14 -6,-18 2,-17 C10,-17 15,-10 13,0 C10,-8 4,-11 -3,-10 C-8,-9 -11,-6 -13,-2Z"),
-            ink
-        )
-        Art.fill(&context, Art.svg("M1,-17 C0,-24 5,-27 8,-23 C9,-20 6,-17 4,-16Z"), ink)
-        // The shared face: plain dark eyes with an upper-left catchlight, a quiet blush, one
-        // round-capped mouth in a darker tone of the skin.
-        let lips = Art.color(0xB5533A)
-        if frontal {
-            ArtStyle.cheek(&context, -7.5, 5.5, 3.2, alpha: 0.3)
-            ArtStyle.cheek(&context, 7.5, 5.5, 3.2, alpha: 0.3)
-            ArtStyle.eye(&context, -5, 1, 1.9, showsWhite: false)
-            ArtStyle.eye(&context, 4.5, 1, 1.9, showsWhite: false)
-            ArtStyle.smile(&context, 0, 7, width: 8, curve: 1.6, color: lips)
-        } else {
-            Art.stroke(&context, Art.line(1.5, -18, 7.5, -18), red, width: ArtStyle.detailLine, cap: .butt)
-            ArtStyle.cheek(&context, -8.5, 5.5, 3.2, alpha: 0.3)
-            ArtStyle.cheek(&context, 6, 6, 3.2, alpha: 0.3)
-            ArtStyle.eye(&context, -6.5, 1, 1.9, showsWhite: false)
-            ArtStyle.eye(&context, 2.5, 1.5, 1.9, showsWhite: false)
-            ArtStyle.smile(&context, -2, 7.2, width: 8, curve: 1.6, color: lips)
-        }
-    }
-
-    /// Urashima Taro (design `urashima`). Faces left; the origin is at his feet (or, kneeling,
-    /// the ground under him).
-    static func urashima(
-        _ context: inout GraphicsContext,
-        rod: Rod = .cast,
-        pose: Pose = .standing,
-        holdsBox: Bool = false,
-        hat: Bool = false
-    ) {
-        let legSkin = Art.color(0xF2C9A0)
-        let footSkin = Art.color(0xE0B088)
-        switch pose {
-        case .standing:
-            if rod == .cast {
-                Art.stroke(&context, Art.line(-14, -66, -104, -134), Art.color(0x8A6A3A), width: ArtStyle.contourLine)
-                Art.stroke(&context, Art.svg("M-104,-134 C-112,-80 -118,-30 -120,22"), Art.color(0xFFFFFF, 0.8), width: 0.8, cap: .butt)
-            }
-            Art.stroke(&context, Art.svg("M-7,-22 L-9,0 M6,-22 L8,0"), legSkin, width: 6.5)
-            Art.stroke(&context, Art.svg("M-13,0 h9 M4,0 h9"), footSkin, width: 5)
-            urashimaUpper(&context, rod: rod, reach: false, holdsBox: holdsBox, hat: hat)
-        case .kneeling:
-            Art.stroke(&context, Art.svg("M2,-5 L24,-4"), legSkin, width: 6.5)
-            Art.stroke(&context, Art.svg("M22,-1 h9"), footSkin, width: 5)
-            Art.group(&context, y: 18) { g in
-                urashimaUpper(&g, rod: rod, reach: !holdsBox, holdsBox: holdsBox, hat: hat)
-            }
-        }
-    }
-
-    /// Coat, straw skirt, arms and head: everything above the knees.
-    static func urashimaUpper(_ context: inout GraphicsContext, rod: Rod, reach: Bool, holdsBox: Bool, hat: Bool) {
-        // Hands use the same skin as the legs in `urashima` (local there, so restated here).
-        let legSkin = Art.color(0xF2C9A0)
-        if rod == .shoulder {
-            Art.stroke(&context, Art.line(10, -44, 36, -146), Art.color(0x8A6A3A), width: ArtStyle.contourLine)
-            Art.stroke(&context, Art.svg("M36,-146 q7,20 2,46"), Art.color(0x7C8DA6, 0.7), width: 0.7, cap: .butt)
-        }
-        // Happi coat.
-        Art.fillLinear(
-            &context,
-            Art.svg("M-14,-80 C-18,-66 -18,-52 -16,-42 L16,-42 C18,-52 18,-66 14,-80 C6,-86 -6,-86 -14,-80Z"),
-            [(Art.color(0x2F5FB0), 0), (Art.color(0x1B3A7A), 1)],
-            from: pt(-18, -86), to: pt(18, -42)
-        )
-        let pale = Art.color(0xF4F7FB)
-        Art.stroke(&context, Art.svg("M-2,-84 L4,-42 M2,-84 L-6,-60"), pale, width: ArtStyle.contourLine, cap: .butt, join: .miter)
-        let spots: [(CGFloat, CGFloat)] = [(-10, -70), (-11, -58), (10, -66), (11, -54), (-8, -48), (8, -76)]
-        var spotPath = Path()
-        for (sx, sy) in spots {
-            spotPath.addEllipse(in: CGRect(x: sx - 1.5, y: sy - 1.5, width: 3, height: 3))
-        }
-        Art.fill(&context, spotPath, pale.opacity(0.85))
-        Art.stroke(&context, Art.line(-17, -48, 17, -48), red, width: 4.5)
-        // Straw skirt.
-        for i in 0..<15 {
-            let x = -15 + CGFloat(i) * 2.1
-            let tint = i % 2 == 1 ? Art.color(0xE9C877) : Art.color(0xD4A94F)
-            Art.stroke(&context, Art.line(x * 0.6, -44, x * 1.15, -20), tint, width: 2.6)
-        }
-        // Arms.
-        if holdsBox {
-            Art.stroke(&context, Art.svg("M-12,-76 C-20,-72 -25,-66 -27,-60"), coatBlue, width: 8)
-            Art.stroke(&context, Art.svg("M12,-76 C15,-66 6,-58 -8,-57"), coatBlue, width: 8)
-            Art.group(&context, x: -21, y: -50, scale: 0.24) { g in
-                lacquerBox(&g, wisp: false)
-            }
-            Art.fill(&context, Art.circle(-32, -56, 3.6), legSkin)
-            Art.fill(&context, Art.circle(-9, -56, 4), legSkin)
-        } else {
-            if reach {
-                Art.stroke(&context, Art.svg("M-12,-76 C-22,-70 -28,-62 -30,-52"), coatBlue, width: 8)
-                Art.fill(&context, Art.circle(-30, -50, 4), legSkin)
-            } else {
-                Art.stroke(&context, Art.svg("M-12,-76 C-20,-72 -22,-66 -16,-64"), coatBlue, width: 8)
-                Art.fill(&context, Art.circle(-15, -65, 4), legSkin)
-            }
-            Art.stroke(&context, Art.svg("M12,-76 C20,-68 20,-60 14,-56"), coatBlue, width: 8)
-            Art.fill(&context, Art.circle(13, -55, 4), legSkin)
-        }
-        // Head. A little larger than the design's, so that he stands about three and a half
-        // heads tall (art direction §4); the chin stays where it was, on the collar.
-        let headScale: CGFloat = 1.18
-        let headY: CGFloat = -84 - 14 * headScale
-        Art.group(&context, x: -1, y: headY, rotate: rad(-6), scale: headScale) { g in
-            urashimaHead(&g, frontal: false)
-        }
-        if hat {
-            // The straw hat sits on the head, in the head's own space.
-            let brim = Art.svg("M-21,-8 L0,-26 L21,-6 C7,-12 -7,-12 -21,-8Z")
-            Art.group(&context, x: -1, y: headY, scale: headScale) { g in
-                Art.fill(&g, brim, Art.color(0xE9C877))
-                Art.stroke(&g, brim, Art.color(0xC99A3F), width: ArtStyle.detailLine)
-            }
-        }
-    }
-
-    // MARK: - Boat
-
-    /// The wooden fishing boat (design `boat`). The origin is the centre of the waterline.
-    static func boat(_ context: inout GraphicsContext) {
-        Art.fillLinear(
-            &context,
-            Art.svg("M-92,-22 C-70,-10 -40,-6 0,-6 C44,-6 76,-12 98,-26 C92,-4 78,10 60,12 L-52,12 C-70,10 -86,-4 -92,-22Z"),
-            [(Art.color(0xC08A54), 0), (Art.color(0x7A4E2E), 1)],
-            from: pt(0, -26), to: pt(0, 12)
-        )
-        Art.fill(
-            &context,
-            Art.svg("M-92,-22 C-70,-10 -40,-6 0,-6 C44,-6 76,-12 98,-26 L96,-20 C74,-6 44,0 0,0 C-40,0 -68,-4 -90,-16Z"),
-            Art.color(0xE2B27A)
-        )
-        Art.stroke(
-            &context,
-            Art.svg("M-80,-4 C-40,4 40,4 84,-8 M-66,6 C-30,10 30,10 70,2"),
-            Art.color(0x6A4326, 0.5), width: ArtStyle.detailLine
-        )
-        // The key light along the upper-left gunwale.
-        Art.stroke(&context, Art.svg("M-90,-20 C-70,-9 -40,-5 0,-5"), ArtStyle.warmLight.opacity(0.45), width: ArtStyle.detailLine)
-        Art.stroke(&context, Art.line(98, -26, 108, -35), Art.color(0x8A5A34), width: 4)
-    }
-
-    /// The straw fish basket that sits in the boat.
-    static func basket(_ context: inout GraphicsContext) {
-        Art.fill(&context, Art.svg("M-10,0 C-12,-12 12,-12 10,0Z"), Art.color(0xC99A3F))
-        Art.stroke(&context, Art.svg("M-10,0 h20 M-8,-5 h16"), Art.color(0x8A6A2A, 0.8), width: ArtStyle.detailLine)
-    }
-
-    /// Urashima standing in his boat with his rod (the group of design `seaScene`).
-    /// The origin is the boat's waterline centre.
-    static func boatWithUrashima(_ context: inout GraphicsContext, tortoiseAboard: Bool = false) {
-        Art.group(&context, x: -10, y: -8) { g in
-            urashima(&g, rod: .cast)
-        }
-        Art.group(&context, x: 46, y: -12) { g in
-            basket(&g)
-        }
-        if tortoiseAboard {
-            Art.group(&context, x: -52, y: -12, scale: 0.6) { g in
-                tortoise(&g, tail: false, lookX: 1.5, lookY: -1.5)
-            }
-        }
-        boat(&context)
-    }
-
-    /// Urashima on the tortoise's back, heading right (the rider of design `palaceScene`).
-    /// The origin is the tortoise's shell centre.
-    static func rider(_ context: inout GraphicsContext, seated: Bool) {
-        Art.group(&context, x: 6, y: -30, scale: 0.8, scaleX: -1) { g in
-            urashima(&g, rod: .absent, pose: seated ? .kneeling : .standing)
-        }
-        Art.group(&context, scaleX: -1) { g in
-            tortoise(&g)
-        }
-    }
-
-    // MARK: - Pines, gulls, far shore
-
-    /// A flat woodblock pine (design `pine`), with an optional lean, missing clumps (bare
-    /// branches) and snow caps.
+    /// A woodblock pine: a tapered, bent trunk under flat cloud-shaped pads of needles with a
+    /// broken upper edge, lit from the upper left. (x, y) is the foot of the trunk; the tree is
+    /// about 56 × `s` units tall. `lean` tips it (negative leans left), `clumps` below 5 leaves
+    /// bare branches, `snow` caps the pads, `lit` is the strength of the warm light on them.
     static func pine(
         _ context: inout GraphicsContext,
         _ x: CGFloat,
@@ -701,37 +518,47 @@ enum UrashimaArt {
         trunk: Color? = nil,
         lean: CGFloat = 0,
         clumps: Int = 5,
-        snow: Bool = false
+        snow: Bool = false,
+        lit: Double = 0.22
     ) {
         let trunkColor = trunk ?? color
+        let topX: CGFloat = x + (lean * 46 - 2) * s
+        let topY: CGFloat = y - 46 * s
+        let bendX: CGFloat = x + (lean * 20 + 4) * s
+        let bendY: CGFloat = y - 22 * s
         var stem = Path()
-        stem.move(to: pt(x, y))
-        let stemTopX: CGFloat = x + (lean * 30 - 2) * s
-        let stemTopY: CGFloat = y - 30 * s
-        let stemBendX: CGFloat = x + (lean * 14 + 3) * s
-        let stemBendY: CGFloat = y - 14 * s
-        stem.addQuadCurve(to: pt(stemTopX, stemTopY), control: pt(stemBendX, stemBendY))
-        Art.stroke(&context, stem, trunkColor, width: 2.2 * s, cap: .butt)
-        let offsets: [(CGFloat, CGFloat, CGFloat)] = [(-10, -30, 16), (6, -36, 14), (-2, -42, 12), (-16, -22, 10), (10, -24, 10)]
+        stem.move(to: pt(x - 2.4 * s, y))
+        stem.addQuadCurve(to: pt(topX - 0.7 * s, topY), control: pt(bendX - 1.6 * s, bendY))
+        stem.addLine(to: pt(topX + 0.7 * s, topY))
+        stem.addQuadCurve(to: pt(x + 2.6 * s, y), control: pt(bendX + 1.6 * s, bendY))
+        stem.closeSubpath()
+        Art.fill(&context, stem, trunkColor)
+
+        let pads: [(CGFloat, CGFloat, CGFloat)] = [(-12, -34, 17), (8, -42, 15), (-2, -50, 13), (-19, -24, 11), (13, -27, 11)]
         var foliage = Path()
+        var glints = Path()
         var caps = Path()
         var twigs = Path()
-        for (index, item) in offsets.enumerated() {
-            let slant = -lean * item.1
-            let cx = x + (item.0 + slant) * s
-            let cy = y + item.1 * s
-            let r = item.2 * s
+        for (index, pad) in pads.enumerated() {
+            let slant: CGFloat = -lean * pad.1
+            let cx: CGFloat = x + (pad.0 + slant) * s
+            let cy: CGFloat = y + pad.1 * s
+            let r: CGFloat = pad.2 * s
+            twigs.move(to: pt(x + slant * s, cy + 6 * s))
+            twigs.addLine(to: pt(cx, cy))
             if index < clumps {
-                foliage.addEllipse(in: CGRect(x: cx - r, y: cy - r * 0.36, width: r * 2, height: r * 0.72))
-                let capR = r * 0.78
-                caps.addEllipse(in: CGRect(x: cx - capR, y: cy - r * 0.46, width: capR * 2, height: r * 0.34))
-            } else {
-                twigs.move(to: pt(x + slant * s, cy + 6 * s))
-                twigs.addLine(to: pt(cx, cy))
+                foliage.addEllipse(in: CGRect(x: cx - r, y: cy - r * 0.34, width: r * 2, height: r * 0.68))
+                foliage.addEllipse(in: CGRect(x: cx - r * 0.78, y: cy - r * 0.52, width: r * 0.8, height: r * 0.56))
+                foliage.addEllipse(in: CGRect(x: cx - r * 0.1, y: cy - r * 0.58, width: r * 0.9, height: r * 0.6))
+                glints.addEllipse(in: CGRect(x: cx - r * 0.7, y: cy - r * 0.46, width: r * 0.95, height: r * 0.26))
+                caps.addEllipse(in: CGRect(x: cx - r * 0.8, y: cy - r * 0.58, width: r * 1.6, height: r * 0.36))
             }
         }
-        Art.stroke(&context, twigs, trunkColor, width: 1.1 * s)
+        Art.stroke(&context, twigs, trunkColor, width: 1.2 * s)
         Art.fill(&context, foliage, color)
+        if lit > 0 {
+            Art.fill(&context, glints, ArtStyle.warmLight.opacity(lit))
+        }
         if snow {
             Art.fill(&context, caps, white)
         }
@@ -743,26 +570,10 @@ enum UrashimaArt {
         wings.move(to: pt(x - 8 * s, y))
         wings.addQuadCurve(to: pt(x, y), control: pt(x - 4 * s, y - 6 * s))
         wings.addQuadCurve(to: pt(x + 8 * s, y), control: pt(x + 4 * s, y - 6 * s))
-        Art.stroke(&context, wings, color, width: ArtStyle.detailLine * s)
+        Art.stroke(&context, wings, color, width: ArtStyle.detailLine * max(s, 0.5))
     }
 
-    /// The far headland of design `seaScene`, sitting on the first band of `sea`.
-    static func headlandPath(_ sea: Sea) -> Path {
-        let a = sea.top(0, 520)
-        let b = sea.top(0, 560)
-        let d = sea.top(0, 600)
-        let e = sea.top(0, 620)
-        let f = sea.top(0, 640)
-        let g = sea.top(0, 650)
-        var land = Path()
-        land.move(to: pt(470, a + 2))
-        land.addCurve(to: pt(610, d - 10), control1: pt(500, a - 22), control2: pt(560, b - 26))
-        land.addCurve(to: pt(660, g + 4), control1: pt(630, e - 4), control2: pt(650, f))
-        land.closeSubpath()
-        return land
-    }
-
-    /// A very small far house; `tiers: 2` adds an upper storey.
+    /// A very small far house under a roof with turned-up eaves; `tiers: 2` adds an upper storey.
     static func tinyHouse(
         _ context: inout GraphicsContext,
         _ x: CGFloat,
@@ -774,158 +585,47 @@ enum UrashimaArt {
     ) {
         Art.group(&context, x: x, y: y, scale: s) { g in
             Art.fill(&g, Art.rect(-8, -7, 16, 8), wall)
-            Art.fill(&g, Art.polygon([pt(-12, -6), pt(-6, -15), pt(6, -15), pt(12, -6)]), roof)
+            Art.fill(&g, Art.svg("M-13,-5 C-9,-7 -7,-11 -6,-15 L6,-15 C7,-11 9,-7 13,-5 L12,-4 L-12,-4Z"), roof)
             if tiers > 1 {
                 Art.fill(&g, Art.rect(-5, -21, 10, 7), wall)
-                Art.fill(&g, Art.polygon([pt(-9, -20), pt(-4, -27), pt(4, -27), pt(9, -20)]), roof)
+                Art.fill(&g, Art.svg("M-10,-19 C-7,-21 -5,-24 -4,-27 L4,-27 C5,-24 7,-21 10,-19 L9,-18 L-9,-18Z"), roof)
             }
         }
     }
 
-    // MARK: - Otohime
-
-    /// Princess Otohime's head, centred on the face.
-    static func otohimeHead(_ context: inout GraphicsContext) {
-        // Two looped knots of hair behind the crown.
-        Art.stroke(&context, Art.ellipse(-6, -19, 4.5, 6.5), ink, width: 2.6)
-        Art.stroke(&context, Art.ellipse(6, -19, 4.5, 6.5), ink, width: 2.6)
-        Art.fill(&context, Art.ellipse(0, 0, 12, 13), Art.color(0xF8DCC0))
-        Art.fill(
-            &context,
-            Art.svg("M-12.6,1 C-15,-13 -7,-17.5 0,-17 C7,-17.5 15,-13 12.6,1 C11,-6 6,-10 0,-11 C-6,-10 -11,-6 -12.6,1Z"),
-            ink
-        )
-        Art.fill(&context, Art.svg("M-12.8,-2 C-14,6 -13.5,13 -12,18 L-9.6,18 C-10.6,12 -10.8,5 -10.4,-3Z"), ink)
-        Art.fill(&context, Art.svg("M12.8,-2 C14,6 13.5,13 12,18 L9.6,18 C10.6,12 10.8,5 10.4,-3Z"), ink)
-        // Crown ornament.
-        Art.fill(&context, Art.svg("M-7,-15 L-5,-21 L-2.5,-17 L0,-23 L2.5,-17 L5,-21 L7,-15Z"), gold)
-        Art.fill(&context, Art.circle(0, -18.2, 1.3), red)
-        Art.fill(&context, Art.circle(-8.6, -13, 1.2), gold)
-        Art.fill(&context, Art.circle(8.6, -13, 1.2), gold)
-        // A composed face, built like every face in the app: plain dark eyes with an upper-left
-        // catchlight, a quiet blush, one small round-capped mouth.
-        ArtStyle.cheek(&context, -6.8, 5.4, 3, alpha: 0.3)
-        ArtStyle.cheek(&context, 6.8, 5.4, 3, alpha: 0.3)
-        ArtStyle.eye(&context, -4.8, 1.8, 1.7, showsWhite: false)
-        ArtStyle.eye(&context, 4.8, 1.8, 1.7, showsWhite: false)
-        ArtStyle.smile(&context, 0, 7.4, width: 5, curve: 1, color: Art.color(0xC8463C))
+    /// A far sail. (x, y) is the stern at the waterline; `k` scales it.
+    static func farSail(_ context: inout GraphicsContext, _ x: CGFloat, _ y: CGFloat, k: CGFloat = 1, alpha: Double = 0.85) {
+        var hull = Path()
+        hull.move(to: pt(x, y))
+        hull.addLine(to: pt(x - 20 * k, y))
+        hull.addQuadCurve(to: pt(x, y + 5 * k), control: pt(x - 12 * k, y + 7 * k))
+        hull.closeSubpath()
+        Art.fill(&context, hull, Art.color(0x6A7C92, alpha))
+        var sail = Path()
+        sail.move(to: pt(x - 10 * k, y - 1 * k))
+        sail.addLine(to: pt(x - 10 * k, y - 18 * k))
+        sail.addQuadCurve(to: pt(x, y - 4 * k), control: pt(x - 2 * k, y - 13 * k))
+        sail.closeSubpath()
+        Art.fill(&context, sail, Art.color(0xFFFFFF, alpha))
     }
 
-    /// Princess Otohime in layered robes of coral, white and jade. The origin is the centre of
-    /// her hem on the ground; she is about 146 units tall.
-    static func otohime(_ context: inout GraphicsContext) {
-        let jade: [(Color, CGFloat)] = [(Art.color(0x6CC7B3), 0), (Art.color(0x2E8F86), 1)]
-        // Long hair down her back.
-        Art.fill(
-            &context,
-            Art.svg("M-13,-126 C-24,-106 -27,-70 -25,-34 C-16,-30 16,-30 25,-34 C27,-70 24,-106 13,-126Z"),
-            ink
+    /// A rounded shore rock, lit from the upper left. (x, y) is the middle of its foot.
+    static func rock(_ context: inout GraphicsContext, _ x: CGFloat, _ y: CGFloat, _ width: CGFloat, _ height: CGFloat, _ color: Color) {
+        let half: CGFloat = width / 2
+        var shape = Path()
+        shape.move(to: pt(x - half, y))
+        shape.addCurve(
+            to: pt(x - half * 0.1, y - height * 0.96),
+            control1: pt(x - half, y - height * 0.6),
+            control2: pt(x - half * 0.6, y - height)
         )
-        // Outer robe.
-        Art.fillLinear(
-            &context,
-            Art.svg("M-20,-70 C-26,-40 -34,-14 -42,0 C-20,6 24,6 46,0 C36,-16 26,-44 20,-70Z"),
-            [(Art.color(0xF58A7A), 0), (Art.color(0xDE5F52), 1)],
-            from: pt(0, -70), to: pt(0, 4)
+        shape.addCurve(
+            to: pt(x + half, y),
+            control1: pt(x + half * 0.42, y - height * 1.04),
+            control2: pt(x + half * 0.92, y - height * 0.5)
         )
-        Art.stroke(&context, Art.svg("M-40,-3 C-20,3 24,3 44,-3"), Art.color(0xFFFFFF, 0.8), width: ArtStyle.contourLine)
-        // White under-robe showing at the front.
-        Art.fill(&context, Art.svg("M-5,-70 C-7,-40 -9,-16 -10,3 L12,3 C10,-16 8,-40 6,-70Z"), Art.color(0xFBF6EE))
-        Art.stroke(&context, Art.svg("M-10,3 C-9,-16 -7,-40 -5,-70 M12,3 C10,-16 8,-40 6,-70"), Art.color(0x2E8F86, 0.4), width: ArtStyle.detailLine)
-        // Sleeves.
-        let leftSleeve = Art.svg("M-14,-104 C-28,-98 -36,-78 -38,-48 C-32,-43 -22,-45 -17,-52 C-17,-68 -13,-84 -9,-94Z")
-        let rightSleeve = Art.svg("M14,-104 C28,-98 36,-78 38,-48 C32,-43 22,-45 17,-52 C17,-68 13,-84 9,-94Z")
-        Art.fillLinear(&context, leftSleeve, jade, from: pt(-38, -104), to: pt(-12, -46))
-        Art.fillLinear(&context, rightSleeve, jade, from: pt(12, -104), to: pt(38, -46))
-        Art.stroke(&context, Art.svg("M-38,-48 C-32,-43 -22,-45 -17,-52 M38,-48 C32,-43 22,-45 17,-52"), Art.color(0xFBF6EE), width: ArtStyle.contourLine)
-        // Bodice.
-        Art.fillLinear(
-            &context,
-            Art.svg("M-15,-104 C-19,-92 -19,-80 -17,-66 L17,-66 C19,-80 19,-92 15,-104 C7,-109 -7,-109 -15,-104Z"),
-            jade, from: pt(0, -108), to: pt(0, -66)
-        )
-        Art.stroke(&context, Art.svg("M-7,-108 L0,-90 L7,-108"), Art.color(0xFBF6EE), width: 3, cap: .butt, join: .miter)
-        Art.stroke(&context, Art.svg("M-4,-108 L0,-97 L4,-108"), Art.color(0xF58A7A), width: ArtStyle.detailLine, cap: .butt, join: .miter)
-        // Sash.
-        Art.fill(&context, Art.svg("M-3,-66 L-6,-34 L-1,-34 L0,-66Z M3,-66 L6,-38 L1,-38 L0,-66Z"), Art.color(0xF7DE9A))
-        Art.fill(&context, Art.rect(-18, -77, 36, 11, radius: 2), gold)
-        Art.stroke(&context, Art.line(-18, -71.5, 18, -71.5), red, width: 1.6, cap: .butt)
-        Art.fill(&context, Art.circle(0, -71.5, 2.6), red)
-        // Hair falling forward over each shoulder.
-        Art.fill(&context, Art.svg("M-12,-118 C-17,-104 -18,-88 -16,-70 L-12.5,-70 C-13,-88 -12,-104 -9,-116Z"), ink)
-        Art.fill(&context, Art.svg("M12,-118 C17,-104 18,-88 16,-70 L12.5,-70 C13,-88 12,-104 9,-116Z"), ink)
-        // Neck and head. The head is larger than a grown-up figure's would be, as Urashima's
-        // is, so the two read as the same kind of drawing; the chin stays on the collar.
-        Art.fill(&context, Art.rect(-3.5, -113, 7, 7), Art.color(0xF2CFB0))
-        let headScale: CGFloat = 1.3
-        let headY: CGFloat = -109 - 13 * headScale
-        Art.group(&context, y: headY, scale: headScale) { g in
-            otohimeHead(&g)
-        }
-    }
-
-    // MARK: - The tamate-bako
-
-    /// The lacquer box (design `lacquerBox`). The origin is the centre of the box's base.
-    static func lacquerBox(_ context: inout GraphicsContext, wisp: Bool = true, wispColor: Color = UrashimaArt.white) {
-        if wisp {
-            let curl = Art.svg("M10,-64 C-10,-84 24,-100 4,-124 C-8,-138 10,-150 4,-162")
-            // A soft wisp only: pale, thin, and fading as it rises.
-            Art.blurred(&context, radius: 2.5, opacity: 0.3) { g in
-                Art.stroke(&g, curl, wispColor, width: 4)
-            }
-        }
-        // The contact shadow falls a little to the lower right, away from the key light.
-        ArtStyle.contactShadow(&context, 5, 2, 64, 7, alpha: 0.3)
-        Art.fillLinear(
-            &context, Art.svg("M-52,-40 L52,-40 L50,0 L-50,0Z"),
-            [(Art.color(0x2B2338), 0), (Art.color(0x14101C), 0.5), (Art.color(0x0A0810), 1)],
-            from: pt(-52, -40), to: pt(52, 0)
-        )
-        Art.fillLinear(
-            &context, Art.svg("M-56,-58 L56,-58 L56,-40 L-56,-40Z"),
-            [(Art.color(0x3A3048), 0), (Art.color(0x1A1524), 0.4), (Art.color(0x0E0B16), 1)],
-            from: pt(-56, 0), to: pt(56, 0)
-        )
-        // The lid catches the warm key light, strongest at its upper-left end.
-        Art.fillLinear(
-            &context, Art.rect(-56, -58.8, 112, ArtStyle.detailLine),
-            [(ArtStyle.warmLight.opacity(0.6), 0), (ArtStyle.warmLight.opacity(0.18), 1)],
-            from: pt(-56, 0), to: pt(56, 0)
-        )
-        // Gold maki-e: wave arcs along the base, two plum blossoms.
-        var makie = Path()
-        let arcCentres: [CGFloat] = [-40, -22, 22, 40]
-        for ax in arcCentres {
-            addArch(&makie, ax, -6, 9)
-            addArch(&makie, ax, -6, 6)
-            addArch(&makie, ax, -6, 3)
-        }
-        makie.move(to: pt(-50, -6))
-        makie.addLine(to: pt(50, -6))
-        Art.stroke(&context, makie, gold.opacity(0.9), width: ArtStyle.detailLine, cap: .butt)
-        let blossoms: [(CGFloat, CGFloat)] = [(-38, -24), (34, -27)]
-        for (bx, by) in blossoms {
-            var petals = Path()
-            for step in 0..<5 {
-                let angle = rad(CGFloat(step) * 72)
-                let px = bx + cos(angle) * 4
-                let py = by + sin(angle) * 4
-                petals.addEllipse(in: CGRect(x: px - 2.4, y: py - 2.4, width: 4.8, height: 4.8))
-            }
-            Art.fill(&context, petals, gold)
-            Art.fill(&context, Art.circle(bx, by, 1.4), red)
-        }
-        // The red silk cord.
-        Art.fill(&context, Art.rect(-6, -58, 12, 58), red)
-        Art.fill(&context, Art.rect(-6, -58, 4, 58), Art.color(0xFF7A6B, 0.6))
-        Art.fill(
-            &context,
-            Art.svg("M0,-60 C-16,-76 -30,-66 -22,-58 C-16,-54 -6,-56 0,-60 C16,-76 30,-66 22,-58 C16,-54 6,-56 0,-60Z"),
-            red
-        )
-        Art.fill(&context, Art.circle(0, -60, 4.6), Art.color(0xB3261E))
-        Art.stroke(&context, Art.svg("M-3,-58 C-12,-46 -16,-38 -20,-26 M3,-58 C12,-46 16,-38 20,-26"), red, width: ArtStyle.contourLine)
-        Art.fill(&context, Art.svg("M-23,-27 l6,2 l-5,14 l-5,-2Z M23,-27 l-6,2 l5,14 l5,-2Z"), gold)
+        shape.closeSubpath()
+        Art.fill(&context, shape, color)
+        ArtStyle.form(&context, shape, bounds: CGRect(x: x - half, y: y - height, width: width, height: height), light: 0.3, shade: 0.24)
     }
 }

@@ -27,13 +27,20 @@ extension AnansiArt {
             // Wrapped cloth.
             let body = Art.svg("M-4,-58 C6,-64 16,-60 18,-52 C22,-36 16,-14 12,2 C8,10 -6,12 -12,4 C-18,-14 -16,-44 -4,-58Z")
             kente(&g, in: body, scale: 0.5)
+            // The one light comes from the upper left, behind him: his back is lit, and the
+            // side toward the trunk falls into the indigo shade (the pot lights it again).
             let shade: [(Color, CGFloat)] = [
-                (ArtStyle.coolShade.opacity(0.4), 0), (ArtStyle.coolShade.opacity(0), 0.6), (Art.color(0xFFE9A8, 0.25), 1),
+                (Art.color(0xFFE9A8, 0.26), 0), (ArtStyle.coolShade.opacity(0), 0.4), (ArtStyle.coolShade.opacity(0.38), 1),
             ]
             Art.fillLinear(&g, body, shade, from: pt(-16, 0), to: pt(20, 0))
             let back = Art.svg("M-10,-52 C-22,-40 -24,-12 -18,10 C-14,16 -8,14 -8,6 C-12,-14 -10,-36 -2,-56Z")
             kente(&g, in: back, scale: 0.5)
-            Art.fill(&g, back, ArtStyle.coolShade.opacity(0.32))
+            Art.fill(&g, back, ArtStyle.warmLight.opacity(0.14))
+            Art.stroke(
+                &g,
+                Art.svg("M-9,-51 C-21,-40 -23,-12 -17.4,9"),
+                ArtStyle.warmLight.opacity(0.6), width: 1.2
+            )
 
             // Near leg.
             limb(&g, "M2,2 C12,-12 24,-14 32,-6", 11, skin)
@@ -68,6 +75,7 @@ extension AnansiArt {
                 Art.fill(&hd, Art.svg("M-14,-2 C-16,-14 -6,-19 4,-17 C-2,-14 -6,-10 -7,-4 C-8,2 -11,4 -14,-2Z"), hairWhite)
                 Art.fill(&hd, Art.svg("M-2,13 C4,17 11,14 13,6 C13,12 10,20 2,20 C-2,20 -4,16 -2,13Z"), hairWhite)
                 Art.fill(&hd, Art.ellipse(-5, 2, 3, 4), skinDark)
+                ArtStyle.rimLight(&hd, 0, 0, 15, alpha: 0.26)
                 let eyeLook = CGPoint(x: 0.7, y: lookingDown ? 0.9 : -0.5)
                 let eyeY: CGFloat = lookingDown ? -2.2 : -3.2
                 ArtStyle.eye(&hd, 7.4, eyeY, 2.7, look: eyeLook, iris: eyeTone, showsWhite: false)
@@ -200,7 +208,10 @@ extension AnansiArt {
         Art.fillLinear(&g, wrap, fall, from: pt(-44, 0), to: pt(44, 0))
         Art.group(&g, rotate: rad(tilt)) { hd in
             kwekuHead(&hd, lookX: lookX, lookY: lookY, mouthOpen: mouthOpen, showsWhite: showsWhite)
+            ArtStyle.rimLight(&hd, 0, -3, 30, alpha: 0.2)
         }
+        // The warm edge of the one light along his left shoulder.
+        Art.stroke(&g, Art.svg("M-41,104 C-43,66 -36,42 -22,31"), ArtStyle.warmLight.opacity(0.45), width: 1.4)
     }
 
     /// Kweku's hands, drawn over the leaves he holds apart. Same origin as `kwekuBust`.
@@ -211,24 +222,44 @@ extension AnansiArt {
     }
 
     /// Kweku peeking from the leaves at the bottom right of the leading pane (screen 04).
+    /// He belongs to the near plane: on a tall canvas he and his leaves grow with it.
     static func kwekuWatching(
         _ context: inout GraphicsContext,
-        _ h: CGFloat,
+        _ st: Stage,
         lookX: CGFloat, lookY: CGFloat,
         mouthOpen: Bool
     ) {
-        let dy = h - 720
-        Art.group(&context, x: 348, y: 622 + dy) { g in
-            kwekuBust(&g, lookX: lookX, lookY: lookY, mouthOpen: mouthOpen)
-        }
-        Art.group(&context, x: 0, y: dy) { g in
+        nearStage(&context, st, anchor: 348, scale: st.near) { g in
+            Art.glow(&g, 330, 610, 70, ArtStyle.anansi.glowColor, alpha: 0.14)
+            Art.group(&g, x: 348, y: 622) { b in
+                kwekuBust(&b, lookX: lookX, lookY: lookY, mouthOpen: mouthOpen)
+            }
             leaf(&g, 262, 740, 130, -58, dark: false)
             leaf(&g, 318, 760, 128, -100, dark: true)
             leaf(&g, 446, 740, 140, -122, dark: false)
             leaf(&g, 380, 770, 120, -78, dark: true)
+            Art.group(&g, x: 348, y: 622) { b in
+                kwekuHands(&b)
+            }
         }
-        Art.group(&context, x: 348, y: 622 + dy) { g in
-            kwekuHands(&g)
+    }
+
+    /// Kweku in his leaves for the folded bands: the bust at (x, y), `s` times the scene size,
+    /// with the leaves he holds apart.
+    static func kwekuInLeaves(
+        _ g: inout GraphicsContext,
+        _ x: CGFloat, _ y: CGFloat, _ s: CGFloat,
+        lookX: CGFloat, lookY: CGFloat,
+        mouthOpen: Bool
+    ) {
+        Art.group(&g, x: x, y: y, scale: s) { b in
+            Art.glow(&b, -14, -8, 66, ArtStyle.anansi.glowColor, alpha: 0.16)
+            kwekuBust(&b, lookX: lookX, lookY: lookY, mouthOpen: mouthOpen)
+            leaf(&b, -86, 118, 130, -58, dark: false)
+            leaf(&b, -30, 138, 128, -100, dark: true)
+            leaf(&b, 98, 118, 140, -122, dark: false)
+            leaf(&b, 32, 148, 120, -78, dark: true)
+            kwekuHands(&b)
         }
     }
 
@@ -248,10 +279,10 @@ extension AnansiArt {
             ArtStyle.contactShadow(&g, 2, 1, 28, 5, alpha: 0.34)
 
             // Legs and feet.
-            limb(&g, "M-7,-30 C-8,-20 -8,-12 -8,-4", 8, skinDark)
-            limb(&g, "M7,-30 C8,-20 8,-12 8,-4", 8, skin)
-            Art.fill(&g, Art.ellipse(-10, -2, 7, 3.6), skinDark)
-            Art.fill(&g, Art.ellipse(11, -2, 7, 3.6), skin)
+            limb(&g, "M-7,-30 C-8,-20 -8,-12 -8,-4", 8, skin)
+            limb(&g, "M7,-30 C8,-20 8,-12 8,-4", 8, skinDark)
+            Art.fill(&g, Art.ellipse(-10, -2, 7, 3.6), skin)
+            Art.fill(&g, Art.ellipse(11, -2, 7, 3.6), skinDark)
 
             // Bare shoulder and chest.
             Art.fill(&g, Art.svg("M-18,-90 C-10,-97 8,-98 17,-92 L20,-60 L-21,-60Z"), skin)
@@ -259,10 +290,12 @@ extension AnansiArt {
             // The cloth, from one shoulder across the body down to the shins.
             let cloth = Art.svg("M-20,-74 C-8,-78 6,-87 13,-97 C21,-93 25,-82 25,-66 C26,-50 25,-38 23,-24 L-22,-24 C-24,-42 -24,-60 -20,-74Z")
             kente(&g, in: cloth, scale: 0.5)
+            // Lit from the upper left; the far side of the cloth falls into the indigo shade.
             let shade: [(Color, CGFloat)] = [
-                (ArtStyle.coolShade.opacity(0.36), 0), (ArtStyle.coolShade.opacity(0), 0.55), (Art.color(0xFFE9A8, 0.22), 1),
+                (Art.color(0xFFE9A8, 0.24), 0), (ArtStyle.coolShade.opacity(0), 0.42), (ArtStyle.coolShade.opacity(0.34), 1),
             ]
             Art.fillLinear(&g, cloth, shade, from: pt(-24, 0), to: pt(26, 0))
+            Art.stroke(&g, Art.svg("M-20,-74 C-24,-60 -24,-42 -22,-25"), ArtStyle.warmLight.opacity(0.5), width: 1.1)
             let fold = Art.svg("M9,-98 C18,-97 25,-90 26,-78 C27,-60 25,-46 21,-36 C18,-38 16,-42 15,-46 C17,-62 15,-80 7,-93Z")
             Art.fill(&g, fold, ArtStyle.coolShade.opacity(0.24))
             Art.stroke(&g, Art.svg("M7,-93 C15,-80 17,-62 15,-46"), Art.color(0xFFE9A8, 0.35), width: 1)
@@ -296,6 +329,7 @@ extension AnansiArt {
             Art.fill(&g, Art.rect(-5, -102, 10, 10, radius: 3), skinDark)
             Art.group(&g, x: 0, y: -117, scale: 0.78) { hd in
                 anansiHead(&hd, detail: true)
+                ArtStyle.rimLight(&hd, 0, -2, 30, alpha: 0.2)
             }
         }
     }
@@ -310,26 +344,50 @@ extension AnansiArt {
         seated: Bool,
         cloth: Color
     ) {
+        // About 3 heads tall standing (63 units, head 21); 46 units seated.
         Art.group(&context, x: x, y: y, scale: s) { g in
-            let seatedShape = "M-9,-27 C-13,-17 -15,-7 -16,0 L16,0 C15,-5 13,-9 10,-11 C11,-17 10,-23 7,-27 C3,-30 -5,-30 -9,-27Z"
-            let standingShape = "M-9,-45 C-12,-31 -12,-13 -10,0 L10,0 C12,-14 12,-31 8,-45 C4,-49 -5,-49 -9,-45Z"
+            let seatedShape = "M-8,-25 C-13,-18 -16,-8 -17,0 L17,0 C16,-5 14,-9 11,-11 C12,-16 11,-21 8,-25 C4,-28 -4,-28 -8,-25Z"
+            let standingShape = "M-9,-41 C-13,-30 -13,-14 -11,-2 C-4,0.5 5,0.5 11,-2 C13,-14 13,-30 9,-41 C5,-44.5 -5,-44.5 -9,-41Z"
             let body = Art.svg(seated ? seatedShape : standingShape)
-            let headY: CGFloat = seated ? -39 : -57
-            let head = Art.circle(0, headY, 9)
-            ArtStyle.contactShadow(&g, 1, 0.5, 18, 3, alpha: 0.28)
-            Art.fill(&g, body, cloth)
-            Art.fill(&g, head, skinDark)
-            let warm: [(Color, CGFloat)] = [
-                (Art.color(0xFFB45A, 0), 0), (Art.color(0xFFB45A, 0), 0.55), (Art.color(0xFFB45A, 0.4), 1),
-            ]
-            Art.fillLinear(&g, body, warm, from: pt(-16, 0), to: pt(16, 0))
-            Art.clipped(&g, to: head) { c in
-                Art.fill(&c, Art.ellipse(-4, headY - 5, 10, 7), hairDark)
-                Art.glow(&c, 8, headY - 1, 11, Art.color(0xFFB45A), alpha: 0.45)
+            let headY: CGFloat = seated ? -35.5 : -52.5
+            let headR: CGFloat = 10.5
+            let top: CGFloat = seated ? -28 : -45
+            let bounds = CGRect(x: -17, y: top, width: 34, height: -top)
+            let head = Art.circle(0, headY, headR)
+
+            ArtStyle.contactShadow(&g, 3, 0.5, 19, 3.2, alpha: 0.3)
+            if !seated {
+                Art.fill(&g, Art.ellipse(-3.5, -1, 5, 2.3), skinDark)
+                Art.fill(&g, Art.ellipse(6, -1, 5, 2.3), skinDark)
             }
-            ArtStyle.eye(&g, 4.2, headY + 0.4, 1.3, iris: eyeTone, showsWhite: false)
-            ArtStyle.cheek(&g, 3.6, headY + 3.4, 2.6, alpha: 0.3)
-            ArtStyle.smile(&g, 5.2, headY + 4.4, width: 3, curve: 0.5, color: mouthTone, lineWidth: 0.8)
+
+            // The wrapped cloth: lit from the upper left, warmed again by the doorway on
+            // the right.
+            Art.fill(&g, body, cloth)
+            ArtStyle.form(&g, body, bounds: bounds, light: 0.3, shade: 0.3)
+            let warm: [(Color, CGFloat)] = [
+                (Art.color(0xFFB45A, 0), 0), (Art.color(0xFFB45A, 0), 0.6), (Art.color(0xFFB45A, 0.3), 1),
+            ]
+            Art.fillLinear(&g, body, warm, from: pt(-17, 0), to: pt(17, 0))
+            let foldLine = seated ? "M-7,-24 C-1,-18 5,-14 11,-11" : "M-8,-40 C-2,-30 5,-22 11,-16"
+            Art.stroke(&g, Art.svg(foldLine), ArtStyle.coolShade.opacity(0.35), width: 1)
+            let hemLine = seated ? "M-15,-4 C-5,-1.5 6,-1.5 15,-4" : "M-11,-7 C-4,-4.5 5,-4.5 11,-7"
+            Art.stroke(&g, Art.svg(hemLine), ArtStyle.anansi.glowColor.opacity(0.4), width: 0.9)
+            limb(&g, seated ? "M6,-22 C10,-18 11,-14 9,-10" : "M7,-38 C11,-31 12,-25 10,-19", 4.2, skinDark)
+
+            // Neck and head.
+            Art.fill(&g, Art.rect(-3, headY + headR - 2.5, 6, 5, radius: 2), skinDark)
+            let tone: [(Color, CGFloat)] = [(skin, 0), (skinDark, 1)]
+            Art.fillRadial(&g, head, tone, center: pt(-3.5, headY - 4), radius: headR * 1.9)
+            Art.clipped(&g, to: head) { c in
+                Art.fill(&c, Art.ellipse(-3.5, headY - 6.5, 12, 8), hairDark)
+                Art.glow(&c, 9.5, headY - 1, 10, Art.color(0xFFB45A), alpha: 0.32)
+            }
+            Art.fill(&g, Art.ellipse(-2.6, headY + 1.2, 2, 2.8), skinDark)
+            ArtStyle.rimLight(&g, 0, headY, headR, alpha: 0.3)
+            ArtStyle.eye(&g, 4.8, headY + 0.6, 1.5, iris: eyeTone, showsWhite: false)
+            ArtStyle.cheek(&g, 4.2, headY + 4, 3, alpha: 0.3)
+            ArtStyle.smile(&g, 5.8, headY + 5.2, width: 3.4, curve: 0.6, color: mouthTone, lineWidth: 0.9)
         }
     }
 
@@ -340,11 +398,23 @@ extension AnansiArt {
         peak: CGFloat = 27
     ) {
         Art.group(&context, x: x, y: y, scale: s) { g in
-            Art.fill(&g, Art.rect(-11, -13, 22, 13), Art.color(0x2A1746))
-            let roof: [CGPoint] = [pt(-16, -12), pt(0, -peak), pt(16, -12)]
-            Art.fill(&g, Art.polygon(roof), Art.color(0x1B0F33))
-            Art.fill(&g, Art.rect(-3, -9, 6, 9), Art.color(0xFFC45A))
-            Art.fill(&g, Art.rect(-3, -9, 6, 9), Art.color(0xFFE9A8, 0.6))
+            let wallTone: [(Color, CGFloat)] = [(Art.color(0x3A2158), 0), (Art.color(0x241340), 1)]
+            Art.fillLinear(&g, Art.rect(-11, -13, 22, 13), wallTone, from: pt(-11, 0), to: pt(11, 0))
+            // A steep thatched roof with a soft, slightly bowed slope.
+            var roof = Path()
+            roof.move(to: pt(-17, -11))
+            roof.addQuadCurve(to: pt(0, -peak), control: pt(-7, -peak * 0.6))
+            roof.addQuadCurve(to: pt(17, -11), control: pt(7, -peak * 0.6))
+            roof.addQuadCurve(to: pt(-17, -11), control: pt(0, -8.5))
+            roof.closeSubpath()
+            Art.fill(&g, roof, Art.color(0x1B0F33))
+            var lit = Path()
+            lit.move(to: pt(-16.4, -11.4))
+            lit.addQuadCurve(to: pt(-0.6, -peak + 1), control: pt(-6.6, -peak * 0.6))
+            Art.stroke(&g, lit, ArtStyle.warmLight.opacity(0.4), width: 0.9)
+            let door = Art.rect(-3, -9.5, 6, 9.5, radius: 2.6)
+            Art.fill(&g, door, Art.color(0xFFC45A))
+            Art.fill(&g, door, Art.color(0xFFE9A8, 0.6))
         }
         Art.fill(&context, Art.circle(x, y - 5 * s, 12 * s), Art.color(0xFFB84D, 0.18))
     }
@@ -357,18 +427,32 @@ extension AnansiArt {
         lit: Double
     ) {
         Art.group(&context, x: x, y: y, scale: s) { g in
-            let wall = Art.rect(-34, -50, 68, 50)
+            // The house's own shadow falls to the lower right, away from the one light.
+            ArtStyle.contactShadow(&g, 16, 2, 58, 6, alpha: 0.3)
+            let wall = Art.svg("M-34,0 C-35,-18 -35,-36 -33,-50 L33,-50 C35,-36 35,-18 34,0Z")
             let wallTone: [(Color, CGFloat)] = [(Art.color(0x4A2A5E), 0), (Art.color(0x2A1746), 1)]
             Art.fillLinear(&g, wall, wallTone, from: pt(0, -50), to: pt(0, 0))
+            let wallShade: [(Color, CGFloat)] = [
+                (ArtStyle.warmLight.opacity(0.1), 0), (ArtStyle.coolShade.opacity(0), 0.4), (ArtStyle.coolShade.opacity(0.34), 1),
+            ]
+            Art.fillLinear(&g, wall, wallShade, from: pt(-34, 0), to: pt(34, 0))
             if lit > 0 {
                 Art.clipped(&g, to: wall) { c in
                     Art.glow(&c, 0, -18, 48, Art.color(0xFFB84D), alpha: 0.45 * lit)
                 }
             }
+            // The eave's shadow on the wall.
+            Art.fill(&g, Art.svg("M-33,-50 L33,-50 L33.6,-41 C12,-37 -12,-37 -33.6,-41Z"), ArtStyle.coolShade.opacity(0.3))
 
-            let roof = Art.svg("M-50,-44 C-30,-66 -12,-98 0,-124 C12,-98 30,-66 50,-44 C30,-39 -30,-39 -50,-44Z")
+            let roof = Art.svg("M-50,-44 C-30,-66 -12,-98 -2,-120 C-1,-126 1,-126 2,-120 C12,-98 30,-66 50,-44 C30,-39 -30,-39 -50,-44Z")
             let roofTone: [(Color, CGFloat)] = [(Art.color(0x2E1A4C), 0), (Art.color(0x150A2C), 1)]
             Art.fillLinear(&g, roof, roofTone, from: pt(0, -124), to: pt(0, -40))
+            ArtStyle.form(&g, roof, bounds: CGRect(x: -50, y: -126, width: 100, height: 88), light: 0.2, shade: 0.3)
+            Art.stroke(
+                &g,
+                Art.svg("M-49,-44.6 C-30,-66 -12,-98 -2,-120"),
+                ArtStyle.warmLight.opacity(0.5), width: 1.2
+            )
             var thatch = Path()
             for i in 0..<9 {
                 let t = CGFloat(i) / 8 - 0.5

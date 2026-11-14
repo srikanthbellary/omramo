@@ -64,6 +64,12 @@ public struct PaneLayout: Equatable, Hashable, Sendable {
     /// its own proportions and gains room around it, instead of being blown up like a stretched
     /// phone screen. Never set for the Duo itself or for the simulated reference canvas.
     public var maximumReferenceScale: Double?
+    /// Lower limit for `referenceScale`, or nil for none (round 4). Set only when a simulated
+    /// unfolded Duo fills a window that is much squatter than the design's panes (an iPhone
+    /// held sideways): the design then keeps a readable size and each pane simply shows less
+    /// of a page at a time, instead of the whole design shrinking to fit the height. The
+    /// scale never exceeds what the pane's width allows.
+    public var minimumReferenceScale: Double?
 
     public init(
         posture: DisplayPosture,
@@ -72,7 +78,8 @@ public struct PaneLayout: Equatable, Hashable, Sendable {
         trailing: LayoutRect?,
         hinge: LayoutRect?,
         source: Source,
-        maximumReferenceScale: Double? = nil
+        maximumReferenceScale: Double? = nil,
+        minimumReferenceScale: Double? = nil
     ) {
         self.posture = posture
         self.canvas = canvas
@@ -81,16 +88,28 @@ public struct PaneLayout: Equatable, Hashable, Sendable {
         self.hinge = hinge
         self.source = source
         self.maximumReferenceScale = maximumReferenceScale
+        self.minimumReferenceScale = minimumReferenceScale
     }
 
     /// Scale from the 432 × 720 reference pane to the real pane, for positions in DESIGN.md.
     public var referenceScale: Double {
         guard leading.width > 0, leading.height > 0 else { return 1 }
-        let fit = min(leading.width / ReferenceCanvas.paneWidth, leading.height / ReferenceCanvas.paneHeight)
+        let byWidth = leading.width / ReferenceCanvas.paneWidth
+        var fit = min(byWidth, leading.height / ReferenceCanvas.paneHeight)
+        if let lowest = minimumReferenceScale, lowest > 0 {
+            fit = max(fit, min(lowest, byWidth))
+        }
         if let limit = maximumReferenceScale, limit > 0 {
             return min(fit, limit)
         }
         return fit
+    }
+
+    /// True when a pane is shorter than the design's pane at this layout's scale (only a
+    /// layout with a `minimumReferenceScale` can be): the reader then shows less of a page on
+    /// each screen and the scene is drawn squat.
+    public var isSquat: Bool {
+        leading.height + 0.5 < ReferenceCanvas.paneHeight * referenceScale
     }
 
     /// Width of the design's pane at this layout's scale. A pane wider than this (an iPad pane)
@@ -125,19 +144,35 @@ public struct PaneLayoutInput: Equatable, Hashable, Sendable {
     /// From the Duo SDK when available, else nil.
     public var reportedPosture: DisplayPosture?
     public var simulation: Simulation?
+    /// Round 4. With `simulation == .unfolded`: lay the two panes out over the **whole
+    /// window** (a thin gutter for the hinge, the scene full-bleed) instead of drawing the
+    /// 892 × 720 reference canvas letterboxed. False keeps the letterboxed reference canvas,
+    /// for comparison with the locked screens. Ignored for any other input.
+    public var simulationFillsWindow: Bool
+    /// The window's safe-area insets on its leading and trailing edges (the Dynamic Island
+    /// and the rounded corners of an iPhone held sideways). Used only by a simulation that
+    /// fills the window: the scene still runs edge to edge, the panes start inside the insets.
+    public var safeAreaLeading: Double
+    public var safeAreaTrailing: Double
 
     public init(
         canvasWidth: Double,
         canvasHeight: Double,
         reportedHinge: LayoutRect? = nil,
         reportedPosture: DisplayPosture? = nil,
-        simulation: Simulation? = nil
+        simulation: Simulation? = nil,
+        simulationFillsWindow: Bool = false,
+        safeAreaLeading: Double = 0,
+        safeAreaTrailing: Double = 0
     ) {
         self.canvasWidth = canvasWidth
         self.canvasHeight = canvasHeight
         self.reportedHinge = reportedHinge
         self.reportedPosture = reportedPosture
         self.simulation = simulation
+        self.simulationFillsWindow = simulationFillsWindow
+        self.safeAreaLeading = safeAreaLeading
+        self.safeAreaTrailing = safeAreaTrailing
     }
 }
 
@@ -158,6 +193,14 @@ public struct PaneLayoutResolver: Equatable, Sendable {
     /// Largest scale of the design on a derived layout (assumption, Mi): type and chrome grow
     /// to 1.3 × the reference size and no further.
     public var maximumDerivedScale: Double = 1.3
+    /// Width of the hinge gutter drawn when a simulated unfolded Duo fills the window
+    /// (round 4): thin, so a phone's screen is not spent on a picture of a hinge.
+    public var filledSimulationGutter: Double = 12
+    /// A simulated unfolded Duo that fills a squat window keeps the design at full size as
+    /// long as its panes are at least this tall, and scales down in proportion below that
+    /// (assumption, round 4): an iPhone held sideways (about 440 pt tall) shows the design at
+    /// about 0.85 ×, not at the 0.61 × that fitting the whole 720 pt pane would give.
+    public var filledSimulationFullScaleHeight: Double = 520
 
     public init() {}
 
@@ -166,8 +209,12 @@ public struct PaneLayoutResolver: Equatable, Sendable {
         let height = max(0, input.canvasHeight)
         let window = LayoutRect(x: 0, y: 0, width: width, height: height)
 
-        // 1. Simulation (debug only): exactly the requested reference layout, letterboxed.
+        // 1. Simulation (debug only): exactly the requested reference layout, letterboxed —
+        // or, when asked, the two panes over the whole window.
         if let simulation = input.simulation {
+            if simulation == .unfolded, input.simulationFillsWindow {
+                return filledUnfolded(window, leadingInset: input.safeAreaLeading, trailingInset: input.safeAreaTrailing)
+            }
             return simulated(simulation, in: window)
         }
 
@@ -231,6 +278,29 @@ public struct PaneLayoutResolver: Equatable, Sendable {
             hinge: LayoutRect(x: canvas.x + paneWidth, y: canvas.y, width: gutter, height: canvas.height),
             source: source,
             maximumReferenceScale: scaleLimit(for: source)
+        )
+    }
+
+    /// The simulated unfolded Duo over the whole window: the canvas is the window (the scene
+    /// is full-bleed, under the gutter and out to every edge), the panes are the two halves
+    /// either side of a thin centred gutter, each starting inside the window's side inset.
+    private func filledUnfolded(_ window: LayoutRect, leadingInset: Double, trailingInset: Double) -> PaneLayout {
+        let gutter = min(filledSimulationGutter, window.width)
+        let middle = window.width / 2
+        // The same inset on both sides, so the two panes are always equally wide.
+        let side = min(max(0, max(leadingInset, trailingInset)), max(0, middle - gutter / 2))
+        let paneWidth = max(0, middle - gutter / 2 - side)
+        let leading = LayoutRect(x: side, y: 0, width: paneWidth, height: window.height)
+        let trailing = LayoutRect(x: middle + gutter / 2, y: 0, width: paneWidth, height: window.height)
+        let minimum = filledSimulationFullScaleHeight > 0 ? min(1, window.height / filledSimulationFullScaleHeight) : 1
+        return PaneLayout(
+            posture: .unfolded,
+            canvas: window,
+            leading: leading,
+            trailing: trailing,
+            hinge: LayoutRect(x: middle - gutter / 2, y: 0, width: gutter, height: window.height),
+            source: .simulated,
+            minimumReferenceScale: minimum
         )
     }
 

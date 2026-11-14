@@ -106,7 +106,8 @@ extension UrashimaArt {
         // (x, y, parent angle, turn, length, depth). The stack walks the branches in the same
         // order as the design's recursion, so the random numbers fall on the same branches.
         var stack: [(CGFloat, CGFloat, CGFloat, CGFloat, CGFloat, Int)] = []
-        let rootAngle = -CGFloat.pi / 2 + (CGFloat(random.next()) - 0.5) * 0.3
+        let rootJitter: CGFloat = (CGFloat(random.next()) - 0.5) * 0.3
+        let rootAngle: CGFloat = -CGFloat.pi / 2 + rootJitter
         stack.append((x, y, rootAngle, 0, 20 * s, 4))
         while let item = stack.popLast() {
             var angle = item.2
@@ -198,7 +199,8 @@ extension UrashimaArt {
     // MARK: - see-rin-gin (design `palaceScene`, screen 06)
 
     static func seeRinGin(_ context: inout GraphicsContext, w: CGFloat, h: CGFloat) {
-        let cx = w / 2 + 14
+        // The palace is the one subject: centred, about 60% of the width.
+        let cx = w / 2 + 6
         let gy = h - 78
         let deepWater: [(Color, CGFloat)] = [(Art.color(0x0C5C9A), 0), (Art.color(0x08407C), 0.45), (Art.color(0x051F4D), 1)]
         fillBackground(&context, w, h, deepWater)
@@ -231,6 +233,12 @@ extension UrashimaArt {
             Art.fill(&context, ray, Art.color(0xFFF1DC, alpha))
         }
 
+        // Far plane: the hills of the sea floor behind the palace, pale with distance.
+        let farHills = ridge(w, gy, gy - 40, gy - 72, gy - 54, bump: 26)
+        Art.fill(&context, farHills, Art.color(0x1A6AA0, 0.4))
+        let midHills = ridge(w, gy, gy - 18, gy - 34, gy - 22, bump: 14)
+        Art.fill(&context, midHills, Art.color(0x0B4A80, 0.55))
+
         // Rocks at either side.
         let rock = Art.color(0x06305F, 0.8)
         var leftRock = Path()
@@ -247,6 +255,8 @@ extension UrashimaArt {
         rightRock.addLine(to: pt(w, h))
         rightRock.closeSubpath()
         Art.fill(&context, rightRock, rock)
+        ArtStyle.form(&context, leftRock, bounds: CGRect(x: 0, y: h - 170, width: 110, height: 170), light: 0.14, shade: 0.2)
+        ArtStyle.form(&context, rightRock, bounds: CGRect(x: w - 110, y: h - 190, width: 110, height: 190), light: 0.1, shade: 0.24)
 
         // The palace's glow.
         let warm = Art.color(0xFFD98A)
@@ -303,6 +313,11 @@ extension UrashimaArt {
         Art.fillLinear(&context, floor, [(Art.color(0x0C4A6E), 0), (Art.color(0x062447), 1)], from: pt(0, gy - 12), to: pt(0, h))
         let path = Art.polygon([pt(cx - 14, gy), pt(cx - 60, h), pt(cx + 60, h), pt(cx + 14, gy)])
         Art.fill(&context, path, Art.color(0xCFE3F2, 0.22))
+        // The lantern light of the gate pools on the floor in front of it.
+        Art.clipped(&context, to: floor) { g in
+            Art.glow(&g, cx, gy + 6, 120, Art.color(0xFFD98A), alpha: 0.22)
+            ArtStyle.tooth(&g, in: CGRect(x: 0, y: gy - 12, width: w, height: 60), seed: 29, color: Art.color(0xBFE6FF), alpha: 0.08)
+        }
 
         // Kelp, coral, pearls.
         let kelpLight = Art.color(0x2FAE8A)
@@ -361,6 +376,8 @@ extension UrashimaArt {
         Art.stroke(&context, Art.svg("M-30,-34 L-74,-16 M38,-34 L86,-20"), Art.color(0x8A6A3A, 0.7), width: ArtStyle.detailLine)
         let sail = Art.svg("M-32,-116 L40,-116 C45,-90 45,-60 38,-34 L-30,-34 C-37,-60 -37,-90 -32,-116Z")
         Art.fillLinear(&context, sail, [(Art.color(0xFBF6EA), 0), (Art.color(0xE6DCC4), 1)], from: pt(-36, 0), to: pt(44, 0))
+        // The sail bellies toward the light: warm on its upper left, shaded lower right.
+        ArtStyle.form(&context, sail, bounds: CGRect(x: -37, y: -116, width: 82, height: 82), light: 0.22, shade: 0.14)
         Art.stroke(
             &context,
             Art.svg("M-14,-116 C-17,-90 -17,-60 -13,-34 M4,-116 V-34 M22,-116 C26,-90 26,-60 21,-34"),
@@ -402,40 +419,37 @@ extension UrashimaArt {
     /// background colour (#1B4C93, the sixth wave band).
     static func seeFishingBoats(_ context: inout GraphicsContext, w: CGFloat, h: CGFloat) {
         let low = h * 0.44
-        let sea = Sea(low: low, lift: 0)
+        let sea = Sea(low: low)
         fillBackground(&context, w, h, daySky)
         ArtStyle.horizonGlow(&context, width: w, y: low + 2, rise: 110, color: horizonTint, alpha: 0.45)
         sun(&context, w - 84, low - 26, 40)
 
-        // Pine headland.
-        var land = Path()
-        land.move(to: pt(-4, low + 4))
-        land.addLine(to: pt(-4, low - 58))
-        land.addCurve(to: pt(132, low - 38), control1: pt(40, low - 76), control2: pt(92, low - 66))
-        land.addCurve(to: pt(188, low + 4), control1: pt(152, low - 24), control2: pt(170, low - 8))
-        land.closeSubpath()
-        Art.fill(&context, land, Art.color(0x8FB9C6))
-        let pineTint = Art.color(0x5E8F8A)
-        pine(&context, 30, low - 62, 1.3, pineTint)
-        pine(&context, 114, low - 42, 1.1, pineTint)
-        pine(&context, 72, low - 62, 1.6, pineTint)
+        // Far plane: a low pine headland, kept clear of the close button (top left) and pale
+        // with distance, and one far sail. They are setting; the near boat is the subject.
+        let base: CGFloat = low + 3
+        Art.layer(&context, opacity: 0.7) { g in
+            Art.fill(&g, headland(-30, 196, base, 34, peak: 0.36), Art.color(0x9DC3CF))
+            let row: [(CGFloat, CGFloat, CGFloat)] = [(22, 0.8, 0.7), (54, 1, 0.9), (92, 0.9, 0.65), (132, 0.5, 0.55)]
+            shorePines(&g, row, base: base, rise: 34, s: 1, color: Art.color(0x7FAAB5))
+        }
+        ArtStyle.atmosphere(&context, width: w, top: low - 100, bottom: low + 4, color: Art.color(0xFFEDE0), alpha: 0.26)
         let gullTint = Art.color(0x5A7C96)
-        gull(&context, 212, low - 96, 0.9, gullTint)
-        gull(&context, 236, low - 108, 0.7, gullTint)
-        gull(&context, 168, low - 118, 0.6, gullTint)
+        gull(&context, 96, low - 92, 0.8, gullTint)
+        gull(&context, 120, low - 104, 0.6, gullTint)
 
         let seaShape = seaBand(&context, sea, 0, fills: dayFills, x1: w, bottom: h)
         seaBand(&context, sea, 1, fills: dayFills, x1: w, bottom: h)
-        Art.group(&context, x: 318, y: sea.top(1, 318) + 3, scale: 0.28) { g in
+        Art.group(&context, x: 372, y: sea.top(1, 372) + 3, scale: 0.24, opacity: 0.85) { g in
             sailBoat(&g, crew: false, net: false)
         }
         seaBand(&context, sea, 2, fills: dayFills, x1: w, bottom: h)
-        Art.group(&context, x: 84, y: sea.top(2, 84) + 7, rotate: rad(2), scale: 0.46) { g in
-            sailBoat(&g, crew: true, net: false)
-        }
         seaBand(&context, sea, 3, fills: dayFills, x1: w, bottom: h)
-        // The one subject: a boat a little above the middle, about 55% of the width.
-        Art.group(&context, x: 232, y: sea.top(3, 232) + 14, rotate: rad(-3), scale: 1.22) { g in
+        // The one subject: a boat centred a little above the middle, about 58% of the width,
+        // with its shadow on the water.
+        let boatX: CGFloat = w / 2 - 4
+        let boatY: CGFloat = sea.top(3, boatX) + 14
+        ArtStyle.contactShadow(&context, boatX + 12, boatY + 14, 132, 10, alpha: 0.22)
+        Art.group(&context, x: boatX, y: boatY, rotate: rad(-3), scale: 1.26) { g in
             sailBoat(&g, crew: true, net: true)
         }
         seaBand(&context, sea, 4, fills: dayFills, x1: w, bottom: h)
@@ -468,9 +482,11 @@ extension UrashimaArt {
         // The warm key light, from the upper left: the box is a mystery, not a menace.
         Art.glow(&context, cx - 70, h * 0.3, 190, ArtStyle.warmLight, alpha: 0.2)
 
-        // Pale silk.
-        let silk = Art.ellipse(cx, baseY + 6, 188, 40)
+        // Pale silk: a cloth with a soft, uneven hem rather than a plain oval.
+        let cloth = Art.svg("M-186,4 C-156,-24 -72,-36 -4,-33 C76,-37 152,-22 190,7 C158,32 96,40 44,42 C20,50 -30,47 -62,41 C-112,40 -164,28 -186,4Z")
+        let silk = cloth.applying(CGAffineTransform(translationX: cx, y: baseY + 6))
         Art.fillLinear(&context, silk, [(Art.color(0xFCF8FD), 0), (Art.color(0xD9CBE6), 1)], from: pt(0, baseY - 34), to: pt(0, baseY + 46))
+        ArtStyle.form(&context, silk, bounds: CGRect(x: cx - 188, y: baseY - 30, width: 378, height: 84), light: 0.22, shade: 0.16)
         let folds = Art.svg("M-150,2 C-110,16 -60,22 -10,22 M30,26 C80,26 130,18 164,4 M-170,-6 C-150,-14 -120,-18 -96,-18")
         let foldPath = folds.applying(CGAffineTransform(translationX: cx, y: baseY + 8))
         Art.clipped(&context, to: silk) { g in
@@ -503,14 +519,22 @@ extension UrashimaArt {
         let line = h * 0.74
         let far = line - 20
         ArtStyle.horizonGlow(&context, width: w, y: far, rise: 120, color: horizonTint, alpha: 0.45)
+        // Far plane: a pale pine headland on the horizon, veiled by the haze.
+        Art.layer(&context, opacity: 0.6) { g in
+            Art.fill(&g, headland(-30, 190, far + 3, 30, peak: 0.36), Art.color(0x9DC3CF))
+            let row: [(CGFloat, CGFloat, CGFloat)] = [(24, 0.8, 0.7), (56, 1, 0.9), (94, 0.9, 0.6)]
+            shorePines(&g, row, base: far + 3, rise: 30, s: 1, color: Art.color(0x7FAAB5))
+        }
+        ArtStyle.atmosphere(&context, width: w, top: far - 90, bottom: far + 4, color: Art.color(0xFFEDE0), alpha: 0.26)
         waveBand(&context, x0: 0, x1: w, bottom: h, amp: 5, length: 44, phase: 6, fill: dayFills[1], foamOpacity: 0.8) { _ in far }
         waveBand(
             &context, x0: 0, x1: w, bottom: h, amp: 9, length: 62, phase: 14,
             fill: dayFills[3], foamOpacity: 0.92, fingers: true, seed: 6, texture: 1, textureDepth: 80
         ) { _ in line }
-        // Head and shoulders to the waist: the topknot about 60 units from the top, the eyes
-        // near the upper third.
-        Art.group(&context, x: w * 0.48, y: h + 60, scale: 3) { g in
+        // Head, shoulders and coat: the topknot about 45 units from the top, the eyes a little
+        // above the middle. (At three heads tall the head is a third of him, so the frame
+        // holds him to the sash rather than to the knees.)
+        Art.group(&context, x: w * 0.48, y: h + 76, scale: 3.6) { g in
             urashima(&g, rod: .shoulder)
         }
         finish(&context, w, h)
@@ -560,8 +584,8 @@ extension UrashimaArt {
         coral(&context, w * 0.13, h - 6, 2.1, Art.color(0xF6A79C), seed: 4)
         coral(&context, w * 0.27, h + 4, 1.3, Art.color(0xFBD3CB), seed: 8)
         bubbles(&context, count: 14, seed: 27, x: 0, y: 0, w: w, h: h, fill: white, ring: white, strength: 2)
-        // Head and shoulders to the waist: the crown about 60 units from the top.
-        Art.group(&context, x: w * 0.5, y: h + 70, scale: 2.6) { g in
+        // Head, shoulders and sleeves: the hair knots about 40 units from the top.
+        Art.group(&context, x: w * 0.5, y: h + 77, scale: 3.6) { g in
             otohime(&g)
         }
         finish(&context, w, h)
@@ -620,19 +644,33 @@ extension UrashimaArt {
         fillBackground(&context, w, h, daySky)
         ArtStyle.horizonGlow(&context, width: w, y: mid + 9, rise: 70, color: horizonTint, alpha: 0.45)
         sun(&context, w * 0.72, mid - 14, 44)
-        let sea = Sea(low: mid + 8, lift: 0, scale: 0.6)
+        let sea = Sea(low: mid + 8, scale: 0.6)
+        // Far plane: a pale pine headland on the horizon.
+        let base: CGFloat = mid + 10
+        Art.layer(&context, opacity: 0.6) { g in
+            Art.fill(&g, headland(-20, 120, base, 16, peak: 0.36), Art.color(0x9DC3CF))
+            let row: [(CGFloat, CGFloat, CGFloat)] = [(16, 0.8, 0.36), (36, 1, 0.48), (60, 0.9, 0.34)]
+            shorePines(&g, row, base: base, rise: 16, s: 1, color: Art.color(0x7FAAB5))
+        }
+        ArtStyle.atmosphere(&context, width: w, top: mid - 50, bottom: mid + 10, color: Art.color(0xFFEDE0), alpha: 0.26)
         let gullTint = Art.color(0x5A7C96)
         gull(&context, w * 0.36, mid - 30, 0.6, gullTint)
         gull(&context, w * 0.43, mid - 37, 0.45, gullTint)
-        for index in 0...3 {
+        let seaShape = seaBand(&context, sea, 0, fills: dayFills, x1: w, bottom: h)
+        for index in 1...3 {
             seaBand(&context, sea, index, fills: dayFills, x1: w, bottom: h)
         }
-        let boatX = w * 0.62
-        Art.group(&context, x: boatX, y: sea.top(3, boatX) + 3, rotate: rad(-5), scale: 0.62) { g in
+        let boatX = w * 0.6
+        let boatY: CGFloat = sea.top(3, boatX) + 3
+        ArtStyle.contactShadow(&context, boatX + 6, boatY + 7, 70, 5, alpha: 0.2)
+        Art.group(&context, x: boatX, y: boatY, rotate: rad(-5), scale: 0.68) { g in
             boatWithUrashima(&g)
         }
         for index in 4...6 {
             seaBand(&context, sea, index, fills: dayFills, x1: w, bottom: h)
+        }
+        Art.clipped(&context, to: seaShape) { g in
+            ArtStyle.tooth(&g, in: CGRect(x: 0, y: mid, width: w, height: h - mid), seed: 15, alpha: 0.12)
         }
         finish(&context, w, h)
     }
