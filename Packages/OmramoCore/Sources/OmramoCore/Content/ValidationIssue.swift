@@ -13,6 +13,7 @@ public enum ValidationCode: String, CaseIterable, Hashable, Sendable {
     case tapAndName = "tap-and-name"
     case emptyText = "empty-text"
     case unusedTapTarget = "unused-tap-target"
+    case pathTextIncomplete = "path-text-incomplete"
 
     // Art, colours, sample
     case missingAlt = "missing-alt"
@@ -21,6 +22,7 @@ public enum ValidationCode: String, CaseIterable, Hashable, Sendable {
     case badColor = "bad-color"
     case freeSpreadsRange = "free-spreads-range"
     case wordsPerSpread = "words-per-spread"
+    case textAreaRange = "text-area-range"
 
     // Text fidelity
     case manuscriptMissing = "manuscript-missing"

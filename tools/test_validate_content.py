@@ -287,6 +287,163 @@ class LandmarkRules(Base):
         self.assertNotEqual(taj["factCards"]["low"]["line"], taj["factCards"]["medium"]["line"])
 
 
+class PathTextAndTextArea(Base):
+    """Milestone 2 rules: text on a path, and where a scene's calm text area ends."""
+
+    WAVE = "M14,66 C70,22 120,84 190,52 C250,26 300,70 388,30"
+
+    def first_block(self):
+        return self.story["spreads"][0]["blocks"][0]
+
+    def test_parse_path_accepts_the_supported_commands(self):
+        self.assertEqual(len(vc.parse_path(self.WAVE)), 3)
+        lines = vc.parse_path("M0 0 10 0 L 20,5 Q30,-5 40.5,0")
+        self.assertEqual([seg[0] for seg in lines], ["M", "L", "L", "Q"])
+        self.assertEqual(lines[3][1], [30.0, -5.0, 40.5, 0.0])
+        self.assertEqual(vc.parse_path("M.5,0 L1.5.25")[1], ("L", [1.5, 0.25]))
+
+    def test_parse_path_rejects_what_the_app_cannot_draw(self):
+        for bad in ("", "M10,10", "L10,10 20,20", "M0,0 c10,10 20,20 30,0", "M0,0 A5,5 0 0 1 10,10",
+                    "M0,0 C10,10 20,20", "M0,0 L10,10 M20,20 L30,30", "M0,0 L10,ten", None, 12):
+            self.assertIsNone(vc.parse_path(bad), repr(bad))
+
+    def test_paragraph_must_not_carry_a_path(self):
+        self.first_block()["path"] = self.WAVE
+        self.assertError(self.run_story(), "path-text-incomplete")
+
+    def test_path_text_needs_a_path(self):
+        self.first_block()["kind"] = "pathText"
+        self.assertError(self.run_story(), "path-text-incomplete")
+        self.first_block()["path"] = "M0,0 a5,5 0 0 1 10,10"
+        self.assertError(self.run_story(), "path-text-incomplete")
+
+    def test_path_text_with_a_path_is_valid_and_keeps_fidelity(self):
+        block = self.first_block()
+        block["kind"] = "pathText"
+        block["path"] = self.WAVE
+        rep = self.run_story()
+        self.assertNotIn("path-text-incomplete", rep.codes())
+        self.assertNotIn("text-fidelity", rep.codes())
+
+    def test_text_area_range(self):
+        scene = self.story["spreads"][0]["scene"]
+        scene["textArea"] = {"trailingBottom": 420}
+        self.assertNotIn("text-area-range", self.run_story().codes())
+        scene["textArea"] = {"leadingBottom": 90}
+        self.assertError(self.run_story(), "text-area-range")
+        scene["textArea"] = {"trailingBottom": 900}
+        self.assertError(self.run_story(), "text-area-range")
+
+    def test_text_area_shape(self):
+        self.story["spreads"][0]["scene"]["textArea"] = {"trailingBottom": "low"}
+        with self.assertRaises(vc.Malformed):
+            self.run_story()
+
+
+class PrototypeStories(unittest.TestCase):
+    """The Medium and Advanced prototype stories added in Milestone 2 (criterion 2.5)."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.landmarks = vc.load_json(os.path.join(ROOT, "landmarks", "landmarks.json"))
+        cls.stories = {}
+        cls.manuscripts = {}
+        for sid in ("monkey-and-crocodile", "anansi-wisdom", "urashima-taro"):
+            cls.stories[sid] = vc.load_json(os.path.join(ROOT, "stories", sid, "story.json"))
+            with open(os.path.join(ROOT, "sources", sid + ".txt"), encoding="utf-8") as handle:
+                cls.manuscripts[sid] = handle.read()
+
+    def validate(self, sid, story=None, manuscript=None):
+        story = copy.deepcopy(self.stories[sid]) if story is None else story
+        vc.shape_story(story)
+        rep = vc.Report(False)
+        vc.validate_story(rep, "story.json", story, self.landmarks,
+                          self.manuscripts[sid] if manuscript is None else manuscript)
+        return rep
+
+    def test_catalog_lists_one_story_per_tier(self):
+        catalog = vc.load_json(os.path.join(ROOT, "catalog.json"))
+        self.assertEqual(catalog["stories"], ["monkey-and-crocodile", "anansi-wisdom", "urashima-taro"])
+        self.assertEqual([self.stories[s]["tier"] for s in catalog["stories"]], ["low", "medium", "advanced"])
+        self.assertEqual([self.stories[s]["region"]["id"] for s in catalog["stories"]],
+                         ["indian", "african", "japanese"])
+
+    def test_all_three_validate_with_text_fidelity(self):
+        for sid in self.stories:
+            rep = self.validate(sid)
+            self.assertEqual(rep.errors(), [], sid)
+            self.assertNotIn("words-per-spread", rep.codes(), sid)
+            self.assertNotIn("unused-tap-target", rep.codes(), sid)
+            self.assertIsNone(vc.compare_text(self.stories[sid], self.manuscripts[sid]), sid)
+
+    def test_fidelity_check_is_honest_for_the_new_stories(self):
+        # One changed word in the story, or in the manuscript, is caught.
+        for sid in ("anansi-wisdom", "urashima-taro"):
+            story = copy.deepcopy(self.stories[sid])
+            run = story["spreads"][1]["blocks"][0]["runs"][0]
+            run["t"] = run["t"].replace(" ", "  very ", 1)
+            self.assertIn("text-fidelity", self.validate(sid, story=story).codes("error"), sid)
+            lines = self.manuscripts[sid].splitlines()
+            index = next(i for i, line in enumerate(lines) if not line.startswith("#") and " the " in line)
+            lines[index] = lines[index].replace(" the ", " teh ", 1)
+            changed = "\n".join(lines)
+            self.assertIn("text-fidelity", self.validate(sid, manuscript=changed).codes("error"), sid)
+
+    def test_stories_are_our_own_retellings(self):
+        for sid, story in self.stories.items():
+            self.assertEqual(story["provenance"]["textBasis"], "omramoRetelling", sid)
+            self.assertEqual(story["review"]["text"]["status"], "pending", sid)
+
+    def test_anansi_is_medium_with_text_on_one_pane(self):
+        story = self.stories["anansi-wisdom"]
+        self.assertEqual(story["theme"]["accent"], "amber")
+        self.assertEqual(story["theme"]["chrome"], {"leading": "dark", "trailing": "dark", "folded": "dark"})
+        self.assertEqual(story["culturalReview"]["level"], "required")
+        panes = {b["pane"] for s in story["spreads"] for b in s["blocks"]}
+        self.assertEqual(panes, {"leading"})
+        target = next(t for t in story["tapTargets"] if t["kind"] == "landmark")
+        self.assertEqual(target["landmark"], {"id": "asante-traditional-buildings", "appearance": "natural"})
+
+    def test_urashima_is_advanced_with_text_on_both_panes_and_a_wave(self):
+        story = self.stories["urashima-taro"]
+        self.assertEqual(story["theme"]["accent"], "red")
+        for spread in story["spreads"]:
+            panes = {b["pane"] for b in spread["blocks"]}
+            self.assertEqual(panes, {"leading", "trailing"}, spread["id"])
+            self.assertEqual(spread["scene"]["textArea"], {"trailingBottom": 420}, spread["id"])
+        paths = [b for s in story["spreads"] for b in s["blocks"] if b["kind"] == "pathText"]
+        self.assertEqual(len(paths), 1)
+        self.assertEqual(paths[0]["pane"], "trailing")
+        self.assertIsNotNone(vc.parse_path(paths[0]["path"]))
+        self.assertEqual(vc.normalize(vc.block_text(paths[0])), '"Urashima, Urashima!"')
+
+    def test_skytree_must_stay_framed_in_old_japan(self):
+        story = copy.deepcopy(self.stories["urashima-taro"])
+        target = next(t for t in story["tapTargets"] if t["kind"] == "landmark")
+        self.assertEqual(target["landmark"]["appearance"], "framed")
+        self.assertEqual(target["landmark"]["framingDevice"]["kind"], "thenAndNow")
+        target["landmark"] = {"id": "tokyo-skytree", "appearance": "natural"}
+        self.assertIn("landmark-anachronism", self.validate("urashima-taro", story=story).codes("error"))
+
+    def test_every_story_marks_a_landmark_a_tap_word_and_a_character_with_a_card(self):
+        for sid, story in self.stories.items():
+            runs = [r for s in story["spreads"] for b in s["blocks"] for r in b["runs"]]
+            tapped = {r["tap"] for r in runs if "tap" in r}
+            named = {r["name"] for r in runs if "name" in r}
+            kinds = {t["kind"] for t in story["tapTargets"] if t["id"] in tapped}
+            self.assertIn("landmark", kinds, sid)
+            self.assertTrue(kinds - {"landmark"}, sid)
+            with_cards = {c["id"] for c in story["characters"] if c.get("card")}
+            self.assertTrue(named & with_cards, sid)
+
+    def test_new_landmarks_have_three_tier_wordings(self):
+        by_id = {lm["id"]: lm for lm in self.landmarks["landmarks"]}
+        for lid in ("asante-traditional-buildings", "tokyo-skytree"):
+            cards = by_id[lid]["factCards"]
+            lines = {cards[t]["line"] for t in vc.TIERS}
+            self.assertEqual(len(lines), 3, lid)
+
+
 class RuleCodesMatchSwift(unittest.TestCase):
     """Criterion 1.20: the Python and Swift validators list the same rules."""
 

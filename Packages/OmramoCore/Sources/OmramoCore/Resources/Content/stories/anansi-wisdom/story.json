@@ -1,0 +1,876 @@
+{
+  "schemaVersion": 1,
+  "id": "anansi-wisdom",
+  "contentVersion": 1,
+  "title": "How Wisdom Became the Property of the Human Race",
+  "subtitle": "An Anansi story",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "african",
+    "culture": "Akan (Asante and Fante)",
+    "place": "Ghana, West Africa",
+    "label": "Akan · Ghana",
+    "pin": {
+      "lat": 6.7,
+      "lon": -1.6
+    },
+    "pinColor": "#FFB020"
+  },
+  "setting": {
+    "period": "Folk-tale time in an Akan village — a story told for hundreds of years",
+    "latestYear": 1900
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Akan Anansesem (spider stories)",
+    "sources": [
+      {
+        "author": "W. H. Barker and Cecilia Sinclair",
+        "title": "West African Folk-Tales",
+        "publisher": "George G. Harrap & Co.",
+        "year": 1917,
+        "gutenbergId": 66923,
+        "url": "https://www.gutenberg.org/ebooks/66923",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Akan Anansi story, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); the authors' death years are not verified and other territories are not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "A living Akan oral tradition (Anansesem); the story, the names and every kente or symbol drawing need an Akan reader.",
+    "community": "Akan (Asante/Fante) reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Ghana is a country in West Africa. In the south it is warm and rainy, and tall forests grow there.",
+      "factCards": [
+        "forest",
+        "village-houses"
+      ]
+    },
+    "culture": {
+      "lesson": "The Akan people call their Anansi tales Anansesem, which means spider stories, and they weave a bright cloth called kente. Long ago, people who were taken across the ocean to the Caribbean and the Americas carried these stories with them, and they are still told there.",
+      "factCards": [
+        "precious-pot",
+        "village-houses"
+      ]
+    },
+    "moral": {
+      "lesson": "No one can keep all the wisdom. Even a child can teach a wise grown-up.",
+      "reflectionQuestion": "What is something you know that you could teach a grown-up?"
+    }
+  },
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": {
+      "leading": "dark",
+      "trailing": "dark",
+      "folded": "dark"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "Father Anansi climbs a great tree at twilight with a clay pot hanging in front of him, under a big yellow moon.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "An Anansi story"
+    }
+  ],
+  "characters": [
+    {
+      "id": "anansi",
+      "name": "Father Anansi",
+      "color": "#FFB86B",
+      "face": {
+        "file": "art/face-anansi.png",
+        "alt": "Father Anansi.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D8342B",
+      "card": {
+        "label": "Character · the keeper of wisdom",
+        "title": "Father Anansi",
+        "traits": [
+          {
+            "text": "Proud",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Loves to be asked",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Not as wise as he thinks",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He wants to be the wisest one of all. In many Akan tales Anansi is a spider, and his name means “spider” in Twi.",
+        "portrait": {
+          "file": "art/char-anansi.card.heic",
+          "alt": "Father Anansi, an old man with a white beard and bright woven cloth, holding a round clay pot.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#6B3A7E",
+          "#3A1F6B",
+          "#1B1145"
+        ]
+      }
+    },
+    {
+      "id": "kweku-tsin",
+      "name": "Kweku Tsin",
+      "color": "#FFD25A",
+      "face": {
+        "file": "art/face-kweku.png",
+        "alt": "Kweku Tsin.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F7B520",
+      "card": {
+        "label": "Character · Father Anansi’s son",
+        "title": "Kweku Tsin",
+        "traits": [
+          {
+            "text": "Quiet",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Notices everything",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Speaks up",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He watches and wonders before he speaks. One good idea from him changes everything.",
+        "portrait": {
+          "file": "art/char-kweku.card.heic",
+          "alt": "Kweku Tsin, a boy with wide, bright eyes, peeking out between two big leaves.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFD35A",
+          "#FFAE45",
+          "#FF8A4D"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "precious-pot",
+      "kind": "object",
+      "title": "Precious pot",
+      "line": "A pot that holds something its owner cares about very much.",
+      "cultureNote": {
+        "label": "From Ghana",
+        "text": "For a very long time, people in Akan villages have shaped pots from clay by hand. Pots like these hold water, food and other things worth keeping."
+      },
+      "picture": {
+        "file": "art/see-precious-pot.heic",
+        "alt": "A round clay pot with a lid, tied with a rope and glowing softly.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A1650"
+    },
+    {
+      "id": "forest",
+      "kind": "place",
+      "title": "Forest",
+      "line": "A wide place where many tall trees grow close together.",
+      "cultureNote": {
+        "label": "From Ghana",
+        "text": "The south of Ghana is warm and rainy, and rain forests grow there. Their tallest trees stand high above all the others."
+      },
+      "picture": {
+        "file": "art/see-forest.heic",
+        "alt": "Tall forest trees with wide trunks and leafy tops, with fireflies glowing between them at twilight.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#12303A"
+    },
+    {
+      "id": "village-houses",
+      "kind": "landmark",
+      "landmark": {
+        "id": "asante-traditional-buildings",
+        "appearance": "natural"
+      },
+      "background": "#3A1F4D"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-village.unfolded.heic",
+          "alt": "At dusk, small houses with glowing windows stand at the edge of a forest. Father Anansi, an old man with a white beard and bright woven cloth, sits at his door while neighbours come to ask his advice.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-village.folded.heic",
+          "alt": "At dusk, Father Anansi sits at his door in a village of small houses with glowing windows.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1B1145",
+          "#6B3A7E",
+          "#F08A4B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago, ",
+              "lead": true
+            },
+            {
+              "t": "Father Anansi",
+              "lead": true,
+              "name": "anansi"
+            },
+            {
+              "t": " held all the wisdom in the world.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He lived in a "
+            },
+            {
+              "t": "village",
+              "tap": "village-houses"
+            },
+            {
+              "t": " at the edge of a great green forest. Every day, his neighbours came knocking at his door."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“How do I mend my leaking roof?” asked one. “When should I plant my yams?” asked another."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Father Anansi always knew. He gave out his wisdom a little at a time, and he loved to be the one everybody needed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-village.unfolded.heic",
+          "alt": "At dusk, small houses with glowing windows stand at the edge of a forest. Father Anansi, an old man with a white beard and bright woven cloth, sits at his door while neighbours come to ask his advice.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-village.folded.heic",
+          "alt": "At dusk, Father Anansi sits at his door in a village of small houses with glowing windows.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1B1145",
+          "#6B3A7E",
+          "#F08A4B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But one day, a neighbour forgot to say thank you. Another only laughed and said, “Oh, I knew that already!”"
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Father Anansi",
+              "name": "anansi"
+            },
+            {
+              "t": "’s pride was stung. "
+            },
+            {
+              "t": "“Then they shall have no wisdom at all,”",
+              "say": "anansi",
+              "chip": true
+            },
+            {
+              "t": " he grumbled. "
+            },
+            {
+              "t": "“I will take back every last crumb of it.”",
+              "say": "anansi"
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All that day he went from house to house, gathering up every wise thing he had ever given away. He poured it all into a big clay pot, pressed on the lid, and sealed it tight."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "A forest path at twilight, lit by fireflies. Father Anansi walks ahead with a round clay pot hanging at his neck. Behind him his son Kweku Tsin peeks out between big leaves.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "Kweku Tsin peeks out between big leaves on a forest path at twilight.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1F1450",
+          "#5A2F7A",
+          "#E9774A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But ",
+              "lead": true
+            },
+            {
+              "t": "Father Anansi",
+              "lead": true,
+              "name": "anansi"
+            },
+            {
+              "t": "’s young son, ",
+              "lead": true
+            },
+            {
+              "t": "Kweku Tsin",
+              "lead": true,
+              "name": "kweku-tsin"
+            },
+            {
+              "t": ", was watching.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Kweku was a quiet boy who noticed things. Why was his father so busy? Why did he keep patting that pot and smiling to himself?"
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That evening, as the sky turned purple, Father Anansi tiptoed out of the house. His "
+            },
+            {
+              "t": "precious pot",
+              "tap": "precious-pot"
+            },
+            {
+              "t": " hung from a rope around his neck. Kweku Tsin slipped out after him, soft as a shadow."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "A forest path at twilight, lit by fireflies. Father Anansi walks ahead with a round clay pot hanging at his neck. Behind him his son Kweku Tsin peeks out between big leaves.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "Kweku Tsin peeks out between big leaves on a forest path at twilight.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1F1450",
+          "#5A2F7A",
+          "#E9774A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Father Anansi hurried down the "
+            },
+            {
+              "t": "forest",
+              "tap": "forest"
+            },
+            {
+              "t": " path. He went on and on, until the houses of the village were far behind him."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The trees grew taller and the shadows grew deeper. At last he stopped beneath the tallest tree of all. Its trunk was wider than a doorway, and its top seemed to brush the moon."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Up there,”",
+              "say": "anansi",
+              "chip": true
+            },
+            {
+              "t": " he chuckled, "
+            },
+            {
+              "t": "“nobody will ever reach my wisdom—nobody but me.”",
+              "say": "anansi"
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Behind a broad green leaf, "
+            },
+            {
+              "t": "Kweku",
+              "name": "kweku-tsin"
+            },
+            {
+              "t": " held his breath and watched."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-climb.unfolded.heic",
+          "alt": "Father Anansi clings to the trunk of a huge tree, with a clay pot hanging in front of him. A big yellow moon shines behind the leaves, and a small spider hangs on its thread.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-climb.folded.heic",
+          "alt": "Father Anansi clings to a huge tree trunk with a clay pot hanging in front of him, under a big moon.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1B1145",
+          "#4A2A7A",
+          "#7A3A80"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Father Anansi",
+              "lead": true,
+              "name": "anansi"
+            },
+            {
+              "t": " hugged the trunk and began to climb.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the pot hung in front of his tummy. He could not get his arms around the tree, and he could not see his feet. Up he went a little way—and the pot swung in his way."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Down he slid. He tried again. He puffed, he grunted, he stretched as far as he could—and the pot swung in his way."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Again and again he tried. Again and again, the pot swung in his way."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-climb.unfolded.heic",
+          "alt": "Father Anansi clings to the trunk of a huge tree, with a clay pot hanging in front of him. A big yellow moon shines behind the leaves, and a small spider hangs on its thread.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-climb.folded.heic",
+          "alt": "Father Anansi clings to a huge tree trunk with a clay pot hanging in front of him, under a big moon.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1B1145",
+          "#4A2A7A",
+          "#7A3A80"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Kweku Tsin",
+              "name": "kweku-tsin"
+            },
+            {
+              "t": " watched from below. He bit his lip. He hopped from foot to foot. At last he could keep quiet no longer."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Father!”",
+              "say": "kweku-tsin",
+              "chip": true
+            },
+            {
+              "t": " he called. "
+            },
+            {
+              "t": "“Why not hang the pot on your back? Then it would not get in your way, and you could climb easily.”",
+              "say": "kweku-tsin"
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Father Anansi",
+              "name": "anansi"
+            },
+            {
+              "t": " stopped. He clung to the tree, quite still. Then, very "
+            },
+            {
+              "t": "slowly",
+              "fx": "stretch"
+            },
+            {
+              "t": ", he turned his head and looked down at his son."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-climb.unfolded.heic",
+          "alt": "Father Anansi clings to the trunk of a huge tree, with a clay pot hanging in front of him. A big yellow moon shines behind the leaves, and a small spider hangs on its thread.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-climb.folded.heic",
+          "alt": "Father Anansi clings to a huge tree trunk with a clay pot hanging in front of him, under a big moon.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1B1145",
+          "#4A2A7A",
+          "#7A3A80"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“All the wisdom in the world is meant to be inside this pot,”",
+              "say": "anansi",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Yet my own small son knows a thing that I did not!”",
+              "say": "anansi"
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His face grew hot. How foolish he felt! In a huff, he tugged the pot from his neck and flung it away."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Down it fell, down through the dark leaves. "
+            },
+            {
+              "t": "Crack!",
+              "fx": "pop",
+              "scale": 1.42
+            },
+            {
+              "t": " It landed on a big grey rock and burst into a hundred pieces."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-wisdom.unfolded.heic",
+          "alt": "A clay pot lies broken on a rock at the foot of a great tree. Golden specks of light drift up out of it and away over the forest, the village and the hills beyond.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-wisdom.folded.heic",
+          "alt": "A clay pot lies broken on a rock, and golden specks of light drift up into the night sky.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1B1145",
+          "#6B3A7E",
+          "#FFC43D"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Out floated the wisdom, like sparks of gold.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The night wind carried it over the forest and over the village. It drifted across rivers and mountains and seas, to every land in the world."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A little of it settled on everyone—on farmers and fishers, on grandmothers and on babies."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Father Anansi",
+              "name": "anansi"
+            },
+            {
+              "t": " watched it go. Then he gave a small smile, climbed down, took "
+            },
+            {
+              "t": "Kweku",
+              "name": "kweku-tsin"
+            },
+            {
+              "t": "’s hand, and walked home."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And that is why no one has all the wisdom, and why everyone has some—even you."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

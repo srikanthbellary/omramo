@@ -69,10 +69,24 @@ private struct LibraryMainPane<Extra: View>: View {
     @ViewBuilder var extra: () -> Extra
 
     var body: some View {
-        let inset = pane.pt(Tokens.Spacing.insetText)
-        let cardWidth = min(pane.pt(Tokens.Spacing.cardWidth), pane.size.width - inset * 2)
-        let tabBarClearance = pane.bottomInset(22) + pane.pt(Tokens.Size.tabBarHeight) + pane.pt(16)
+        let inset = pane.contentInset + pane.pt(Tokens.Spacing.insetText)
+        let cardWidth = max(0, min(pane.pt(Tokens.Spacing.cardWidth), pane.size.width - inset * 2))
+        let fade = pane.pt(18)
 
+        VStack(spacing: 0) {
+            column(inset: inset, cardWidth: cardWidth, fade: fade)
+
+            // The tab bar has its own strip — 62 pt high, 22 pt above the bottom edge or above
+            // the home indicator, whichever is higher — so nothing in the column (the map
+            // legend least of all) is ever hidden behind it.
+            LibraryTabBar()
+                .padding(.top, pane.pt(6))
+                .padding(.bottom, pane.bottomInset(22))
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+    }
+
+    private func column(inset: CGFloat, cardWidth: CGFloat, fade: CGFloat) -> some View {
         ScrollView(.vertical) {
             VStack(alignment: .leading, spacing: 0) {
                 WordmarkView()
@@ -133,15 +147,20 @@ private struct LibraryMainPane<Extra: View>: View {
                 extra()
             }
             .padding(.top, max(pane.pt(56), pane.safeArea.top + pane.pt(8)))
-            .padding(.bottom, tabBarClearance)
+            .padding(.bottom, fade + pane.pt(6))
             .frame(maxWidth: .infinity, alignment: .leading)
         }
         .scrollIndicators(.hidden)
         .scrollBounceBehavior(.basedOnSize)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
-        .overlay(alignment: .bottom) {
-            LibraryTabBar()
-                .padding(.bottom, pane.bottomInset(22))
+        // The column ends above the tab bar and fades out softly there: cards scroll out of
+        // sight instead of sliding underneath the bar.
+        .mask {
+            VStack(spacing: 0) {
+                Color.black
+                LinearGradient(colors: [Color.black, Color.black.opacity(0)], startPoint: .top, endPoint: .bottom)
+                    .frame(height: fade)
+            }
         }
     }
 }
@@ -173,8 +192,8 @@ private struct StoryMapSection: View {
     let readingNow: StoryID?
 
     var body: some View {
-        let inset = pane.pt(Tokens.Spacing.insetText)
-        let cardWidth = min(pane.pt(Tokens.Spacing.cardWidth), pane.size.width - inset * 2)
+        let inset = pane.contentInset + pane.pt(Tokens.Spacing.insetText)
+        let cardWidth = max(0, min(pane.pt(Tokens.Spacing.cardWidth), pane.size.width - inset * 2))
         VStack(alignment: .leading, spacing: 0) {
             SectionLabel(text: "Where the stories come from")
                 .padding(.top, pane.pt(26))

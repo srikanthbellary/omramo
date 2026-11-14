@@ -193,9 +193,25 @@ public struct FramingDevice: Codable, Hashable, Sendable {
 /// One page: an authored spread that owns one scene. The same folded and unfolded.
 public struct Spread: Codable, Hashable, Sendable, Identifiable {
     public struct Scene: Codable, Hashable, Sendable {
+        /// Where the calm part of the scene ends on each pane: the y position, on the 720-point
+        /// reference pane, below which the picture needs the space and story text must not go.
+        /// Omitted values mean "down to the footer chrome".
+        public struct TextArea: Codable, Hashable, Sendable {
+            public static let range: ClosedRange<Double> = 200...720
+
+            public var leadingBottom: Double?
+            public var trailingBottom: Double?
+
+            public init(leadingBottom: Double? = nil, trailingBottom: Double? = nil) {
+                self.leadingBottom = leadingBottom
+                self.trailingBottom = trailingBottom
+            }
+        }
+
         public var unfolded: ArtRef
         public var folded: ArtRef
         public var fallbackColors: [String]
+        public var textArea: TextArea?
     }
 
     public var id: SpreadID
@@ -229,6 +245,14 @@ public struct TextBlock: Codable, Hashable, Sendable, Identifiable {
     public var runs: [TextRun]
     /// For `pathText`: an SVG-style curve in a 400 × 96 box.
     public var path: String?
+
+    public init(id: BlockID, pane: Pane, kind: Kind = .paragraph, runs: [TextRun], path: String? = nil) {
+        self.id = id
+        self.pane = pane
+        self.kind = kind
+        self.runs = runs
+        self.path = path
+    }
 
     /// The paragraph exactly as written: the run texts joined.
     public var plainText: String {

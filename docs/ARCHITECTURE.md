@@ -133,7 +133,7 @@ Resolution order — a pure function, fully unit-tested:
 1. **Simulation set** (debug only) → build exactly the requested layout (see 5.4).
 2. **SDK reported a hinge rectangle** → panes are the canvas areas either side of it; posture unfolded.
 3. **SDK reported a posture but no hinge** → unfolded splits the canvas in half around a zero-width hinge; folded is one pane.
-4. **No SDK information** → derive from size: if `canvasWidth ≥ 2 × minimumPaneWidth + virtualGutter` **and** `canvasWidth > canvasHeight`, treat as unfolded with a centred virtual gutter; otherwise folded. An ordinary iPhone in portrait therefore gets the folded layout. A landscape iPad, or an iPad window wide enough in Split View / Stage Manager, gets two panes. Milestone Mi tightens size-class behaviour (narrow Split View should fall back to single-pane cleanly).
+4. **No SDK information** → derive from size: if `canvasWidth ≥ 2 × minimumPaneWidth + virtualGutter` (748 pt), the window is at least `minimumPaneHeight` (600 pt) tall, **and** it is either wider than tall or at least `minimumPortraitSplitWidth` (980 pt) wide, treat as unfolded with a centred virtual gutter; otherwise folded. An ordinary iPhone therefore gets the folded layout. A landscape iPad, a 13-inch iPad in portrait, or an iPad window wide enough in Split View / Stage Manager, gets two panes; an 11-inch iPad in portrait and any narrow window get one well-padded pane. A derived layout also carries `maximumReferenceScale` (1.3): the design is never scaled up further, and a wider pane centres its text column and cards in a band `contentWidth` wide instead (milestone Mi; all four numbers are assumptions to tune on device).
 
 ### 5.3 App-side provider
 
@@ -226,7 +226,7 @@ Content/
 | **TapTarget** | `id`, `kind` (`place` \| `object` \| `creature` \| `idea` \| `landmark`), `title`, `subtitle?`, `line` (the one line to read), `cultureNote?` { `label`, `text` }, `picture` (ArtRef), `background` (hex). For `kind: landmark`: `landmark` (LandmarkRef) is required, and `title`, `line`, `cultureNote` and `picture` are **omitted** — the card takes them from the landmark catalog in the story's tier wording (§6.5) |
 | **LandmarkRef** | `id` (landmark id in `landmarks.json`), `appearance` (`natural` \| `framed`), `framingDevice?` — required when `appearance` is `framed` |
 | **FramingDevice** | `kind` (`thenAndNow` \| `mapMoment` \| `worldLink` \| `presentDayNarrator`), `label` (the note label on the card, e.g. "LONG AFTER THIS STORY"), `line` (one bridging sentence shown before the landmark's fact, written for this story) |
-| **Spread** | `id`, `part`, `scene` { `unfolded`: ArtRef, `folded`: ArtRef, `fallbackColors[]` }, `chrome?` (overrides theme), `blocks[]` |
+| **Spread** | `id`, `part`, `scene` { `unfolded`: ArtRef, `folded`: ArtRef, `fallbackColors[]`, `textArea?` { `leadingBottom?`, `trailingBottom?` } — where the calm part of the scene ends on each pane, as a y position on the 720-point reference pane (200…720); text stops there and continues on a continuation screen (added in M2, e.g. `trailingBottom: 420` on the Advanced story, whose picture keeps the lower part of the trailing pane) }, `chrome?` (overrides theme), `blocks[]` |
 | **TextBlock** | `id`, `pane` (`leading` \| `trailing`; ignored when folded, where blocks flow in order), `kind` (`paragraph` \| `pathText`), `runs[]`, `path?` (for `pathText`: an SVG-style curve in a 400 × 96 box) |
 | **TextRun** | `t` (text, required), plus optional: `lead` (bool — display-face lead sentence), `say` (character id — voice colour and weight), `chip` (bool — draw the speaker's face chip before this run), `name` (character id — dotted underline, opens the character card), `tap` (tap-target id — opens tap-to-see), `fx` (`pop` \| `stretch`), `scale` (number, for `pop`) |
 | **ArtRef** | `file`, `alt` (required, non-empty), `width`, `height` (pixels) |
@@ -244,6 +244,7 @@ Constraints added for region, provenance, education and landmarks:
 - Every `landmark.id` resolves in the landmark catalog. `appearance: framed` has a `framingDevice`.
 - **Anachronism rule:** if the story has `setting.latestYear` and the landmark's `built.from` is later, `appearance` must be `framed`. If the landmark's `region` differs from the story's `region.id`, `appearance` must be `framed` with kind `worldLink` or `mapMoment`. A landmark with `status: lost` or `unproven` must have `depiction: reconstruction`.
 - Warning: more than two landmark targets in one story.
+- A `pathText` block has a `path` made of absolute `M`, `L`, `Q` and `C` commands (one open curve — the subset the app draws); a paragraph has no `path`. `scene.textArea` values lie between 200 and 720 (rules `path-text-incomplete`, `text-area-range`, added in M2).
 
 ### 6.4 Example (abridged, from screen 03)
 
@@ -630,7 +631,8 @@ The rule statements in the left column are taken from the 13 Nov assessment, whi
 | Reading position per story | App support directory (JSON file) | No |
 | Reading log: page-read events as (local date, story ID, spread ID) — **no times of day, no durations** | App support directory | No |
 | Seen tap targets, friends met, finished stories | App support directory | No |
-| Appearance and text-size settings | `UserDefaults` | No |
+| Text-size step, one bookmark per story | App support directory (`reader-memory.json`, with the seen cards and friends met; not `UserDefaults`, so no required-reason entry is needed) | No |
+| Appearance setting (M4) | `UserDefaults` | No |
 | Entitlement cache | App support directory | No |
 
 Files are excluded from nothing special; they ride in the user's normal device backup. Optional iCloud sync is out of scope.

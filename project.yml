@@ -100,6 +100,8 @@ schemes:
         "-OmramoPosture unfolded": false
         "-OmramoPosture folded": false
         "-OmramoOpenStory monkey-and-crocodile": false
+        "-OmramoOpenStory anansi-wisdom": false
+        "-OmramoOpenStory urashima-taro": false
     test:
       config: Debug
       targets:

@@ -15,9 +15,9 @@ Sunrise Gen AI LLC · private · `omramo.com`
 
 ## Status
 
-v2 design is approved and locked (13 Nov 2026). Milestone 1 of the implementation plan is **code complete but unverified**: it was written on a Linux box with no Swift toolchain, so no Swift file has been compiled yet. The first build on a Mac is the next step (see [`docs/BUILD.md`](docs/BUILD.md)).
+v2 design is approved and locked (13 Nov 2026). **Milestone 1** compiled and launched on a Mac (Xcode 26.6) on 13 Nov 2026. **Milestones 2, 3 and Mi** (complete reader, tap-to-see / character / landmark cards, iPad layout) are **code complete but not yet compiled or seen**: they were written on a Linux box with no Swift toolchain. Compiling that round on the Mac is the next step (see [`docs/BUILD.md`](docs/BUILD.md) §7a).
 
-M1 contains the XcodeGen project, the pure-Swift core package with the content model and validator, one sample story (*The Monkey and the Crocodile*, Low tier, our own draft retelling with placeholder art), the design system, and the Library and Reading (Low) screens. Tap-to-see, character cards, the parent view and the subscription are later milestones.
+The repo contains the XcodeGen project, the pure-Swift core package (content model, validator, paging, layout), three prototype stories — one per tier, each our own draft retelling: *The Monkey and the Crocodile* (Low, India), *How Wisdom Became the Property of the Human Race* (Medium, Akan, Ghana) and *The Story of Urashima Taro* (Advanced, Japan) — with concept art drawn in code, the design system, the Library and the reader. The parent view, the grown-up gate, the sample gate and the subscription are later milestones.
 
 ## Documents
 

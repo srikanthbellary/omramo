@@ -12,7 +12,7 @@ private struct WindowSafeAreaKey: EnvironmentKey {
 }
 
 private struct PaneContextKey: EnvironmentKey {
-    static let defaultValue = PaneContext(side: .single, size: .zero, scale: 1, safeArea: EdgeInsets())
+    static let defaultValue = PaneContext(side: .single, size: .zero, scale: 1, safeArea: EdgeInsets(), source: .derived)
 }
 
 extension EnvironmentValues {
@@ -51,10 +51,29 @@ struct PaneContext: Equatable {
     var scale: CGFloat
     /// The part of the window's safe area that touches this pane.
     var safeArea: EdgeInsets
+    /// Where the layout came from (a simulated canvas draws the hinge and has no safe area).
+    var source: PaneLayout.Source
 
     /// A DESIGN.md measurement in this pane's points.
     func pt(_ reference: Double) -> CGFloat {
         CGFloat(reference) * scale
+    }
+
+    /// Width of the design's 432-point pane at this pane's scale.
+    var contentWidth: CGFloat {
+        min(size.width, CGFloat(ReferenceCanvas.paneWidth) * scale)
+    }
+
+    /// Extra margin on each side when the pane is wider than the design's pane (an iPad pane).
+    /// Text columns and cards sit in a centred band `contentWidth` wide; glass chrome stays at
+    /// the pane's own edges, as on any large-screen app.
+    var contentInset: CGFloat {
+        max(0, (size.width - contentWidth) / 2)
+    }
+
+    /// True for the one pane of a folded or narrow window.
+    var isSingle: Bool {
+        side == .single
     }
 
     /// Top of the top controls: the design position, moved down if the system's safe area
@@ -153,7 +172,8 @@ struct TwoPane<Backdrop: View, Leading: View, Trailing: View, Folded: View>: Vie
             side: side,
             size: CGSize(width: rect.width, height: rect.height),
             scale: CGFloat(layout.referenceScale),
-            safeArea: insets(for: side)
+            safeArea: insets(for: side),
+            source: layout.source
         )
         return view
             .environment(\.pane, context)

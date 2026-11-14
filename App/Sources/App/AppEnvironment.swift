@@ -9,6 +9,8 @@ final class AppEnvironment {
     private(set) var library: LoadState<Library> = .idle
     let router: AppRouter
     let progress: ReadingProgressStore
+    /// Text size, bookmarks, seen cards and friends met.
+    let memory: ReaderMemoryStore
     let layoutProvider: any PaneLayoutProvider
     /// Font files that could not be found or registered; empty when all is well.
     let fontProblems: [String]
@@ -17,6 +19,7 @@ final class AppEnvironment {
         fontProblems = FontRegistrar.registerBundledFonts()
         router = AppRouter()
         progress = ReadingProgressStore()
+        memory = ReaderMemoryStore()
         layoutProvider = PaneLayoutProviders.current()
         loadContent()
 

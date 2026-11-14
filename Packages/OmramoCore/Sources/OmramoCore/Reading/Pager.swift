@@ -4,7 +4,8 @@ import Foundation
 public struct ReadingPosition: Codable, Hashable, Sendable {
     public var storyID: StoryID
     public var spreadID: SpreadID
-    /// The paragraph that was first on screen. Used from M2 (continuation screens).
+    /// The paragraph that was first on screen, so the same screen of the page is shown again
+    /// after a relaunch or a change of layout.
     public var blockID: BlockID?
 
     public init(storyID: StoryID, spreadID: SpreadID, blockID: BlockID? = nil) {
@@ -51,8 +52,9 @@ public struct ReadingProgressFile: Codable, Hashable, Sendable {
     }
 }
 
-/// Page arithmetic over a story's spreads. A page is an authored spread.
-/// M1: next and previous spread only. Continuation screens for overflow arrive in M2.
+/// Page arithmetic over a story's spreads. A page is an authored spread: the page indicator and
+/// "pages read" count spreads. A page whose text does not fit continues on further screens of
+/// the same page (see `ScreenPlanner`); `forward` and `backward` step through those.
 public struct Pager: Equatable, Sendable {
     public let spreadIDs: [SpreadID]
 
@@ -116,8 +118,9 @@ public struct PageDashes: Equatable, Sendable {
     /// - Parameters:
     ///   - page: 1-based current page.
     ///   - pageCount: number of pages in the story.
-    public init(page: Int, pageCount: Int) {
-        let count = max(1, min(pageCount, PageDashes.maximumDashes))
+    ///   - maximumDashes: fewer where the footer is narrow (the folded pane draws seven).
+    public init(page: Int, pageCount: Int, maximumDashes: Int = PageDashes.maximumDashes) {
+        let count = max(1, min(pageCount, max(1, maximumDashes)))
         let total = max(1, pageCount)
         let clampedPage = min(max(1, page), total)
         let currentDash: Int
@@ -133,5 +136,64 @@ public struct PageDashes: Equatable, Sendable {
             if index == currentDash { return .current }
             return .upcoming
         }
+    }
+}
+
+// MARK: - Continuation screens (docs/ARCHITECTURE.md §8.3)
+
+/// Which screen of a page to show. A page (spread) whose text does not fit its pane continues
+/// on further screens with the same page number; how many there are depends on the pane size
+/// and the text size, so a place inside a page is remembered by content, never by index.
+public enum ScreenAnchor: Hashable, Sendable {
+    /// The first screen of the page.
+    case start
+    /// The screen that shows this paragraph.
+    case block(BlockID)
+    /// The last screen of the page (used when going back into a page).
+    case end
+}
+
+extension Pager {
+    /// One press of the page-turn button or of the back-one-page control.
+    public enum Move: Equatable, Sendable {
+        /// Stay on the page; show another of its screens (0-based).
+        case screen(Int)
+        /// Go to another page, at its first or last screen.
+        case spread(SpreadID, ScreenAnchor)
+    }
+
+    /// The round button: through the page's continuation screens first, then to the next page.
+    /// Nil at the very end of the story.
+    public func forward(from id: SpreadID, screen: Int, screenCount: Int) -> Move? {
+        if screen + 1 < max(1, screenCount) {
+            return .screen(screen + 1)
+        }
+        return next(after: id).map { Move.spread($0, .start) }
+    }
+
+    /// The back control: back through the page's screens, then to the last screen of the page
+    /// before. Nil at the very start of the story.
+    public func backward(from id: SpreadID, screen: Int, screenCount: Int) -> Move? {
+        if screen > 0 {
+            return .screen(min(screen, max(1, screenCount)) - 1)
+        }
+        return previous(before: id).map { Move.spread($0, .end) }
+    }
+
+    /// True on the last screen of the last page.
+    public func isAtEnd(_ id: SpreadID, screen: Int, screenCount: Int) -> Bool {
+        isLast(id) && screen + 1 >= max(1, screenCount)
+    }
+
+    /// True on the first screen of the first page.
+    public func isAtStart(_ id: SpreadID, screen: Int) -> Bool {
+        first == id && screen <= 0
+    }
+}
+
+extension ReadingPosition {
+    /// Where inside the saved page to reopen: at the paragraph that was first on screen.
+    public var anchor: ScreenAnchor {
+        blockID.map { ScreenAnchor.block($0) } ?? .start
     }
 }

@@ -59,6 +59,11 @@ public struct PaneLayout: Equatable, Hashable, Sendable {
     /// The region with no pixels or no touch between the panes. Nil when folded.
     public var hinge: LayoutRect?
     public var source: Source
+    /// Upper limit for `referenceScale`, or nil for none. Set when the layout is derived from a
+    /// window's size (an iPad, Split View, Stage Manager): on a large window the design keeps
+    /// its own proportions and gains room around it, instead of being blown up like a stretched
+    /// phone screen. Never set for the Duo itself or for the simulated reference canvas.
+    public var maximumReferenceScale: Double?
 
     public init(
         posture: DisplayPosture,
@@ -66,7 +71,8 @@ public struct PaneLayout: Equatable, Hashable, Sendable {
         leading: LayoutRect,
         trailing: LayoutRect?,
         hinge: LayoutRect?,
-        source: Source
+        source: Source,
+        maximumReferenceScale: Double? = nil
     ) {
         self.posture = posture
         self.canvas = canvas
@@ -74,12 +80,23 @@ public struct PaneLayout: Equatable, Hashable, Sendable {
         self.trailing = trailing
         self.hinge = hinge
         self.source = source
+        self.maximumReferenceScale = maximumReferenceScale
     }
 
     /// Scale from the 432 × 720 reference pane to the real pane, for positions in DESIGN.md.
     public var referenceScale: Double {
         guard leading.width > 0, leading.height > 0 else { return 1 }
-        return min(leading.width / ReferenceCanvas.paneWidth, leading.height / ReferenceCanvas.paneHeight)
+        let fit = min(leading.width / ReferenceCanvas.paneWidth, leading.height / ReferenceCanvas.paneHeight)
+        if let limit = maximumReferenceScale, limit > 0 {
+            return min(fit, limit)
+        }
+        return fit
+    }
+
+    /// Width of the design's pane at this layout's scale. A pane wider than this (an iPad pane)
+    /// centres its text column and cards in a band this wide; chrome stays at the pane's edges.
+    public var contentWidth: Double {
+        min(leading.width, ReferenceCanvas.paneWidth * referenceScale)
     }
 
     /// A single empty pane; used before the first measurement.
@@ -133,6 +150,14 @@ public struct PaneLayoutResolver: Equatable, Sendable {
     public var minimumPaneHeight: Double = 600
     /// Matches the design's hinge gap.
     public var virtualGutter: Double = ReferenceCanvas.hingeWidth
+    /// A window taller than it is wide (an iPad in portrait) is split only when it is at least
+    /// this wide, so each pane is comfortably wider than the design's pane (assumption, Mi).
+    /// A 13-inch iPad in portrait (1024–1032 pt) qualifies; an 11-inch one (820–834 pt) reads
+    /// in one well-padded pane instead of two cramped ones.
+    public var minimumPortraitSplitWidth: Double = 980
+    /// Largest scale of the design on a derived layout (assumption, Mi): type and chrome grow
+    /// to 1.3 × the reference size and no further.
+    public var maximumDerivedScale: Double = 1.3
 
     public init() {}
 
@@ -168,16 +193,32 @@ public struct PaneLayoutResolver: Equatable, Sendable {
             }
         }
 
-        // 4. No system information: derive from size.
+        // 4. No system information: derive from size. Landscape windows split as soon as two
+        // panes and the virtual gutter fit; portrait windows only when they are wide enough
+        // for two generous panes. Anything else — an iPhone, a narrow Split View or Stage
+        // Manager window, an 11-inch iPad in portrait — is one pane.
         let wideEnough = width >= 2 * minimumPaneWidth + virtualGutter
-        if wideEnough && width > height && height >= minimumPaneHeight {
+        let shapeAllowsSplit = width > height || width >= minimumPortraitSplitWidth
+        if wideEnough && shapeAllowsSplit && height >= minimumPaneHeight {
             return split(window, gutter: virtualGutter, source: .derived)
         }
         return single(window, source: .derived)
     }
 
+    private func scaleLimit(for source: PaneLayout.Source) -> Double? {
+        source == .derived ? maximumDerivedScale : nil
+    }
+
     private func single(_ canvas: LayoutRect, source: PaneLayout.Source) -> PaneLayout {
-        PaneLayout(posture: .folded, canvas: canvas, leading: canvas, trailing: nil, hinge: nil, source: source)
+        PaneLayout(
+            posture: .folded,
+            canvas: canvas,
+            leading: canvas,
+            trailing: nil,
+            hinge: nil,
+            source: source,
+            maximumReferenceScale: scaleLimit(for: source)
+        )
     }
 
     private func split(_ canvas: LayoutRect, gutter: Double, source: PaneLayout.Source) -> PaneLayout {
@@ -188,7 +229,8 @@ public struct PaneLayoutResolver: Equatable, Sendable {
             leading: LayoutRect(x: canvas.x, y: canvas.y, width: paneWidth, height: canvas.height),
             trailing: LayoutRect(x: canvas.x + paneWidth + gutter, y: canvas.y, width: paneWidth, height: canvas.height),
             hinge: LayoutRect(x: canvas.x + paneWidth, y: canvas.y, width: gutter, height: canvas.height),
-            source: source
+            source: source,
+            maximumReferenceScale: scaleLimit(for: source)
         )
     }
 

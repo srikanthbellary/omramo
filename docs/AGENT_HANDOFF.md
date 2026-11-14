@@ -1,6 +1,6 @@
 # Omramo — agent handoff
 
-Last updated: 13 Nov 2026, 8:46 PM ET (America/New_York). Read this first, then `docs/PRD.md`.
+Last updated: 13 Nov 2026, after the 8:46 PM ET decision — M2 / M3 / Mi code round, uncompiled (see §9, last entry). Read this first, then `docs/PRD.md`.
 This file is the durable memory for any agent (human or AI) picking up Omramo. It contains no secrets; credentials live outside the repo.
 
 ## 1. What Omramo is
@@ -91,10 +91,10 @@ Srikanth: "go with whatever the best approach is for this kind of app. Follow be
 
 ## 8. Next milestones
 
-See `docs/IMPLEMENTATION_PLAN.md`. Immediate next steps after the first green Mac build:
-1. Visual check of Library and Low-tier Reading against `docs/design/` (including `TextRenderer`, item 1.17 / BUILD §7.9). List every gap versus Apple Design Award / locked v2 quality.
+See `docs/IMPLEMENTATION_PLAN.md`. **Immediate next step (as of the last §9 entry): compile the M2 / M3 / Mi round on the Mac** — `docs/BUILD.md` §7a is the checklist and §8a the list of likely compile errors. Then:
+1. Visual check of Library and Low-tier Reading against `docs/design/` (including `TextRenderer`, item 1.17 / BUILD §7.9). List every gap versus Apple Design Award / locked v2 quality. Now also screens 04–07 and 10, and the iPad sizes.
 2. Srikanth still needs to answer remaining blocking questions (PRD §12; especially Q4 Duo SDK, Q7 pricing/plans, Q18 page breaks, Q22 retellings, Q23–Q24 rights and cultural reviewers, Q30 sensitive content / exact age rating). Q1 and Q2 are decided.
-3. M2 complete reader, M3 tap-to-see + character cards, Mi iPad layout (parallel after M2), …; content milestone C1 in parallel.
+3. M2 complete reader, M3 tap-to-see + character cards and Mi iPad layout are written but unverified: check each *[Mac]* criterion before calling any of them done. Later milestones follow the plan; content milestone C1 in parallel.
 
 ## 9. Status log
 
@@ -112,3 +112,21 @@ See `docs/IMPLEMENTATION_PLAN.md`. Immediate next steps after the first green Ma
 ### 13 Nov 2026, 8:46 PM ET — Q2 ages and store listing
 - Srikanth: list as 6–12 and suggest younger and older can also read, including 13/14 who are still building reading skills, otherwise they will think it is a younger-kids app and not open it. Chose: skip the Kids Category, use a normal age rating, market as ages 6 to 14 and up, keep the kid-safety rules.
 - **Q2 decided.** Not in the Kids Category. Marketed as ages 6 to 14 and up. Tiers stand (Low 6–8, Medium 8–10, Advanced 10–12+). Advanced must not feel babyish to a 13–14-year-old. Exact App Store age rating (4+ or 9+) remains open under Q30. Recorded in `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/CONTENT_PLAN.md`, `docs/research/AGE_RANGE.md` and here.
+
+### 13 Nov 2026 (after 8:46 PM ET) — M2, M3 and Mi code round (Fable 5.2, Linux box)
+- **State: code complete, NOT compiled, NOT seen.** The box has no Swift toolchain. Everything was checked by inspection and by reviewer passes; the Python validator suite was run (62 tests pass; all three stories validate, 0 errors). Do not call any *[Mac]* criterion of M2, M3 or Mi met until `docs/BUILD.md` §7a has been worked through on the Mac.
+- **Mi bug fixes from the first simulator pass (written, not yet seen):** reader text is laid out so it should no longer sit under chrome (each pane has a bounded text area; overflow goes to a continuation screen); the library tab bar has its own strip, so the map legend should not be under it; derived layouts cap the design at 1.3 × and centre the content band, so an iPad should not look like a stretched phone.
+- **M2:** "Aa" text size (5 steps, persisted, interim panel — gap G1); bookmark (one per story, persisted); back-one-page control (interim, beside the page chip — gap G3; no swipe, Q13 still open); continuation screens (`ScreenPlanner` in the core); position = page + paragraph, kept across relaunch, posture and window changes; folded reading after screen 10; per-story theme; text on a path.
+- **M3:** marked words and names tappable (≥ 44 pt); tap-to-see, landmark and character cards on the facing pane (`CardPlacement`), bottom card when folded (A2 / G4); hold state, toast, seen state and friends met persisted (`reader-memory.json`); page turn blocked while a card is open; VoiceOver custom actions and focus moves.
+- **Mi:** same `PaneLayoutResolver`; two panes on full-size iPads in landscape and on a 13-inch iPad in portrait (≥ 980 pt wide), one padded pane otherwise; pointer and hardware keyboard (→ / space, ←, Return, Esc).
+- **Content:** two new prototype stories, both **our own retellings**, `review: pending`: *How Wisdom Became the Property of the Human Race* (Medium, Akan, 8 pages, cultural review required) and *The Story of Urashima Taro* (Advanced, Japan, 16 pages, text on both panes, the call on the wave path). Two new landmarks: `asante-traditional-buildings` (natural in the Anansi story) and `tokyo-skytree` (framed, "then and now", in Urashima). Schema additions inside version 1: `scene.textArea`, and a path rule for `pathText` (both validators).
+- **Art:** every scene, cover, tap-to-see picture, portrait, face chip and landmark picture for the three stories is now drawn in SwiftUI `Canvas` code (`App/Sources/Art/`), ported and extended from our own locked design sources. Concept art, `review.art: pending`, never rendered. See `Content/ART_PLACEHOLDERS.md`.
+- **Tests:** core suite grew from 116 by about 80 test methods (two M1 assertions in `DecodingTests.swift` were updated because they asserted a one-story catalog); about 20 new app tests in `App/Tests/ReaderTests.swift`. None of the new Swift tests has been run. Counts and the list are in `docs/BUILD.md` §6.
+- **Untouched, as instructed:** M4–M8 stay stubbed (no sample gate: every page of all three stories is readable; no StoreKit, gate, parent view, splash or Duo SDK). No App Store Connect, signing or submission step. `DEVELOPMENT_TEAM` empty. No prices. The Q2 decision (not in the Kids Category; ages 6 to 14 and up) is unchanged. The `omramo-web` repo was not touched.
+- **Needs Srikanth (nothing here was assumed as decided):**
+  - Q22 / Q5 — the three texts are retellings; the plan's M1–M3 assumption still says "public-domain texts unaltered". Editorial choices made in the drafts, to confirm or reverse: Urashima ends with him grown old on the shore (no death, no tobacco or sake, no wedding, no closing sermon); Anansi takes the wisdom back over a small slight and walks home hand in hand with his son.
+  - Q24 — Akan reader for the Anansi text **and** drawings (kente, pot, village houses, the landmark card); Japanese reader for Urashima. Facts in the culture notes and fact cards are unverified.
+  - Q29 — Tokyo Skytree name and image rights before any release.
+  - Q21 — design answers for G1 ("Aa" panel), G3 (back control; last page), G4 (folded card: ours covers the tapped line), G8 (folded Medium / Advanced type); DESIGN §9 item 4 (when the place marker clears: ours clears on the next page turn).
+  - Mi — sign-off of the iPad rules after seeing them: two panes in portrait only from 980 pt, the 1.3 × cap.
+- **Riskiest compile items this round:** `Text.LayoutKey` hit-testing (switch `StoryTextStyle.usesLayoutKey = false` to fall back), the art painters' volume, the measure-then-plan loop, text on a path in `Canvas`. Full list: `docs/BUILD.md` §8a.

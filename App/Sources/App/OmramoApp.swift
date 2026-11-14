@@ -46,7 +46,13 @@ struct RootView: View {
             LibraryScreen(library: library)
         case .reader(let storyID):
             if let story = library.story(id: storyID) {
-                ReaderScreen(story: story, progress: appEnvironment.progress, router: router)
+                ReaderScreen(
+                    story: story,
+                    landmarks: library.landmarks,
+                    progress: appEnvironment.progress,
+                    memory: appEnvironment.memory,
+                    router: router
+                )
                     // A new story is a new reader: do not carry state across.
                     .id(storyID)
             } else {

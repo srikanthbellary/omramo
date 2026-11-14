@@ -266,6 +266,10 @@ def shape_story(s):
         shape_art(scene, "unfolded", p + ".scene")
         shape_art(scene, "folded", p + ".scene")
         _need(scene, "fallbackColors", "list", p + ".scene")
+        area = _need(scene, "textArea", "obj", p + ".scene", optional=True)
+        if area is not None:
+            _need(area, "leadingBottom", "num", p + ".scene.textArea", optional=True)
+            _need(area, "trailingBottom", "num", p + ".scene.textArea", optional=True)
         shape_chrome(spread, "chrome", p, optional=True)
         for j, block in enumerate(_need(spread, "blocks", "list", p)):
             bp = "%s.blocks[%d]" % (p, j)
@@ -328,6 +332,45 @@ def shape_catalog(c):
     for i, sid in enumerate(_need(c, "stories", "list", "")):
         if not isinstance(sid, str):
             raise Malformed('wrong type at "stories[%d]": expected str' % i)
+
+
+# ---------------------------------------------------------------- text on a path
+
+_PATH_ARITY = {"M": 2, "L": 2, "Q": 4, "C": 6}
+_PATH_TOKEN_RE = re.compile(r"[MLQC]|-?(?:[0-9]+\.?[0-9]*|\.[0-9]+)")
+TEXT_AREA_RANGE = (200, 720)
+
+
+def parse_path(text):
+    """The curve of a `pathText` block: absolute M, L, Q and C commands only (the subset the app
+    draws). Returns a list of (command, [numbers]), or None when the text is not such a path.
+    Mirrors `SVGPath` in OmramoCore."""
+    if not isinstance(text, str):
+        return None
+    # Separators are exactly the ones the Swift parser accepts: space, comma, tab, CR, LF.
+    if re.sub(r"[ ,\n\t\r]+", "", _PATH_TOKEN_RE.sub("", text)) != "":
+        return None
+    tokens = _PATH_TOKEN_RE.findall(text)
+    segments, i, command = [], 0, None
+    while i < len(tokens):
+        if tokens[i] in _PATH_ARITY:
+            command = tokens[i]
+            i += 1
+        if command is None:
+            return None
+        arity = _PATH_ARITY[command]
+        numbers = tokens[i:i + arity]
+        if len(numbers) != arity or any(n in _PATH_ARITY for n in numbers):
+            return None
+        segments.append((command, [float(n) for n in numbers]))
+        i += arity
+        if command == "M":
+            command = "L"  # further pairs after a move are lines, as in SVG
+    if len(segments) < 2 or segments[0][0] != "M":
+        return None
+    if any(seg[0] == "M" for seg in segments[1:]):
+        return None
+    return segments
 
 
 # ---------------------------------------------------------------- text fidelity
@@ -458,6 +501,12 @@ def validate_story(rep, file, story, landmarks, manuscript, art_exists=None):
             bp = "%s.blocks[%d]" % (sp, bi)
             if not block["runs"]:
                 rep.add(E, "empty-text", file, bp + ".runs", "the block has no runs")
+            if block["kind"] == "pathText":
+                if parse_path(block.get("path")) is None:
+                    rep.add(E, "path-text-incomplete", file, bp + ".path",
+                            "a pathText block needs a path of absolute M, L, Q and C commands")
+            elif block.get("path") is not None:
+                rep.add(E, "path-text-incomplete", file, bp + ".path", "only a pathText block may have a path")
             for ri, run in enumerate(block["runs"]):
                 rp = "%s.runs[%d]" % (bp, ri)
                 if run["t"] == "":
@@ -508,6 +557,13 @@ def validate_story(rep, file, story, landmarks, manuscript, art_exists=None):
         check_art(rep, file, spread["scene"]["folded"], sp + ".folded", art_exists)
         for i, color in enumerate(spread["scene"]["fallbackColors"]):
             check_color(rep, file, color, "%s.fallbackColors[%d]" % (sp, i))
+        area = spread["scene"].get("textArea") or {}
+        for key in ("leadingBottom", "trailingBottom"):
+            value = area.get(key)
+            if value is not None and not (TEXT_AREA_RANGE[0] <= value <= TEXT_AREA_RANGE[1]):
+                rep.add(E, "text-area-range", file, "%s.textArea.%s" % (sp, key),
+                        "the text area must end between %d and %d points down the 720-point reference pane"
+                        % TEXT_AREA_RANGE)
 
     # sample
     free = story["sample"]["freeSpreads"]

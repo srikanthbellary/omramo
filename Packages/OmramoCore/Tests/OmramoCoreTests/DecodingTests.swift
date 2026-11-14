@@ -14,7 +14,8 @@ final class DecodingTests: XCTestCase {
     func testCatalogDecodes() throws {
         let catalog = try SampleContent.repository().loadCatalog()
         XCTAssertEqual(catalog.schemaVersion, 1)
-        XCTAssertEqual(catalog.stories, [SampleContent.storyID])
+        // M2 added the Medium and Advanced prototype stories after the Low sample.
+        XCTAssertEqual(catalog.stories, [SampleContent.storyID, StoryID("anansi-wisdom"), StoryID("urashima-taro")])
     }
 
     func testSampleStoryDecodes() throws {
@@ -105,17 +106,18 @@ final class DecodingTests: XCTestCase {
 
     func testLibraryLoadsAndListsTheSample() throws {
         let library = try SampleContent.repository().loadLibrary()
-        XCTAssertEqual(library.stories.count, 1)
+        // M2: three prototype stories, one per tier; the Low sample is still first.
+        XCTAssertEqual(library.stories.count, 3)
         let entry = try XCTUnwrap(library.entries.first)
         XCTAssertEqual(entry.title, "The Monkey and the Crocodile")
         XCTAssertEqual(entry.tier, .low)
         XCTAssertEqual(entry.originLabel, "Ancient India")
         XCTAssertEqual(entry.spreadCount, 14)
 
-        XCTAssertEqual(library.entries(matching: .all).count, 1)
+        XCTAssertEqual(library.entries(matching: .all).count, 3)
         XCTAssertEqual(library.entries(matching: .low).count, 1)
-        XCTAssertTrue(library.entries(matching: .medium).isEmpty)
-        XCTAssertTrue(library.entries(matching: .advanced).isEmpty)
+        XCTAssertEqual(library.entries(matching: .medium).map(\.id), [StoryID("anansi-wisdom")])
+        XCTAssertEqual(library.entries(matching: .advanced).map(\.id), [StoryID("urashima-taro")])
     }
 
     // MARK: Schema version

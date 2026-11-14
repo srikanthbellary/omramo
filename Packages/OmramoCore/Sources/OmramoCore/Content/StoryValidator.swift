@@ -116,6 +116,15 @@ public struct StoryValidator: Sendable {
                 if block.runs.isEmpty {
                     issues.append(.init(.error, .emptyText, at: blockPath + ".runs", "the block has no runs"))
                 }
+                if block.kind == .pathText {
+                    if block.path.flatMap({ SVGPath(string: $0) }) == nil {
+                        issues.append(.init(.error, .pathTextIncomplete, at: blockPath + ".path",
+                                            "a pathText block needs a path of absolute M, L, Q and C commands"))
+                    }
+                } else if block.path != nil {
+                    issues.append(.init(.error, .pathTextIncomplete, at: blockPath + ".path",
+                                        "only a pathText block may have a path"))
+                }
                 for (runIndex, run) in block.runs.enumerated() {
                     let runPath = blockPath + ".runs[\(runIndex)]"
                     if run.text.isEmpty {
@@ -218,6 +227,16 @@ public struct StoryValidator: Sendable {
             checkArt(spread.scene.folded, at: path + ".folded", artFileExists, &issues)
             for (colorIndex, color) in spread.scene.fallbackColors.enumerated() {
                 checkColor(color, at: path + ".fallbackColors[\(colorIndex)]", &issues)
+            }
+            let areaEdges: [(String, Double?)] = [
+                ("leadingBottom", spread.scene.textArea?.leadingBottom),
+                ("trailingBottom", spread.scene.textArea?.trailingBottom),
+            ]
+            for (name, value) in areaEdges {
+                if let value, !Spread.Scene.TextArea.range.contains(value) {
+                    issues.append(.init(.error, .textAreaRange, at: path + ".textArea.\(name)",
+                                        "the text area must end between 200 and 720 points down the 720-point reference pane"))
+                }
             }
         }
     }

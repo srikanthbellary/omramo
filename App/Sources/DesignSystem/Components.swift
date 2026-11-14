@@ -57,6 +57,8 @@ struct OmramoIcon: View {
         case lock = "icon-lock"
         case close = "icon-x"
         case spark = "icon-spark"
+        case previous = "icon-prev"
+        case returnArrow = "icon-ret"
 
         /// Size in the design, in reference points.
         var size: CGSize {
@@ -71,6 +73,8 @@ struct OmramoIcon: View {
             case .lock: return CGSize(width: 13, height: 16)
             case .close: return CGSize(width: 13, height: 13)
             case .spark: return CGSize(width: 14, height: 14)
+            case .previous: return CGSize(width: 15, height: 13)
+            case .returnArrow: return CGSize(width: 18, height: 16)
             }
         }
     }
@@ -229,21 +233,26 @@ struct RoundGlassButton: View {
     let icon: OmramoIcon.Name
     let chrome: ChromeStyle
     let label: String
+    /// Diameter in reference points: 40 as designed; the back-one-page control is smaller.
+    var diameter: Double = Tokens.Size.roundGlassButton
+    /// Overrides the glass tint (the close button on a card).
+    var fill: RGBA?
     let action: @MainActor () -> Void
 
     var body: some View {
-        let size = pane.pt(Tokens.Size.roundGlassButton)
+        let size = pane.pt(diameter)
         Button(action: action) {
-            OmramoIcon(name: icon)
+            OmramoIcon(name: icon, multiplier: CGFloat(min(1, diameter / Tokens.Size.roundGlassButton + 0.08)))
                 .foregroundStyle(Color(rgba: Tokens.Glass.style(chrome).content))
                 .frame(width: size, height: size)
-                .glass(chrome, in: Circle())
+                .glass(chrome, fill: fill, in: Circle())
                 // Hit area of at least 44 × 44 pt even when the pane is scaled down.
                 .frame(minWidth: CGFloat(Tokens.Size.minimumHitTarget), minHeight: CGFloat(Tokens.Size.minimumHitTarget))
                 .contentShape(Rectangle())
         }
         .buttonStyle(PressScaleButtonStyle())
         .frame(width: size, height: size)
+        .hoverEffect(.lift)
         .accessibilityLabel(Text(verbatim: label))
     }
 }
@@ -302,6 +311,7 @@ struct PageTurnButton: View {
         }
         .buttonStyle(PressScaleButtonStyle())
         .frame(width: size, height: size)
+        .hoverEffect(.lift)
         .accessibilityLabel(Text(verbatim: label))
         .accessibilityValue(Text(verbatim: value))
     }
@@ -332,6 +342,45 @@ struct PrimaryButtonLabel: View {
         .background(LinearGradient(vertical: Tokens.Gradients.buttonPrimary), in: Capsule(style: .continuous))
         .shadow(color: Color(rgba: RGBA(hex: 0xE8432B, alpha: 0.34)), radius: pane.pt(11), x: 0, y: pane.pt(10))
         .shadow(color: Color.black.opacity(0.14), radius: pane.pt(2), x: 0, y: pane.pt(2))
+    }
+}
+
+/// The full-width button at the foot of a card: "Back to my line" (§5.9, §5.10).
+/// Sun gradient with dark text on a tap-to-see card; coral with white text on a character card.
+struct CardButtonLabel: View {
+    enum Style {
+        case sun
+        case coral
+    }
+
+    @Environment(\.pane) private var pane
+    let title: String
+    let style: Style
+
+    var body: some View {
+        let ink = style == .sun ? Color(rgba: Tokens.Palette.pageTurnAmberArrow) : Color.white
+        let gradient = style == .sun ? Tokens.Gradients.buttonSun : Tokens.Gradients.buttonPrimary
+        let shadow = style == .sun ? RGBA(hex: 0xFFA014, alpha: 0.36) : RGBA(hex: 0xE8432B, alpha: 0.34)
+        HStack(spacing: pane.pt(9)) {
+            OmramoIcon(name: .returnArrow)
+            Text(verbatim: title)
+        }
+        .typeRole(Tokens.UIType.buttonLabel)
+        .foregroundStyle(ink)
+        .frame(maxWidth: .infinity)
+        .frame(height: pane.pt(Tokens.Size.primaryButtonHeight))
+        .background(LinearGradient(vertical: gradient), in: Capsule(style: .continuous))
+        .overlay {
+            // Inner top highlight (§3.6 `buttonPrimary`).
+            Capsule(style: .continuous)
+                .strokeBorder(
+                    LinearGradient(colors: [Color.white.opacity(0.5), Color.white.opacity(0)], startPoint: .top, endPoint: .center),
+                    lineWidth: pane.pt(1.5)
+                )
+        }
+        .shadow(color: Color(rgba: shadow), radius: pane.pt(11), x: 0, y: pane.pt(10))
+        .shadow(color: Color.black.opacity(0.14), radius: pane.pt(2), x: 0, y: pane.pt(2))
+        .contentShape(Capsule(style: .continuous))
     }
 }
 
@@ -373,7 +422,7 @@ struct SectionLabel: View {
 // MARK: - Aurora backdrop (§3.3)
 
 /// Base fill with five heavily blurred circles. Drawn across the whole canvas.
-/// TODO(M6): grain overlay (fractal noise, soft-light) to match the screenshots.
+/// A fine grain (soft-light noise) lies over the blobs, as in the designs.
 struct AuroraBackdrop: View {
     let aurora: Tokens.Aurora
 
@@ -400,6 +449,7 @@ struct AuroraBackdrop: View {
                     }
                 }
                 .blur(radius: CGFloat(aurora.blur) * unit)
+                GrainOverlay(opacity: aurora.grainOpacity * 0.7)
             }
         }
         .clipped()
