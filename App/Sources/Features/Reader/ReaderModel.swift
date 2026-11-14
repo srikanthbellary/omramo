@@ -114,7 +114,52 @@ final class ReaderModel {
     /// The reader came on screen: remember this story as the one being read.
     func didOpen() {
         savePosition()
+        #if DEBUG
+        if let raw = DebugLaunch.cardID() {
+            openLaunchCard(raw)
+        }
+        #endif
     }
+
+    #if DEBUG
+    /// Debug launch helper: open a named tap-to-see or character card, jumping to its page if needed.
+    func openLaunchCard(_ raw: String) {
+        let tap = StoryCardRef.tapTarget(TapTargetID(raw))
+        let character = StoryCardRef.character(CharacterID(raw))
+        let ref: StoryCardRef
+        if canOpen(tap) {
+            ref = tap
+        } else if canOpen(character) {
+            ref = character
+        } else {
+            print("[Omramo] -OmramoOpenCard: '\(raw)' is not a card in this story")
+            return
+        }
+        guard let found = firstMark(of: ref) else {
+            print("[Omramo] -OmramoOpenCard: '\(raw)' has no marked word in the story")
+            return
+        }
+        spreadID = found.spreadID
+        anchor = .block(found.blockID)
+        open(ref, from: found.blockID)
+    }
+
+    private func firstMark(of ref: StoryCardRef) -> (spreadID: SpreadID, blockID: BlockID)? {
+        for spread in story.spreads {
+            for block in spread.blocks {
+                if block.runs.contains(where: { run in
+                    switch ref {
+                    case .tapTarget(let id): return run.tapTarget == id
+                    case .character(let id): return run.characterName == id
+                    }
+                }) {
+                    return (spread.id, block.id)
+                }
+            }
+        }
+        return nil
+    }
+    #endif
 
     /// True when the round button has nowhere further to go: the last screen of the last page.
     func isAtEnd(screen: Int, screenCount: Int) -> Bool {

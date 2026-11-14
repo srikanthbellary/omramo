@@ -75,13 +75,30 @@ final class AppRouter {
 enum DebugLaunch {
     /// Opens a story at launch: `-OmramoOpenStory monkey-and-crocodile`.
     static let openStoryArgument = "-OmramoOpenStory"
+    /// Opens a tap-to-see or character card on that story: `-OmramoOpenCard river-bank`.
+    static let openCardArgument = "-OmramoOpenCard"
+    /// Requests a device orientation: `-OmramoOrientation landscape` or `portrait`.
+    static let orientationArgument = "-OmramoOrientation"
 
-    static func storyID(from arguments: [String] = ProcessInfo.processInfo.arguments) -> StoryID? {
-        guard let index = arguments.firstIndex(of: openStoryArgument),
+    static func value(after flag: String, in arguments: [String] = ProcessInfo.processInfo.arguments) -> String? {
+        guard let index = arguments.firstIndex(of: flag),
               index + 1 < arguments.count else { return nil }
         let raw = arguments[index + 1]
         guard !raw.isEmpty, !raw.hasPrefix("-") else { return nil }
-        return StoryID(raw)
+        return raw
+    }
+
+    static func storyID(from arguments: [String] = ProcessInfo.processInfo.arguments) -> StoryID? {
+        value(after: openStoryArgument, in: arguments).map { StoryID($0) }
+    }
+
+    static func cardID(from arguments: [String] = ProcessInfo.processInfo.arguments) -> String? {
+        value(after: openCardArgument, in: arguments)
+    }
+
+    /// "landscape" or "portrait", if passed.
+    static func orientation(from arguments: [String] = ProcessInfo.processInfo.arguments) -> String? {
+        value(after: orientationArgument, in: arguments)
     }
 }
 #endif

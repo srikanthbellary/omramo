@@ -121,7 +121,15 @@ xcrun simctl launch booted com.omramo.app -OmramoPosture unfolded -OmramoOpenSto
 # The Medium and Advanced stories (screens 04 and 05):
 xcrun simctl launch booted com.omramo.app -OmramoPosture unfolded -OmramoOpenStory anansi-wisdom
 xcrun simctl launch booted com.omramo.app -OmramoPosture unfolded -OmramoOpenStory urashima-taro
+xcrun simctl launch booted com.omramo.app -- -OmramoOpenStory monkey-and-crocodile -OmramoOpenCard river-bank
 ```
+
+Arguments that start with `-` must come after `--`, or `simctl` swallows them. Debug-only flags:
+`-OmramoOpenCard <tap-or-character-id>` opens that card on the opened story; `-OmramoOrientation
+landscape|portrait` asks the window scene to rotate. To actually rotate the simulated iPad (needed
+for landscape stills), run the `OmramoShots` UI-test scheme:
+
+`xcodebuild test -project Omramo.xcodeproj -scheme OmramoShots -destination 'platform=iOS Simulator,id=<ipad-udid>'`.
 
 Hardware keyboard (simulator: *I/O ▸ Keyboard ▸ Connect Hardware Keyboard*): **→** or
 **space** turns the page, **←** goes back a page; with a card open, **Return** is "Back to my

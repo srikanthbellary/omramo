@@ -1,4 +1,5 @@
 import SwiftUI
+import UIKit
 import OmramoCore
 
 @main
@@ -37,6 +38,11 @@ struct RootView: View {
             }
         }
         .statusBarHidden(false)
+        #if DEBUG
+        .task {
+            await DebugLaunch.applyRequestedOrientation()
+        }
+        #endif
     }
 
     @ViewBuilder
@@ -86,3 +92,34 @@ struct ContentFailureView: View {
         }
     }
 }
+
+#if DEBUG
+extension DebugLaunch {
+    /// Ask the window scene to rotate. Used from `simctl` so iPad landscape shots do not
+    /// depend on Simulator's GUI (which needs Accessibility permission).
+    @MainActor
+    static func applyRequestedOrientation() async {
+        let mask: UIInterfaceOrientationMask
+        switch orientation() {
+        case "landscape": mask = .landscape
+        case "portrait": mask = .portrait
+        default: return
+        }
+        // The scene may not be connected on the first frame.
+        for attempt in 0..<8 {
+            let scenes = UIApplication.shared.connectedScenes.compactMap { $0 as? UIWindowScene }
+            if !scenes.isEmpty {
+                for scene in scenes {
+                    scene.requestGeometryUpdate(.iOS(interfaceOrientations: mask)) { error in
+                        print("[Omramo] -OmramoOrientation failed: \(error)")
+                    }
+                }
+                try? await Task.sleep(for: .milliseconds(350))
+                return
+            }
+            try? await Task.sleep(for: .milliseconds(100 + attempt * 50))
+        }
+        print("[Omramo] -OmramoOrientation: no window scene yet")
+    }
+}
+#endif
