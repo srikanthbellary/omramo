@@ -18,6 +18,12 @@ final class ReaderMemoryStore {
         self.file = ReaderMemoryStore.load(from: fileURL)
     }
 
+    /// An in-memory store that already holds a memory (the debug demo state, tests).
+    init(seed: ReaderMemoryFile) {
+        self.fileURL = nil
+        self.file = seed
+    }
+
     // MARK: Text size
 
     /// The chosen step, or nil when none has been chosen yet.

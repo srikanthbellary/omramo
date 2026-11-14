@@ -40,21 +40,36 @@ struct CoverView: View {
 
 // MARK: - Story card
 
-/// Cover 116 × 134 with the tier pill, then title (up to three lines) and origin.
+/// Cover 116 × 134 with the tier pill (and a tick once the story is finished), then title
+/// (up to three lines) and origin.
 struct StoryCardView: View {
     @Environment(\.pane) private var pane
     let story: Story
+    /// Read to the end at least once.
+    var isFinished = false
+
+    private var spokenLabel: String {
+        let base = "\(story.title). Level: \(story.tier.displayName). From \(story.region.label)."
+        return isFinished ? base + " Finished." : base
+    }
 
     var body: some View {
         let width = pane.pt(Tokens.Size.storyCoverWidth)
         VStack(alignment: .leading, spacing: 0) {
             CoverView(story: story)
                 .frame(width: width, height: pane.pt(Tokens.Size.storyCoverHeight))
+                // The reader opens out of the cover and closes back into it.
+                .heroSource(.cover(story.id))
                 .overlay(alignment: .topLeading) {
                     TierPill(tier: story.tier)
                         .padding(pane.pt(7))
                 }
-            // TODO(M4): finished tick (24 pt white disc) at the cover's bottom right.
+                .overlay(alignment: .bottomTrailing) {
+                    if isFinished {
+                        FinishedTick()
+                            .padding(pane.pt(7))
+                    }
+                }
 
             Text(verbatim: story.title)
                 .typeRole(Tokens.UIType.storyCardTitle)
@@ -75,7 +90,7 @@ struct StoryCardView: View {
         .frame(width: width, alignment: .leading)
         .contentShape(Rectangle())
         .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(verbatim: "\(story.title). Level: \(story.tier.displayName). From \(story.region.label)."))
+        .accessibilityLabel(Text(verbatim: spokenLabel))
         .accessibilityAddTraits(.isButton)
     }
 }
@@ -208,7 +223,7 @@ struct LevelFilterView: View {
 
 // MARK: - Tab bar (§5.15)
 
-/// Floating glass capsule with three items. Only Library is live in M1.
+/// Floating glass capsule with three items. Only Library is live.
 /// TODO(M4): "My shelf" tab, and "Grown-ups" behind the grown-up gate. Until then those two
 /// items are drawn, as in the design, but do nothing and are hidden from assistive technology.
 struct LibraryTabBar: View {

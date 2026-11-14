@@ -1,4 +1,4 @@
-# Art status: concept art drawn in code (M2 / M3 / Mi round)
+# Art status: concept art drawn in code (round 3: one art direction across the three stories)
 
 **No image file listed here exists yet.** The story and landmark JSON name each picture by a
 file path, an alt text and a pixel size; the files are delivered later by the art workstream
@@ -11,8 +11,14 @@ painters, chosen by the picture's *asset name* — the file name without folder 
 - They are **our own drawings**, ported and extended from the locked design sources
   (`docs/design/source/src/lib/art-*.js`). No photographs, no third-party artwork, nothing traced.
 - They are **concept art, not final illustration.** Every `review.art` field stays `pending`.
-  Nothing here has been seen on a screen yet: the code was written on a box with no Swift
-  toolchain, so every picture needs a visual check on the Mac (`docs/BUILD.md` §7a).
+- **Round 2** pictures were seen on the Mac (simulator shots `r2-*.png`). **Round 3** then
+  re-worked every painter to one shared art direction (`docs/ART_DIRECTION.md`; shared
+  constants and helpers in `App/Sources/Art/ArtStyle.swift`) — again on a box with no Swift
+  toolchain and no renderer. **The round-3 look has not been seen on a screen**: every picture
+  needs a visual check on the Mac (`docs/BUILD.md` §7b), and the list at the end of this file
+  says where it is most likely to look wrong.
+- Each picture is rasterised once (`cachedArt()` in `StoryArt.swift`), so page turns, card
+  reveals and the library-to-story transition move a cached image, not a redrawn `Canvas`.
 - When a real file is added at the path below, the app shows it and stops drawing the code
   picture; no code change is needed. Run `python3 tools/validate_content.py --check-art` to
   list the files still missing.
@@ -103,9 +109,48 @@ and their card says so.
 | `art/asante-traditional-buildings.heic` | 1296 × 1212 | A low earth-walled house with a steep thatched roof and curling wall patterns. Generic patterns only; for the Akan reviewer. | How Wisdom Became the Property of the Human Race (natural) | `asante-traditional-buildings` |
 | `art/tokyo-skytree.heic` | 1296 × 1212 | A slim pale lattice tower above a low city and a river, evening. Our own stylised drawing; `docs/CONTENT_PLAN.md` §6.6 notes that the operator licenses the name and image (legal review before release, PRD Q29). | The Story of Urashima Taro (framed, "then and now") | `tokyo-skytree` |
 
+## What round 3 changed in the pictures (to check on the Mac)
+
+One light, one face construction, one finish, three palettes (`docs/ART_DIRECTION.md`).
+
+| Shared rule | Where it was applied |
+|---|---|
+| Warm horizon band (`ArtStyle.horizonGlow`) | Every scene with a horizon, the covers, the outdoor tap-to-see pictures and all four landmarks. In the Anansi scenes it replaces the old orange haze; in the Skytree picture it replaces a blurred haze ellipse |
+| Finish pass (`ArtStyle.finish`: warm wash from the upper left, soft indigo vignette) | Every scene (unfolded and folded), picture, portrait, cover and landmark. Not on face chips. Weaker wash on the dark Anansi story, weaker vignette on the pale Urashima story |
+| Contact shadows in the shared indigo (`ArtStyle.contactShadow`) | Under the Monkey (branch, rock, the Crocodile's back), standing Anansi and the villagers, Urashima, Otohime, the beached boat, the lacquer box, the pot, and the landmark buildings — replacing black or grey ellipses |
+| One face construction (`ArtStyle.eye` / `cheek` / `smile`) | The Monkey and both crocodiles (large eye with a white: Low tier); Father Anansi, Kweku Tsin and the villagers (plain dark eye in scenes, a modest white eye on portraits and chips); Urashima and Otohime (plain dark eye), the tortoise (small white eye, as on screen 05). Catchlights are upper left everywhere |
+| Two line weights, no black lines | Detail and contour strokes in all three stories are a darker tone of their fill at 1.6 or 2.4 units. Hairline detail in the landmarks, rigging, nets and leaf veins keep their own finer widths |
+| Shared stipple (`ArtStyle.tooth`) | Large flat areas in all three stories and the landmarks |
+| Portrait framing | Anansi, Kweku Tsin and Otohime use `ArtStyle.portraitBackdrop` in their card's own colours (Kweku Tsin's portrait is now on the card's gold, not dusk purple); the Monkey keeps the sunburst of screen 07; Urashima and the tortoise keep their sea backdrops |
+| Friendlier, calmer faces | Anansi's stern brow and down-turned mouth became a raised brow and a small smile; crocodile teeth are small rounded bumps; Otohime's near-black lash strokes are gone |
+| Proportions | Standing Anansi about 3.2 heads tall (head scale 0.56 → 0.78); Urashima about 3.5 (head × 1.18); Otohime about 4.4 (head × 1.3) |
+
+Known shortfalls against the direction, from the three painters' own notes:
+
+- **Light direction is not fully one light.** The Anansi climb scene keeps its moon on the
+  right (locked screen 04), so the tree's rim light and the cloth highlights still come from
+  the right; the Skytree's moon is upper right.
+- **Proportions:** Urashima (3.5 heads) and Otohime (4.4) are not at 3; the villagers are
+  nearer 3.7. Reaching 3 means redrawing bodies, not scaling heads.
+- **Crocodile eyes** are now a white eye in a yellow rim instead of the yellow reptile eye of
+  screen 03 — friendlier, but a visible change from the locked design; the peach cheek on
+  green skin may look muddy.
+- **Tap-to-see framing:** `see-river-bank` is still a small landscape, not one centred
+  subject, and its bank reaches into the bottom quarter; `see-forest` has no single subject;
+  the Lighthouse and Skytree sit off-centre.
+- **Palette:** the Anansi canopy and forest picture stay teal (as on screen 04), off the
+  purple-to-ember ramp; the Urashima "years later" sea is still grey-lavender.
+- **Folded bands** are still crops of the unfolded scenes (except `scene-ride`); the "face
+  inside the middle 60%" rule is unchecked.
+- **Unverified arithmetic:** the re-framed portraits (leaf and hand alignment on Kweku Tsin,
+  head positions on all five), the larger heads against shoulders, and the horizon band's
+  edge in open sky under the text on the Urashima sea, shore and return scenes.
+
 ## Status
 
 Every `review.art` field is `pending`. All card copy, lesson wording and fact-card wording in
-the JSON is draft, unreviewed text. The pictures most in need of a first look on the Mac are
-the new compositions (the scenes marked above, and every cover, face, portrait, tap-to-see
-and landmark picture not tied to a design screen) and every folded crop.
+the JSON is draft, unreviewed text. After round 3 **every** picture needs a look on the Mac
+(nothing drawn this round has been rendered); first the faces and portraits, which changed
+most, then every scene's horizon and finish, then the folded crops. New cultural-review
+material from this round: the villagers' faces and hair and Father Anansi's new expression
+(Akan reviewer), Urashima's and Otohime's faces (Japanese reader).

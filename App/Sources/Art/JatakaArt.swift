@@ -73,6 +73,8 @@ extension JatakaArt {
         Art.group(&context, x: size.width - 892 * k, y: 0, scale: k) { g in
             body(&g, virtual)
         }
+        // The shared finish belongs to the band itself, not to the wider canvas behind it.
+        ArtStyle.finish(&context, size)
     }
 
     static let banyanBlobs: [Blob] = [
@@ -111,14 +113,14 @@ extension JatakaArt {
         ).applying(drop)
         Art.fillLinear(&context, branch, bark, from: CGPoint(x: 436, y: 0), to: CGPoint(x: 806, y: 0))
         let branchLight = Art.svg("M800,286 C720,300 640,308 560,306 C520,304 470,304 438,298").applying(drop)
-        Art.stroke(&context, branchLight, Art.color(0xB37A58, 0.7), width: 2.5)
+        Art.stroke(&context, branchLight, Art.color(0xB37A58, 0.7), width: ArtStyle.contourLine)
 
         let furrows = Art.svg(
             "M812,520 C818,420 814,330 822,200 M842,540 C846,430 840,330 850,190 M790,584 C800,500 802,470 806,420"
         ).applying(stretch)
-        Art.stroke(&context, furrows, Art.color(0x3A2230, 0.45), width: 2)
+        Art.stroke(&context, furrows, Art.color(0x3E2532, 0.45), width: ArtStyle.detailLine)
         let trunkLight = Art.svg("M796,470 C800,400 798,340 806,270").applying(stretch)
-        Art.stroke(&context, trunkLight, Art.color(0xC68A62, 0.5), width: 3)
+        Art.stroke(&context, trunkLight, Art.color(0xC68A62, 0.5), width: ArtStyle.contourLine)
         let feet = Art.svg("M770,574 C756,588 740,594 720,598 M800,588 C790,600 780,606 764,612").applying(ground)
         Art.stroke(&context, feet, Art.color(0x5B3B36), width: 7)
 
@@ -181,7 +183,7 @@ extension JatakaArt {
         banyan(&context, height: h, horizon: H, branchY: branchY)
 
         // The Monkey on the branch.
-        Art.fill(&context, Art.ellipse(607, 310 + dy, 30, 4), Art.color(0x2A1820, 0.35))
+        ArtStyle.contactShadow(&context, 609, 311 + dy, 36, 5, alpha: 0.32)
         Art.group(&context, x: 606, y: 306 + dy, scale: 0.98) { g in
             monkey(&g, pose: .sit, lookX: -2.2, lookY: 2.2, mouth: .smile)
         }
@@ -197,11 +199,11 @@ extension JatakaArt {
         // The crocodiles: the mother near the bank, her little son out in the river.
         let skin = youngCrocSkin()
         Art.group(&context, x: 716, y: H + 62, scale: 0.8, scaleX: -1) { g in
-            croc(&g, skin: skin, lid: .sly, lookX: -1, lookY: -2, waterline: 9, water: Art.color(0x1596A0))
+            croc(&g, skin: skin, lid: .sly, lookX: -1, lookY: -2, waterline: 9, water: Art.color(0x1596A0), mirrored: true)
         }
         ripples(&context, 594, H + 72, 230, count: 3)
         Art.group(&context, x: 412, y: H + 78, scale: 0.42, scaleX: -1) { g in
-            croc(&g, skin: skin, lid: .wide, lookX: -1.5, lookY: -1, waterline: 9, water: Art.color(0x2AA9A6))
+            croc(&g, skin: skin, lid: .wide, lookX: -1.5, lookY: -1, waterline: 9, water: Art.color(0x2AA9A6), mirrored: true)
         }
         ripples(&context, 346, H + 83, 120, count: 2)
 
@@ -217,6 +219,10 @@ extension JatakaArt {
         }
         dragonfly(&context, 300, H + 30, scale: 1)
         dragonfly(&context, 520, H + 20, scale: 0.8)
+        if !folded {
+            // The folded band gets its finish from `foldedCrop`.
+            ArtStyle.finish(&context, size)
+        }
     }
 
     /// scene-ride (unfolded): mid-river. The Monkey rides the Crocodile across the trailing
@@ -257,19 +263,21 @@ extension JatakaArt {
         let skin = youngCrocSkin()
         Art.group(&context, x: crocX, y: crocY, scale: scale) { g in
             croc(&g, skin: skin, lid: .sleepy, lookX: -1, lookY: 0, waterline: 12, water: Art.color(0x1596A0))
+            ArtStyle.contactShadow(&g, 204, -19, 40, 6, alpha: 0.26)
             Art.group(&g, x: 206, y: -26, scale: 1.02) { m in
                 monkey(&m, pose: .ride, lookX: -2, lookY: 0, mouth: .grin)
             }
         }
         ripples(&context, crocX + 150, crocY + 14, 320, count: 3)
         let bowWave = placed("M-26,10 q-14,-4 -24,2 M-30,20 q-16,0 -26,8", x: crocX, y: crocY, scale: scale)
-        Art.stroke(&context, bowWave, Art.color(0xFFFFFF, 0.8), width: 2.2)
+        Art.stroke(&context, bowWave, Art.color(0xFFFFFF, 0.8), width: ArtStyle.contourLine)
         let wake = placed("M362,16 q16,-5 30,1 M366,28 q18,-2 30,6", x: crocX, y: crocY, scale: scale)
-        Art.stroke(&context, wake, Art.color(0xFFFFFF, 0.6), width: 2)
+        Art.stroke(&context, wake, Art.color(0xFFFFFF, 0.6), width: ArtStyle.detailLine)
 
         lotusPad(&context, 56, H + 122, 30, flower: true)
         lotusPad(&context, 120, H + 138, 22)
         dragonfly(&context, 360, H + 44, scale: 0.9)
+        ArtStyle.finish(&context, size)
     }
 
     /// scene-ride (folded): screen 10 of the designs.
@@ -298,13 +306,15 @@ extension JatakaArt {
         let skin = youngCrocSkin()
         Art.group(&context, x: crocX, y: crocY, scale: 0.92 * k) { g in
             croc(&g, skin: skin, lid: .sleepy, lookX: -1, lookY: 0, waterline: 12, water: Art.color(0x1596A0))
+            ArtStyle.contactShadow(&g, 204, -19, 40, 6, alpha: 0.26)
             Art.group(&g, x: 206, y: -26, scale: 1.02) { m in
                 monkey(&m, pose: .ride, lookX: -2, lookY: 0, mouth: .grin)
             }
         }
         ripples(&context, crocX + 140 * k, crocY + 14 * k, 300 * k, count: 3)
         let bowWave = placed("M-26,10 q-14,-4 -24,2 M-30,20 q-16,0 -26,8", x: crocX, y: crocY, scale: k)
-        Art.stroke(&context, bowWave, Art.color(0xFFFFFF, 0.8), width: 2.2)
+        Art.stroke(&context, bowWave, Art.color(0xFFFFFF, 0.8), width: ArtStyle.contourLine)
+        ArtStyle.finish(&context, size)
     }
 
     /// scene-island: a new tree downriver, a stepping-stone rock halfway across, the island
@@ -343,7 +353,7 @@ extension JatakaArt {
         var arc = Path()
         arc.move(to: CGPoint(x: 716, y: H - 34))
         arc.addQuadCurve(to: CGPoint(x: 576, y: H + 22), control: CGPoint(x: 640, y: H - 190))
-        Art.stroke(&context, arc, Art.color(0xFFFFFF, 0.75), width: 2.6, dash: [1, 9])
+        Art.stroke(&context, arc, Art.color(0xFFFFFF, 0.75), width: ArtStyle.contourLine, dash: [1, 9])
         Art.group(&context, x: 644, y: H - 70, rotate: deg(-10), scale: 0.9) { g in
             monkey(&g, pose: .ride, lookX: -2, lookY: 2, mouth: .open)
         }
@@ -351,7 +361,7 @@ extension JatakaArt {
         // The Crocodile, only his eyes and back above the water.
         let skin = youngCrocSkin()
         Art.group(&context, x: 412, y: H + 90, scale: 0.46, scaleX: -1) { g in
-            croc(&g, skin: skin, lid: .sly, lookX: -1.5, lookY: -2.5, waterline: 0, water: Art.color(0x2AA9A6), waterOpacity: 0.8)
+            croc(&g, skin: skin, lid: .sly, lookX: -1.5, lookY: -2.5, waterline: 0, water: Art.color(0x2AA9A6), waterOpacity: 0.8, mirrored: true)
         }
         ripples(&context, 346, H + 93, 130, count: 2)
 
@@ -365,6 +375,9 @@ extension JatakaArt {
             cornerLeaves(&context, width: w, height: h, color: Art.color(0x0E5A55))
         }
         dragonfly(&context, 470, H + 44, scale: 0.9)
+        if !folded {
+            ArtStyle.finish(&context, size)
+        }
     }
 
     /// scene-dusk: evening. The Crocodile lies very flat on the rock; the Monkey sits at the
@@ -411,13 +424,13 @@ extension JatakaArt {
         let lyingFlat = Art.rect(440, H - 30, 240, 72)
         Art.clipped(&context, to: lyingFlat) { g in
             Art.group(&g, x: 650, y: H + 31, scale: 0.5, scaleX: -1) { c in
-                croc(&c, skin: skin, lid: .shut, waterline: 200, waterOpacity: 0)
+                croc(&c, skin: skin, lid: .shut, waterline: 200, waterOpacity: 0, mirrored: true)
             }
         }
-        Art.stroke(&context, Art.line(482, H + 42.5, 644, H + 42.5), Art.color(0x3A2F66, 0.3), width: 2)
+        Art.stroke(&context, Art.line(482, H + 42.5, 644, H + 42.5), ArtStyle.coolShade.opacity(0.3), width: ArtStyle.contourLine)
 
         // The Monkey at the water's edge.
-        Art.fill(&context, Art.ellipse(708, H + 20, 34, 5), Art.color(0x1B3A40, 0.3))
+        ArtStyle.contactShadow(&context, 708, H + 20, 40, 6, alpha: 0.3)
         Art.group(&context, x: 708, y: H + 2, scale: 0.9) { g in
             monkey(&g, pose: .sit, lookX: -3, lookY: 1.2, mouth: .oh)
         }
@@ -437,5 +450,9 @@ extension JatakaArt {
         // Evening warmth over the lower part of the picture.
         let warm: [(Color, CGFloat)] = [(Art.color(0xFF9E7A, 0), 0), (Art.color(0xFF9E7A, 0.1), 1)]
         Art.fillLinear(&context, Art.rect(0, H - 160, w, h - H + 160), warm, from: CGPoint(x: 0, y: H - 160), to: CGPoint(x: 0, y: h))
+        if !folded {
+            // A pale evening picture: a little less of the warm wash.
+            ArtStyle.finish(&context, size, wash: 0.08, vignette: 0.10)
+        }
     }
 }

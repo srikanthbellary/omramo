@@ -234,10 +234,24 @@ extension LandmarkArt {
         return path
     }
 
-    /// Paper tooth over the whole picture: pale and dark specks.
+    /// Paper tooth over the whole picture: pale and dark specks, through the shared stipple
+    /// (`ArtStyle.tooth`) so the density and dot size match the story pictures. The dark specks
+    /// are the shared shadow tint, never black.
     static func tooth(_ context: inout GraphicsContext, seed: UInt32, light: Double, dark: Double) {
         let whole = CGRect(x: 0, y: 0, width: unitWidth, height: unitHeight)
-        Art.stipple(&context, in: whole, count: 260, seed: seed, color: Art.color(0xFFFFFF), alpha: light)
-        Art.stipple(&context, in: whole, count: 200, seed: seed &+ 101, color: Art.color(0x0A1030), alpha: dark)
+        ArtStyle.tooth(&context, in: whole, seed: seed, color: Art.color(0xFFFFFF), alpha: light)
+        ArtStyle.tooth(&context, in: whole, seed: seed &+ 101, color: ArtStyle.coolShade, alpha: dark)
+    }
+
+    /// The warm band at a landmark's horizon (art direction §1), across the whole picture.
+    static func horizon(_ context: inout GraphicsContext, y: CGFloat, rise: CGFloat, hex: UInt32, alpha: Double) {
+        var wide = context
+        wide.translateBy(x: -24, y: 0)
+        ArtStyle.horizonGlow(&wide, width: unitWidth + 48, y: y, rise: rise, color: Art.color(hex), alpha: alpha)
+    }
+
+    /// The last pass of every landmark picture: the shared warm wash and soft vignette.
+    static func finish(_ context: inout GraphicsContext, wash: Double, vignette: Double) {
+        ArtStyle.finish(&context, CGSize(width: unitWidth, height: unitHeight), wash: wash, vignette: vignette)
     }
 }

@@ -12,6 +12,8 @@ struct OmramoApp: App {
                 .environment(appEnvironment)
                 .environment(appEnvironment.router)
                 .environment(appEnvironment.progress)
+                .environment(appEnvironment.memory)
+                .environment(appEnvironment.log)
                 // The reading scenes carry their own light; Appearance (dark mode) for the
                 // library is design gap G7. Until it is designed the app is light only.
                 .preferredColorScheme(.light)
@@ -34,7 +36,7 @@ struct RootView: View {
             case .failed(let message):
                 ContentFailureView(message: message)
             case .loaded(let library):
-                screen(for: router.route, in: library)
+                RootScreens(library: library)
             }
         }
         .statusBarHidden(false)
@@ -45,26 +47,50 @@ struct RootView: View {
         #endif
     }
 
-    @ViewBuilder
-    private func screen(for route: AppRouter.Route, in library: Library) -> some View {
-        switch route {
-        case .library:
+}
+
+/// The library, and the reader over it when a story is open.
+///
+/// The library stays laid out underneath (not hit-testable, hidden from assistive technology):
+/// the reader opens out of the cover that was tapped and closes back into it, wherever that
+/// cover is by then, and the library keeps its scroll position and level filter.
+private struct RootScreens: View {
+    @Environment(AppEnvironment.self) private var appEnvironment
+    @Environment(AppRouter.self) private var router
+    @Environment(\.windowSize) private var windowSize
+    @Environment(\.paneLayout) private var layout
+    @Environment(\.accessibilityReduceMotion) private var reduceMotion
+    let library: Library
+
+    var body: some View {
+        let reading = router.route != .library
+        ZStack(alignment: .topLeading) {
             LibraryScreen(library: library)
-        case .reader(let storyID):
-            if let story = library.story(id: storyID) {
+                .allowsHitTesting(!reading)
+                .accessibilityHidden(reading)
+
+            if case .reader(let storyID) = router.route, let story = library.story(id: storyID) {
                 ReaderScreen(
                     story: story,
                     landmarks: library.landmarks,
                     progress: appEnvironment.progress,
                     memory: appEnvironment.memory,
+                    log: appEnvironment.log,
                     router: router
                 )
-                    // A new story is a new reader: do not carry state across.
-                    .id(storyID)
-            } else {
-                LibraryScreen(library: library)
+                // A new story is a new reader: do not carry state across.
+                .id(storyID)
+                .transition(.hero(
+                    from: router.heroRect,
+                    in: windowSize,
+                    cornerRadius: CGFloat(Tokens.Radius.storyCover * layout.referenceScale),
+                    reduceMotion: reduceMotion
+                ))
+                .zIndex(1)
             }
         }
+        // §3.7 `Motion.hero`: cover → reader and back; a cross-fade with Reduce Motion.
+        .animation(Motion.hero(reduceMotion: reduceMotion), value: router.route)
     }
 }
 

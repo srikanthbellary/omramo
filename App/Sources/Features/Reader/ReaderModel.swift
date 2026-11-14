@@ -55,21 +55,39 @@ final class ReaderModel {
     /// are derived from these in the view (`ReaderPageLayout`); nothing here is a pixel position.
     private(set) var measurements: [TextMeasureKey: [BlockID: CGFloat]] = [:]
 
+    // Motion (docs/DESIGN.md §3.7). None of this is saved.
+
+    /// Which way the last page turn went, so the words leave and arrive on the right sides.
+    var turnDirection: TurnDirection = .forward
+    /// True for the length of a page-turn transition: the page-turn controls ignore presses.
+    private(set) var isTurning = false
+    /// Changes every time the reader moves to another page or another screen of a page (and
+    /// at no other time — not when the window is resized or the text is measured). It is the
+    /// identity of the words on screen for the page-turn transition, and drives the haptic.
+    private(set) var pageToken = 0
+    /// Where the tapped word was on screen (window coordinates) when its card opened, and the
+    /// layout it was measured in. Only the card's opening and closing motion reads it.
+    private(set) var cardOrigin: CardOrigin?
+
     private let progress: ReadingProgressStore
     private let memory: ReaderMemoryStore
+    private let log: ReadingLogStore
     private var toastTask: Task<Void, Never>?
+    private var turnTask: Task<Void, Never>?
 
     init(
         story: Story,
         progress: ReadingProgressStore,
         memory: ReaderMemoryStore? = nil,
-        landmarks: LandmarkCatalog = LandmarkCatalog()
+        landmarks: LandmarkCatalog = LandmarkCatalog(),
+        log: ReadingLogStore? = nil
     ) {
         self.story = story
         self.landmarks = landmarks
         self.progress = progress
         // No store given (tests, previews): remember in memory only.
         self.memory = memory ?? ReaderMemoryStore(fileURL: nil)
+        self.log = log ?? ReadingLogStore(fileURL: nil)
         let pager = Pager(story: story)
         self.pager = pager
         let saved = progress.position(for: story.id)
@@ -177,11 +195,16 @@ final class ReaderModel {
     /// card is open. `plan` is the current page's screens as laid out now (nil = one screen).
     func turnPage(in plan: ScreenPlan? = nil) {
         // TODO(M5): ask SampleGate before showing a spread beyond `story.sample.freeSpreads`.
-        // TODO(M4): record a page-read event (date, story, spread — never a time) in ReadingLog.
         guard openCard == nil, let spreadID else { return }
         let count = plan?.screenCount ?? 1
         let screen = plan?.index(for: anchor) ?? 0
         guard let move = pager.forward(from: spreadID, screen: screen, screenCount: count) else { return }
+        if case .spread = move {
+            // The page just left has been read: one entry per forward turn (date, story and
+            // page — never a time). A continuation screen of the same page is not a new page.
+            log.recordPageRead(storyID: story.id, spreadID: spreadID)
+        }
+        turnDirection = .forward
         apply(move, in: plan)
     }
 
@@ -191,7 +214,21 @@ final class ReaderModel {
         let count = plan?.screenCount ?? 1
         let screen = plan?.index(for: anchor) ?? 0
         guard let move = pager.backward(from: spreadID, screen: screen, screenCount: count) else { return }
+        turnDirection = .backward
         apply(move, in: plan)
+    }
+
+    /// Called by the page-turn controls (not by the model's own page functions, which stay
+    /// immediate): locks the controls for the length of the transition, so a second press
+    /// cannot start a second turn on top of the first.
+    func beginTurn(lockFor seconds: Double) {
+        isTurning = true
+        turnTask?.cancel()
+        turnTask = Task { [weak self] in
+            try? await Task.sleep(for: .milliseconds(Int(max(0, seconds) * 1000)))
+            guard !Task.isCancelled else { return }
+            self?.isTurning = false
+        }
     }
 
     private func apply(_ move: Pager.Move, in plan: ScreenPlan?) {
@@ -207,6 +244,7 @@ final class ReaderModel {
         returnedCard = nil
         isTextPanelOpen = false
         dismissToast()
+        pageToken += 1
         savePosition()
     }
 
@@ -225,9 +263,14 @@ final class ReaderModel {
         memory.recordMet(shown.flatMap(\.namedCharacters), in: story.id)
     }
 
-    /// The child pressed the button on the last screen of the last page.
-    /// TODO(M6): the story-finished moment (design gap G3). TODO(M4): mark the story finished.
+    /// The child pressed the button on the last screen of the last page: the last page has
+    /// been read and the story is finished (a tick on its cover, a place on the shelf).
+    /// TODO(M6): the story-finished moment (design gap G3).
     func finish() {
+        if let spreadID {
+            log.recordPageRead(storyID: story.id, spreadID: spreadID)
+        }
+        log.markFinished(story.id)
         progress.clear(storyID: story.id)
     }
 
@@ -309,11 +352,15 @@ final class ReaderModel {
             // already on screen, so its heights would never be reported again.
             measurements.removeAll()
         }
+        let target = pager.index(of: bookmark.spreadID) ?? 0
+        let here = spreadID.flatMap { pager.index(of: $0) } ?? 0
+        turnDirection = target < here ? .backward : .forward
         spreadID = bookmark.spreadID
         anchor = bookmark.anchor
         returnedCard = nil
         isTextPanelOpen = false
         dismissToast()
+        pageToken += 1
         savePosition()
     }
 
@@ -334,11 +381,14 @@ final class ReaderModel {
 
     /// The child tapped a marked word in `blockID`. Nothing on a card can call this: a card
     /// never opens another card.
-    func open(_ ref: StoryCardRef, from blockID: BlockID) {
+    /// - Parameter origin: where the word was on screen, for the opening motion; nil when the
+    ///   card is not opened by a tap on a word (VoiceOver, a launch argument).
+    func open(_ ref: StoryCardRef, from blockID: BlockID, origin: CardOrigin? = nil) {
         guard openCard == nil, canOpen(ref) else { return }
         isTextPanelOpen = false
         dismissToast()
         returnedCard = nil
+        cardOrigin = origin
         openCard = OpenCard(ref: ref, blockID: blockID)
     }
 
@@ -365,7 +415,7 @@ final class ReaderModel {
         self.toast = toast
         toastTask = Task { [weak self] in
             // §3.7 motion.toast: stays about 1.6 s after appearing.
-            try? await Task.sleep(for: .milliseconds(1900))
+            try? await Task.sleep(for: .milliseconds(Int((Motion.toastIn + Motion.toastStay) * 1000) + 100))
             guard !Task.isCancelled else { return }
             self?.toast = nil
         }
@@ -394,6 +444,15 @@ final class ReaderModel {
     }
 }
 
+/// Where a tapped word was when its card opened.
+struct CardOrigin: Equatable {
+    /// The word's rectangle in window coordinates.
+    var rect: CGRect
+    /// The layout it was measured in: after a rotation or a resize the rectangle is stale and
+    /// the motion falls back to the card's own edge.
+    var key: TextMeasureKey?
+}
+
 /// Identifies one way of setting a page's text: the page, the column width and the type size.
 /// Paragraph heights are only comparable under the same key.
 struct TextMeasureKey: Hashable {
@@ -404,12 +463,22 @@ struct TextMeasureKey: Hashable {
     /// Pane scale in thousandths.
     var paneScale: Int
     var posture: DisplayPosture
+    /// The tall-pane type boost in thousandths (1000 = none).
+    var typeBoost: Int
 
-    init(spreadID: SpreadID, columnWidth: CGFloat, textSize: TextSizeStep, paneScale: CGFloat, posture: DisplayPosture) {
+    init(
+        spreadID: SpreadID,
+        columnWidth: CGFloat,
+        textSize: TextSizeStep,
+        paneScale: CGFloat,
+        posture: DisplayPosture,
+        typeBoost: CGFloat = 1
+    ) {
         self.spreadID = spreadID
         self.columnWidth = Int((columnWidth * 2).rounded())
         self.textSize = textSize
         self.paneScale = Int((paneScale * 1000).rounded())
         self.posture = posture
+        self.typeBoost = Int((typeBoost * 1000).rounded())
     }
 }

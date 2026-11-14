@@ -34,7 +34,9 @@ extension LandmarkArt {
         ]
         backdrop(&context, sky)
         stars(&context, count: 34, seed: 23, maxY: 120, color: Art.color(0xFFF3DC))
-        Art.glow(&context, 92, 232, 180, Art.color(0xFFC878), alpha: 0.65)
+        // The shared horizon band (behind the forest), then the last of the sun on the left.
+        horizon(&context, y: 252, rise: 80, hex: 0xFFC96B, alpha: 0.3)
+        Art.glow(&context, 92, 232, 180, Art.color(0xFFC878), alpha: 0.55)
 
         Art.blurred(&context, radius: 4, opacity: 0.5) { g in
             var clouds = Path()
@@ -103,8 +105,8 @@ extension LandmarkArt {
         // The building's own shadow, falling away from the light.
         let shadow = Art.polygon([pt(40, 300), pt(398, 300), pt(436, 322), pt(96, 322)])
         let shadowStops: [(Color, CGFloat)] = [
-            (Art.color(0x2A1438, 0.42), 0),
-            (Art.color(0x2A1438, 0), 1),
+            (ArtStyle.coolShade.opacity(0.4), 0),
+            (ArtStyle.coolShade.opacity(0), 1),
         ]
         fillVertical(&context, shadow, shadowStops, from: 300, to: 322)
     }
@@ -325,9 +327,9 @@ extension LandmarkArt {
         ]
         fillHorizontal(&context, front, wash, from: 40, to: 398)
         let eaveShadow: [(Color, CGFloat)] = [
-            (Art.color(0x22102A, 0.6), 0),
-            (Art.color(0x22102A, 0.22), 0.5),
-            (Art.color(0x22102A, 0), 1),
+            (ArtStyle.coolShade.opacity(0.5), 0),
+            (ArtStyle.coolShade.opacity(0.2), 0.5),
+            (ArtStyle.coolShade.opacity(0), 1),
         ]
         fillVertical(&context, Art.rect(40, 214, 358, 18), eaveShadow, from: 214, to: 232)
     }
@@ -401,7 +403,7 @@ extension LandmarkArt {
             Art.stroke(&g, allCourses, Art.color(0x4E2C22, 0.3), width: 1.1)
             Art.stroke(&g, coursesLight, Art.color(0xF8D69A, 0.16), width: 0.7)
             fillHorizontal(&g, Art.rect(20, 80, 400, 150), evening, from: 24, to: 412)
-            Art.fill(&g, Art.rect(20, 209, 400, 14), Art.color(0x2A1420, 0.3))
+            Art.fill(&g, Art.rect(20, 209, 400, 14), ArtStyle.coolShade.opacity(0.26))
         }
 
         // The ridge: a thick roll of thatch, bound at intervals.
@@ -422,7 +424,7 @@ extension LandmarkArt {
         Art.stroke(&context, ties, Art.color(0x4E2C22, 0.6), width: 0.9, cap: .butt)
 
         // The line of shade tucked under the eaves.
-        Art.stroke(&context, Art.line(42, 218.5, 396, 218.5), Art.color(0x22102A, 0.4), width: 1.6, cap: .butt)
+        Art.stroke(&context, Art.line(42, 218.5, 396, 218.5), ArtStyle.coolShade.opacity(0.36), width: ArtStyle.detailLine, cap: .butt)
     }
 
     // MARK: Finish
@@ -430,5 +432,7 @@ extension LandmarkArt {
     private static func asanteFinish(_ context: inout GraphicsContext) {
         bottomFade(&context, 0x3A1F4D, from: 304, alpha: 0.85)
         tooth(&context, seed: 521, light: 0.06, dark: 0.06)
+        // A dusk picture: a little less wash.
+        finish(&context, wash: 0.06, vignette: 0.08)
     }
 }

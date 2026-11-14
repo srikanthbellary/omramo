@@ -187,8 +187,9 @@ struct StoryMapCard: View {
         .frame(width: mapSize.width, height: mapSize.height)
     }
 
-    /// Legend row, as designed. TODO(M4): "Read" needs the reading log; until then a story's
-    /// pin is drawn in the "Read" style whether or not it has been finished.
+    /// Legend row, as designed. TODO(M4): a pin does not yet look different once its story
+    /// is finished (the tick on the cover and the shelf card show that); a story's pin is
+    /// drawn in its own colour, and ringed while it is the one being read.
     private func legend(unit: CGFloat) -> some View {
         HStack(spacing: 14 * unit) {
             HStack(spacing: 6 * unit) {

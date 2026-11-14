@@ -99,8 +99,8 @@ enum AnansiArt {
                 let tone = i % 2 == 1 ? Art.color(0x3A2466) : Art.color(0x472C73)
                 umbrellaTree(&g, item.0, 650, 120 * item.1 + 40, item.1 * 0.8, tone, seed: UInt32(40 + i))
             }
-            let haze: [(Color, CGFloat)] = [(Art.color(0xFF9A5A, 0), 0), (Art.color(0xFF9A5A, 0.5), 1)]
-            Art.fillLinear(&g, Art.rect(0, 540, w, 180), haze, from: pt(0, 540), to: pt(0, 720))
+            // The shared ember band on the horizon, over the far trees so they stay hazy.
+            ArtStyle.horizonGlow(&g, width: w, y: 660, rise: 150, color: ArtStyle.anansi.glowColor, alpha: 0.42)
             Art.fill(
                 &g,
                 Art.svg("M0,660 C80,640 160,654 260,646 C360,638 420,656 520,648 C640,640 760,656 892,644 L892,720 L0,720Z"),
@@ -114,7 +114,7 @@ enum AnansiArt {
                 Art.stroke(
                     &g,
                     Art.svg("M100,618 C96,600 108,590 102,572 C98,560 106,552 104,544"),
-                    Art.color(0xD9B8E8, 0.3), width: 2.5
+                    Art.color(0xD9B8E8, 0.3), width: ArtStyle.contourLine
                 )
             }
         }
@@ -166,12 +166,12 @@ enum AnansiArt {
         let lightSide = Art.svg("M696,470 C702,570 730,650 782,720 L740,720 C712,660 690,590 684,510Z")
         Art.fill(&context, shifted(lightSide, dy), Art.color(0xF3D9C8, 0.25))
         let roots = Art.svg("M640,720 C644,640 640,560 644,500 M664,720 C660,650 664,590 660,520")
-        Art.stroke(&context, shifted(roots, dy), Art.color(0x1B0F33, 0.5), width: 3, cap: .butt)
+        Art.stroke(&context, shifted(roots, dy), Art.color(0x1B0F33, 0.5), width: ArtStyle.contourLine)
 
         let grooves = Art.svg("M622,20 C626,160 620,320 618,450 M650,10 C654,180 648,300 650,440 M672,0 C676,160 670,320 674,460")
-        Art.stroke(&context, stretched(grooves, k), Art.color(0x1B0F33, 0.4), width: 1.8, cap: .butt)
+        Art.stroke(&context, stretched(grooves, k), Art.color(0x1B0F33, 0.4), width: ArtStyle.detailLine)
         let rimLine = Art.svg("M692,10 C688,160 688,330 694,470")
-        Art.stroke(&context, stretched(rimLine, k), Art.color(0xFFE9D2, 0.65), width: 2.2, cap: .butt)
+        Art.stroke(&context, stretched(rimLine, k), Art.color(0xFFE9D2, 0.65), width: ArtStyle.contourLine)
 
         Art.fill(
             &context,
@@ -188,7 +188,7 @@ enum AnansiArt {
     /// The web strung from the trunk to the moon, with the small spider on its thread.
     static func moonWeb(_ context: inout GraphicsContext) {
         spiderWeb(&context, 694, 140, 110, -0.42, 0.5)
-        Art.stroke(&context, Art.line(762, 118, 762, 196), Art.color(0xFFFFFF, 0.6), width: 0.7, cap: .butt)
+        Art.stroke(&context, Art.line(762, 118, 762, 196), ArtStyle.warmLight.opacity(0.6), width: 0.7, cap: .butt)
         spider(&context, 762, 200, 1)
     }
 
@@ -230,7 +230,7 @@ enum AnansiArt {
             Art.stroke(
                 &g,
                 Art.svg("M158,596 C154,580 166,570 160,554 C156,544 164,536 162,528"),
-                Art.color(0xD9B8E8, 0.3), width: 2.5
+                Art.color(0xD9B8E8, 0.3), width: ArtStyle.contourLine
             )
         }
 
@@ -244,9 +244,9 @@ enum AnansiArt {
             house(&g, 726, 700, 2.25, lit: 1)
             Art.fill(&g, Art.ellipse(676, 706, 130, 9), Art.color(0xFFB84D, 0.2))
 
-            villager(&g, 490, 702, 1.9, seated: false, cloth: Art.color(0x2A1B58))
-            villager(&g, 524, 706, 1.9, seated: true, cloth: Art.color(0x3A1F52))
-            villager(&g, 556, 708, 1.45, seated: true, cloth: Art.color(0x24284F))
+            villager(&g, 490, 702, 1.9, seated: false, cloth: ArtStyle.anansi.shadeColor)
+            villager(&g, 524, 706, 1.9, seated: true, cloth: ArtStyle.anansi.midColor)
+            villager(&g, 556, 708, 1.45, seated: true, cloth: Art.color(0x2E3A6B))
 
             Art.glow(&g, 612, 640, 90, Art.color(0xFFC46A), alpha: 0.22)
             anansiStanding(&g, 606, 704, 0.98, withPot: false, gesture: true)
@@ -265,7 +265,7 @@ enum AnansiArt {
 
         fireflies(&context, 9, seed: 9, in: CGRect(x: 0, y: h - 130, width: 300, height: 90))
         fireflies(&context, 12, seed: 29, in: CGRect(x: 460, y: h - 330, width: 432, height: 250))
-        tooth(&context, w, h)
+        finishPicture(&context, size)
     }
 
     // MARK: - Scene: the forest path
@@ -330,7 +330,7 @@ enum AnansiArt {
         fireflies(&context, 12, seed: 9, in: CGRect(x: 0, y: h - 130, width: 300, height: 90))
         let flyTop = min(300, h * 0.42)
         fireflies(&context, 26, seed: 29, in: CGRect(x: 460, y: flyTop, width: 432, height: max(60, h - 20 - flyTop)))
-        tooth(&context, w, h)
+        finishPicture(&context, size)
     }
 
     // MARK: - Scene: the climb (screen 04)
@@ -360,7 +360,7 @@ enum AnansiArt {
         Art.glow(&context, 598, hipY - 54, 120, Art.color(0xFFC94D), alpha: 0.3)
         anansiClimbing(&context, 558, hipY, 1.42)
         let sparks: [(CGFloat, CGFloat, CGFloat, Int)] = [
-            (560, 268, 1.2, 1), (530, 236, 1, 2), (574, 210, 1.5, 0), (540, 176, 0.9, 1),
+            (504, 276, 1.2, 1), (530, 236, 1, 2), (574, 210, 1.5, 0), (540, 176, 0.9, 1),
             (508, 196, 0.8, 2), (486, 150, 1.2, 0), (520, 130, 0.8, 2),
         ]
         motes(&context, sparks, dx: 0, dy: hipY - 372)
@@ -372,7 +372,7 @@ enum AnansiArt {
         fireflies(&context, 12, seed: 9, in: CGRect(x: 0, y: h - 130, width: 300, height: 90))
         let flyTop = min(300, h * 0.42)
         fireflies(&context, 22, seed: 29, in: CGRect(x: 460, y: flyTop, width: 432, height: max(60, h - 20 - flyTop)))
-        tooth(&context, w, h)
+        finishPicture(&context, size)
     }
 
     // MARK: - Scene: wisdom spreads over the world
@@ -429,7 +429,11 @@ enum AnansiArt {
             let stone: [(Color, CGFloat)] = [(Art.color(0x5A4680), 0), (Art.color(0x2E2152), 0.5), (Art.color(0x1C1338), 1)]
             Art.fillLinear(&g, rock, stone, from: pt(0, 652), to: pt(0, 720))
             Art.fill(&g, Art.svg("M470,676 C486,662 520,656 548,662 C530,668 500,672 480,686Z"), Art.color(0xFFD98A, 0.3))
-            Art.stroke(&g, Art.svg("M540,664 C548,680 546,700 552,716 M500,672 C496,690 500,704 496,718"), Art.color(0x140C2A, 0.5), width: 1.4)
+            Art.stroke(
+                &g,
+                Art.svg("M540,664 C548,680 546,700 552,716 M500,672 C496,690 500,704 496,718"),
+                Art.color(0x1C1338, 0.6), width: ArtStyle.detailLine
+            )
 
             // The lower half of the pot, lying open on the rock.
             Art.group(&g, x: 514, y: 638, rotate: rad(-22), scale: 1.5) { p in
@@ -474,7 +478,7 @@ enum AnansiArt {
             stream.move(to: source)
             stream.addCurve(to: ribbon.2, control1: ribbon.0, control2: ribbon.1)
             Art.stroke(&context, stream, moteGold.opacity(0.08), width: 7)
-            Art.stroke(&context, stream, moteGold.opacity(0.22), width: 1.4)
+            Art.stroke(&context, stream, moteGold.opacity(0.22), width: ArtStyle.detailLine)
             for i in 1...9 {
                 let t = CGFloat(i) / 10
                 let p = cubicPoint(source, ribbon.0, ribbon.1, ribbon.2, t)
@@ -499,6 +503,6 @@ enum AnansiArt {
         fireflies(&context, 8, seed: 9, in: CGRect(x: 0, y: h - 130, width: 300, height: 90))
         let flyTop = min(300, h * 0.42)
         fireflies(&context, 12, seed: 29, in: CGRect(x: 460, y: flyTop, width: 432, height: max(60, h - 20 - flyTop)))
-        tooth(&context, w, h)
+        finishPicture(&context, size)
     }
 }

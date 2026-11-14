@@ -86,7 +86,8 @@ targets:
         DEVELOPMENT_TEAM: ""
         CODE_SIGN_STYLE: Automatic
 
-  # Screenshot helper only. Run with the OmramoShots scheme, not Cmd-U on Omramo.
+  # XCUITests: round-3 screenshots (ShotTests) and tapping marked words (WordTapTests).
+  # Run with the OmramoShots scheme, not Cmd-U on Omramo. See docs/BUILD.md §4.
   OmramoUITests:
     type: bundle.ui-testing
     platform: iOS
@@ -124,6 +125,9 @@ schemes:
         "-OmramoOpenCard river-bank": false
         "-OmramoOrientation landscape": false
         "-OmramoOrientation portrait": false
+        # Empty in-memory stores (UI tests); a small made-up reading history (screenshots).
+        "-OmramoResetState": false
+        "-OmramoDemoState": false
     test:
       config: Debug
       targets:

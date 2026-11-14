@@ -15,6 +15,9 @@ extension UrashimaArt {
         let w: CGFloat = 892
         let sea = Sea(low: h - 72, lift: 196)
         fillBackground(&context, w, h, daySky)
+        // The warm band at the horizon. Its line is the calm sea level of the leading pane, so
+        // the swell on the trailing pane rises in front of it.
+        ArtStyle.horizonGlow(&context, width: w, y: sea.low + 2, rise: 210, color: horizonTint, alpha: 0.4)
         sun(&context, 800, h - 268, 50)
 
         // Far headland with pines.
@@ -54,7 +57,7 @@ extension UrashimaArt {
         ripple.addQuadCurve(to: pt(560, rippleY), control: pt(540, rippleY - 7))
         ripple.addQuadCurve(to: pt(600, rippleY), control: pt(580, rippleY + 7))
         ripple.addQuadCurve(to: pt(640, rippleY), control: pt(620, rippleY - 7))
-        Art.stroke(&context, ripple, Art.color(0xFFFFFF, 0.8), width: 2)
+        Art.stroke(&context, ripple, Art.color(0xFFFFFF, 0.8), width: ArtStyle.detailLine)
 
         seaBand(&context, sea, 5, fills: dayFills, bottom: h)
         seaBand(&context, sea, 6, fills: dayFills, bottom: h)
@@ -63,7 +66,10 @@ extension UrashimaArt {
             leadingMist(&context, w, h, Art.color(0xF3F9FB))
         }
         Art.clipped(&context, to: seaShape) { g in
-            Art.stipple(&g, in: CGRect(x: 0, y: h - 340, width: w, height: 340), count: 380, seed: 11, color: white, alpha: 0.14, size: 0.4...1.1)
+            ArtStyle.tooth(&g, in: CGRect(x: 0, y: h - 340, width: w, height: 340), seed: 11, alpha: 0.12)
+        }
+        if !folded {
+            finish(&context, w, h)
         }
     }
 
@@ -97,10 +103,14 @@ extension UrashimaArt {
         let sea = Sea(low: h - 72, lift: 120)
         let fills = later ? duskFills : dayFills
         fillBackground(&context, w, h, later ? duskSky : eveningSky)
+        // The warm band at the horizon, on the calm sea level of the leading pane. It stays on
+        // the changed shore too: the ending is quiet and sad, but the light is still warm.
+        ArtStyle.horizonGlow(&context, width: w, y: sea.low + 2, rise: 170, color: horizonTint, alpha: later ? 0.5 : 0.4)
 
         if later {
-            Art.glow(&context, 730, h - 214, 84, white, alpha: 0.75)
-            Art.fill(&context, Art.circle(730, h - 214, 22), Art.color(0xFBF7F4, 0.9))
+            // A pale sun in the haze, warm rather than white.
+            Art.glow(&context, 730, h - 214, 84, Art.color(0xFFE9DC), alpha: 0.8)
+            Art.fill(&context, Art.circle(730, h - 214, 22), Art.color(0xFFF3E6, 0.92))
         } else {
             sun(&context, 730, h - 198, 34)
         }
@@ -145,7 +155,7 @@ extension UrashimaArt {
             leadingMist(&context, w, h, later ? Art.color(0xF1EEF3) : Art.color(0xF6F3EF))
         }
         Art.clipped(&context, to: seaShape) { g in
-            Art.stipple(&g, in: CGRect(x: 0, y: h - 260, width: w, height: 260), count: 260, seed: 17, color: white, alpha: 0.13, size: 0.4...1.1)
+            ArtStyle.tooth(&g, in: CGRect(x: 0, y: h - 260, width: w, height: 260), seed: 17, alpha: 0.12)
         }
 
         // Sand, with a wet edge and a foam line where the water meets it.
@@ -160,14 +170,16 @@ extension UrashimaArt {
         var edge = Path()
         edge.move(to: pt(480, h + 6))
         edge.addCurve(to: pt(640, h - 124), control1: pt(520, h - 46), control2: pt(570, h - 100))
-        Art.stroke(&context, edge, Art.color(0xFFFFFF, 0.85), width: 3)
+        Art.stroke(&context, edge, Art.color(0xFFFFFF, 0.85), width: ArtStyle.contourLine)
         let sandStops: [(Color, CGFloat)] = later
             ? [(Art.color(0xEAE5E8), 0), (Art.color(0xD6CDD5), 1)]
             : [(Art.color(0xF7EDD9), 0), (Art.color(0xEAD7B6), 1)]
         Art.fillLinear(&context, sand, sandStops, from: pt(0, h - 170), to: pt(0, h))
         let grainTint = later ? Art.color(0x6E6480) : Art.color(0x9A7A4A)
         Art.clipped(&context, to: sand) { g in
-            Art.stipple(&g, in: CGRect(x: 500, y: h - 170, width: 392, height: 170), count: 170, seed: 5, color: grainTint, alpha: 0.12, size: 0.4...1.0)
+            ArtStyle.tooth(&g, in: CGRect(x: 500, y: h - 170, width: 392, height: 170), seed: 5, color: grainTint, alpha: 0.12)
+            // The key light on the upper-left shoulder of the sand.
+            Art.glow(&g, 640, h - 140, 150, ArtStyle.warmLight, alpha: later ? 0.16 : 0.22)
         }
 
         // Pines on the ridge.
@@ -184,6 +196,7 @@ extension UrashimaArt {
             pine(&context, 872, h - 158, 2.0, Art.color(0x3F7F74), trunk: bark, lean: -0.3)
             pine(&context, 824, h - 150, 2.6, Art.color(0x4E8C7E), trunk: bark, lean: -0.28)
             // His boat, drawn up on the sand.
+            ArtStyle.contactShadow(&context, 790, h - 105, 52, 5)
             Art.group(&context, x: 786, y: h - 112, rotate: rad(5), scale: 0.5) { g in
                 boat(&g)
             }
@@ -199,16 +212,17 @@ extension UrashimaArt {
             Art.fill(&context, leafPath, Art.color(0xB98A7C, 0.6))
 
             // Urashima alone, the box in his hands, the first violet mist curling from it.
-            Art.fill(&context, Art.ellipse(640, h - 77, 22, 4), Art.color(0x4A4266, 0.16))
+            ArtStyle.contactShadow(&context, 644, h - 77, 26, 4.5)
             Art.group(&context, x: 640, y: h - 78) { g in
                 urashima(&g, rod: .absent, holdsBox: true)
             }
+            // A soft wisp only: pale lilac, thin, nothing that looms.
             let curl = Art.svg("M4,-2 C-8,-14 14,-24 2,-38 C-6,-48 8,-58 3,-72")
-            let mist = curl.applying(CGAffineTransform(translationX: 619, y: h - 146))
-            Art.blurred(&context, radius: 3, opacity: 0.55) { g in
-                Art.stroke(&g, mist, Art.color(0x9B7BD8), width: 5)
+            let mist = curl.applying(CGAffineTransform(translationX: 612, y: h - 146))
+            Art.blurred(&context, radius: 3, opacity: 0.45) { g in
+                Art.stroke(&g, mist, Art.color(0xC9B6F0), width: 5)
             }
-            Art.stroke(&context, mist, Art.color(0xB79CFF, 0.75), width: 1.2)
+            Art.stroke(&context, mist, Art.color(0xEDE4FF, 0.7), width: ArtStyle.detailLine)
         } else {
             // The tortoise going back into the water; Urashima kneeling to let it go.
             Art.group(&context, x: 566, y: h - 74, rotate: rad(-4), scale: 0.8) { g in
@@ -218,11 +232,14 @@ extension UrashimaArt {
             ripple.move(to: pt(506, h - 62))
             ripple.addQuadCurve(to: pt(530, h - 62), control: pt(518, h - 67))
             ripple.addQuadCurve(to: pt(554, h - 62), control: pt(542, h - 57))
-            Art.stroke(&context, ripple, Art.color(0xFFFFFF, 0.8), width: 1.8)
-            Art.fill(&context, Art.ellipse(634, h - 79, 24, 4), Art.color(0x7A5A34, 0.16))
+            Art.stroke(&context, ripple, Art.color(0xFFFFFF, 0.8), width: ArtStyle.detailLine)
+            ArtStyle.contactShadow(&context, 638, h - 79, 28, 4.5)
             Art.group(&context, x: 628, y: h - 80) { g in
                 urashima(&g, rod: .absent, pose: .kneeling)
             }
+        }
+        if !folded {
+            finish(&context, w, h)
         }
     }
 
@@ -235,10 +252,12 @@ extension UrashimaArt {
             (Art.color(0xE6F6F4), 0), (Art.color(0xDDF3F0), 0.45), (Art.color(0xCDEDEA), 0.75), (Art.color(0xB9E4E0), 1),
         ]
         fillBackground(&context, w, h, water)
+        // The same key light as above the water: warm, from the upper left of the surface.
+        Art.glow(&context, 140, -60, 460, horizonTint, alpha: 0.5)
         lightShafts(&context, h: h, strength: 1)
 
-        // The first far roofs of the palace.
-        Art.glow(&context, 812, h - 170, 170, Art.color(0xFFF6DC), alpha: 0.55)
+        // The first far roofs of the palace, in their own warm lantern light.
+        Art.glow(&context, 812, h - 170, 170, Art.color(0xFFEFC8), alpha: 0.6)
         Art.layer(&context, opacity: 0.85) { g in
             palaceSilhouette(&g, 812, h - 88, 1, Art.color(0xA3D6D1))
         }
@@ -288,6 +307,9 @@ extension UrashimaArt {
         }
         bubbles(&context, count: 9, seed: 5, x: 486, y: h - 262, w: 70, h: 96, fill: white, ring: white, strength: 2.4)
         bubbles(&context, count: 16, seed: 21, x: 0, y: h - 300, w: w, h: 300, fill: white, ring: white, strength: 1.8)
+        if !folded {
+            finish(&context, w, h)
+        }
     }
 
     /// Soft slanting shafts of light from the surface.
@@ -301,7 +323,8 @@ extension UrashimaArt {
             let footLeft: CGFloat = x - width * 0.6 - drift
             let corners: [CGPoint] = [pt(x, -10), pt(x + width, -10), pt(footRight, h), pt(footLeft, h)]
             let shaft = Art.polygon(corners)
-            Art.fill(&context, shaft, Art.color(0xFFFFFF, alpha * strength))
+            // Warm white, like the key light: never a cold beam.
+            Art.fill(&context, shaft, Art.color(0xFFF6E6, alpha * strength))
         }
     }
 
@@ -342,8 +365,9 @@ extension UrashimaArt {
             (Art.color(0xEEF7F4), 0), (Art.color(0xE6F6F4), 0.4), (Art.color(0xD9F1EC), 0.75), (Art.color(0xCDEDEA), 1),
         ]
         fillBackground(&context, w, h, light)
+        Art.glow(&context, 140, -60, 460, horizonTint, alpha: 0.45)
         lightShafts(&context, h: h, strength: 0.7)
-        Art.glow(&context, 560, h - 170, 190, Art.color(0xFFF6DC), alpha: 0.7)
+        Art.glow(&context, 560, h - 170, 190, Art.color(0xFFEFC8), alpha: 0.7)
 
         // Garden floor.
         var floor = Path()
@@ -360,7 +384,7 @@ extension UrashimaArt {
         Art.fill(&context, Art.rect(496, h - 110, 128, 3), gold.opacity(0.8))
         hall(&context, 560, h - 108, 50, 34, 20, windows: 4, style: HallStyle.pearl)
         hall(&context, 560, h - 162, 30, 22, 16, windows: 2, style: HallStyle.pearl)
-        Art.stroke(&context, Art.line(560, h - 200, 560, h - 216), gold, width: 2.2)
+        Art.stroke(&context, Art.line(560, h - 200, 560, h - 216), gold, width: ArtStyle.contourLine)
         Art.fill(&context, Art.circle(560, h - 218, 3.6), Art.color(0xFFE9A8))
 
         // Coral trees along the floor.
@@ -399,8 +423,8 @@ extension UrashimaArt {
         Art.fill(&context, flakes, Art.color(0xFFFFFF, 0.9))
 
         // Otohime greeting Urashima.
-        Art.fill(&context, Art.ellipse(678, h - 57, 40, 5), Art.color(0x3F7F78, 0.14))
-        Art.fill(&context, Art.ellipse(744, h - 57, 20, 4), Art.color(0x3F7F78, 0.14))
+        ArtStyle.contactShadow(&context, 682, h - 56, 46, 6, alpha: 0.2)
+        ArtStyle.contactShadow(&context, 748, h - 57, 24, 4.5, alpha: 0.2)
         Art.group(&context, x: 676, y: h - 58) { g in
             otohime(&g)
         }
@@ -409,6 +433,9 @@ extension UrashimaArt {
         }
 
         bubbles(&context, count: 12, seed: 23, x: 0, y: h - 280, w: w, h: 280, fill: white, ring: white, strength: 1.8)
+        if !folded {
+            finish(&context, w, h)
+        }
     }
 
     /// A flat woodblock tree: a forked trunk under cloud-shaped foliage in two tones, with a few

@@ -108,9 +108,19 @@ enum UrashimaArt {
         (Art.color(0xEAF4FB), 0), (Art.color(0xF4F1EC), 0.5), (Art.color(0xFCE8DC), 0.8), (Art.color(0xFBDCCB), 1),
     ]
 
+    /// The changed shore: a lavender haze above, but the low sky still ends in the story's peach
+    /// (the ending is sad, never cold).
     static let duskSky: [(Color, CGFloat)] = [
-        (Art.color(0xECEBF5), 0), (Art.color(0xF1EEF1), 0.5), (Art.color(0xEFE4E8), 0.8), (Art.color(0xE7DCE6), 1),
+        (Art.color(0xECEBF5), 0), (Art.color(0xF3EEF0), 0.5), (Art.color(0xF8E6E0), 0.8), (Art.color(0xFBDDD0), 1),
     ]
+
+    /// The peach of the horizon band (the `glow` step of the story's ramp).
+    static var horizonTint: Color { ArtStyle.urashima.glowColor }
+
+    /// The last pass of every scene, picture, portrait and cover of this pale story.
+    static func finish(_ context: inout GraphicsContext, _ w: CGFloat, _ h: CGFloat, wash: Double = 0.08, vignette: Double = 0.06) {
+        ArtStyle.finish(&context, CGSize(width: w, height: h), wash: wash, vignette: vignette)
+    }
 
     static let deepFloor = Art.color(0x8FD0C8)
     static let palaceFloor = Art.color(0xC9E6DC)
@@ -174,6 +184,7 @@ enum UrashimaArt {
                 fill: tail, foamOpacity: 0.85
             ) { _ in line }
         }
+        finish(&context, width, height)
     }
 
     // MARK: - Sea
@@ -308,7 +319,7 @@ enum UrashimaArt {
 
         if texture != 0 {
             let radius: CGFloat = (texture == 1 ? 16 : 20) * max(detail, 0.5)
-            let tint = texture == 1 ? Art.color(0xFFFFFF, 0.26) : Art.color(0x9CC8EE, 0.24)
+            let tint = texture == 1 ? Art.color(0xFFFFFF, 0.2) : Art.color(0x9CC8EE, 0.19)
             let rowStep = radius / 2
             let colStep = radius * 2
             let firstRow = Int(((minTop - amp) / rowStep).rounded(.down))
@@ -337,11 +348,12 @@ enum UrashimaArt {
             }
             let arcPath = arcs
             Art.clipped(&context, to: shape) { g in
-                Art.stroke(&g, arcPath, tint, width: 1.1)
+                Art.stroke(&g, arcPath, tint, width: ArtStyle.detailLine * max(detail, 0.6))
             }
         }
 
-        Art.stroke(&context, crest, foam.opacity(foamOpacity), width: 2.2 * max(detail, 0.6))
+        // The crest line is the story's signature: always pale, always the contour weight.
+        Art.stroke(&context, crest, foam.opacity(foamOpacity), width: ArtStyle.contourLine * max(detail, 0.6))
 
         if fingers {
             var random = ArtRandom(seed)
@@ -435,16 +447,18 @@ enum UrashimaArt {
             Art.svg("M-30,-2 C-42,-8 -48,-22 -50,-34 C-44,-40 -36,-38 -34,-30 C-32,-20 -26,-12 -20,-8Z"),
             skinStops, from: pt(-50, -40), to: pt(-20, -2)
         )
-        Art.stroke(&context, Art.svg("M-42,-18 q5,-1 8,2 M-44,-26 q5,-2 9,1"), Art.color(0x4F7A3E, 0.6), width: 1, cap: .butt)
+        Art.stroke(&context, Art.svg("M-42,-18 q5,-1 8,2 M-44,-26 q5,-2 9,1"), Art.color(0x4F7A3E, 0.5), width: ArtStyle.detailLine)
         Art.group(&context, x: -52, y: -40, rotate: rad(-14)) { g in
             Art.fillLinear(&g, Art.ellipse(0, 0, 14, 11), skinStops, from: pt(-14, -11), to: pt(14, 11))
         }
-        Art.fill(&context, Art.circle(-56, -43, 4.2), white)
-        Art.fill(&context, Art.circle(-57 + lookX, -43 + lookY, 2.6), Art.color(0x1B2B1D))
-        Art.fill(&context, Art.circle(-57.8 + lookX, -44 + lookY, 0.9), white)
-        Art.stroke(&context, Art.svg("M-61,-48 q5,-4 10,-1"), Art.color(0x3F6B35), width: 1.6)
+        // The shared eye, with its white, at the modest size of design screen 05. The design's
+        // iris rests one unit toward the nose; `lookX` / `lookY` move it from there.
+        let eyeLook = CGPoint(x: (lookX - 1) / 1.44, y: lookY / 1.44)
+        ArtStyle.eye(&context, -56, -43, 4.2, look: eyeLook, iris: Art.color(0x1B2B1D), showsWhite: true)
+        ArtStyle.cheek(&context, -49, -35.5, 3.6, alpha: 0.3)
+        Art.stroke(&context, Art.svg("M-61,-48 q5,-4 10,-1"), Art.color(0x3F6B35), width: ArtStyle.detailLine)
         if smile {
-            Art.stroke(&context, Art.svg("M-65,-36 q5,5 12,2"), Art.color(0x2F5A3A), width: 1.6)
+            Art.stroke(&context, Art.svg("M-65,-36 q5,5 12,2"), Art.color(0x2F5A3A), width: ArtStyle.detailLine)
         }
         Art.fill(&context, Art.circle(-64.5, -41, 0.9), Art.color(0x2F5A3A))
         // Shell.
@@ -463,8 +477,10 @@ enum UrashimaArt {
         }
         let hexPath = hexes
         Art.clipped(&context, to: shell) { g in
-            Art.stroke(&g, hexPath, Art.color(0x2F5A3A, 0.75), width: 1.4, cap: .butt, join: .miter)
+            Art.stroke(&g, hexPath, Art.color(0x2F5A3A, 0.7), width: ArtStyle.detailLine)
+            // The key light on the upper left of the shell.
             Art.stroke(&g, Art.svg("M-34,-8 C-24,-26 -6,-32 8,-31"), Art.color(0xC7E88A, 0.4), width: 4)
+            Art.glow(&g, -16, -24, 26, ArtStyle.warmLight, alpha: 0.22)
         }
         Art.fill(
             &context,
@@ -498,21 +514,22 @@ enum UrashimaArt {
             ink
         )
         Art.fill(&context, Art.svg("M1,-17 C0,-24 5,-27 8,-23 C9,-20 6,-17 4,-16Z"), ink)
-        let blush = Art.color(0xF58A7A, 0.5)
+        // The shared face: plain dark eyes with an upper-left catchlight, a quiet blush, one
+        // round-capped mouth in a darker tone of the skin.
         let lips = Art.color(0xB5533A)
         if frontal {
-            Art.fill(&context, Art.circle(-5, 1, 1.7), ink)
-            Art.fill(&context, Art.circle(4, 1, 1.7), ink)
-            Art.stroke(&context, Art.svg("M-4,7 q4,3.5 8,0"), lips, width: 1.5)
-            Art.fill(&context, Art.ellipse(-8, 5, 2.6, 1.8), blush)
-            Art.fill(&context, Art.ellipse(8, 5, 2.6, 1.8), blush)
+            ArtStyle.cheek(&context, -7.5, 5.5, 3.2, alpha: 0.3)
+            ArtStyle.cheek(&context, 7.5, 5.5, 3.2, alpha: 0.3)
+            ArtStyle.eye(&context, -5, 1, 1.9, showsWhite: false)
+            ArtStyle.eye(&context, 4.5, 1, 1.9, showsWhite: false)
+            ArtStyle.smile(&context, 0, 7, width: 8, curve: 1.6, color: lips)
         } else {
-            Art.stroke(&context, Art.line(1.5, -18, 7.5, -18), red, width: 1.8, cap: .butt)
-            Art.fill(&context, Art.circle(-6.5, 1, 1.7), ink)
-            Art.fill(&context, Art.circle(2.5, 1.5, 1.7), ink)
-            Art.stroke(&context, Art.svg("M-6,7 q4,3.5 8,.5"), lips, width: 1.5)
-            Art.fill(&context, Art.ellipse(-9, 5, 2.6, 1.8), blush)
-            Art.fill(&context, Art.ellipse(6, 6, 2.6, 1.8), blush)
+            Art.stroke(&context, Art.line(1.5, -18, 7.5, -18), red, width: ArtStyle.detailLine, cap: .butt)
+            ArtStyle.cheek(&context, -8.5, 5.5, 3.2, alpha: 0.3)
+            ArtStyle.cheek(&context, 6, 6, 3.2, alpha: 0.3)
+            ArtStyle.eye(&context, -6.5, 1, 1.9, showsWhite: false)
+            ArtStyle.eye(&context, 2.5, 1.5, 1.9, showsWhite: false)
+            ArtStyle.smile(&context, -2, 7.2, width: 8, curve: 1.6, color: lips)
         }
     }
 
@@ -530,7 +547,7 @@ enum UrashimaArt {
         switch pose {
         case .standing:
             if rod == .cast {
-                Art.stroke(&context, Art.line(-14, -66, -104, -134), Art.color(0x8A6A3A), width: 2.2)
+                Art.stroke(&context, Art.line(-14, -66, -104, -134), Art.color(0x8A6A3A), width: ArtStyle.contourLine)
                 Art.stroke(&context, Art.svg("M-104,-134 C-112,-80 -118,-30 -120,22"), Art.color(0xFFFFFF, 0.8), width: 0.8, cap: .butt)
             }
             Art.stroke(&context, Art.svg("M-7,-22 L-9,0 M6,-22 L8,0"), legSkin, width: 6.5)
@@ -550,7 +567,7 @@ enum UrashimaArt {
         // Hands use the same skin as the legs in `urashima` (local there, so restated here).
         let legSkin = Art.color(0xF2C9A0)
         if rod == .shoulder {
-            Art.stroke(&context, Art.line(10, -44, 36, -146), Art.color(0x8A6A3A), width: 2.2)
+            Art.stroke(&context, Art.line(10, -44, 36, -146), Art.color(0x8A6A3A), width: ArtStyle.contourLine)
             Art.stroke(&context, Art.svg("M36,-146 q7,20 2,46"), Art.color(0x7C8DA6, 0.7), width: 0.7, cap: .butt)
         }
         // Happi coat.
@@ -561,7 +578,7 @@ enum UrashimaArt {
             from: pt(-18, -86), to: pt(18, -42)
         )
         let pale = Art.color(0xF4F7FB)
-        Art.stroke(&context, Art.svg("M-2,-84 L4,-42 M2,-84 L-6,-60"), pale, width: 2.4, cap: .butt, join: .miter)
+        Art.stroke(&context, Art.svg("M-2,-84 L4,-42 M2,-84 L-6,-60"), pale, width: ArtStyle.contourLine, cap: .butt, join: .miter)
         let spots: [(CGFloat, CGFloat)] = [(-10, -70), (-11, -58), (10, -66), (11, -54), (-8, -48), (8, -76)]
         var spotPath = Path()
         for (sx, sy) in spots {
@@ -595,14 +612,20 @@ enum UrashimaArt {
             Art.stroke(&context, Art.svg("M12,-76 C20,-68 20,-60 14,-56"), coatBlue, width: 8)
             Art.fill(&context, Art.circle(13, -55, 4), legSkin)
         }
-        // Head.
-        Art.group(&context, x: -1, y: -98, rotate: rad(-6)) { g in
+        // Head. A little larger than the design's, so that he stands about three and a half
+        // heads tall (art direction §4); the chin stays where it was, on the collar.
+        let headScale: CGFloat = 1.18
+        let headY: CGFloat = -84 - 14 * headScale
+        Art.group(&context, x: -1, y: headY, rotate: rad(-6), scale: headScale) { g in
             urashimaHead(&g, frontal: false)
         }
         if hat {
-            let brim = Art.svg("M-22,-106 L-1,-124 L20,-104 C6,-110 -8,-110 -22,-106Z")
-            Art.fill(&context, brim, Art.color(0xE9C877))
-            Art.stroke(&context, brim, Art.color(0xC99A3F), width: 1, cap: .butt, join: .miter)
+            // The straw hat sits on the head, in the head's own space.
+            let brim = Art.svg("M-21,-8 L0,-26 L21,-6 C7,-12 -7,-12 -21,-8Z")
+            Art.group(&context, x: -1, y: headY, scale: headScale) { g in
+                Art.fill(&g, brim, Art.color(0xE9C877))
+                Art.stroke(&g, brim, Art.color(0xC99A3F), width: ArtStyle.detailLine)
+            }
         }
     }
 
@@ -624,15 +647,17 @@ enum UrashimaArt {
         Art.stroke(
             &context,
             Art.svg("M-80,-4 C-40,4 40,4 84,-8 M-66,6 C-30,10 30,10 70,2"),
-            Art.color(0x6A4326, 0.6), width: 1.2, cap: .butt
+            Art.color(0x6A4326, 0.5), width: ArtStyle.detailLine
         )
+        // The key light along the upper-left gunwale.
+        Art.stroke(&context, Art.svg("M-90,-20 C-70,-9 -40,-5 0,-5"), ArtStyle.warmLight.opacity(0.45), width: ArtStyle.detailLine)
         Art.stroke(&context, Art.line(98, -26, 108, -35), Art.color(0x8A5A34), width: 4)
     }
 
     /// The straw fish basket that sits in the boat.
     static func basket(_ context: inout GraphicsContext) {
         Art.fill(&context, Art.svg("M-10,0 C-12,-12 12,-12 10,0Z"), Art.color(0xC99A3F))
-        Art.stroke(&context, Art.svg("M-10,0 h20 M-8,-5 h16"), Art.color(0x8A6A2A), width: 1, cap: .butt)
+        Art.stroke(&context, Art.svg("M-10,0 h20 M-8,-5 h16"), Art.color(0x8A6A2A, 0.8), width: ArtStyle.detailLine)
     }
 
     /// Urashima standing in his boat with his rod (the group of design `seaScene`).
@@ -718,7 +743,7 @@ enum UrashimaArt {
         wings.move(to: pt(x - 8 * s, y))
         wings.addQuadCurve(to: pt(x, y), control: pt(x - 4 * s, y - 6 * s))
         wings.addQuadCurve(to: pt(x + 8 * s, y), control: pt(x + 4 * s, y - 6 * s))
-        Art.stroke(&context, wings, color, width: 1.6 * s)
+        Art.stroke(&context, wings, color, width: ArtStyle.detailLine * s)
     }
 
     /// The far headland of design `seaScene`, sitting on the first band of `sea`.
@@ -777,14 +802,13 @@ enum UrashimaArt {
         Art.fill(&context, Art.circle(0, -18.2, 1.3), red)
         Art.fill(&context, Art.circle(-8.6, -13, 1.2), gold)
         Art.fill(&context, Art.circle(8.6, -13, 1.2), gold)
-        // A composed face.
-        Art.fill(&context, Art.ellipse(-4.8, 1.8, 1.5, 1.2), ink)
-        Art.fill(&context, Art.ellipse(4.8, 1.8, 1.5, 1.2), ink)
-        Art.stroke(&context, Art.svg("M-7,1 q2.2,-1.7 4.4,0 M2.6,1 q2.2,-1.7 4.4,0"), ink, width: 0.9)
-        Art.stroke(&context, Art.svg("M-7,-3 q2,-1 4,-0.4 M3,-3.4 q2,-0.6 4,0.4"), ink.opacity(0.55), width: 0.7)
-        Art.fill(&context, Art.svg("M-2.2,7 q2.2,2 4.4,0 q-2.2,-1 -4.4,0Z"), Art.color(0xC8463C))
-        Art.fill(&context, Art.ellipse(-7, 5, 2.4, 1.5), Art.color(0xF58A7A, 0.35))
-        Art.fill(&context, Art.ellipse(7, 5, 2.4, 1.5), Art.color(0xF58A7A, 0.35))
+        // A composed face, built like every face in the app: plain dark eyes with an upper-left
+        // catchlight, a quiet blush, one small round-capped mouth.
+        ArtStyle.cheek(&context, -6.8, 5.4, 3, alpha: 0.3)
+        ArtStyle.cheek(&context, 6.8, 5.4, 3, alpha: 0.3)
+        ArtStyle.eye(&context, -4.8, 1.8, 1.7, showsWhite: false)
+        ArtStyle.eye(&context, 4.8, 1.8, 1.7, showsWhite: false)
+        ArtStyle.smile(&context, 0, 7.4, width: 5, curve: 1, color: Art.color(0xC8463C))
     }
 
     /// Princess Otohime in layered robes of coral, white and jade. The origin is the centre of
@@ -804,16 +828,16 @@ enum UrashimaArt {
             [(Art.color(0xF58A7A), 0), (Art.color(0xDE5F52), 1)],
             from: pt(0, -70), to: pt(0, 4)
         )
-        Art.stroke(&context, Art.svg("M-40,-3 C-20,3 24,3 44,-3"), Art.color(0xFFFFFF, 0.8), width: 2, cap: .butt)
+        Art.stroke(&context, Art.svg("M-40,-3 C-20,3 24,3 44,-3"), Art.color(0xFFFFFF, 0.8), width: ArtStyle.contourLine)
         // White under-robe showing at the front.
         Art.fill(&context, Art.svg("M-5,-70 C-7,-40 -9,-16 -10,3 L12,3 C10,-16 8,-40 6,-70Z"), Art.color(0xFBF6EE))
-        Art.stroke(&context, Art.svg("M-10,3 C-9,-16 -7,-40 -5,-70 M12,3 C10,-16 8,-40 6,-70"), Art.color(0x2E8F86, 0.55), width: 1, cap: .butt)
+        Art.stroke(&context, Art.svg("M-10,3 C-9,-16 -7,-40 -5,-70 M12,3 C10,-16 8,-40 6,-70"), Art.color(0x2E8F86, 0.4), width: ArtStyle.detailLine)
         // Sleeves.
         let leftSleeve = Art.svg("M-14,-104 C-28,-98 -36,-78 -38,-48 C-32,-43 -22,-45 -17,-52 C-17,-68 -13,-84 -9,-94Z")
         let rightSleeve = Art.svg("M14,-104 C28,-98 36,-78 38,-48 C32,-43 22,-45 17,-52 C17,-68 13,-84 9,-94Z")
         Art.fillLinear(&context, leftSleeve, jade, from: pt(-38, -104), to: pt(-12, -46))
         Art.fillLinear(&context, rightSleeve, jade, from: pt(12, -104), to: pt(38, -46))
-        Art.stroke(&context, Art.svg("M-38,-48 C-32,-43 -22,-45 -17,-52 M38,-48 C32,-43 22,-45 17,-52"), Art.color(0xFBF6EE), width: 2.2)
+        Art.stroke(&context, Art.svg("M-38,-48 C-32,-43 -22,-45 -17,-52 M38,-48 C32,-43 22,-45 17,-52"), Art.color(0xFBF6EE), width: ArtStyle.contourLine)
         // Bodice.
         Art.fillLinear(
             &context,
@@ -821,7 +845,7 @@ enum UrashimaArt {
             jade, from: pt(0, -108), to: pt(0, -66)
         )
         Art.stroke(&context, Art.svg("M-7,-108 L0,-90 L7,-108"), Art.color(0xFBF6EE), width: 3, cap: .butt, join: .miter)
-        Art.stroke(&context, Art.svg("M-4,-108 L0,-97 L4,-108"), Art.color(0xF58A7A), width: 1.4, cap: .butt, join: .miter)
+        Art.stroke(&context, Art.svg("M-4,-108 L0,-97 L4,-108"), Art.color(0xF58A7A), width: ArtStyle.detailLine, cap: .butt, join: .miter)
         // Sash.
         Art.fill(&context, Art.svg("M-3,-66 L-6,-34 L-1,-34 L0,-66Z M3,-66 L6,-38 L1,-38 L0,-66Z"), Art.color(0xF7DE9A))
         Art.fill(&context, Art.rect(-18, -77, 36, 11, radius: 2), gold)
@@ -830,9 +854,12 @@ enum UrashimaArt {
         // Hair falling forward over each shoulder.
         Art.fill(&context, Art.svg("M-12,-118 C-17,-104 -18,-88 -16,-70 L-12.5,-70 C-13,-88 -12,-104 -9,-116Z"), ink)
         Art.fill(&context, Art.svg("M12,-118 C17,-104 18,-88 16,-70 L12.5,-70 C13,-88 12,-104 9,-116Z"), ink)
-        // Neck and head.
+        // Neck and head. The head is larger than a grown-up figure's would be, as Urashima's
+        // is, so the two read as the same kind of drawing; the chin stays on the collar.
         Art.fill(&context, Art.rect(-3.5, -113, 7, 7), Art.color(0xF2CFB0))
-        Art.group(&context, y: -122) { g in
+        let headScale: CGFloat = 1.3
+        let headY: CGFloat = -109 - 13 * headScale
+        Art.group(&context, y: headY, scale: headScale) { g in
             otohimeHead(&g)
         }
     }
@@ -843,11 +870,13 @@ enum UrashimaArt {
     static func lacquerBox(_ context: inout GraphicsContext, wisp: Bool = true, wispColor: Color = UrashimaArt.white) {
         if wisp {
             let curl = Art.svg("M10,-64 C-10,-84 24,-100 4,-124 C-8,-138 10,-150 4,-162")
-            Art.blurred(&context, radius: 2.5, opacity: 0.35) { g in
-                Art.stroke(&g, curl, wispColor, width: 5)
+            // A soft wisp only: pale, thin, and fading as it rises.
+            Art.blurred(&context, radius: 2.5, opacity: 0.3) { g in
+                Art.stroke(&g, curl, wispColor, width: 4)
             }
         }
-        Art.fill(&context, Art.ellipse(0, 2, 62, 7), Art.color(0x000000, 0.22))
+        // The contact shadow falls a little to the lower right, away from the key light.
+        ArtStyle.contactShadow(&context, 5, 2, 64, 7, alpha: 0.3)
         Art.fillLinear(
             &context, Art.svg("M-52,-40 L52,-40 L50,0 L-50,0Z"),
             [(Art.color(0x2B2338), 0), (Art.color(0x14101C), 0.5), (Art.color(0x0A0810), 1)],
@@ -858,7 +887,12 @@ enum UrashimaArt {
             [(Art.color(0x3A3048), 0), (Art.color(0x1A1524), 0.4), (Art.color(0x0E0B16), 1)],
             from: pt(-56, 0), to: pt(56, 0)
         )
-        Art.stroke(&context, Art.line(-56, -58, 56, -58), Art.color(0xFFFFFF, 0.35), width: 1.6, cap: .butt)
+        // The lid catches the warm key light, strongest at its upper-left end.
+        Art.fillLinear(
+            &context, Art.rect(-56, -58.8, 112, ArtStyle.detailLine),
+            [(ArtStyle.warmLight.opacity(0.6), 0), (ArtStyle.warmLight.opacity(0.18), 1)],
+            from: pt(-56, 0), to: pt(56, 0)
+        )
         // Gold maki-e: wave arcs along the base, two plum blossoms.
         var makie = Path()
         let arcCentres: [CGFloat] = [-40, -22, 22, 40]
@@ -869,7 +903,7 @@ enum UrashimaArt {
         }
         makie.move(to: pt(-50, -6))
         makie.addLine(to: pt(50, -6))
-        Art.stroke(&context, makie, gold.opacity(0.95), width: 1.3, cap: .butt)
+        Art.stroke(&context, makie, gold.opacity(0.9), width: ArtStyle.detailLine, cap: .butt)
         let blossoms: [(CGFloat, CGFloat)] = [(-38, -24), (34, -27)]
         for (bx, by) in blossoms {
             var petals = Path()
@@ -891,7 +925,7 @@ enum UrashimaArt {
             red
         )
         Art.fill(&context, Art.circle(0, -60, 4.6), Art.color(0xB3261E))
-        Art.stroke(&context, Art.svg("M-3,-58 C-12,-46 -16,-38 -20,-26 M3,-58 C12,-46 16,-38 20,-26"), red, width: 2.6)
+        Art.stroke(&context, Art.svg("M-3,-58 C-12,-46 -16,-38 -20,-26 M3,-58 C12,-46 16,-38 20,-26"), red, width: ArtStyle.contourLine)
         Art.fill(&context, Art.svg("M-23,-27 l6,2 l-5,14 l-5,-2Z M23,-27 l-6,2 l5,14 l5,-2Z"), gold)
     }
 }

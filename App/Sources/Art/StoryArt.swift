@@ -121,6 +121,19 @@ struct CodeArtView: View, Equatable {
     }
 }
 
+// MARK: - Caching
+
+extension View {
+    /// Flattens a code-drawn picture and its grain into one off-screen image. A page turn, a
+    /// card reveal or the library-to-story transition then moves and fades that image; the
+    /// `Canvas` is not drawn again and the soft-light grain is not blended again every frame
+    /// (docs/ART_DIRECTION.md §8).
+    func cachedArt() -> some View {
+        // Not opaque: a portrait is drawn over its card's gradient, and a scene over its ground.
+        drawingGroup()
+    }
+}
+
 // MARK: - Scenes
 
 /// A reading scene. Unfolded it is one picture under both panes and the hinge; folded it is the
@@ -146,6 +159,7 @@ struct SceneArtView: View {
                     .equatable()
                     // The designs lay a fine grain over every scene so flat shapes feel painted.
                     .overlay(GrainOverlay(opacity: 0.28))
+                    .cachedArt()
             }
         }
         .accessibilityElement(children: .ignore)
@@ -207,6 +221,7 @@ struct CoverArtView: View {
                 )
                 .equatable()
                 .overlay(GrainOverlay(opacity: 0.22))
+                .cachedArt()
             }
         }
         .accessibilityElement(children: .ignore)
@@ -247,6 +262,7 @@ struct CardArtView: View {
                 CodeArtView(name: art.assetName, source: source, role: role, colors: colors)
                     .equatable()
                     .overlay(GrainOverlay(opacity: 0.22))
+                    .cachedArt()
             }
         }
         .accessibilityElement(children: .ignore)

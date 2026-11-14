@@ -16,6 +16,12 @@ final class ReadingProgressStore {
         self.file = ReadingProgressStore.load(from: fileURL)
     }
 
+    /// An in-memory store that already holds positions (the debug demo state, tests).
+    init(seed: ReadingProgressFile) {
+        self.fileURL = nil
+        self.file = seed
+    }
+
     func position(for storyID: StoryID) -> ReadingPosition? {
         file.position(for: storyID)
     }

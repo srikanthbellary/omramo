@@ -51,13 +51,13 @@ extension UrashimaArt {
         var left = Path()
         left.move(to: pt(-w, -5))
         left.addCurve(to: pt(-w * 0.2, -h), control1: pt(-w * 0.72, 2), control2: pt(-w * 0.46, -h * 0.5))
-        Art.stroke(&context, left, style.edge, width: 2, cap: .butt)
+        Art.stroke(&context, left, style.edge, width: ArtStyle.contourLine, cap: .butt)
         var right = Path()
         right.move(to: pt(w, -5))
         right.addCurve(to: pt(w * 0.2, -h), control1: pt(w * 0.72, 2), control2: pt(w * 0.46, -h * 0.5))
-        Art.stroke(&context, right, style.edge, width: 2, cap: .butt)
-        Art.stroke(&context, Art.line(-w * 0.93, 5, w * 0.93, 5), style.edge, width: 2.6)
-        Art.stroke(&context, Art.line(-w * 0.2, -h, w * 0.2, -h), style.edge, width: 3)
+        Art.stroke(&context, right, style.edge, width: ArtStyle.contourLine, cap: .butt)
+        Art.stroke(&context, Art.line(-w * 0.93, 5, w * 0.93, 5), style.edge, width: ArtStyle.contourLine)
+        Art.stroke(&context, Art.line(-w * 0.2, -h, w * 0.2, -h), style.edge, width: ArtStyle.contourLine)
         Art.fill(&context, Art.circle(-w, -6, 2.4), style.edge)
         Art.fill(&context, Art.circle(w, -6, 2.4), style.edge)
     }
@@ -218,7 +218,7 @@ extension UrashimaArt {
             row += 1
             arcY += radius / 2
         }
-        Art.stroke(&context, arcs, Art.color(0x7FD6F2, 0.09), width: 1.4)
+        Art.stroke(&context, arcs, Art.color(0x7FD6F2, 0.08), width: ArtStyle.detailLine)
 
         // Light rays.
         let rays: [(CGFloat, CGFloat, Double)] = [(60, 60, 0.07), (150, 40, 0.05), (230, 80, 0.08), (330, 50, 0.05), (390, 36, 0.04)]
@@ -227,7 +227,8 @@ extension UrashimaArt {
             let footLeft: CGFloat = rx - rw * 0.6 - 90
             let corners: [CGPoint] = [pt(rx, -10), pt(rx + rw, -10), pt(footRight, h), pt(footLeft, h)]
             let ray = Art.polygon(corners)
-            Art.fill(&context, ray, Art.color(0xCFF6FF, alpha))
+            // Warm white, like the key light: the deep water is dark, never cold.
+            Art.fill(&context, ray, Art.color(0xFFF1DC, alpha))
         }
 
         // Rocks at either side.
@@ -263,7 +264,7 @@ extension UrashimaArt {
         hall(&context, cx, gy - 44, 78, 46, 26, windows: 5, style: style)
         hall(&context, cx, gy - 116, 52, 34, 24, windows: 3, style: style)
         hall(&context, cx, gy - 176, 30, 26, 22, windows: 2, style: style)
-        Art.stroke(&context, Art.line(cx, gy - 226, cx, gy - 248), gold, width: 2.6)
+        Art.stroke(&context, Art.line(cx, gy - 226, cx, gy - 248), gold, width: ArtStyle.contourLine)
         Art.fill(&context, Art.circle(cx, gy - 250, 12), Art.color(0xFFE9A8, 0.25))
         Art.fill(&context, Art.circle(cx, gy - 250, 5), Art.color(0xFFE9A8))
 
@@ -274,7 +275,7 @@ extension UrashimaArt {
                 [(Art.color(0xFFFFFF), 0), (Art.color(0xCFE3F2), 1)], from: pt(0, -52), to: pt(0, 0)
             )
             Art.fill(&g, Art.svg("M-15,0 V-20 C-15,-40 15,-40 15,0Z"), Art.color(0x06305F))
-            Art.stroke(&g, Art.svg("M-15,0 V-20 C-15,-40 15,-40 15,0"), gold, width: 2.2, cap: .butt)
+            Art.stroke(&g, Art.svg("M-15,0 V-20 C-15,-40 15,-40 15,0"), gold, width: ArtStyle.contourLine, cap: .butt)
             Art.fill(&g, Art.svg("M-11,0 V-18 C-11,-33 11,-33 11,0Z"), Art.color(0xFFD98A, 0.55))
             Art.fill(&g, Art.rect(-40, -54, 80, 4), gold)
             Art.fillLinear(&g, Art.rect(-30, -74, 60, 20), [(style.wallTop, 0), (style.wallBottom, 1)], from: pt(0, -74), to: pt(0, -54))
@@ -345,7 +346,10 @@ extension UrashimaArt {
         let bubbleFill = Art.color(0xBFF3FF)
         let bubbleRing = Art.color(0xDFFBFF)
         bubbles(&context, count: 8, seed: 5, x: 10, y: h - 230, w: 50, h: 50, fill: bubbleFill, ring: bubbleRing)
-        bubbles(&context, count: 34, seed: 21, x: 0, y: 0, w: w, h: h, fill: bubbleFill, ring: bubbleRing)
+        // The bubbles stay out of the bottom quarter, which the card fades into its own colour.
+        bubbles(&context, count: 28, seed: 21, x: 0, y: 0, w: w, h: h * 0.78, fill: bubbleFill, ring: bubbleRing)
+        // A dark picture: a little less wash, the usual vignette.
+        finish(&context, w, h, wash: 0.06, vignette: 0.08)
     }
 
     // MARK: - see-fishing-boats
@@ -354,16 +358,16 @@ extension UrashimaArt {
     static func sailBoat(_ context: inout GraphicsContext, crew: Bool, net: Bool) {
         let timber = Art.color(0x6A4326)
         Art.stroke(&context, Art.line(4, -8, 4, -130), timber, width: 3, cap: .butt)
-        Art.stroke(&context, Art.svg("M-30,-34 L-74,-16 M38,-34 L86,-20"), Art.color(0x8A6A3A, 0.9), width: 1, cap: .butt)
+        Art.stroke(&context, Art.svg("M-30,-34 L-74,-16 M38,-34 L86,-20"), Art.color(0x8A6A3A, 0.7), width: ArtStyle.detailLine)
         let sail = Art.svg("M-32,-116 L40,-116 C45,-90 45,-60 38,-34 L-30,-34 C-37,-60 -37,-90 -32,-116Z")
         Art.fillLinear(&context, sail, [(Art.color(0xFBF6EA), 0), (Art.color(0xE6DCC4), 1)], from: pt(-36, 0), to: pt(44, 0))
         Art.stroke(
             &context,
             Art.svg("M-14,-116 C-17,-90 -17,-60 -13,-34 M4,-116 V-34 M22,-116 C26,-90 26,-60 21,-34"),
-            Art.color(0xCFC3A6), width: 1, cap: .butt
+            Art.color(0xCFC3A6, 0.8), width: ArtStyle.detailLine, cap: .butt
         )
         Art.fill(&context, Art.circle(4, -78, 9), Art.color(0xE0453A, 0.85))
-        Art.stroke(&context, Art.line(-36, -117, 44, -117), timber, width: 2.6)
+        Art.stroke(&context, Art.line(-36, -117, 44, -117), timber, width: ArtStyle.contourLine)
         if crew {
             Art.group(&context, x: -44, y: -8, scale: 0.62) { g in
                 urashima(&g, rod: .absent, hat: true)
@@ -387,7 +391,7 @@ extension UrashimaArt {
                 Art.stroke(&g, meshPath, Art.color(0xF6EED6, 0.9), width: 0.8, cap: .butt)
             }
             let cork = Art.color(0xE9C877)
-            Art.stroke(&context, Art.svg("M-84,-20 C-66,-12 -48,-10 -34,-10"), cork, width: 1.6)
+            Art.stroke(&context, Art.svg("M-84,-20 C-66,-12 -48,-10 -34,-10"), cork, width: ArtStyle.detailLine)
             Art.fill(&context, Art.circle(-78, -17, 2.2), cork)
             Art.fill(&context, Art.circle(-62, -12.6, 2.2), cork)
             Art.fill(&context, Art.circle(-46, -10.6, 2.2), cork)
@@ -400,6 +404,7 @@ extension UrashimaArt {
         let low = h * 0.44
         let sea = Sea(low: low, lift: 0)
         fillBackground(&context, w, h, daySky)
+        ArtStyle.horizonGlow(&context, width: w, y: low + 2, rise: 110, color: horizonTint, alpha: 0.45)
         sun(&context, w - 84, low - 26, 40)
 
         // Pine headland.
@@ -425,23 +430,25 @@ extension UrashimaArt {
             sailBoat(&g, crew: false, net: false)
         }
         seaBand(&context, sea, 2, fills: dayFills, x1: w, bottom: h)
-        Art.group(&context, x: 108, y: sea.top(2, 108) + 7, rotate: rad(2), scale: 0.5) { g in
+        Art.group(&context, x: 84, y: sea.top(2, 84) + 7, rotate: rad(2), scale: 0.46) { g in
             sailBoat(&g, crew: true, net: false)
         }
         seaBand(&context, sea, 3, fills: dayFills, x1: w, bottom: h)
-        Art.group(&context, x: 258, y: sea.top(3, 258) + 16, rotate: rad(-3)) { g in
+        // The one subject: a boat a little above the middle, about 55% of the width.
+        Art.group(&context, x: 232, y: sea.top(3, 232) + 14, rotate: rad(-3), scale: 1.22) { g in
             sailBoat(&g, crew: true, net: true)
         }
         seaBand(&context, sea, 4, fills: dayFills, x1: w, bottom: h)
         seaBand(&context, sea, 5, fills: dayFills, x1: w, bottom: h)
 
         Art.clipped(&context, to: seaShape) { g in
-            Art.stipple(&g, in: CGRect(x: 0, y: low - 10, width: w, height: h - low + 10), count: 240, seed: 13, color: white, alpha: 0.13, size: 0.4...1.1)
+            ArtStyle.tooth(&g, in: CGRect(x: 0, y: low - 10, width: w, height: h - low + 10), seed: 13, alpha: 0.12)
         }
         // Run the bottom into the card colour.
         let card = dayFills[5]
         let fade: [(Color, CGFloat)] = [(card.opacity(0), 0), (card.opacity(0.9), 0.75), (card, 1)]
         Art.fillLinear(&context, Art.rect(0, h - 120, w, 120), fade, from: pt(0, h - 120), to: pt(0, h))
+        finish(&context, w, h)
     }
 
     // MARK: - see-tamatebako
@@ -451,13 +458,15 @@ extension UrashimaArt {
         let card = Art.color(0x2B1E4A)
         Art.fill(&context, Art.rect(0, 0, w, h), card)
         let cx = w / 2
-        let baseY = h * 0.67
+        let baseY = h * 0.62
         Art.fillRadial(
             &context, Art.rect(0, 0, w, h),
             [(Art.color(0x4B3878), 0), (Art.color(0x34265A), 0.6), (card, 1)],
             center: pt(cx, h * 0.46), radius: h * 0.78
         )
-        Art.glow(&context, cx, h * 0.48, 180, Art.color(0xB79CFF), alpha: 0.3)
+        Art.glow(&context, cx, h * 0.48, 180, Art.color(0xB79CFF), alpha: 0.22)
+        // The warm key light, from the upper left: the box is a mystery, not a menace.
+        Art.glow(&context, cx - 70, h * 0.3, 190, ArtStyle.warmLight, alpha: 0.2)
 
         // Pale silk.
         let silk = Art.ellipse(cx, baseY + 6, 188, 40)
@@ -465,7 +474,7 @@ extension UrashimaArt {
         let folds = Art.svg("M-150,2 C-110,16 -60,22 -10,22 M30,26 C80,26 130,18 164,4 M-170,-6 C-150,-14 -120,-18 -96,-18")
         let foldPath = folds.applying(CGAffineTransform(translationX: cx, y: baseY + 8))
         Art.clipped(&context, to: silk) { g in
-            Art.stroke(&g, foldPath, Art.color(0xBFAED2, 0.7), width: 1.4)
+            Art.stroke(&g, foldPath, Art.color(0xBFAED2, 0.7), width: ArtStyle.detailLine)
         }
 
         // A few motes in the glow.
@@ -474,12 +483,14 @@ extension UrashimaArt {
             let mx = cx + random.next(in: -170...170)
             let my = h * 0.08 + random.next(in: 0...150)
             let mr = random.next(in: 1.6...3.4)
-            Art.fill(&context, Art.spark(mx, my, mr), Art.color(0xE6DCFF, 0.5))
+            Art.fill(&context, Art.spark(mx, my, mr), Art.color(0xFFEBD2, 0.5))
         }
 
-        Art.group(&context, x: cx, y: baseY, scale: 2.4) { g in
-            lacquerBox(&g, wisp: true, wispColor: Art.color(0xD9C8FF))
+        // The box: centred, a little above the middle, about 60% of the width.
+        Art.group(&context, x: cx, y: baseY, scale: 2.3) { g in
+            lacquerBox(&g, wisp: true, wispColor: Art.color(0xE9DEFF))
         }
+        finish(&context, w, h, wash: 0.06, vignette: 0.06)
     }
 
     // MARK: - Portraits
@@ -491,24 +502,29 @@ extension UrashimaArt {
         gull(&context, w * 0.25, h * 0.19, 0.8, Art.color(0x5A7C96))
         let line = h * 0.74
         let far = line - 20
+        ArtStyle.horizonGlow(&context, width: w, y: far, rise: 120, color: horizonTint, alpha: 0.45)
         waveBand(&context, x0: 0, x1: w, bottom: h, amp: 5, length: 44, phase: 6, fill: dayFills[1], foamOpacity: 0.8) { _ in far }
         waveBand(
             &context, x0: 0, x1: w, bottom: h, amp: 9, length: 62, phase: 14,
             fill: dayFills[3], foamOpacity: 0.92, fingers: true, seed: 6, texture: 1, textureDepth: 80
         ) { _ in line }
-        Art.group(&context, x: w * 0.46, y: h + 84, scale: 3) { g in
+        // Head and shoulders to the waist: the topknot about 60 units from the top, the eyes
+        // near the upper third.
+        Art.group(&context, x: w * 0.48, y: h + 60, scale: 3) { g in
             urashima(&g, rod: .shoulder)
         }
+        finish(&context, w, h)
     }
 
     static func portraitTortoise(_ context: inout GraphicsContext, w: CGFloat, h: CGFloat) {
         fillBackground(&context, w, h, daySky)
-        Art.glow(&context, w * 0.72, h * 0.3, 150, Art.color(0xFFD9C6), alpha: 0.6)
         gull(&context, w * 0.74, h * 0.2, 1.0, Art.color(0x5A7C96))
         let far = h * 0.55
         let mid = h * 0.61
         let near = h * 0.78
         let front = h * 0.9
+        // The shared horizon band, in place of the old loose glow in the sky.
+        ArtStyle.horizonGlow(&context, width: w, y: far, rise: 140, color: horizonTint, alpha: 0.55)
         waveBand(&context, x0: 0, x1: w, bottom: h, amp: 4, length: 38, phase: 4, fill: dayFills[0], foamOpacity: 0.7) { _ in far }
         waveBand(
             &context, x0: 0, x1: w, bottom: h, amp: 6, length: 50, phase: 20,
@@ -525,14 +541,15 @@ extension UrashimaArt {
             &context, x0: 0, x1: w, bottom: h, amp: 10, length: 78, phase: 8,
             fill: dayFills[5], foamOpacity: 0.92, fingers: true, seed: 9
         ) { _ in front }
+        finish(&context, w, h)
     }
 
     static func portraitOtohime(_ context: inout GraphicsContext, w: CGFloat, h: CGFloat) {
-        let light: [(Color, CGFloat)] = [
-            (Art.color(0xEEF7F4), 0), (Art.color(0xE2F4F1), 0.5), (Art.color(0xCDEDEA), 1),
-        ]
-        fillBackground(&context, w, h, light)
-        Art.glow(&context, w * 0.5, h * 0.42, 230, Art.color(0xFFF6DC), alpha: 0.75)
+        // The card's own colours (story.json: #FFF1F4 over #F9D3DC) with a warm halo, no rays.
+        ArtStyle.portraitBackdrop(
+            &context, CGSize(width: w, height: h),
+            top: Art.color(0xFFF1F4), bottom: Art.color(0xF9D3DC), halo: Art.color(0xFFF6DC), rays: false
+        )
         // A hall of the palace, far behind her.
         let hallX = w * 0.78
         let hallY = h * 0.66
@@ -543,9 +560,11 @@ extension UrashimaArt {
         coral(&context, w * 0.13, h - 6, 2.1, Art.color(0xF6A79C), seed: 4)
         coral(&context, w * 0.27, h + 4, 1.3, Art.color(0xFBD3CB), seed: 8)
         bubbles(&context, count: 14, seed: 27, x: 0, y: 0, w: w, h: h, fill: white, ring: white, strength: 2)
-        Art.group(&context, x: w * 0.5, y: h + 78, scale: 2.6) { g in
+        // Head and shoulders to the waist: the crown about 60 units from the top.
+        Art.group(&context, x: w * 0.5, y: h + 70, scale: 2.6) { g in
             otohime(&g)
         }
+        finish(&context, w, h)
     }
 
     // MARK: - Faces
@@ -553,8 +572,9 @@ extension UrashimaArt {
     /// Design `faceUrashima`: the head on #CFE6F7 (viewBox -20 -24 40 40).
     static func faceUrashima(_ context: inout GraphicsContext, w: CGFloat, h: CGFloat) {
         Art.fill(&context, Art.rect(0, 0, w, h), Art.color(0xCFE6F7))
-        let k = w / 40
-        Art.group(&context, x: 20 * k, y: 22 * k, scale: k) { g in
+        // The face fills about 80% of the chip, eyes near the centre line.
+        let k = w / 36
+        Art.group(&context, x: 18 * k, y: 19 * k, scale: k) { g in
             urashimaHead(&g, frontal: true)
         }
     }
@@ -598,6 +618,7 @@ extension UrashimaArt {
     static func cover(_ context: inout GraphicsContext, w: CGFloat, h: CGFloat) {
         let mid = h / 2
         fillBackground(&context, w, h, daySky)
+        ArtStyle.horizonGlow(&context, width: w, y: mid + 9, rise: 70, color: horizonTint, alpha: 0.45)
         sun(&context, w * 0.72, mid - 14, 44)
         let sea = Sea(low: mid + 8, lift: 0, scale: 0.6)
         let gullTint = Art.color(0x5A7C96)
@@ -613,5 +634,6 @@ extension UrashimaArt {
         for index in 4...6 {
             seaBand(&context, sea, index, fills: dayFills, x1: w, bottom: h)
         }
+        finish(&context, w, h)
     }
 }
