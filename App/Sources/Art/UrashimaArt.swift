@@ -547,6 +547,8 @@ enum UrashimaArt {
 
     /// Coat, straw skirt, arms and head: everything above the knees.
     static func urashimaUpper(_ context: inout GraphicsContext, rod: Rod, reach: Bool, holdsBox: Bool, hat: Bool) {
+        // Hands use the same skin as the legs in `urashima` (local there, so restated here).
+        let legSkin = Art.color(0xF2C9A0)
         if rod == .shoulder {
             Art.stroke(&context, Art.line(10, -44, 36, -146), Art.color(0x8A6A3A), width: 2.2)
             Art.stroke(&context, Art.svg("M36,-146 q7,20 2,46"), Art.color(0x7C8DA6, 0.7), width: 0.7, cap: .butt)
