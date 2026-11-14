@@ -17,6 +17,7 @@
 4. **Reading is the largest thing on a reading screen.** No play, audio or autoplay control anywhere.
 5. **One picture answer at a time.** A tap-to-see card has one line, one culture note, one button, and no onward link.
 6. **Text becomes art in at most one place per page** (for example the call on the wave line in screen 05).
+7. **Advanced should not feel babyish.** The app is marketed as ages 6 to 14 and up and is not listed in the Kids Category (PRD Q2). Advanced typography, scenes and chrome should feel grown-up enough for a 13- or 14-year-old still building reading skills; do not invent a more "kiddie" look for the older tier.
 
 ## 2. Canvas (assumption, not an Apple specification)
 
@@ -442,7 +443,7 @@ The folded page number is the same page as unfolded (5 of 14), so position carri
 | All illustrations; the device shell | Three tiers, one story per tier, tier locked per story |
 | Pane size, hinge gap, status-bar split | Tap-to-see on the facing pane, return to the same line |
 | Page counts (14, 6, 19), parent-view numbers, streak length | Two-page free sample, family subscription, grown-up gate |
-| Culture-note and character-card wording | Pages read, not screen time; no ads or tracking |
+| Culture-note and character-card wording | Pages read, not screen time; no ads or tracking; marketed as ages 6 to 14 and up; Advanced must not look like a little-kid book |
 | The gate mechanic (type three numbers) | Story text unaltered from the source texts |
 | "More cultures later" markers (no titles promised) | The OM / RA / MO mark |
 

@@ -1,7 +1,7 @@
 # Omramo age-range research
 
 **Date:** 13 November 2026  
-**Purpose:** Answer Srikanth's question (t3736u) and inform PRD Q2 (exact ages per tier). This note recommends a range; it does not close Q2 until Srikanth agrees.  
+**Purpose:** Answer Srikanth's question (t3736u) and inform PRD Q2 (exact ages per tier). The research below recommended a 6–12 range with core 7–11. **Q2 was closed on 13 Nov 2026 at 8:46 PM ET** as recorded in “Decision (Q2)” and in `docs/PRD.md`.  
 **Scope:** Omramo is an English story reader for children who can already read independently. There is no read-aloud control. The question is when children start *hearing* moral stories, when they can *read* them alone, when they move from heavily illustrated books to chapter books and then to text-dominant “real” books, and what age band that implies for the app.
 
 No figures below are invented. Where a national standard does not exist (for example, official words-per-page by grade), that is stated and the guidance is compared with publisher formats only.
@@ -17,7 +17,8 @@ No figures below are invented. Where a national standard does not exist (for exa
 | Recommended Omramo starting age | **About 7**, with strong 6-year-olds who already read English independently welcome in Low. Not for pre-readers or the Apple “5 and under” band. |
 | Cartoonish / picture-heavy → chapter books | Typically **ages 7–9** (US grades 2–3; UK Years 3–4). |
 | Chapter books → text-dominant “legit” books | Typically **ages 8–12**, solidifying around **9–11** as middle-grade novels take over and pictures recede. |
-| Overall Omramo range | **Ages 6–12**, with the core audience **7–11** (US grades 2–5; UK Years 2–6). Low is the on-ramp; Advanced sits at the start of text-dominant reading, not at young-adult novels. |
+| Overall Omramo range (research recommendation) | **Ages 6–12**, with the core audience **7–11** (US grades 2–5; UK Years 2–6). Low is the on-ramp; Advanced sits at the start of text-dominant reading, not at young-adult novels. |
+| **Decision (Q2, 13 Nov 2026, 8:46 PM ET)** | **Do not list in the App Store Kids Category.** Use a normal App Store age rating (exact 4+ or 9+ still open under Q30). **Market as ages 6 to 14 and up**, so a 13- or 14-year-old still building reading skills does not treat it as a little-kid app. Reading tiers below stand as ability bands. Advanced should look grown-up enough not to feel babyish. Kid-safety rules (no ads, no third-party analytics or tracking, parental gate, privacy manifest, no accounts) stay in force. |
 
 ---
 
@@ -108,17 +109,17 @@ Sources: [Lexile Grade Level Charts (student norms)](https://hub.lexile.com/lexi
 
 ## (e) Implications: Apple Kids Category and current type sizes
 
-### Kids Category age bands
+### Kids Category age bands — decision: stay out
 
-Apple’s Kids category is for apps designed for children **ages 11 and under**. In App Store Connect the developer must choose **one** primary-audience band: **5 and under**, **6–8**, or **9–11**. The app must follow App Review Guidelines 1.3 and 5.1.4. It can also be discovered in another primary and secondary category (for example Education or Books).
+Apple’s Kids category is for apps designed for children **ages 11 and under**. In App Store Connect the developer must choose **one** primary-audience band: **5 and under**, **6–8**, or **9–11**. An app in that category must follow App Review Guidelines 1.3 and 5.1.4. It can also be discovered in another primary and secondary category (for example Education or Books).
+
+The research below is kept as background. **Srikanth closed this on 13 Nov 2026 at 8:46 PM ET (PRD Q2): Omramo will not be listed in the Kids Category.** The reason is the same gap the research identified: no single Kids band covers 6 through 14. Listing as 6–8 or 9–11 would make a 13- or 14-year-old still building reading skills think the app is only for younger children. A normal App Store age rating (4+ or 9+, still open under Q30) sets a floor, not a ceiling. Store description, screenshots and omramo.com market the app as **ages 6 to 14 and up**. Education or Books can be the primary category. All kid-safety rules still apply: no ads, no third-party analytics or tracking, a parental gate before purchases and external links, a privacy manifest, and no accounts.
+
+Background that led to the choice (not a live open question):
 
 - **Do not choose “5 and under.”** Omramo requires independent reading and has no read-aloud. That band is for pre-literate and emergent readers.
-- The product’s real span (about 6–11/12) does not fit a single Apple band cleanly. The whole catalog in a Kids listing must be appropriate for the band you pick.
-- **If every story, including Advanced, is written and themed so a typical 6-to-8-year-old can use the app safely,** choose **6–8**. That matches the independent-reading on-ramp and puts Omramo in front of families who are just leaving early readers. Deeper literary language can still live in Advanced, but war, death, slavery and similar material (already flagged in content-plan CQ9 / Q29) would need age-appropriate handling — or would push the listing up.
-- **If Advanced keeps heavier historical or tragic themes that are not appropriate as a 6–8 primary experience,** choose **9–11**. That also matches the age at which children more reliably articulate a moral theme (around 9–10). Younger independent readers can still use Low, but Kids-category browse will present the app as 9–11.
-- Either way, set Education or Books as the other category so families can find it outside the single Kids band. The App Store *age rating* (4+, 9+, 13+) is a separate control from the Kids band; stories that treat death or war may land at **9+** even if the Kids band is 6–8. That pairing should be checked when CQ9 is decided.
-
-A practical recommendation, pending the sensitive-content decision: treat **6–8 as the preferred Kids band only if the catalog is held to 6–8 appropriateness**; otherwise **9–11**. Do not list in “5 and under.”
+- The product’s real span does not fit a single Apple Kids band cleanly. The whole catalog in a Kids listing must be appropriate for the band you pick, and Kids browse would present an upper age of 8 or 11.
+- The App Store *age rating* (4+, 9+, 13+) is a separate control from the Kids band. Stories that treat death or war may land at **9+**. That pairing should be checked when CQ9 / Q30 is decided.
 
 Sources: [Apple, App Store categories — Kids](https://developer.apple.com/app-store/categories/); [Apple, Design safe and age-appropriate experiences (Kids category, age bands, parental gates)](https://developer.apple.com/kids/).
 
@@ -161,15 +162,14 @@ Sources: [Common Sense, 2025 Census overview](https://www.commonsensemedia.org/r
 
 ## What this does and does not decide
 
-This note recommends, for PRD Q2:
+This note recommended, for PRD Q2:
 
 - Starting age: **about 7**, with able 6-year-old independent readers welcome in Low.
-- Overall range: **6–12**, core **7–11**.
+- Overall reading-ability range: **6–12**, core **7–11**.
 - Tiers: Low 6–8 (typical 7), Medium 8–10, Advanced 10–12, as ability bands, not locks.
-- Kids Category: never “5 and under”; choose **6–8** or **9–11** once sensitive-content policy (CQ9) is settled.
 - Keep the current type sizes and words-per-page targets.
 
-It does not set prices, change the no-read-aloud rule, or close Q2 on its own.
+**Q2 is now decided (13 Nov 2026, 8:46 PM ET).** Those tier bands stand. The app is marketed more widely as **ages 6 to 14 and up**, is **not** listed in the Kids Category, and still follows the kid-safety rules. The exact App Store age rating (4+ or 9+) stays open under Q30 / CQ9. This note does not set prices or change the no-read-aloud rule.
 
 ### Source list (all used above)
 

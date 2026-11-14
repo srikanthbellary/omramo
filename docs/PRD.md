@@ -2,7 +2,7 @@
 
 **Status:** v2 design approved and locked by Srikanth, 13 Nov 2026. This document supersedes `docs/PRODUCT.md` (the Telugu-first v1 lock, kept for history).
 **Companions:** `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/CONTENT_PLAN.md` (launch story catalog and landmarks).
-**Decisions, 13 Nov 2026 evening:** Q1 resolved — universal app (iPhone, Duo, iPad). No accounts or sign-in; purchases use the Apple ID via StoreKit 2. The app follows App Store Kids Category guidelines 1.3 and 5.1.4. See §8, §11 A1 and §12 Q1.
+**Decisions, 13 Nov 2026 evening:** Q1 resolved — universal app (iPhone, Duo, iPad). No accounts or sign-in; purchases use the Apple ID via StoreKit 2. **Q2 resolved later the same evening (8:46 PM ET):** the app is not listed in the App Store Kids Category. It uses a normal App Store age rating and is marketed as ages 6 to 14 and up. Child-safety rules from Review Guidelines 1.3 and 5.1.4 are still followed (no ads, no third-party analytics or tracking, parental gate, privacy manifest, no accounts). See §8, §11 A1 and §12 Q1–Q2.
 **Sources:** business case v5 (13 Nov 2026), the 16-point discussion brief, the locked designs-v2 (12 screens in `docs/design/`), the expert assessment of 13 Nov 2026, and `stories/SOURCES.md`.
 
 Conventions used in all four documents:
@@ -25,7 +25,7 @@ Omramo's answer is a **magical book that the child reads**. Illustration and tap
 
 | | Who | What they want |
 |---|---|---|
-| **Reader** | A child anywhere in the world who can already read English, roughly early to middle grades. Exact ages per tier: TBD — open question (Q2). | Stories worth reading, pictures, things to tap, a shelf that fills up. |
+| **Reader** | A child anywhere in the world who can already read English, **ages 6 to 14 and up**. Tiers are ability bands, not locks: Low 6–8, Medium 8–10, Advanced 10–12+ (a 13- or 14-year-old still building reading skills should not feel this is a little-kid app). Decided (Q2). | Stories worth reading, pictures, things to tap, a shelf that fills up. |
 | **Buyer** | The parent (teachers and schools later, not in this scope). | Screen time that is real reading; proof of it in pages read, not minutes; no ads, no tracking. |
 | **Device** | A **universal** iOS app: ordinary iPhone (single-pane), Apple's foldable iPhone Duo (two panes either side of a hinge, plus the folded outer screen), and iPad (two-pane spread on the larger canvas, including Split View and Stage Manager size classes). | — |
 
@@ -228,7 +228,7 @@ These need either a design pass or Srikanth's agreement that engineering derives
 
 ## 8. Monetisation shape
 
-- **Decided:** one auto-renewing **family subscription** through StoreKit 2, unlocking the whole library across all tiers. Identity for the purchase is the **Apple ID only** — there is no Omramo account, no sign-in screen and no server. Family Sharing is on. Restore Purchases is required and sits behind the grown-up gate with the paywall. Free: browse every cover, read the first two pages of any story. No ads. Purchases, external links and settings that leave the child experience sit behind the grown-up gate, per App Store Review Guidelines 1.3 (Kids Category) and 5.1.4 (Kids).
+- **Decided:** one auto-renewing **family subscription** through StoreKit 2, unlocking the whole library across all tiers. Identity for the purchase is the **Apple ID only** — there is no Omramo account, no sign-in screen and no server. Family Sharing is on. Restore Purchases is required and sits behind the grown-up gate with the paywall. Free: browse every cover, read the first two pages of any story. No ads. Purchases, external links and settings that leave the child experience sit behind the grown-up gate, following the child-safety rules in App Store Review Guidelines 1.3 and 5.1.4 (no ads, no third-party analytics, parental gate, privacy manifest). The app is **not** listed in the Kids Category (Q2).
 - **Price:** TBD — open question (Q7). The app never hardcodes a price; it shows the localized price StoreKit returns. The design shows "TBD".
 - **Plan structure:** TBD — open question (Q7): one plan or monthly + yearly; free trial or not. The locked screen shows a single plan card.
 - **Publishing cadence** that justifies a subscription ("new stories added"): TBD — open question (Q8).
@@ -261,7 +261,7 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 | **Rights outside the US.** US public-domain status is recorded for all three texts; outside the US only Ozaki (d. 1932) is confirmed. | A global launch of the exact texts is not cleared. | Per-story `source` and `rights` record; Q5. |
 | **Tier calibration.** The three prototype texts do not rise in length with tier; the Medium story is 384 words, so a two-page sample is a large share of it. | Tiers may not mean what parents expect; sample gives away too much of short stories. | Sample length is a per-story field; Q3 and Q6. |
 | **"Pages read" can be inflated by flipping.** | Parents lose trust in the one metric shown. | Honest wording in the parent view; fast-flip share measured in tests; a minimum-dwell rule is an open question (Q14). |
-| **Kids Category and children's privacy (COPPA, GDPR-K).** | Rejection or legal exposure. | Collect nothing, no third-party SDKs, gate before purchase and links; legal review is an owner action. |
+| **Children's privacy (COPPA, GDPR-K) and App Review.** | Rejection or legal exposure. | Stay out of the Kids Category, but still collect nothing, use no third-party SDKs, and gate purchases and links; legal review is an owner action. The exact age rating (4+ or 9+) waits on Q30. |
 | **Small Duo install base; the child is not the device owner.** | Habit cannot form on a borrowed phone. | Single-pane mode works on any iPhone if Srikanth chooses to ship there (Q1). |
 | **No Swift toolchain on the development box.** | M1 code is checked by reading, not compiling. | Pure-Swift core with tests that run the moment a Mac is available; `docs/BUILD.md`; small, conventional code. |
 | **Thin catalog behind a subscription.** | "Ongoing value" is weak with three books. | Q8. |
@@ -301,7 +301,7 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 
 **Audience and tiers**
 
-- **Q2. Ages.** What age range does each tier target, and which Kids Category age band (5 and under, 6–8, 9–11) does the app sit in? Or does it stay out of the Kids Category?
+- **Q2. Ages. DECIDED 13 Nov 2026, 8:46 PM ET.** Stay out of the App Store Kids Category (Apple only offers 5 and under, 6–8, or 9–11, and any of those would cap the listing at 11 and make the app look like a little-kid product to older struggling readers). Use a normal App Store age rating; market the app as **ages 6 to 14 and up** in the store description, screenshots and on omramo.com. Keep all kid-safety rules anyway: no ads, no third-party analytics or tracking, a parental gate before purchases and external links, a privacy manifest, and no accounts. Reading tiers (from `docs/research/AGE_RANGE.md`) stand as ability bands: Low 6–8, Medium 8–10, Advanced 10–12+. Advanced typography and art should look grown-up enough that a 13- or 14-year-old is not babied. **Still open, under Q30:** the exact age rating (4+ or 9+), which depends on sensitive content in Advanced.
 - **Q3. Tier names and calibration.** The locked design prints "Low" on child-facing screens; the assessment advises a neutral name. Keep Low / Medium / Advanced? Is a written tier specification (word counts, sentence length) wanted before more stories are written?
 
 **Content**
@@ -316,7 +316,7 @@ The app sends no analytics (see `docs/ARCHITECTURE.md` §10). These are measured
 - **Q27. Education surfacing.** Approve, reject or redesign: a reflection question on the story-finished moment, "Talk about it" in the parent view, landmark pins on the story map, a "Wonders you have seen" row (feature C11).
 - **Q28. Landmark scope.** Is 37 the right launch set? Keep or drop the loose links (Sydney Opera House, Statue of Liberty, Golden Gate Bridge, Christ the Redeemer)? Confirm at most two per story and that some stories have none.
 - **Q29. Landmark image rights.** Legal review before art is commissioned: Eiffel Tower night lighting, Sydney Opera House, Burj Khalifa, Christ the Redeemer, Tokyo Skytree, recent buildings, and the differing national rules on depicting buildings.
-- **Q30. Sensitive content.** Confirm handling per tier of gods in ancient and living religions, religious buildings (shown as architecture), slavery, war, death, abandonment and hunting in the proposed stories; tied to the ages in Q2.
+- **Q30. Sensitive content.** Confirm handling per tier of gods in ancient and living religions, religious buildings (shown as architecture), slavery, war, death, abandonment and hunting in the proposed stories; tied to the ages in Q2 (decided: Low 6–8, Medium 8–10, Advanced 10–12+, marketed 6 to 14 and up). This also decides the exact App Store age rating (**4+** or **9+**).
 - **Q31. Launch size and order.** Must the whole 10 × 3 catalog ship on day one, or may it launch in waves? (Sharpens Q8.)
 - **Q18. Page breaks.** May engineering paginate the three prototype texts (about 55 / 90 / 190 words a page), or will an editor supply the page breaks, tap words and card texts? M1 needs this for the Low story only.
 

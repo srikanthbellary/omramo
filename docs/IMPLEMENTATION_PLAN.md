@@ -257,7 +257,7 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 ### Scope
 - Content status review: `review` and `culturalReview` fields; cultural and rights sign-off status per story and per landmark from C1 (owner decision whether a private pilot may use `pending` content; a public release may not).
 - Optional test-build event log for the pilot metrics, if PRD Q12/Q14 ask for it.
-- Hand-off document: how to archive, what to enter in App Store Connect, the expected privacy-label answers, the Kids Category age band chosen, known issues.
+- Hand-off document: how to archive, what to enter in App Store Connect, the expected privacy-label answers, that the app is not in the Kids Category (Q2), the App Store age rating chosen (4+ or 9+, Q30), known issues.
 
 ### Acceptance criteria
 | # | Criterion |
@@ -266,7 +266,7 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 | 8.2 | The hand-off document exists and lists every owner action |
 | 8.3 | No release-blocking open question remains unanswered (list in §"Blocking questions" below) |
 
-**Future owner actions (not performed by this plan):** Apple developer organisation enrolment, signing and provisioning, App Store Connect app record, TestFlight upload and tester invitations, age rating and Kids Category selection, privacy label, App Review submission, legal review, publishing `omramo.com/privacy` and `/terms`.
+**Future owner actions (not performed by this plan):** Apple developer organisation enrolment, signing and provisioning, App Store Connect app record, TestFlight upload and tester invitations, age rating selection (not Kids Category; Q2 decided; exact 4+ or 9+ waits on Q30), privacy label, App Review submission, legal review, publishing `omramo.com/privacy` and `/terms`.
 
 ---
 
@@ -348,7 +348,7 @@ A parallel workstream run by people (writers, an editor, illustrators, community
 | M3 | Q21 (gap G4) | Bottom card when folded |
 | M4 | Q9 (gate mechanic), Q10 (streak), Q14 (page counting), Q11 (profiles) | Three digits as words; streak as designed; every forward turn counts; one child |
 | M5 | Q6 (sample), Q7 (plans, identifiers, price), Q20 (bundle id) | Two-page sample; one placeholder product; `com.omramo.app` |
-| M6 | Q2 (age band), Q15 (font), motion approval | Unset age band; Inter for system rows; proposed motion |
+| M6 | Q30 (exact age rating 4+ or 9+), Q15 (font), motion approval | Age rating unset pending Q30; Inter for system rows; proposed motion |
 | M7 | Q4 (Duo SDK and device) | Cannot proceed (Q1 is decided: universal) |
 | Mi | none blocking; visual sign-off of i.5 | Proceed with the pane resolver and list deviations |
 | M8 | Q5 (review and rights), Q12 (testing), Q20 (legal, account) | Cannot proceed to a pilot |

@@ -44,7 +44,7 @@ Dependency direction is one way: `Omramo` (app) → `OmramoCore`. The core never
 
 Rules that keep the build reproducible:
 
-- No third-party Swift packages. Nothing to resolve, nothing to audit for the Kids Category.
+- No third-party Swift packages. Nothing to resolve, nothing to audit for children's privacy and App Review.
 - Bundle identifier, display name and version live in `Configuration/*.xcconfig`. Signing team is in an untracked `Configuration/Signing.local.xcconfig` (never committed).
 - `docs/BUILD.md` (an M1 deliverable) gives the exact commands: install XcodeGen, generate, run tests, run the app, run in simulated-Duo mode.
 - Record the XcodeGen version used in `docs/BUILD.md`.
@@ -597,15 +597,15 @@ EntitlementGate / SampleGate (pure, core)    every screen asks these; none decid
 
 - Whether Family Sharing can be switched off again after being enabled for a product, and family-group limits.
 - Current App Review expectations for the wording beside the Subscribe button (the designed terms paragraph is a sensible default).
-- Whether any Kids Category rule constrains free trials or introductory offers.
+- Whether any child-safety or App Review rule constrains free trials or introductory offers (the app is not in the Kids Category, but the same 1.3 / 5.1.4 practices are kept).
 - Final product identifiers, plan structure, trial (PRD Q7); the bundle identifier (PRD Q20).
 - If a server is ever needed (cross-platform access, school licences), App Store Server Notifications is the route. Not in scope.
 
-## 10. Privacy, COPPA and App Store Kids Category
+## 10. Privacy, COPPA and child-safety (not listed in the Kids Category)
 
 ### 10.1 Position
 
-**Collect nothing.** No account, no sign-in, no child profile data leaving the device, no analytics, no advertising, no third-party SDK, no network calls by app code at all in the MVP. The only network activity is the operating system's own StoreKit traffic and, behind the grown-up gate, opening the legal pages. This is the required position for an App Store **Kids Category** app under Review Guidelines **1.3** (Kids Category) and **5.1.4** (Kids): no third-party analytics or ads; a parental gate before purchases, external links and settings; a privacy manifest; and no behavioural advertising or cross-app tracking.
+**Collect nothing.** No account, no sign-in, no child profile data leaving the device, no analytics, no advertising, no third-party SDK, no network calls by app code at all in the MVP. The only network activity is the operating system's own StoreKit traffic and, behind the grown-up gate, opening the legal pages. The app is **not** listed in the App Store Kids Category (PRD Q2, decided 13 Nov 2026). The same child-safety practices from Review Guidelines **1.3** and **5.1.4** are still followed: no third-party analytics or ads; a parental gate before purchases, external links and settings; a privacy manifest; and no behavioural advertising or cross-app tracking.
 
 ### 10.2 Constraints and how the build meets them
 
@@ -613,12 +613,12 @@ The rule statements in the left column are taken from the 13 Nov assessment, whi
 
 | Constraint | Implementation |
 |---|---|
-| Kids Category: no links out, purchasing opportunities or other distractions unless behind a parental gate | One `GrownUpGate` component in front of: the Grown-ups tab, the subscription screen, Restore, Manage Subscription, Privacy, Terms, and any `openURL`. A single `ExternalLink.open(_:)` helper is the only code allowed to open URLs and always goes through the gate. A unit/UI test fails if a purchase call is reachable without a passed gate |
+| Child-safety (guidelines 1.3 and 5.1.4): no links out, purchasing opportunities or other distractions unless behind a parental gate | One `GrownUpGate` component in front of: the Grown-ups tab, the subscription screen, Restore, Manage Subscription, Privacy, Terms, and any `openURL`. A single `ExternalLink.open(_:)` helper is the only code allowed to open URLs and always goes through the gate. A unit/UI test fails if a purchase call is reachable without a passed gate |
 | The child is never shown a price or a buy button | End-of-sample card says only "Ask a grown-up to unlock" |
 | No third-party analytics or advertising | Zero dependencies. A check in `docs/BUILD.md`'s release checklist: `project.yml` and `Package.swift` list no remote packages |
 | Do not transmit personal or device information to third parties | No network code. No identifiers generated. No `IDFA`, no `identifierForVendor` use |
 | A parental gate is not parental consent | Because nothing is collected, verifiable parental consent should not arise. **This is a design position, not legal clearance** — a children's-privacy review is an owner action (PRD Q20) |
-| Age band must be chosen (5 and under / 6–8 / 9–11) | Open question (PRD Q2) |
+| Not listed in the Kids Category; marketed as ages 6 to 14 and up | Decided (PRD Q2). Exact App Store age rating (4+ or 9+) remains open under Q30 |
 | COPPA (US), GDPR-K (EU), UK children's code | Collect-nothing is the right default for all three; legal review before a global launch is an owner action |
 | No notifications aimed at the child | No notification permission is requested in the MVP |
 | Gate must be an adult-level task | `GateChallenge`: random digits shown as words, typed on a keypad (design concept; PRD Q9). New digits on each presentation and after each wrong answer |
@@ -785,7 +785,7 @@ Inspected read-only with `git ls-tree` / `git show` on `origin/cursor/omramo-ios
 | `facingPages` (page n left, n + 1 right) | In v2 one page is the whole spread: text plus a continuous scene |
 | `PaneArrangement` from size class only | v2 needs pane rectangles and the hinge rectangle (scene under the hinge, card on the facing pane), a folded mode with its own composition, and a simulated Duo |
 | `BookSpine`, `BookshelfBackground`, paper/ink `OmramoPalette`, system fonts with Telugu fallbacks, procedural `PlaceholderArt` | The locked design forbids paper, spine and serif; it has its own palette, three bundled OFL fonts and real scene art |
-| "Hard paywall" shown directly after the sample | Kids Category: the child sees "Ask a grown-up"; price and purchase sit behind a grown-up gate |
+| "Hard paywall" shown directly after the sample | Child-safety rules (even though the app is not in the Kids Category): the child sees "Ask a grown-up"; price and purchase sit behind a grown-up gate |
 | Subscription named "All Access" with `com.omramo.allaccess.*` | The design names it "Omramo Family"; identifiers are open (PRD Q7) |
 | Progress in `UserDefaults` keyed by book | Adds a reading log, seen targets and an entitlement cache; moved to small files |
 | Catalog → sample screen → reader as separate routes | One reader with a per-spread gate; the sample is just the first spreads of the same reader |
@@ -815,7 +815,7 @@ Inspected read-only with `git ls-tree` / `git show` on `origin/cursor/omramo-ios
 4. **`TextRenderer` capability** — to be proven at first compile; decides §8.2 plan versus fallback.
 5. **Product identifiers, plans, trial, price** (PRD Q7); **entitlement cache grace period** (§9.2).
 6. **Bundle identifier and Apple developer team** (PRD Q20).
-7. **Kids Category age band** (PRD Q2) and legal review.
+7. **Exact App Store age rating** (4+ or 9+) remains open under PRD Q30; the listing decision is closed (not in the Kids Category, Q2). Legal review remains an owner action.
 8. **App-size budget and image quality settings** — needs real art.
 9. **Pack hosting** for the later download stage (§11).
 10. **Test-build event log** for pilot metrics: wanted or not (PRD Q12, Q14).

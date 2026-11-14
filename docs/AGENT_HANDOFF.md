@@ -1,11 +1,11 @@
 # Omramo — agent handoff
 
-Last updated: 13 Nov 2026 (America/New_York). Read this first, then `docs/PRD.md`.
+Last updated: 13 Nov 2026, 8:46 PM ET (America/New_York). Read this first, then `docs/PRD.md`.
 This file is the durable memory for any agent (human or AI) picking up Omramo. It contains no secrets; credentials live outside the repo.
 
 ## 1. What Omramo is
 
-A **global English, illustration-driven, game-like story reader for children who can already read**. Stories come in three tiers (Low / Medium / Advanced), with tap-to-see visuals, character cards, a parent view, a sample + paywall and a family subscription. It is a **native Swift (SwiftUI) app for the two-pane iPhone Duo**, with a folded single-screen mode and a normal-iPhone/simulator fallback.
+A **global English, illustration-driven, game-like story reader for children who can already read**, marketed as **ages 6 to 14 and up**. Stories come in three tiers (Low / Medium / Advanced; ability bands 6–8, 8–10, 10–12+), with tap-to-see visuals, character cards, a parent view, a sample + paywall and a family subscription. It is a **native Swift (SwiftUI) universal app** for iPhone, the two-pane iPhone Duo and iPad, with a folded single-screen mode. It is **not** listed in the App Store Kids Category, but keeps the same kid-safety rules.
 
 Owner: Srikanth Bellary (GitHub `srikanthbellary`), Sunrise Gen AI LLC.
 
@@ -61,7 +61,7 @@ v1 used cream paper, a serif and a book spine. v2 ("the page is a place") remove
 | Path | What |
 |---|---|
 | `docs/PRD.md` | Product requirements; §12 consolidated open questions (Q1–Q31) |
-| `docs/ARCHITECTURE.md` | SwiftUI architecture, Duo pane/hinge abstraction, content schema, Landmark catalog, StoreKit 2, privacy/COPPA/Kids, offline, accessibility |
+| `docs/ARCHITECTURE.md` | SwiftUI architecture, Duo pane/hinge abstraction, content schema, Landmark catalog, StoreKit 2, privacy/COPPA/child-safety, offline, accessibility |
 | `docs/DESIGN.md` | Locked v2 design system and screen-by-screen spec |
 | `docs/IMPLEMENTATION_PLAN.md` | Milestones M1–M8 + content milestone C1 with acceptance criteria |
 | `docs/CONTENT_PLAN.md` | 32-story launch catalog (10 regions × 3 tiers), education pillars, 37 landmarks, story→landmark map, cultural-review list |
@@ -77,7 +77,8 @@ Srikanth: "go with whatever the best approach is for this kind of app. Follow be
 
 1. **Universal app (PRD Q1 decided).** iPhone (single-pane), Duo (two-pane), iPad (two-pane spread on the larger canvas, including Split View and Stage Manager, via the same `PaneLayout` resolver). `TARGETED_DEVICE_FAMILY = 1,2`. Full iPad layout polish is **milestone Mi** (acceptance criteria in `docs/IMPLEMENTATION_PLAN.md`); do not treat a first iPad simulator launch as that milestone.
 2. **No accounts or sign-in.** Purchases go through the **Apple ID** with a StoreKit 2 family subscription, Family Sharing on, and Restore Purchases. No Omramo account, no sign-in screen, no server. Reading progress stays on the device.
-3. **Kids Category.** Follow App Store Review Guidelines **1.3** and **5.1.4**: no third-party analytics or ads, a parental gate before purchases, external links and settings, and a privacy manifest.
+3. **Child-safety rules, without the Kids Category listing.** Follow App Store Review Guidelines **1.3** and **5.1.4** anyway: no third-party analytics or ads, a parental gate before purchases, external links and settings, and a privacy manifest. No accounts.
+4. **Ages (PRD Q2 decided, 13 Nov 2026, 8:46 PM ET).** Do **not** list Omramo in the App Store Kids Category. Use a normal App Store age rating and market it as **ages 6 to 14 and up**, so a 13- or 14-year-old still building reading skills does not see it as a little-kid app. Tiers from `docs/research/AGE_RANGE.md` stand (Low 6–8, Medium 8–10, Advanced 10–12+). Advanced should look grown-up enough not to feel babyish. The exact rating (4+ or 9+) stays open under Q30.
 
 ## 7. Build setup
 
@@ -92,7 +93,7 @@ Srikanth: "go with whatever the best approach is for this kind of app. Follow be
 
 See `docs/IMPLEMENTATION_PLAN.md`. Immediate next steps after the first green Mac build:
 1. Visual check of Library and Low-tier Reading against `docs/design/` (including `TextRenderer`, item 1.17 / BUILD §7.9). List every gap versus Apple Design Award / locked v2 quality.
-2. Srikanth still needs to answer remaining blocking questions (PRD §12; especially Q4 Duo SDK, Q7 pricing/plans, Q18 page breaks, Q22 retellings, Q23–Q24 rights and cultural reviewers). Q1 is decided.
+2. Srikanth still needs to answer remaining blocking questions (PRD §12; especially Q4 Duo SDK, Q7 pricing/plans, Q18 page breaks, Q22 retellings, Q23–Q24 rights and cultural reviewers, Q30 sensitive content / exact age rating). Q1 and Q2 are decided.
 3. M2 complete reader, M3 tap-to-see + character cards, Mi iPad layout (parallel after M2), …; content milestone C1 in parallel.
 
 ## 9. Status log
@@ -106,4 +107,8 @@ See `docs/IMPLEMENTATION_PLAN.md`. Immediate next steps after the first green Ma
 
 ### 13 Nov 2026 — first Mac Studio compile and product decisions
 - First `xcodebuild` of M1 on the Mac Studio (Xcode 26.6, iPhone 17 Pro Max / iOS 26.5). Package tests: 116 passed. The first failing command-line build was an arch mismatch (app x86_64 vs `OmramoCore` arm64), not a missing package reference; fixed in `project.yml` / `Base.xcconfig`. Debug argument `-OmramoOpenStory` added so the reader can be opened from `simctl`.
-- **Q1 decided (universal app).** **No accounts / no sign-in; Apple ID + StoreKit 2 for purchases.** **Kids Category guidelines 1.3 and 5.1.4** adopted. Recorded in `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/IMPLEMENTATION_PLAN.md` (new milestone Mi) and here.
+- **Q1 decided (universal app).** **No accounts / no sign-in; Apple ID + StoreKit 2 for purchases.** Child-safety guidelines 1.3 and 5.1.4 adopted (at that time framed as Kids Category). Recorded in `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/IMPLEMENTATION_PLAN.md` (new milestone Mi) and here.
+
+### 13 Nov 2026, 8:46 PM ET — Q2 ages and store listing
+- Srikanth: list as 6–12 and suggest younger and older can also read, including 13/14 who are still building reading skills, otherwise they will think it is a younger-kids app and not open it. Chose: skip the Kids Category, use a normal age rating, market as ages 6 to 14 and up, keep the kid-safety rules.
+- **Q2 decided.** Not in the Kids Category. Marketed as ages 6 to 14 and up. Tiers stand (Low 6–8, Medium 8–10, Advanced 10–12+). Advanced must not feel babyish to a 13–14-year-old. Exact App Store age rating (4+ or 9+) remains open under Q30. Recorded in `docs/PRD.md`, `docs/ARCHITECTURE.md`, `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md`, `docs/CONTENT_PLAN.md`, `docs/research/AGE_RANGE.md` and here.
