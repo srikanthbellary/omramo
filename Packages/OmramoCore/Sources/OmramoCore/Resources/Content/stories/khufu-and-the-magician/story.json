@@ -1,0 +1,1277 @@
+{
+  "schemaVersion": 1,
+  "id": "khufu-and-the-magician",
+  "contentVersion": 1,
+  "title": "King Khufu and the Magician",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "egyptian",
+    "culture": "Ancient Egyptian tale",
+    "place": "Memphis and Giza, Egypt",
+    "label": "Ancient Egypt",
+    "pin": {
+      "lat": 29.9,
+      "lon": 31.2
+    },
+    "pinColor": "#F0A81C"
+  },
+  "setting": {
+    "period": "Ancient Egypt in the age of the pyramid builders, about 4,500 years ago",
+    "latestYear": -2500
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Egyptian tale (the Westcar Papyrus)",
+    "sources": [
+      {
+        "author": "W. M. Flinders Petrie",
+        "title": "Egyptian Tales, Translated from the Papyri, First Series",
+        "year": 1895,
+        "gutenbergId": 7386,
+        "url": "https://www.gutenberg.org/ebooks/7386",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of an ancient Egyptian tale from the Westcar Papyrus, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Egyptologist (accuracy read)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Egypt is a desert country with one great river, the Nile. People lived along its banks and travelled on it by boat: under sail with the north wind going upstream, by oar and current coming back.",
+      "factCards": [
+        "nile",
+        "river-boat",
+        "pyramid-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "King Khufu built the Great Pyramid at Giza as his tomb, about 4,500 years ago. Kings were told stories at court, and scribes wrote such stories on rolls of papyrus; this tale comes from one. Far away and much later the Maya also built pyramids, with no link to Egypt.",
+      "factCards": [
+        "papyrus-roll",
+        "pyramid-moment",
+        "chichen-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "The king has the power to order anything, and the old magician tells him no twice: once to protect a prisoner, once to keep what is not his to give. The king could punish him and chooses to listen. Power and right are two different things.",
+      "reflectionQuestion": "Dedi said no to the most powerful man in Egypt. Why do you think the king laughed instead of growing angry?"
+    }
+  },
+  "moral": "Being powerful does not make a thing right, and a wise king listens.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#33210F",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A tiny white-haired old man with a staff stands before a king on a chair, with a cross-looking goose on the floor between them.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "khufu",
+      "name": "King Khufu",
+      "color": "#8A4A00",
+      "face": {
+        "file": "art/face-khufu.png",
+        "alt": "King Khufu.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE9B8",
+      "card": {
+        "label": "Character · the king of Egypt",
+        "title": "King Khufu",
+        "traits": [
+          {
+            "text": "Builds a pyramid",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Loves a good tale",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Used to hearing yes",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He rules all Egypt, and nobody tells him no. He is waiting for his great tomb to be finished, and he is not good at waiting.",
+        "portrait": {
+          "file": "art/char-khufu.card.heic",
+          "alt": "King Khufu on his chair in a white kilt and a broad bead collar, leaning forward with his chin on his fist.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#F6DFA6",
+          "#E3B765",
+          "#B9822F"
+        ]
+      }
+    },
+    {
+      "id": "dedi",
+      "name": "Dedi",
+      "color": "#0B6B4A",
+      "face": {
+        "file": "art/face-dedi.png",
+        "alt": "Dedi the magician.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D9F5E4",
+      "card": {
+        "label": "Character · a very old magician",
+        "title": "Dedi",
+        "traits": [
+          {
+            "text": "110 years old",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Reads papyrus rolls",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Can say no",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "He is tiny, cheerful and always hungry, and he never travels without his books. He speaks softly, even to a king, and he means what he says.",
+        "portrait": {
+          "file": "art/char-dedi.card.heic",
+          "alt": "Dedi, a tiny smiling old man with short white hair, in a plain white kilt, leaning on a tall staff.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#CFEBDD",
+          "#8CC9B4",
+          "#4A9A8A"
+        ]
+      }
+    },
+    {
+      "id": "prince",
+      "name": "Hordedef",
+      "color": "#1B4F86",
+      "face": {
+        "file": "art/face-prince.png",
+        "alt": "Prince Hordedef.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#DCE9FA"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "pyramid-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "great-pyramid-giza",
+        "appearance": "natural"
+      },
+      "background": "#5A3A1C"
+    },
+    {
+      "id": "chichen-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "chichen-itza",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Far away across the ocean, and thousands of years later, a different people, the Maya, also built pyramids of stone. The Maya and the Egyptians never met; each had the idea on their own."
+        }
+      },
+      "background": "#1F4A3A"
+    },
+    {
+      "id": "nile",
+      "kind": "place",
+      "title": "The Nile",
+      "line": "A very long river that flows north through the desert of Egypt to the sea.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Almost everyone in ancient Egypt lived beside the Nile, because the land away from it was dry desert. The king’s city of Memphis and the pyramids of Giza both stood near its west bank."
+      },
+      "picture": {
+        "file": "art/see-nile.heic",
+        "alt": "A wide blue-green river with a strip of green fields and palm trees on each bank and pale desert beyond.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4F5C"
+    },
+    {
+      "id": "river-boat",
+      "kind": "object",
+      "title": "River boat",
+      "line": "A long wooden boat with one tall sail and many oars, for travelling on the Nile.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "In Egypt the wind blows mostly from the north, and the Nile flows from the south. So people sailed up the river with the wind, and rowed or drifted back down with the water."
+      },
+      "picture": {
+        "file": "art/see-river-boat.heic",
+        "alt": "A long wooden river boat with upturned ends, one tall sail and a row of oars, on calm water.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3A5C"
+    },
+    {
+      "id": "papyrus-roll",
+      "kind": "object",
+      "title": "Papyrus roll",
+      "line": "A long sheet for writing, made from river reeds and rolled up to keep it safe.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Egyptian scribes wrote on papyrus in black and red ink. This story of Khufu and Dedi comes from one such roll, written about 3,600 years ago and kept today in a museum in Berlin."
+      },
+      "picture": {
+        "file": "art/see-papyrus-roll.heic",
+        "alt": "A half-unrolled papyrus roll with rows of small dark marks, beside a scribe’s wooden palette with black and red ink.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A4A1C"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-court.unfolded.heic",
+          "alt": "The king’s hall of slim painted columns, open on one side to a pale hot sky and the river. On the right King Khufu sits on his chair with his sons standing before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-court.folded.heic",
+          "alt": "King Khufu on his chair between two painted columns, with a prince standing before him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7EDD3",
+          "#EDD9A6",
+          "#C9A566"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "King Khufu",
+              "lead": true,
+              "name": "khufu"
+            },
+            {
+              "t": " was building the biggest tomb in the world.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a stone pyramid on the rock at Giza, and only half done. Day after day the king’s "
+            },
+            {
+              "t": "great tomb",
+              "tap": "pyramid-moment"
+            },
+            {
+              "t": " swallowed stone, and still it wanted more."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The king could only wait, and waiting made him cross. Each afternoon he sat in his cool hall of columns and called for his sons."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Tell me a tale of wonders,”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " he said."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One son told of a magician who folded a lake in half like a blanket. Another told of a wax crocodile that came alive. The king yawned. Those magicians had all died long ago."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-court.unfolded.heic",
+          "alt": "The king’s hall of slim painted columns, open on one side to a pale hot sky and the river. On the right King Khufu sits on his chair with his sons standing before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-court.folded.heic",
+          "alt": "King Khufu on his chair between two painted columns, with a prince standing before him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7EDD3",
+          "#EDD9A6",
+          "#C9A566"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then "
+            },
+            {
+              "t": "Prince Hordedef",
+              "name": "prince"
+            },
+            {
+              "t": " stood up. He was the quiet son, the one who was always reading."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Those are old tales, Father,”",
+              "say": "prince",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Nobody alive saw them happen. I know of a magician who is living today.”",
+              "say": "prince"
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The king stopped yawning."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“His name is ",
+              "say": "prince",
+              "chip": true
+            },
+            {
+              "t": "Dedi",
+              "say": "prince",
+              "name": "dedi"
+            },
+            {
+              "t": ", and he is a hundred and ten years old. Every day he eats five hundred loaves and drinks a hundred jugs of beer. A lion follows him about like a dog, and nobody needs to hold its lead. People say that if a head is cut off, he can put it back.”",
+              "say": "prince"
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Five hundred loaves?”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " said the king."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-court.unfolded.heic",
+          "alt": "The king’s hall of slim painted columns, open on one side to a pale hot sky and the river. On the right King Khufu sits on his chair with his sons standing before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-court.folded.heic",
+          "alt": "King Khufu on his chair between two painted columns, with a prince standing before him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7EDD3",
+          "#EDD9A6",
+          "#C9A566"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There is one thing more,”",
+              "say": "prince",
+              "chip": true
+            },
+            {
+              "t": " said the prince. "
+            },
+            {
+              "t": "“Dedi knows about the secret rooms of Thoth.”",
+              "say": "prince"
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now the king sat up straight. The Egyptians said that Thoth was the god of wisdom and of writing, and that his temple held secret rooms no one could find. Khufu had hunted for their plan for years. He wanted rooms just like them inside his own tomb."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Go yourself, my son,”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " said the king. "
+            },
+            {
+              "t": "“Take my best boat up the ",
+              "say": "khufu"
+            },
+            {
+              "t": "Nile",
+              "say": "khufu",
+              "tap": "nile"
+            },
+            {
+              "t": " and bring this Dedi to me.”",
+              "say": "khufu"
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Before the sun went down, the sailors were loading the boats."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "A long river boat with a tall sail and rowers on the pale blue-green Nile under a wide pale sky. On the right bank, among palms and mud-brick houses, a tiny old man lies on a couch at his door.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Old Dedi on a couch of palm sticks at his door, with the prince’s boat on the river behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E2F0EC",
+          "#F6E8BC",
+          "#6FA79B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The prince’s "
+            },
+            {
+              "t": "river boat",
+              "tap": "river-boat"
+            },
+            {
+              "t": " went south with the wind in its big square sail. Mud-brick villages and palm trees slid by."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He found "
+            },
+            {
+              "t": "Dedi",
+              "name": "dedi"
+            },
+            {
+              "t": " at his door, lying in the shade on a bed of palm ribs, while two servants rubbed the aches out of his head and his feet."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The prince bowed low. "
+            },
+            {
+              "t": "“May your old age be long and free of aches. My father the king invites you to his table.”",
+              "say": "prince",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Welcome, king’s son,”",
+              "say": "dedi",
+              "chip": true
+            },
+            {
+              "t": " said Dedi, holding out his hands to be pulled up. "
+            },
+            {
+              "t": "“I will come. But my books come too.”",
+              "say": "dedi"
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So Dedi sailed in the prince’s boat, and his books sailed behind."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-court.unfolded.heic",
+          "alt": "The king’s hall of slim painted columns, open on one side to a pale hot sky and the river. On the right King Khufu sits on his chair with his sons standing before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-court.folded.heic",
+          "alt": "King Khufu on his chair between two painted columns, with a prince standing before him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F7EDD3",
+          "#EDD9A6",
+          "#C9A566"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Dedi walked into the hall of columns leaning on his staff.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He was as small as a boy and as wrinkled as a dried fig. Behind him came two servants with a chest of "
+            },
+            {
+              "t": "papyrus rolls",
+              "tap": "papyrus-roll"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“So you are Dedi. Why have you never come to my court?”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " asked "
+            },
+            {
+              "t": "King Khufu",
+              "name": "khufu"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Nobody ever sent for me, my lord,”",
+              "say": "dedi",
+              "chip": true
+            },
+            {
+              "t": " said Dedi. "
+            },
+            {
+              "t": "“Today somebody did, and here I am.”",
+              "say": "dedi"
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The king leaned forward. "
+            },
+            {
+              "t": "“Is it true that you can put back a head that has been cut off?”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " "
+            },
+            {
+              "t": "“I know how it is done, my lord,”",
+              "say": "dedi",
+              "chip": true
+            },
+            {
+              "t": " said Dedi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-magic.unfolded.heic",
+          "alt": "The king’s hall seen from another side, with pale sunlit wall and floor on the left. On the right small white-haired Dedi lifts his staff over a cross-looking goose while King Khufu leans forward, astonished.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-magic.folded.heic",
+          "alt": "Dedi with his staff raised and a cackling goose at his feet, with the astonished king behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F9F0DA",
+          "#F0DBA4",
+          "#BC8E52"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then we shall see it,”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " said the king. He clapped his hands. "
+            },
+            {
+              "t": "“Fetch a prisoner from the prison.”",
+              "say": "khufu"
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The guards turned to go. Nobody ever said no to Khufu."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Not a person, my lord king,”",
+              "say": "dedi",
+              "chip": true
+            },
+            {
+              "t": " said Dedi quietly. "
+            },
+            {
+              "t": "“A herdsman would not do that to his oxen. It is not right.”",
+              "say": "dedi"
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The fan-bearers forgot to fan. The king could have ordered it with one word. He looked a long time at the small old man, and the small old man looked back."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Bring a goose,”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " said King Khufu."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-magic.unfolded.heic",
+          "alt": "The king’s hall seen from another side, with pale sunlit wall and floor on the left. On the right small white-haired Dedi lifts his staff over a cross-looking goose while King Khufu leans forward, astonished.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-magic.folded.heic",
+          "alt": "Dedi with his staff raised and a cackling goose at his feet, with the astonished king behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F9F0DA",
+          "#F0DBA4",
+          "#BC8E52"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The goose came in under a servant’s arm, hissing at everybody."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was done behind a cloth, quick as a blink. Then the goose’s body lay at the west side of the hall, and its head lay at the east side, looking most offended."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Dedi lifted his staff and spoke words that no one else knew."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The body got up and "
+            },
+            {
+              "t": "waddled",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": ". The head went hop, hop, hop across the floor. They met in the middle, and there stood one whole goose, cackling crossly at the king."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The court gasped, and then it laughed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-magic.unfolded.heic",
+          "alt": "The king’s hall seen from another side, with pale sunlit wall and floor on the left. On the right small white-haired Dedi lifts his staff over a cross-looking goose while King Khufu leans forward, astonished.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-magic.folded.heic",
+          "alt": "Dedi with his staff raised and a cackling goose at his feet, with the astonished king behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F9F0DA",
+          "#F0DBA4",
+          "#BC8E52"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When the hall was quiet again, the king asked what he had wanted to ask all along."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Now, Dedi. The secret rooms of Thoth. How many are there?”",
+              "say": "khufu",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Forgive me, my lord. I do not know the number,”",
+              "say": "dedi",
+              "chip": true
+            },
+            {
+              "t": " said Dedi. "
+            },
+            {
+              "t": "“I only know where the answer is kept. It lies in a chest of flint, in a temple in the City of the Sun.”",
+              "say": "dedi"
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then bring the chest to me.”",
+              "say": "khufu",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Dedi shook his white head. "
+            },
+            {
+              "t": "“It is not mine to bring, my lord. Not even for a king.”",
+              "say": "dedi",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-magic.unfolded.heic",
+          "alt": "The king’s hall seen from another side, with pale sunlit wall and floor on the left. On the right small white-haired Dedi lifts his staff over a cross-looking goose while King Khufu leans forward, astonished.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-magic.folded.heic",
+          "alt": "Dedi with his staff raised and a cackling goose at his feet, with the astonished king behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F9F0DA",
+          "#F0DBA4",
+          "#BC8E52"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Twice in one afternoon the old man had said no."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The princes stared at the floor. The goose, for once, kept quiet. King Khufu frowned until his eyebrows met. Then, slowly, he began to laugh."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I have a hundred men who say yes to everything,”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“I had better keep the one who says no.”",
+              "say": "khufu"
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He gave his orders. Dedi was to live in "
+            },
+            {
+              "t": "Prince Hordedef",
+              "name": "prince"
+            },
+            {
+              "t": "’s house. Every day he was to have an ox, a thousand loaves, a hundred jugs of beer and a hundred bunches of onions."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The onions are a kind thought,”",
+              "say": "dedi",
+              "chip": true
+            },
+            {
+              "t": " said Dedi."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-pyramid.unfolded.heic",
+          "alt": "A pale-gold late afternoon over green fields and a harbour basin. On the right King Khufu and Dedi stand on a terrace, looking at the half-built great pyramid with its long ramp and tiny workers.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-pyramid.folded.heic",
+          "alt": "King Khufu and tiny Dedi side by side on a terrace, seen from behind, with the half-built pyramid beyond them.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEBC4",
+          "#F3D194",
+          "#C89B58"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Late that afternoon the king and the magician stood on the palace terrace."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Beyond the green fields, the half-built "
+            },
+            {
+              "t": "pyramid",
+              "tap": "chichen-moment"
+            },
+            {
+              "t": " caught the last light. Tiny men hauled a stone up its long ramp, singing as they pulled."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Year after year of stone, and still no top,”",
+              "say": "khufu",
+              "chip": true
+            },
+            {
+              "t": " said Khufu. "
+            },
+            {
+              "t": "“Could your words finish it by morning, Dedi?”",
+              "say": "khufu"
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Some things are better made by many hands, my lord,”",
+              "say": "dedi",
+              "chip": true
+            },
+            {
+              "t": " said Dedi. "
+            },
+            {
+              "t": "“Besides, I have a thousand loaves to eat.”",
+              "say": "dedi"
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The king laughed. Down in the courtyard a goose was still complaining to anyone who would listen. And far off, one more stone slid into its place."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

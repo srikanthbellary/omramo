@@ -1,0 +1,509 @@
+{
+  "id": "sadko",
+  "title": "Sadko",
+  "tier": "medium",
+  "region": {
+    "id": "russian",
+    "culture": "Russian bylina (sung story)",
+    "place": "Novgorod, Russia",
+    "label": "Novgorod · Russia",
+    "pin": { "lat": 58.5, "lon": 31.3 },
+    "pinColor": "#E8562A"
+  },
+  "setting": {
+    "period": "Novgorod the Great, about 900 years ago",
+    "latestYear": 1200
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Russian bylina of Novgorod",
+    "sources": [
+      {
+        "author": "Arthur Ransome",
+        "title": "Old Peter's Russian Tales",
+        "year": 1916,
+        "gutenbergId": 16981,
+        "url": "https://www.gutenberg.org/ebooks/16981",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Russian bylina of Novgorod, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Ransome died in 1967 and his wording is protected in life + 70 countries until 2038; our text is retold from the traditional bylina and uses none of his wording (CONTENT_PLAN CQ2). Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Russian reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Novgorod stands on the River Volkhov, just north of Lake Ilmen in north-west Russia. Rivers joined it to the Baltic Sea and to lands far to the south, so boats did the work of roads.",
+      "factCards": ["lake-ilmen", "river-roads", "novgorod-moment", "harbour-moment"]
+    },
+    "culture": {
+      "lesson": "Medieval Novgorod was a city of merchants, and its musicians played the gusli at their feasts. Sadko’s story is a bylina: a story sung from memory for centuries before it was written down.",
+      "factCards": ["gusli", "bylina"]
+    },
+    "moral": {
+      "lesson": "Sadko’s music wins him everything, and he loses it only when he stops playing. He turns down a palace of pearl for a small river at home. The child can weigh what he gave up each time.",
+      "reflectionQuestion": "Sadko broke his own gusli. What did he lose by doing it, and what did he save?"
+    }
+  },
+  "moral": "Your gift is worth more than gold, and no palace is better than home.",
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": { "leading": "dark", "trailing": "dark", "folded": "dark" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "alt": "A young man sits on a white stone at the edge of a dark lake at night, playing a small wing-shaped harp on his knees, while a huge crowned head with a green beard rises from the water."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "sadko",
+      "name": "Sadko",
+      "color": "#FFC978",
+      "chipBackground": "#C8452B",
+      "faceAlt": "Sadko.",
+      "card": {
+        "label": "Character · a musician of Novgorod",
+        "title": "Sadko",
+        "traits": [
+          { "text": "Plays the gusli", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Bold with a wager", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Misses home", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "He starts with nothing but a gusli and ends with thirty ships. It takes a trip to the bottom of the sea to show him which one matters more.",
+        "portraitAlt": "A young man with brown hair cut round, in a belted tunic with an embroidered collar, holding a small wing-shaped gusli against his chest under a night sky.",
+        "background": ["#2F5C8A", "#1E3554", "#0E1B33"]
+      }
+    },
+    {
+      "id": "sea-tsar",
+      "name": "Sea Tsar",
+      "color": "#8FE3C8",
+      "chipBackground": "#1F7A6B",
+      "faceAlt": "The Sea Tsar.",
+      "card": {
+        "label": "Character · ruler under the water",
+        "title": "The Sea Tsar",
+        "traits": [
+          { "text": "Pays his debts", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Loves a dance tune", "fill": "#D9F5E4", "ink": "#0B6B4A" },
+          { "text": "Heavy on his feet", "fill": "#FFE0D6", "ink": "#B33A1C" }
+        ],
+        "body": "A tsar is a king, and this one rules every lake and sea in the old songs of Russia. When he dances on the sea floor, storms blow up above.",
+        "portraitAlt": "A huge, jolly king with a long green beard and a crown of coral and shells, in a robe that ripples like water, in deep green light.",
+        "background": ["#1F7A6B", "#134A4A", "#0A2A33"]
+      }
+    },
+    {
+      "id": "chernava",
+      "name": "Chernava",
+      "color": "#C9D6F2",
+      "chipBackground": "#55668F",
+      "faceAlt": "Chernava."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "novgorod-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "novgorod-kremlin",
+        "appearance": "natural"
+      },
+      "background": "#1E3554"
+    },
+    {
+      "id": "gusli",
+      "kind": "object",
+      "title": "Gusli",
+      "line": "A flat wooden harp that rests on the knees and is played with the fingers.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "People digging in Novgorod have found gusli about 900 years old, kept whole by the wet ground. Musicians in Russia still play the gusli today."
+      },
+      "pictureAlt": "A small wing-shaped wooden gusli with seven strings, lying flat and seen from above.",
+      "background": "#5A3420"
+    },
+    {
+      "id": "lake-ilmen",
+      "kind": "place",
+      "title": "Lake Ilmen",
+      "line": "A wide, shallow lake a short walk south of the city of Novgorod.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Many rivers run into Lake Ilmen, but only one runs out: the Volkhov. It flows north past Novgorod, and its water reaches the Baltic Sea in the end."
+      },
+      "pictureAlt": "A wide, flat lake under a starry sky, with one white stone on the near shore.",
+      "background": "#163B4F"
+    },
+    {
+      "id": "bylina",
+      "kind": "idea",
+      "title": "A sung story",
+      "line": "A bylina is an old Russian story that is sung aloud, not read from a book.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Singers in the north of Russia kept Sadko’s story in their heads for hundreds of years. Nobody wrote the songs down until less than 300 years ago."
+      },
+      "pictureAlt": "An old singer with a white beard sitting on a wooden bench, one hand raised as he sings.",
+      "background": "#4A2A45"
+    },
+    {
+      "id": "river-roads",
+      "kind": "idea",
+      "title": "River roads",
+      "line": "Long ago, traders moved their goods by boat, because rivers were easier than forest tracks.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Novgorod’s merchants sent furs, wax and honey down the rivers and brought back silver, cloth and salt. Where one river ended, they dragged their boats over the land to the next."
+      },
+      "pictureAlt": "A wooden river ship with one square red sail and a carved prow, loaded with barrels and bundles of fur.",
+      "background": "#1F4A4A"
+    },
+    {
+      "id": "harbour-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "christ-the-redeemer",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Sailors everywhere know a harbour by the great thing that stands above it. Far from Sadko’s sea and long after his story, a statue on a mountain came to watch over the harbour of Rio de Janeiro."
+        }
+      },
+      "background": "#134A4A"
+    }
+  ],
+  "scenes": {
+    "scene-novgorod": {
+      "unfoldedAlt": "Novgorod at deep dusk beside the River Volkhov: log houses with steep plank roofs, boats tied at wooden quays, and a white cathedral with helmet-shaped domes behind pale ramparts. On the right, Sadko sits on the bank with his gusli; the left is dark blue sky with the first stars.",
+      "foldedAlt": "Sadko on the river bank at dusk with his gusli on his knees, the white cathedral and lamplit log houses behind him.",
+      "fallbackColors": ["#14233F", "#2B4468", "#6A4A3A"]
+    },
+    "scene-lake": {
+      "unfoldedAlt": "Lake Ilmen at night under many stars, its dark water heaving. On the right, Sadko plays his gusli on a white stone at the water’s edge as the huge Sea Tsar rises, crowned with coral, shell and waterweed; the left is calm night sky.",
+      "foldedAlt": "Sadko on a white stone at night, playing, with the Sea Tsar’s crowned head and green beard rising from the lake beside him.",
+      "fallbackColors": ["#0C1730", "#17365A", "#0F4A4F"]
+    },
+    "scene-ship": {
+      "unfoldedAlt": "A dark sea at night with waves racing past. On the right, Sadko’s red-sailed wooden ships stand dead still with full sails, and an oak plank is lowered from the nearest one; the left is dark sky and a low moon behind thin cloud.",
+      "foldedAlt": "Sadko at the rail of a red-sailed ship at night, his gusli under his arm, looking down at an oak plank on the dark water.",
+      "fallbackColors": ["#0B1428", "#1B2F52", "#12404A"]
+    },
+    "scene-palace": {
+      "unfoldedAlt": "The floor of the sea in deep green-gold light. On the right, a palace of white stone and shell, where the huge Sea Tsar dances while fish and river-maidens circle him and small Sadko plays his gusli; the left is calm dark green water with a few rising bubbles.",
+      "foldedAlt": "The Sea Tsar dancing with his robe swirling in green underwater light, and Sadko small beside him with his gusli.",
+      "fallbackColors": ["#0A2A33", "#12504F", "#2E6B4A"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-novgorod",
+      "part": "part-1",
+      "paras": [
+        "^Long ago, the city of Novgorod stood rich and busy beside a river.",
+        "Boats crowded its wooden quays. Merchants in fur-trimmed coats counted their silver, and above the log roofs rose a <tap:novgorod-moment>white cathedral</tap> with domes like helmets.",
+        "<name:sadko>Sadko</name> counted no silver. He owned one thing in the world, a gusli of maple wood, and he could make its strings laugh or weep.",
+        "So the merchants sent for him whenever they feasted. He played until the candles burned low, and they paid him with his supper.",
+        "It was a thin living, but the music was his own."
+      ]
+    },
+    {
+      "scene": "scene-lake",
+      "part": "part-1",
+      "paras": [
+        "Then came a week when nobody sent for him. Not one door opened. Not one servant came running.",
+        "On the seventh day Sadko walked out of the city to the wide grey lake called Ilmen. He sat on a white stone and laid the <tap:gusli>gusli</tap> across his knees.",
+        "<say:sadko*>“If nobody will listen,”</say> he said, <say:sadko>“I will play for the water.”</say>",
+        "He played from noon until the stars came out. And though no wind blew, the lake began to heave. Waves slapped the stone. Far out, something huge was rising."
+      ]
+    },
+    {
+      "scene": "scene-lake",
+      "part": "part-1",
+      "paras": [
+        "Up through the black water came a crown of shell and coral. Under it came a green beard as wide as a fishing net, streaming like a waterfall.",
+        "It was the <name:sea-tsar>Sea Tsar</name>, king of every water from lake to ocean.",
+        "<say:sea-tsar*>“I held a feast below,”</say> he boomed, <say:sea-tsar>“and your playing was the best of it. I pay my debts, Sadko.”</say>",
+        "<say:sea-tsar*>“Tomorrow, tell the merchants there are fish with golden fins in <tap:lake-ilmen>Lake Ilmen</tap>. They will laugh. Wager with them. Then cast a silk net three times.”</say>",
+        "The crown sank. The lake lay flat as a plate."
+      ]
+    },
+    {
+      "scene": "scene-novgorod",
+      "part": "part-1",
+      "paras": [
+        "The next evening Sadko was sent for at last. He sang the <tap:bylina>old songs of heroes</tap>. Then he laid his hands flat on the strings.",
+        "<say:sadko*>“There are fish with golden fins in Lake Ilmen,”</say> he said.",
+        "The merchants roared with laughter. Sadko set his gusli on the table. <say:sadko*>“I wager this, which is all I have, against six shops full of goods.”</say>",
+        "They rowed out by torchlight. Sadko cast the silk net once, twice, three times. Each time it came up with one fish, and each fish had fins of <pop:1.3>red gold</pop>.",
+        "By morning the musician was a merchant."
+      ]
+    },
+    {
+      "scene": "scene-novgorod",
+      "part": "part-1",
+      "paras": [
+        "Twelve good years went by. Sadko built thirty ships, and every one had a red sail.",
+        "In Novgorod, <tap:river-roads>rivers were the roads</tap>. His ships carried furs, wax and honey down them and out to the open sea. They came home heavy with silver, cloth and salt.",
+        "He wore a coat trimmed with fur now, and he feasted in a hall of his own.",
+        "But the gusli hung on its peg, and dust lay along the strings. Sadko was too busy to play.",
+        "And in twelve years of sailing, he had never once thanked the Sea Tsar."
+      ]
+    },
+    {
+      "scene": "scene-ship",
+      "part": "part-2",
+      "paras": [
+        "^One night, far out at sea, all thirty ships stopped dead.",
+        "The wind was fair. The red sails stood full. Waves raced past on either side, yet the ships sat as if nailed to the water.",
+        "The sailors rolled a barrel of silver over the side. It sank, and nothing changed.",
+        "<say:sadko*>“It is not silver he wants,”</say> said <name:sadko>Sadko</name> quietly. <say:sadko>“It is me.”</say>",
+        "He took down his dusty gusli. The sailors lowered an oak plank, and he stepped onto it. At once the ships leaped forward like horses let go, and the dark sea was empty."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-2",
+      "paras": [
+        "Sadko lay down on the plank, hugged the gusli and fell asleep to the rocking of the waves.",
+        "He woke on the floor of the sea. Green-gold light fell through the water. Before him stood a palace of white stone and shell, and fish swam in and out of its windows like swallows.",
+        "On a throne of coral sat the <name:sea-tsar>Sea Tsar</name>, drumming his fingers.",
+        "<say:sea-tsar*>“Twelve years you have sailed my sea,”</say> he rumbled, <say:sea-tsar>“and paid me nothing. Not a coin. Not a tune. Now <stretch>play!</stretch>”</say>"
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-2",
+      "paras": [
+        "Sadko played. The Sea Tsar hitched up his robe and danced. He stamped and spun, faster and faster, for a day and a night.",
+        "A quiet river-maiden slipped to Sadko’s side. Her name was <name:chernava>Chernava</name>.",
+        "<say:chernava*>“When he dances, the sea above us goes wild,”</say> she whispered. <say:chernava>“Ships are running for the <tap:harbour-moment>harbour</tap>. The fishermen’s wives stand on the shore and count the sails.”</say>",
+        "Sadko looked at his hands. Then he pulled, and every string snapped.",
+        "<say:sadko*>“My gusli is broken, great Tsar,”</say> he said. <say:sadko>“There is no mending it down here.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-2",
+      "paras": [
+        "The Sea Tsar sat down with a bump that shook the palace. He was sorry, but he was not angry.",
+        "<say:sea-tsar*>“Then stay,”</say> he said. <say:sea-tsar>“Choose a bride from my daughters. You shall have a palace of pearl.”</say>",
+        "The river-maidens glided past, bright with gold and sea-pearls. But Sadko had lived in golden rooms, and he had found them cold.",
+        "Last of all came Chernava, in plain grey. A small river near Novgorod had the very same name.",
+        "<say:sadko*>“I choose Chernava,”</say> said Sadko. And he lay down to sleep in the green light."
+      ]
+    },
+    {
+      "scene": "scene-novgorod",
+      "part": "part-2",
+      "paras": [
+        "He woke with his cheek on wet grass. Beside him ran the little Chernava river, and beyond it the domes of Novgorod showed pale under the last stars of the night.",
+        "Round the bend of the Volkhov came a red sail. Then another. Then all thirty. The sailors shouted when they saw him waving from the bank.",
+        "<name:sadko>Sadko</name> never went to sea again. He strung his gusli with new strings.",
+        "And on still evenings he sat on the white stone by the lake and played for anyone who cared to listen, above the water or under it."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "novgorod-kremlin",
+      "name": "Novgorod Kremlin and Saint Sophia Cathedral",
+      "era": "medieval",
+      "built": {
+        "from": 1045,
+        "to": 1050,
+        "circa": false,
+        "note": "The dates of the stone cathedral. The fortress round it is older in origin, but the red brick walls seen today are later, from the 15th century; exact dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Veliky Novgorod, Russia",
+      "coordinates": { "lat": 58.522, "lon": 31.276 },
+      "region": "russian",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A white cathedral with domes shaped like helmets, behind red walls beside a wide river."
+        },
+        "medium": {
+          "line": "A stone cathedral finished in 1050 in Novgorod, a trading city in the north-west of Russia.",
+          "note": "A prince of Novgorod had it built nearly 1,000 years ago. It is one of the oldest stone buildings in Russia, and it still stands."
+        },
+        "advanced": {
+          "line": "The cathedral of Saint Sophia, built from 1045 to 1050 inside Novgorod’s fortress, which is called a kremlin.",
+          "note": "The cathedral is older than the walls round it: the red brick walls seen today were built about 400 years later. Before that, the fortress had ramparts of earth, timber and stone."
+        }
+      },
+      "art": {
+        "file": "art/novgorod-kremlin.heic",
+        "alt": "A white cathedral with five domes, the middle one gold, behind red brick walls and a tower beside a wide river.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E3554",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building: presented as architecture and history only (CQ9).",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "christ-the-redeemer",
+      "name": "Christ the Redeemer",
+      "era": "modern",
+      "built": {
+        "from": 1922,
+        "to": 1931,
+        "circa": false,
+        "note": "Building years of the statue on Corcovado mountain; it was opened in 1931."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Brazil",
+      "place": "Rio de Janeiro, Brazil",
+      "coordinates": { "lat": -22.952, "lon": -43.211 },
+      "lists": ["new7Wonders"],
+      "factCards": {
+        "low": {
+          "line": "A tall pale statue with its arms held wide, on a mountain top above the sea."
+        },
+        "medium": {
+          "line": "A statue about 30 metres tall on Corcovado mountain, above the harbour of Rio de Janeiro in Brazil.",
+          "note": "It was finished in 1931, after about nine years of work. Sailors coming into the bay can see it from far out at sea."
+        },
+        "advanced": {
+          "line": "A statue about 30 metres tall, built of concrete from 1922 to 1931 on a mountain about 700 metres high.",
+          "note": "Its skin is made of thousands of small tiles of pale soapstone, a soft stone that stands up well to sun and rain. Every piece had to be carried up the mountain."
+        }
+      },
+      "art": {
+        "file": "art/christ-the-redeemer.heic",
+        "alt": "A tall pale statue with its arms held wide, on the top of a steep green mountain above a bay with rounded hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#134A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Rights in the statue’s image are claimed by the Archdiocese of Rio, and the sculptor died in 1961, so copyright may still run in some countries (CONTENT_PLAN §6.6). Presented as a landmark and a work of engineering, with respect and no religious teaching (CQ9).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the traditional Russian bylina of Sadko of Novgorod.",
+    "It is not the wording of any earlier edition or translation.",
+    "Documented source for the tale: Arthur Ransome, \"Old Peter's Russian Tales\" (1916),",
+    "Project Gutenberg ebook #16981, https://www.gutenberg.org/ebooks/16981",
+    "(US public domain; Ransome died in 1967, so his wording is protected in life + 70 countries until 2038).",
+    "Rights care (CQ2): the writer did NOT open Ransome's text for this draft, on purpose, so that no phrase",
+    "of his could carry over. The telling was written from general knowledge of the bylina tradition.",
+    "Our telling follows the shape of the bylina, not Ransome's: the wager about the golden-finned fish, the",
+    "twelve years without tribute, the ships held still at sea, the oak plank, the broken strings, the choice",
+    "of the river-maiden Chernava and the waking beside the Chernava river. Ransome's own inventions (his",
+    "framing, and his treatment of the river and the Tsar's daughter) are not used. A source-check agent must",
+    "still compare this text with Gutenberg #16981 line by line and confirm that nothing echoes it.",
+    "Softened for ability age 8 to 10: in the bylina Sadko stakes his head; here he stakes his gusli, all he",
+    "has. In the bylina lots are cast to choose who goes down to the Sea Tsar; here Sadko understands and goes.",
+    "Left out: Saint Nicholas, who advises Sadko in the bylina (a religious figure); here Chernava's whisper",
+    "tells him what the dancing does and he breaks the strings himself. Also left out: the Sea Tsaritsa, the",
+    "three hundred maidens passed over three times, any wedding, Sadko's wife in Novgorod, his boast to buy",
+    "up all the goods of Novgorod, and the church-building ending.",
+    "Changed from the editorial plan: the last page is set in the last starlight before dawn, not in full",
+    "morning, because the story's theme is dark and every scene must stay dark.",
+    "Reviewer to check: the forms Sadko, Chernava, Ilmen, Volkhov, gusli, bylina, 'Sea Tsar' (Morskoi Tsar);",
+    "that a tsar of the sea rising from Lake Ilmen reads rightly to a Russian reader; whether a real river",
+    "Chernava exists near Novgorod or is only the bylina's (the text says only 'a small river near Novgorod');",
+    "the trade goods (furs, wax, honey out; silver, cloth, salt in); 'six shops' (variants differ in number).",
+    "Card facts to check: gusli about 900 years old found by archaeologists in Novgorod; the Volkhov as the",
+    "only river flowing out of Lake Ilmen; bylinas first written down less than 300 years ago (the Kirsha",
+    "Danilov collection); boats dragged overland between rivers. Landmark facts to check: Saint Sophia",
+    "1045-1050, built for a prince of Novgorod; brick kremlin walls 15th century; Christ the Redeemer",
+    "about 30 m tall, 1922-1931, concrete faced with soapstone tiles, Corcovado about 700 m high.",
+    "The Christ the Redeemer link is loose by design (CONTENT_PLAN 6.3, CQ7): it is only 'a harbour's landmark'.",
+    "SOURCE CHECK (18 Nov 2026, against Gutenberg #16981 on the mirror, by quoted passages, not a full",
+    "line-by-line read): no shared sentence or simile found; none of Ransome's own details is used (his",
+    "dulcimer, white sails, the river Volkhov as the beloved, the coffer of jewels, the wedding). One shared",
+    "verb ('the sea boiled') was changed. OPEN QUESTION: the cited book does not contain most of our plot",
+    "(the wager, Lake Ilmen, the tribute, the plank, the broken strings, Chernava). A public-domain translation",
+    "of the bylina itself would be a truer documented source (perhaps Isabel Hapgood, 'The Epic Songs of",
+    "Russia', 1886: not verified). Until then the plan's citation stands and this note records the gap.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Russian reader) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#0C1730",
+      "shade": "#17365A",
+      "mid": "#1F6B66",
+      "light": "#E9EEF2",
+      "glow": "#FFC65A",
+      "accent": "#C8352B",
+      "mood": "Deep night blue above water and sea green below it; warm gold only in small places (lamplit windows, torch flame, fish fins, the middle dome); white stone and one white lakeside stone catch the light; the red of the sails is the single strong colour. Quiet, wide and atmospheric."
+    },
+    "light": "This is a DARK story: every scene is deep dusk, night, the last starlight before dawn, or under water. Never daylight. Above water the light is starlight and a low moon, with small warm points of lamp and torch. Under water it is a soft green-gold glow falling from above. Light text must read on every leading pane.",
+    "world": [
+      "Novgorod about 1100 to 1200, a trading city of the forest north: houses built of round horizontal logs with notched corners, steep roofs of wooden planks or shingles, small windows glowing with lamplight. No stone houses, no glass-fronted shops.",
+      "The streets are paved with split logs laid side by side (plank roads), raised above the mud. Wooden fences, wooden quays on posts along the River Volkhov, and a long wooden bridge across the river.",
+      "Saint Sophia Cathedral inside the fortress: tall plain white walls with narrow windows and a tight cluster of five HELMET-shaped domes (smooth, like a warrior's pointed helmet), the middle one gilded, the others lead-grey. NOT the swirled, striped, coloured onion domes of Saint Basil's, which is in Moscow and 400 years later.",
+      "The fortress (kremlin) in the scenes: pale ramparts of earth, timber and white stone with wooden towers. Do NOT draw the red brick walls in the scenes; they are later (15th century). Red brick appears only on the landmark card, which shows the place as it is today.",
+      "Ships: clinker-built wooden river and sea boats (overlapping planks), one mast, one square sail, a high carved prow, a steering oar at the stern side, oars along the sides. Sadko's sails are plain deep red. No rows of gun ports, no three-masted galleons, no flags.",
+      "The gusli: a small flat instrument of maple, wing-shaped or helmet-shaped, about as long as a forearm, with 5 to 9 strings fanning from one end. It lies across the knees and is plucked and strummed with the fingers. Not a balalaika (triangular, with a neck), not a tall harp on a stand, not a guitar.",
+      "Dress of men: a belted tunic to the knee with embroidered bands at collar, cuffs and hem, narrow trousers tucked into soft leather boots or leg wraps. Merchants: a long coat edged with fur and a round cap with a fur brim. Hair cut round like a bowl; older men bearded.",
+      "The feast: a long timber hall with benches and trestle tables, wooden bowls and ladles, drinking horns, candles and oil lamps, a tiled or clay stove. No samovar, no glass bottles, no forks.",
+      "Lake Ilmen: very wide, shallow and flat, with low reedy shores, birch and pine far off. One smooth white boulder at the water's edge is Sadko's seat on pages 2 and 3 and again on the last page.",
+      "The golden-finned fish: plain silver lake fish (like a perch or bream) with fins of bright red-gold. Three of them, one in each cast of a fine silk net.",
+      "Under the sea: a palace of white stone and giant shells with round arches, pillars wound with waterweed, a coral throne. The river-maidens are the Sea Tsar's daughters: young women with long loose hair and long plain gowns the colours of river water, fully human in shape (no fish tails). Chernava wears plain grey with no jewels.",
+      "Nothing frightening: the Sea Tsar is grand and comic, the storm above is shown only as tossing waves and small ships running for shelter, never a wreck or anyone in the water.",
+      "Avoid: Saint Basil's and any onion-dome skyline, matryoshka dolls, balalaikas, samovars, Cossack dress, fur hats with ear flaps, troikas, tridents and Greek sea-god looks (no Poseidon, no mermaids with tails), pirate ships, and any daylight sky."
+    ],
+    "characters": {
+      "sadko": "A young man, about three heads tall, slim, with brown hair cut round and small plain eyes; clean-shaven. Part I pages 1 to 4: a plain undyed linen tunic with a red embroidered collar and cuffs, a woven belt, soft boots. From page 5: a long dark-blue merchant's coat edged with brown fur and a round fur-brimmed cap; under the sea he has lost the cap. Signature detail: the small wing-shaped maple gusli, always in his hands or on his knees (strings hanging broken on page 9, new on page 10).",
+      "sea-tsar": "Huge, four or five times Sadko's height, broad and round-bellied, with a jolly weathered face, bushy brows and a green beard that spreads like a fishing net. A crown of red coral branches and shells with waterweed trailing from it; a robe in blue-greens that moves like water, with a hem of foam. Signature detail: big bare feet stamping when he dances. Grand and funny, never demonic: no fangs, claws, glowing eyes or trident.",
+      "chernava": "A quiet young river-maiden, slight, with long straight dark hair and a calm face. A plain grey gown with no gold or pearls, while her sisters glitter. Signature detail: she stands a little apart, one hand raised as if whispering."
+    },
+    "scenes": {
+      "scene-novgorod": {
+        "unfolded": "Deep dusk, almost night. Far: a dark blue sky with the first stars on the leading (left) pane, whose upper two thirds stay calm and empty. Middle, on the trailing (right) half: pale ramparts and the white cathedral with its five helmet domes, the middle one faintly gold; log houses with steep plank roofs and small lamplit windows stepping down to the river. Near: the dark River Volkhov low across both panes, boats with furled sails at wooden quays, and Sadko sitting on the bank at the right with his gusli on his knees. The same scene serves the feast pages, the merchant years and the last page (read as the dark before dawn).",
+        "folded": "Sadko in the middle, seated on the bank with the gusli on his knees, the white cathedral domes and two or three lamplit log houses behind his shoulder, dark starry sky at the top for the words."
+      },
+      "scene-lake": {
+        "unfolded": "Night. Far: a wide sky thick with stars over a flat black horizon of far forest; the leading pane's upper two thirds are only sky. Middle: the lake heaving in long swells with no wind, starlight on the wave backs. Near, on the trailing half: Sadko on the white boulder at the water's edge, playing, and beyond him the Sea Tsar risen to the chest, water pouring from his beard and crown, a few gold-finned fish glinting round him.",
+        "folded": "Sadko on the white stone in the lower middle, looking up; the Sea Tsar's crowned head and streaming green beard filling the band behind him; stars above for the words."
+      },
+      "scene-ship": {
+        "unfolded": "Night at sea. Far: a low moon behind thin cloud and a dark sky on the leading pane. Middle: lines of waves racing left to right, white-topped. Near, on the trailing half: three of Sadko's ships in a row, red sails bellied full yet the hulls sitting flat and still in a patch of strangely smooth water; from the nearest ship sailors lower an oak plank on ropes, and Sadko stands at the rail with his gusli.",
+        "folded": "The nearest ship's side and red sail; Sadko at the rail with the gusli under his arm, looking down at the plank on the dark water; night sky above."
+      },
+      "scene-palace": {
+        "unfolded": "Under water, dark green deepening to almost black at the edges, with soft green-gold light falling from above. The leading pane's upper two thirds are calm dark water with a few rising bubbles and one far fish. On the trailing half: the white stone and shell palace with round arches, the coral throne, and in front of it the huge Sea Tsar in mid-dance, one foot up, robe swirling; fish and river-maidens circle him; Sadko sits small on a white step at the lower right, playing. Chernava stands near Sadko in plain grey.",
+        "folded": "The Sea Tsar dancing in the middle with his robe swirling and beard flying, Sadko small at his feet with the gusli, dark green water above for the words."
+      }
+    },
+    "pictures": {
+      "gusli": "One small wing-shaped maple gusli with seven strings, seen from above and a little to one side, lying flat on a deep brown ground.",
+      "lake-ilmen": "The wide flat lake at night under stars with a low far shore, and one white boulder centred on the near bank.",
+      "bylina": "One old singer with a white beard, seated on a wooden bench in a belted tunic, mouth open in song and one hand raised; a single candle beside him.",
+      "river-roads": "One clinker-built river ship with a square red sail and a carved prow, loaded with barrels and bundles of fur, centred on dark river water."
+    },
+    "portraits": {
+      "sadko": "Half figure in his Part I tunic with the red embroidered collar, holding the gusli against his chest and looking a little upward, half smiling; deep blue night sky with a few stars behind.",
+      "sea-tsar": "Head and shoulders, laughing, the coral-and-shell crown tilted, the green beard spreading out of the frame, small fish swimming through it; deep green water with gold light from above."
+    },
+    "cover": "Night at Lake Ilmen: Sadko seated on the white stone in the lower middle, playing the gusli, and the Sea Tsar's crowned head and streaming green beard rising from the dark water behind him, with one gold-finned fish leaping between them under a starry sky.",
+    "landmarks": {
+      "novgorod-kremlin": "Our own drawing of the place as it is today, in clear evening light: the white cathedral of Saint Sophia with five helmet-shaped domes, the middle one gold and the others grey, behind the red brick kremlin walls and one tower, with the wide River Volkhov in front. Architecture only; no photograph traced.",
+      "christ-the-redeemer": "Our own drawing: the tall pale statue with its arms held wide, small and simple, on the top of the steep green Corcovado mountain, above a blue bay with rounded hills and a few boats. Drawn from a distance as a landmark above a harbour; no close-up of the face; no photograph traced."
+    }
+  }
+}

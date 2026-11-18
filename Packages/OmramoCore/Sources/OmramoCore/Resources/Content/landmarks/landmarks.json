@@ -658,6 +658,570 @@
         "facts": "pending",
         "art": "pending"
       }
+    },
+    {
+      "id": "great-pyramid-giza",
+      "name": "Great Pyramid of Giza",
+      "era": "ancient",
+      "built": {
+        "from": -2600,
+        "to": -2560,
+        "circa": true,
+        "note": "Built as the tomb of King Khufu. The dates are approximate: Egyptologists place his reign within a few decades of these years."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Egypt",
+      "place": "Giza, Egypt",
+      "coordinates": {
+        "lat": 29.979,
+        "lon": 31.134
+      },
+      "region": "egyptian",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge pyramid of pale stone blocks in the desert, with four sides that meet in a point."
+        },
+        "medium": {
+          "line": "A stone pyramid at Giza in Egypt, built about 4,500 years ago as the tomb of King Khufu.",
+          "note": "It is made of about two million stone blocks. Of the Seven Wonders of the Ancient World, it is the only one still standing."
+        },
+        "advanced": {
+          "line": "For more than 3,000 years this pyramid, once about 146 metres high, was the tallest building in the world.",
+          "note": "How we know who built it: in 2013 papyrus diaries were found by the Red Sea, kept by a man named Merer, whose crew shipped white limestone to Giza for Khufu’s pyramid."
+        }
+      },
+      "art": {
+        "file": "art/great-pyramid-giza.heic",
+        "alt": "A great pyramid of pale stone under a clear sky, with two more pyramids behind it and tiny people at its foot.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3A1C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). An ancient monument long out of any copyright; the general freedom-of-panorama check of CONTENT_PLAN 6.6 still applies.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "chichen-itza",
+      "name": "Chichén Itzá",
+      "era": "medieval",
+      "built": {
+        "from": 600,
+        "to": 1200,
+        "circa": true,
+        "note": "The years in which the Maya city grew. Its great step pyramid, El Castillo, was built late in that time, about 1,000 years ago; the exact dates are to verify."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Mexico",
+      "place": "Yucatán, Mexico",
+      "coordinates": {
+        "lat": 20.683,
+        "lon": -88.569
+      },
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A grey stone pyramid with big steps on every side and a small square temple on top."
+        },
+        "medium": {
+          "line": "A step pyramid in the old Maya city of Chichén Itzá in Mexico, built about 1,000 years ago.",
+          "note": "The Maya built it. Maya people live today in Mexico and Central America, and many speak Mayan languages."
+        },
+        "advanced": {
+          "line": "Each of its four stairways has 91 steps; with the platform on top that makes 365, one for every day of the year.",
+          "note": "A smaller, older pyramid is hidden inside it. It was built about 3,500 years after the pyramids of Egypt, by people who had never heard of Egypt."
+        }
+      },
+      "art": {
+        "file": "art/chichen-itza.heic",
+        "alt": "A grey stone step pyramid with nine terraces, a stairway up the middle of each side and a square temple on top, on a green lawn with forest behind.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A3A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). To check in that review: whether the heritage authority of Mexico authority (INAH) sets conditions on commercial images of the site, and the general freedom-of-panorama point of CONTENT_PLAN 6.6.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "mount-fuji",
+      "name": "Mount Fuji",
+      "era": "natural",
+      "status": "natural",
+      "depiction": "asIs",
+      "country": "Japan",
+      "place": "Honshu, Japan",
+      "coordinates": {
+        "lat": 35.361,
+        "lon": 138.727
+      },
+      "region": "japanese",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall mountain shaped like a cone, with white snow on its top for most of the year."
+        },
+        "medium": {
+          "line": "Mount Fuji is the highest mountain in Japan, about 3,776 metres tall.",
+          "note": "It is a sleeping volcano. It last erupted in 1707, and it has been quiet ever since."
+        },
+        "advanced": {
+          "line": "Fuji is a volcano that is resting, not dead: in 1707 its last eruption dropped ash on the city of Edo, now Tokyo.",
+          "note": "One old story says the mountain got its name from the smoke in this tale. Nobody knows for certain where the name comes from."
+        }
+      },
+      "art": {
+        "file": "art/mount-fuji.heic",
+        "alt": "A tall, even cone of a mountain with snow on its top, above a lake and low hills, in clear morning light.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F3460",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "golden-gate-bridge",
+      "name": "Golden Gate Bridge",
+      "era": "modern",
+      "built": {
+        "from": 1933,
+        "to": 1937,
+        "circa": false,
+        "note": "Building began in January 1933 and the bridge opened in May 1937."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "United States",
+      "place": "San Francisco, USA",
+      "coordinates": {
+        "lat": 37.82,
+        "lon": -122.478
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long red-orange bridge hangs from two tall towers. Fog often hides its feet."
+        },
+        "medium": {
+          "line": "A hanging bridge of steel across the Golden Gate, the strait where San Francisco Bay meets the Pacific Ocean.",
+          "note": "It was built between 1933 and 1937. Its colour, called International Orange, helps ships to see it in fog."
+        },
+        "advanced": {
+          "line": "A suspension bridge opened in 1937, whose main span of about 1,280 metres was the longest in the world until 1964.",
+          "note": "The roadway hangs from two main cables, each spun from thousands of steel wires. The architect Irving Morrow chose the orange to suit the hills and to show in fog."
+        }
+      },
+      "art": {
+        "file": "art/golden-gate-bridge.heic",
+        "alt": "A long red-orange bridge with two tall towers, hung on great cables, crossing blue water with fog round its feet.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#17405C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Believed clear as a public work; confirm the name is not a restricted mark (CONTENT_PLAN 6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "novgorod-kremlin",
+      "name": "Novgorod Kremlin and Saint Sophia Cathedral",
+      "era": "medieval",
+      "built": {
+        "from": 1045,
+        "to": 1050,
+        "circa": false,
+        "note": "The dates of the stone cathedral. The fortress round it is older in origin, but the red brick walls seen today are later, from the 15th century; exact dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Veliky Novgorod, Russia",
+      "coordinates": {
+        "lat": 58.522,
+        "lon": 31.276
+      },
+      "region": "russian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A white cathedral with domes shaped like helmets, behind red walls beside a wide river."
+        },
+        "medium": {
+          "line": "A stone cathedral finished in 1050 in Novgorod, a trading city in the north-west of Russia.",
+          "note": "A prince of Novgorod had it built nearly 1,000 years ago. It is one of the oldest stone buildings in Russia, and it still stands."
+        },
+        "advanced": {
+          "line": "The cathedral of Saint Sophia, built from 1045 to 1050 inside Novgorod’s fortress, which is called a kremlin.",
+          "note": "The cathedral is older than the walls round it: the red brick walls seen today were built about 400 years later. Before that, the fortress had ramparts of earth, timber and stone."
+        }
+      },
+      "art": {
+        "file": "art/novgorod-kremlin.heic",
+        "alt": "A white cathedral with five domes, the middle one gold, behind red brick walls and a tower beside a wide river.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E3554",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building: presented as architecture and history only (CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "christ-the-redeemer",
+      "name": "Christ the Redeemer",
+      "era": "modern",
+      "built": {
+        "from": 1922,
+        "to": 1931,
+        "circa": false,
+        "note": "Building years of the statue on Corcovado mountain; it was opened in 1931."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Brazil",
+      "place": "Rio de Janeiro, Brazil",
+      "coordinates": {
+        "lat": -22.952,
+        "lon": -43.211
+      },
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall pale statue with its arms held wide, on a mountain top above the sea."
+        },
+        "medium": {
+          "line": "A statue about 30 metres tall on Corcovado mountain, above the harbour of Rio de Janeiro in Brazil.",
+          "note": "It was finished in 1931, after about nine years of work. Sailors coming into the bay can see it from far out at sea."
+        },
+        "advanced": {
+          "line": "A statue about 30 metres tall, built of concrete from 1922 to 1931 on a mountain about 700 metres high.",
+          "note": "Its skin is made of thousands of small tiles of pale soapstone, a soft stone that stands up well to sun and rain. Every piece had to be carried up the mountain."
+        }
+      },
+      "art": {
+        "file": "art/christ-the-redeemer.heic",
+        "alt": "A tall pale statue with its arms held wide, on the top of a steep green mountain above a bay with rounded hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#134A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Rights in the statue’s image are claimed by the Archdiocese of Rio, and the sculptor died in 1961, so copyright may still run in some countries (CONTENT_PLAN §6.6). Presented as a landmark and a work of engineering, with respect and no religious teaching (CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "colosseum",
+      "name": "Colosseum",
+      "era": "ancient",
+      "built": {
+        "from": 70,
+        "to": 80,
+        "circa": false,
+        "note": "Begun under the emperor Vespasian and opened by his son Titus in 80 CE. The exact start year (70 to 72 CE) is to verify (CONTENT_PLAN §5)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Italy",
+      "place": "Rome, Italy",
+      "coordinates": {
+        "lat": 41.89,
+        "lon": 12.492
+      },
+      "region": "european",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge oval of pale stone in Rome, with rows and rows of arches."
+        },
+        "medium": {
+          "line": "Rome’s greatest arena, opened about 1,950 years ago, had seats for about 50,000 people.",
+          "note": "Two emperors, Vespasian and his son Titus, built it between 70 and 80 CE. People and animals were made to fight there; today it stands as a place to remember."
+        },
+        "advanced": {
+          "line": "An oval arena of stone, brick and concrete, built in Rome between 70 and 80 CE, with three rows of arches round the outside.",
+          "note": "Roman writers describe the shows held in it. Earthquakes, and builders who carried off its stone, brought down much of one side, which is why it looks broken today."
+        }
+      },
+      "art": {
+        "file": "art/colosseum.heic",
+        "alt": "A great oval arena of pale stone with three rows of arches, one side standing higher than the other, under a warm sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2E22",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Sensitive history: the cards say plainly, without detail, that people and animals were made to fight there (CONTENT_PLAN CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "temple-of-artemis-ephesus",
+      "name": "Temple of Artemis at Ephesus",
+      "era": "ancient",
+      "built": {
+        "from": -550,
+        "to": -323,
+        "circa": true,
+        "note": "The first great marble temple rose about 550 BCE and was burned down; a new one was begun about 323 BCE. Both dates are approximate."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Türkiye",
+      "place": "Ephesus, Türkiye",
+      "coordinates": {
+        "lat": 37.95,
+        "lon": 27.364
+      },
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A marble temple with more than 100 tall columns. It is gone now; one column stands."
+        },
+        "medium": {
+          "line": "A great marble temple at Ephesus, in today’s Türkiye, one of the Seven Wonders of the ancient world.",
+          "note": "The first great temple rose about 550 BCE and burned down; a new one was begun about 323 BCE. It is lost now, and one rebuilt column marks the place."
+        },
+        "advanced": {
+          "line": "A lost wonder: ancient writers describe a very wide marble temple ringed by more than 100 tall columns.",
+          "note": "Nobody alive has seen it. Our picture follows the old descriptions and the stones dug up at Ephesus, so parts of it are a careful guess."
+        }
+      },
+      "art": {
+        "file": "art/temple-of-artemis-ephesus.heic",
+        "alt": "A drawing of how the temple may have looked: a very wide marble temple with a forest of tall columns and a low triangular roof front, on a stepped base.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A3F5C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A reconstruction of a lost building: it must always be labelled as a drawing of how it may have looked. Shown as architecture and history only.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "parthenon",
+      "name": "Parthenon",
+      "era": "ancient",
+      "built": {
+        "from": -447,
+        "to": -432,
+        "circa": false,
+        "note": "The building went up from 447 BCE; its carvings were finished by 432 BCE. That is long after the mythical time of the story, so the medium card says it was built later (CONTENT_PLAN §6.2)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Greece",
+      "place": "Athens, Greece",
+      "coordinates": {
+        "lat": 37.972,
+        "lon": 23.727
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A temple of white marble on a rocky hill, with tall columns all the way round."
+        },
+        "medium": {
+          "line": "The Athenians built this marble temple for Athena on the Acropolis, about 2,400 years ago.",
+          "note": "It was built long after the time of this story. The contest of Athena and Poseidon was carved high on its western end."
+        },
+        "advanced": {
+          "line": "Built between 447 and 432 BCE, with eight columns across each end and seventeen along each side.",
+          "note": "In 1687 gunpowder stored inside it exploded and blew out the middle of the building. Most of the contest carving is lost; we know its design from drawings made a few years before the blast and from broken pieces kept in museums."
+        }
+      },
+      "art": {
+        "file": "art/parthenon.heic",
+        "alt": "A marble temple with a row of tall columns and a broken triangular roof front, on a rocky hilltop under a blue sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1D4466",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "statue-of-zeus-olympia",
+      "name": "Statue of Zeus at Olympia",
+      "era": "ancient",
+      "built": {
+        "from": -435,
+        "circa": true,
+        "note": "Made about 435 BCE by the sculptor Phidias for the temple of Zeus at Olympia. The exact years are not known. The statue is lost; our picture is a reconstruction."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Greece",
+      "place": "Olympia, Greece",
+      "coordinates": {
+        "lat": 37.638,
+        "lon": 21.63
+      },
+      "region": "european",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant statue of gold and ivory, sitting on a throne. It is gone now."
+        },
+        "medium": {
+          "line": "A seated statue of Zeus about 12 metres tall, made at Olympia around 435 BCE.",
+          "note": "The sculptor was Phidias, who also made the great statue of Athena for Athens. The statue of Zeus was lost more than 1,500 years ago."
+        },
+        "advanced": {
+          "line": "One of the Seven Wonders of the ancient world: gold and ivory laid over a wooden frame, about as tall as a four-storey house.",
+          "note": "Nothing of it survives, and nobody is sure how it was lost. We know its look from an ancient traveller named Pausanias, who described it, from small pictures on old coins, and from the sculptor’s workshop, which was dug up at Olympia."
+        }
+      },
+      "art": {
+        "file": "art/statue-of-zeus-olympia.heic",
+        "alt": "A drawing of how the statue may have looked: a huge seated figure of gold and ivory on a throne inside a temple, its head near the roof, holding a tall staff.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A55",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The statue is lost: the picture is our own reconstruction and must be labelled as one.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "hanging-gardens-babylon",
+      "name": "Hanging Gardens of Babylon",
+      "era": "ancient",
+      "built": {
+        "from": -600,
+        "circa": true,
+        "note": "Said to have been built about 600 BCE. No trace has been found; the date is the traditional one, not a known one (CONTENT_PLAN §5)."
+      },
+      "status": "unproven",
+      "depiction": "reconstruction",
+      "country": "Iraq",
+      "place": "Babylon (traditional site), Iraq",
+      "coordinates": {
+        "lat": 32.54,
+        "lon": 44.42
+      },
+      "region": "persianArabian",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Gardens on high steps, with trees on every step. Nobody has ever found them."
+        },
+        "medium": {
+          "line": "One of the Seven Wonders of the ancient world, said to have stood in Babylon about 2,600 years ago.",
+          "note": "Old writers said a king of Babylon built them. No one has found a trace of them, so this picture is an artist’s idea."
+        },
+        "advanced": {
+          "line": "The gardens are known only from Greek and Roman writers who lived long after the time they describe.",
+          "note": "Diggers at Babylon have found no sure trace of them. They may be a legend, or they may have stood in another city, Nineveh."
+        }
+      },
+      "art": {
+        "file": "art/hanging-gardens-babylon.heic",
+        "alt": "A drawing of how the gardens may have looked: stepped terraces of brick with trees and hanging plants on every level and water running down, beside a river.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E4A38",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A reconstruction of an unproven wonder: it must stay labelled as an artist’s idea.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "burj-khalifa",
+      "name": "Burj Khalifa",
+      "era": "contemporary",
+      "built": {
+        "from": 2004,
+        "to": 2010,
+        "circa": false,
+        "note": "Building began in 2004 and the tower opened in 2010."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "United Arab Emirates",
+      "place": "Dubai, United Arab Emirates",
+      "coordinates": {
+        "lat": 25.197,
+        "lon": 55.274
+      },
+      "region": "persianArabian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A thin silver tower, taller than any other building in the world."
+        },
+        "medium": {
+          "line": "The tallest building in the world, about 828 metres high, in the city of Dubai.",
+          "note": "It was built between 2004 and 2010 and has more than 160 floors."
+        },
+        "advanced": {
+          "line": "At about 828 metres, it has been the world’s tallest building since it opened in 2010.",
+          "note": "Seen from above it has three wings round a central core, a shape that helps so thin a tower stand firm in the wind."
+        }
+      },
+      "art": {
+        "file": "art/burj-khalifa.heic",
+        "alt": "A very tall, thin silver tower that narrows in steps to a needle point, far above the other towers of a city by the sea.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3558",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The owner asserts rights over the name and image in commercial use (CONTENT_PLAN §6.6): legal review needed before release.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     }
   ]
 }

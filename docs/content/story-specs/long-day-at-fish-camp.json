@@ -1,0 +1,395 @@
+{
+  "id": "long-day-at-fish-camp",
+  "title": "The Long Day at Fish Camp",
+  "tier": "medium",
+  "region": {
+    "id": "arctic",
+    "culture": "Yup’ik",
+    "place": "Kuskokwim River, Alaska",
+    "label": "Yup’ik · Alaska",
+    "pin": { "lat": 60.8, "lon": -161.8 },
+    "pinColor": "#2F9BE0"
+  },
+  "setting": {
+    "period": "The Kuskokwim River, Alaska, today"
+  },
+  "provenance": {
+    "kind": "original",
+    "credit": "Original story written by us (Omramo)",
+    "premise": "At his family’s summer fish camp on the Kuskokwim River, a boy pulls a net by himself for the first time and lands a king salmon he badly wants to keep. His grandmother asks where a first catch goes, and he carries it downriver to an elder, and walks home with empty arms and something better than a fish.",
+    "rights": "Original text written for Omramo. No traditional or sacred narrative is used. A Yup’ik consultant, ideally a co-author, is sought for names, Yugtun words and customs (CONTENT_PLAN CQ4)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Indigenous setting (Yup’ik, south-west Alaska). An original story: names, Yugtun words, the first-catch custom, fish-camp work and every card must be checked by a Yup’ik consultant, ideally a co-author.",
+    "community": "Yup’ik consultant",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Kuskokwim is a great river that winds across the flat tundra of south-west Alaska to the Bering Sea. In June the sun sets there for only a few hours and the sky never grows dark; there is no snow in this story, on purpose.",
+      "factCards": ["kuskokwim"]
+    },
+    "culture": {
+      "lesson": "Yup’ik families move to fish camp in summer to catch salmon, cut it, dry it on racks and smoke it for the winter, wasting nothing and taking only what they will use. A first catch is given away, often to an elder. Yup’ik families never lived in snow houses: their old winter homes were sod houses, and today they live in modern houses.",
+      "factCards": ["drying-rack", "first-catch", "sod-house"]
+    },
+    "moral": {
+      "lesson": "Nick wants to keep the first fish that is truly his, and that wish is fair. Giving it away costs him something, and he comes home with a welcome, a story about his grandfather and a place among the people who provide.",
+      "reflectionQuestion": "Nick came home with empty arms and felt taller. What do you think he was carrying?"
+    }
+  },
+  "moral": "The best part of catching something good is giving it away.",
+  "theme": {
+    "textColor": "#1B2E44",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A boy in a hoodie and rubber boots hugs a big silver salmon wrapped in green grass, on a river bank under a pale gold evening sky."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "nick",
+      "name": "Nick",
+      "color": "#1F5F8B",
+      "chipBackground": "#D6E9F7",
+      "faceAlt": "Nick.",
+      "card": {
+        "label": "Character · the boy with the first fish",
+        "title": "Nick",
+        "traits": [
+          { "text": "Nine years old", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Pulls his own net", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Gives his first catch", "fill": "#D9F5E4", "ink": "#0B6B4A" }
+        ],
+        "body": "Nick spends every summer at his family’s fish camp on the river. This June he lands a king salmon by himself, and has to decide what a first fish is for.",
+        "portraitAlt": "A boy of about nine in a blue hoodie and a cap, hugging a big silver salmon wrapped in green grass.",
+        "background": ["#FFE3B0", "#F5B97A", "#D98A5A"]
+      }
+    },
+    {
+      "id": "grandma",
+      "name": "Grandma",
+      "color": "#A8501C",
+      "chipBackground": "#FFE2A8",
+      "faceAlt": "Grandma.",
+      "card": {
+        "label": "Character · Nick’s grandmother",
+        "title": "Grandma",
+        "traits": [
+          { "text": "Cuts with an uluaq", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Asks, never scolds", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Wastes nothing", "fill": "#D9F5E4", "ink": "#0B6B4A" }
+        ],
+        "body": "Grandma cuts the family’s salmon at fish camp, quick and neat, all the long evening. She does not tell Nick what to do with his fish. She asks him a question instead.",
+        "portraitAlt": "A grandmother in a flowered cotton overshirt with a hood and a headscarf, holding a curved fish knife at a wooden cutting table.",
+        "background": ["#CFE6E4", "#8FBFC0", "#4E8C96"]
+      }
+    },
+    {
+      "id": "lena",
+      "name": "Lena",
+      "color": "#8E2F5A",
+      "chipBackground": "#F6DCE7",
+      "faceAlt": "Old Lena."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "drying-rack",
+      "kind": "object",
+      "title": "Drying rack",
+      "line": "A frame of wooden poles where strips of salmon hang to dry in the wind.",
+      "cultureNote": {
+        "label": "From the Yup’ik",
+        "text": "At fish camp, Yup’ik families cut salmon into strips, dry them in the wind and then smoke them. The dried fish feeds the family all through the long winter."
+      },
+      "pictureAlt": "A rack of peeled wooden poles hung with rows of red salmon strips under a blue tarp roof.",
+      "background": "#7A2E22"
+    },
+    {
+      "id": "kuskokwim",
+      "kind": "place",
+      "title": "Kuskokwim River",
+      "line": "A great brown river that winds across the flat land of Alaska to the Bering Sea.",
+      "cultureNote": {
+        "label": "From Alaska",
+        "text": "No roads join the villages along the Kuskokwim to the rest of Alaska. People travel by boat in summer, and in winter they drive over the thick river ice."
+      },
+      "pictureAlt": "A wide brown river looping across flat green tundra, with one small aluminium boat on it.",
+      "background": "#1F4A5C"
+    },
+    {
+      "id": "first-catch",
+      "kind": "idea",
+      "title": "A first catch",
+      "line": "The first fish or animal a young person catches all by themselves.",
+      "cultureNote": {
+        "label": "From the Yup’ik",
+        "text": "Many Yup’ik families give a first catch away, often to an elder. It shows that the young person will grow up to bring food to other people too."
+      },
+      "pictureAlt": "A child’s two hands holding out a silver salmon wrapped in long green grass.",
+      "background": "#2E3F6E"
+    },
+    {
+      "id": "sod-house",
+      "kind": "idea",
+      "title": "Sod house",
+      "line": "A warm winter house with thick walls of earth and grass, set partly under the ground.",
+      "cultureNote": {
+        "label": "From the Yup’ik",
+        "text": "Long ago, Yup’ik families did not live in snow houses. They spent the winter in sod houses framed with driftwood, and today they live in modern houses in villages."
+      },
+      "pictureAlt": "A low rounded house covered in green grass, with a short tunnel doorway framed in grey driftwood.",
+      "background": "#3D4A2A"
+    }
+  ],
+  "scenes": {
+    "scene-camp": {
+      "unfoldedAlt": "A summer fish camp on a low grassy river bank under a pale gold evening sky. On the right stand plywood cabins, a smokehouse with a wisp of smoke, and long racks of red salmon strips under a blue tarp, with an aluminium skiff on the mud below.",
+      "foldedAlt": "A grandmother cuts salmon at a wooden table beside racks of red salmon strips under a blue tarp.",
+      "fallbackColors": ["#FCE9C4", "#F6C9A0", "#8FA36A"]
+    },
+    "scene-net": {
+      "unfoldedAlt": "A wide brown river under a pale gold and peach sky, with a low green shore far away. On the right a boy in an aluminium skiff hauls a net with white floats, and a big silver salmon comes over the side.",
+      "foldedAlt": "A boy in a skiff pulls a net hand over hand as a big silver salmon comes over the side.",
+      "fallbackColors": ["#FBE6BC", "#F3C6A2", "#9C8A6E"]
+    },
+    "scene-bank": {
+      "unfoldedAlt": "A narrow path along a river bank through tall grass, pink fireweed and low willow, under a huge pale peach sky. On the right a boy walks with a big fish wrapped in green grass in his arms, and a small cloud of mosquitoes round his cap.",
+      "foldedAlt": "A boy carries a big grass-wrapped fish along a path through tall grass and pink fireweed.",
+      "fallbackColors": ["#FBE3C8", "#F7BFA0", "#7F9A5E"]
+    },
+    "scene-porch": {
+      "unfoldedAlt": "A small weathered grey cabin by the river under a pale peach sky, with one short drying rack and a cutting table at the water’s edge. On the right an old woman in a headscarf sits on the step with a mug of tea.",
+      "foldedAlt": "An old woman in a headscarf sits on the step of a small grey cabin, a curved fish knife on the table beside her.",
+      "fallbackColors": ["#FADFC6", "#F2B79C", "#8C8F74"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-camp",
+      "part": "part-1",
+      "paras": [
+        "^At fish camp in June, the day never really ends.",
+        "The sun rolled low around the sky, and the river shone like the side of a fish. Smoke slipped out of the smokehouse, sweet and sharp.",
+        "Under a blue tarp hung the <tap:drying-rack>drying racks</tap>, row after row of red salmon strips, turning a little in the wind.",
+        "At the cutting table stood <name:grandma>Grandma</name> with her uluaq, the curved knife she used for fish. Flick, flick it went, and a salmon lay open like a book.",
+        "<name:nick>Nick</name> was nine, and his job was to carry. He took the strips to the racks, one bucket at a time."
+      ]
+    },
+    {
+      "scene": "scene-net",
+      "part": "part-1",
+      "paras": [
+        "For three summers Nick had helped with the nets. He had held the rope and bailed the skiff. But the fish had always been somebody else’s.",
+        "Tonight Uncle Joe cut the motor out on the wide brown <tap:kuskokwim>Kuskokwim</tap>. He nodded at the short net, strung between its white floats.",
+        "“This one is yours,” he said. “I’ll just keep the boat straight.”",
+        "Nick pulled, hand over hand. The net came up dripping, empty, empty. Then it pulled back.",
+        "A weight. A silver flash. <pop:1.3>Thump!</pop> Over the side slid a king salmon, nearly as long as his arm."
+      ]
+    },
+    {
+      "scene": "scene-camp",
+      "part": "part-1",
+      "paras": [
+        "Nick carried the fish up the muddy bank himself, hugging it with both arms. Nobody was allowed to help.",
+        "His cousins came running. His aunt whistled. Even the dogs stood up to look.",
+        "Nick could see it all already. His strips on the rack, the reddest in the row. His name on the lid of a jar. All winter he would eat that fish, and tell everyone at the table who had caught it.",
+        "He laid it on the cutting table, right in front of Grandma."
+      ]
+    },
+    {
+      "scene": "scene-camp",
+      "part": "part-1",
+      "paras": [
+        "Grandma wiped her uluaq on her apron and looked the fish over from nose to tail. <say:grandma*>“That is a fine fish,”</say> she said. <say:grandma>“Whose is it?”</say>",
+        "<say:nick*>“Mine!”</say> said Nick.",
+        "<say:grandma*>“Mm. And where does a <tap:first-catch>first catch</tap> go?”</say>",
+        "Nick knew. Last summer his cousin Mary had carried her first fish to the neighbours, and the summer before, so had her brother. Nick had watched them go and thought it a fine thing to do. It had not been his fish then.",
+        "He looked down at his rubber boots."
+      ]
+    },
+    {
+      "scene": "scene-camp",
+      "part": "part-1",
+      "paras": [
+        "<say:nick*>“Could I give away the second one?”</say> he asked. <say:nick>“I’ll catch a second one tomorrow. A bigger one.”</say>",
+        "<say:grandma*>“The second one is never the first one,”</say> said Grandma. She was not cross. She was already pulling long wet grass from the bank.",
+        "<say:grandma*>“Take it to <name:lena>Lena</name>, downriver. Her knees are keeping her off the water this summer, and she has no one to pull a net for her.”</say>",
+        "She wrapped the salmon in the grass, cool and green, and put the bundle in his arms. It was heavier than before.",
+        "Nick did not say yes. But he started walking."
+      ]
+    },
+    {
+      "scene": "scene-bank",
+      "part": "part-2",
+      "paras": [
+        "^The path to Lena’s cabin ran along the top of the bank.",
+        "Tall grass brushed his rain pants. Fireweed stood in it, just turning pink, and mosquitoes sang round his ears. He could not slap them. Both arms were full of fish.",
+        "Beside him the river slid by, wide as a lake and brown as tea.",
+        "He practised what to say. <say:nick*>“This is for you, because of your knees.”</say> No. <say:nick>“Grandma made me bring this.”</say> Worse.",
+        "It was eleven at night. The sun still sat above the flat green tundra, and the whole sky was the colour of a peach."
+      ]
+    },
+    {
+      "scene": "scene-porch",
+      "part": "part-2",
+      "paras": [
+        "Lena’s cabin was small and grey, with one short rack beside it. Old <name:lena>Lena</name> sat on the step with a mug of tea, watching the river.",
+        "Nick walked up to her and held out the bundle. Every word he had practised flew away, all but three.",
+        "<say:nick*>“It’s my first.”</say>",
+        "Lena put down her tea. She folded back the grass and took the salmon in both hands, as carefully as if it were much heavier than it was.",
+        "<say:lena*>“Quyana,”</say> she said. It was the Yup’ik word for thank you, and she said it slowly. Then she looked at the fish for a long time."
+      ]
+    },
+    {
+      "scene": "scene-porch",
+      "part": "part-2",
+      "paras": [
+        "Then she got up, slow on her knees, and carried the salmon to her table by the water. <say:lena*>“Come and watch. My mother showed me this cut.”</say>",
+        "Her uluaq rocked once behind the head and slid along the backbone. Two red sides fell open.",
+        "<say:lena*>“Strips for my rack. The head for soup. The eggs go to my sister, the belly to the Charles family, and the scraps to Peter’s dogs.”</say> She counted on her fingers. <say:lena>“Your one fish is going to four houses, Nick.”</say>",
+        "She rinsed the knife. <say:lena*>“My mother used to say the fish know a hand that gives. They come to it again.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-porch",
+      "part": "part-2",
+      "paras": [
+        "Afterwards they sat on the step. Lena gave him a bowl of akutaq, last summer’s blueberries whipped soft and sweet with fat.",
+        "<say:lena*>“Your grandfather was smaller than you when he caught his first,”</say> she said. <say:lena>“He brought it to my mother. She grew up in a <tap:sod-house>sod house</tap>, my mother, and she knew a good fish. He dropped it twice on the way, she told me.”</say>",
+        "Nick laughed with his mouth full.",
+        "When he stood to go, she put a dry red strip from her own rack in his hand. That would be gone before he got home. The story about his grandfather would not."
+      ]
+    },
+    {
+      "scene": "scene-camp",
+      "part": "part-2",
+      "paras": [
+        "Nick walked home chewing. It was nearly midnight, and the sun was only now sliding down to the edge of the tundra. His arms were empty. They swung at his sides, and he felt a little taller.",
+        "Grandma was still at her table. <say:grandma*>“Well?”</say> she asked. <say:nick*>“She said quyana,”</say> said Nick.",
+        "<say:grandma*>“And what did you say?”</say> Nick grinned. <say:nick*>“Tomorrow, can I pull the net again?”</say>",
+        "<say:grandma*>“One more day,”</say> said Grandma. <say:grandma>“When the racks are full, we stop.”</say>",
+        "Behind her the racks hung red in the wind, the smoke climbed into the gold, and the <stretch>long</stretch> day went on."
+      ]
+    }
+  ],
+  "landmarks": [],
+  "sourceNotes": [
+    "This is an Omramo original, written for the app. It retells no traditional, sacred, ceremonial or",
+    "clan-owned narrative, and it has no printed source. It was written from general knowledge of present-day",
+    "fish-camp life on the Kuskokwim River; nothing here has yet been checked by a Yup'ik reader.",
+    "A Yup'ik consultant, ideally a co-author (CONTENT_PLAN CQ4), must read the text, the art and every card.",
+    "FOR THE CONSULTANT - names: we use everyday English names (Nick, Grandma, Lena, Uncle Joe, cousin Mary,",
+    "Peter, the Charles family) because many Yup'ik people have an English name and a Yup'ik name. Yup'ik names",
+    "are left to the consultant. Check that these names and the surname Charles are fitting for the region.",
+    "Check how a child of nine would speak to and of an elder. The narrator says 'old Lena' and Grandma says",
+    "'Lena'; Nick uses no name for her. A kinship or respect term may be right instead.",
+    "FOR THE CONSULTANT - Yugtun words (three only): 'quyana' (thank you), 'uluaq' (the curved fish knife),",
+    "'akutaq' (berries whipped with fat). Check spelling, the Kuskokwim dialect forms, and use in an English",
+    "sentence. Page 7 calls quyana 'the Yup'ik word for thank you'. The English nickname of akutaq is not used.",
+    "FOR THE CONSULTANT - the first-catch custom: is a first salmon (not only a first seal or bird) given",
+    "away on the Kuskokwim; is an elder outside the family the right person; would the child carry it alone;",
+    "is wrapping the fish in wet grass right; would the elder cut it at once with the child watching?",
+    "Lena's saying on page 8 ('the fish know a hand that gives; they come to it again') is given as her",
+    "mother's words, not as a claim by us. Check that it is true to what elders say and is not restricted",
+    "teaching. If it is not right, cut it or replace it with the consultant's wording.",
+    "FOR THE CONSULTANT - fish-camp work: a boy of nine pulling a short net alone while his uncle holds the",
+    "skiff; the uluaq cut on page 8 (behind the head, along the backbone); strips dried then smoked; the head",
+    "for soup, eggs and belly shared, scraps to dogs; a jar with a name on the lid; stopping when racks are full.",
+    "King (Chinook) salmon: the June run is true to tradition, but king fishing on the Kuskokwim has been",
+    "closed or tightly limited in recent years because of weak runs. Decide with the consultant whether a",
+    "present-day story should name a king, another salmon, or say only 'salmon'.",
+    "Akutaq in June: berries are not ripe until later in summer, so the text says 'last summer's blueberries'.",
+    "Check that akutaq would be on hand at a fish camp and which berry is most likely.",
+    "Sod house (page 9): Lena says her mother grew up in one. Check that this fits the dates for the lower",
+    "Kuskokwim. The card says winter homes were sod houses framed with driftwood, never snow houses",
+    "(CONTENT_PLAN 1.4). The app never uses the word 'igloo'.",
+    "Fireweed: said to be 'just turning pink'; full bloom on the Kuskokwim is usually July. Check or cut.",
+    "CORRECTION TO THE PLAN - the sun: CONTENT_PLAN M6 says 'midnight sun'. At about 61 N the June sun does",
+    "set. Near Bethel around the solstice it sets after midnight by the clock (about 00:20) and rises about",
+    "05:15, and the sky stays light all night. So the text has the sun up at eleven and sliding down near",
+    "midnight, and never says the sun stays up. Clock times to verify. No snow anywhere, on purpose.",
+    "CHANGE FROM THE PLAN - scene-porch has no bucket of fresh berries (not ripe in June); a kettle instead.",
+    "CHANGE FROM THE PLAN - Lena counts four houses, not five, so that the count matches the names she gives.",
+    "Card facts to verify: no roads join the Kuskokwim villages to the rest of Alaska; winter travel on the",
+    "river ice; dried and smoked salmon as winter food; first catch given to an elder; sod houses.",
+    "Nothing was softened: an original with no harsh matter. Fish are cut, plainly and without gore.",
+    "Status: DRAFT. Text review pending. Cultural review (required: Yup'ik consultant) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#1B2E44",
+      "shade": "#5E6F5A",
+      "mid": "#9DB07A",
+      "light": "#FCE9C4",
+      "glow": "#FFD08A",
+      "accent": "#C8442E",
+      "mood": "The long gold evening of a northern summer: pale gold and peach sky that never goes dark, silver-brown river, tundra green, weathered grey plywood, one strong note of salmon red and one of tarp blue. Quiet, wide and airy."
+    },
+    "light": "Every scene is a PALE evening: low warm sun from the left, long soft shadows, sky pale gold near the top and peach near the horizon. Never night, never a dark sky, no stars, no moon. The last page is the same camp at the palest point of the night, the sun just touching the horizon.",
+    "world": [
+      "Present day, south-west Alaska, the lower Kuskokwim River near Bethel in June. The land is flat delta tundra to the horizon: no mountains nearby, no forest. The only tall plants are scrub willow and alder along the bank and, at most, a few thin spruce far off.",
+      "The river is very wide (a far low green line for the other shore), slow, silty brown with silver light on it, with grey mud at the edge and grassy cut banks about as high as a child.",
+      "Fish camp buildings: small plain plywood or weathered board cabins with metal stovepipes and tin or tar-paper roofs; a tall narrow smokehouse of grey boards with smoke leaking from the eaves; no painted decoration.",
+      "Drying racks: frames of peeled spruce or cottonwood poles, with rows of salmon strips (long thin red-orange strips, skin side dark) and flat split fish hung over the poles, under a blue plastic tarp roof tied with rope.",
+      "The cutting table is a rough plank table by the water with a bucket and a plastic fish tote. The uluaq is a broad crescent steel blade with a short handle fixed across the top of it, held in the fist. It is a kitchen tool, never drawn as a weapon.",
+      "The boat is an open flat-bottomed aluminium skiff with an outboard motor, dented and plain. The net is a nylon gillnet with a line of white oval floats. Life jacket on the boy in the skiff. Uncle Joe (no card, no chip) is a man in his thirties in a cap, an orange rain jacket and rubber boots, sitting at the outboard at the back, small and half turned away.",
+      "The fish is a king (Chinook) salmon: silver sides, blue-green back with small black spots, black gum line, about 75 cm long. Fresh from the river it is silver, never red or hook-jawed.",
+      "Clothes today: hoodies, baseball caps, rain pants, knee-high rubber boots (brown or green), work gloves. The grandmother and Lena wear a qaspeq: a loose flowered cotton overshirt with a hood, a big front pocket and a ruffle at the hem, over trousers and rubber boots, with a headscarf tied under the chin or at the nape.",
+      "Plants on the bank: tall green grass and sedge, fireweed (tall stems, narrow leaves, spikes of magenta-pink flowers only just opening from the bottom), low willow. A small cloud of mosquitoes as fine dots is true and funny.",
+      "Small true things a child will spot: a thermos and enamel mugs, a kettle, a four-wheeler parked by a cabin, a red fuel can, sled dogs resting by plywood dog boxes, gulls waiting near the cutting table.",
+      "Lena's place is one small, older, weathered grey cabin with a single short rack and a cutting table at the water's edge. No bucket of fresh berries: berries are not ripe in June.",
+      "The sod house appears ONLY in its tap picture, as a house of long ago: a low rounded mound covered in grass with a short entrance tunnel framed in grey driftwood, on bare tundra in autumn colours. No snow on it.",
+      "Avoid: snow, ice, snow houses, fur parkas in summer, dog sleds, polar bears, penguins, totem poles (other peoples), harpoons, kayaks as costume, feathers, face paint, nose kissing, mountains, pine forest, log cabins in the western style, tipis. Faces are warm and particular, never caricature; no slanted-eye shorthand."
+    ],
+    "characters": {
+      "nick": "A Yup'ik boy of about nine: round brown face, straight black hair under a faded baseball cap, small plain dark eyes, a gap-toothed grin on the last page. Blue hoodie, dark rain pants, brown rubber boots. Signature detail: the big salmon wrapped in long green grass, hugged against his chest with both arms.",
+      "grandma": "A Yup'ik grandmother in her sixties, short and strong, calm half-smile, grey-black hair under a flowered headscarf. A qaspeq (hooded cotton overshirt) in small blue-and-white flowers with a front pocket, an apron over it, rubber boots. Signature detail: the uluaq in her right fist at the plank cutting table.",
+      "lena": "A Yup'ik elder of about eighty, small and thin, deep laugh lines, white hair under a plain rose headscarf, glasses. A faded lilac flowered qaspeq, a cardigan, rubber boots. She moves slowly because of her knees. Signature detail: an enamel mug of tea, held in both hands on the cabin step."
+    },
+    "scenes": {
+      "scene-camp": {
+        "unfolded": "Far: the flat horizon of the tundra and a pale gold sky with the low sun just out of the picture to the left. Middle, on the trailing (right) half: two plywood cabins with stovepipes, the grey smokehouse with a wisp of smoke, the long racks of red strips under the blue tarp. Near right: the plank cutting table with Grandma at it and Nick with a bucket; the skiff pulled up on grey mud at the lower edge. The leading (left) pane's upper two thirds are calm pale gold sky above a low line of river and far shore.",
+        "folded": "Grandma close up at the cutting table, her face in the middle, the uluaq in her fist and a red salmon side open on the planks; rows of red strips under the blue tarp behind her; pale gold sky at the top for the words."
+      },
+      "scene-net": {
+        "unfolded": "Far: a thin low green shore and a pale gold-to-peach sky. Middle: the wide brown river with long silver glints. Near, on the trailing (right) half: the aluminium skiff seen from the side, Nick standing braced at the middle hauling the net hand over hand, white floats trailing in a curve, the big silver king salmon half over the gunwale, his uncle small at the outboard. The leading pane's upper two thirds are open pale sky above the far shore.",
+        "folded": "Nick in the middle, leaning back with the wet net in both fists, his mouth open in surprise, the silver salmon coming over the side of the skiff below him and the pale sky above."
+      },
+      "scene-bank": {
+        "unfolded": "Far: the flat tundra horizon under a huge pale peach sky, the sun low and soft at the far left edge. Middle: the river sliding by on the left, wide and brown. Near, on the trailing (right) half: the narrow dirt path on top of the grassy bank, tall grass, fireweed just turning pink, low willow, and Nick walking away to the right with the grass-wrapped fish in both arms and a little cloud of mosquitoes round his cap. The leading pane's upper two thirds are calm peach sky above the water.",
+        "folded": "Nick in the middle from the waist up, chin tucked over the green bundle with the salmon's silver tail sticking out, fireweed and grass on both sides, mosquito dots round his cap, pale peach sky above."
+      },
+      "scene-porch": {
+        "unfolded": "Far: the flat far shore and a pale peach sky. Middle, on the trailing (right) half: Lena's small weathered grey cabin with a stovepipe and one short drying rack with a few red strips. Near right: Lena sitting on the wooden step with her mug of tea, a kettle beside her, and the plank cutting table at the water's edge with her uluaq on it. The leading pane's upper two thirds are open pale sky above the river.",
+        "folded": "Lena close up on the cabin step, her face in the middle under the rose headscarf, the mug of tea in both hands, the corner of the cutting table and the uluaq at one side, pale peach sky above the cabin roof."
+      }
+    },
+    "pictures": {
+      "drying-rack": "One centred drying rack of peeled poles hung with two rows of red salmon strips, under a blue tarp roof, on a deep salmon-red ground.",
+      "kuskokwim": "The river seen from high up: one wide brown-silver ribbon looping across flat green tundra dotted with small ponds, with one tiny aluminium skiff and its wake in the centre.",
+      "first-catch": "Two child's hands in hoodie cuffs holding out one silver salmon wrapped in long green grass, centred, on a deep blue ground.",
+      "sod-house": "One low rounded sod house of long ago, centred: a grass-covered mound with a short entrance tunnel framed in grey driftwood and a thread of smoke from the top, on autumn tundra. No snow."
+    },
+    "portraits": {
+      "nick": "Half figure, facing us, hugging the grass-wrapped king salmon against his blue hoodie, proud and a little unsure; pale gold evening sky behind.",
+      "grandma": "Half figure at the plank cutting table in her flowered qaspeq and headscarf, the uluaq in her fist, looking up with a calm asking half-smile; the red strips and blue tarp soft behind her."
+    },
+    "cover": "Nick in the middle of the picture on the river-bank path, hugging the big silver salmon wrapped in green grass, looking down the river; fireweed and tall grass round his boots, a line of red salmon strips and a blue tarp small behind him, and the wide pale gold evening sky above."
+  }
+}

@@ -8,7 +8,7 @@ Round 5 adds the 29 remaining stories of `docs/CONTENT_PLAN.md` in three batches
 | Batch | Stories | State |
 |---|---|---|
 | 1 | The ten new **Low** stories (L2–L11), the shared illustration kit, the build tool, the library for a big catalog, ten landmarks | written, **uncompiled, unseen** |
-| 2 | The ten new **Medium** stories (M1–M9, M11) | to do |
+| 2 | The ten new **Medium** stories (M1–M9, M11), twelve landmarks | written, **uncompiled, unseen** (begun on Fable 5.2, finished on Opus 5.5) |
 | 3 | The nine new **Advanced** stories (A1, A2, A4–A10) | to do |
 
 ## 0. Standing decisions for the round (from Srikanth; do not reopen)
@@ -43,6 +43,8 @@ spec**: their `story.json` files are still edited by hand, and their painters
 
 Batch-1 painter enums: `SailorArt`, `SparrowArt`, `MountainsArt`, `PossumArt`, `SnowHouseArt`,
 `PeasantBearArt`, `BremenArt`, `WindSunArt`, `SunMoonArt`, `LionHareArt`.
+Batch-2 painter enums: `TigerArt`, `KhufuArt`, `MoonChildArt`, `WeaverArt`, `IktomiArt`,
+`FishCampArt`, `SadkoArt`, `AndroclesArt`, `OliveArt`, `SindbadArt`.
 
 ## 2. The spec and the build tool
 
@@ -210,7 +212,47 @@ Hard-won notes:
   assume one Medium or one Advanced story (`books.medium`, `stories.first { $0.tier == … }`
   are fine; exact lists are not).
 
-## 6. What batch 2 must do first
+## 6. What batch 2 learned (read before batch 3)
+
+Batch 2 (18 Nov 2026) followed §5 and added these conventions:
+
+- **Medium numbers that worked:** 10 pages, two parts, 90–105 words a page (the tests allow
+  40–118), 940–1,045 words a story, four scenes, three or four ordinary taps, two character
+  cards; a minor speaker (Zeus, the Queen Mother, a crowd, a minister) speaks in plain quoted
+  text with no say-tag. Morals of two sides are fine within 18 words ("…, and a wise king
+  listens.").
+- **Editorial plans as a file.** The lead wrote one plan per story into a shared file (beats,
+  the four scene names, character ids, tap ids and their words, landmark ids and devices, the
+  full landmark entries' facts, header values, art cautions). Ten writers ran in parallel from
+  it and returned valid specs in about five minutes each. Keep doing this for batch 3.
+- **The source check is not optional.** Writers given beats that paraphrase a source carry
+  the translator's phrases into the text: the check found real echoes in three of nine
+  stories (Tiger, Iktomi, Khufu) and one in three others. Reword every echo and add a
+  "SOURCE CHECK" block to `sourceNotes` listing the further departures from the cited book.
+- **A natural landmark** must be built no later than the story's `setting.latestYear`
+  (validator rule), or be framed; set `latestYear` honestly (the Athens story: −400).
+  Landmarks outside the ten story regions carry **no** `region`.
+- **Framing labels** may be more precise than the three examples: the Colosseum card reads
+  "SOON AFTER THIS STORY" (forty years).
+- **Dark Medium stories** are allowed (three of ten): every picture night, deep dusk or deep
+  water; the chrome `dark` on all three keys; tests check the three keys agree.
+- **Run the painters early and watch the budget.** The account's usage limit stopped all ten
+  story painters part-way (each had its cast and some scenes). Recovery that worked: a script
+  lists, per enum, the functions its `paint` switch calls that are not yet declared
+  (`r5-scratch/painter_state.py`), and a second painter finishes from that list after
+  reading the first one's `+Cast.swift`. Write the `paint` switch first (as the brief says):
+  it is what made the hand-over exact.
+- **For batch 3:** the build tool must learn trailing-pane paragraphs and `pathText` (§2);
+  Advanced pages put text on both panes like Urashima. The scratch briefs to copy are in
+  `/workspace/srikanth/duo/Omramo/r5-scratch/` (`WRITER_BRIEF_M.md`, `PLANS_M.md`,
+  `PAINTER_BRIEF_M.md`, `LANDMARK_BRIEF.md`, `continue_prompts.py`).
+- New landmarks for Advanced: `angkor-wat`, `bibliotheca-alexandrina`, `forbidden-city`,
+  `lions-gate-bridge`, `ilulissat-icefjord` (natural), `kizhi-pogost`, `palace-of-knossos`,
+  `eiffel-tower` (draw by day: CONTENT_PLAN §6.6), `great-mosque-of-djenne`, `persepolis`,
+  `mausoleum-halicarnassus` (lost: a reconstruction). `great-wall-of-china` and
+  `tokyo-skytree` exist.
+
+## 6a. What batch 2 had to do first (done)
 
 1. Compile batch 1 on the Mac if it has not been (BUILD §7d) — the kit has never been
    compiled or rendered; fix it before thirteen more painters lean on it.

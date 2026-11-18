@@ -1,0 +1,460 @@
+{
+  "id": "herd-boy-and-weaving-maiden",
+  "title": "The Herd Boy and the Weaving Maiden",
+  "tier": "medium",
+  "region": {
+    "id": "chinese",
+    "culture": "Chinese festival story (Qixi)",
+    "place": "China",
+    "label": "China",
+    "pin": { "lat": 34.3, "lon": 108.9 },
+    "pinColor": "#E0483A"
+  },
+  "setting": {
+    "period": "Folk-tale time in China, and the night sky above it",
+    "latestYear": 1000
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Chinese folk tale (the Qixi festival story)",
+    "sources": [
+      {
+        "author": "Richard Wilhelm (ed.), trans. Frederick H. Martens",
+        "title": "The Chinese Fairy Book",
+        "year": 1921,
+        "gutenbergId": 29939,
+        "url": "https://www.gutenberg.org/ebooks/29939",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Chinese folk tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Chinese reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The night sky is a place every child on Earth can visit. The Milky Way, which people in China call the Silver River, runs between the bright stars Vega and Altair.",
+      "factCards": ["silver-river", "two-stars", "bridge-moment"]
+    },
+    "culture": {
+      "lesson": "Silk was first made in China and was woven at home. The Qixi festival, on the seventh night of the seventh lunar month, remembers this story; Japan and Korea keep it too.",
+      "factCards": ["silk", "qixi"]
+    },
+    "moral": {
+      "lesson": "Love and work both matter. The two lose each other when they forget their work, and win a night together by doing it well and waiting.",
+      "reflectionQuestion": "Was it fair to part them? What would you have decided, if you ruled the sky?"
+    }
+  },
+  "moral": "Love needs patience, and the work still has to be done.",
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": { "leading": "dark", "trailing": "dark", "folded": "dark" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "alt": "A young woman and a young man meet at the top of an arch of black and white magpies, over a river of stars in a deep blue night sky."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "zhinu",
+      "name": "Zhinü",
+      "color": "#C2456E",
+      "chipBackground": "#FBDDE6",
+      "faceAlt": "Zhinü, the Weaving Maiden.",
+      "card": {
+        "label": "Character · the weaver of the sky",
+        "title": "Zhinü, the Weaving Maiden",
+        "traits": [
+          { "text": "Weaves the sky’s silk", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Curious", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Proud of her work", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "She weaves the rose of dawn and the gold of evening on a loom in the sky. Her name is said “jir-nyoo”, and it means the Weaving Maiden.",
+        "portraitAlt": "Zhinü in a pale rose robe with long sleeves, her hair in a high knot, holding a skein of dawn-pink silk against a dark blue sky.",
+        "background": ["#6A3468", "#3F2459", "#1E1640"]
+      }
+    },
+    {
+      "id": "niulang",
+      "name": "Niulang",
+      "color": "#2F6FA8",
+      "chipBackground": "#D6E6F7",
+      "faceAlt": "Niulang, the Herd Boy.",
+      "card": {
+        "label": "Character · a poor farm boy",
+        "title": "Niulang, the Herd Boy",
+        "traits": [
+          { "text": "Kind to his ox", "fill": "#D9F5E4", "ink": "#0B6B4A" },
+          { "text": "Ploughs his own field", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Never gives up", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "He has a straw-roofed hut, a row of mulberry trees and one old ox. His name is said “nyoh-lahng”, and it means the Herd Boy.",
+        "portraitAlt": "Niulang in a short blue jacket, his hair tied up in a cloth, with one hand on the neck of his old yellow ox, under a starry sky.",
+        "background": ["#2A5682", "#1C3B66", "#101F45"]
+      }
+    },
+    {
+      "id": "ox",
+      "name": "Old Ox",
+      "color": "#9A6A1F",
+      "chipBackground": "#F6E3B5",
+      "faceAlt": "The Old Ox."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "silk",
+      "kind": "object",
+      "title": "Silk",
+      "line": "A fine, shining thread spun by silkworms, and the smooth cloth woven from it.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "Silk was first made in China, thousands of years ago. Families fed silkworms on mulberry leaves, unwound the cocoons into thread, and wove it on looms at home."
+      },
+      "pictureAlt": "A skein of shining rose-pink silk thread with three white silkworm cocoons on a green mulberry leaf.",
+      "background": "#4A2350"
+    },
+    {
+      "id": "silver-river",
+      "kind": "place",
+      "title": "The Silver River",
+      "line": "The Milky Way: a pale band of far-off stars that crosses the whole night sky.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "In China the Milky Way is called Yinhe, the Silver River, or Tianhe, the Sky River. You can find it from anywhere on Earth on a clear, dark night, far from city lights."
+      },
+      "pictureAlt": "The Milky Way as a pale silver band of stars slanting across a dark blue sky above a low black line of hills.",
+      "background": "#141B45"
+    },
+    {
+      "id": "qixi",
+      "kind": "idea",
+      "title": "Qixi",
+      "line": "A festival on the seventh night of the seventh month of the old moon calendar.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "At Qixi, said “chee-shee”, people in China look up for the two stars, and girls once showed their skill by threading needles in the moonlight. Japan keeps the same story as Tanabata, and Korea as Chilseok."
+      },
+      "pictureAlt": "A needle with a long red thread held up against a half moon in a dark violet sky.",
+      "background": "#3A1F4F"
+    },
+    {
+      "id": "bridge-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "golden-gate-bridge",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "A bridge joins two sides that could not meet. Far away from China, and long after this story was first told, people hung a bridge of steel across a wide strait of the sea."
+        }
+      },
+      "background": "#17405C"
+    },
+    {
+      "id": "two-stars",
+      "kind": "idea",
+      "title": "Vega and Altair",
+      "line": "Two of the brightest stars of summer, one on each side of the Milky Way.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "In China, Vega is the Weaving Maiden and Altair is the Herd Boy. With a third bright star, Deneb, they make a big triangle that sky-watchers in the northern half of the world look for on summer nights."
+      },
+      "pictureAlt": "Two bright stars, one on each side of a pale band of small stars, in a dark blue sky.",
+      "background": "#1A2152"
+    }
+  ],
+  "scenes": {
+    "scene-loom": {
+      "unfoldedAlt": "The sky country at deep dusk: on the right, a young woman sits at a tall wooden loom that stands among dark clouds, and bands of rose and gold cloud-silk trail from it. The left half is calm dark violet sky with a few early stars.",
+      "foldedAlt": "Zhinü at her tall loom among dark clouds, with a band of rose and gold silk running through her hands.",
+      "fallbackColors": ["#1B1642", "#3C2560", "#7A3F6E"]
+    },
+    "scene-meadow": {
+      "unfoldedAlt": "A river meadow at night under many stars: on the right, a boy stands beside an old yellow ox near a small straw-roofed hut and a row of mulberry trees. The left half is calm dark blue sky above a low line of dark hills.",
+      "foldedAlt": "Niulang with his arm over the neck of his old yellow ox, in front of a small straw-roofed hut at night.",
+      "fallbackColors": ["#101A40", "#1E2F5C", "#1F3B3A"]
+    },
+    "scene-river": {
+      "unfoldedAlt": "Deep night: a great band of silver stars pours across the sky like a river, with a small figure on each bank, a young woman on the near right and a boy with an ox far across. The left half is calm dark sky where the river of stars thins to a pale mist.",
+      "foldedAlt": "Zhinü on the bank of a river made of stars, looking across it to a small far figure with an ox.",
+      "fallbackColors": ["#0D1236", "#1D2A63", "#3A4F8F"]
+    },
+    "scene-bridge": {
+      "unfoldedAlt": "Deep night: on the right, thousands of magpies fly wing to wing in an arch over the river of stars, and a young woman and a young man meet at the top. The left half is calm dark blue sky with a few magpies still flying up.",
+      "foldedAlt": "Zhinü and Niulang take hands at the top of an arch of black and white magpies, with stars all round them.",
+      "fallbackColors": ["#0E1438", "#232B66", "#5A3E78"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-loom",
+      "part": "part-1",
+      "paras": [
+        "^High above the clouds, a girl sat weaving the colours of the sky.",
+        "Her name was <name:zhinu>Zhinü</name>, which means the Weaving Maiden. Her grandmother, the Queen Mother, ruled the whole country of the sky.",
+        "On a loom as tall as a pine tree, Zhinü wove the <tap:silk>silk</tap> of the sky. She wove rose for the dawn and gold for the evening, and every day the sky wore what she had made.",
+        "It was fine work, and it was never finished. As soon as one evening was done, the next dawn was waiting. Zhinü had never had a day of rest."
+      ]
+    },
+    {
+      "scene": "scene-meadow",
+      "part": "part-1",
+      "paras": [
+        "Far below, beside a slow brown river, lived a boy called <name:niulang>Niulang</name>. The name means the Herd Boy, and it suited him.",
+        "He had no mother or father. He had a hut with a straw roof, a row of mulberry trees, and one old yellow ox.",
+        "Niulang shared his supper with the ox. Each evening he combed the burrs out of the old beast’s coat and told him about the day.",
+        "One night, under a sky full of stars, the <name:ox>Old Ox</name> answered.",
+        "<say:ox*>“Tomorrow at dusk the sky maidens come down to wash their silk in the river,”</say> he said. <say:ox>“Go and see.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-meadow",
+      "part": "part-1",
+      "paras": [
+        "The next evening Niulang led the ox down to the river to drink. Down the sky came seven maidens, their arms full of silk.",
+        "Six washed their silk and flew home. The seventh was rinsing a skein of dawn-pink thread when it slipped from her fingers. Niulang waded in and caught it.",
+        "<say:zhinu*>“Thank you,”</say> said Zhinü. <say:zhinu>“What is it like to live down here?”</say>",
+        "He told her about ploughing, and rain on the roof, and the smell of cut grass. They talked until the stars came out.",
+        "She came back the next evening, and the next. Then one evening she did not go home."
+      ]
+    },
+    {
+      "scene": "scene-meadow",
+      "part": "part-1",
+      "paras": [
+        "Zhinü and Niulang were married under the mulberry trees, with the Old Ox for a guest.",
+        "He ploughed and she wove plain brown cloth, and at night they sat in the doorway and counted stars. They were so happy that they forgot everything else.",
+        "Some mornings the Old Ox stood unfed until noon. Weeds crept across the field.",
+        "<say:ox*>“The field is waiting,”</say> said the Old Ox. <say:niulang*>“Tomorrow,”</say> said Niulang.",
+        "And far above them the great loom stood still. Dawn came up grey. Evening went down grey. All over the world, people looked up and wondered where the colours had gone."
+      ]
+    },
+    {
+      "scene": "scene-meadow",
+      "part": "part-1",
+      "paras": [
+        "In the sky country, the Queen Mother looked out at another grey evening and frowned.",
+        "She went to the weaving hall. Dust lay on the tall loom, and a spider had spun its own small web across the threads.",
+        "“Where is my granddaughter?” she asked. No one dared to answer, so she looked down through the clouds herself. There was <name:zhinu>Zhinü</name>, laughing in a doorway, with weeds all round the house.",
+        "“The sky cannot go without its colours,” said the Queen Mother. “Bring her home.”",
+        "Two messengers in robes of white cloud bowed, and stepped off the edge of the sky."
+      ]
+    },
+    {
+      "scene": "scene-meadow",
+      "part": "part-2",
+      "paras": [
+        "^The messengers came at dusk, as quietly as mist.",
+        "They took Zhinü by the hands, and her feet left the ground. <say:zhinu*>“Niulang!”</say> she called. Already she was as high as the mulberry tops.",
+        "<name:niulang>Niulang</name> ran. He ran until the field ended and there was nothing left to run on but air.",
+        "Behind him the Old Ox knelt in the grass. <say:ox*>“You fed me when you had little,”</say> he said. <say:ox>“Climb on my back and hold my horns.”</say>",
+        "Then the old beast leaped. His hooves struck the evening air like a road, and <stretch>up</stretch> they went, past the clouds, into the dark."
+      ]
+    },
+    {
+      "scene": "scene-river",
+      "part": "part-2",
+      "paras": [
+        "The stars grew big around them. Ahead flew the messengers, and between them Zhinü, looking back.",
+        "<say:niulang*>“Faster, old friend!”</say> cried Niulang. The gap closed. Zhinü stretched out her hand, and his fingers brushed hers.",
+        "But the Queen Mother stood waiting at the gate of the sky. She drew a long silver pin from her hair and scored one line across the dark.",
+        "The line shone. Then it filled with stars, thousands and thousands, and <pop:1.3>flooded</pop> into a river too wide to swim and too deep to wade.",
+        "People in China still call it the <tap:silver-river>Silver River</tap>."
+      ]
+    },
+    {
+      "scene": "scene-river",
+      "part": "part-2",
+      "paras": [
+        "Niulang sat down on one bank and would not leave. Zhinü sat on the other and would not weave.",
+        "After many grey days, Zhinü stood up and went back to her loom.",
+        "<say:zhinu*>“If the dawn must have colour,”</say> she said, <say:zhinu>“it shall be the best I ever made.”</say> Across the water, Niulang began to herd the cattle of the sky, and not one went hungry.",
+        "The magpies saw it all, and chattered about it in every tree. At last the Queen Mother heard, and her frown softened.",
+        "“One night a year,” she said. “The <tap:qixi>seventh night of the seventh month</tap>. If the work is done.”"
+      ]
+    },
+    {
+      "scene": "scene-bridge",
+      "part": "part-2",
+      "paras": [
+        "All year Zhinü wove and Niulang herded, and the dawns were finer than ever before.",
+        "When the seventh night came, a sound rose from the earth like wind in dry leaves. It was wings.",
+        "Magpies were flying up from every wood and rooftop in the world. They locked wing to wing, thousands upon thousands, until a black and white <tap:bridge-moment>bridge</tap> arched from bank to bank.",
+        "<name:zhinu>Zhinü</name> stepped on from one side, and <name:niulang>Niulang</name> from the other. The bridge trembled under them, feather-soft.",
+        "They met at the very top, and for one whole night nobody in the sky did any work at all."
+      ]
+    },
+    {
+      "scene": "scene-bridge",
+      "part": "part-2",
+      "paras": [
+        "They are up there still. On a clear summer night, look for the pale river of light overhead.",
+        "On one bank shines a bright star, and on the other bank another. People in China say those <tap:two-stars>two stars</tap> are the Weaving Maiden and the Herd Boy, each hard at work.",
+        "If rain falls on the seventh night, people say it is their tears. Nobody can tell whether they are sad ones or happy ones.",
+        "And the next morning, look closely at the magpies. Some seem a little bald on top. So would you be, if two people in love had walked across your head."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "golden-gate-bridge",
+      "name": "Golden Gate Bridge",
+      "era": "modern",
+      "built": {
+        "from": 1933,
+        "to": 1937,
+        "circa": false,
+        "note": "Building began in January 1933 and the bridge opened in May 1937."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "United States",
+      "place": "San Francisco, USA",
+      "coordinates": { "lat": 37.820, "lon": -122.478 },
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A long red-orange bridge hangs from two tall towers. Fog often hides its feet."
+        },
+        "medium": {
+          "line": "A hanging bridge of steel across the Golden Gate, the strait where San Francisco Bay meets the Pacific Ocean.",
+          "note": "It was built between 1933 and 1937. Its colour, called International Orange, helps ships to see it in fog."
+        },
+        "advanced": {
+          "line": "A suspension bridge opened in 1937, whose main span of about 1,280 metres was the longest in the world until 1964.",
+          "note": "The roadway hangs from two main cables, each spun from thousands of steel wires. The architect Irving Morrow chose the orange to suit the hills and to show in fog."
+        }
+      },
+      "art": {
+        "file": "art/golden-gate-bridge.heic",
+        "alt": "A long red-orange bridge with two tall towers, hung on great cables, crossing blue water with fog round its feet.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#17405C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Believed clear as a public work; confirm the name is not a restricted mark (CONTENT_PLAN 6.6).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the Chinese festival story of Qixi,",
+    "the Herd Boy (Niulang) and the Weaving Maiden (Zhinu). It is not the wording of any earlier edition.",
+    "Documented source for the tale: Richard Wilhelm (ed.), \"The Chinese Fairy Book\", translated by",
+    "Frederick H. Martens (New York: Stokes, 1921), story XVI. Project Gutenberg ebook #29939,",
+    "https://www.gutenberg.org/ebooks/29939 (US public domain; other territories not verified).",
+    "The source was read (pglaf mirror, 18 Nov 2026) for its plot only; no sentence follows its wording.",
+    "VARIANT. Our telling departs from the cited book on purpose. In Wilhelm the boy takes the maiden's",
+    "clothes while she bathes and so wins a promise of marriage; we do NOT tell that. We follow the equally",
+    "old and widely told form: they meet at the river, marry, and each forgets their work; for that they are",
+    "parted, and may meet one night a year if the work is done.",
+    "Other departures from the cited book: it has a yellow cow, we have an old ox (the common form);",
+    "it has nine sisters bathing in the Sea of Heaven, we have seven maidens washing silk in an earthly river;",
+    "in it the maiden draws the river herself with her hairpin, here her grandmother the Queen Mother does",
+    "(the common form, where she is Xiwangmu, the Queen Mother of the West); it has crows making the bridge,",
+    "we have magpies, as in the Chinese tradition (the 'magpie bridge', queqiao).",
+    "Plan change: the plan named both the Lord of Heaven and the Queen Mother. We keep one ruler, the",
+    "Queen Mother, as Zhinu's grandmother, so a child follows one authority from parting to pardon.",
+    "Our own small inventions: the dropped skein that Niulang fetches, the spider's web on the idle loom,",
+    "the ox as wedding guest, the magpies carrying the news. The grey dawns are in many tellings.",
+    "Left out: the stolen clothes, the talking willow, the couple's two children, the death of the ox and",
+    "its hide (in common tellings Niulang flies up wearing the hide; here the living ox carries him),",
+    "the yoke and spindle the pair throw at each other, and the promise of immortality.",
+    "Softened: no one is punished in anger; the Queen Mother frowns, parts them, and relents.",
+    "From the tradition and kept: rain on the seventh night as the lovers' tears (also in Wilhelm);",
+    "magpies bald after Qixi from being walked on (a common saying, not in Wilhelm).",
+    "Reviewer to check: the names Zhinu (with u-umlaut in the text) and Niulang and the pronunciation hints",
+    "on the cards (jir-nyoo, nyoh-lahng, chee-shee); the title Queen Mother and her being the grandmother;",
+    "Yinhe and Tianhe as names of the Milky Way; needle-threading at Qixi; Tanabata and Chilseok;",
+    "Vega = Weaving Maiden and Altair = Herd Boy; silk facts; the Golden Gate Bridge facts (1933-1937,",
+    "main span about 1,280 m, longest until 1964, International Orange, Irving Morrow).",
+    "SOURCE CHECK (18 Nov 2026, against Gutenberg #29939 on the mirror): one coinage of the translator's",
+    "('cloud-silk') was in the first draft and was changed to 'the silk of the sky'. No other echo found.",
+    "CORRECTION: the two children and the ox's death and hide, named above as left out, are NOT in Wilhelm;",
+    "they belong to the common tradition. Further departures from Wilhelm: his boy flies up on the cow before",
+    "the marriage and the courtship is in Heaven; the marriage lasts seven days and only she neglects her",
+    "work; only the Maiden crosses the bridge (ours: both meet in the middle); his yearly meeting has no",
+    "condition (ours: 'if the work is done'); her parent is the Ruler of Heaven, with no grandmother; his boy",
+    "is a poor family's son hired out, not an orphan with a hut. The colour yellow is kept (his cow, our ox).",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Chinese reader) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#0D1236",
+      "shade": "#1D2A63",
+      "mid": "#4A3F8A",
+      "light": "#C9D3F2",
+      "glow": "#F4B58A",
+      "accent": "#E8748F",
+      "mood": "Deep night blues and violet, the Silver River in cool silver-white, and one warm note of rose-gold wherever Zhinu's silk appears; quiet, wide and still, like an ink painting on dark blue paper."
+    },
+    "light": "DARK story: every scene is night or deep dusk, and the text is light. Soft cool starlight from above; the only warm light is the rose-gold glow of the cloud-silk (and a small lamp glow in the hut doorway). Keep the leading (left) pane dark and even so pale text reads on it; no bright moon behind the words.",
+    "world": [
+      "A folk-tale China of long ago (Han-style, before 1000): never a named dynasty court. Dress is hanfu: cross-collar robes closing right over left, long wide sleeves, a sash at the waist. No buttons, no high Manchu collars.",
+      "Zhinu's loom is a tall wooden frame loom with a slanted warp of many fine threads, a cloth beam and a hand shuttle; it stands on dark cloud, not on a floor. The cloth she weaves leaves the loom as long soft bands of rose and gold that trail away across the sky like cloud at sunset.",
+      "The sky country is cloud and open sky: a few low curling cloud banks drawn with simple scroll edges, one plain gateway of pale stone or wood with a tiled roof far off. No palace crowds, no thrones.",
+      "The meadow: flat river land with reeds and grass, a slow river, a small hut with earth walls and a thick straw thatch, a low doorway with a faint lamp glow. Beside it a short row of white mulberry trees: low, round-headed, with broad heart-shaped leaves (the trees silkworms feed on).",
+      "The ox is a Chinese yellow ox: yellow-brown coat, a small hump at the shoulder, short curved horns, a soft dewlap, a rope halter. Old and gentle, a little bony at the hip. Not a water buffalo, not a European dairy cow.",
+      "Farm things: a simple wooden plough with a single iron share, a hoe, a woven bamboo basket, a wooden comb or handful of straw for grooming the ox.",
+      "The Silver River is the Milky Way: a broad uneven band of countless small stars with brighter knots and a darker lane in it, slanting across the whole sky and pouring like water between two banks of dark cloud. Two stars are brighter than all the rest, one on each bank (Vega on Zhinu's side, Altair on Niulang's).",
+      "The magpie is the Eurasian (Oriental) magpie: black head, breast and back, white belly and white shoulder patches, long wedge-shaped tail and wings with a blue-green gloss. In the bridge the birds overlap wing to wing like roof tiles, making one clear arch; the nearest dozen are drawn as birds, the rest become pattern.",
+      "The cloud messengers are two calm figures in plain white robes with long sleeves, half made of cloud at the hem; grave and gentle, not soldiers, no weapons.",
+      "The Queen Mother (she has no portrait or chip): an upright older woman in a dark violet robe with a wide sash, grey hair in a high knot held by one long silver pin. Stern but not cruel; if she appears at all she is small and far off at the sky gate.",
+      "Nothing frightening: the parting is wide and quiet, not violent. The ox's leap into the sky is grand and a little comic (an old ox galloping on air).",
+      "Avoid: Qing-dynasty queues and Manchu dress, dragons and phoenixes everywhere, red paper lanterns and festival clutter, pandas, the Great Wall, pagodas on every hill, chopstick hairpins, slanted-eye caricature. The Golden Gate Bridge never appears in any scene."
+    ],
+    "characters": {
+      "zhinu": "A young woman, slim and upright, with a calm round face and small plain dark eyes. A pale rose cross-collar robe with long sleeves and a deeper rose sash, a trailing silk scarf; black hair in a high knot with one plain pin. On earth (pages 3 to 6) the same robe with sleeves tied back. Signature detail: a band or skein of rose-gold silk always in or near her hands.",
+      "niulang": "A young man, sturdy and sun-browned, with an open face. A short faded blue cross-collar jacket with a cloth belt, loose undyed trousers rolled at the shin, straw sandals; black hair in a topknot tied with a strip of cloth. Signature detail: one hand on the ox, or the ox's rope halter in his hand.",
+      "ox": "An old yellow-brown Chinese ox with short curved horns, a small shoulder hump, kind half-closed eyes and a grey muzzle; a rope halter. Signature gesture: kneeling on his front legs to let Niulang climb on."
+    },
+    "scenes": {
+      "scene-loom": {
+        "unfolded": "Deep dusk, DARK. Far: dark violet sky deepening to night blue at the top, a few early stars. Middle: low banks of dark cloud with paler edges. Near, on the trailing (right) half: the tall loom standing on cloud with Zhinu seated at it, shuttle in hand; from the loom, bands of rose and gold cloud-silk trail away to the right and low along the horizon, glowing softly. The leading (left) pane's upper two thirds are calm dark violet sky; the silk reaches it only as a thin low glow.",
+        "folded": "Zhinu's face in the middle, bent a little over her work, the warp threads of the loom rising behind her and a band of rose-gold silk across the bottom; dark sky at the top for the words."
+      },
+      "scene-meadow": {
+        "unfolded": "Night, DARK. Far: a dark blue sky thick with small stars over a low line of black hills. Middle: the slow river as a paler band catching starlight, reeds along it. Near, on the trailing (right) half: the straw-roofed hut with a faint warm glow in its doorway, the row of round mulberry trees, and Niulang standing with the Old Ox. The leading pane's upper two thirds are calm starry sky, the stars small and sparse there.",
+        "folded": "Niulang in the middle with his arm over the Old Ox's neck, the thatch of the hut behind one shoulder and stars above; dark sky at the top."
+      },
+      "scene-river": {
+        "unfolded": "Deep night, DARK. The Silver River fills the picture: a great band of stars sweeping from the upper right down across the middle, widest and brightest on the trailing (right) half. Near right, on a bank of dark cloud: Zhinu, small, standing and looking across. Far across the stars on the other bank: a tiny Niulang with the ox, and one bright star above each of them. On the leading (left) pane the river thins to a pale mist low down; the upper two thirds stay dark and calm.",
+        "folded": "Zhinu from the shoulders up at one side, looking across a wide band of stars to a very small figure and ox on the far bank; dark sky above."
+      },
+      "scene-bridge": {
+        "unfolded": "Deep night, DARK. The river of stars runs low across both panes. On the trailing (right) half, one clear arch of magpies wing to wing rises over it, black and white with a blue-green gloss, and at the top Zhinu and Niulang meet and take hands, her rose scarf lifting. One bright star stands at each foot of the bridge. On the leading (left) pane a few last magpies fly up from the bottom corner; the upper two thirds are calm dark blue sky.",
+        "folded": "Zhinu and Niulang in the middle, taking hands, with magpie wings overlapping like tiles under their feet and stars round them; dark sky at the top."
+      }
+    },
+    "pictures": {
+      "silk": "One centred skein of shining rose-pink silk thread, loosely twisted, with three white silkworm cocoons resting on a single green mulberry leaf below it; deep plum ground.",
+      "silver-river": "The Milky Way as one pale silver band of stars slanting across a dark blue sky, above a low black line of hills; no figures.",
+      "qixi": "One fine needle with a long red thread through its eye, held up against a half moon (the moon of a seventh night) in a dark violet sky; no hand needed, or only fingertips.",
+      "two-stars": "Two bright four-rayed stars, the left a little blue-white, one on each side of a pale band of small stars; dark blue sky, nothing else."
+    },
+    "portraits": {
+      "zhinu": "Half figure, turned a little to one side, in her pale rose robe with her hair in a high knot, holding a skein of dawn-pink silk in both hands; deep violet sky with a faint band of rose behind. No rays.",
+      "niulang": "Half figure in his short blue jacket and cloth-tied topknot, one hand on the neck of the Old Ox, whose head shares the picture; deep blue starry sky behind. No rays."
+    },
+    "cover": "The meeting on the bridge: the arch of magpies across the middle of the picture over the river of stars, Zhinu and Niulang at the top reaching for each other's hands, her rose-gold scarf the one warm note in a deep blue night.",
+    "landmarks": {
+      "golden-gate-bridge": "Our own drawing of the Golden Gate Bridge by day, seen from one side: two tall red-orange towers with their stepped cross-braces, the two great main cables sweeping down and up, thin hanger cables, the long deck over blue water, low white fog round the tower feet and green-brown hills at one end. No photograph traced; no magpies, no figures from the story."
+    }
+  }
+}

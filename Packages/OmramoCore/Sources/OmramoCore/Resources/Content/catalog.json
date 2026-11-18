@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 3,
+  "catalogVersion": 4,
   "stories": [
     "monkey-and-crocodile",
     "shipwrecked-sailor",
@@ -13,7 +13,17 @@
     "north-wind-and-sun",
     "why-sun-and-moon-live-in-sky",
     "lion-and-hare",
+    "tiger-brahman-jackal",
+    "khufu-and-the-magician",
+    "bamboo-cutter-and-moon-child",
+    "herd-boy-and-weaving-maiden",
+    "iktomi-and-the-muskrat",
+    "long-day-at-fish-camp",
+    "sadko",
+    "androcles-and-the-lion",
+    "horse-and-the-olive",
     "anansi-wisdom",
+    "sindbad-second-voyage",
     "urashima-taro"
   ]
 }

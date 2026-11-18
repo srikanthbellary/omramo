@@ -1,6 +1,6 @@
 # Omramo — Content plan: launch story catalog and landmarks (v2)
 
-**Status:** the plan is Srikanth's proposal-as-adopted for the build (round 5 writes it out). **Written and drawn so far: 13 of 32 stories** — the three prototypes and, in round 5 batch 1 (18 Nov 2026), the ten other Low stories; see §2a. Every text is a draft (`review.text: pending`), every picture is concept art drawn in code (`review.art: pending`), and nothing has been through cultural review, fact-check or legal clearance.
+**Status:** the plan is Srikanth's proposal-as-adopted for the build (round 5 writes it out). **Written and drawn so far: 23 of 32 stories** — the three prototypes and, in round 5 (18 Nov 2026), the ten other Low stories (batch 1) and the ten other Medium stories (batch 2); see §2a. Every text is a draft (`review.text: pending`), every picture is concept art drawn in code (`review.art: pending`), and nothing has been through cultural review, fact-check or legal clearance.
 **Reads with:** `docs/PRD.md` (§4a, §12), `docs/ARCHITECTURE.md` (§6), `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md` (milestone C1).
 
 **Owner requirements this plan answers (13 Nov 2026):**
@@ -81,8 +81,17 @@ Conventions: **Decided / Assumption / TBD — open question** as in the PRD. No 
 | L9 | `north-wind-and-sun` | Low | Draft — round 5 batch 1 |
 | L10 | `why-sun-and-moon-live-in-sky` | Low | Draft — round 5 batch 1 ⚑ Efik reader |
 | L11 | `lion-and-hare` | Low | Draft — round 5 batch 1 ⚑ reviewer familiar with Rumi and Sufi tradition (light) |
-| M1–M9, M11 | the ten other Medium stories | Medium | Planned — round 5 batch 2 |
+| M1 | `tiger-brahman-jackal` | Medium | Draft — round 5 batch 2 |
+| M2 | `khufu-and-the-magician` | Medium | Draft — round 5 batch 2 |
+| M3 | `bamboo-cutter-and-moon-child` | Medium | Draft — round 5 batch 2 |
+| M4 | `herd-boy-and-weaving-maiden` | Medium | Draft — round 5 batch 2 |
+| M5 | `iktomi-and-the-muskrat` | Medium | Draft — round 5 batch 2 ⚑ Dakota consultant |
+| M6 | `long-day-at-fish-camp` | Medium | Draft (original) — round 5 batch 2 ⚑ Yup'ik consultant |
+| M7 | `sadko` | Medium | Draft — round 5 batch 2 |
+| M8 | `androcles-and-the-lion` | Medium | Draft — round 5 batch 2 |
+| M9 | `horse-and-the-olive` | Medium | Draft — round 5 batch 2 |
 | M10 | `anansi-wisdom` | Medium | Draft (rounds 2–4; moral polished in round 5) ⚑ Akan reader |
+| M11 | `sindbad-second-voyage` | Medium | Draft — round 5 batch 2 |
 | A1, A2, A4–A10 | the nine other Advanced stories | Advanced | Planned — round 5 batch 3 |
 | A3 | `urashima-taro` | Advanced | Draft (rounds 2–4; moral polished in round 5) |
 
@@ -93,6 +102,20 @@ Things the drafts of batch 1 did that this plan left open (each is listed in the
 - **Names and words.** The Snow House: the girl is Elisapie; three Inuktitut words (iglu, qamutiik, qulliq) — all for the Inuit consultant. Possum: no Cherokee words; the dance is the animals' own. Sun and Moon: no Efik names. Old Man: Yu Gong and Zhi Sou with the meanings of their names.
 - **Landmarks added to the shared catalog (10):** `sydney-opera-house`, `himeji-castle`, `great-wall-of-china`, `machu-picchu`, `hagia-sophia`, `saint-basils-cathedral`, `bremen-town-hall-roland`, `colossus-of-rhodes`, `statue-of-liberty`, `petra`, each with fact cards for the three tiers (facts pending review; several dates and details beyond §5.1 come from general knowledge and are marked in the review notes).
 - **Morals** are one short sentence each (round 5 rule: at most about 14 words for Low, 18 for Medium and Advanced, no semicolon).
+
+Things the drafts of batch 2 did that this plan left open or had wrong (each is in the story's manuscript header for the reviewers):
+
+- **Sources.** All nine sources were read on the Gutenberg mirror, first by the writers (for the order of events) and then by a source-check pass that compared wording. Phrases that stayed close to a translator (most in the Tiger and Iktomi drafts, some in Khufu) were reworded; the manuscript headers list what was changed and where each telling departs from its cited book.
+- **M4, the variant.** Wilhelm's version (the cited book) has the Herd Boy take the maiden's clothes while she bathes. Ours follows the other old form of the tale: they marry, both neglect their work, they are parted, and may meet once a year if the work is done. The Queen Mother (her grandmother here) draws the river; magpies make the bridge (Wilhelm: crows).
+- **M6, a correction to this plan.** §3.2 says "the summer of the midnight sun". At the Kuskokwim (about 61° N) the June sun does set for a few hours; the sky stays light. The story says so ("the sun was only now sliding down" near midnight) and a test keeps the phrase "midnight sun" out. The boy is Nick, the elder Lena (everyday English names; Yup'ik names are left to the consultant); three Yugtun words (quyana, uluaq, akutaq). King-salmon fishing on the Kuskokwim has been restricted in recent years: the consultant decides whether the story names the fish.
+- **M7, the source gap.** Our Sadko follows the traditional bylina (the wager on the golden-finned fish, the tribute owed, the broken strings, Chernava); Ransome's chapter, the plan's cited book, tells a different shape and none of his details is used. A public-domain translation of the bylina would be a truer documented source (open; CQ2). Saint Nicholas is left out.
+- **M2.** The prophecy is left out, as planned; Dedi's two refusals carry the story. The plan's "Giza and Memphis": the text names no city for the palace (both lie west of the river; the pyramid is seen "beyond the green fields").
+- **M5.** The hospitality sentence is our paraphrase of the custom Zitkala-Ša states, not a Dakota formula; the consultant's first question is whether an Iktomi story may be published for reading in every season at all (§1.3).
+- **M8.** The Colosseum card is labelled "SOON AFTER THIS STORY" (about forty years). The arena in the scenes is a circus-like ground, not the Colosseum.
+- **M9.** Greek names (Zeus, Poseidon, Athena) for Baldwin's Roman ones; the people vote with pebbles and the olive wins by one; the horse stays.
+- **Softenings (examples).** Khufu: the goose trick happens "behind a cloth, quick as a blink". Tiger: he is carried off into the forest by the villagers. Iktomi: the bone bounces off his nose. Sindbad: the serpents are heard, never fought. Bamboo-Cutter: nobody is hurt or dies; the two last suitors "quietly gave up". Androcles: slavery said plainly in two sentences; no fighting shown in the arena.
+- **Landmarks added to the shared catalog (12; 26 of 37 now):** `great-pyramid-giza`, `chichen-itza`, `mount-fuji` (natural: no built date), `golden-gate-bridge`, `novgorod-kremlin`, `christ-the-redeemer`, `colosseum`, `temple-of-artemis-ephesus` (lost: a reconstruction), `parthenon`, `statue-of-zeus-olympia` (lost: a reconstruction), `hanging-gardens-babylon` (unproven: a reconstruction, and the cards say no trace has been found), `burj-khalifa`. Landmarks outside the ten story regions carry no `region`.
+- **Levelling.** Ten pages in two parts, 86–112 words a page (the tests allow up to 118), four scenes, three or four tap-to-see words (one a place, one "how people live there"), two character cards. Three of the ten are dark stories with light text, like the Anansi prototype (Bamboo-Cutter, Herd Boy, Sadko).
 
 ---
 

@@ -1,0 +1,1224 @@
+{
+  "schemaVersion": 1,
+  "id": "sindbad-second-voyage",
+  "contentVersion": 1,
+  "title": "Sindbad’s Second Voyage",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "persianArabian",
+    "culture": "Arabic (The Thousand and One Nights)",
+    "place": "Baghdad and Basra, Iraq",
+    "label": "Baghdad · Iraq",
+    "pin": {
+      "lat": 33.3,
+      "lon": 44.4
+    },
+    "pinColor": "#12A8B8"
+  },
+  "setting": {
+    "period": "The golden age of Baghdad, about 1,200 years ago",
+    "latestYear": 900
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Arabic tale from The Thousand and One Nights",
+    "sources": [
+      {
+        "author": "Andrew Lang (ed.)",
+        "title": "The Arabian Nights Entertainments",
+        "year": 1898,
+        "gutenbergId": 128,
+        "url": "https://www.gutenberg.org/ebooks/128",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of an Arabic tale from The Thousand and One Nights, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Reader in Arabic literature (Iraq)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Baghdad stands on the river Tigris; downstream lies the port of Basra, and beyond it the Gulf and the Indian Ocean. Sailing ships crossed that ocean on the monsoon winds.",
+      "factCards": [
+        "basra",
+        "baghdad-moment",
+        "gulf-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "In the golden age of Baghdad, merchants and sailors carried goods and stories between Iraq, India, Africa and China. The Thousand and One Nights gathered such stories over hundreds of years.",
+      "factCards": [
+        "dhow",
+        "the-nights"
+      ]
+    },
+    "moral": {
+      "lesson": "Each time Sindbad is stuck he rages for a minute, then looks at what he has (a tree, a turban, an old tale) and uses it. He is also very glad to get home, and then forgets why.",
+      "reflectionQuestion": "Sindbad promises twice never to go to sea again. Do you think he will keep his promise this time?"
+    }
+  },
+  "moral": "When you are alone and afraid, keep your wits about you.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#0F2F3D",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A small man in a turban stands beside a huge smooth white egg among green trees, while the shadow of a giant wing slides over the ground.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "sindbad",
+      "name": "Sindbad",
+      "color": "#0E6E7C",
+      "face": {
+        "file": "art/face-sindbad.png",
+        "alt": "Sindbad.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D3EEF0",
+      "card": {
+        "label": "Character · a merchant of Baghdad",
+        "title": "Sindbad",
+        "traits": [
+          {
+            "text": "Quick thinker",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Wears a long turban",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Glad to get home",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He buys and sells from port to port, and trouble finds him at every one. When he is stuck, he stops shouting and starts thinking.",
+        "portrait": {
+          "file": "art/char-sindbad.card.heic",
+          "alt": "Sindbad, a young man with a short dark beard and a white turban, smiling, with a sea-blue sash round his robe.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#C9ECEC",
+          "#8FD0D2",
+          "#3E9EAA"
+        ]
+      }
+    },
+    {
+      "id": "roc",
+      "name": "Roc",
+      "color": "#9A6A12",
+      "face": {
+        "file": "art/face-roc.png",
+        "alt": "The Roc.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FBE9BF",
+      "card": {
+        "label": "Character · the greatest bird of the tales",
+        "title": "The Roc",
+        "traits": [
+          {
+            "text": "Wide as a cloud",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Called “rukh” in Arabic",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never notices Sindbad",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "Sailors told of a bird so big that her egg looked like a white dome. To the Roc, a man is no more than a burr on her leg.",
+        "portrait": {
+          "file": "art/char-roc.card.heic",
+          "alt": "The head and one great wing of a white and gold bird like an eagle, with a tiny island far below it.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FBEBC2",
+          "#F2CB7A",
+          "#D79A3C"
+        ]
+      }
+    },
+    {
+      "id": "merchant",
+      "name": "Merchant",
+      "color": "#7A3E6B",
+      "face": {
+        "file": "art/face-merchant.png",
+        "alt": "The diamond merchant.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#EEDDEA"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "baghdad-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "hanging-gardens-babylon",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Find Baghdad on the map, and look a little to the south for the ruins of Babylon. There, people said, a king once built gardens in the sky, but no one has ever found them."
+        }
+      },
+      "background": "#1E4A38"
+    },
+    {
+      "id": "gulf-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "burj-khalifa",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "Sindbad sailed down the Gulf in a wooden ship. Long after this story, about 1,200 years later, the tallest building in the world rose on its shore."
+        }
+      },
+      "background": "#1B3558"
+    },
+    {
+      "id": "dhow",
+      "kind": "object",
+      "title": "Dhow",
+      "line": "A wooden sailing ship with a slanting sail, its planks sewn together with cord.",
+      "cultureNote": {
+        "label": "From the Arabian Sea",
+        "text": "Sailors of the Gulf and the Indian Ocean used the monsoon, a wind that blows one way for half the year and back for the other half. They sailed out on one wind and waited to come home on the other."
+      },
+      "picture": {
+        "file": "art/see-dhow.heic",
+        "alt": "A wooden ship with one tall slanting triangular sail, seen from the side on calm blue water.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1C4F63"
+    },
+    {
+      "id": "the-nights",
+      "kind": "idea",
+      "title": "The Nights",
+      "line": "The Thousand and One Nights is a great book of old tales, and Sindbad’s is one.",
+      "cultureNote": {
+        "label": "From the Arabic-speaking world",
+        "text": "The tales were gathered over hundreds of years from Arabic, Persian and Indian storytellers. In the book a clever queen, Shahrazad, tells a king a story night after night."
+      },
+      "picture": {
+        "file": "art/see-the-nights.heic",
+        "alt": "An open handwritten book on a low wooden stand, with a small brass oil lamp burning beside it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A5E"
+    },
+    {
+      "id": "basra",
+      "kind": "place",
+      "title": "Basra",
+      "line": "A busy port in the south of Iraq, where two great rivers flow together towards the sea.",
+      "cultureNote": {
+        "label": "From Iraq",
+        "text": "In Sindbad’s time, ships left Basra for India, East Africa and China, and came back with spices, silk and ivory. Date palms still grow along its waterways."
+      },
+      "picture": {
+        "file": "art/see-basra.heic",
+        "alt": "A mud-brick quay with tall date palms behind it and one wooden ship tied up, its sail furled.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6B4A1E"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-harbour.unfolded.heic",
+          "alt": "The flat port of Basra under a pale turquoise sky: a mud-brick quay with date palms and warehouses, and porters carrying bales. On the right Sindbad steps aboard a wooden ship with a long slanting sail.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-harbour.folded.heic",
+          "alt": "Sindbad on the gangplank of a wooden ship, a bale on his shoulder, with date palms behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEFF0",
+          "#FBEBC8",
+          "#D9B77A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sindbad",
+              "lead": true,
+              "name": "sindbad"
+            },
+            {
+              "t": " of ",
+              "lead": true
+            },
+            {
+              "t": "Baghdad",
+              "lead": true,
+              "tap": "baghdad-moment"
+            },
+            {
+              "t": " had sworn never to go to sea again.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He had come home rich from his first voyage, and he was glad of dry land. He bought a house with a fountain in the courtyard. He gave feasts for his friends."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For a whole year he kept his promise. Then one morning he walked by the river, where the boats were unloading."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He smelled tar and wet rope. He heard sailors talk of islands where pepper grew, and of fish as long as a street."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“One more voyage,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " said Sindbad to himself. "
+            },
+            {
+              "t": "“Only a short one.”",
+              "say": "sindbad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-harbour.unfolded.heic",
+          "alt": "The flat port of Basra under a pale turquoise sky: a mud-brick quay with date palms and warehouses, and porters carrying bales. On the right Sindbad steps aboard a wooden ship with a long slanting sail.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-harbour.folded.heic",
+          "alt": "Sindbad on the gangplank of a wooden ship, a bale on his shoulder, with date palms behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEFF0",
+          "#FBEBC8",
+          "#D9B77A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So he bought bales of cloth and jars of sweet oil, and went down the river to Basra."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A ship lay at the quay with her long slanting sail tied up. Other merchants were going aboard, and Sindbad went with them."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A fair wind carried them down "
+            },
+            {
+              "t": "the Gulf",
+              "tap": "gulf-moment"
+            },
+            {
+              "t": " and out upon the wide ocean. They sailed from port to port, wherever there was something to sell."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At every port Sindbad sold a little and bought a little. His bales grew smaller and his purse grew heavier."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“This is easy,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“I should have come sooner.”",
+              "say": "sindbad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-egg.unfolded.heic",
+          "alt": "A green island of fruit trees under a pale bright sky. On the right a huge smooth white dome with no door rises among the trees, with Sindbad tiny beside it and the shadow of a vast wing sliding over the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-egg.folded.heic",
+          "alt": "Sindbad, very small, looks up at the curve of a huge smooth white egg among the trees.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#F7F1D8",
+          "#7FB58A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One day they landed on an island of fruit trees and clear streams. Nobody lived there."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sindbad ate his fill of fruit. Then he lay down by a stream, and the water sang him to sleep."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When he woke, the shore was empty. Far out on the water, the "
+            },
+            {
+              "t": "dhow",
+              "tap": "dhow"
+            },
+            {
+              "t": " was a white speck. Nobody had meant to leave him. Nobody had counted."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Fool!”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " he shouted at himself. "
+            },
+            {
+              "t": "“You had a house! You had a fountain!”",
+              "say": "sindbad"
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He shouted until he was hoarse. Then, since shouting moved no ships, he climbed the tallest tree to look about."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-egg.unfolded.heic",
+          "alt": "A green island of fruit trees under a pale bright sky. On the right a huge smooth white dome with no door rises among the trees, with Sindbad tiny beside it and the shadow of a vast wing sliding over the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-egg.folded.heic",
+          "alt": "Sindbad, very small, looks up at the curve of a huge smooth white egg among the trees.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#F7F1D8",
+          "#7FB58A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "From the treetop he saw sea on one side. On the other, far off among the trees, something large and white was shining."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He walked to it. It was a dome, smooth as a washed bowl and higher than a house. He paced round it: fifty paces, and no door."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then the sky went dark, as if a cloud had crossed the sun. It was a bird as wide as a cloud, and it settled on the dome."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sindbad remembered the sailors’ talk of the "
+            },
+            {
+              "t": "Roc",
+              "name": "roc"
+            },
+            {
+              "t": ", the greatest bird in the world."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“That is no dome,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " he whispered. "
+            },
+            {
+              "t": "“That is an ",
+              "say": "sindbad"
+            },
+            {
+              "t": "egg",
+              "say": "sindbad",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": ".”",
+              "say": "sindbad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-egg.unfolded.heic",
+          "alt": "A green island of fruit trees under a pale bright sky. On the right a huge smooth white dome with no door rises among the trees, with Sindbad tiny beside it and the shadow of a vast wing sliding over the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-egg.folded.heic",
+          "alt": "Sindbad, very small, looks up at the curve of a huge smooth white egg among the trees.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#F7F1D8",
+          "#7FB58A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Roc folded her wings and slept upon her egg. One leg came down beside Sindbad, as thick as a palm trunk."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He looked at the leg. He looked at the empty sea."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A bird this size does not live on one small island,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Where she goes, there will be land.”",
+              "say": "sindbad"
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He unwound his turban, yard after yard, and tied himself fast to the great leg. All night he did not dare to sneeze."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At dawn the Roc rose. "
+            },
+            {
+              "t": "Up",
+              "fx": "stretch"
+            },
+            {
+              "t": " went Sindbad, until the island was a leaf and the sea a blue plate. Then down she dropped, so fast that he could not breathe."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A deep valley between sheer pale sandstone cliffs, with a strip of pale sky above and a floor that glitters with stones. On the right Sindbad stands small among them while a giant bird lifts away with a long serpent, and far serpents coil into holes in the rock.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "Sindbad kneels on the glittering valley floor with a diamond as big as his fist in his hand.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EEF0",
+          "#F3DDBE",
+          "#C89A6A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The ",
+              "lead": true
+            },
+            {
+              "t": "Roc",
+              "lead": true,
+              "name": "roc"
+            },
+            {
+              "t": " set him down in the deepest valley in the world.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He tore the knots loose and rolled away. The Roc snatched up a serpent longer than a ship, and was gone over the cliffs before he could stand."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The cliffs stood on every side like the walls of a well. No path climbed them. The sun reached the valley floor for one hour a day."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sindbad",
+              "name": "sindbad"
+            },
+            {
+              "t": " sat down, and the ground crunched. He looked. He was sitting on diamonds."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They lay about like gravel in a stream bed, and some were as big as his fist."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A deep valley between sheer pale sandstone cliffs, with a strip of pale sky above and a floor that glitters with stones. On the right Sindbad stands small among them while a giant bird lifts away with a long serpent, and far serpents coil into holes in the rock.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "Sindbad kneels on the glittering valley floor with a diamond as big as his fist in his hand.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EEF0",
+          "#F3DDBE",
+          "#C89A6A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sindbad laughed until the cliffs laughed back."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“On the island I had fruit and water, and wanted only a ship,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Here I have a king’s treasure, and I would give it all for a ladder.”",
+              "say": "sindbad"
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "As the light failed, the serpents came out. By day they hid from the Roc in holes in the rock. Now they slid over the stones, each one as thick as a ship’s mast."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sindbad found a small cave and rolled a stone across its mouth. He sat with his back to it all night and did not sleep. Outside, something dry went rustling by, and by, and by."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A deep valley between sheer pale sandstone cliffs, with a strip of pale sky above and a floor that glitters with stones. On the right Sindbad stands small among them while a giant bird lifts away with a long serpent, and far serpents coil into holes in the rock.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "Sindbad kneels on the glittering valley floor with a diamond as big as his fist in his hand.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EEF0",
+          "#F3DDBE",
+          "#C89A6A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last a grey light showed round the stone. The rustling stopped. Sindbad crept out, stiff and hungry."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Thump!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " A great piece of raw meat landed beside him. Thump! Another fell farther off. He looked up, and saw only cliff and sky."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he remembered "
+            },
+            {
+              "t": "an old tale",
+              "tap": "the-nights"
+            },
+            {
+              "t": " he had heard in Baghdad and never believed."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In it, merchants threw meat into a valley no man could climb down to. Diamonds stuck in the meat. Eagles carried the meat up to their nests, and the merchants chased the eagles off and picked out the stones."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“So it is true,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " said Sindbad. "
+            },
+            {
+              "t": "“Then I know my way out.”",
+              "say": "sindbad"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-nest.unfolded.heic",
+          "alt": "A cliff top under a wide pale morning sky. On the right, in a big nest of sticks, Sindbad sits up with a slab of meat tied to his back, a large eagle flaps away, and astonished merchants in turbans run up with sticks.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-nest.folded.heic",
+          "alt": "Sindbad sits up in a nest of sticks, holding out a handful of diamonds to an astonished merchant.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FDEFCB",
+          "#C9A26B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He filled his bag and sash with the best stones, tied the biggest piece of meat to his back with his turban, and lay face down."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Claws closed on the meat. The valley fell away, and an eagle dropped him in a nest on the cliff top."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Men came shouting and banging sticks, and the eagle flew. A "
+            },
+            {
+              "t": "merchant",
+              "name": "merchant"
+            },
+            {
+              "t": " ran to the nest and found a man where his meat should be."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Do not be angry,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " said Sindbad. "
+            },
+            {
+              "t": "“I have enough for us both.”",
+              "say": "sindbad"
+            },
+            {
+              "t": " He poured out his stones."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The merchant chose one, and only one. "
+            },
+            {
+              "t": "“This will keep me all my life,”",
+              "say": "merchant",
+              "chip": true
+            },
+            {
+              "t": " he said."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-harbour.unfolded.heic",
+          "alt": "The flat port of Basra under a pale turquoise sky: a mud-brick quay with date palms and warehouses, and porters carrying bales. On the right Sindbad steps aboard a wooden ship with a long slanting sail.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-harbour.folded.heic",
+          "alt": "Sindbad on the gangplank of a wooden ship, a bale on his shoulder, with date palms behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEFF0",
+          "#FBEBC8",
+          "#D9B77A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sindbad went home the long way, with the merchants, stopping at one island after another. On one grew camphor trees so wide that a whole caravan could rest under a single one."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last the ship came up the river to the date palms of "
+            },
+            {
+              "t": "Basra",
+              "tap": "basra"
+            },
+            {
+              "t": ". From there a riverboat took him home to Baghdad."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He gave much of his treasure to the poor. He sat by his fountain and told his friends about the egg, the valley and the long night in the cave."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I shall never go to sea again,”",
+              "say": "sindbad",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Sindbad",
+              "name": "sindbad"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And he meant it, for a whole year."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

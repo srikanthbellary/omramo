@@ -1,0 +1,1178 @@
+{
+  "schemaVersion": 1,
+  "id": "iktomi-and-the-muskrat",
+  "contentVersion": 1,
+  "title": "Iktomi and the Muskrat",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "nativeAmericanFirstNations",
+    "culture": "Dakota (Yankton)",
+    "place": "Northern Great Plains, North America",
+    "label": "Dakota · Great Plains",
+    "pin": {
+      "lat": 43.0,
+      "lon": -98.5
+    },
+    "pinColor": "#D94F3D"
+  },
+  "setting": {
+    "period": "A Dakota story, told on the Great Plains for many generations",
+    "latestYear": 1880
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Dakota Iktomi story",
+    "sources": [
+      {
+        "author": "Zitkala-Ša (Gertrude Simmons Bonnin, Yankton Dakota)",
+        "title": "Old Indian Legends",
+        "year": 1901,
+        "gutenbergId": 338,
+        "url": "https://www.gutenberg.org/ebooks/338",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a Dakota Iktomi story, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Indigenous story (Dakota). Some Dakota and Lakota families tell Iktomi stories only in winter; a Dakota consultant must advise whether and how we publish it, and check every card.",
+    "community": "Dakota consultant",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The northern Great Plains of North America are open grass country with prairie lakes and big rivers such as the Missouri. The Dakota live there today.",
+      "factCards": [
+        "great-plains",
+        "reed-lodge"
+      ]
+    },
+    "culture": {
+      "lesson": "Sharing food with a visitor is the Dakota way, as the Dakota writer Zitkala-Ša says herself. Iktomi the trickster teaches by doing things wrong: people laugh at him, and learn.",
+      "factCards": [
+        "guest-custom",
+        "storyteller"
+      ]
+    },
+    "moral": {
+      "lesson": "Iktomi wants to keep everything and still look generous, and he ends with nothing. Sharing would have cost him half a pot; greed costs him all of it. He learns the right words, but will he remember them?",
+      "reflectionQuestion": "Iktomi knew the right thing to say all along. Why do you think he did not say it?"
+    }
+  },
+  "moral": "Share what you have, for greed can lose you the whole pot.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#1B2B36",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "Iktomi runs along the shore of a prairie lake with a big stone on his back, while a small muskrat swims straight across the water.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "iktomi",
+      "name": "Iktomi",
+      "color": "#A63A2A",
+      "face": {
+        "file": "art/face-iktomi.png",
+        "alt": "Iktomi.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FBE0D2",
+      "card": {
+        "label": "Character · the trickster",
+        "title": "Iktomi",
+        "traits": [
+          {
+            "text": "Always hungry",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Too clever by half",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Wears beaded moccasins",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "In Dakota stories Iktomi is a spider trickster who can look like a man. He does things the wrong way, and people laugh at him and learn.",
+        "portrait": {
+          "file": "art/char-iktomi.card.heic",
+          "alt": "Iktomi in a fringed deerskin jacket, with red bands wrapped round his two long braids, hugging a cooking pot and looking sideways.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#F6D9A8",
+          "#E9A66A",
+          "#C9603E"
+        ]
+      }
+    },
+    {
+      "id": "muskrat",
+      "name": "Muskrat",
+      "color": "#5A3D2B",
+      "face": {
+        "file": "art/face-muskrat.png",
+        "alt": "Muskrat.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E9DCC8",
+      "card": {
+        "label": "Character · the visitor from the lake",
+        "title": "Muskrat",
+        "traits": [
+          {
+            "text": "Calls you friend",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Fast in water",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Builds with reeds",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He comes out of the lake dripping wet and greets Iktomi as a friend. His legs are short, but nobody on the prairie swims better.",
+        "portrait": {
+          "file": "art/char-muskrat.card.heic",
+          "alt": "Muskrat, small, round and dark brown, sitting up with wet whiskers among green cattails at the edge of the lake.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#CDE6EE",
+          "#8FC1D4",
+          "#4A8FAE"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "great-plains",
+      "kind": "place",
+      "title": "Great Plains",
+      "line": "A wide, open grass country in the middle of North America, with few trees.",
+      "cultureNote": {
+        "label": "From the Dakota",
+        "text": "The Dakota live on the northern Great Plains, a country of tall grass, prairie lakes and big rivers such as the Missouri. Many Dakota families live there today, in South Dakota, North Dakota, Minnesota and Nebraska."
+      },
+      "picture": {
+        "file": "art/see-great-plains.heic",
+        "alt": "A wide prairie of gold-green grass with one blue lake in the middle, under a huge pale sky with white clouds.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3F5A2E"
+    },
+    {
+      "id": "guest-custom",
+      "kind": "idea",
+      "title": "Sharing food",
+      "line": "When a visitor comes while you are eating, you ask them to sit and share.",
+      "cultureNote": {
+        "label": "From the Dakota",
+        "text": "Zitkala-Ša, the Dakota writer who set this story down, says that inviting a visitor to share your food was the custom of her people. Being generous is still greatly honoured among the Dakota today."
+      },
+      "picture": {
+        "file": "art/see-guest-custom.heic",
+        "alt": "A dark cooking pot of fish on the grass with two horn spoons resting side by side against it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#7A3A26"
+    },
+    {
+      "id": "reed-lodge",
+      "kind": "creature",
+      "title": "Muskrat lodge",
+      "line": "A muskrat is a small brown swimmer that builds a round house of reeds.",
+      "cultureNote": {
+        "label": "From the Great Plains",
+        "text": "Muskrats live in lakes and marshes across North America. They heap up cattails and mud into a dome in the water, and the door is underneath, so they swim in and out unseen."
+      },
+      "picture": {
+        "file": "art/see-reed-lodge.heic",
+        "alt": "A round dome of heaped brown reeds standing in still water, with a muskrat swimming towards it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4F5E"
+    },
+    {
+      "id": "storyteller",
+      "kind": "idea",
+      "title": "The storyteller",
+      "line": "A storyteller keeps old stories alive by telling them again to new listeners.",
+      "cultureNote": {
+        "label": "From the Dakota",
+        "text": "Zitkala-Ša, a Yankton Dakota woman, wrote these stories down in 1901 so that all children could read them. The Dakota tell Iktomi stories today, and some families tell them only on winter nights."
+      },
+      "picture": {
+        "file": "art/see-storyteller.heic",
+        "alt": "An open book lying on a striped wool blanket, with a small fire glowing warmly behind it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2F4F"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-lake.unfolded.heic",
+          "alt": "A blue prairie lake edged with wild rice and cattails under a wide pale sky, with gold-green grass running to the horizon. On the right, Iktomi sits by a small fire with a pot of fish, and a muskrat’s wet head looks up from the water’s edge.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-lake.folded.heic",
+          "alt": "Iktomi sits with a pot of fish and a horn spoon, while a wet muskrat stands at his elbow.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEEF5",
+          "#F6EBC8",
+          "#9DB56A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi sat by a prairie lake with a whole pot of fish.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All around him the grass of the "
+            },
+            {
+              "t": "Great Plains",
+              "tap": "great-plains"
+            },
+            {
+              "t": " ran out to the edge of the sky. Wild rice stood thick in the shallows, and an old willow leaned over the water."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi",
+              "name": "iktomi"
+            },
+            {
+              "t": " was a trickster, who liked playing tricks far better than working. Meals did not come to him every day, but today he had more boiled fish than he could eat in two."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He stirred it with his horn spoon. He sniffed the steam. He hummed a dance song, and he did not look up once."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-lake.unfolded.heic",
+          "alt": "A blue prairie lake edged with wild rice and cattails under a wide pale sky, with gold-green grass running to the horizon. On the right, Iktomi sits by a small fire with a pot of fish, and a muskrat’s wet head looks up from the water’s edge.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-lake.folded.heic",
+          "alt": "Iktomi sits with a pot of fish and a horn spoon, while a wet muskrat stands at his elbow.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEEF5",
+          "#F6EBC8",
+          "#9DB56A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Good day, my friend!”",
+              "say": "muskrat",
+              "chip": true
+            },
+            {
+              "t": " said a voice from the wild rice."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi jumped so hard that he nearly swallowed his spoon. There at his elbow stood "
+            },
+            {
+              "t": "Muskrat",
+              "name": "muskrat"
+            },
+            {
+              "t": ", sleek and dripping, fresh from the lake."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Good day,”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " said Iktomi, and that was all he said."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now, among the Dakota, when a visitor finds you eating, you ask him to sit down and "
+            },
+            {
+              "t": "share the meal",
+              "tap": "guest-custom"
+            },
+            {
+              "t": ". “Come and sit, my friend. There is plenty for two.” Iktomi knew it as well as he knew his own name."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Muskrat smiled and waited to be asked. Iktomi hummed louder and tapped time on the rim of the pot."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-lake.unfolded.heic",
+          "alt": "A blue prairie lake edged with wild rice and cattails under a wide pale sky, with gold-green grass running to the horizon. On the right, Iktomi sits by a small fire with a pot of fish, and a muskrat’s wet head looks up from the water’s edge.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-lake.folded.heic",
+          "alt": "Iktomi sits with a pot of fish and a horn spoon, while a wet muskrat stands at his elbow.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEEF5",
+          "#F6EBC8",
+          "#9DB56A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Muskrat looked at his wet toes. The lake behind him seemed a very good place to be."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi wanted every last fish for himself. He also wanted to look like the most generous fellow on the prairie."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He put down his spoon. "
+            },
+            {
+              "t": "“My friend, I have a fine idea!”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " he cried. "
+            },
+            {
+              "t": "“We shall run a race, from the far side of the lake back to this fire, and the winner eats the fish.”",
+              "say": "iktomi"
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Race you?”",
+              "say": "muskrat",
+              "chip": true
+            },
+            {
+              "t": " said Muskrat. "
+            },
+            {
+              "t": "“You have long legs, and look at mine. They are no longer than your thumb.”",
+              "say": "muskrat"
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then I will run with a heavy rock tied on my back,”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " said Iktomi grandly. "
+            },
+            {
+              "t": "“Nobody can call that unfair.”",
+              "say": "iktomi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-race.unfolded.heic",
+          "alt": "The long shore of the lake curves away through reeds and mud under a huge pale sky with white clouds. On the right, Iktomi runs bent double, with a heavy stone tied in a blanket on his back.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-race.folded.heic",
+          "alt": "Iktomi puffs along the shore, bent under a big stone wrapped in his blanket.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EBF6",
+          "#F3E9C6",
+          "#B7B86C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They walked round to the far side of the lake, where grey stones lay in the shallows. Iktomi chose the biggest, to show how fair he was."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He spread out his blanket and rolled the stone into it. Muskrat pushed from below, Iktomi heaved from above, and up it went onto his back."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Light as a duck feather,”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " said Iktomi, with his knees shaking."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far across the water, a thin thread of smoke showed where the pot was waiting. The first to reach the fire would win."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Ready?”",
+              "say": "muskrat",
+              "chip": true
+            },
+            {
+              "t": " asked Muskrat politely. "
+            },
+            {
+              "t": "“",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": "Go!",
+              "say": "iktomi",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": "”",
+              "say": "iktomi"
+            },
+            {
+              "t": " shouted Iktomi, and he was off."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-race.unfolded.heic",
+          "alt": "The long shore of the lake curves away through reeds and mud under a huge pale sky with white clouds. On the right, Iktomi runs bent double, with a heavy stone tied in a blanket on his back.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-race.folded.heic",
+          "alt": "Iktomi puffs along the shore, bent under a big stone wrapped in his blanket.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EBF6",
+          "#F3E9C6",
+          "#B7B86C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The shore of the lake was much longer than it looked.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi",
+              "name": "iktomi"
+            },
+            {
+              "t": " ran through mud that sucked at his moccasins. He ran through reeds that slapped his face. The stone went thump, thump, thump against his back, and the mosquitoes sang in both his ears."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Halfway round he stopped to puff, and he looked across the water. Nothing moved on the other shore. No grass shook. No small brown runner hurried along it."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Poor fellow,”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " said Iktomi. "
+            },
+            {
+              "t": "“He is so slow that I cannot even see him. I shall eat one fish for him.”",
+              "say": "iktomi"
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He laughed, hitched up his stone and ran on."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-swim.unfolded.heic",
+          "alt": "Seen from low over the water, the pale lake stretches to a small far bank where a thread of smoke rises. On the right, a muskrat swims straight across with a long V of ripples behind him, past a round lodge of reeds.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-swim.folded.heic",
+          "alt": "A muskrat swims with only his nose, eyes and whiskers above the water, trailing a V of ripples.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DDF0F4",
+          "#BFDDE6",
+          "#6FA3B8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But "
+            },
+            {
+              "t": "Muskrat",
+              "name": "muskrat"
+            },
+            {
+              "t": " was not on the other shore. Muskrat was not on any shore at all."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nobody had said which way to go, so he had slipped into the lake without a splash. Now he swam straight across the middle, with only his nose and whiskers showing."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Out among the cattails stood his house, a round "
+            },
+            {
+              "t": "lodge of reeds",
+              "tap": "reed-lodge"
+            },
+            {
+              "t": " heaped up in the water. He had dived and paddled here since he was a kit no bigger than a duck’s egg."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A long V of ripples spread out behind him, and the thread of smoke grew nearer with every stroke."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-lake.unfolded.heic",
+          "alt": "A blue prairie lake edged with wild rice and cattails under a wide pale sky, with gold-green grass running to the horizon. On the right, Iktomi sits by a small fire with a pot of fish, and a muskrat’s wet head looks up from the water’s edge.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-lake.folded.heic",
+          "alt": "Iktomi sits with a pot of fish and a horn spoon, while a wet muskrat stands at his elbow.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEEF5",
+          "#F6EBC8",
+          "#9DB56A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The afternoon was nearly gone when Iktomi staggered up to the willow tree."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There lay the ashes, still warm. There lay his horn spoon. But there was no pot, no fish and no Muskrat."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi let go of the blanket. Down came the stone, "
+            },
+            {
+              "t": "thump",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": ", right on his toe."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He hopped round the ashes on one foot, howling. Then he sat down and held his toe in both hands."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“He swam!”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " he groaned. "
+            },
+            {
+              "t": "“Of course he swam. And I carried a rock round a lake! A pot shared is half a pot. A pot raced for is no pot at all.”",
+              "say": "iktomi"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-tree.unfolded.heic",
+          "alt": "An old willow leans out over the still lake under a pale gold late-afternoon sky. On the right, the muskrat sits high on a branch with the pot, and Iktomi kneels below, staring at the muskrat’s reflection in the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-tree.folded.heic",
+          "alt": "Iktomi looks up with his mouth open at the muskrat, who sits on a willow branch holding the pot.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E2F0F2",
+          "#F5E7C2",
+          "#7FA98C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All that running had made him thirsty. He limped to the lake and bent down to drink."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he stared. Down in the deep green water sat Muskrat, with the pot between his paws, picking a fish clean."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“So that is where you are hiding!”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " cried "
+            },
+            {
+              "t": "Iktomi",
+              "name": "iktomi"
+            },
+            {
+              "t": ". He plunged in his arm up to the shoulder and caught a handful of cold water."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Somebody laughed. The laugh came from over his head."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi looked up. On a branch of the old willow sat the real Muskrat with the real pot. The one in the lake was only his picture in the water."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-tree.unfolded.heic",
+          "alt": "An old willow leans out over the still lake under a pale gold late-afternoon sky. On the right, the muskrat sits high on a branch with the pot, and Iktomi kneels below, staring at the muskrat’s reflection in the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-tree.folded.heic",
+          "alt": "Iktomi looks up with his mouth open at the muskrat, who sits on a willow branch holding the pot.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E2F0F2",
+          "#F5E7C2",
+          "#7FA98C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Muskrat! Dear, kind Muskrat!”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " called Iktomi. "
+            },
+            {
+              "t": "“Throw me down a little. One fish. Even one bone would do!”",
+              "say": "iktomi"
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He tipped back his head and opened his mouth as wide as it would go."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Muskrat chose a bone and dropped it with care. It hit Iktomi on the nose, plink, and fell in the grass. Iktomi was on his knees at once, hunting for it."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Muskrat laughed until the branch shook. "
+            },
+            {
+              "t": "“Next time a friend comes while you are eating,”",
+              "say": "muskrat",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“try saying this: ‘Come and sit, my friend. There is plenty for two.’ It is not hard.”",
+              "say": "muskrat"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-tree.unfolded.heic",
+          "alt": "An old willow leans out over the still lake under a pale gold late-afternoon sky. On the right, the muskrat sits high on a branch with the pot, and Iktomi kneels below, staring at the muskrat’s reflection in the water.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-tree.folded.heic",
+          "alt": "Iktomi looks up with his mouth open at the muskrat, who sits on a willow branch holding the pot.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E2F0F2",
+          "#F5E7C2",
+          "#7FA98C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Iktomi limped home across the prairie with an empty stomach and a toe as fat as a plum. Behind him, in the willow, Muskrat was scraping the pot."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All the way he practised. "
+            },
+            {
+              "t": "“Come and sit, my friend. There is plenty for two,”",
+              "say": "iktomi",
+              "chip": true
+            },
+            {
+              "t": " he told a meadowlark on a grass stem. "
+            },
+            {
+              "t": "“Come and sit, my friend,”",
+              "say": "iktomi"
+            },
+            {
+              "t": " he told a grasshopper, and a grey stone, and the first pale star."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "By the time he reached home he had it perfectly. He lay down very pleased with himself."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And by morning, the "
+            },
+            {
+              "t": "storytellers",
+              "tap": "storyteller"
+            },
+            {
+              "t": " say, he had forgotten every word."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -35,6 +35,13 @@ enum ContentPlan {
         "anansi-wisdom", "urashima-taro",
     ]
 
+    /// Round 5, batch 2: the ten new Medium stories (M1–M9 and M11; M10 is the Anansi prototype).
+    static let batchTwo: [String] = [
+        "tiger-brahman-jackal", "khufu-and-the-magician", "bamboo-cutter-and-moon-child",
+        "herd-boy-and-weaving-maiden", "iktomi-and-the-muskrat", "long-day-at-fish-camp", "sadko",
+        "androcles-and-the-lion", "horse-and-the-olive", "sindbad-second-voyage",
+    ]
+
     /// §7: the twelve stories that must carry the flag "needs cultural review before release".
     static let requiredReview: Set<String> = [
         "monkey-and-crocodile", "savitri-and-satyavan", "lion-and-hare", "why-possums-tail-is-bare",
@@ -59,6 +66,17 @@ enum ContentPlan {
         "north-wind-and-sun": ["colossus-of-rhodes", "statue-of-liberty"],
         "why-sun-and-moon-live-in-sky": [],
         "lion-and-hare": ["petra"],
+        // Batch 2 (§6.2), in the order the story meets them.
+        "tiger-brahman-jackal": [],
+        "khufu-and-the-magician": ["great-pyramid-giza", "chichen-itza"],
+        "bamboo-cutter-and-moon-child": ["mount-fuji"],
+        "herd-boy-and-weaving-maiden": ["golden-gate-bridge"],
+        "iktomi-and-the-muskrat": [],
+        "long-day-at-fish-camp": [],
+        "sadko": ["novgorod-kremlin", "christ-the-redeemer"],
+        "androcles-and-the-lion": ["temple-of-artemis-ephesus", "colosseum"],
+        "horse-and-the-olive": ["statue-of-zeus-olympia", "parthenon"],
+        "sindbad-second-voyage": ["hanging-gardens-babylon", "burj-khalifa"],
         "anansi-wisdom": ["asante-traditional-buildings"],
         "urashima-taro": ["tokyo-skytree"],
     ]
@@ -108,6 +126,74 @@ final class CatalogPlanTests: XCTestCase {
         }
         XCTAssertGreaterThanOrEqual(catalog.count, 13)
         XCTAssertLessThanOrEqual(catalog.count, 32)
+        // Batch 2 is all there too: 23 stories after it.
+        for id in ContentPlan.batchTwo {
+            XCTAssertTrue(catalog.contains(id), "\(id) is missing from the catalog")
+        }
+        XCTAssertGreaterThanOrEqual(catalog.count, 23)
+    }
+
+    func testEveryPlannedMediumStoryIsInTheCatalog() throws {
+        let library = try ContentPlan.bundledLibrary()
+        let medium = library.stories.filter { $0.tier == .medium }.map(\.id.rawValue)
+        XCTAssertEqual(medium, Array(ContentPlan.order[11..<22]))
+        XCTAssertEqual(Set(ContentPlan.batchTwo).union(["anansi-wisdom"]), Set(medium))
+        // One Medium story from every region, and two from Europe (Roman and Greek).
+        let regions = library.stories.filter { $0.tier == .medium }.map(\.region.id)
+        XCTAssertEqual(Set(regions), Set(RegionID.allCases))
+        XCTAssertEqual(regions.filter { $0 == .european }.count, 2)
+    }
+
+    func testTheNewMediumStoriesAreLevelledLikeTheAnansiStory() throws {
+        let library = try ContentPlan.bundledLibrary()
+        for story in library.stories where story.tier == .medium {
+            let id = story.id.rawValue
+            let isNew = ContentPlan.batchTwo.contains(id)
+            // Anansi has 8 pages; the plan gives a Medium story 8 to 10.
+            XCTAssertGreaterThanOrEqual(story.spreads.count, 8, id)
+            XCTAssertLessThanOrEqual(story.spreads.count, 10, id)
+            XCTAssertEqual(story.sample.freeSpreads, 2, id)
+            XCTAssertEqual(Set(story.spreads.map(\.scene.unfolded.assetName)).count, 4, id)
+            for spread in story.spreads {
+                // About 90 words a page; never a wall of text.
+                XCTAssertLessThanOrEqual(spread.wordCount, 118, "\(id) \(spread.id)")
+                XCTAssertGreaterThanOrEqual(spread.wordCount, 40, "\(id) \(spread.id)")
+                XCTAssertLessThanOrEqual(spread.blocks.count, 6, "\(id) \(spread.id)")
+                XCTAssertTrue(spread.blocks.allSatisfy { $0.pane == .leading && $0.kind == .paragraph }, "\(id) \(spread.id)")
+                let taps = spread.blocks.flatMap(\.runs).filter { $0.tapTarget != nil }
+                XCTAssertLessThanOrEqual(taps.count, 1, "\(id) \(spread.id)")
+            }
+            XCTAssertTrue(story.spreads[0].blocks[0].runs.allSatisfy(\.isLead), id)
+            // One ink a story: the three chrome styles agree (all light, or all dark like Anansi).
+            XCTAssertEqual(story.theme.chrome.leading, story.theme.chrome.trailing, id)
+            XCTAssertEqual(story.theme.chrome.leading, story.theme.chrome.folded, id)
+            if isNew {
+                XCTAssertEqual(story.parts.count, 2, id)
+                // A place card and "how people live there" (CONTENT_PLAN §4.2): three or more.
+                XCTAssertGreaterThanOrEqual(story.tapTargets.filter { $0.kind != .landmark }.count, 3, id)
+                XCTAssertEqual(story.characters.filter { $0.card != nil }.count, 2, id)
+                // The first page of Part II opens with a lead line too.
+                let second = try XCTUnwrap(story.spreads.first { $0.part == story.parts[1].id }, id)
+                XCTAssertTrue(second.blocks[0].runs.allSatisfy(\.isLead), id)
+            }
+        }
+    }
+
+    func testTheFishCampStoryTeachesAlaskaCorrectly() throws {
+        // CONTENT_PLAN §1.4: a present-day Yup'ik summer story with no snow house in it; a card
+        // says what the winter houses were built of.
+        let story = try XCTUnwrap(try ContentPlan.bundledLibrary().story(id: StoryID("long-day-at-fish-camp")))
+        XCTAssertEqual(story.region.id, .arctic)
+        XCTAssertTrue(story.region.culture.contains("Yup"))
+        XCTAssertTrue(story.region.place.contains("Alaska"))
+        XCTAssertNil(story.setting.latestYear, "a present-day story")
+        XCTAssertEqual(story.provenance.kind, .original)
+        let text = story.spreads.flatMap(\.blocks).map(\.plainText).joined(separator: " ").lowercased()
+        XCTAssertFalse(text.contains("snow house"))
+        XCTAssertFalse(text.contains("midnight sun"), "at 61° N the June sun dips below the horizon")
+        let sod = try XCTUnwrap(story.tapTargets.first { $0.id.rawValue == "sod-house" })
+        XCTAssertTrue((sod.cultureNote?.text ?? "").lowercased().contains("sod"))
+        XCTAssertTrue(story.landmarkIDs.isEmpty)
     }
 
     func testEveryPlannedLowStoryIsInTheCatalog() throws {
@@ -396,6 +482,59 @@ final class LandmarkPlanTests: XCTestCase {
         }
     }
 
+    func testTheWondersOfBatchTwoAreShownHonestly() throws {
+        let catalog = try SampleContent.landmarks()
+        for id in ["temple-of-artemis-ephesus", "statue-of-zeus-olympia"] {
+            let landmark = try XCTUnwrap(catalog.landmark(id: LandmarkID(id)), id)
+            XCTAssertEqual(landmark.status, .lost, id)
+            XCTAssertEqual(landmark.depiction, .reconstruction, id)
+            XCTAssertTrue(landmark.lists.contains(.ancientSeven), id)
+        }
+        // No trace of the gardens has been found: unproven, and drawn as an idea.
+        let gardens = try XCTUnwrap(catalog.landmark(id: LandmarkID("hanging-gardens-babylon")))
+        XCTAssertEqual(gardens.status, .unproven)
+        XCTAssertEqual(gardens.depiction, .reconstruction)
+        // The one Ancient Wonder still standing.
+        let pyramid = try XCTUnwrap(catalog.landmark(id: LandmarkID("great-pyramid-giza")))
+        XCTAssertEqual(pyramid.status, .standing)
+        XCTAssertEqual(pyramid.depiction, .asIs)
+        XCTAssertTrue(pyramid.lists.contains(.ancientSeven))
+        // A mountain was not built.
+        let fuji = try XCTUnwrap(catalog.landmark(id: LandmarkID("mount-fuji")))
+        XCTAssertEqual(fuji.era, .natural)
+        XCTAssertEqual(fuji.status, .natural)
+        XCTAssertNil(fuji.built)
+        XCTAssertGreaterThanOrEqual(catalog.landmarks.count, 26)
+    }
+
+    func testTheNaturalLandmarksOfBatchTwoBelongToTheirStories() throws {
+        // §6.2: Khufu's own pyramid, the mountain the tale ends on, Sadko's own city, and the
+        // temple on the hill of the contest (told as "built later" by the narrator).
+        let library = try ContentPlan.bundledLibrary()
+        let natural: [(story: String, landmark: String)] = [
+            ("khufu-and-the-magician", "great-pyramid-giza"),
+            ("bamboo-cutter-and-moon-child", "mount-fuji"),
+            ("sadko", "novgorod-kremlin"),
+            ("horse-and-the-olive", "parthenon"),
+        ]
+        for pair in natural {
+            let story = try XCTUnwrap(library.story(id: StoryID(pair.story)), pair.story)
+            let target = try XCTUnwrap(story.tapTargets.first { $0.landmark?.id.rawValue == pair.landmark }, pair.landmark)
+            XCTAssertEqual(target.landmark?.appearance, .natural, pair.landmark)
+        }
+        // Every other landmark of the batch stands outside its story and says how.
+        for id in ContentPlan.batchTwo {
+            let story = try XCTUnwrap(library.story(id: StoryID(id)), id)
+            for target in story.tapTargets where target.kind == .landmark {
+                let ref = try XCTUnwrap(target.landmark, id)
+                if !natural.contains(where: { $0.story == id && $0.landmark == ref.id.rawValue }) {
+                    XCTAssertEqual(ref.appearance, .framed, "\(id) \(ref.id)")
+                    XCTAssertNotNil(ref.framingDevice, "\(id) \(ref.id)")
+                }
+            }
+        }
+    }
+
     func testFramedLandmarksNameTheirDevice() throws {
         let library = try ContentPlan.bundledLibrary()
         for story in library.stories {
@@ -443,12 +582,18 @@ final class CulturalReviewFlagTests: XCTestCase {
                    "why-sun-and-moon-live-in-sky", "lion-and-hare", "anansi-wisdom"] {
             XCTAssertTrue(flagged.contains(id), id)
         }
+        // Batch 2 adds the Dakota story and the Yup'ik original: eight of the twelve.
+        for id in ["iktomi-and-the-muskrat", "long-day-at-fish-camp"] {
+            XCTAssertTrue(flagged.contains(id), id)
+        }
+        XCTAssertGreaterThanOrEqual(flagged.count, 8)
     }
 
     func testAFlaggedStoryCannotShip() throws {
         let repository = try SampleContent.repository()
         let landmarks = try repository.loadLandmarks()
-        for id in ["why-possums-tail-is-bare", "the-snow-house", "why-sun-and-moon-live-in-sky", "lion-and-hare"] {
+        for id in ["why-possums-tail-is-bare", "the-snow-house", "why-sun-and-moon-live-in-sky", "lion-and-hare",
+                   "iktomi-and-the-muskrat", "long-day-at-fish-camp"] {
             let story = try repository.loadStory(id: StoryID(id))
             let manuscript = try XCTUnwrap(try repository.loadManuscript(id: story.id))
             let report = StoryValidator(mode: .release).validate(story: story, landmarks: landmarks, manuscript: manuscript)
@@ -517,6 +662,11 @@ final class LibraryShelfTests: XCTestCase {
         XCTAssertEqual(shelves[0].stories.count, 11)
         XCTAssertEqual(shelves[0].countText, "11 stories")
         XCTAssertEqual(shelves[0].stories.first?.id, StoryID("monkey-and-crocodile"))
+        // Batch 2: the Medium shelf is full as well.
+        XCTAssertEqual(shelves[1].stories.count, 11)
+        XCTAssertEqual(shelves[1].countText, "11 stories")
+        XCTAssertEqual(shelves[1].stories.first?.id, StoryID("tiger-brahman-jackal"))
+        XCTAssertEqual(shelves[1].stories.last?.id, StoryID("sindbad-second-voyage"))
     }
 
     func testAChosenLevelIsOneShelf() throws {
@@ -625,5 +775,29 @@ final class NextStoryCatalogTests: XCTestCase {
         // The last Low story wraps round to the first unread Low story.
         let last = StoryID("lion-and-hare")
         XCTAssertEqual(NextStory.suggestion(after: last, in: stories, finished: [last])?.id, StoryID("monkey-and-crocodile"))
+    }
+
+    func testAMediumReaderIsLedAlongTheMediumShelf() throws {
+        let stories = try ContentPlan.bundledLibrary().stories
+        let medium = stories.filter { $0.tier == .medium }
+        XCTAssertEqual(medium.count, 11)
+        var finished: Set<StoryID> = []
+        var current = try XCTUnwrap(medium.first)
+        var walked = [current.id]
+        for _ in 1..<medium.count {
+            finished.insert(current.id)
+            let next = try XCTUnwrap(NextStory.suggestion(after: current.id, in: stories, finished: finished))
+            XCTAssertEqual(next.tier, .medium, "after \(current.id)")
+            walked.append(next.id)
+            current = next
+        }
+        XCTAssertEqual(walked, medium.map(\.id), "catalog order within the level")
+        // With the whole Medium shelf read, the next story is one level up, not down.
+        finished.insert(current.id)
+        let up = try XCTUnwrap(NextStory.suggestion(after: current.id, in: stories, finished: finished))
+        XCTAssertEqual(up.tier, .advanced)
+        // From the middle of the shelf: the following Medium story.
+        let sadko = StoryID("sadko")
+        XCTAssertEqual(NextStory.suggestion(after: sadko, in: stories, finished: [sadko])?.id, StoryID("androcles-and-the-lion"))
     }
 }

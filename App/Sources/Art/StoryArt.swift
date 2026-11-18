@@ -82,6 +82,17 @@ enum ArtLibrary {
         case "north-wind-and-sun": return WindSunArt.paint(_:role:in:size:)
         case "why-sun-and-moon-live-in-sky": return SunMoonArt.paint(_:role:in:size:)
         case "lion-and-hare": return LionHareArt.paint(_:role:in:size:)
+        // Round 5, batch 2: the Medium stories.
+        case "tiger-brahman-jackal": return TigerArt.paint(_:role:in:size:)
+        case "khufu-and-the-magician": return KhufuArt.paint(_:role:in:size:)
+        case "bamboo-cutter-and-moon-child": return MoonChildArt.paint(_:role:in:size:)
+        case "herd-boy-and-weaving-maiden": return WeaverArt.paint(_:role:in:size:)
+        case "iktomi-and-the-muskrat": return IktomiArt.paint(_:role:in:size:)
+        case "long-day-at-fish-camp": return FishCampArt.paint(_:role:in:size:)
+        case "sadko": return SadkoArt.paint(_:role:in:size:)
+        case "androcles-and-the-lion": return AndroclesArt.paint(_:role:in:size:)
+        case "horse-and-the-olive": return OliveArt.paint(_:role:in:size:)
+        case "sindbad-second-voyage": return SindbadArt.paint(_:role:in:size:)
         default: return nil
         }
     }

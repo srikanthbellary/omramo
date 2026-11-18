@@ -37,6 +37,8 @@ REQUIRED_REVIEW = {
 }
 ORIGINALS = {"the-snow-house", "long-day-at-fish-camp", "the-griots-apprentice"}
 BATCH_ONE_NEW = PLAN_ORDER[1:11]
+# Round 5, batch 2: the ten new Medium stories (the Anansi prototype is the eleventh).
+BATCH_TWO_NEW = [sid for sid in PLAN_ORDER[11:22] if sid != "anansi-wisdom"]
 HAND_WRITTEN = {"monkey-and-crocodile", "anansi-wisdom", "urashima-taro"}
 
 
@@ -116,6 +118,10 @@ class Specs(unittest.TestCase):
             self.assertIn(sid, self.catalog)
         for sid in HAND_WRITTEN:
             self.assertIn(sid, self.catalog)
+        for sid in BATCH_TWO_NEW:
+            self.assertIn(sid, self.catalog)
+        self.assertEqual(len(BATCH_TWO_NEW), 10)
+        self.assertGreaterEqual(len(self.catalog), 23)
 
     def test_every_catalog_story_has_a_spec_or_is_hand_written(self):
         for sid in self.catalog:
@@ -193,6 +199,46 @@ class Specs(unittest.TestCase):
                 self.assertLessEqual(words, 75, "%s %s" % (sid, spread["id"]))
                 taps = [r for b in spread["blocks"] for r in b["runs"] if r.get("tap")]
                 self.assertLessEqual(len(taps), 1, "%s %s" % (sid, spread["id"]))
+
+    def test_new_medium_stories_are_levelled(self):
+        for sid in BATCH_TWO_NEW:
+            story = self.stories[sid]
+            self.assertEqual(story["tier"], "medium", sid)
+            self.assertTrue(9 <= len(story["spreads"]) <= 10, sid)
+            self.assertEqual(len(story["parts"]), 2, sid)
+            self.assertEqual(len({s["scene"]["unfolded"]["file"] for s in story["spreads"]}), 4, sid)
+            ordinary = [t for t in story["tapTargets"] if t["kind"] != "landmark"]
+            self.assertGreaterEqual(len(ordinary), 3, sid)
+            self.assertTrue(any(t["kind"] == "place" for t in ordinary), sid)
+            self.assertEqual(len([c for c in story["characters"] if c.get("card")]), 2, sid)
+            chrome = story["theme"]["chrome"]
+            self.assertEqual(len({chrome["leading"], chrome["trailing"], chrome["folded"]}), 1, sid)
+            total = 0
+            for spread in story["spreads"]:
+                words = sum(len(vc.block_text(b).split()) for b in spread["blocks"])
+                total += words
+                self.assertLessEqual(words, 118, "%s %s" % (sid, spread["id"]))
+                self.assertGreaterEqual(words, 55, "%s %s" % (sid, spread["id"]))
+                taps = [r for b in spread["blocks"] for r in b["runs"] if r.get("tap")]
+                self.assertLessEqual(len(taps), 1, "%s %s" % (sid, spread["id"]))
+            self.assertTrue(750 <= total <= 1100, "%s: %d words" % (sid, total))
+            # Lead lines open the story and Part II.
+            self.assertTrue(all(r.get("lead") for r in story["spreads"][0]["blocks"][0]["runs"]), sid)
+            second = next(s for s in story["spreads"] if s["part"] == story["parts"][1]["id"])
+            self.assertTrue(all(r.get("lead") for r in second["blocks"][0]["runs"]), sid)
+            # Every character with a card is named (tappable) in the text.
+            named = {r.get("name") for s in story["spreads"] for b in s["blocks"] for r in b["runs"]}
+            for character in story["characters"]:
+                if character.get("card"):
+                    self.assertIn(character["id"], named, "%s: %s is never named" % (sid, character["id"]))
+
+    def test_the_fish_camp_story_has_no_snow_house_and_no_midnight_sun(self):
+        story = self.stories["long-day-at-fish-camp"]
+        text = " ".join(vc.block_text(b) for s in story["spreads"] for b in s["blocks"]).lower()
+        self.assertNotIn("snow house", text)
+        self.assertNotIn("midnight sun", text)
+        self.assertNotIn("latestYear", story["setting"])
+        self.assertIn("sod-house", [t["id"] for t in story["tapTargets"]])
 
     def test_a_tap_target_and_a_character_never_share_an_id(self):
         for sid, story in self.stories.items():

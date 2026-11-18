@@ -1,0 +1,1206 @@
+{
+  "schemaVersion": 1,
+  "id": "bamboo-cutter-and-moon-child",
+  "contentVersion": 1,
+  "title": "The Bamboo-Cutter and the Moon-Child",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "japanese",
+    "culture": "Japanese tale (Taketori Monogatari)",
+    "place": "Japan",
+    "label": "Japan",
+    "pin": {
+      "lat": 35.0,
+      "lon": 135.8
+    },
+    "pinColor": "#E8483F"
+  },
+  "setting": {
+    "period": "Old Japan, about 1,100 years ago",
+    "latestYear": 1000
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Japanese tale (Taketori Monogatari, The Tale of the Bamboo-Cutter)",
+    "sources": [
+      {
+        "author": "Yei Theodora Ozaki",
+        "title": "Japanese Fairy Tales",
+        "year": 1908,
+        "gutenbergId": 4018,
+        "url": "https://www.gutenberg.org/ebooks/4018",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Japanese tale, Taketori Monogatari, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Japanese reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Bamboo groves cover the hills of Japan. The old capital, Heian-kyo, is today’s Kyoto, and Mount Fuji, far to its east, is the highest mountain in the country.",
+      "factCards": [
+        "old-capital",
+        "fuji-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Bamboo is made into a hundred useful things. At the old court people wrote to each other in five-line poems, and in autumn families still sit out to look at the full moon.",
+      "factCards": [
+        "bamboo-work",
+        "court-poem",
+        "moon-viewing"
+      ]
+    },
+    "moral": {
+      "lesson": "The lords try to win Kaguya-hime with false gifts and are found out; the Emperor and her father love her truly and still cannot keep her. Loving someone does not make them yours.",
+      "reflectionQuestion": "The Emperor could have lived for ever. Why do you think he sent the jar up the mountain instead?"
+    }
+  },
+  "moral": "You cannot own someone you love, and false gifts are always found out.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": {
+      "leading": "dark",
+      "trailing": "dark",
+      "folded": "dark"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "At night in a dark bamboo grove, an old man kneels beside a cut stem that glows gold, and a tiny girl sits shining inside it.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "kaguya",
+      "name": "Kaguya-hime",
+      "color": "#FFE08A",
+      "face": {
+        "file": "art/face-kaguya.png",
+        "alt": "Kaguya-hime.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#4A4FA8",
+      "card": {
+        "label": "Character · the child from the Moon",
+        "title": "Kaguya-hime",
+        "traits": [
+          {
+            "text": "Shines in the dark",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Writes court poems",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Cannot be owned",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "She was found inside a bamboo stem, no longer than a hand. She is gentle with everyone, and nobody on earth can make her go where she will not.",
+        "portrait": {
+          "file": "art/char-kaguya.card.heic",
+          "alt": "Kaguya-hime in layered court robes, her long straight black hair loose down her back, with a pale glow around her and a full moon behind.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#4A5AA8",
+          "#2A2F78",
+          "#141A4A"
+        ]
+      }
+    },
+    {
+      "id": "bamboo-cutter",
+      "name": "Bamboo-Cutter",
+      "color": "#A8E0B0",
+      "face": {
+        "file": "art/face-bamboo-cutter.png",
+        "alt": "The old Bamboo-Cutter.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#2F6B4A",
+      "card": {
+        "label": "Character · her father on earth",
+        "title": "The Bamboo-Cutter",
+        "traits": [
+          {
+            "text": "Works with bamboo",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Gentle hands",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Loves his daughter",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He has cut bamboo in the same grove all his life. He would bar every door in Japan to keep his daughter beside him, and still he cannot.",
+        "portrait": {
+          "file": "art/char-bamboo-cutter.card.heic",
+          "alt": "The old Bamboo-Cutter in plain hemp work clothes, holding a short cutting knife, with dark bamboo stems behind him and a gold glow on his face.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#3F7D5A",
+          "#1F4A3A",
+          "#0F2A26"
+        ]
+      }
+    },
+    {
+      "id": "emperor",
+      "name": "Emperor",
+      "color": "#E3C8FF",
+      "face": {
+        "file": "art/face-emperor.png",
+        "alt": "The Emperor.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#6A3A8E"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "bamboo-work",
+      "kind": "object",
+      "title": "Bamboo work",
+      "line": "Bamboo is a giant grass with hollow stems that are light, strong and easy to split.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "In Japan, people have long split bamboo into thin strips and woven them into baskets, fences and blinds. Flutes, ladles, tea whisks and the handles of writing brushes are made of bamboo too."
+      },
+      "picture": {
+        "file": "art/see-bamboo-work.heic",
+        "alt": "A round woven bamboo basket, with a split green bamboo stem and a short cutting knife lying beside it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#17382C"
+    },
+    {
+      "id": "old-capital",
+      "kind": "place",
+      "title": "The old capital",
+      "line": "A capital is the city where the ruler of a country lives and keeps court.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "In the time of this story the Emperor’s capital was Heian-kyo, a city laid out in straight streets like a grid. Today it is called Kyoto, and many of its streets still follow that plan."
+      },
+      "picture": {
+        "file": "art/see-old-capital.heic",
+        "alt": "A great palace gate with red pillars and a wide tiled roof, at the end of a broad straight avenue under a night sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A2350"
+    },
+    {
+      "id": "court-poem",
+      "kind": "idea",
+      "title": "Court poem",
+      "line": "A very short poem of five lines, written with a brush and sent like a letter.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "At the old Japanese court, lords and ladies sent each other five-line poems instead of plain letters. A poem was written on fine paper and often tied to a flowering branch."
+      },
+      "picture": {
+        "file": "art/see-court-poem.heic",
+        "alt": "A folded poem on pale paper tied to a sprig of autumn grass, with a writing brush beside it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2B2A5E"
+    },
+    {
+      "id": "moon-viewing",
+      "kind": "idea",
+      "title": "Moon-viewing",
+      "line": "Sitting outside on an autumn evening, simply to look at the full moon.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "In Japan this custom is called tsukimi. In autumn families still set out round rice dumplings and tall pampas grass, and sit together to watch the full moon rise."
+      },
+      "picture": {
+        "file": "art/see-moon-viewing.heic",
+        "alt": "A small wooden stand piled with round white rice dumplings beside a vase of pampas grass, under a full moon.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1C2A52"
+    },
+    {
+      "id": "fuji-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "mount-fuji",
+        "appearance": "natural"
+      },
+      "background": "#1F3460"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-grove.unfolded.heic",
+          "alt": "A bamboo grove at night, deep green-black under an indigo sky. On the right an old man with a cutting knife bends towards one stem that glows gold from inside.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-grove.folded.heic",
+          "alt": "At night, an old man’s face is lit gold by a glowing bamboo stem with a tiny girl sitting inside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#131A40",
+          "#17382C",
+          "#0C1F1B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "An old man in Japan once cut bamboo for his living.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "From the tall green stems he and his wife made "
+            },
+            {
+              "t": "baskets and ladles",
+              "tap": "bamboo-work"
+            },
+            {
+              "t": " and flutes to sell, and people called him the "
+            },
+            {
+              "t": "Bamboo-Cutter",
+              "name": "bamboo-cutter"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One evening, when the grove was already dark, he saw one stem that shone. Light glowed through its green skin like a lamp through paper."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He cut it open with his knife, as gently as he could. In the hollow sat a girl no longer than his hand, looking up at him."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I have cut bamboo all my life,”",
+              "say": "bamboo-cutter",
+              "chip": true
+            },
+            {
+              "t": " he whispered, "
+            },
+            {
+              "t": "“and never found a daughter in it before.”",
+              "say": "bamboo-cutter"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "A thatched house among bamboo at deep dusk, under a dark indigo sky. On the right, pale light pours from its open doors as if a moon were inside, and ox-carts of fine visitors wait at the fence.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "At deep dusk, a young woman with very long black hair sits in a doorway, and the light that fills the house comes from her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A1E4E",
+          "#2A2F78",
+          "#14262A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He carried her home in his sleeve. His wife lined a basket with soft cloth, and there the tiny girl slept."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "After that day the old man’s luck changed. Whenever he split a stem of bamboo, gold pieces lay shining inside it."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The child grew as fast as bamboo itself. In three months she was a tall young woman with long black hair, and a pale light came from her. No room she sat in was ever dark."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So she was given the name "
+            },
+            {
+              "t": "Kaguya-hime",
+              "name": "kaguya"
+            },
+            {
+              "t": ", the Shining Princess."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On the blackest night, the old woman could thread her needle at her daughter’s side."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "A thatched house among bamboo at deep dusk, under a dark indigo sky. On the right, pale light pours from its open doors as if a moon were inside, and ox-carts of fine visitors wait at the fence.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "At deep dusk, a young woman with very long black hair sits in a doorway, and the light that fills the house comes from her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A1E4E",
+          "#2A2F78",
+          "#14262A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Word of the Shining Princess travelled all the way to the "
+            },
+            {
+              "t": "capital",
+              "tap": "old-capital"
+            },
+            {
+              "t": ". Soon great lords in ox-carts crowded the lane."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They waited at the fence through rain and snow. One by one they grew cold and went home, until only five were left. Those five would not go."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I am old, my child,”",
+              "say": "bamboo-cutter",
+              "chip": true
+            },
+            {
+              "t": " said the "
+            },
+            {
+              "t": "Bamboo-Cutter",
+              "name": "bamboo-cutter"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“Choose one of them, so that you are not left alone.”",
+              "say": "bamboo-cutter"
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Kaguya-hime did not wish to marry anyone. "
+            },
+            {
+              "t": "“Then let each bring me one thing,”",
+              "say": "kaguya",
+              "chip": true
+            },
+            {
+              "t": " she said, "
+            },
+            {
+              "t": "“a thing no one has ever brought. I will marry the man who truly does it.”",
+              "say": "kaguya"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "A thatched house among bamboo at deep dusk, under a dark indigo sky. On the right, pale light pours from its open doors as if a moon were inside, and ox-carts of fine visitors wait at the fence.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "At deep dusk, a young woman with very long black hair sits in a doorway, and the light that fills the house comes from her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A1E4E",
+          "#2A2F78",
+          "#14262A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The first lord had to find a stone bowl that shines by itself. He brought a sooty one from a temple down the road, and it did not shine at all."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The second had to find a branch of gold with jewels for fruit. His looked perfect, until six craftsmen knocked at the door. “Please, lady, he has not paid us for making it!”"
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The third had to find a robe of fire-rat fur, which no flame can burn. Kaguya-hime laid it on the coals. "
+            },
+            {
+              "t": "Puff!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " It was gone."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The last two lords heard about it and quietly gave up."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "A thatched house among bamboo at deep dusk, under a dark indigo sky. On the right, pale light pours from its open doors as if a moon were inside, and ox-carts of fine visitors wait at the fence.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "At deep dusk, a young woman with very long black hair sits in a doorway, and the light that fills the house comes from her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A1E4E",
+          "#2A2F78",
+          "#14262A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then the Emperor himself came riding to the house among the bamboo."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He saw her shining in the dim room. "
+            },
+            {
+              "t": "“Come to my palace,”",
+              "say": "emperor",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“You shall be the first lady of the land.”",
+              "say": "emperor"
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I cannot,”",
+              "say": "kaguya",
+              "chip": true
+            },
+            {
+              "t": " said Kaguya-hime. "
+            },
+            {
+              "t": "“If I am forced, I shall vanish like a shadow.”",
+              "say": "kaguya"
+            },
+            {
+              "t": " And already her edges were growing faint."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Emperor could command anyone in Japan. He looked at her for a long moment, then bowed and rode home alone."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But he sent her a "
+            },
+            {
+              "t": "poem",
+              "tap": "court-poem"
+            },
+            {
+              "t": ", and she sent one back. For three years their poems flew to and fro like birds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "A thatched house among bamboo at deep dusk, under a dark indigo sky. On the right, pale light pours from its open doors as if a moon were inside, and ox-carts of fine visitors wait at the fence.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "At deep dusk, a young woman with very long black hair sits in a doorway, and the light that fills the house comes from her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A1E4E",
+          "#2A2F78",
+          "#14262A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the fourth autumn, Kaguya-hime began to watch the moon.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Night after night she sat on the porch and looked up. It was the season when families sat out to "
+            },
+            {
+              "t": "admire the moon",
+              "tap": "moon-viewing"
+            },
+            {
+              "t": ", but the rounder it grew, the more she wept."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“What is it, my child?”",
+              "say": "bamboo-cutter",
+              "chip": true
+            },
+            {
+              "t": " asked the old man. "
+            },
+            {
+              "t": "“What do you see up there?”",
+              "say": "bamboo-cutter"
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My first home,”",
+              "say": "kaguya",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“I was not born in this world. I came from the Moon. On the night of the mid-autumn full moon, my people will come to fetch me.”",
+              "say": "kaguya"
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She held his rough hand in both of hers. "
+            },
+            {
+              "t": "“I would stay if I could.”",
+              "say": "kaguya",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-moon.unfolded.heic",
+          "alt": "The night of the full moon, the sky a deep dark blue. On the right, guards with bows stand on the roof and wall of the house, and a shining cloud carrying tall bright figures comes down from a huge moon.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-moon.folded.heic",
+          "alt": "On a dark night, a shining cloud with tall robed figures floats down from a huge full moon towards a rooftop lined with archers.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0F1640",
+          "#27357A",
+          "#131A33"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Emperor sent two thousand guards with bows. A thousand stood on the roof, and a thousand ringed the wall."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old man barred every door. He sat in the inmost room with his arms around his daughter. "
+            },
+            {
+              "t": "“Nobody shall take you,”",
+              "say": "bamboo-cutter",
+              "chip": true
+            },
+            {
+              "t": " he said."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At midnight the sky turned brighter than ten full moons together. Down from the Moon came a cloud, and on it stood tall, calm people who shone."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The guards lifted their bows, and their arms fell slack. Not one arrow flew. Then, with no hand upon them, the barred doors slid open, "
+            },
+            {
+              "t": "one after another",
+              "fx": "stretch"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-moon.unfolded.heic",
+          "alt": "The night of the full moon, the sky a deep dark blue. On the right, guards with bows stand on the roof and wall of the house, and a shining cloud carrying tall bright figures comes down from a huge moon.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-moon.folded.heic",
+          "alt": "On a dark night, a shining cloud with tall robed figures floats down from a huge full moon towards a rooftop lined with archers.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0F1640",
+          "#27357A",
+          "#131A33"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Kaguya-hime",
+              "name": "kaguya"
+            },
+            {
+              "t": " stepped out into the light. She took off her outer robe and put it into her mother’s hands."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Keep this,”",
+              "say": "kaguya",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“And when the moon is bright, look up. I shall be looking down.”",
+              "say": "kaguya"
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then she wrote a letter to the Emperor and set a small jar beside it. Whoever drank from that jar would never die."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A Moon woman held up a robe of feathers. Whoever wore it forgot the sorrows of the earth, and its loves as well."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It settled on her shoulders, and her tears stopped. She stepped onto the cloud, and the cloud rose, grew small, and was gone."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-fuji.unfolded.heic",
+          "alt": "Deep blue night just before dawn, with a pale moon low in the sky. On the right rises the great cone of Mount Fuji, a thin thread of smoke climbing from its top and tiny figures on its slope.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-fuji.folded.heic",
+          "alt": "In the deep blue before dawn, a thin thread of smoke rises from the snowy top of Mount Fuji towards a pale moon.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#101A44",
+          "#1F3460",
+          "#16233F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old couple folded the robe and laid it away. On bright nights they sat on the porch together and looked up."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The letter and the jar were carried to the palace. The Emperor read the letter twice. He did not open the jar."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“What use is living for ever,”",
+              "say": "emperor",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“if I never see her again?”",
+              "say": "emperor"
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He sat silent for a long time. Then he called his ministers. "
+            },
+            {
+              "t": "“Tell me,”",
+              "say": "emperor",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“which mountain in my land stands nearest to the sky?”",
+              "say": "emperor"
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There is one in the east, my lord,” they answered, “so high that its head is white with snow.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-fuji.unfolded.heic",
+          "alt": "Deep blue night just before dawn, with a pale moon low in the sky. On the right rises the great cone of Mount Fuji, a thin thread of smoke climbing from its top and tiny figures on its slope.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-fuji.folded.heic",
+          "alt": "In the deep blue before dawn, a thin thread of smoke rises from the snowy top of Mount Fuji towards a pale moon.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#101A44",
+          "#1F3460",
+          "#16233F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the Emperor’s men carried the letter and the jar up past the trees and past the clouds, to the very top."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There, under the setting moon, they lit a fire. They burned the letter and poured the water of life on the flames, and not one man tasted a drop."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The smoke rose in one thin thread, straight toward the Moon."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That mountain is "
+            },
+            {
+              "t": "Mount Fuji",
+              "tap": "fuji-moment"
+            },
+            {
+              "t": ". People said the smoke went on rising for many, many years."
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And sometimes, on a clear night, a wisp of cloud still trails from its top, like a letter on its way."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

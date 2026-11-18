@@ -50,6 +50,31 @@ enum LandmarkArt {
             painter = { g in LandmarkArt.paintStatueOfLiberty(&g) }
         case "petra":
             painter = { g in LandmarkArt.paintPetra(&g) }
+        // Round 5, batch 2.
+        case "great-pyramid-giza":
+            painter = { g in LandmarkArt.paintGreatPyramid(&g) }
+        case "chichen-itza":
+            painter = { g in LandmarkArt.paintChichenItza(&g) }
+        case "mount-fuji":
+            painter = { g in LandmarkArt.paintMountFuji(&g) }
+        case "golden-gate-bridge":
+            painter = { g in LandmarkArt.paintGoldenGate(&g) }
+        case "novgorod-kremlin":
+            painter = { g in LandmarkArt.paintNovgorod(&g) }
+        case "christ-the-redeemer":
+            painter = { g in LandmarkArt.paintChristRedeemer(&g) }
+        case "colosseum":
+            painter = { g in LandmarkArt.paintColosseum(&g) }
+        case "temple-of-artemis-ephesus":
+            painter = { g in LandmarkArt.paintTempleOfArtemis(&g) }
+        case "parthenon":
+            painter = { g in LandmarkArt.paintParthenon(&g) }
+        case "statue-of-zeus-olympia":
+            painter = { g in LandmarkArt.paintZeusOlympia(&g) }
+        case "hanging-gardens-babylon":
+            painter = { g in LandmarkArt.paintHangingGardens(&g) }
+        case "burj-khalifa":
+            painter = { g in LandmarkArt.paintBurjKhalifa(&g) }
         default:
             return false
         }

@@ -598,6 +598,51 @@ the three prototypes (not every planned story has a landmark, by design); app `R
 further edits made by the review pass are listed in the round-5 entry of
 `docs/AGENT_HANDOFF.md`.
 
+### Implemented in round 5, batch 2 — the Medium stories (code complete, **not yet compiled or seen**)
+
+Batch 2 of three (18 Nov 2026, same branch, on top of batch 1's commit `ed2541f`). Begun on
+Fable 5.2; that session hit its usage limit while the ten story painters were part-way, and
+the batch was finished on Opus 5.5 in the same session (`docs/AGENT_HANDOFF.md`).
+
+- **Ten new Medium stories**, in plan order (M1–M9 before `anansi-wisdom`, M11 after it) —
+  `tiger-brahman-jackal`, `khufu-and-the-magician`, `bamboo-cutter-and-moon-child`,
+  `herd-boy-and-weaving-maiden`, `iktomi-and-the-muskrat` ⚑, `long-day-at-fish-camp` ⚑ (an
+  Omramo original), `sadko`, `androcles-and-the-lion`, `horse-and-the-olive`,
+  `sindbad-second-voyage`. Each: 10 pages in two parts (86–112 words a page, 940–1,045
+  a story), four scenes, three or four tap-to-see words (a place and a "how people live
+  there"), the plan's landmarks, two character cards, a one-sentence moral, the `education`
+  block, a manuscript whose header records the source check. Three are dark stories with
+  light text (Bamboo-Cutter, Herd Boy, Sadko). The catalog holds 23 stories
+  (`catalogVersion` 4).
+- **Twelve landmarks** (26 of the plan's 37): `great-pyramid-giza`, `chichen-itza`,
+  `mount-fuji` (natural), `golden-gate-bridge`, `novgorod-kremlin`, `christ-the-redeemer`,
+  `colosseum`, `temple-of-artemis-ephesus` and `statue-of-zeus-olympia` (lost:
+  reconstructions), `parthenon`, `hanging-gardens-babylon` (unproven: a reconstruction),
+  `burj-khalifa`. Pictures in `App/Sources/Art/Landmarks/`, registered in `LandmarkArt.paint`.
+- **Cultural-review flag:** eight of the twelve §7 stories are now in the catalog and flagged
+  (batch 2 adds Iktomi and the fish camp).
+- **Ten story painters** under `App/Sources/Art/Stories/` (`TigerArt`, `KhufuArt`,
+  `MoonChildArt`, `WeaverArt`, `IktomiArt`, `FishCampArt`, `SadkoArt`, `AndroclesArt`,
+  `OliveArt`, `SindbadArt`), registered in `ArtLibrary.storyPainter(for:)`. No kit change.
+- **No change to the app's code** besides the two registries: the library's shelves, the
+  map and `NextStory` take the bigger catalog as they are (tested).
+
+**Tests added (none of the Swift ones run):** core `Round5Tests.swift` — `ContentPlan.batchTwo`
+and the batch-2 landmark map; `testEveryPlannedMediumStoryIsInTheCatalog`,
+`testTheNewMediumStoriesAreLevelledLikeTheAnansiStory`, `testTheFishCampStoryTeachesAlaskaCorrectly`,
+`testTheWondersOfBatchTwoAreShownHonestly`, `testTheNaturalLandmarksOfBatchTwoBelongToTheirStories`,
+`testAMediumReaderIsLedAlongTheMediumShelf`; extra assertions in the catalog, flag, shelf and
+release tests (batch 2 is all there; eight flagged; the Medium shelf holds eleven). App
+`App/Tests/Round5Tests.swift` — `testTheMediumShelfIsFullAndEveryMediumStoryHasItsPainter`;
+the three "new story" loops (pictures at every shape, face chips, read to the moral) now run
+over Low **and** Medium stories. UI `ShotTests` — `testR5Medium…` (8 methods: the Medium
+grid, page 1 of all ten in four postures, later pages 4 / 7 / 9, eight cards, two finished
+moments). Python `tools/test_build_stories.py` — 21 tests (two new: Medium levelling; the
+fish camp has no snow house and no "midnight sun"), run on the box: pass.
+
+**Existing assertions changed (intended; nothing weakened):** app `Round5Tests` minimum
+counts raised (23 stories, 26 landmarks). No other existing test was edited.
+
 ### Short of the acceptance criteria (precise leftovers)
 
 Everything marked *[Mac]* in `docs/IMPLEMENTATION_PLAN.md` for M2, M3 and Mi is **unverified**
@@ -862,6 +907,29 @@ Nothing of this batch has been compiled, run or seen. In order:
    and only the story being read named; the hero transition into and out of a cover on a
    shelf that has been scrolled.
 
+## 7e. First-compile checklist for round 5, batch 2
+
+Do §7d first if batch 1 has not been compiled: batch 2 leans on the same kit.
+
+1. `python3 tools/build_stories.py --check && python3 tools/validate_content.py` (0 errors),
+   `python3 tools/test_validate_content.py` (62), `python3 tools/test_build_stories.py` (21).
+2. `swift test --package-path Packages/OmramoCore` (`Round5Tests` now covers 23 stories).
+3. `xcodegen generate` (**required**: about 50 new files under `App/Sources/Art/Stories` and
+   `App/Sources/Art/Landmarks`), then build. §8e lists the likely errors. If one painter will
+   not compile and time is short, comment its line out of `ArtLibrary.storyPainter(for:)`
+   (the story shows the stand-in) and go on; a landmark likewise in `LandmarkArt.paint`.
+4. ⌘U, then `ShotTests` (`OmramoShots` scheme) on an iPad and an iPhone: the new
+   `testR5Medium…` methods write `r5-*-reader-<tiger|khufu|moon-child|weaver|iktomi|fish-camp|sadko|androcles|olive|sindbad>-*.png`,
+   `r5-*-library-medium-*.png`, eight card shots and two finished moments.
+5. Look first at the three **dark** stories (Bamboo-Cutter, Herd Boy, Sadko): the words are
+   cream, so the leading pane must be deep on every page and the chrome dark. Then the light
+   ones: a pale sky behind the words on every page.
+6. Then per story: the subject on the trailing pane, faces clear of the controls, the folded
+   band holding a face, the tall iPad portrait filled at the foot; the Medium look (small
+   plain eyes, no rays).
+7. Landmarks: the three reconstructions (Artemis, Zeus, Hanging Gardens) must read as
+   sketches, not records; Christ the Redeemer and Saint Sophia as architecture only.
+
 ## 8. Known unverified items
 
 Milestone 1 compiled and ran (13 Nov 2026). The table below is the M1 list, kept for the
@@ -971,6 +1039,24 @@ posture API, per-pane safe areas). The app does not reference any Duo API.
   similar, but nobody has seen these pages at the five text sizes or on a squat pane.
 - **Facts.** Ten new landmark entries and thirty tap-to-see notes: `review.facts` pending.
   The source check (18 Nov, on a Gutenberg mirror) is recorded in each manuscript header.
+
+### 8e. Unverified in round 5, batch 2
+
+- **The ten Medium story painters** (`App/Sources/Art/Stories/{Tiger,Khufu,MoonChild,Weaver,Iktomi,FishCamp,Sadko,Androcles,Olive,Sindbad}Art*.swift`)
+  and the **twelve landmark pictures**: written blind, checked by script (brackets,
+  duplicate declarations, argument labels of every call into the art types, every function a
+  `paint` switch calls is declared) and by "be the compiler" reading passes. Each story
+  painter was written by two agents in turn (the first stopped at a usage limit): look for a
+  helper that one of them assumed and the other did not write, and for two near-identical
+  helpers.
+- Likely compile errors, as for batch 1: `CGFloat` / `Double` mixes; long expressions the
+  type-checker gives up on (Colosseum and Parthenon each build a four-point polygon in one
+  expression); a wrong kit enum case or property name.
+- **Dark Medium stories** draw with `Kit.Light(isNight: true)`; the kit's night handling has
+  never been seen.
+- **Facts.** Twelve landmark entries and thirty-seven tap-to-see notes: `review.facts`
+  pending. The source check (18 Nov, on the Gutenberg mirror) is in each manuscript header.
+- **Library.** Eleven covers on the Medium shelf; 23 pins on the map.
 
 ## 9. Troubleshooting: fonts not loading
 
