@@ -5,14 +5,23 @@
       "id": "taj-mahal",
       "name": "Taj Mahal",
       "era": "earlyModern",
-      "built": { "from": 1632, "to": 1653, "circa": true },
+      "built": {
+        "from": 1632,
+        "to": 1653,
+        "circa": true
+      },
       "status": "standing",
       "depiction": "asIs",
       "country": "India",
       "place": "Agra, on the River Yamuna",
-      "coordinates": { "lat": 27.175, "lon": 78.042 },
+      "coordinates": {
+        "lat": 27.175,
+        "lon": 78.042
+      },
       "region": "indian",
-      "lists": ["new7Wonders"],
+      "lists": [
+        "new7Wonders"
+      ],
       "factCards": {
         "low": {
           "line": "A great white building of shining stone, built to remember a queen who was loved."
@@ -34,20 +43,31 @@
       },
       "background": "#12305A",
       "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     },
     {
       "id": "lighthouse-of-alexandria",
       "name": "Lighthouse of Alexandria",
       "era": "ancient",
-      "built": { "from": -280, "circa": true },
+      "built": {
+        "from": -280,
+        "circa": true
+      },
       "status": "lost",
       "depiction": "reconstruction",
       "country": "Egypt",
       "place": "Alexandria",
-      "coordinates": { "lat": 31.214, "lon": 29.885 },
+      "coordinates": {
+        "lat": 31.214,
+        "lon": 29.885
+      },
       "region": "egyptian",
-      "lists": ["ancientSeven"],
+      "lists": [
+        "ancientSeven"
+      ],
       "factCards": {
         "low": {
           "line": "A tall tower with a fire on top, to guide ships home."
@@ -67,7 +87,10 @@
       },
       "background": "#0B2A4A",
       "rights": "Our own reconstruction drawing, not traced from any modern artist's reconstruction. Concept art drawn in code (see ART_PLACEHOLDERS.md).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     },
     {
       "id": "asante-traditional-buildings",
@@ -82,9 +105,14 @@
       "depiction": "asIs",
       "country": "Ghana",
       "place": "Villages near Kumasi, Ghana",
-      "coordinates": { "lat": 6.7, "lon": -1.6 },
+      "coordinates": {
+        "lat": 6.7,
+        "lon": -1.6
+      },
       "region": "african",
-      "lists": ["other"],
+      "lists": [
+        "other"
+      ],
       "factCards": {
         "low": {
           "line": "Houses with thick earth walls, covered in patterns that mean something."
@@ -106,20 +134,32 @@
       },
       "background": "#3A1F4D",
       "rights": "Our own illustration; no photograph. The wall patterns are drawn in the style of the buildings, not copied from one wall. Akan reader to review the drawing and the wording (CONTENT_PLAN §7).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     },
     {
       "id": "tokyo-skytree",
       "name": "Tokyo Skytree",
       "era": "contemporary",
-      "built": { "from": 2008, "to": 2012, "circa": false },
+      "built": {
+        "from": 2008,
+        "to": 2012,
+        "circa": false
+      },
       "status": "standing",
       "depiction": "asIs",
       "country": "Japan",
       "place": "Tokyo, Japan",
-      "coordinates": { "lat": 35.71, "lon": 139.811 },
+      "coordinates": {
+        "lat": 35.71,
+        "lon": 139.811
+      },
       "region": "japanese",
-      "lists": ["other"],
+      "lists": [
+        "other"
+      ],
       "factCards": {
         "low": {
           "line": "A very, very tall tower in Tokyo. It stays standing even when the ground shakes."
@@ -141,7 +181,483 @@
       },
       "background": "#14254F",
       "rights": "Our own illustration; no photograph. The tower's operator licenses commercial use of its name and image (CONTENT_PLAN §6.6): legal review needed before release (PRD Q29).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "bremen-town-hall-roland",
+      "name": "Bremen Town Hall and Roland",
+      "era": "medieval",
+      "built": {
+        "from": 1404,
+        "to": 1410,
+        "circa": true,
+        "note": "The stone Roland was set up in 1404 and the town hall was built in about 1405 to 1410; its decorated front was added about 200 years later. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Germany",
+      "place": "The market square, Bremen, Germany",
+      "coordinates": {
+        "lat": 53.076,
+        "lon": 8.807
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A stone knight named Roland has guarded Bremen’s market square for over 600 years."
+        },
+        "medium": {
+          "line": "The people of Bremen built their town hall and its stone knight, Roland, a little after 1400.",
+          "note": "Beside the town hall stands a bronze statue of a donkey, a dog, a cat and a rooster."
+        },
+        "advanced": {
+          "line": "Bremen’s town hall and its Roland statue, begun in 1404, stood for a trading city that ran its own affairs.",
+          "note": "Both are on the World Heritage List. A bronze statue of the four Town Musicians has stood beside the hall since the 1950s."
+        }
+      },
+      "art": {
+        "file": "art/bremen-town-hall-roland.heic",
+        "alt": "A tall stone knight with a sword and shield stands in a market square, in front of a town hall with a green roof and a row of arches.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A4F",
+      "rights": "Our own illustration; no photograph. The drawing shows the town hall and the Roland only. It must not copy the modern bronze Town Musicians statue beside the hall, which is a 20th-century artwork that may still be in copyright (CONTENT_PLAN §6.6). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "colossus-of-rhodes",
+      "name": "Colossus of Rhodes",
+      "era": "ancient",
+      "built": {
+        "from": -292,
+        "to": -280,
+        "circa": true,
+        "note": "Ancient writers say it took about 12 years to build. Dates and height to be fact-checked (CONTENT_PLAN §5.1)."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Greece",
+      "place": "Rhodes, Greece",
+      "coordinates": {
+        "lat": 36.451,
+        "lon": 28.226
+      },
+      "region": "european",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant bronze statue of the sun god, about as tall as a ten-floor building."
+        },
+        "medium": {
+          "line": "The people of Rhodes built it about 2,300 years ago: a bronze sun god about 33 metres tall.",
+          "note": "An earthquake brought it down after only about 54 years."
+        },
+        "advanced": {
+          "line": "Finished about 280 BCE and felled by an earthquake about 226 BCE, it stood for only about 54 years.",
+          "note": "Nobody knows exactly how or where it stood. It did not stand with one foot on each side of the harbour mouth; that picture was imagined many centuries later."
+        }
+      },
+      "art": {
+        "file": "art/colossus-of-rhodes.heic",
+        "alt": "A drawing of how the statue may have looked: a tall bronze figure with a crown of sun rays, standing with its feet together on a stone base beside a harbour.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#123A5C",
+      "rights": "Our own reconstruction drawing, not traced from any modern artist’s reconstruction; no photograph. The statue is lost and its pose is unknown: it is drawn standing on one base beside the harbour, never astride the harbour mouth. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "statue-of-liberty",
+      "name": "Statue of Liberty",
+      "era": "modern",
+      "built": {
+        "from": 1875,
+        "to": 1886,
+        "circa": true,
+        "note": "Dedicated in 1886; work on the statue began in France about 1875. Dates to be fact-checked (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "USA",
+      "place": "New York Harbor, USA",
+      "coordinates": {
+        "lat": 40.689,
+        "lon": -74.045
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant green statue of a woman, holding a torch high above a harbour."
+        },
+        "medium": {
+          "line": "A gift from the people of France to the United States, set up in New York Harbor in 1886.",
+          "note": "A poem calls her “The New Colossus”."
+        },
+        "advanced": {
+          "line": "Dedicated in 1886, the copper statue was made in France and shipped across the Atlantic in pieces.",
+          "note": "Emma Lazarus’s poem “The New Colossus” names her after the lost statue of Rhodes. Her copper skin has turned green in the air."
+        }
+      },
+      "art": {
+        "file": "art/statue-of-liberty.heic",
+        "alt": "A tall green statue of a woman in a robe and a crown of rays, holding a torch high, on a stone base on a small island in a harbour.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0F3F4F",
+      "rights": "Our own illustration; no photograph. The statue is believed clear to depict (a public work, long out of copyright); confirm the name is not a restricted mark (CONTENT_PLAN §6.6). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "great-wall-of-china",
+      "name": "Great Wall of China",
+      "era": "ancient",
+      "built": {
+        "from": -700,
+        "to": 1644,
+        "circa": true,
+        "note": "Many walls built over 2,000 years; most of today's wall 1368–1644. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "China",
+      "place": "Across north China; our drawing shows the wall at Badaling, near Beijing",
+      "coordinates": {
+        "lat": 40.36,
+        "lon": 116.02
+      },
+      "region": "chinese",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long, long wall of stone and brick that climbs up and down the hills."
+        },
+        "medium": {
+          "line": "It is not one wall but many, built over about 2,000 years to guard north China.",
+          "note": "People say you can see it from the Moon. You cannot, not with your eyes alone."
+        },
+        "advanced": {
+          "line": "Many walls, begun about 2,700 years ago; most of the brick and stone wall seen today was built between 1368 and 1644.",
+          "note": "It cannot be seen from the Moon with the naked eye. How long it is depends on which of the many walls you count."
+        }
+      },
+      "art": {
+        "file": "art/great-wall-of-china.heic",
+        "alt": "A stone wall with square watchtowers winding along the tops of green hills into the distance.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2E4A3A",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "machu-picchu",
+      "name": "Machu Picchu",
+      "era": "medieval",
+      "built": {
+        "from": 1450,
+        "circa": true,
+        "note": "Built about 1450. Date to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Peru",
+      "place": "High in the Andes mountains of Peru",
+      "coordinates": {
+        "lat": -13.163,
+        "lon": -72.545
+      },
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A town of stone houses, built high up on the ridge of a mountain."
+        },
+        "medium": {
+          "line": "The Inca built this town on a mountain ridge in Peru about 600 years ago.",
+          "note": "Its stones fit together so closely that the walls need no mortar to hold them."
+        },
+        "advanced": {
+          "line": "An Inca town built about 1450 on a ridge in the Andes, with stones cut to fit together without mortar.",
+          "note": "The Inca left no written account of it, so historians still study what the town was for."
+        }
+      },
+      "art": {
+        "file": "art/machu-picchu.heic",
+        "alt": "Stone houses without roofs and green steps of land on a narrow mountain ridge, with a steep green peak behind.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A44",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "saint-basils-cathedral",
+      "name": "Saint Basil’s Cathedral",
+      "era": "earlyModern",
+      "built": {
+        "from": 1555,
+        "to": 1561,
+        "circa": false
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Red Square, Moscow",
+      "coordinates": {
+        "lat": 55.752,
+        "lon": 37.623
+      },
+      "region": "russian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Its bright roofs are shaped like onions. No two are the same."
+        },
+        "medium": {
+          "line": "It was built on Red Square in Moscow more than 450 years ago, for a ruler named Ivan.",
+          "note": "Roofs with this shape are called onion domes. Each one has its own colours and pattern."
+        },
+        "advanced": {
+          "line": "Built from 1555 to 1561 for Tsar Ivan IV, it stands on Red Square with a cluster of onion domes around one tall central tower.",
+          "note": "Old records name its builders as Barma and Postnik, but no one is sure who they were. The bright colours were added later."
+        }
+      },
+      "art": {
+        "file": "art/saint-basils-cathedral.heic",
+        "alt": "A cluster of towers topped with bright onion-shaped domes, striped and patterned in red, green, blue, gold and white, around one tall pointed tower.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3160",
+      "rights": "Our own illustration; no photograph. A religious building, presented as architecture and history only (CONTENT_PLAN §5, CQ9). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "sydney-opera-house",
+      "name": "Sydney Opera House",
+      "era": "contemporary",
+      "built": {
+        "from": 1959,
+        "to": 1973,
+        "circa": false
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Australia",
+      "place": "Sydney, Australia",
+      "coordinates": {
+        "lat": -33.857,
+        "lon": 151.215
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A building beside the sea with a roof like big white sails."
+        },
+        "medium": {
+          "line": "It opened in 1973 in Sydney, Australia. Its roof looks like sails on the harbour.",
+          "note": "An architect from Denmark, Jørn Utzon, drew its shape."
+        },
+        "advanced": {
+          "line": "Building began in 1959 and took about 14 years, much longer than anyone had planned.",
+          "note": "Its curved roof shells are covered with about a million pale tiles."
+        }
+      },
+      "art": {
+        "file": "art/sydney-opera-house.heic",
+        "alt": "A white building with tall curved roofs like a row of sails, standing at the edge of a blue harbour by day.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#10355C",
+      "rights": "Our own illustration; no photograph. The name and image are trademarks of the Sydney Opera House Trust, with rules for commercial use (CONTENT_PLAN §6.6): legal review needed before release (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "hagia-sophia",
+      "name": "Hagia Sophia",
+      "era": "medieval",
+      "built": {
+        "from": 532,
+        "to": 537,
+        "circa": false,
+        "note": "The first dome fell after an earthquake in 558 and was rebuilt, a little taller, by about 562. Dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Türkiye",
+      "place": "Istanbul, Türkiye",
+      "coordinates": {
+        "lat": 41.009,
+        "lon": 28.98
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge old building with a great round dome on top, as high as a hill."
+        },
+        "medium": {
+          "line": "Built in Istanbul about 1,500 years ago, in less than six years. Its great dome was the wonder of its age.",
+          "note": "It has been a church, a mosque and a museum."
+        },
+        "advanced": {
+          "line": "Finished in 537 for the emperor Justinian, with a brick dome about 31 metres across that seems to float on a ring of windows.",
+          "note": "The first dome fell after an earthquake and was rebuilt taller. Over about 1,500 years the building has been a church, a mosque and a museum."
+        }
+      },
+      "art": {
+        "file": "art/hagia-sophia.heic",
+        "alt": "A great building of warm stone and brick with one wide, shallow dome above a ring of small windows, and smaller half-domes stepping down around it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3B2A5C",
+      "rights": "Our own illustration; no photograph. A religious building, presented as architecture and history only (CONTENT_PLAN §5, CQ9). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "himeji-castle",
+      "name": "Himeji Castle",
+      "era": "earlyModern",
+      "built": {
+        "from": 1601,
+        "to": 1609,
+        "circa": false,
+        "note": "The castle as it stands today. Older forts stood on the same hill before it; their dates are to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Japan",
+      "place": "Himeji, Japan",
+      "coordinates": {
+        "lat": 34.839,
+        "lon": 134.694
+      },
+      "region": "japanese",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall white castle on a hill. Its roofs curve up like a bird's wings."
+        },
+        "medium": {
+          "line": "A white castle in Himeji, Japan, finished about 400 years ago.",
+          "note": "People call it the White Heron Castle, for its white walls and wing-like roofs."
+        },
+        "advanced": {
+          "line": "A hilltop castle built between 1601 and 1609, called the White Heron Castle for its white walls and wing-like roofs.",
+          "note": "Its wooden towers are coated in white plaster. Most castles of its age in Japan have been lost; this one still stands."
+        }
+      },
+      "art": {
+        "file": "art/himeji-castle.heic",
+        "alt": "A white castle with many curved grey roofs, one above another, on a stone base on a green hill.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3A5C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "petra",
+      "name": "Petra",
+      "era": "ancient",
+      "built": {
+        "from": -300,
+        "to": 100,
+        "circa": true,
+        "note": "Carved and built over several hundred years, from about the 4th century BCE to the 1st century CE. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Jordan",
+      "place": "A desert valley in southern Jordan",
+      "coordinates": {
+        "lat": 30.329,
+        "lon": 35.444
+      },
+      "region": "persianArabian",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A city cut into rose-red rock, where caravans stopped to rest."
+        },
+        "medium": {
+          "line": "A people called the Nabataeans carved this caravan city into rose-red cliffs about 2,000 years ago.",
+          "note": "Traders and their camels stopped here for water on the long desert roads."
+        },
+        "advanced": {
+          "line": "A Nabataean trading city in Jordan, carved into sandstone cliffs between about 300 BCE and 100 CE.",
+          "note": "Much of the city still lies buried, and archaeologists keep finding more."
+        }
+      },
+      "art": {
+        "file": "art/petra.heic",
+        "alt": "A tall building front with columns, carved straight into a rose-red cliff at the end of a narrow rocky path.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2430",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     }
   ]
 }

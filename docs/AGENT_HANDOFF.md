@@ -1,6 +1,6 @@
 # Omramo — agent handoff
 
-Last updated: 14 Nov 2026 — coding round 4 (polish), code complete and uncompiled (see §9, last entry). Round 3 was compiled, run and merged (PR #4). Read this first, then `docs/PRD.md`.
+Last updated: 18 Nov 2026 — coding round 5 (the stories round), batch 1 of 3: code and content complete, uncompiled and unseen (see §9, last entry). Round 4 was compiled, run and merged (PR #5, `17e5581`). Read this first, then `docs/PRD.md`.
 This file is the durable memory for any agent (human or AI) picking up Omramo. It contains no secrets; credentials live outside the repo.
 
 ## 1. What Omramo is
@@ -71,6 +71,8 @@ v1 used cream paper, a serif and a book spine. v2 ("the page is a place") remove
 | `docs/content/source-texts/` | Public-domain source texts (Gutenberg) for the first three stories, `SOURCES.md` |
 | `docs/agent-runs/` | Fable 5.2 run log and the exact prompts used |
 | `docs/ART_DIRECTION.md` | The art direction for the pictures drawn in code (round 3, deepened in round 4), the app icon and the splash |
+| `docs/content/story-specs/` | Round 5: the authoring spec of each new story (text, cards, header, landmark entries, art brief); `tools/build_stories.py` builds `story.json` and the manuscript from it |
+| `docs/agent-runs/r5-batch-notes.md` | Round 5: the kit, the per-story file layout and the conventions batches 2 and 3 must follow |
 | `docs/brand/` | App icon: `app-icon.svg` (source), `app-icon-1024.png`, `app-icon-preview.png` (round 4) |
 | `tools/` | `validate_content.py` + its tests; `make_app_icon.py` (SVG → the icon PNGs); `make_sounds.py` (the two optional reader sounds) |
 
@@ -93,6 +95,8 @@ Srikanth: "go with whatever the best approach is for this kind of app. Follow be
 - Details in `docs/BUILD.md`.
 
 ## 8. Next milestones
+
+**Immediate next step (as of the last §9 entry, round 5 batch 1): compile batch 1 on the Mac — `docs/BUILD.md` §7d is the checklist and §8d the list of likely compile errors — run `ShotTests` for the `r5-*.png` set, and look at the kit's people and animals before batches 2 and 3 (`docs/agent-runs/r5-batch-notes.md`) build twenty more stories on them.** The paragraphs below are the earlier next steps, kept for their lists.
 
 See `docs/IMPLEMENTATION_PLAN.md`. **Immediate next step (as of the last §9 entry): compile round 4 on the Mac — `docs/BUILD.md` §7c is the checklist and §8c the list of likely compile errors — then run `ShotTests` for the `r4-*.png` set and `MotionDemoTests` for the recordings, and look at them.** The paragraph below is the earlier next step, kept for its list. Earlier: **compile the M2 / M3 / Mi round on the Mac** — `docs/BUILD.md` §7a is the checklist and §8a the list of likely compile errors. Then:
 1. Visual check of Library and Low-tier Reading against `docs/design/` (including `TextRenderer`, item 1.17 / BUILD §7.9). List every gap versus Apple Design Award / locked v2 quality. Now also screens 04–07 and 10, and the iPad sizes.
@@ -189,3 +193,48 @@ Round 3 was compiled, run and merged on the Mac as PR #4 (`7194575`): 247 core t
   - Still not built: designed loading and error states, the "My shelf" tab, the map's "Read" pin, the parent view, the grown-up gate, the paywall; type refinements (line breaks, hanging punctuation, word spacing); folded Medium and Advanced type (G8).
   - VoiceOver on the new screens (the modal finished moment, the panel's switch, focus after "Read again") needs a device.
 - **Needs Srikanth (nothing here was assumed as decided):** the icon; the splash as built; the story-finished moment and whether a moral is shown (Q27) and its three wordings (with Q22 / Q24); the "Library" capsule and previous-page arrow versus the locked screens; the "Aa" panel; the folded card at 60%; sounds — keep, change or remove; the moon moved in the Anansi story (a visible change from locked screen 04); the crocodile eye restored to screen 03 (round 3's friendlier white eye is gone); plus everything still open from earlier rounds (motion values, Mi numbers, Q14, Q10, Q22, Q24, Q29, Q21).
+
+### 18 Nov 2026 — coding round 5, the stories round: batch 1 of 3 (Fable 5.2, Linux box, branch `feat/r5-stories`)
+
+Round 4 was compiled, run and merged on the Mac as PR #5 (`17e5581`). Round 5 adds the 29 remaining stories of `docs/CONTENT_PLAN.md` in three batches; this is batch 1: the tagline, the morals, the shared illustration kit and the ten new **Low** stories. Srikanth's bar is unchanged (award level, smooth and simple for 6–12, no slop, a real app, Advanced not babyish).
+
+**Decisions Srikanth made for the round (applied, not reopened):**
+1. **Tagline: "Turn the page. See the world."** It replaces "A magical book that you read." in `Brand.tagline`, on the splash (left pane "Turn the page.", right pane "See the world."), in README line 1 and in the test that pinned the old wording. It sits under the website's "Read your way around the world". Historical documents and the locked design PNGs keep the old line.
+2. **Morals: one clear, kid-friendly sentence each** (short concrete words, no semicolon, at most about 14 words for Low and 18 for Medium / Advanced), keeping the idea of each draft. The three older stories now read: Monkey — "When you are in trouble, stay calm and think." (unchanged); Anansi — "Nobody has all the wisdom, so even a child can teach a grown-up."; Urashima — "Be kind and keep your promises, for lost time never comes back."
+3. The finished screen, the icon and the splash stay as designed in round 4 (only the tagline text changed).
+
+- **State: code and content complete, NOT compiled, NOT seen.** No Swift toolchain on the box. Checked by the Python tools (validator 0 errors; 62 + 19 tests pass), by scripts over all 155 Swift files (bracket balance; duplicate declarations; the argument labels of about 19,000 calls into the art types; private or undeclared kit members) and by 24 "be the compiler" reading passes (the kit, the landmarks, each story painter, core + app + tests). The box rebooted mid-batch; the working tree survived, the sub-agents and scratch files did not, and the art half of the batch was re-run from the saved state.
+- **Ten new Low stories** (all drafts, `review.text` and `review.art` pending), in plan order after the Monkey story. ⚑ = flagged "needs cultural review before release".
+
+  | Story | People, place | Moral |
+  |---|---|---|
+  | `shipwrecked-sailor` — The Shipwrecked Sailor | Ancient Egypt | When things go wrong, stay brave and thank those who help you. |
+  | `tongue-cut-sparrow` — The Tongue-Cut Sparrow | Japan | Kindness comes back to you, but greed brings only trouble. |
+  | `old-man-who-moved-mountains` — The Old Man Who Moved the Mountains | Ancient China | Big things get done a little at a time by people who keep going. |
+  | `why-possums-tail-is-bare` — Why the Possum's Tail Is Bare ⚑ | Cherokee, southern Appalachians | Boasting makes you easy to trick, so be proud quietly. |
+  | `the-snow-house` — The Snow House (an Omramo original) ⚑ | Inuit, Nunavut, Canada | Careful, patient work holds together, because every block leans on the others. |
+  | `peasant-and-bear` — The Peasant and the Bear | Russia | Think and ask before you agree to a bargain. |
+  | `bremen-town-musicians` — The Bremen Town Musicians | Germany | You are never too old to be useful to your friends. |
+  | `north-wind-and-sun` — The North Wind and the Sun | Ancient Greece | A gentle way often works better than force. |
+  | `why-sun-and-moon-live-in-sky` — Why the Sun and the Moon Live in the Sky ⚑ | Efik, Nigeria | Think ahead before you make a big promise. |
+  | `lion-and-hare` — The Lion and the Hare ⚑ | Persia | Quick thinking can keep the small safe from a bully. |
+
+  Each: 12–14 pages in two parts, four scenes, three tap-to-see words with culture notes, the plan's landmark moments, two character cards (three in Sun and Moon), the `education` block, a manuscript whose header records the source, every softening and what a reviewer must check. Built from `docs/content/story-specs/<id>.json` by `tools/build_stories.py`.
+- **Cultural-review flag.** All twelve §7 stories will carry `culturalReview { level: required, status: pending, reason, community }`; the six in the catalog now do (the four above plus Monkey and Anansi, which already did). In code: `CulturalReview.needsReviewBeforeRelease`, `releaseFlagLine`; a new rule `cultural-review-no-community` in both validators; release mode refuses a flagged story.
+- **Ten landmarks** added (14 in the catalog), each with three fact cards and a picture: Sydney Opera House, Himeji Castle, Great Wall, Machu Picchu, Hagia Sophia, Saint Basil's, Bremen Town Hall and Roland, Colossus of Rhodes (a reconstruction), Statue of Liberty, Petra.
+- **Illustration kit** (`App/Sources/Art/Kit/`, about 8,200 lines) and **ten story painters** (`App/Sources/Art/Stories/`, about 15,000 lines) and **ten landmark pictures** (`App/Sources/Art/Landmarks/`, about 3,850 lines). `docs/ART_DIRECTION.md` §11; per-story lists and the painters' own shortfalls in `Content/ART_PLACEHOLDERS.md`.
+- **Library for a big catalog:** shelves by level on "All", a grid for a chosen level, a quieter map (`docs/BUILD.md` §6, round 5). `NextStory` unchanged and tested on the whole catalog.
+- **Tests added (none of the Swift ones run):** core `Round5Tests.swift` (30 methods), app `App/Tests/Round5Tests.swift` (12), UI `ShotTests` `testR5…` (17), Python `tools/test_build_stories.py` (19, run: pass).
+- **Existing tests updated — intended changes because the catalog grew or the tagline changed; none weakened:** core `DecodingTests` (`testCatalogDecodes`: the three prototypes within the bigger catalog; `testLibraryLoadsAndListsTheSample`: counts follow the catalog), core `Round4Tests` (every story has a moral, all different; the `NextStoryTests` helper's catalog is the three prototypes), `ReaderCardTests` (`PrototypeContent.allStories()` is the three prototypes), app `Round4Tests` (the tagline halves; the next-story test's catalog), Python `test_catalog_lists_one_story_per_tier`.
+- **How to run:** `docs/BUILD.md` §7d.
+- **Untouched, as instructed:** no App Store Connect, signing or submission step; `DEVELOPMENT_TEAM` empty; no prices; no ads, tracking, analytics, accounts, network calls or sign-in; no third-party package; no photos or third-party art; the `omramo-web` repo was not touched; every debug flag still works; XcodeGen settings unchanged (new files sit under existing target folders).
+- **Honest gaps (the batch's own list):**
+  - **Nothing has been compiled or seen**: about 27,000 new lines of Swift, of which the kit is the riskiest (a fault in `Kit.person` or `Kit.beast` shows in most stories). Expect a round of compile fixes and then of visual fixes on the Mac before any picture is judged.
+  - **The pictures are thinner than the Monkey story's.** The painters used 1,250–1,650 lines a story against the Monkey's 2,660; scenes lean on kit calls, near-plane framing is often generic, kit figures have a fixed set of side-view poses. Each story has heroes of its own, but "distinct and specific, not a recoloured template" is a claim only eyes can check. An illustrator (C1) remains the real answer.
+  - **The texts are drafts by an AI author with an AI editor.** They were read in full by the lead and checked once against their sources, but no child, teacher, editor or cultural reader has seen them.
+  - **Sources.** gutenberg.org was unreachable; six sources were read on a mirror afterwards. Three findings stand as open questions in the manuscript headers: Carrick's *Peasant and the Bear* is a different variant from the commonly told one we follow (no second source cited); details of the Sailor follow later translations than Petrie (none cited); Dayrell does not name the Efik for the Sun-and-Moon tale (the attribution follows the plan).
+  - **Facts.** Ten landmark entries and thirty culture notes carry details beyond CONTENT_PLAN §5.1 from general knowledge; all `review.facts` pending.
+  - **Cultural review has not started** (PRD Q24). The Snow House uses an Inuit girl's name (Elisapie) and three Inuktitut words chosen by us; the Possum story's cards make statements about the Cherokee; none of it has been read by the people concerned.
+  - **Library.** Three shelves and a grid are our design for a catalog the locked screen 02 never showed; the map with many pins is quieter but still crowded where regions cluster.
+  - Not built: a region filter (CQ11 leaves it open), landmark pins on the map, "Wonders you have seen".
+- **Needs Srikanth (nothing here was assumed as decided):** the ten texts and their softenings (each manuscript header lists them); the four new morals where we departed from the suggested wording (Bremen, Peasant and Bear); the name Elisapie and the Inuktitut words until a consultant is found (Q24, Q25); the Efik attribution; whether "loose" landmark links stay (Sydney Opera House, Statue of Liberty — Q28); landmark image rights (Q29: Sydney Opera House most of all); the library shelves; plus everything still open from earlier rounds.

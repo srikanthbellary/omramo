@@ -1,0 +1,528 @@
+{
+  "id": "bremen-town-musicians",
+  "title": "The Bremen Town Musicians",
+  "tier": "low",
+  "region": {
+    "id": "european",
+    "culture": "German (Brothers Grimm)",
+    "place": "Lower Saxony and Bremen, northern Germany",
+    "label": "Germany",
+    "pin": {
+      "lat": 53.1,
+      "lon": 8.8
+    },
+    "pinColor": "#F2A007"
+  },
+  "setting": {
+    "period": "Northern Germany, about 200 years ago",
+    "latestYear": 1819
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "German folk tale collected by Jacob and Wilhelm Grimm",
+    "sources": [
+      {
+        "author": "Jacob and Wilhelm Grimm, translated by Margaret Hunt",
+        "title": "Household Tales by Brothers Grimm",
+        "publisher": "George Bell and Sons",
+        "year": 1884,
+        "gutenbergId": 5314,
+        "url": "https://www.gutenberg.org/ebooks/5314",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional German tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "German reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Northern Germany is flat farming country with mills and long roads; the old trading city of Bremen stands on the River Weser.",
+      "factCards": [
+        "mill",
+        "bremen-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "The Grimm brothers wrote down tales that people told at home. Town musician was a real job: towns paid players for markets and festivals.",
+      "factCards": [
+        "town-musician",
+        "timber-house"
+      ]
+    },
+    "moral": {
+      "lesson": "Nobody is too old to be useful; friends are stronger together. Four animals nobody wants make a home by using what each can still do.",
+      "reflectionQuestion": "What can you and your friends do together that you could not do alone?"
+    }
+  },
+  "moral": "You are never too old to be useful to your friends.",
+  "theme": {
+    "textColor": "#14263A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A rooster on a cat on a dog on a donkey, all four singing outside a glowing window."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "donkey",
+      "name": "Donkey",
+      "color": "#4A5568",
+      "chipBackground": "#E3E7EE",
+      "faceAlt": "The old Donkey.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Donkey",
+        "traits": [
+          {
+            "text": "Old and steady",
+            "fill": "#E3E7EE",
+            "ink": "#3A4558"
+          },
+          {
+            "text": "Loud, proud voice",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Gathers friends",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He carried sacks to the mill for many years. When he is told he is too old, he does not sulk. He sets off down the road, and he asks everyone he meets to come too.",
+        "portraitAlt": "The grey Donkey on the road, head up, ears up, mouth open in a song.",
+        "background": [
+          "#FFE08A",
+          "#F7C56B",
+          "#E59A52"
+        ]
+      }
+    },
+    {
+      "id": "dog",
+      "name": "Dog",
+      "color": "#8A4B14",
+      "chipBackground": "#FFE2C2",
+      "faceAlt": "The old Dog."
+    },
+    {
+      "id": "cat",
+      "name": "Cat",
+      "color": "#6B3A7A",
+      "chipBackground": "#EBDDF2",
+      "faceAlt": "The old Cat."
+    },
+    {
+      "id": "rooster",
+      "name": "Rooster",
+      "color": "#B03A1E",
+      "chipBackground": "#FFE0D6",
+      "faceAlt": "The Rooster.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Rooster",
+        "traits": [
+          {
+            "text": "Loudest of all",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Sharp eyes",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Sleeps up high",
+            "fill": "#DCEBFA",
+            "ink": "#1F4E86"
+          }
+        ],
+        "body": "He crows with all his might, even on a bad day. He likes the highest seat he can find. From up there he is the first to see the light in the forest.",
+        "portraitAlt": "The Rooster on a farm gate, chest out, crowing at the sky.",
+        "background": [
+          "#FFD9A0",
+          "#FFB07A",
+          "#F0825A"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "mill",
+      "kind": "place",
+      "title": "The mill",
+      "line": "A place where big stones grind grain into flour for bread.",
+      "cultureNote": {
+        "label": "From northern Germany",
+        "text": "Northern Germany is flat and windy, so many of its mills have great sails. Donkeys carried the sacks."
+      },
+      "pictureAlt": "A wooden windmill with four sails on a low green rise.",
+      "background": "#2C5A4A"
+    },
+    {
+      "id": "bremen-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "bremen-town-hall-roland",
+        "appearance": "natural"
+      },
+      "background": "#3A2A4F"
+    },
+    {
+      "id": "town-musician",
+      "kind": "idea",
+      "title": "Town musician",
+      "line": "A person whose job is to play music for the whole town.",
+      "cultureNote": {
+        "label": "In old Germany",
+        "text": "Long ago, German towns paid musicians to play at markets, weddings and festivals. It was a real job."
+      },
+      "pictureAlt": "A town musician’s things in a market square: a lute leaning on a small drum, a curved horn and a soft hat.",
+      "background": "#7A3B2A"
+    },
+    {
+      "id": "timber-house",
+      "kind": "object",
+      "title": "Timber house",
+      "line": "A house with a frame of dark wooden beams you can see.",
+      "cultureNote": {
+        "label": "From Germany",
+        "text": "Many old houses in Germany are built this way. People still live in them today."
+      },
+      "pictureAlt": "A small house with dark wooden beams, pale walls and a thatched roof.",
+      "background": "#4A3528"
+    }
+  ],
+  "scenes": {
+    "scene-road": {
+      "unfoldedAlt": "A country road runs across flat green fields to a far-off town. A grey donkey walks along it past a wooden signpost, with a dog, a cat and a rooster.",
+      "foldedAlt": "A grey donkey walks along a country road past a wooden signpost.",
+      "fallbackColors": [
+        "#CFE9F2",
+        "#FFF1C4",
+        "#8DB360"
+      ]
+    },
+    "scene-forest": {
+      "unfoldedAlt": "Evening at the edge of a forest under a pale sky. A donkey and a dog rest under a big tree, a cat sits on a branch and a rooster perches at the top. A small light shines far off among the trees.",
+      "foldedAlt": "A donkey and a dog rest under a big tree at dusk, with a cat on a branch and a rooster at the top.",
+      "fallbackColors": [
+        "#D9E6F2",
+        "#FFE3C2",
+        "#3F6B52"
+      ]
+    },
+    "scene-window": {
+      "unfoldedAlt": "A timber house in the forest at dusk, its window glowing. A donkey stands at the window with a dog on his back, a cat on the dog and a rooster on the cat.",
+      "foldedAlt": "A rooster on a cat on a dog on a donkey, beside a glowing window.",
+      "fallbackColors": [
+        "#DCE4F2",
+        "#FFDDB8",
+        "#5A4A3A"
+      ]
+    },
+    "scene-home": {
+      "unfoldedAlt": "Morning in the yard of the timber house. The donkey lies on straw, the dog sits by the open door, the cat is on the window sill and the rooster stands on the roof.",
+      "foldedAlt": "The donkey rests on straw in the sunny yard, with the dog, the cat and the rooster close by.",
+      "fallbackColors": [
+        "#CDEBF5",
+        "#FFF3C9",
+        "#7FAE5C"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-road",
+      "part": "part-1",
+      "paras": [
+        "^An old <name:donkey>Donkey</name> had carried sacks to the <tap:mill>mill</tap> for many years.",
+        "Now his legs were slow and his back was sore.",
+        "One morning he heard his master grumble at the gate.",
+        "“That Donkey is too old to be useful,” the man said. “He is not worth his oats.”"
+      ]
+    },
+    {
+      "scene": "scene-road",
+      "part": "part-1",
+      "paras": [
+        "The Donkey’s long ears drooped. Then up they went again.",
+        "<say:donkey*>“Too old?”</say> he said. <say:donkey>“My legs are slow, but my voice is as loud as ever. Hee-haw!”</say>",
+        "<say:donkey*>“I know! I will go to <tap:bremen-moment>Bremen</tap>, the great town by the river. They love music there.”</say>",
+        "So he pushed open the gate and set off down the road."
+      ]
+    },
+    {
+      "scene": "scene-road",
+      "part": "part-1",
+      "paras": [
+        "Soon he met an old <name:dog>Dog</name> lying by the road, puffing and panting.",
+        "<say:donkey*>“Why are you puffing so, friend?”</say> asked the Donkey.",
+        "<say:dog*>“I cannot run fast any more,”</say> puffed the Dog. <say:dog>“My master says I am no use. Where shall I go?”</say>",
+        "<say:donkey*>“Come with me to Bremen. I am going to be a <tap:town-musician>town musician</tap>. You have a fine voice!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-road",
+      "part": "part-1",
+      "paras": [
+        "The Dog wagged his tail, and on they went, two together.",
+        "Before long they met an old <name:cat>Cat</name> in the road, looking as gloomy as a week of rain.",
+        "<say:cat*>“My teeth are blunt,”</say> she sighed. <say:cat>“I would rather sit by the fire than chase mice. So nobody wants me.”</say>",
+        "<say:donkey*>“Come with us to Bremen. You have a fine voice!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-road",
+      "part": "part-1",
+      "paras": [
+        "The Cat licked a paw, and on they went, three together.",
+        "At the next farm a <name:rooster>Rooster</name> stood on the gate, crowing with all his might.",
+        "<say:rooster*>“Guests are coming on Sunday,”</say> he cried, <say:rooster>“and the cook wants me for the soup pot! So I am crowing while I can!”</say>",
+        "<say:donkey*>“Come with us to Bremen instead. You have a fine voice!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-1",
+      "paras": [
+        "Down flew the Rooster, and on they went, four together.",
+        "But Bremen was far, too far for one day. When the sky turned pale, they stopped at the edge of a forest.",
+        "The Donkey and the Dog lay down under a big tree. The Cat climbed onto a branch. The Rooster flew to the very top."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-1",
+      "paras": [
+        "From up there he saw something twinkle, far off among the trees.",
+        "<say:rooster*>“A light!”</say> he crowed. <say:rooster>“A little yellow light! There must be a house.”</say>",
+        "<say:dog*>“A house may have a bone in it,”</say> said the Dog.",
+        "<say:cat*>“And a warm fire,”</say> said the Cat. So up they all got and walked toward the light."
+      ]
+    },
+    {
+      "scene": "scene-window",
+      "part": "part-2",
+      "paras": [
+        "^The light shone from a <tap:timber-house>house</tap> deep in the forest.",
+        "The Donkey was the tallest, so he looked in at the window.",
+        "<say:rooster*>“What do you see, Donkey?”</say> whispered the Rooster.",
+        "<say:donkey*>“A table full of good things,”</say> said the Donkey, <say:donkey>“bread and cheese and fat sausages. And three robbers eating it all up.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-window",
+      "part": "part-2",
+      "paras": [
+        "<say:dog*>“That supper would suit us,”</say> said the Dog. <say:dog>“But how do we get them out?”</say>",
+        "The four friends put their heads together, and soon they had a plan.",
+        "The Donkey set his front hooves on the window sill. The Dog climbed onto the Donkey. The Cat climbed onto the Dog. And the Rooster flew up onto the Cat’s head."
+      ]
+    },
+    {
+      "scene": "scene-window",
+      "part": "part-2",
+      "paras": [
+        "<say:donkey*>“Now,”</say> whispered the Donkey. <say:donkey>“One, two, three, music!”</say>",
+        "The Donkey brayed. The Dog barked. The Cat miaowed. The Rooster crowed. <pop:1.3>Hee-haw!</pop> Woof! Miaow! Cock-a-doodle-doo!",
+        "Then <pop:1.3>Crash!</pop> In they all tumbled through the window.",
+        "The robbers jumped up. They were sure a monster had come for them, and they ran off into the forest as fast as they could go."
+      ]
+    },
+    {
+      "scene": "scene-window",
+      "part": "part-2",
+      "paras": [
+        "Then the four friends sat down to supper. They ate until every plate shone.",
+        "After that they blew out the candle, and each found the bed they liked best.",
+        "The Donkey lay on the straw in the yard. The Dog lay behind the door. The Cat curled up by the warm fire. The Rooster flew up to the roof."
+      ]
+    },
+    {
+      "scene": "scene-window",
+      "part": "part-2",
+      "paras": [
+        "In the dark of night, one robber crept back to look.",
+        "Two small lights glowed by the fire. “Hot coals,” he thought, and bent to light his candle.",
+        "But they were the Cat’s eyes! She hissed and scratched. The Dog nipped his leg. The Donkey gave him a kick.",
+        "And from the roof the Rooster screamed, <say:rooster>“<pop:1.3>Cock-a-doodle-doo!</pop>”</say>"
+      ]
+    },
+    {
+      "scene": "scene-home",
+      "part": "part-2",
+      "paras": [
+        "The robber ran all the way back to his friends.",
+        "“Do not go near that house!” he puffed. “A witch scratched my face, and a watchman with a stick poked my leg.”",
+        "“A great monster thumped me with a club. And up on the roof sat a judge, shouting, ‘Bring that rascal to me!’”"
+      ]
+    },
+    {
+      "scene": "scene-home",
+      "part": "part-2",
+      "paras": [
+        "The robbers never came back.",
+        "And the four friends liked the house so well that they stayed.",
+        "The Donkey had his straw, the Dog his door, the Cat her fire and the Rooster his roof. Every evening they made music together.",
+        "As for Bremen, they never got there. <say:donkey*>“Bremen can wait,”</say> said the Donkey. And it is waiting still."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "bremen-town-hall-roland",
+      "name": "Bremen Town Hall and Roland",
+      "era": "medieval",
+      "built": {
+        "from": 1404,
+        "to": 1410,
+        "circa": true,
+        "note": "The stone Roland was set up in 1404 and the town hall was built in about 1405 to 1410; its decorated front was added about 200 years later. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Germany",
+      "place": "The market square, Bremen, Germany",
+      "coordinates": {
+        "lat": 53.076,
+        "lon": 8.807
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A stone knight named Roland has guarded Bremen’s market square for over 600 years."
+        },
+        "medium": {
+          "line": "The people of Bremen built their town hall and its stone knight, Roland, a little after 1400.",
+          "note": "Beside the town hall stands a bronze statue of a donkey, a dog, a cat and a rooster."
+        },
+        "advanced": {
+          "line": "Bremen’s town hall and its Roland statue, begun in 1404, stood for a trading city that ran its own affairs.",
+          "note": "Both are on the World Heritage List. A bronze statue of the four Town Musicians has stood beside the hall since the 1950s."
+        }
+      },
+      "art": {
+        "file": "art/bremen-town-hall-roland.heic",
+        "alt": "A tall stone knight with a sword and shield stands in a market square, in front of a town hall with a green roof and a row of arches.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A4F",
+      "rights": "Our own illustration; no photograph. The drawing shows the town hall and the Roland only. It must not copy the modern bronze Town Musicians statue beside the hall, which is a 20th-century artwork that may still be in copyright (CONTENT_PLAN §6.6). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a traditional German folk tale collected by",
+    "Jacob and Wilhelm Grimm (northern Germany; Lower Saxony and Bremen). It is not the wording of any earlier edition.",
+    "Documented source for the tale: \"Household Tales by Brothers Grimm\", translated by Margaret Hunt",
+    "(London: George Bell and Sons, 1884), tale 27, Project Gutenberg ebook #5314, https://www.gutenberg.org/ebooks/5314",
+    "(US public domain; other territories not verified).",
+    "Softened for ages 6 to 8: the masters only call the animals too old to be useful (no talk of killing them);",
+    "the Rooster's soup pot is kept as a joke; the fight with the robber is three quick comic beats; nobody is hurt.",
+    "Left out: the instruments each animal plans to play and the robber captain. The number of robbers (three) is ours.",
+    "",
+    "Status: DRAFT. Text review pending. Cultural review (standard: German reader) pending.",
+    "Source check, 18 Nov 2026 (read on the Project Gutenberg mirror gutenberg.pglaf.org; gutenberg.org itself was unreachable):",
+    "Hunt prints the tale as “27 The Bremen Town-Musicians”. The Gutenberg text gives no publisher or year, so the 1884 first-edition details in the citation are from the plan and unconfirmed.",
+    "Our additions and changes: the supper menu, the evening music and the closing lines; the robbers think of a monster (a ghost in the source); the robber's “man with a knife” is a watchman with a stick, and the dog nips rather than bites; the Rooster sleeps on the roof (a roof beam in the source); the lines about bones and a warm fire are given to the Dog and the Cat.",
+    "One phrase of Hunt's (“a face like three rainy days”) had been echoed in the first draft and was rewritten."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#2F3E46",
+      "shade": "#5B6E5A",
+      "mid": "#8DB360",
+      "light": "#DCEBF2",
+      "glow": "#FFD98A",
+      "accent": "#C8452C",
+      "mood": "Soft northern daylight over wide flat fields; cool pale skies, warm straw and window gold, one spot of rooster red."
+    },
+    "light": "Late afternoon on the road, pale dusk in the forest and at the house, fresh morning at home; ONE warm light from the upper left in every picture.",
+    "world": [
+      "Northern German lowland about 1800: very flat land, a low horizon, a huge sky, long straight unpaved roads lined with pollarded willows, birches or poplars, drainage ditches, wet meadows and rye fields.",
+      "Farmhouses are Low German hall houses: long and low, timber frame filled with red brick or pale plaster, a great thatched roof that comes down low, a big arched barn door in the gable end.",
+      "Mills are wooden post windmills or smock mills with four lattice sails; sacks of grain and flour are plain coarse linen.",
+      "The signpost is a plain weathered wooden finger post; if it carries a word, only BREMEN in simple capitals.",
+      "The forest is beech and oak with a few birches at the edge: smooth grey trunks, a floor of brown leaves and ferns. The four rest under one broad old oak.",
+      "The robbers' house is a small timber-frame forest house: dark oak beams, pale plaster, small-paned window, thatched or red-tiled roof, a yard with a straw heap. The lit window is the warmest thing in the picture.",
+      "Inside, seen only through the window: a plank table, a round dark loaf, cheese, sausages, a jug, one candle. The robbers are small comic figures in plain dark coats and slouch hats; no weapons shown.",
+      "Bremen on the horizon is tiny: two church spires and low roofs beside a line of river, pale blue with distance.",
+      "AVOID: mountains, Alpine chalets, lederhosen, dirndls and other Bavarian clichés; fairy-tale castles; onion domes; anything modern (wires, tarmac, fences of wire).",
+      "AVOID copying the bronze Town Musicians statue in Bremen (a 20th-century artwork). Our tower of animals is our own drawing: lively, wobbly, mid-song, not a statue pose."
+    ],
+    "characters": {
+      "donkey": "A small, sturdy grey donkey with a pale muzzle and belly, a dark cross on his shoulders, very long ears that show his mood, a few white hairs round the eyes, a worn rope halter. Slow legs, bright eyes.",
+      "dog": "An old hunting hound, rust-brown and white, long soft ears, a grey muzzle, tongue out when he puffs, a cracked leather collar. Loyal, hopeful face.",
+      "cat": "An old grey tabby with white whiskers and white front paws, a little thin, half-closed green eyes and a gloomy mouth that slowly cheers up through the story.",
+      "rooster": "A proud farmyard rooster: bright red comb and wattles, gold and rust neck feathers, dark green-black curling tail, yellow legs. Chest always out."
+    },
+    "scenes": {
+      "scene-road": {
+        "unfolded": "Far: a low horizon with the tiny spires of Bremen and a silver line of river on the right, a windmill small on the left horizon. Middle: flat green and gold fields, a row of pollarded willows along a ditch. Near: the pale dirt road curving low across both panes to the right, a wooden finger post, and the Donkey walking toward the town on the trailing half, with the Dog beside him, the Cat a step behind and the Rooster on a gate post. The leading pane's upper two thirds is calm pale blue sky with thin high cloud.",
+        "folded": "The Donkey's head and shoulders in the middle of the band, ears up, walking right along the road; the signpost behind him, the Dog's head at his side, flat fields and a pale sky above."
+      },
+      "scene-forest": {
+        "unfolded": "A PALE evening sky, cream near the horizon and soft blue-grey above. Far: open fields fading left. Middle: the dark edge of the forest filling the trailing half, and deep among its trunks one small yellow light. Near: a broad old oak on the trailing half; the Donkey and the Dog lying at its foot, the Cat on a low branch, the Rooster at the very top, looking toward the light. The leading pane's upper two thirds stays open pale sky.",
+        "folded": "The foot of the oak: the Donkey's and the Dog's faces in the middle, resting side by side, the Cat's tail hanging from a branch above them, the small yellow light among the trunks behind, pale sky at the top."
+      },
+      "scene-window": {
+        "unfolded": "Sky still PALE dusk above the tree tops, lilac-grey and cream. Middle and near, on the trailing half: the timber house side-on, its small-paned window glowing gold and throwing a warm patch on the ground. At the window the tower of four: the Donkey with front hooves on the sill, the Dog on his back, the Cat on the Dog, the Rooster on the Cat's head, wings out. Low dark ferns and tree trunks across the bottom. The leading pane's upper two thirds is calm pale sky between thin birch tops.",
+        "folded": "The tower of four animals upright in the middle of the band, faces lit gold from the window at the right edge; the Rooster near the top of the picture area, the Donkey's face in the centre, pale dusk sky above."
+      },
+      "scene-home": {
+        "unfolded": "Fresh morning, pale blue sky with a warm cream horizon. Far: sunlit forest tops. Middle: the timber house on the trailing half with its door open and smoke rising thin from the chimney. Near: the yard low across both panes: the Donkey lying on a heap of golden straw, the Dog sitting in the doorway, the Cat on the window sill in the sun, the Rooster on the roof ridge. The leading pane's upper two thirds is clear pale sky.",
+        "folded": "The Donkey's contented face in the middle, lying on straw, with the Cat curled against him and the Dog's head beside; the house wall and the Rooster on the roof edge above, pale morning sky at the top."
+      }
+    },
+    "pictures": {
+      "mill": "One centred wooden post windmill with four lattice sails on a low green rise, a few grain sacks at its door, wide sky behind; deep green fading at the bottom.",
+      "town-musician": "One centred town musician of about 1800 in a long dark coat, soft hat and buckled shoes, playing a curved horn or a shawm on market cobbles; a hint of stalls behind; warm brick-red fading at the bottom.",
+      "timber-house": "One centred small timber-frame house: dark oak beams in squares and slants, pale plaster between, small-paned window, thatched roof; deep brown fading at the bottom."
+    },
+    "portraits": {
+      "donkey": "The Donkey from the chest up on the road, head lifted, ears straight up, mouth open mid hee-haw, warm golden sky behind.",
+      "rooster": "The Rooster on a farm gate, chest out, beak open to the sky, tail feathers curling, warm peach sky behind."
+    },
+    "cover": "The tower of four in the middle, outside the glowing window at pale dusk: Donkey, Dog on Donkey, Cat on Dog, Rooster on top, all four with mouths open in song.",
+    "landmarks": {
+      "bremen-town-hall-roland": "By day, our own drawing of Bremen's market square: the stone Roland in the middle foreground under his tall pointed stone canopy, a knight with a raised sword and a shield, about three times a person's height with the canopy; behind him the long town hall with its row of ground-floor arches, tall windows, decorated gables and green copper roof. No people needed; no bronze animal statue."
+    }
+  }
+}

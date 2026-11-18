@@ -1,0 +1,1416 @@
+{
+  "schemaVersion": 1,
+  "id": "the-snow-house",
+  "contentVersion": 1,
+  "title": "The Snow House",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "arctic",
+    "culture": "Inuit",
+    "place": "Nunavut, Canada",
+    "label": "Inuit · Nunavut",
+    "pin": {
+      "lat": 69.4,
+      "lon": -81.8
+    },
+    "pinColor": "#2F9BE0"
+  },
+  "setting": {
+    "period": "Nunavut, Canada, today"
+  },
+  "provenance": {
+    "kind": "original",
+    "credit": "Original story written by us (Omramo)",
+    "premise": "On a spring trip to the fishing lakes, a girl helps her grandfather build a snow house for the night. She wants to go fast and her blocks crack; he shows her how to find the right snow, cut each block, lean it on the last one and set the final block at the top, and she sleeps warm inside what she helped build.",
+    "rights": "Original text written for Omramo. No traditional or sacred narrative is used. An Inuit consultant, ideally a co-author, is sought for names, Inuktitut words, clothing, tools and customs (CONTENT_PLAN CQ4)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Indigenous setting (Inuit, Nunavut). An original story: names, Inuktitut words, clothing, tools and the building method must be checked by an Inuit consultant, ideally a co-author.",
+    "community": "Inuit consultant (Nunavut)",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "Nunavut lies in the far north of Canada: a land of tundra and sea ice with no trees, where the spring sun stays up late into the evening.",
+      "factCards": [
+        "nunavut",
+        "hagia-sophia-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "The snow house is Inuit engineering: a spiral of snow blocks that holds itself up, cut with a snow knife and lit by the stone lamp, the qulliq. Children learn it by watching an elder; families in Nunavut live in modern houses today and still teach this skill.",
+      "factCards": [
+        "snow-knife",
+        "qulliq"
+      ]
+    },
+    "moral": {
+      "lesson": "Careful work, done patiently, holds together; every block leans on the others. Elisapie's rushed blocks crumble, and her slow ones become part of a house.",
+      "reflectionQuestion": "When did going slowly help you make something that lasted?"
+    }
+  },
+  "moral": "Careful, patient work holds together, because every block leans on the others.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#13283F",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A girl in a red parka presses snow into the wall of a half-built snow house, while her grandfather looks out over the top.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "elisapie",
+      "name": "Elisapie",
+      "color": "#B0362B",
+      "face": {
+        "file": "art/face-elisapie.png",
+        "alt": "Elisapie, a girl in a red parka with a fur-trimmed hood.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE1D6",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Elisapie",
+        "traits": [
+          {
+            "text": "Always in a hurry",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Fills every gap",
+            "fill": "#DCEEFB",
+            "ink": "#1B5687"
+          },
+          {
+            "text": "Loves to fish",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          }
+        ],
+        "body": "She wants everything done fast, and her first snow blocks crumble. Then she watches Grandfather, slows down, and helps to build a whole house.",
+        "portrait": {
+          "file": "art/char-elisapie.card.heic",
+          "alt": "Elisapie in her red parka, hugging a block of snow nearly as big as she is.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#CFE9F7",
+          "#FFD9A8",
+          "#F2876B"
+        ]
+      }
+    },
+    {
+      "id": "grandfather",
+      "name": "Grandfather",
+      "color": "#1D5A8C",
+      "face": {
+        "file": "art/face-grandfather.png",
+        "alt": "Grandfather, an older man with a lined, smiling face in a dark blue parka hood.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6EAF8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Grandfather",
+        "traits": [
+          {
+            "text": "Never hurries",
+            "fill": "#DCEEFB",
+            "ink": "#1B5687"
+          },
+          {
+            "text": "Few words",
+            "fill": "#E6E3F5",
+            "ink": "#4A3C8C"
+          },
+          {
+            "text": "Likes his tea",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          }
+        ],
+        "body": "He can build a house out of snow before the sun goes down. He does not explain much. He says, “Watch,” and he smiles into his hood.",
+        "portrait": {
+          "file": "art/char-grandfather.card.heic",
+          "alt": "Grandfather in his dark blue parka, holding his long snow knife and a cup of tea.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#BFE0F5",
+          "#7FB6E0",
+          "#2F6FA8"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "nunavut",
+      "kind": "place",
+      "title": "Nunavut",
+      "line": "A wide, cold land in the far north of Canada.",
+      "cultureNote": {
+        "label": "In Nunavut today",
+        "text": "Nunavut is the home of Inuit. No trees grow there. In spring the sea is still frozen, and the sun stays up late into the evening."
+      },
+      "picture": {
+        "file": "art/see-nunavut.heic",
+        "alt": "A wide land of snow and bare rock beside a frozen sea, under a low golden sun.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B4F7A"
+    },
+    {
+      "id": "snow-knife",
+      "kind": "object",
+      "title": "Snow knife",
+      "line": "A long, flat knife for cutting blocks out of hard snow.",
+      "cultureNote": {
+        "label": "In Nunavut today",
+        "text": "Inuit builders used to make snow knives from bone or antler. Today many use a steel knife or a saw."
+      },
+      "picture": {
+        "file": "art/see-snow-knife.heic",
+        "alt": "A long, flat snow knife with a wooden handle, standing in the snow beside a cut block.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A5D86"
+    },
+    {
+      "id": "hagia-sophia-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "hagia-sophia",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Inuit builders make a dome of snow that holds itself up. Far away, other builders made a great dome of brick and stone, and it stands the same way: each piece leans on the next."
+        }
+      },
+      "background": "#3B2A5C"
+    },
+    {
+      "id": "qulliq",
+      "kind": "object",
+      "title": "The qulliq",
+      "line": "A lamp carved from stone that burns oil with a low flame.",
+      "cultureNote": {
+        "label": "In Nunavut today",
+        "text": "The qulliq gives light and heat. Families in Nunavut live in modern houses today, and still teach how to light the lamp and how to build a snow house."
+      },
+      "picture": {
+        "file": "art/see-qulliq.heic",
+        "alt": "A shallow, half-moon lamp of grey stone with a low line of flame along its straight edge.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2F1E"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-trail.unfolded.heic",
+          "alt": "A snowmobile pulls a long wooden sled across a wide white land under a low spring sun. A girl in a red parka rides on the sled.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-trail.folded.heic",
+          "alt": "A girl in a red parka rides on a wooden sled across the snow, under a low golden sun.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDE8F6",
+          "#FFE9C2",
+          "#EEF5FA"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Elisapie",
+              "lead": true,
+              "name": "elisapie"
+            },
+            {
+              "t": " rode across the white land of ",
+              "lead": true
+            },
+            {
+              "t": "Nunavut",
+              "lead": true,
+              "tap": "nunavut"
+            },
+            {
+              "t": " on a sled.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The sled was a long wooden qamutiik. It bumped and hissed over the snow behind "
+            },
+            {
+              "t": "Grandfather",
+              "name": "grandfather"
+            },
+            {
+              "t": "’s snowmobile."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a spring evening. The sun sat low and gold, and it would not go down for hours."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Faster, Grandfather!”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " shouted Elisapie. "
+            },
+            {
+              "t": "“The fish are waiting!”",
+              "say": "elisapie"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-trail.unfolded.heic",
+          "alt": "A snowmobile pulls a long wooden sled across a wide white land under a low spring sun. A girl in a red parka rides on the sled.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-trail.folded.heic",
+          "alt": "A girl in a red parka rides on a wooden sled across the snow, under a low golden sun.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDE8F6",
+          "#FFE9C2",
+          "#EEF5FA"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandfather did not go faster. Grandfather never went faster."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They crossed the frozen sea. They crossed a hill of bare brown rock. They crossed more snow than Elisapie could look at."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last he stopped beside a frozen lake. "
+            },
+            {
+              "t": "“The fishing lakes are far,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Tonight we sleep here.”",
+              "say": "grandfather"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Elisapie looked around. No house. No cabin. Only snow."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-trail.unfolded.heic",
+          "alt": "A snowmobile pulls a long wooden sled across a wide white land under a low spring sun. A girl in a red parka rides on the sled.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-trail.folded.heic",
+          "alt": "A girl in a red parka rides on a wooden sled across the snow, under a low golden sun.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDE8F6",
+          "#FFE9C2",
+          "#EEF5FA"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Sleep in what?”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " she asked."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“In a house,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " said Grandfather. He patted the snow. "
+            },
+            {
+              "t": "“We have not built it yet.”",
+              "say": "grandfather"
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He meant an iglu. In Inuktitut, the language of Inuit, iglu means a house. This one would be made of snow."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I will help! I will be fast!”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " said Elisapie. Grandfather said only, "
+            },
+            {
+              "t": "“Hm,”",
+              "say": "grandfather"
+            },
+            {
+              "t": " and took out his "
+            },
+            {
+              "t": "snow knife",
+              "tap": "snow-knife"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cutting.unfolded.heic",
+          "alt": "Grandfather cuts a block from hard snow with his long snow knife. Beside him the girl looks down at a block that has cracked in two.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cutting.folded.heic",
+          "alt": "The girl holds a snow block that has cracked in two, while Grandfather cuts with his snow knife behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EAF5",
+          "#FFE3B8",
+          "#E6F0F7"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Elisapie did not wait. She took the saw and cut a block from the snow at her feet."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“One!”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " She heaved it up. "
+            },
+            {
+              "t": "Crack!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " It broke in two."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Two!”",
+              "say": "elisapie"
+            },
+            {
+              "t": " The next block crumbled like cake. "
+            },
+            {
+              "t": "“Three!”",
+              "say": "elisapie"
+            },
+            {
+              "t": " The third fell to powder."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandfather looked at the heap. "
+            },
+            {
+              "t": "“A fine pile of snow,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“It is not a house.”",
+              "say": "grandfather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cutting.unfolded.heic",
+          "alt": "Grandfather cuts a block from hard snow with his long snow knife. Beside him the girl looks down at a block that has cracked in two.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cutting.folded.heic",
+          "alt": "The girl holds a snow block that has cracked in two, while Grandfather cuts with his snow knife behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EAF5",
+          "#FFE3B8",
+          "#E6F0F7"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Why do they break?”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " asked Elisapie."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandfather did not say. He walked off slowly, pushing his knife into the snow. Too soft here. Too soft there."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then the knife went in slow and even, all the way down. "
+            },
+            {
+              "t": "Squeak!",
+              "fx": "pop",
+              "scale": 1.3
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“This snow sings,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“The wind packed it hard. Soft snow is for jumping in. Singing snow is for houses.”",
+              "say": "grandfather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cutting.unfolded.heic",
+          "alt": "Grandfather cuts a block from hard snow with his long snow knife. Beside him the girl looks down at a block that has cracked in two.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cutting.folded.heic",
+          "alt": "The girl holds a snow block that has cracked in two, while Grandfather cuts with his snow knife behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EAF5",
+          "#FFE3B8",
+          "#E6F0F7"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He cut. Down, down, across, and a push with his boot. Out came a block as long as his arm, straight as a box."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He gave Elisapie the saw. "
+            },
+            {
+              "t": "“Now you. Slowly.”",
+              "say": "grandfather",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Down, down, across. Her tongue stuck out. Her block was smaller, but it came out whole. "
+            },
+            {
+              "t": "“It is heavy!”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " she puffed."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Good,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " said Grandfather. "
+            },
+            {
+              "t": "“A house should be.”",
+              "say": "grandfather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cutting.unfolded.heic",
+          "alt": "Grandfather cuts a block from hard snow with his long snow knife. Beside him the girl looks down at a block that has cracked in two.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cutting.folded.heic",
+          "alt": "The girl holds a snow block that has cracked in two, while Grandfather cuts with his snow knife behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EAF5",
+          "#FFE3B8",
+          "#E6F0F7"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Block after block they cut. Grandfather stood them in a ring on the snow, each tight against the next."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he did something strange. He sliced the top of the ring into a slope, low at one end and high at the other."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You have spoiled it!”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " cried Elisapie. "
+            },
+            {
+              "t": "“It is all crooked!”",
+              "say": "elisapie"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Crooked on purpose,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " said Grandfather. "
+            },
+            {
+              "t": "“Watch.”",
+              "say": "grandfather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-spiral.unfolded.heic",
+          "alt": "A half-built snow house: the wall of snow blocks climbs round in a spiral. Grandfather stands inside it and the girl presses snow into the gaps from outside.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-spiral.folded.heic",
+          "alt": "The girl presses soft snow into a gap in the spiral wall of snow blocks, with Grandfather's hood showing over the top.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D0E6F4",
+          "#FFDDB0",
+          "#E3EEF6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandfather set the next block on the low end of the slope.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He set another beside it, leaning on the first. Then another, leaning on that. The wall did not go up in rings. It climbed round and round, like a snail’s shell."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Each block leans on the last,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " said Grandfather. "
+            },
+            {
+              "t": "“So none of them can fall.”",
+              "say": "grandfather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-spiral.unfolded.heic",
+          "alt": "A half-built snow house: the wall of snow blocks climbs round in a spiral. Grandfather stands inside it and the girl presses snow into the gaps from outside.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-spiral.folded.heic",
+          "alt": "The girl presses soft snow into a gap in the spiral wall of snow blocks, with Grandfather's hood showing over the top.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D0E6F4",
+          "#FFDDB0",
+          "#E3EEF6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandfather worked inside the wall, cutting blocks from the snow under his boots."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Elisapie had the outside. "
+            },
+            {
+              "t": "“Find every gap,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“and fill it with soft snow. Your kind of snow.”",
+              "say": "grandfather"
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She pressed snow into the cracks with her mitts. Pat, pat, pat."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Each new block tipped inward a little more. Nothing fell. Each block leaned on the last."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-spiral.unfolded.heic",
+          "alt": "A half-built snow house: the wall of snow blocks climbs round in a spiral. Grandfather stands inside it and the girl presses snow into the gaps from outside.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-spiral.folded.heic",
+          "alt": "The girl presses soft snow into a gap in the spiral wall of snow blocks, with Grandfather's hood showing over the top.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D0E6F4",
+          "#FFDDB0",
+          "#E3EEF6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Up went the wall, and in. Soon Elisapie could see only Grandfather’s hood. Then only his knife. Then only a hole with a voice in it."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Are you still in there?”",
+              "say": "elisapie",
+              "chip": true
+            },
+            {
+              "t": " she called."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I hope so,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " said the voice. "
+            },
+            {
+              "t": "“Somebody is building this house.”",
+              "say": "grandfather"
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The wall had become a "
+            },
+            {
+              "t": "dome",
+              "tap": "hagia-sophia-moment"
+            },
+            {
+              "t": ", round as a bowl turned upside down."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-spiral.unfolded.heic",
+          "alt": "A half-built snow house: the wall of snow blocks climbs round in a spiral. Grandfather stands inside it and the girl presses snow into the gaps from outside.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-spiral.folded.heic",
+          "alt": "The girl presses soft snow into a gap in the spiral wall of snow blocks, with Grandfather's hood showing over the top.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D0E6F4",
+          "#FFDDB0",
+          "#E3EEF6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He cut the last block too big. He pushed it up through the hole sideways and laid it flat."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Shave, shave went his knife. The block sank down, snug as a lid."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Grandfather! How will you get out?”",
+              "say": "elisapie",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The knife poked through the wall by her boots and sawed a small door. Grandfather looked out. "
+            },
+            {
+              "t": "“Same way you get in.”",
+              "say": "grandfather",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-night.unfolded.heic",
+          "alt": "The finished snow house glows gold from inside in the pale blue dusk of an Arctic spring night. The sled rests beside it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-night.folded.heic",
+          "alt": "The round snow house glows gold from inside in the pale blue dusk, with the sled beside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C9DCF2",
+          "#F9DFC4",
+          "#DCE8F4"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Inside, Grandfather unwrapped Grandmother’s stone lamp, the "
+            },
+            {
+              "t": "qulliq",
+              "tap": "qulliq"
+            },
+            {
+              "t": ". He poured in oil and lit the wick."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A low flame crept along the edge of the lamp. The white walls turned gold."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Elisapie looked up at the blocks, winding round to the top. "
+            },
+            {
+              "t": "“Which ones are mine?”",
+              "say": "elisapie",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The ones holding up mine,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " said Grandfather. "
+            },
+            {
+              "t": "“And mine are holding up yours.”",
+              "say": "grandfather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-night.unfolded.heic",
+          "alt": "The finished snow house glows gold from inside in the pale blue dusk of an Arctic spring night. The sled rests beside it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-night.folded.heic",
+          "alt": "The round snow house glows gold from inside in the pale blue dusk, with the sled beside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C9DCF2",
+          "#F9DFC4",
+          "#DCE8F4"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They ate bannock and drank hot, sweet tea. The wind went round and round the house and found no way in."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Outside, the spring night stayed pale and blue. The little house glowed like a lamp."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Elisapie lay warm in her sleeping bag and counted the blocks. One, two, three…"
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She was asleep before she reached the top."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-night.unfolded.heic",
+          "alt": "The finished snow house glows gold from inside in the pale blue dusk of an Arctic spring night. The sled rests beside it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-night.folded.heic",
+          "alt": "The round snow house glows gold from inside in the pale blue dusk, with the sled beside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C9DCF2",
+          "#F9DFC4",
+          "#DCE8F4"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the morning she crawled out into bright sun. There stood the snow house, round and firm. Not one block had moved."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Hurry, Grandfather! The fish are waiting!”",
+              "say": "elisapie",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandfather sat in the doorway with his tea. "
+            },
+            {
+              "t": "“They have waited all winter,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“They can wait for one cup.”",
+              "say": "grandfather"
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So Elisapie sat down and waited too. Slowly. Well, nearly slowly."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

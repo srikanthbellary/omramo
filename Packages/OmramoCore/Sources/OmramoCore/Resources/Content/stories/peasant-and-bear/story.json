@@ -1,0 +1,1290 @@
+{
+  "schemaVersion": 1,
+  "id": "peasant-and-bear",
+  "contentVersion": 1,
+  "title": "The Peasant and the Bear",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "russian",
+    "culture": "Russian village folk tale",
+    "place": "Russia",
+    "label": "Russia",
+    "pin": {
+      "lat": 56,
+      "lon": 40
+    },
+    "pinColor": "#E8562A"
+  },
+  "setting": {
+    "period": "A Russian village, long ago",
+    "latestYear": 1800
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Russian village folk tales",
+    "sources": [
+      {
+        "author": "Valery Carrick, translated by Nevill Forbes",
+        "title": "More Russian Picture Tales",
+        "publisher": "Frederick A. Stokes Company",
+        "year": 1914,
+        "gutenbergId": 23462,
+        "url": "https://www.gutenberg.org/ebooks/23462",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Russian folk tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Russian reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Russia's great forests and the farm fields at their edge; summers in the north are short, so villagers grew root crops such as turnips, and grain such as rye.",
+      "factCards": [
+        "forest",
+        "turnip",
+        "saint-basils-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Village farming in old Russia (plough, sickle, turnips, rye and black bread), and the bear as the best-known animal of Russian tales: big, blustery and easily outwitted.",
+      "factCards": [
+        "turnip",
+        "rye"
+      ]
+    },
+    "moral": {
+      "lesson": "Think before you agree to a bargain. The hasty Bear chooses twice without asking what is being planted; the careful Peasant knows that tops or roots depends on the crop.",
+      "reflectionQuestion": "What should the Bear have asked before he said “Done!”?"
+    }
+  },
+  "moral": "Think and ask before you agree to a bargain.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#14291F",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A peasant holding up a round turnip and a big brown bear holding a bunch of green leaves, side by side in a field.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "peasant",
+      "name": "Peasant",
+      "color": "#A63A22",
+      "face": {
+        "file": "art/face-peasant.png",
+        "alt": "The Peasant.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE3C2",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Peasant",
+        "traits": [
+          {
+            "text": "Careful planner",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Hard worker",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Keeps calm",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He has one field, one horse and one wooden plough. He knows what grows up and what grows down. When a bear roars at him, he takes off his cap and makes a plan.",
+        "portrait": {
+          "file": "art/char-peasant.card.heic",
+          "alt": "The Peasant in a red shirt and a cap, holding a round turnip by its leaves.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFD98A",
+          "#F7B45C",
+          "#E88A4A"
+        ]
+      }
+    },
+    {
+      "id": "bear",
+      "name": "Bear",
+      "color": "#6B3F1D",
+      "face": {
+        "file": "art/face-bear.png",
+        "alt": "The Bear.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F3DDBE",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Bear",
+        "traits": [
+          {
+            "text": "Always in a hurry",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Big, loud roar",
+            "fill": "#F3E2C8",
+            "ink": "#6B3F1D"
+          },
+          {
+            "text": "Loves sweet things",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He says the forest is his, and he roars a great deal. But he would much rather eat than fight. He says “Done!” before he has asked a single question.",
+        "portrait": {
+          "file": "art/char-bear.card.heic",
+          "alt": "The big brown Bear sitting down, chewing a green turnip leaf and looking puzzled.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#CFE8B0",
+          "#9CCB7A",
+          "#5E9E5A"
+        ]
+      }
+    },
+    {
+      "id": "wife",
+      "name": "Wife",
+      "color": "#17694A",
+      "face": {
+        "file": "art/face-wife.png",
+        "alt": "The Peasant’s wife.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6F0E0"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "forest",
+      "kind": "place",
+      "title": "The great forest",
+      "line": "A wide land of trees: white birch, tall pine and dark spruce.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Russia has more forest than any other country. Bears still live among its trees."
+      },
+      "picture": {
+        "file": "art/see-forest.heic",
+        "alt": "The edge of a forest of white-barked birch trees and dark, pointed spruce trees.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E5A3C"
+    },
+    {
+      "id": "turnip",
+      "kind": "object",
+      "title": "A turnip",
+      "line": "A round, sweet root that grows hidden under its green leaves.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Turnips grow fast, even in a short, cool summer. Long ago, Russian village families ate them often."
+      },
+      "picture": {
+        "file": "art/see-turnip.heic",
+        "alt": "One round white-and-gold turnip with a tuft of green leaves on top.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3F6B2A"
+    },
+    {
+      "id": "saint-basils-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "saint-basils-cathedral",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "Round as onions! Long after this story, builders in Russia gave a great building roofs shaped like onions."
+        }
+      },
+      "background": "#1B3160"
+    },
+    {
+      "id": "rye",
+      "kind": "object",
+      "title": "Golden rye",
+      "line": "A tall grass whose seeds are ground into flour for bread.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Rye grows well in cold places. Russian bakers make a dark, rich loaf from it, called black bread."
+      },
+      "picture": {
+        "file": "art/see-rye.heic",
+        "alt": "A sheaf of golden rye tied in the middle, its long bearded ears nodding at the top.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#8A5A14"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-field.unfolded.heic",
+          "alt": "A spring morning at the edge of a forest of birch and spruce. A peasant in a red shirt ploughs dark earth with a small horse, and a big brown bear steps out of the trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-field.folded.heic",
+          "alt": "A big brown bear steps out of the birch trees towards a peasant and his horse.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFF1C4",
+          "#6B4A2E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At the edge of a great ",
+              "lead": true
+            },
+            {
+              "t": "forest",
+              "lead": true,
+              "tap": "forest"
+            },
+            {
+              "t": " lived a poor ",
+              "lead": true
+            },
+            {
+              "t": "Peasant",
+              "lead": true,
+              "name": "peasant"
+            },
+            {
+              "t": ".",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A peasant is a farmer who owns very little. This one had one field, one horse and one wooden plough."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One spring morning he went out to plough. The earth turned over, dark and soft, and the birds sang in the birch trees."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-field.unfolded.heic",
+          "alt": "A spring morning at the edge of a forest of birch and spruce. A peasant in a red shirt ploughs dark earth with a small horse, and a big brown bear steps out of the trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-field.folded.heic",
+          "alt": "A big brown bear steps out of the birch trees towards a peasant and his horse.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFF1C4",
+          "#6B4A2E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Crack!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " went the bushes. Out of the forest came a great brown "
+            },
+            {
+              "t": "Bear",
+              "name": "bear"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Peasant!”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " he roared. "
+            },
+            {
+              "t": "“This is my forest. I will break you up like a stick!”",
+              "say": "bear"
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The horse stopped. The birds stopped. But the Peasant did not run. He took off his cap."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-field.unfolded.heic",
+          "alt": "A spring morning at the edge of a forest of birch and spruce. A peasant in a red shirt ploughs dark earth with a small horse, and a big brown bear steps out of the trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-field.folded.heic",
+          "alt": "A big brown bear steps out of the birch trees towards a peasant and his horse.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFF1C4",
+          "#6B4A2E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Don’t, Bear,”",
+              "say": "peasant",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Let us share. I will do the sowing. When the crop is ripe, you take the tops, and I will take only the roots.”",
+              "say": "peasant"
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Bear scratched his ear. Tops were on top. Tops must be best."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He did not ask what the Peasant was sowing. "
+            },
+            {
+              "t": "“Done!”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " he said, and he ambled back into the trees."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-field.unfolded.heic",
+          "alt": "A spring morning at the edge of a forest of birch and spruce. A peasant in a red shirt ploughs dark earth with a small horse, and a big brown bear steps out of the trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-field.folded.heic",
+          "alt": "A big brown bear steps out of the birch trees towards a peasant and his horse.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFF1C4",
+          "#6B4A2E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Summer is short in the north, so the Peasant did not waste a day."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He sowed. He weeded. He chased away the crows."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Up came the leaves, thick and green. Now and then the Bear came by to look."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My tops are growing nicely,”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " he said."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-turnips.unfolded.heic",
+          "alt": "An autumn field under yellow birch trees. A peasant loads a wooden cart with round turnips, and a bear sits beside a heap of green leaves.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-turnips.folded.heic",
+          "alt": "A bear sits by a heap of green leaves and looks at a cart full of round turnips.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EEF0",
+          "#FFE9B0",
+          "#B9862E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Autumn came. The birch leaves turned yellow, and the Bear came for his share."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Peasant took hold of some leaves and pulled. "
+            },
+            {
+              "t": "Pop!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " Out of the dark earth came a "
+            },
+            {
+              "t": "turnip",
+              "tap": "turnip"
+            },
+            {
+              "t": ", fat and white. Then another, and another."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He cut off the green tops and made a heap. "
+            },
+            {
+              "t": "“Yours, Bear. Just as we agreed.”",
+              "say": "peasant",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-turnips.unfolded.heic",
+          "alt": "An autumn field under yellow birch trees. A peasant loads a wooden cart with round turnips, and a bear sits beside a heap of green leaves.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-turnips.folded.heic",
+          "alt": "A bear sits by a heap of green leaves and looks at a cart full of round turnips.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EEF0",
+          "#FFE9B0",
+          "#B9862E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Bear sat down by his heap of leaves. He chewed one. It was tough. It was bitter."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Peasant loaded his cart. In went the turnips, round as "
+            },
+            {
+              "t": "onions",
+              "tap": "saint-basils-moment"
+            },
+            {
+              "t": ", until the cart was full."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Bear stopped chewing. "
+            },
+            {
+              "t": "“What have you got there, Peasant?”",
+              "say": "bear",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-turnips.unfolded.heic",
+          "alt": "An autumn field under yellow birch trees. A peasant loads a wooden cart with round turnips, and a bear sits beside a heap of green leaves.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-turnips.folded.heic",
+          "alt": "A bear sits by a heap of green leaves and looks at a cart full of round turnips.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EEF0",
+          "#FFE9B0",
+          "#B9862E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Only my roots, Bear. I am taking them to town to sell.”",
+              "say": "peasant",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Give me one to try.”",
+              "say": "bear",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Peasant tossed him a turnip, and the Bear bit it in two. "
+            },
+            {
+              "t": "Crunch!",
+              "fx": "pop",
+              "scale": 1.3
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was sweet. It was juicy. It was much, much nicer than leaves."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-turnips.unfolded.heic",
+          "alt": "An autumn field under yellow birch trees. A peasant loads a wooden cart with round turnips, and a bear sits beside a heap of green leaves.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-turnips.folded.heic",
+          "alt": "A bear sits by a heap of green leaves and looks at a cart full of round turnips.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8EEF0",
+          "#FFE9B0",
+          "#B9862E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Grrr!”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " said the Bear. "
+            },
+            {
+              "t": "“Your roots are sweet and my tops are bitter. Next year, I take the roots!”",
+              "say": "bear"
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“As you wish, Bear,”",
+              "say": "peasant",
+              "chip": true
+            },
+            {
+              "t": " said the Peasant. "
+            },
+            {
+              "t": "“Next year the roots are yours, and I will take only the tops.”",
+              "say": "peasant"
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Bear nodded hard. Once again, he did not ask what would be sown."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-field.unfolded.heic",
+          "alt": "A spring morning at the edge of a forest of birch and spruce. A peasant in a red shirt ploughs dark earth with a small horse, and a big brown bear steps out of the trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-field.folded.heic",
+          "alt": "A big brown bear steps out of the birch trees towards a peasant and his horse.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFF1C4",
+          "#6B4A2E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Next spring the Peasant ploughed his field again.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His "
+            },
+            {
+              "t": "wife",
+              "name": "wife"
+            },
+            {
+              "t": " carried out a sack of seed. "
+            },
+            {
+              "t": "“Turnips again?”",
+              "say": "wife",
+              "chip": true
+            },
+            {
+              "t": " she asked."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Not this year,”",
+              "say": "peasant",
+              "chip": true
+            },
+            {
+              "t": " said the Peasant. "
+            },
+            {
+              "t": "“This year we sow ",
+              "say": "peasant"
+            },
+            {
+              "t": "rye",
+              "say": "peasant",
+              "tap": "rye"
+            },
+            {
+              "t": ".”",
+              "say": "peasant"
+            },
+            {
+              "t": " And he scattered the grain by the handful, left and right."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far off in the trees, the Bear rubbed his paws. "
+            },
+            {
+              "t": "“My roots,”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“My sweet, sweet roots.”",
+              "say": "bear"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-rye.unfolded.heic",
+          "alt": "High summer. A wide field of tall golden rye under a pale blue sky, with a bear standing at its edge, watching it grow.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-rye.folded.heic",
+          "alt": "A bear peers over a field of tall golden rye.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C9E9F5",
+          "#FFF3BF",
+          "#E0A92E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The rye came up green. All summer it grew, up to the Peasant’s knee, up to his belt, up to his shoulder."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then it turned gold, and it whispered when the wind blew."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every day the Bear came to look. "
+            },
+            {
+              "t": "“Grow, roots, grow,”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " he sang. He never once looked at the tops."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-rye.unfolded.heic",
+          "alt": "High summer. A wide field of tall golden rye under a pale blue sky, with a bear standing at its edge, watching it grow.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-rye.folded.heic",
+          "alt": "A bear peers over a field of tall golden rye.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C9E9F5",
+          "#FFF3BF",
+          "#E0A92E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At harvest time the Peasant came with his sickle, a knife curved like a new moon."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Swish, swish, swish! Down fell the golden rye. His wife tied it into sheaves, and they stacked the sheaves on the cart."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Now, Bear,”",
+              "say": "peasant",
+              "chip": true
+            },
+            {
+              "t": " said the Peasant, "
+            },
+            {
+              "t": "“the roots are yours. Every one.”",
+              "say": "peasant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-harvest.unfolded.heic",
+          "alt": "Harvest time. A peasant stands by a cart of golden sheaves and full sacks, and a bear sits on a heap of dry roots. Far off are a log house and a village.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-harvest.folded.heic",
+          "alt": "A bear sits on a heap of dry roots beside a cart stacked with golden sheaves.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5ECF3",
+          "#FFE7B3",
+          "#C99A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Bear dug. He pulled up a root, thin and dry as string. He chewed it. He pulled a face."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Peasant!”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " he roared. "
+            },
+            {
+              "t": "“Tops, and I get leaves. Roots, and I get string! How do you do it?”",
+              "say": "bear"
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I don’t do it, Bear. The crop does. Turnips grow down. Rye grows up. You never asked what I was sowing.”",
+              "say": "peasant",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-harvest.unfolded.heic",
+          "alt": "Harvest time. A peasant stands by a cart of golden sheaves and full sacks, and a bear sits on a heap of dry roots. Far off are a log house and a village.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-harvest.folded.heic",
+          "alt": "A bear sits on a heap of dry roots beside a cart stacked with golden sheaves.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5ECF3",
+          "#FFE7B3",
+          "#C99A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Bear sat on his heap of roots and thought for a long time."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the village, the Peasant’s wife baked black bread from the new rye. The whole house smelled of it."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Before the first snow, the Peasant carried a warm loaf and a basket of turnips to the edge of the forest. He left them on a stump."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-harvest.unfolded.heic",
+          "alt": "Harvest time. A peasant stands by a cart of golden sheaves and full sacks, and a bear sits on a heap of dry roots. Far off are a log house and a village.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-harvest.folded.heic",
+          "alt": "A bear sits on a heap of dry roots beside a cart stacked with golden sheaves.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5ECF3",
+          "#FFE7B3",
+          "#C99A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Bear found them. He ate the loaf. He ate the turnips. He licked the basket."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Next spring,”",
+              "say": "bear",
+              "chip": true
+            },
+            {
+              "t": " he said, with his mouth full, "
+            },
+            {
+              "t": "“I will not say tops, and I will not say roots. I will say: Peasant, what are we planting?”",
+              "say": "bear"
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he yawned a great yawn, and went off to sleep until spring."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

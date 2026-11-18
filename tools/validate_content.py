@@ -660,6 +660,9 @@ def validate_story(rep, file, story, landmarks, manuscript, art_exists=None):
         if blank(cultural.get("reason")):
             rep.add(E, "cultural-review-no-reason", file, "culturalReview.reason",
                     "a required cultural review must say why it is required")
+        if blank(cultural.get("community")):
+            rep.add(E, "cultural-review-no-community", file, "culturalReview.community",
+                    "a required cultural review must name the community or reviewer who should read the story")
         if cultural["status"] != "approved":
             rep.add(rep.pending, "cultural-review-not-approved", file, "culturalReview.status",
                     "required cultural review is %s; the story cannot ship until it is approved" % cultural["status"])

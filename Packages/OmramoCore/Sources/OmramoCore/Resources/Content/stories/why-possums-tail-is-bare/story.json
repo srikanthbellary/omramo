@@ -1,0 +1,1288 @@
+{
+  "schemaVersion": 1,
+  "id": "why-possums-tail-is-bare",
+  "contentVersion": 1,
+  "title": "Why the Possum’s Tail Is Bare",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "nativeAmericanFirstNations",
+    "culture": "Cherokee",
+    "place": "The southern Appalachian Mountains (the Cherokee homelands)",
+    "label": "Cherokee · Appalachia",
+    "pin": {
+      "lat": 35.5,
+      "lon": -83.3
+    },
+    "pinColor": "#D94F3D"
+  },
+  "setting": {
+    "period": "A Cherokee story, told for a very long time and still told today"
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Cherokee animal story",
+    "sources": [
+      {
+        "author": "James Mooney",
+        "title": "Myths of the Cherokee (story 18, “Why the Possum’s Tail is Bare”)",
+        "publisher": "Bureau of American Ethnology, Nineteenth Annual Report (Government Printing Office)",
+        "year": 1900,
+        "gutenbergId": 45634,
+        "url": "https://www.gutenberg.org/ebooks/45634",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Cherokee animal story, written for Omramo; it does not use the wording of the cited edition. The story belongs to the Cherokee people. James Mooney was an outside ethnographer who wrote it down from several Cherokee storytellers, east and west, whom he does not name for this story; they are the tellers to credit. The cited edition is a US government publication of 1900 and is in the US public domain (published before 1931); other territories not verified. A Cherokee consultant must confirm that we may retell this story, and how, before release. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Indigenous story (Cherokee). A widely published animal tale, but a Cherokee consultant must confirm it is right for us to retell and how.",
+    "community": "Cherokee consultant",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Great Smoky Mountains in the southern Appalachians are the Cherokee homelands; the opossum, the rabbit and the cricket are real animals of these eastern woodlands.",
+      "factCards": [
+        "smoky-mountains",
+        "opossum"
+      ]
+    },
+    "culture": {
+      "lesson": "The Cherokee tell animal stories for fun and for teaching, and tell them today. Cherokee people live in North Carolina and Oklahoma and have their own writing, the syllabary made by Sequoyah.",
+      "factCards": [
+        "cricket-barber",
+        "opossum",
+        "smoky-mountains"
+      ]
+    },
+    "moral": {
+      "lesson": "Boasting makes you easy to trick; be proud quietly. Possum is so busy being admired that he never checks what is being done to his tail.",
+      "reflectionQuestion": "What are you proud of, and how can you be proud of it quietly?"
+    }
+  },
+  "moral": "Boasting makes you easy to trick, so be proud quietly.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#16302A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A grey possum holds up his long bushy tail and sings, while a rabbit watches from the ferns.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "possum",
+      "name": "Possum",
+      "color": "#4A4F73",
+      "face": {
+        "file": "art/face-possum.png",
+        "alt": "Possum, with his white face and pink nose.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E3E4F2",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Possum",
+        "traits": [
+          {
+            "text": "Loves his tail",
+            "fill": "#E3E4F2",
+            "ink": "#3A3F66"
+          },
+          {
+            "text": "Sings every morning",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never looks down",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He has the finest tail in the woods, and he will tell you so. He combs it every morning. He sings about it every day.",
+        "portrait": {
+          "file": "art/char-possum.card.heic",
+          "alt": "Possum sitting in the morning sun, combing his long bushy tail.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#CFE6DA",
+          "#8FC3A4",
+          "#3F8468"
+        ]
+      }
+    },
+    {
+      "id": "rabbit",
+      "name": "Rabbit",
+      "color": "#A8501C",
+      "face": {
+        "file": "art/face-rabbit.png",
+        "alt": "Rabbit, with long ears and bright eyes.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Rabbit",
+        "traits": [
+          {
+            "text": "Carries the news",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Full of tricks",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "A bit of fluff",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He hops from den to den with the news. He has heard Possum’s song a few too many times. When his ears twitch, a trick is coming.",
+        "portrait": {
+          "file": "art/char-rabbit.card.heic",
+          "alt": "Rabbit standing on a mossy path, ears up, with his small fluffy tail.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFE6A6",
+          "#F6BE6A",
+          "#D9853C"
+        ]
+      }
+    },
+    {
+      "id": "cricket",
+      "name": "Cricket",
+      "color": "#17694A",
+      "face": {
+        "file": "art/face-cricket.png",
+        "alt": "Cricket, small and black, with long feelers.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D9F5E4"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "smoky-mountains",
+      "kind": "place",
+      "title": "Smoky Mountains",
+      "line": "Old, rounded mountains covered in forest and often wrapped in blue mist.",
+      "cultureNote": {
+        "label": "Cherokee homelands",
+        "text": "These mountains are the homelands of the Cherokee people. Cherokee people live there today, in North Carolina, and in Oklahoma too."
+      },
+      "picture": {
+        "file": "art/see-smoky-mountains.heic",
+        "alt": "Blue forested mountain ridges fading into morning mist.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#27506B"
+    },
+    {
+      "id": "cricket-barber",
+      "kind": "creature",
+      "title": "The cricket",
+      "line": "A small insect that sings by rubbing its wings together.",
+      "cultureNote": {
+        "label": "The Cherokee tell",
+        "text": "The Cherokee often call the cricket the barber. Crickets can nibble the hair right off a fur."
+      },
+      "picture": {
+        "file": "art/see-cricket-barber.heic",
+        "alt": "A black field cricket on a green leaf.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F5A3C"
+    },
+    {
+      "id": "opossum",
+      "kind": "creature",
+      "title": "The possum",
+      "line": "A real animal with a bare tail, which plays dead when it is scared.",
+      "cultureNote": {
+        "label": "The Cherokee tell",
+        "text": "Cherokee people tell this story today. Their language has its own writing, made by a man named Sequoyah."
+      },
+      "picture": {
+        "file": "art/see-opossum.heic",
+        "alt": "A real opossum with grey fur, a white face and a long bare tail, on a log.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A3F5C"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-woods.unfolded.heic",
+          "alt": "In the mountain woods in the morning, a possum sits on a mossy log combing his long bushy tail. A rabbit watches from the ferns. Blue misty ridges rise far behind.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-woods.folded.heic",
+          "alt": "A possum combs his long bushy tail in the morning woods.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDE8E4",
+          "#FFF0C2",
+          "#4F8F63"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago, in the misty blue ",
+              "lead": true
+            },
+            {
+              "t": "mountains",
+              "lead": true,
+              "tap": "smoky-mountains"
+            },
+            {
+              "t": ", ",
+              "lead": true
+            },
+            {
+              "t": "Possum",
+              "lead": true,
+              "name": "possum"
+            },
+            {
+              "t": " had a splendid tail.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was long and thick and bushy, and it swept the ground behind him."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every morning he sat in the sun and combed it until it shone."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And every morning he sang, "
+            },
+            {
+              "t": "“Look at my tail! Oh, look at my tail!”",
+              "say": "possum",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-woods.unfolded.heic",
+          "alt": "In the mountain woods in the morning, a possum sits on a mossy log combing his long bushy tail. A rabbit watches from the ferns. Blue misty ridges rise far behind.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-woods.folded.heic",
+          "alt": "A possum combs his long bushy tail in the morning woods.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDE8E4",
+          "#FFF0C2",
+          "#4F8F63"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Rabbit",
+              "name": "rabbit"
+            },
+            {
+              "t": " lived close by. Rabbit had a tail too, but it was nothing much. It was only a bit of fluff."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Good morning, Rabbit!”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " Possum would call. "
+            },
+            {
+              "t": "“Have you seen my tail today?”",
+              "say": "possum"
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I saw it yesterday,”",
+              "say": "rabbit",
+              "chip": true
+            },
+            {
+              "t": " said Rabbit. "
+            },
+            {
+              "t": "“And the day before. And the day before that.”",
+              "say": "rabbit"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But Possum was already singing again."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-woods.unfolded.heic",
+          "alt": "In the mountain woods in the morning, a possum sits on a mossy log combing his long bushy tail. A rabbit watches from the ferns. Blue misty ridges rise far behind.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-woods.folded.heic",
+          "alt": "A possum combs his long bushy tail in the morning woods.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDE8E4",
+          "#FFF0C2",
+          "#4F8F63"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now, Rabbit was the one who carried the news. One morning he came hopping up the path."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Possum! There is to be a great dance tonight. All the animals are coming. Will you be there?”",
+              "say": "rabbit",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Possum stroked his tail. "
+            },
+            {
+              "t": "“I will come,”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“if I may have the best seat. Everyone should be able to see my tail.”",
+              "say": "possum"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-woods.unfolded.heic",
+          "alt": "In the mountain woods in the morning, a possum sits on a mossy log combing his long bushy tail. A rabbit watches from the ferns. Blue misty ridges rise far behind.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-woods.folded.heic",
+          "alt": "A possum combs his long bushy tail in the morning woods.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDE8E4",
+          "#FFF0C2",
+          "#4F8F63"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Rabbit’s ears twitched. He was tired of that tail. He was tired of it right down to his toes."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then a trick popped into his head, and he smiled."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The best seat is yours,”",
+              "say": "rabbit",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“And I will send someone to comb your tail and dress it for the dance.”",
+              "say": "rabbit"
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“How kind!”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " said Possum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-combing.unfolded.heic",
+          "alt": "Late in the afternoon a possum lies with his eyes shut outside his den in a hollow tree. A small cricket winds red string round and round his tail.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-combing.folded.heic",
+          "alt": "A cricket winds red string round a possum’s tail.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEBD9",
+          "#FFE7AE",
+          "#6E8F4E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That afternoon, "
+            },
+            {
+              "t": "Cricket",
+              "name": "cricket"
+            },
+            {
+              "t": " came to Possum’s den."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Cricket is so good at cutting hair that the Cherokee often call him "
+            },
+            {
+              "t": "the barber",
+              "tap": "cricket-barber"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Rabbit sent me,”",
+              "say": "cricket",
+              "chip": true
+            },
+            {
+              "t": " he chirped. "
+            },
+            {
+              "t": "“Lie down, shut your eyes, and leave it all to me.”",
+              "say": "cricket"
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So Possum stretched out in the warm sun and shut his eyes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-combing.unfolded.heic",
+          "alt": "Late in the afternoon a possum lies with his eyes shut outside his den in a hollow tree. A small cricket winds red string round and round his tail.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-combing.folded.heic",
+          "alt": "A cricket winds red string round a possum’s tail.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEBD9",
+          "#FFE7AE",
+          "#6E8F4E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Cricket combed the tail from top to tip. Then he took a long red string."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I will wrap it round and round,”",
+              "say": "cricket",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“to keep every hair smooth until the dance.”",
+              "say": "cricket"
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Round and round went the red string. And close behind the string, very softly, went Cricket."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Snip!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " Snip, snip."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-combing.unfolded.heic",
+          "alt": "Late in the afternoon a possum lies with his eyes shut outside his den in a hollow tree. A small cricket winds red string round and round his tail.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-combing.folded.heic",
+          "alt": "A cricket winds red string round a possum’s tail.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEBD9",
+          "#FFE7AE",
+          "#6E8F4E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“What is that tickling?”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " asked Possum, with his eyes still shut."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Only my comb,”",
+              "say": "cricket",
+              "chip": true
+            },
+            {
+              "t": " said Cricket. Snip, snip. Soon the tail was wrapped from top to tip, as neat as a red ribbon."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There,”",
+              "say": "cricket",
+              "chip": true
+            },
+            {
+              "t": " said Cricket. "
+            },
+            {
+              "t": "“Do not untie it until you dance.”",
+              "say": "cricket"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I shall be the finest sight in the woods,”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " said Possum."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dance.unfolded.heic",
+          "alt": "In the evening the animals sit in a ring in a forest clearing. A possum steps into the middle, his tail wrapped in red string.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dance.folded.heic",
+          "alt": "A possum steps into a ring of animals, his tail wrapped in red string.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4DCC6",
+          "#FFDFA0",
+          "#5E7F58"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That evening, all the animals came to the clearing.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bear came, and Deer, and slow old Turtle. The Raccoons came, and a whole row of Squirrels."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Possum had the best seat, just as "
+            },
+            {
+              "t": "Rabbit",
+              "name": "rabbit"
+            },
+            {
+              "t": " had promised. His tail lay beside him in its red string."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Wait until they see,”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " he whispered."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dance.unfolded.heic",
+          "alt": "In the evening the animals sit in a ring in a forest clearing. A possum steps into the middle, his tail wrapped in red string.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dance.folded.heic",
+          "alt": "A possum steps into a ring of animals, his tail wrapped in red string.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4DCC6",
+          "#FFDFA0",
+          "#5E7F58"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last it was Possum’s turn to dance. He stepped into the middle of the circle and pulled the red string loose."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He did not look down. He looked at all the faces around him, and he sang."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Look at my tail! Oh, look at my tail!”",
+              "say": "possum",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The animals gave a great shout."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dance.unfolded.heic",
+          "alt": "In the evening the animals sit in a ring in a forest clearing. A possum steps into the middle, his tail wrapped in red string.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dance.folded.heic",
+          "alt": "A possum steps into a ring of animals, his tail wrapped in red string.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4DCC6",
+          "#FFDFA0",
+          "#5E7F58"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Possum was pleased. He danced around the circle and sang louder. "
+            },
+            {
+              "t": "“Look how long it is! Look how it sweeps the ground!”",
+              "say": "possum",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The animals shouted again. Somebody giggled."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Look how thick it is! Look how soft!”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " sang Possum."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now everyone was laughing. Bear laughed until he had to sit down."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dance.unfolded.heic",
+          "alt": "In the evening the animals sit in a ring in a forest clearing. A possum steps into the middle, his tail wrapped in red string.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dance.folded.heic",
+          "alt": "A possum steps into a ring of animals, his tail wrapped in red string.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4DCC6",
+          "#FFDFA0",
+          "#5E7F58"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Possum stopped. "
+            },
+            {
+              "t": "“Why are they laughing?”",
+              "say": "possum",
+              "chip": true
+            },
+            {
+              "t": " he wondered."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He looked at Rabbit. Rabbit was looking at the sky."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So, at last, Possum looked down."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There was his tail. There was not one hair on it. It was as thin and bare as a lizard’s tail."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-grin.unfolded.heic",
+          "alt": "A possum lies on his back in the clearing, grinning, with his thin bare tail curled beside him. The other animals stand around him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-grin.folded.heic",
+          "alt": "A possum lies on his back and grins, his bare tail curled.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F3D9CC",
+          "#FFE2A6",
+          "#5B7C56"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Possum opened his mouth to speak. Nothing came out."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He opened it to sing. Nothing came out."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His ears went hot. He was so surprised, and so ashamed, that he could not say one word."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So he did the only thing he could think of. "
+            },
+            {
+              "t": "Flop!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " He rolled over on his back, and he grinned."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-grin.unfolded.heic",
+          "alt": "A possum lies on his back in the clearing, grinning, with his thin bare tail curled beside him. The other animals stand around him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-grin.folded.heic",
+          "alt": "A possum lies on his back and grins, his bare tail curled.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F3D9CC",
+          "#FFE2A6",
+          "#5B7C56"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The laughing soon stopped, and the dance went on. But Possum’s tail has been bare from that day to this."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He never sang about it again."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And when a "
+            },
+            {
+              "t": "possum",
+              "tap": "opossum"
+            },
+            {
+              "t": " is taken by surprise, he still rolls over on his back and grins."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He is not saying a word. He is only waiting for everyone to stop looking."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

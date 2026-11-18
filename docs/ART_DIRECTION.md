@@ -182,6 +182,50 @@ motes. The warm light is at the fold on two panes and behind "RA" on one.
 
 Both are ours; both wait for Srikanth's eye. The icon is a first design, not a decision.
 
+## 11. The illustration kit (round 5)
+
+The catalog grows from three stories to thirty-two. Three bespoke sets of helpers do not scale
+to that, and thirty-two sets would not look like one app. So round 5 adds a shared kit,
+`enum Kit` in `App/Sources/Art/Kit/` (ten files), on top of `Art` and `ArtStyle`:
+
+- **Frames** — one per picture shape of §5a, so every painter recomposes for a tall window, a
+  squat one, the phone's band and both cover crops in the same way: `Kit.stage` /
+  `designSpace` / `nearSpace`, `Kit.band` / `hung`, `Kit.cover`, `Kit.portrait`,
+  `Kit.faceChip`, `Kit.sink`.
+- **Light, sky, land, water** — `Kit.Light` (a story keeps one or two), `sky`, `sun`, `moon`,
+  `cloud`, `ranges`, `peaks`, `mountain`, `ground`, `mound`, `water`, `swells`, `ripples`.
+- **`Kit.solid`** — any shape filled and modelled by the one light (§3a) in one call.
+- **People** — `Kit.Person`: one face construction (§4) for everyone, about three heads tall;
+  only skin, hair, headwear and dress change (nine garments: tunic, robe, kimono, kilt, parka,
+  wrapper, shirt and trousers, dress, chiton). No caricature: a culture is shown by its true
+  dress, tools and setting, never by exaggerated features.
+- **Animals** — `Kit.Beast` (a four-legged animal by proportions, ears, tail, muzzle) with
+  ready-made looks so every story draws the same bear; `Kit.Bird`; a few small creatures.
+- **Plants, ground, buildings, props** — trees of ten regions, crops, snow and sand,
+  region-neutral building blocks (walls, eight roof styles, towers, domes, columns), boats of
+  five kinds, baskets, pots, carts, wells, tools.
+
+What keeps a kit from making thirty-two recoloured templates:
+
+1. **A story owns its palette and its light** (a five-step ramp with a warm glow, an accent,
+   one or two `Kit.Light`s), taken from the author's research in the story's spec.
+2. **The hero is the painter's own.** The kit gives the supporting cast and the world; the
+   thing a child will remember — the golden serpent, the snow house's spiral, the tower of four
+   animals, the North Wind's face, the Water as a person — is drawn for that story alone, in
+   the story's `+Cast.swift`.
+3. **Region-true composition.** A Japanese farmhouse is `Kit.house` with thatch *and* the
+   porch, the bamboo and the hills the painter adds; the kit never decides what a place is.
+4. **Tier look.** Low: large eyes with whites, rays behind portraits, bright daylight, comic
+   poses. Medium and Advanced: the smaller plain eye, no rays, quieter colour, more air.
+
+Every Low story of round 5 keeps a **pale sky behind the words** in all four scenes, so one
+dark ink serves every page; its evenings are pale peach or lilac, never night.
+
+Like everything before it, **the kit and every round-5 picture were written without a
+compiler or a renderer.** The kit has the most leverage and so the most risk: a wrong
+proportion in `Kit.person` is wrong in twenty stories. It must be looked at on the Mac before
+batches 2 and 3 build on it (`docs/agent-runs/r5-batch-notes.md` §6).
+
 ## 9. What is still open
 
 - All of this is direction for **concept art written without a renderer on the authoring

@@ -48,6 +48,12 @@ struct StoryCardView: View {
     /// Read to the end at least once.
     var isFinished = false
 
+    /// The space between two covers on a shelf or in the grid.
+    static let gap: Double = 12
+    /// Every card is as tall as a cover with a three-line title and its origin, so a shelf
+    /// keeps one height while its covers load and a grid keeps even rows.
+    static let height: Double = Tokens.Size.storyCoverHeight + 9 + 15.5 * 3 + 5 + 15
+
     private var spokenLabel: String {
         let base = "\(story.title). Level: \(story.tier.displayName). From \(story.region.label)."
         return isFinished ? base + " Finished." : base
@@ -84,10 +90,11 @@ struct StoryCardView: View {
                     .typeRole(Tokens.UIType.storyCardPlace)
                     .foregroundStyle(Color(rgba: Tokens.Palette.ink.opacity(0.6)))
                     .lineLimit(1)
+                    .minimumScaleFactor(0.8)
             }
             .padding(.top, pane.pt(5))
         }
-        .frame(width: width, alignment: .leading)
+        .frame(width: width, height: pane.pt(StoryCardView.height), alignment: .topLeading)
         .contentShape(Rectangle())
         .accessibilityElement(children: .ignore)
         .accessibilityLabel(Text(verbatim: spokenLabel))

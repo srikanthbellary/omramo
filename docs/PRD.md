@@ -194,7 +194,7 @@ All 12 locked screens. Detailed specs are in `docs/DESIGN.md` §6.
 
 | # | Screen | File | Purpose |
 |---|---|---|---|
-| 01 | Splash | `docs/design/01-splash.png` | OM \| RA \| MO mark split by the hinge; "A magical book / that you read." |
+| 01 | Splash | `docs/design/01-splash.png` | OM \| RA \| MO mark split by the hinge; "Turn the page. / See the world." (round 5, 18 Nov 2026; the locked PNG still shows the earlier line "A magical book / that you read.") |
 | 02 | Library home | `docs/design/02-library-home.png` | Keep reading, stories by level, story map, streak, shelf, friends |
 | 03 | Reading, Low | `docs/design/03-read-low.png` | Text left, scene across both panes |
 | 04 | Reading, Medium | `docs/design/04-read-medium.png` | Twilight scene, light text |

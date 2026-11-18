@@ -1,6 +1,6 @@
 # Omramo
 
-A magical book that you read. Omramo is a global English, illustration-driven story reader for children who can already read, built natively in Swift (SwiftUI) for the two-pane **iPhone Duo**, with a folded single-screen mode.
+Turn the page. See the world. Omramo is a global English, illustration-driven story reader for children who can already read, built natively in Swift (SwiftUI) for the two-pane **iPhone Duo**, with a folded single-screen mode.
 
 Sunrise Gen AI LLC · private · `omramo.com`
 

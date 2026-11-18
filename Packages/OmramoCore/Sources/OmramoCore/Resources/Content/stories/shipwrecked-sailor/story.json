@@ -1,0 +1,1350 @@
+{
+  "schemaVersion": 1,
+  "id": "shipwrecked-sailor",
+  "contentVersion": 1,
+  "title": "The Shipwrecked Sailor",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "egyptian",
+    "culture": "Ancient Egyptian (Middle Kingdom)",
+    "place": "Egypt and the Red Sea",
+    "label": "Ancient Egypt",
+    "pin": {
+      "lat": 26,
+      "lon": 33
+    },
+    "pinColor": "#F0A81C"
+  },
+  "setting": {
+    "period": "Ancient Egypt, about 4,000 years ago",
+    "latestYear": -1900
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Egyptian tale of the Middle Kingdom, known from a single papyrus",
+    "sources": [
+      {
+        "author": "W. M. Flinders Petrie",
+        "title": "Egyptian Tales, Translated from the Papyri, First Series",
+        "publisher": "Methuen & Co.",
+        "year": 1895,
+        "gutenbergId": 7386,
+        "url": "https://www.gutenberg.org/ebooks/7386",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional ancient Egyptian tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Egyptologist accuracy read"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Red Sea, east of Egypt and the Nile, and the voyage south toward the land the Egyptians called Punt. Nobody is sure today exactly where Punt was, and the card says so.",
+      "factCards": [
+        "red-sea",
+        "incense",
+        "lighthouse-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Egyptians wrote stories on papyrus. This is one of the oldest adventure stories known, and its papyrus is kept in a museum in Russia.",
+      "factCards": [
+        "papyrus",
+        "incense"
+      ]
+    },
+    "moral": {
+      "lesson": "Stay brave and calm when things go wrong; be thankful to those who help you. The Sailor thanks the Serpent in the only way the Serpent wants: by telling his story well.",
+      "reflectionQuestion": "Who helped you once when you were afraid, and how did you thank them?"
+    }
+  },
+  "moral": "When things go wrong, stay brave and thank those who help you.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#0F2A3F",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A small sailor sits on a green island beside a great golden serpent with blue eyebrows. Both look out to sea.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "sailor",
+      "name": "Sailor",
+      "color": "#A8501C",
+      "face": {
+        "file": "art/face-sailor.png",
+        "alt": "The Sailor.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sailor",
+        "traits": [
+          {
+            "text": "Far from home",
+            "fill": "#D6ECFA",
+            "ink": "#0E4C7A"
+          },
+          {
+            "text": "Says thank you",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Tells a good story",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "A great wave washed him onto an island, all alone. He was very frightened. Then he made a friend, and he never forgot him.",
+        "portrait": {
+          "file": "art/char-sailor.card.heic",
+          "alt": "The Sailor in a white linen kilt, standing on the sand and waving.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#8FD3F0",
+          "#5BB5DC",
+          "#2F8FC0"
+        ]
+      }
+    },
+    {
+      "id": "serpent",
+      "name": "Serpent",
+      "color": "#1B4F9C",
+      "face": {
+        "file": "art/face-serpent.png",
+        "alt": "The golden Serpent.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE7A0",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Serpent",
+        "traits": [
+          {
+            "text": "Gold scales",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Blue eyebrows",
+            "fill": "#D6E4FA",
+            "ink": "#1B3F8A"
+          },
+          {
+            "text": "Lord of Punt",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He is huge and golden, and as gentle as a cat with her kitten. He lives alone on his island. He wants only one gift: a good word.",
+        "portrait": {
+          "file": "art/char-serpent.card.heic",
+          "alt": "The great golden Serpent, coiled and smiling, with blue eyebrows and a long beard.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFD86B",
+          "#F7B544",
+          "#E8923A"
+        ]
+      }
+    },
+    {
+      "id": "captain",
+      "name": "Captain",
+      "color": "#17694A",
+      "face": {
+        "file": "art/face-captain.png",
+        "alt": "The Captain of the great ship.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#BDEFE0"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "red-sea",
+      "kind": "place",
+      "title": "The Red Sea",
+      "line": "A long, narrow sea between Africa and Arabia, east of Egypt.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Egyptian ships sailed down this sea to a land they called Punt. Today nobody is sure exactly where Punt was."
+      },
+      "picture": {
+        "file": "art/see-red-sea.heic",
+        "alt": "A long blue sea lying between two dry, sandy shores.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0B4F7A"
+    },
+    {
+      "id": "opera-house-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "sydney-opera-house",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "A sail is a wide cloth that catches the wind. Far away, and long after this story, people gave a building a roof shaped like sails."
+        }
+      },
+      "background": "#10355C"
+    },
+    {
+      "id": "incense",
+      "kind": "object",
+      "title": "Incense",
+      "line": "Dried tree sap that gives off a sweet smell when it burns.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Egyptians loved sweet smells. They sent ships a very long way to bring incense home from Punt."
+      },
+      "picture": {
+        "file": "art/see-incense.heic",
+        "alt": "A small bowl of golden lumps of incense, with a curl of smoke rising from it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3418"
+    },
+    {
+      "id": "lighthouse-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "lighthouse-of-alexandria",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "A harbour is a safe place for ships to stop. Long after this story, sailors coming home to Egypt had a great light to guide them in."
+        }
+      },
+      "background": "#0B2A4A"
+    },
+    {
+      "id": "papyrus",
+      "kind": "object",
+      "title": "Papyrus",
+      "line": "A kind of paper made from tall reeds that grow by the Nile.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "This story was written on papyrus about 4,000 years ago. It is one of the oldest adventure stories we know. The papyrus is kept in a museum in Russia."
+      },
+      "picture": {
+        "file": "art/see-papyrus.heic",
+        "alt": "A roll of pale brown papyrus, partly open, with a reed pen lying beside it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3D4A1E"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ship.unfolded.heic",
+          "alt": "A great wooden Egyptian ship with one wide square sail and rows of oars crosses a blue sea. Far off, low dark clouds are gathering.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ship.folded.heic",
+          "alt": "A great Egyptian ship with a wide square sail on a blue sea.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEAF2",
+          "#FFE9B0",
+          "#1C7FA6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago in Egypt, a ",
+              "lead": true
+            },
+            {
+              "t": "Sailor",
+              "lead": true,
+              "name": "sailor"
+            },
+            {
+              "t": " set out across the ",
+              "lead": true
+            },
+            {
+              "t": "Red Sea",
+              "lead": true,
+              "tap": "red-sea"
+            },
+            {
+              "t": ".",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His ship was the biggest on the water. A hundred and twenty sailors rowed it, each one braver than a lion."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They were going to the king’s mines, far, far away."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The wind will be kind,”",
+              "say": "captain",
+              "chip": true
+            },
+            {
+              "t": " said the "
+            },
+            {
+              "t": "Captain",
+              "name": "captain"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“We will be home before the figs are ripe.”",
+              "say": "captain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ship.unfolded.heic",
+          "alt": "A great wooden Egyptian ship with one wide square sail and rows of oars crosses a blue sea. Far off, low dark clouds are gathering.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ship.folded.heic",
+          "alt": "A great Egyptian ship with a wide square sail on a blue sea.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEAF2",
+          "#FFE9B0",
+          "#1C7FA6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Up went the great square "
+            },
+            {
+              "t": "sail",
+              "tap": "opera-house-moment"
+            },
+            {
+              "t": ". The wind filled it, round and white."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For days the ship ran over the blue water, and the sailors sang."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then the sky turned dark. The wind began to howl. Waves stood up as tall as houses."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Hold on!”",
+              "say": "captain",
+              "chip": true
+            },
+            {
+              "t": " shouted the Captain. "
+            },
+            {
+              "t": "“Hold on, my lions!”",
+              "say": "captain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ship.unfolded.heic",
+          "alt": "A great wooden Egyptian ship with one wide square sail and rows of oars crosses a blue sea. Far off, low dark clouds are gathering.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ship.folded.heic",
+          "alt": "A great Egyptian ship with a wide square sail on a blue sea.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEAF2",
+          "#FFE9B0",
+          "#1C7FA6"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The ship went up, and the ship went down. Up, and down."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then came the biggest wave of all. "
+            },
+            {
+              "t": "Crash!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " It swept the Sailor off the deck and into the sea."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He caught hold of a plank of wood. All night long the dark water carried him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-island.unfolded.heic",
+          "alt": "A sailor sits alone on the sandy shore of a green island, under fig trees heavy with fruit. The sea is empty.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-island.folded.heic",
+          "alt": "A sailor sits alone under a fig tree on a sandy shore.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C6EEE6",
+          "#FFF0B8",
+          "#2FA39A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the morning a wave set him down on warm sand. He was on an island."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He looked for the great ship. He saw only water."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I am all alone,”",
+              "say": "sailor",
+              "chip": true
+            },
+            {
+              "t": " said the Sailor."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For three days he lay in the shade of a fig tree, too sad to move."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-island.unfolded.heic",
+          "alt": "A sailor sits alone on the sandy shore of a green island, under fig trees heavy with fruit. The sea is empty.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-island.folded.heic",
+          "alt": "A sailor sits alone under a fig tree on a sandy shore.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C6EEE6",
+          "#FFF0B8",
+          "#2FA39A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he grew hungry. He stood up and looked around."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "What an island! There were figs and grapes, fat melons, fish in the pools and birds in every tree."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He ate until he was full. Then he lit a little fire, to thank his gods."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That was when the thunder began."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-serpent.unfolded.heic",
+          "alt": "A great golden serpent with blue eyebrows and a long beard bends its head kindly towards a small sailor, among the trees of the island.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-serpent.folded.heic",
+          "alt": "A golden serpent with blue eyebrows looks kindly at a small sailor.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEDD",
+          "#FFE6A6",
+          "#3C9A6B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But it was not thunder. The trees shook. The ground shook. The Sailor shook most of all."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He hid his face in his hands. When he peeped out, a great "
+            },
+            {
+              "t": "Serpent",
+              "name": "serpent"
+            },
+            {
+              "t": " was coming towards him."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His scales shone like gold. His eyebrows were blue as the bluest stone. He wore a long beard, like a king’s."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-serpent.unfolded.heic",
+          "alt": "A great golden serpent with blue eyebrows and a long beard bends its head kindly towards a small sailor, among the trees of the island.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-serpent.folded.heic",
+          "alt": "A golden serpent with blue eyebrows looks kindly at a small sailor.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEDD",
+          "#FFE6A6",
+          "#3C9A6B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Serpent rose up above him."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Who brought you here, little one?”",
+              "say": "serpent",
+              "chip": true
+            },
+            {
+              "t": " he asked. "
+            },
+            {
+              "t": "“Who brought you here? Who brought you to my island?”",
+              "say": "serpent"
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sailor lay flat on the sand. He opened his mouth, but no words came out."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the Serpent picked him up in his mouth, as softly as a cat carries her kitten, and carried him away to his den."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-serpent.unfolded.heic",
+          "alt": "A great golden serpent with blue eyebrows and a long beard bends its head kindly towards a small sailor, among the trees of the island.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-serpent.folded.heic",
+          "alt": "A golden serpent with blue eyebrows looks kindly at a small sailor.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEDD",
+          "#FFE6A6",
+          "#3C9A6B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Serpent set him down without a scratch.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Now, little one,”",
+              "say": "serpent",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“who brought you here?”",
+              "say": "serpent"
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the Sailor told him about the ship, the storm and the great wave. "
+            },
+            {
+              "t": "“I will never see my home again,”",
+              "say": "sailor",
+              "chip": true
+            },
+            {
+              "t": " he said."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Do not be afraid, little one,”",
+              "say": "serpent",
+              "chip": true
+            },
+            {
+              "t": " said the Serpent. "
+            },
+            {
+              "t": "“In four months a ship will come from your own land and take you home.”",
+              "say": "serpent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-serpent.unfolded.heic",
+          "alt": "A great golden serpent with blue eyebrows and a long beard bends its head kindly towards a small sailor, among the trees of the island.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-serpent.folded.heic",
+          "alt": "A golden serpent with blue eyebrows looks kindly at a small sailor.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEDD",
+          "#FFE6A6",
+          "#3C9A6B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So they waited, and counted the moons together."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One evening the Serpent told a story of his own. "
+            },
+            {
+              "t": "“Once there were seventy-five of us here: brothers, sisters, children. Now there is only me.”",
+              "say": "serpent",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sailor said nothing. He just sat a little closer."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I was sad for a long time,”",
+              "say": "serpent",
+              "chip": true
+            },
+            {
+              "t": " said the Serpent. "
+            },
+            {
+              "t": "“But I learned to be brave. So will you.”",
+              "say": "serpent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-serpent.unfolded.heic",
+          "alt": "A great golden serpent with blue eyebrows and a long beard bends its head kindly towards a small sailor, among the trees of the island.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-serpent.folded.heic",
+          "alt": "A golden serpent with blue eyebrows looks kindly at a small sailor.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEDD",
+          "#FFE6A6",
+          "#3C9A6B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sailor wanted to give something back."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“When I get home,”",
+              "say": "sailor",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“I will send you ships full of ",
+              "say": "sailor"
+            },
+            {
+              "t": "incense",
+              "say": "sailor",
+              "tap": "incense"
+            },
+            {
+              "t": " and perfume!”",
+              "say": "sailor"
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Serpent laughed until his gold scales rattled."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Little one, I am the lord of Punt. All the sweet smells in the world grow right here. Just say a good word for me in your town.”",
+              "say": "serpent",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-island.unfolded.heic",
+          "alt": "A sailor sits alone on the sandy shore of a green island, under fig trees heavy with fruit. The sea is empty.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-island.folded.heic",
+          "alt": "A sailor sits alone under a fig tree on a sandy shore.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#C6EEE6",
+          "#FFF0B8",
+          "#2FA39A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One moon passed, then two, then three, then four."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One morning the Sailor climbed a tall tree and looked out to sea. "
+            },
+            {
+              "t": "A sail!",
+              "fx": "pop",
+              "scale": 1.3
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a ship from Egypt, and he knew every face on board."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There he is!”",
+              "say": "captain",
+              "chip": true
+            },
+            {
+              "t": " roared the Captain. "
+            },
+            {
+              "t": "“We have looked for you on every shore!”",
+              "say": "captain"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-serpent.unfolded.heic",
+          "alt": "A great golden serpent with blue eyebrows and a long beard bends its head kindly towards a small sailor, among the trees of the island.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-serpent.folded.heic",
+          "alt": "A golden serpent with blue eyebrows looks kindly at a small sailor.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEDD",
+          "#FFE6A6",
+          "#3C9A6B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Serpent heaped the ship with gifts: incense and perfume, sweet wood, and long white tusks of ivory."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sailor bowed low. "
+            },
+            {
+              "t": "“Thank you, my friend. I will come back to see you.”",
+              "say": "sailor",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You cannot,”",
+              "say": "serpent",
+              "chip": true
+            },
+            {
+              "t": " said the Serpent kindly. "
+            },
+            {
+              "t": "“When you sail away, my island will slip under the waves. No one will find it again. Go home, little one.”",
+              "say": "serpent"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "The ship comes into a harbour on the Nile in the morning. Palm trees and flat-roofed houses stand on the bank, and children run to meet it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "A ship comes into a harbour with palm trees and flat-roofed houses.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEF0",
+          "#FFE2A0",
+          "#3F8E8A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "North they sailed for two months, just as the Serpent had said."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sailor looked back once. Where the island had been, there was only bright water."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last the ship slid into the "
+            },
+            {
+              "t": "harbour",
+              "tap": "lighthouse-moment"
+            },
+            {
+              "t": " of his own town. There were the palm trees. There were the flat brown roofs. And there, running along the bank, were his children."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "The ship comes into a harbour on the Nile in the morning. Palm trees and flat-roofed houses stand on the bank, and children run to meet it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "A ship comes into a harbour with palm trees and flat-roofed houses.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEF0",
+          "#FFE2A0",
+          "#3F8E8A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That night the whole town came to listen."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He told them about the storm, the wave and the island of figs."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Most of all, he told them about a great gold Serpent with blue eyebrows, who was kind to a frightened sailor."
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Someone wrote it all down on "
+            },
+            {
+              "t": "papyrus",
+              "tap": "papyrus"
+            },
+            {
+              "t": ". Four thousand years later, the good word has reached you."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

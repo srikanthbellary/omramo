@@ -1,0 +1,534 @@
+{
+  "id": "lion-and-hare",
+  "title": "The Lion and the Hare",
+  "tier": "low",
+  "region": {
+    "id": "persianArabian",
+    "culture": "Persian (told by the poet Rumi)",
+    "place": "Persia (Iran)",
+    "label": "Persia",
+    "pin": {
+      "lat": 32,
+      "lon": 53
+    },
+    "pinColor": "#12A8B8"
+  },
+  "setting": {
+    "period": "Told in Persia about 800 years ago; the tale itself is older",
+    "latestYear": 1273
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Persian animal tale, told by Rumi in the Masnavi; older in Kalila and Dimna, and first told in India",
+    "sources": [
+      {
+        "author": "Jalal al-Din Rumi, translated by James W. Redhouse",
+        "title": "The Mesnevi of Mevlana Jelalu-’d-din Muhammed er-Rumi, Book the First (Tale V, “The Lion and the Beasts”)",
+        "publisher": "Trübner & Co.",
+        "year": 1881,
+        "gutenbergId": 61724,
+        "url": "https://www.gutenberg.org/ebooks/61724",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Persian animal tale, written for Omramo; it does not use the wording of the cited edition. We retell only the animal tale and use none of Rumi’s spiritual commentary or religious teaching. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Our direct source is a Sufi religious teaching poem (Rumi’s Masnavi). We retell only the animal tale, without the spiritual commentary; a reviewer should confirm that is respectful (light review).",
+    "community": "Reviewer familiar with Rumi and Sufi tradition",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "Persia (today Iran) is a dry land of hills, green valleys and wells. The story crossed India, Persia and Arabia along the caravan roads.",
+      "factCards": [
+        "persia",
+        "well",
+        "petra-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Stories travel: this one began in India, was told in Persian by the poet Rumi, then in Arabic, and reached Europe. Poets taught with animal stories.",
+      "factCards": [
+        "persia",
+        "petra-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "Wit can protect the small from a bully. The Hare cannot fight or roar, so he thinks, and the Lion’s own temper does the rest.",
+      "reflectionQuestion": "Why did the Hare want the Lion to be angry?"
+    }
+  },
+  "moral": "Quick thinking can keep the small safe from a bully.",
+  "theme": {
+    "textColor": "#1D2B3A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A lion leans over an old stone well with a small hare beside him. A lion and a hare look back up from the water."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "hare",
+      "name": "Hare",
+      "color": "#1F5F8B",
+      "chipBackground": "#D6ECF7",
+      "faceAlt": "The little Hare.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Hare",
+        "traits": [
+          {
+            "text": "Smallest of all",
+            "fill": "#D6ECF7",
+            "ink": "#1A4F75"
+          },
+          {
+            "text": "Very long ears",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Thinks first",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He is the smallest animal in the valley. He cannot roar and he cannot fight. So he listens, and then he thinks.",
+        "portraitAlt": "The little Hare sitting up in the grass with his long ears raised.",
+        "background": [
+          "#BFE6E4",
+          "#8CCFC4",
+          "#4FA89A"
+        ]
+      }
+    },
+    {
+      "id": "lion",
+      "name": "Lion",
+      "color": "#A34A12",
+      "chipBackground": "#FFE2A8",
+      "faceAlt": "The Lion.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Lion",
+        "traits": [
+          {
+            "text": "Very loud",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Never full",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Hates to wait",
+            "fill": "#F3E3D0",
+            "ink": "#6B3F1A"
+          }
+        ],
+        "body": "He roars from his rock and likes to see everyone run. He wants his dinner big, and he wants it now. He is so busy roaring that he never stops to think.",
+        "portraitAlt": "The Lion on his rock with his mouth wide open, roaring.",
+        "background": [
+          "#FFD98A",
+          "#F5B458",
+          "#E08A3C"
+        ]
+      }
+    },
+    {
+      "id": "gazelle",
+      "name": "Gazelle",
+      "color": "#17694A",
+      "chipBackground": "#D9F2DC",
+      "faceAlt": "The Gazelle."
+    },
+    {
+      "id": "tortoise",
+      "name": "Tortoise",
+      "color": "#5E5A14",
+      "chipBackground": "#EFEBC2",
+      "faceAlt": "The old Tortoise."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "petra-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "petra",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "A caravan is a long line of camels carrying goods and travellers. Long ago, caravans rested in desert cities like this one, far to the west."
+        }
+      },
+      "background": "#5A2430"
+    },
+    {
+      "id": "persia",
+      "kind": "place",
+      "title": "Persia",
+      "line": "A land of dry hills, green valleys and gardens, now called Iran.",
+      "cultureNote": {
+        "label": "From Persia",
+        "text": "The poet Rumi told this story in the Persian language about 800 years ago. It was already old then: it began in India."
+      },
+      "pictureAlt": "A green valley with a stream and poplar trees, between dry golden hills.",
+      "background": "#1E5C4E"
+    },
+    {
+      "id": "wild-hare",
+      "kind": "creature",
+      "title": "The hare",
+      "line": "A hare is not a rabbit: it has longer ears and longer legs.",
+      "cultureNote": {
+        "label": "In Iran today",
+        "text": "Hares still live in the dry hills of Iran. They do not dig burrows. They rest in a hollow in the grass."
+      },
+      "pictureAlt": "A sandy-brown hare sitting up in dry grass, with long black-tipped ears.",
+      "background": "#6A4A22"
+    },
+    {
+      "id": "well",
+      "kind": "object",
+      "title": "A well",
+      "line": "A deep hole lined with stone, dug to reach water under the ground.",
+      "cultureNote": {
+        "label": "From Persia",
+        "text": "Persia is a dry land. Long ago, people there dug wells and tunnels to bring water to their fields and gardens."
+      },
+      "pictureAlt": "An old well with a low ring of rough stones, and dark water far down inside.",
+      "background": "#274B63"
+    }
+  ],
+  "scenes": {
+    "scene-valley": {
+      "unfoldedAlt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+      "foldedAlt": "A lion stands on a rock above a green valley with a stream.",
+      "fallbackColors": [
+        "#CFEFEA",
+        "#FFEFC0",
+        "#6FA85A"
+      ]
+    },
+    "scene-council": {
+      "unfoldedAlt": "The animals of the valley sit together under a great plane tree in the evening. A little hare sits in the long grass, thinking.",
+      "foldedAlt": "A little hare sits thinking in the grass under a great plane tree.",
+      "fallbackColors": [
+        "#D9EEDD",
+        "#FFE6AE",
+        "#7FA650"
+      ]
+    },
+    "scene-hills": {
+      "unfoldedAlt": "At noon a little hare leads a lion along a dusty path over dry hills, past grey rocks and tall dark cypress trees.",
+      "foldedAlt": "A little hare hops along a dusty path with a lion close behind.",
+      "fallbackColors": [
+        "#D9EEF2",
+        "#FFE6B0",
+        "#D9A85C"
+      ]
+    },
+    "scene-well": {
+      "unfoldedAlt": "A lion leans over an old stone well in the dry hills, with a little hare at the rim beside his paw. In the water below, a lion and a hare look up.",
+      "foldedAlt": "A lion and a little hare look down into an old stone well.",
+      "fallbackColors": [
+        "#D4ECEF",
+        "#FFE2A6",
+        "#C99A5B"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-valley",
+      "part": "part-1",
+      "paras": [
+        "^This story walked from India to Persia with the <tap:petra-moment>caravans</tap>.",
+        "It rode on swaying camels, over mountains and across wide sands.",
+        "At every well where the camels drank, somebody told it. Beside every fire, somebody told it again.",
+        "Now it has come all the way to you."
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-1",
+      "paras": [
+        "In the dry golden hills of <tap:persia>Persia</tap> lay a green valley.",
+        "A cold stream ran through it. Deer drank there, and gazelles, and a fox, and a slow old tortoise, and one small hare.",
+        "It would have been the best valley in the world, but for the <name:lion>Lion</name>."
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-1",
+      "paras": [
+        "Every day the Lion stood on his rock and roared.",
+        "Every day he chased the deer from the grass and the gazelles from the stream. He chased the fox. He even chased the tortoise, which was not hard.",
+        "Nobody could eat in peace. Nobody could drink in peace. Nobody could even nap."
+      ]
+    },
+    {
+      "scene": "scene-council",
+      "part": "part-1",
+      "paras": [
+        "One evening the animals met under the great plane tree.",
+        "<say:tortoise*>“I have not finished a meal since spring,”</say> said the <name:tortoise>Tortoise</name>.",
+        "<say:gazelle*>“We cannot fight him,”</say> said the <name:gazelle>Gazelle</name>. <say:gazelle>“We cannot outroar him. But perhaps we can make a bargain with him.”</say>",
+        "In the long grass sat the little <name:hare>Hare</name>. He said nothing. He only listened."
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-1",
+      "paras": [
+        "So they all went to the foot of the Lion’s rock.",
+        "<say:gazelle*>“Great Lion,”</say> said the Gazelle, <say:gazelle>“stay in your den. Every day, one of us will bring your dinner to you.”</say>",
+        "The Lion yawned. He liked chasing. But he liked resting more.",
+        "<say:lion*>“Agreed,”</say> he said. <say:lion>“But it must come every day. And it must never be late.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-1",
+      "paras": [
+        "So it began. One day it was fish from the stream. The next day it was honey from the rocks. The Tortoise brought figs, and that took him from dawn to dark.",
+        "The valley was quiet now. But was the Lion pleased? He was not.",
+        "<say:lion*>“More!”</say> he grumbled from his den. <say:lion>“Bigger! Sooner!”</say>",
+        "And each day he said it a little louder."
+      ]
+    },
+    {
+      "scene": "scene-council",
+      "part": "part-1",
+      "paras": [
+        "Then came the day it was the little Hare’s turn.",
+        "But the Hare did not set off. He sat under the plane tree and twitched his <tap:wild-hare>long ears</tap>.",
+        "<say:gazelle*>“Hurry, Hare!”</say> said the Gazelle. <say:gazelle>“The sun is climbing. He will be so angry!”</say>",
+        "<say:hare*>“Good,”</say> said the Hare. <say:hare>“I have a plan, and it needs an angry lion. Give me a little time.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-2",
+      "paras": [
+        "^At noon the Hare hopped up to the rock, with empty paws.",
+        "The Lion had been waiting since breakfast. His tummy growled. Then he growled.",
+        "<say:lion*><pop:1.3>“Late!”</pop></say> he roared. <say:lion>“Late, and nothing in your paws! Where is my dinner?”</say>",
+        "The Hare bowed so low that his ears touched the dust."
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-2",
+      "paras": [
+        "<say:hare*>“O King,”</say> he said, <say:hare>“I was bringing you a fine fat fish. But another lion stopped me on the road.”</say>",
+        "<say:lion*>“Another lion?”</say> said the Lion.",
+        "<say:hare*>“A big one,”</say> said the Hare. <say:hare>“He said he was king of this valley. Then he took your dinner and ate it.”</say>",
+        "The Lion’s tail went stiff. <say:lion*>“King? In my valley? <pop:1.3>Show me!</pop>”</say>"
+      ]
+    },
+    {
+      "scene": "scene-hills",
+      "part": "part-2",
+      "paras": [
+        "So the Hare led the way, and the Lion stamped along behind.",
+        "Up the hot hills they went, past grey rocks and tall dark cypress trees. The dust puffed. The sun beat down.",
+        "<say:lion*>“Is it far?”</say> puffed the Lion.",
+        "<say:hare*>“Not far, O King,”</say> said the Hare. And he hopped a little faster."
+      ]
+    },
+    {
+      "scene": "scene-well",
+      "part": "part-2",
+      "paras": [
+        "At last they came to an old, deep <tap:well>well</tap>, with a ring of stones around it.",
+        "The Hare stopped. He began to shake, from his ears to his tail.",
+        "<say:hare*>“He lives down there,”</say> he whispered. <say:hare>“I am too afraid to look alone. Hold me, O King, and we will look together.”</say>",
+        "So the Lion picked him up in his paws."
+      ]
+    },
+    {
+      "scene": "scene-well",
+      "part": "part-2",
+      "paras": [
+        "The Lion leaned over the stones and looked down.",
+        "Far below, in the dark round water, a lion looked up. And in his paws he held a small hare.",
+        "<say:lion*>“So it is true!”</say> roared the Lion. <say:lion>“Get out of my valley!”</say>",
+        "And from deep in the well, a roar came back: my valley … valley … valley.",
+        "Nobody roars back at a lion."
+      ]
+    },
+    {
+      "scene": "scene-well",
+      "part": "part-2",
+      "paras": [
+        "The Lion dropped the Hare, and he leaped.",
+        "<pop:1.3>Splash!</pop>",
+        "The water was cold. The water was deep. And there was no other lion in it at all.",
+        "He scrambled up the rough stones, paw over paw, and flopped out onto the dust. His mane hung flat. He looked no bigger than a wet cat."
+      ]
+    },
+    {
+      "scene": "scene-council",
+      "part": "part-2",
+      "paras": [
+        "The Lion did not roar. He crept away over the hills, dripping, and he never came back.",
+        "The Hare skipped home to the green valley.",
+        "That evening the deer ate, the gazelles drank, and the Tortoise finished a whole meal, very slowly.",
+        "And if you ever look down a well and a face looks up at you — wave. Do not roar."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "petra",
+      "name": "Petra",
+      "era": "ancient",
+      "built": {
+        "from": -300,
+        "to": 100,
+        "circa": true,
+        "note": "Carved and built over several hundred years, from about the 4th century BCE to the 1st century CE. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Jordan",
+      "place": "A desert valley in southern Jordan",
+      "coordinates": {
+        "lat": 30.329,
+        "lon": 35.444
+      },
+      "region": "persianArabian",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A city cut into rose-red rock, where caravans stopped to rest."
+        },
+        "medium": {
+          "line": "A people called the Nabataeans carved this caravan city into rose-red cliffs about 2,000 years ago.",
+          "note": "Traders and their camels stopped here for water on the long desert roads."
+        },
+        "advanced": {
+          "line": "A Nabataean trading city in Jordan, carved into sandstone cliffs between about 300 BCE and 100 CE.",
+          "note": "Much of the city still lies buried, and archaeologists keep finding more."
+        }
+      },
+      "art": {
+        "file": "art/petra.heic",
+        "alt": "A tall building front with columns, carved straight into a rose-red cliff at the end of a narrow rocky path.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2430",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a traditional Persian animal tale. It is not the wording of any earlier edition.",
+    "The poet Rumi told the tale in Persian in the Masnavi (13th century). It is older: it is in Kalila and Dimna, and before that it was told in India.",
+    "Documented source for the tale: The Mesnevi of Jalal al-Din Rumi, Book the First, Tale V, “The Lion and the Beasts”, translated by James W. Redhouse (London: Trübner & Co., 1881), Project Gutenberg ebook #61724, https://www.gutenberg.org/ebooks/61724 (US public domain; other territories not verified). Read for this retelling on a Gutenberg mirror.",
+    "We retell only the animal tale. None of Rumi’s spiritual commentary or religious teaching is used, and the beasts’ debate with the lion about effort and trust is left out.",
+    "Softened: in the source the beasts send the lion one of themselves each day, chosen by lot; here they bring him his dinner, and nobody is a victim.",
+    "Softened: in the source the lion dies in the well; here he climbs out soaked and leaves the valley for good.",
+    "Left out: the second hare said to be held by the other lion. Here the other lion is said to have taken the dinner.",
+    "The opening lines about caravans are ours; they carry the Petra map moment (CONTENT_PLAN §6.1).",
+    "Status: DRAFT. Text review pending. Cultural review (required, light: reviewer familiar with Rumi and Sufi tradition) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#1E5C4E",
+      "shade": "#8A6A3A",
+      "mid": "#D9A85C",
+      "light": "#D4ECEF",
+      "glow": "#FFE6AE",
+      "accent": "#12A8B8",
+      "mood": "Dry gold hills and one cool green valley under a pale turquoise sky; warm, clear and a little funny, never harsh."
+    },
+    "light": "Clear daylight on a dry plateau (soft evening gold for scene-council, bright noon for scene-hills and scene-well); ONE warm light from the upper left in every picture.",
+    "world": [
+      "Landscape: the Iranian plateau and its foothills. Bare, folded ochre and gold hills with grey rock outcrops; a narrow green valley where a cold stream runs. Not a sand-dune desert, not an African savanna (no flat-topped acacias).",
+      "Trees: the oriental plane tree (chenar) is huge and broad, with pale mottled bark and hand-shaped leaves; cypress (sarv) is slim, dark and pointed; white-trunked poplars and willows follow the stream; wild fig, pomegranate and almond on the slopes.",
+      "Animals true to Iran: goitered gazelle (sandy coat, white belly; the male has dark lyre-shaped horns), Persian fallow deer (spotted coat), red fox, a spur-thighed tortoise with a domed patterned shell, and a hare (sandy brown, very long black-tipped ears, long back legs).",
+      "The Lion is an Asiatic (Persian) lion, a kind that once lived in Iran: sandy coat, a shorter, darker mane than an African lion, a loose fold of skin along the belly.",
+      "The well: a wide old shaft with a low ring of rough, unshaped field stones, a few fallen ones beside it, dry grass in the cracks. No roof, no bucket crank, no European wishing well. The inside walls are rough stone a lion could climb. The water is dark and round like a mirror.",
+      "No people and no buildings in any scene. The animals wear nothing and carry nothing. The Lion’s den is a shallow cave under his rock.",
+      "Colours: gold, ochre, dusty rose rock, cool stream green, turquoise sky. Flat clear shapes are welcome.",
+      "AVOID: Arabian Nights clichés (domes, turbans, carpets, lamps), camels or caravans in the story scenes (the caravan belongs only to the Petra card), calligraphy, religious imagery of any kind, and copying any real Persian miniature painting or manuscript page.",
+      "AVOID: a frightening Lion. He is loud, vain and cross, never bloody; no bared claws at the small animals, no injured animal anywhere. After the well he is wet and sorry for himself, comic not pitiful.",
+      "Petra is never visible in a scene: it is in Jordan, far from the story’s valley, and appears only on its card."
+    ],
+    "characters": {
+      "hare": "Small, lean, sandy brown with a pale belly; very long upright ears with black tips, long back legs, bright dark eyes. His ears show his mood: up when thinking, flat when bowing, trembling at the well. Signature: one ear slightly bent at the tip.",
+      "lion": "Big, sandy gold Asiatic lion with a short dark-brown mane and a tufted tail; heavy brows, a wide mouth made for roaring, a round well-fed tummy. Signature: chin held high, tail stiff when cross. Soaked at the end: mane flat, thin and small-looking.",
+      "gazelle": "Slender goitered gazelle, sandy with a white belly and a dark stripe along the side, large gentle eyes, short black tail. She stands tall and speaks for the others; calm and careful.",
+      "tortoise": "Old spur-thighed tortoise with a high domed shell in olive and gold patches, wrinkled neck, heavy sleepy eyelids. Signature: always chewing, always last."
+    },
+    "scenes": {
+      "scene-valley": {
+        "unfolded": "Far: folded gold hills under a wide pale turquoise sky. Middle: the green valley with its bright stream, poplars and willows, deer and gazelles small by the water. Near, on the trailing (right) half: the Lion on a flat-topped rock, head up, with the dark mouth of his den below; a fox, the tortoise and the hare low in the foreground grass. The leading (left) pane’s upper two thirds is calm pale sky over low distant hills.",
+        "folded": "The Lion on his rock in the middle of the band, face to us, the valley and stream falling away below him; pale sky above for the words."
+      },
+      "scene-council": {
+        "unfolded": "Evening gold. Far: the valley and soft hills. Middle and near, low across both panes: the animals in a loose ring in the grass (the Gazelle standing, deer, the fox, the Tortoise). On the trailing half: the pale mottled trunk of the great plane tree at the right edge, its crown coming in from the right as sunlit mid-green leaves; the little Hare sits a little apart in the long grass under it, ears up, thinking. No Lion in this picture. Keep the top of the trailing pane light (sky or pale sunlit leaves, not a dark mass). The leading pane’s upper two thirds is calm pale evening sky.",
+        "folded": "The Hare’s face in the middle, sitting in long grass with the plane trunk behind him and one or two friends (the Gazelle, the Tortoise) close by; pale sky above."
+      },
+      "scene-hills": {
+        "unfolded": "Noon, short shadows. Far: bare gold ridges and a pale hot sky. Middle: a dusty path climbing between grey rocks and three or four tall dark cypress trees. Near, on the trailing half: the little Hare hopping ahead, looking back over his shoulder, and the Lion stamping behind him, puffing, small clouds of dust at his paws. The leading pane’s upper two thirds is calm pale sky above a low ridge.",
+        "folded": "The Hare in the middle of the band, mid-hop on the path, with the Lion’s big face just behind him and one cypress to the side; pale sky above."
+      },
+      "scene-well": {
+        "unfolded": "Noon in a dry hollow among the hills. Far: gold hills and pale sky. Middle: a lone cypress and scattered rocks. Near, on the trailing half: the old stone well seen from a little above, so we can look into it. The Lion leans over the rim with the Hare at the rim in the crook of his forepaw; down in the dark round water a lion and a hare look up. The leading pane’s upper two thirds is calm pale sky.",
+        "folded": "The Lion’s face and the Hare’s face side by side in the middle, peering down over the ring of stones; the two reflections small in the dark water at the bottom of the band."
+      }
+    },
+    "pictures": {
+      "persia": "One centred subject: a small green valley with a stream and a few poplars, held between dry golden hills under a clear sky. No animals, no buildings.",
+      "well": "One centred subject: the old well with its low ring of rough stones, seen from a little above so the dark water shows far down. Dry ground around it; no animals.",
+      "wild-hare": "One centred subject: a real-looking hare sitting up in dry grass, in side view, showing the long black-tipped ears and long back legs. Not the story’s character pose; a natural-history look."
+    },
+    "portraits": {
+      "hare": "The Hare sitting up in the grass, ears raised, one bent at the tip, with a small knowing look; cool green-turquoise background.",
+      "lion": "The Lion on his rock, chest out, mouth wide open in a roar, mane flying; comic and grand, warm gold background."
+    },
+    "cover": "The Lion and the little Hare at the rim of the old stone well, looking down; the round water in the middle of the picture shows a lion and a hare looking back up. Gold hills and pale sky behind.",
+    "landmarks": {
+      "petra": "By day: the tall carved front known as the Treasury, with its columns cut straight into a rose-red sandstone cliff, seen from the mouth of the narrow rock path that leads to it. Warm light from the upper left. No people, no camels, no modern stalls. Our own drawing, not traced from a photograph."
+    }
+  }
+}

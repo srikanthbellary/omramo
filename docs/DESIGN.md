@@ -437,6 +437,8 @@ The price string always comes from StoreKit. Until a product exists the card sho
 ### 5.20 Splash wordmark across the hinge
 `OM` + `R` right-aligned 9 pt from the hinge edge of the left pane; `A` + `MO` left-aligned 9 pt from the hinge edge of the right pane; top 214; so the hinge runs through the middle of "RA". R and A carry the `wordmark.ra` gradient. Each pane has a 60 pt warm edge glow (`rgba(255,150,90,.22)`) and a 2 pt seam line on its hinge edge from top 150 to bottom 150. Tagline at top 404: "A magical book" right-aligned on the left pane, "that you read." left-aligned on the right. Bottom-left: three overlapping 40 pt cover discs. Bottom-right: three origin chips (white 9% fill). Small four-point "motes" in `#FFD25A`.
 Folded splash is not drawn (estimate: the full word "OMRAMO" on one line scaled to the pane width with the same gradient on "RA").
+**Tagline (round 5):** the app now shows "Turn the page." on the left pane and "See the world." on the right (one line, "Turn the page. See the world.", on one pane); the locked PNG keeps the earlier wording.
+
 **As built (round 4):** two panes — the wordmark, the tagline halves, the 60 pt edge glow, the 2 pt seam and ten still motes, placed as above (the wordmark keeps its 214 / 720 place in proportion on a pane of another height, and scales down on a pane too narrow for half the word). The cover discs and origin chips of screen 01 are left out: the splash is on screen for under a second and they would only flicker. One pane — "OMRAMO" on one line across the text width, a soft warm glow behind "RA" where the hinge would be, the whole tagline beneath, a little above the middle.
 
 ### 5.21 Story map card

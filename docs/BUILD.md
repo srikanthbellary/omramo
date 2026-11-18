@@ -534,6 +534,70 @@ switch in the "Aa" panel, remembered in `reader-memory.json` (`soundOn`, optiona
   (round 3) still holds as written — the provider still asks for the unfolded simulation and
   the posture is still unfolded — although the layout behind it now fills the window.
 
+### Implemented in round 5, batch 1 — the stories round (code complete, **not yet compiled or seen**)
+
+Batch 1 of three (18 Nov 2026, branch `feat/r5-stories`, cut from `main` after round 4 was
+compiled and merged as PR #5). Conventions for batches 2 and 3: `docs/agent-runs/r5-batch-notes.md`.
+
+- **Tagline.** "Turn the page. See the world." (`Brand.tagline`; the splash halves are cut
+  after the first sentence: "Turn the page." | "See the world."; README line 1).
+- **Morals.** One short sentence a story (at most 14 words for Low, 18 for Medium and
+  Advanced, no semicolon). Monkey unchanged; Anansi and Urashima reworded.
+- **Ten new Low stories** in plan order after the Monkey story — `shipwrecked-sailor`,
+  `tongue-cut-sparrow`, `old-man-who-moved-mountains`, `why-possums-tail-is-bare`,
+  `the-snow-house` (an Omramo original), `peasant-and-bear`, `bremen-town-musicians`,
+  `north-wind-and-sun`, `why-sun-and-moon-live-in-sky`, `lion-and-hare` — each 12–14 pages in
+  two parts, four scenes, three tap-to-see words, the plan's landmark moments, two character
+  cards, a one-sentence moral, the `education` block and a manuscript. The catalog now holds
+  13 stories (`catalogVersion` 3).
+- **Authoring.** Each new story is built from a spec, `docs/content/story-specs/<id>.json`,
+  by `tools/build_stories.py` (writes `story.json`, the manuscript, and merges new landmarks);
+  `--check` fails when a generated file is stale. `tools/test_build_stories.py` (19 tests).
+- **Ten landmarks** added to the shared catalog (14 now), each with fact cards for the three
+  tiers and its own picture: `sydney-opera-house`, `himeji-castle`, `great-wall-of-china`,
+  `machu-picchu`, `hagia-sophia`, `saint-basils-cathedral`, `bremen-town-hall-roland`,
+  `colossus-of-rhodes` (lost: a reconstruction), `statue-of-liberty`, `petra`.
+- **Cultural-review flag.** `CulturalReview.needsReviewBeforeRelease` / `releaseFlagLine`
+  ("Needs cultural review before release — <reviewer>: <reason>"); new rule
+  `cultural-review-no-community` in both validators (a required review must name its
+  reviewer). Flagged in the catalog: Monkey, Possum, Snow House, Sun and Moon, Lion and Hare,
+  Anansi (six of the plan's twelve; the other six arrive in batches 2 and 3).
+- **Illustration kit.** `App/Sources/Art/Kit/` (`enum Kit`, ten files, about 8,200 lines):
+  frames for every picture shape, light / sky / land / water, `Kit.solid`, people, animals,
+  birds, trees, ground cover, buildings, props (`docs/ART_DIRECTION.md` §11). The ten story
+  painters are under `App/Sources/Art/Stories/` (one enum a story, four files each) and the
+  ten landmark pictures under `App/Sources/Art/Landmarks/`.
+- **Art registry.** `ArtLibrary.storyPainter(for:)` in `StoryArt.swift`: one line a story; a
+  story without a painter, or an unknown picture name, gets the calm stand-in.
+- **Library for a big catalog.** "All" shows one shelf a level (a header with the level and
+  its count, covers scrolling sideways, loaded lazily); a chosen level shows all of its covers
+  in a grid, three to a row at the design width (`Library.shelves(matching:)`, `LibraryShelf`
+  in the core). Every card has one height. The story map names only the story being read once
+  there are more than six pins, draws it last, and leaves out a "more cultures later" ring
+  where a story has arrived (`StoryMapRules`).
+- **Next story.** `NextStory` is unchanged: with eleven Low stories a reader is led through
+  their own level in catalog order before the next level (tests on the whole catalog).
+- **Screenshots.** `ShotTests` gains `testR5…` methods writing `r5-*.png` (§7d); the round-4
+  methods still write `r4-*.png`.
+
+**Tests added (none run):** core `Round5Tests.swift` — `CatalogPlanTests` (12),
+`LandmarkPlanTests` (4), `CulturalReviewFlagTests` (5), `LibraryShelfTests` (3),
+`StoryMapRulesTests` (3), `NextStoryCatalogTests` (3); app `App/Tests/Round5Tests.swift` —
+`StoryArtRegistryTests` (6), `BiggerLibraryTests` (6); UI `ShotTests` `testR5…` (17); Python
+`tools/test_build_stories.py` (19, run on the box: pass).
+
+**Existing tests updated because the catalog grew (intended changes; nothing weakened):**
+`DecodingTests.testLibraryLoadsAndListsTheSample` (counts follow the catalog; eleven Low
+entries); core `Round4Tests` — `testEveryBundledStoryHasAMoralOfOneSentence` (every story, all
+morals different) and the `NextStoryTests` helper (its catalog is the three prototypes, one a
+level, as when it was written); `ReaderCardTests` — `PrototypeContent.allStories()` now means
+the three prototypes (not every planned story has a landmark, by design); app `Round4Tests`
+— `testTheTaglineSplitsAtTheHinge` (new wording) and
+`testTheNextStoryComesFromTheCatalogAndTheLog` (the three-prototype catalog); Python
+`test_catalog_lists_one_story_per_tier` (the prototypes within the bigger catalog). Any
+further edits made by the review pass are listed in the round-5 entry of
+`docs/AGENT_HANDOFF.md`.
+
 ### Short of the acceptance criteria (precise leftovers)
 
 Everything marked *[Mac]* in `docs/IMPLEMENTATION_PLAN.md` for M2, M3 and Mi is **unverified**
@@ -766,6 +830,38 @@ Nothing in round 4 has been compiled or seen. Work in this order.
 11. `WordTapTests`, `MotionDemoTests`, then `ShotTests` on an iPad and an iPhone simulator
     (§4). Compare the `r4-*.png` set with `r3-*.png`.
 
+## 7d. First-compile checklist for round 5, batch 1
+
+Nothing of this batch has been compiled, run or seen. In order:
+
+1. `python3 tools/build_stories.py --check && python3 tools/validate_content.py` (0 errors),
+   `python3 tools/test_validate_content.py` (62), `python3 tools/test_build_stories.py` (19).
+2. `swift test --package-path Packages/OmramoCore` — the round-4 suite plus `Round5Tests`.
+   A failing content assertion names the story and the page.
+3. `xcodegen generate` (**required**: about 60 new source files under `App/Sources/Art/Kit`,
+   `Stories` and `Landmarks`), then build. Expect the first errors in the kit
+   (`App/Sources/Art/Kit/*.swift`), then in the story painters. §8d lists the likely kinds.
+   If one painter will not compile and time is short, comment its line out of
+   `ArtLibrary.storyPainter(for:)` — that story then shows the stand-in — and go on.
+4. ⌘U (the app tests, with `App/Tests/Round5Tests.swift`).
+5. `WordTapTests`, then `ShotTests` with the `OmramoShots` scheme on an iPad and an iPhone
+   simulator: `-only-testing:OmramoUITests/ShotTests` writes the `r4-*.png` set again and the
+   new `r5-*.png` set: the library (all levels; with a reading history; the Low level's grid;
+   folded and unfolded postures on the iPhone), page 1 of each of the ten stories (iPad
+   landscape and portrait, iPhone portrait, folded and unfolded postures), pages 5, 9 and 12
+   of each (the later scenes), six cards, one finished moment, the splash with the new
+   tagline. About 150 files on an iPad and 110 on an iPhone; allow for the time.
+6. **Look at the kit first**: `r5-*-reader-*` shots show `Kit.person` (Sailor, Sparrow,
+   Mountains, Snow House, Peasant, Wind and Sun, Sun and Moon), `Kit.beast` (Possum, Peasant
+   and Bear, Bremen, Lion and Hare), `Kit.bird` (Sparrow, Bremen), trees, houses and props. A
+   fault there repeats in every story; fix the kit before judging a story, and before batch 2.
+7. Check per story: is the sky behind the words pale on every page (dark ink is used
+   throughout)? Is the subject on the trailing pane, on the ground, clear of the controls? Does
+   the tall iPad portrait have a filled foot? Does the folded band hold the subject's face?
+8. Check the library: three shelves on "All", the grid on "Low", the map with thirteen pins
+   and only the story being read named; the hero transition into and out of a cover on a
+   shelf that has been scrolled.
+
 ## 8. Known unverified items
 
 Milestone 1 compiled and ran (13 Nov 2026). The table below is the M1 list, kept for the
@@ -847,6 +943,34 @@ Nothing in round 4 was compiled. Most likely to need a fix, first:
 
 Not verifiable at all without hardware: everything about the real Duo (pane sizes, hinge,
 posture API, per-pane safe areas). The app does not reference any Duo API.
+
+### 8d. Unverified in round 5, batch 1
+
+- **The whole kit** (`App/Sources/Art/Kit/`, about 8,200 lines) and **every story painter and
+  landmark picture** of the batch: written blind, checked by script (brackets, duplicate
+  declarations, the argument labels of every call into the art types) and by "be the compiler"
+  reading passes. Likely compile errors, most likely first: a `CGFloat` / `Double` mix; an
+  expression too long for the type-checker ("unable to type-check this expression in
+  reasonable time": split it into typed `let`s); a wrong enum case or property name on a kit
+  type; an unqualified call shadowed by a parameter of the same name (`Kit+Buildings.swift`
+  calls `Kit.wall` / `Kit.roof` from functions with parameters named `wall` and `roof`); a
+  closure drawing on the outer `context`; `Path.strokedPath` / `trimmedPath` uses in
+  `Kit+Beasts.swift`, `Kit+PeopleBody.swift` and two landmark files.
+- `ArtLibrary.storyPainter(for:)` returns function references such as
+  `SailorArt.paint(_:role:in:size:)` as `ArtPainter` values (a function type with an `inout`
+  parameter). If the compiler objects, write each case as a closure:
+  `return { name, role, context, size in SailorArt.paint(name, role: role, in: &context, size: size) }`.
+- **Proportions and faces of `Kit.person`, `Kit.beast`, `Kit.bird`** — never rendered.
+- **Cost.** Thirteen covers are rasterised on the library (lazily per shelf); each new scene
+  is one `Canvas` of several hundred to about 1,500 calls, rasterised once. Watch the first
+  open of a story and the first scroll of the Low shelf on a real device.
+- **Library.** `LazyHStack` inside a horizontal `ScrollView` inside the vertical one; the hero
+  frame of a cover that has scrolled off its shelf (the router keeps the last reported frame);
+  the `LazyVGrid` column count on a narrow window; XCUITest tapping "Level: Low".
+- **Story text on real pages.** The new Low pages are 35–64 words; the Monkey story's are
+  similar, but nobody has seen these pages at the five text sizes or on a squat pane.
+- **Facts.** Ten new landmark entries and thirty tap-to-see notes: `review.facts` pending.
+  The source check (18 Nov, on a Gutenberg mirror) is recorded in each manuscript header.
 
 ## 9. Troubleshooting: fonts not loading
 

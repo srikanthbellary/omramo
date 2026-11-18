@@ -1,0 +1,1277 @@
+{
+  "schemaVersion": 1,
+  "id": "old-man-who-moved-mountains",
+  "contentVersion": 1,
+  "title": "The Old Man Who Moved the Mountains",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "chinese",
+    "culture": "Ancient Chinese (from the classic Liezi)",
+    "place": "The Taihang and Wangwu mountains, north China",
+    "label": "Ancient China",
+    "pin": {
+      "lat": 35.5,
+      "lon": 113
+    },
+    "pinColor": "#E0483A"
+  },
+  "setting": {
+    "period": "Ancient China, over 2,000 years ago",
+    "latestYear": -300
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Chinese fable from the Liezi",
+    "sources": [
+      {
+        "author": "Lionel Giles (translator)",
+        "title": "Taoist Teachings from the Book of Lieh Tzŭ",
+        "publisher": "John Murray",
+        "year": 1912,
+        "verified": false
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling, written for Omramo, of the classical fable of Yu Gong in the ancient Chinese book Liezi (chapter “Tang wen”), which is in the public domain everywhere. The cited English edition is a reference only and is unverified; Lionel Giles's English wording is not used (he died in 1958, so his wording is protected in life + 70 countries until 2029). Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Chinese reader",
+    "notes": "We tell the classical Liezi version only; no modern political use of the fable appears in the text, the cards or the art."
+  },
+  "education": {
+    "geography": {
+      "lesson": "North China's mountains stand beside the flat Yellow River plain; mountains decide where roads can go and how long a journey takes.",
+      "factCards": [
+        "north-china-mountains",
+        "great-wall-moment",
+        "machu-picchu-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Families of several generations live and work together and listen to their elders; the story gives Chinese a four-word saying every schoolchild knows, Yu Gong yi shan.",
+      "factCards": [
+        "big-family",
+        "carrying-pole"
+      ]
+    },
+    "moral": {
+      "lesson": "Big things are done a little at a time, by people who keep going.",
+      "reflectionQuestion": "What big job could you do a little at a time?"
+    }
+  },
+  "moral": "Big things get done a little at a time by people who keep going.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#1E2A33",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "An old man with a white beard carries two baskets on a shoulder pole. A small boy walks beside him, and two great mountains rise behind them.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "yu-gong",
+      "name": "Yu Gong",
+      "color": "#8A4B14",
+      "face": {
+        "file": "art/face-yu-gong.png",
+        "alt": "Yu Gong, an old man with a white beard.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE6B8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Yu Gong",
+        "traits": [
+          {
+            "text": "Nearly ninety",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never gives up",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Calm when teased",
+            "fill": "#DCEBFA",
+            "ink": "#1F4E86"
+          }
+        ],
+        "body": "His name means Foolish Old Man, but he is not foolish at all. Every schoolchild in China knows four words about him: Yu Gong yi shan. They mean “Yu Gong moves the mountains.”",
+        "portrait": {
+          "file": "art/char-yu-gong.card.heic",
+          "alt": "Yu Gong smiling, with a carrying pole across his shoulders and a basket at each end.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFE08A",
+          "#FFC06A",
+          "#F59A5A"
+        ]
+      }
+    },
+    {
+      "id": "wife",
+      "name": "Wife",
+      "color": "#7A2E5A",
+      "face": {
+        "file": "art/face-wife.png",
+        "alt": "Yu Gong’s wife, an old woman with grey hair pinned up.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F8DDEA"
+    },
+    {
+      "id": "boy",
+      "name": "Little boy",
+      "color": "#1F6A3E",
+      "face": {
+        "file": "art/face-boy.png",
+        "alt": "The little boy from next door, with a gap in his smile.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6F2DC"
+    },
+    {
+      "id": "zhi-sou",
+      "name": "Zhi Sou",
+      "color": "#2B4F8C",
+      "face": {
+        "file": "art/face-zhi-sou.png",
+        "alt": "Zhi Sou, an old man laughing.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D9E8FB",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Zhi Sou",
+        "traits": [
+          {
+            "text": "Lives by the river",
+            "fill": "#DCEBFA",
+            "ink": "#1F4E86"
+          },
+          {
+            "text": "Quick to laugh",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Sure he is right",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "His name means Wise Old Man. He is clever with words, and he likes to sit in the shade. Yu Gong gives him something new to think about.",
+        "portrait": {
+          "file": "art/char-zhi-sou.card.heic",
+          "alt": "Zhi Sou sitting under a willow by the river, laughing with one hand raised.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#BFE3F2",
+          "#8FC7E0",
+          "#5FA3C8"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "north-china-mountains",
+      "kind": "place",
+      "title": "North China’s mountains",
+      "line": "A long wall of mountains stands beside the wide, flat Yellow River plain.",
+      "cultureNote": {
+        "label": "In north China",
+        "text": "The Taihang Mountains are real, and people live below them today. For a very long time, roads had to go round them or squeeze through narrow passes."
+      },
+      "picture": {
+        "file": "art/see-north-china-mountains.heic",
+        "alt": "A line of steep grey-blue mountains rising straight up from a flat yellow plain, with a small road bending round them.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2F5D73"
+    },
+    {
+      "id": "big-family",
+      "kind": "idea",
+      "title": "One big family",
+      "line": "Grandparents, parents and children all living and working in one home.",
+      "cultureNote": {
+        "label": "From ancient China",
+        "text": "In old China, a family often shared one home for many generations. The oldest people were listened to with great respect."
+      },
+      "picture": {
+        "file": "art/see-big-family.heic",
+        "alt": "A grandfather, a grandmother, their grown sons and small grandchildren sitting together in the yard of a farmhouse.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#8A4A2A"
+    },
+    {
+      "id": "carrying-pole",
+      "kind": "object",
+      "title": "Carrying pole",
+      "line": "A pole across the shoulders, with a basket hanging from each end.",
+      "cultureNote": {
+        "label": "From ancient China",
+        "text": "With a pole, one person can carry two full baskets. People in China have carried loads this way for thousands of years, and some still do."
+      },
+      "picture": {
+        "file": "art/see-carrying-pole.heic",
+        "alt": "A wooden pole with a woven basket of earth hanging from each end.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6B4A1F"
+    },
+    {
+      "id": "great-wall-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "great-wall-of-china",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Basket by basket, a family can move a great deal. Stone by stone, people in north China built something very, very long."
+        }
+      },
+      "background": "#2E4A3A"
+    },
+    {
+      "id": "machu-picchu-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "machu-picchu",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Yu Gong’s family worked hard on their mountains. Far away in Peru, other people worked on a mountain top, and built a town there."
+        }
+      },
+      "background": "#1F4A44"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-mountains.unfolded.heic",
+          "alt": "A small farmhouse with a thatched roof stands in front of two huge mountains that block the way. An old man looks up at them from his door.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-mountains.folded.heic",
+          "alt": "An old man at the door of a farmhouse, looking up at two huge mountains.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE6F2",
+          "#FFE9BF",
+          "#8FA77A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago in China, an old man lived facing ",
+              "lead": true
+            },
+            {
+              "t": "two great mountains",
+              "lead": true,
+              "tap": "north-china-mountains"
+            },
+            {
+              "t": ".",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His name was "
+            },
+            {
+              "t": "Yu Gong",
+              "name": "yu-gong"
+            },
+            {
+              "t": ", which means Foolish Old Man. He was nearly ninety."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The mountains were called Taihang and Wangwu. They stood right in front of his door, as high as the clouds."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-mountains.unfolded.heic",
+          "alt": "A small farmhouse with a thatched roof stands in front of two huge mountains that block the way. An old man looks up at them from his door.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-mountains.folded.heic",
+          "alt": "An old man at the door of a farmhouse, looking up at two huge mountains.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE6F2",
+          "#FFE9BF",
+          "#8FA77A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "To reach the market, Yu Gong had to walk all the way round them. It took days and days."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One evening he came home with sore feet and a dusty beard. He called his "
+            },
+            {
+              "t": "whole family",
+              "tap": "big-family"
+            },
+            {
+              "t": " together."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His wife, his sons and his grandchildren all sat down."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Those mountains are in our way,”",
+              "say": "yu-gong",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Let us dig them away.”",
+              "say": "yu-gong"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-mountains.unfolded.heic",
+          "alt": "A small farmhouse with a thatched roof stands in front of two huge mountains that block the way. An old man looks up at them from his door.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-mountains.folded.heic",
+          "alt": "An old man at the door of a farmhouse, looking up at two huge mountains.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE6F2",
+          "#FFE9BF",
+          "#8FA77A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His sons nodded. His grandchildren cheered."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Yu Gong’s wife",
+              "name": "wife"
+            },
+            {
+              "t": " folded her arms. "
+            },
+            {
+              "t": "“Husband, you puff going up our little hill,”",
+              "say": "wife",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“And where will you put all that earth and stone?”",
+              "say": "wife"
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Everybody looked east, where the river ran away to the sea."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“In the sea,”",
+              "say": "yu-gong",
+              "chip": true
+            },
+            {
+              "t": " said Yu Gong. "
+            },
+            {
+              "t": "“The sea has plenty of room.”",
+              "say": "yu-gong"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-digging.unfolded.heic",
+          "alt": "A family digs at the foot of a mountain. An old man, his sons, his grandchildren and a small boy carry baskets of earth on shoulder poles along a path.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-digging.folded.heic",
+          "alt": "An old man and a small boy carry baskets of earth along a path below a mountain.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5ECF3",
+          "#FFE3A8",
+          "#C29A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The next morning they began. "
+            },
+            {
+              "t": "Crack!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " The sons broke the rock. The grandchildren dug the earth."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Yu Gong filled the baskets, and his wife tied them tight."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Each "
+            },
+            {
+              "t": "carrying pole",
+              "tap": "carrying-pole"
+            },
+            {
+              "t": " had a basket at both ends. Up it went, onto a shoulder."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Dig, lift, carry, tip. Dig, lift, carry, tip."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-digging.unfolded.heic",
+          "alt": "A family digs at the foot of a mountain. An old man, his sons, his grandchildren and a small boy carry baskets of earth on shoulder poles along a path.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-digging.folded.heic",
+          "alt": "An old man and a small boy carry baskets of earth along a path below a mountain.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5ECF3",
+          "#FFE3A8",
+          "#C29A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Next door lived a "
+            },
+            {
+              "t": "little boy",
+              "name": "boy"
+            },
+            {
+              "t": " who was just losing his milk teeth."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He watched over the wall. Then he came skipping across the yard."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I can carry too!”",
+              "say": "boy",
+              "chip": true
+            },
+            {
+              "t": " he said, with a gap in his smile."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then here is a basket your size,”",
+              "say": "yu-gong",
+              "chip": true
+            },
+            {
+              "t": " said Yu Gong."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-digging.unfolded.heic",
+          "alt": "A family digs at the foot of a mountain. An old man, his sons, his grandchildren and a small boy carry baskets of earth on shoulder poles along a path.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-digging.folded.heic",
+          "alt": "An old man and a small boy carry baskets of earth along a path below a mountain.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5ECF3",
+          "#FFE3A8",
+          "#C29A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a long, long way to the sea. They set off when snow lay on the path."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Splash!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " In went the earth and stones. Then they turned for home, and the peaches were ripe when they got there."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And the mountains? They looked just as big as before."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Still the family kept on, "
+            },
+            {
+              "t": "basket by basket",
+              "tap": "great-wall-moment"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river-bend.unfolded.heic",
+          "alt": "At a bend in a wide river, an old man sits under a willow and laughs. Another old man stands calmly on the path with two baskets on a pole.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river-bend.folded.heic",
+          "alt": "An old man laughs under a willow by a river while another stands calmly with his baskets.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF0",
+          "#FFF0BC",
+          "#6FA9A8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The path to the sea passed a bend in the river. There lived "
+            },
+            {
+              "t": "Zhi Sou",
+              "name": "zhi-sou"
+            },
+            {
+              "t": ", whose name means Wise Old Man."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every day he watched the baskets go by. One day he laughed out loud."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Yu Gong, you are old and tired!”",
+              "say": "zhi-sou",
+              "chip": true
+            },
+            {
+              "t": " he called. "
+            },
+            {
+              "t": "“You could not pull one blade of grass off those mountains!”",
+              "say": "zhi-sou"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river-bend.unfolded.heic",
+          "alt": "At a bend in a wide river, an old man sits under a willow and laughs. Another old man stands calmly on the path with two baskets on a pole.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river-bend.folded.heic",
+          "alt": "An old man laughs under a willow by a river while another stands calmly with his baskets.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF0",
+          "#FFF0BC",
+          "#6FA9A8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Yu Gong set down his baskets and looked at Zhi Sou.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He did not shout. He did not sulk. He rubbed his sore shoulder and smiled."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You are right, I am old,”",
+              "say": "yu-gong",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“One day I will be gone. But I have children.”",
+              "say": "yu-gong"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river-bend.unfolded.heic",
+          "alt": "At a bend in a wide river, an old man sits under a willow and laughs. Another old man stands calmly on the path with two baskets on a pole.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river-bend.folded.heic",
+          "alt": "An old man laughs under a willow by a river while another stands calmly with his baskets.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF0",
+          "#FFF0BC",
+          "#6FA9A8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My children will have children,”",
+              "say": "yu-gong",
+              "chip": true
+            },
+            {
+              "t": " said Yu Gong. "
+            },
+            {
+              "t": "“Their children will have children too, and on and on.”",
+              "say": "yu-gong"
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He pointed up at the two grey peaks."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My family grows. The mountains do not. So why should we not finish?”",
+              "say": "yu-gong",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Zhi Sou opened his mouth. He shut it again. The Wise Old Man had no answer at all."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-digging.unfolded.heic",
+          "alt": "A family digs at the foot of a mountain. An old man, his sons, his grandchildren and a small boy carry baskets of earth on shoulder poles along a path.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-digging.folded.heic",
+          "alt": "An old man and a small boy carry baskets of earth along a path below a mountain.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5ECF3",
+          "#FFE3A8",
+          "#C29A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the work went on. Dig, lift, carry, tip."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Winter came, and summer came. The little boy grew big new teeth."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Some days the family sang. Some days they grumbled. Every day they dug."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But high above the top of a "
+            },
+            {
+              "t": "mountain",
+              "tap": "machu-picchu-moment"
+            },
+            {
+              "t": ", somebody was listening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-mountains.unfolded.heic",
+          "alt": "A small farmhouse with a thatched roof stands in front of two huge mountains that block the way. An old man looks up at them from his door.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-mountains.folded.heic",
+          "alt": "An old man at the door of a farmhouse, looking up at two huge mountains.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE6F2",
+          "#FFE9BF",
+          "#8FA77A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was the Lord of the Sky. He had heard every scrape of the hoes and every word by the river."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He had never known hearts so steady. That family would never stop."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That night he sent two giants, the strongest there ever were."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One took Taihang on his back. One took Wangwu. Away they tiptoed while everybody slept."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-open-road.unfolded.heic",
+          "alt": "Morning. The mountains are gone. A straight road runs from the farmhouse door across a wide golden plain, and the family stands looking at it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-open-road.folded.heic",
+          "alt": "An old man and a small boy stand at a gate, looking down a straight road across a wide golden plain.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEF7",
+          "#FFE7A6",
+          "#D9B95C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the morning Yu Gong picked up his hoe and opened the door. He stopped. He rubbed his eyes."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "No Taihang. No Wangwu. Only sky, and a wide plain, golden in the sun."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Yu Gong!”",
+              "say": "boy",
+              "chip": true
+            },
+            {
+              "t": " shouted the little boy, hopping at the gate. "
+            },
+            {
+              "t": "“Who tipped them all?”",
+              "say": "boy"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-open-road.unfolded.heic",
+          "alt": "Morning. The mountains are gone. A straight road runs from the farmhouse door across a wide golden plain, and the family stands looking at it.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-open-road.folded.heic",
+          "alt": "An old man and a small boy stand at a gate, looking down a straight road across a wide golden plain.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEF7",
+          "#FFE7A6",
+          "#D9B95C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now a road ran straight to the south, flat as a table. The family walked to market and were home before dark."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Zhi Sou came up from the river bend to stare. He still had no answer."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Yu Gong’s wife went to hang up the baskets."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Keep them handy,”",
+              "say": "yu-gong",
+              "chip": true
+            },
+            {
+              "t": " said Yu Gong. "
+            },
+            {
+              "t": "“I have been looking at our little hill.”",
+              "say": "yu-gong"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

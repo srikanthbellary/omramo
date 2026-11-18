@@ -1,6 +1,6 @@
 # Omramo — Content plan: launch story catalog and landmarks (v2)
 
-**Status:** proposal for Srikanth's review. Nothing here is written, illustrated, reviewed or cleared yet.
+**Status:** the plan is Srikanth's proposal-as-adopted for the build (round 5 writes it out). **Written and drawn so far: 13 of 32 stories** — the three prototypes and, in round 5 batch 1 (18 Nov 2026), the ten other Low stories; see §2a. Every text is a draft (`review.text: pending`), every picture is concept art drawn in code (`review.art: pending`), and nothing has been through cultural review, fact-check or legal clearance.
 **Reads with:** `docs/PRD.md` (§4a, §12), `docs/ARCHITECTURE.md` (§6), `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md` (milestone C1).
 
 **Owner requirements this plan answers (13 Nov 2026):**
@@ -63,6 +63,36 @@ Conventions: **Decided / Assumption / TBD — open question** as in the PRD. No 
 | **Persian / Arabian** | The Lion and the Hare (Persian) | Sindbad's Second Voyage (Arabic) | Zal and the Simurgh (Persian) |
 
 **Counts:** 32 stories — Low 11, Medium 11, Advanced 10. **29 public-domain retellings, 3 originals.** **12 flagged for required cultural review** (§7).
+
+### 2a. Status of each story (round 5)
+
+"Draft" = text written as our own retelling (or original), built from `docs/content/story-specs/<id>.json`, validated, with concept art drawn in code; text, art, facts and cultural review all still **pending**. ⚑ = carries the flag **needs cultural review before release** (§7).
+
+| # | Story | Tier | Status |
+|---|---|---|---|
+| L1 | `monkey-and-crocodile` | Low | Draft (rounds 1–4; moral polished in round 5) ⚑ Buddhist reader |
+| L2 | `shipwrecked-sailor` | Low | Draft — round 5 batch 1 |
+| L3 | `tongue-cut-sparrow` | Low | Draft — round 5 batch 1 |
+| L4 | `old-man-who-moved-mountains` | Low | Draft — round 5 batch 1 |
+| L5 | `why-possums-tail-is-bare` | Low | Draft — round 5 batch 1 ⚑ Cherokee consultant |
+| L6 | `the-snow-house` | Low | Draft (original) — round 5 batch 1 ⚑ Inuit consultant (Nunavut) |
+| L7 | `peasant-and-bear` | Low | Draft — round 5 batch 1 |
+| L8 | `bremen-town-musicians` | Low | Draft — round 5 batch 1 |
+| L9 | `north-wind-and-sun` | Low | Draft — round 5 batch 1 |
+| L10 | `why-sun-and-moon-live-in-sky` | Low | Draft — round 5 batch 1 ⚑ Efik reader |
+| L11 | `lion-and-hare` | Low | Draft — round 5 batch 1 ⚑ reviewer familiar with Rumi and Sufi tradition (light) |
+| M1–M9, M11 | the ten other Medium stories | Medium | Planned — round 5 batch 2 |
+| M10 | `anansi-wisdom` | Medium | Draft (rounds 2–4; moral polished in round 5) ⚑ Akan reader |
+| A1, A2, A4–A10 | the nine other Advanced stories | Advanced | Planned — round 5 batch 3 |
+| A3 | `urashima-taro` | Advanced | Draft (rounds 2–4; moral polished in round 5) |
+
+Things the drafts of batch 1 did that this plan left open (each is listed in the story's manuscript header, `Content/sources/<id>.txt`, for the reviewers):
+
+- **Sources.** gutenberg.org was unreachable from the authoring box on 18 Nov 2026; where a mirror could be read the tale was read there, otherwise the retelling was written from knowledge of the traditional tale. No source wording is used. Each manuscript header says which.
+- **Softenings (examples).** Sparrow: the scissors "nip the tip" of the tongue, the big basket holds bees, a toad and mud, the old woman says sorry. Sailor: the crew is not lost; the serpent's family "now there is only me". Lion and Hare: the animals bring the lion his dinner (no victim) and the lion climbs out of the well and leaves. Bremen: "too old to be useful", no talk of killing. Peasant and Bear: a warm ending (a loaf and turnips left on a stump).
+- **Names and words.** The Snow House: the girl is Elisapie; three Inuktitut words (iglu, qamutiik, qulliq) — all for the Inuit consultant. Possum: no Cherokee words; the dance is the animals' own. Sun and Moon: no Efik names. Old Man: Yu Gong and Zhi Sou with the meanings of their names.
+- **Landmarks added to the shared catalog (10):** `sydney-opera-house`, `himeji-castle`, `great-wall-of-china`, `machu-picchu`, `hagia-sophia`, `saint-basils-cathedral`, `bremen-town-hall-roland`, `colossus-of-rhodes`, `statue-of-liberty`, `petra`, each with fact cards for the three tiers (facts pending review; several dates and details beyond §5.1 come from general knowledge and are marked in the review notes).
+- **Morals** are one short sentence each (round 5 rule: at most about 14 words for Low, 18 for Medium and Advanced, no semicolon).
 
 ---
 

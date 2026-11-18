@@ -15,19 +15,26 @@ struct StoryMapPin: Identifiable {
     let color: Color
     let point: GeoPoint
     let state: Status
+    /// False on a crowded map, where only the story being read is named (`StoryMapRules`).
+    var showsLabel = true
 
-    /// Real pins from the catalog: one for every story that has a `region.pin`.
+    /// Real pins from the catalog: one for every story that has a `region.pin`. The story
+    /// being read comes last, so its pin and label are drawn over the others.
     static func pins(for library: Library, readingNow: StoryID?) -> [StoryMapPin] {
-        library.stories.compactMap { story in
+        let placed = library.stories.filter { $0.region.pin != nil }
+        let pins: [StoryMapPin] = placed.compactMap { story in
             guard let point = story.region.pin else { return nil }
+            let isReadingNow = story.id == readingNow
             return StoryMapPin(
                 id: story.id,
                 label: story.region.label,
                 color: Color(hex: story.region.pinColor, fallback: Tokens.Palette.mint),
                 point: point,
-                state: story.id == readingNow ? .readingNow : .story
+                state: isReadingNow ? .readingNow : .story,
+                showsLabel: StoryMapRules.showsLabel(isReadingNow: isReadingNow, pinCount: placed.count)
             )
         }
+        return pins.filter { $0.state == .story } + pins.filter { $0.state == .readingNow }
     }
 }
 
@@ -120,12 +127,15 @@ struct StoryMapCard: View {
     }
 
     private var accessibilitySummary: String {
-        let places = pins.map(\.label).joined(separator: ", ")
+        // One mention of each place, however many stories come from it.
+        var seen = Set<String>()
+        let places = pins.map(\.label).filter { seen.insert($0).inserted }.joined(separator: ", ")
         return places.isEmpty ? "Map of the world." : "Map of the world. Stories from: \(places)."
     }
 
     private func dots(unit: CGFloat) -> some View {
-        Canvas { context, size in
+        let storyPoints = pins.map(\.point)
+        return Canvas { context, size in
             let dot = Color.white.opacity(0.3)
             let radius = 1.5 * unit
             for (latitude, runs) in WorldMap.land {
@@ -142,7 +152,7 @@ struct StoryMapCard: View {
                 }
             }
             // "More cultures later": small dashed rings.
-            for point in WorldMap.later {
+            for point in WorldMap.later where StoryMapRules.isClear(point, of: storyPoints) {
                 let center = WorldMap.project(point, in: size)
                 let ring = 3.6 * unit
                 context.stroke(
@@ -174,15 +184,17 @@ struct StoryMapCard: View {
                 .overlay(Circle().stroke(Color.white, lineWidth: 1.8 * unit))
                 .frame(width: 10 * unit, height: 10 * unit)
                 .position(center)
-            Text(verbatim: pin.label)
-                .typeRole(Tokens.UIType.mapPinLabel)
-                .foregroundStyle(Color(rgba: Tokens.Palette.ink))
-                .lineLimit(1)
-                .padding(.horizontal, 7 * unit)
-                .frame(height: 20 * unit)
-                .background(Color.white, in: Capsule(style: .continuous))
-                .fixedSize()
-                .position(x: labelX, y: center.y + 24 * unit)
+            if pin.showsLabel {
+                Text(verbatim: pin.label)
+                    .typeRole(Tokens.UIType.mapPinLabel)
+                    .foregroundStyle(Color(rgba: Tokens.Palette.ink))
+                    .lineLimit(1)
+                    .padding(.horizontal, 7 * unit)
+                    .frame(height: 20 * unit)
+                    .background(Color.white, in: Capsule(style: .continuous))
+                    .fixedSize()
+                    .position(x: labelX, y: center.y + 24 * unit)
+            }
         }
         .frame(width: mapSize.width, height: mapSize.height)
     }

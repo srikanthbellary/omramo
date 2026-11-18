@@ -29,6 +29,27 @@ enum LandmarkArt {
             painter = { g in LandmarkArt.paintAsante(&g) }
         case "tokyo-skytree":
             painter = { g in LandmarkArt.paintSkytree(&g) }
+        // Round 5, batch 1 (App/Sources/Art/Landmarks/).
+        case "sydney-opera-house":
+            painter = { g in LandmarkArt.paintSydneyOperaHouse(&g) }
+        case "himeji-castle":
+            painter = { g in LandmarkArt.paintHimejiCastle(&g) }
+        case "great-wall-of-china":
+            painter = { g in LandmarkArt.paintGreatWall(&g) }
+        case "machu-picchu":
+            painter = { g in LandmarkArt.paintMachuPicchu(&g) }
+        case "hagia-sophia":
+            painter = { g in LandmarkArt.paintHagiaSophia(&g) }
+        case "saint-basils-cathedral":
+            painter = { g in LandmarkArt.paintSaintBasils(&g) }
+        case "bremen-town-hall-roland":
+            painter = { g in LandmarkArt.paintBremenRoland(&g) }
+        case "colossus-of-rhodes":
+            painter = { g in LandmarkArt.paintColossus(&g) }
+        case "statue-of-liberty":
+            painter = { g in LandmarkArt.paintStatueOfLiberty(&g) }
+        case "petra":
+            painter = { g in LandmarkArt.paintPetra(&g) }
         default:
             return false
         }

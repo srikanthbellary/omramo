@@ -33,11 +33,14 @@ struct SplashView: View {
         .accessibilityIdentifier("splash")
     }
 
-    /// The tagline in two halves for the two panes: "A magical book" | "that you read."
+    /// The tagline in two halves for the two panes: "Turn the page." | "See the world."
+    /// It is cut after its first sentence; a tagline of one sentence stays whole, on the
+    /// leading pane.
     static func taglineHalves(_ tagline: String = Brand.tagline) -> (leading: String, trailing: String) {
-        guard let cut = tagline.range(of: " that ") else { return (tagline, "") }
-        let leading = String(tagline[tagline.startIndex..<cut.lowerBound])
-        let trailing = String(tagline[cut.lowerBound...]).trimmingCharacters(in: .whitespaces)
+        guard let cut = tagline.range(of: ". ") else { return (tagline, "") }
+        let leading = String(tagline[tagline.startIndex..<cut.lowerBound]) + "."
+        let trailing = String(tagline[cut.upperBound...]).trimmingCharacters(in: .whitespaces)
+        guard !trailing.isEmpty else { return (tagline, "") }
         return (leading, trailing)
     }
 

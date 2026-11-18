@@ -1,5 +1,19 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 2,
-  "stories": ["monkey-and-crocodile", "anansi-wisdom", "urashima-taro"]
+  "catalogVersion": 3,
+  "stories": [
+    "monkey-and-crocodile",
+    "shipwrecked-sailor",
+    "tongue-cut-sparrow",
+    "old-man-who-moved-mountains",
+    "why-possums-tail-is-bare",
+    "the-snow-house",
+    "peasant-and-bear",
+    "bremen-town-musicians",
+    "north-wind-and-sun",
+    "why-sun-and-moon-live-in-sky",
+    "lion-and-hare",
+    "anansi-wisdom",
+    "urashima-taro"
+  ]
 }

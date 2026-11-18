@@ -5,7 +5,8 @@ import OmramoCore
 // Pictures for stories, cards and landmarks.
 //
 // CONCEPT ART — the pictures are drawn in code (`JatakaArt`, `AnansiArt`, `UrashimaArt`,
-// `LandmarkArt`), ported and extended from the locked design sources. They are our own work,
+// `LandmarkArt`, and from round 5 one painter a story under `Art/Stories/`, composed from the
+// shared kit in `Art/Kit/`), ported and extended from the locked design sources. They are our own work,
 // not final illustration: every `review.art` field stays `pending`.
 //
 // TODO(art): replace with commissioned illustrations (content milestone C1). When an image
@@ -61,22 +62,43 @@ enum ArtSource: Hashable {
 }
 
 enum ArtLibrary {
+    /// The art registry: the painter of each story, by story id. A story that is not here yet
+    /// (text added before its art) gets the calm stand-in for every picture; nothing crashes.
+    /// Add one line per story (docs/agent-runs/r5-batch-notes.md).
+    static func storyPainter(for storyID: String) -> ArtPainter? {
+        switch storyID {
+        // Rounds 2–4: the three prototypes.
+        case "monkey-and-crocodile": return JatakaArt.paint(_:role:in:size:)
+        case "anansi-wisdom": return AnansiArt.paint(_:role:in:size:)
+        case "urashima-taro": return UrashimaArt.paint(_:role:in:size:)
+        // Round 5, batch 1: the Low stories.
+        case "shipwrecked-sailor": return SailorArt.paint(_:role:in:size:)
+        case "tongue-cut-sparrow": return SparrowArt.paint(_:role:in:size:)
+        case "old-man-who-moved-mountains": return MountainsArt.paint(_:role:in:size:)
+        case "why-possums-tail-is-bare": return PossumArt.paint(_:role:in:size:)
+        case "the-snow-house": return SnowHouseArt.paint(_:role:in:size:)
+        case "peasant-and-bear": return PeasantBearArt.paint(_:role:in:size:)
+        case "bremen-town-musicians": return BremenArt.paint(_:role:in:size:)
+        case "north-wind-and-sun": return WindSunArt.paint(_:role:in:size:)
+        case "why-sun-and-moon-live-in-sky": return SunMoonArt.paint(_:role:in:size:)
+        case "lion-and-hare": return LionHareArt.paint(_:role:in:size:)
+        default: return nil
+        }
+    }
+
+    /// True when a painter is registered for the story.
+    static func hasPainter(for storyID: StoryID) -> Bool {
+        storyPainter(for: storyID.rawValue) != nil
+    }
+
     /// Draws `name` for `source` in the role's units. Returns false when no painter knows it.
     static func paint(_ name: String, source: ArtSource, role: ArtRole, in context: inout GraphicsContext, size: CGSize) -> Bool {
         switch source {
         case .landmark:
             return LandmarkArt.paint(name, role: role, in: &context, size: size)
         case .story(let id):
-            switch id.rawValue {
-            case "monkey-and-crocodile":
-                return JatakaArt.paint(name, role: role, in: &context, size: size)
-            case "anansi-wisdom":
-                return AnansiArt.paint(name, role: role, in: &context, size: size)
-            case "urashima-taro":
-                return UrashimaArt.paint(name, role: role, in: &context, size: size)
-            default:
-                return false
-            }
+            guard let painter = storyPainter(for: id.rawValue) else { return false }
+            return painter(name, role, &context, size)
         }
     }
 

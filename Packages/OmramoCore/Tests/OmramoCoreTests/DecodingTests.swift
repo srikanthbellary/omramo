@@ -15,7 +15,10 @@ final class DecodingTests: XCTestCase {
         let catalog = try SampleContent.repository().loadCatalog()
         XCTAssertEqual(catalog.schemaVersion, 1)
         // M2 added the Medium and Advanced prototype stories after the Low sample.
-        XCTAssertEqual(catalog.stories, [SampleContent.storyID, StoryID("anansi-wisdom"), StoryID("urashima-taro")])
+        // Round 5: the catalog grew (13 stories after batch 1); the three prototypes keep their order.
+        XCTAssertEqual(catalog.stories.first, SampleContent.storyID)
+        let prototypes = [SampleContent.storyID, StoryID("anansi-wisdom"), StoryID("urashima-taro")]
+        XCTAssertEqual(catalog.stories.filter { prototypes.contains($0) }, prototypes)
     }
 
     func testSampleStoryDecodes() throws {
@@ -107,17 +110,20 @@ final class DecodingTests: XCTestCase {
     func testLibraryLoadsAndListsTheSample() throws {
         let library = try SampleContent.repository().loadLibrary()
         // M2: three prototype stories, one per tier; the Low sample is still first.
-        XCTAssertEqual(library.stories.count, 3)
+        // Round 5: the catalog grows toward the plan's 32 stories (13 after batch 1).
+        XCTAssertEqual(library.stories.count, try SampleContent.repository().loadCatalog().stories.count)
+        XCTAssertGreaterThanOrEqual(library.stories.count, 13)
         let entry = try XCTUnwrap(library.entries.first)
         XCTAssertEqual(entry.title, "The Monkey and the Crocodile")
         XCTAssertEqual(entry.tier, .low)
         XCTAssertEqual(entry.originLabel, "Ancient India")
         XCTAssertEqual(entry.spreadCount, 14)
 
-        XCTAssertEqual(library.entries(matching: .all).count, 3)
-        XCTAssertEqual(library.entries(matching: .low).count, 1)
-        XCTAssertEqual(library.entries(matching: .medium).map(\.id), [StoryID("anansi-wisdom")])
-        XCTAssertEqual(library.entries(matching: .advanced).map(\.id), [StoryID("urashima-taro")])
+        XCTAssertEqual(library.entries(matching: .all).count, library.stories.count)
+        // Round 5, batch 1: all eleven Low stories of the plan.
+        XCTAssertEqual(library.entries(matching: .low).count, 11)
+        XCTAssertTrue(library.entries(matching: .medium).map(\.id).contains(StoryID("anansi-wisdom")))
+        XCTAssertTrue(library.entries(matching: .advanced).map(\.id).contains(StoryID("urashima-taro")))
     }
 
     // MARK: Schema version

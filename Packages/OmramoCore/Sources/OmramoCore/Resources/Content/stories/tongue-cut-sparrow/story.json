@@ -1,0 +1,1408 @@
+{
+  "schemaVersion": 1,
+  "id": "tongue-cut-sparrow",
+  "contentVersion": 1,
+  "title": "The Tongue-Cut Sparrow",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "japanese",
+    "culture": "Japanese folk tale",
+    "place": "Japan",
+    "label": "Japan",
+    "pin": {
+      "lat": 36,
+      "lon": 138
+    },
+    "pinColor": "#E8483F"
+  },
+  "setting": {
+    "period": "Old Japan, long ago",
+    "latestYear": 1600
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Japanese folk tale (Shita-kiri Suzume)",
+    "sources": [
+      {
+        "author": "Yei Theodora Ozaki",
+        "title": "Japanese Fairy Tales",
+        "year": 1908,
+        "gutenbergId": 4018,
+        "url": "https://www.gutenberg.org/ebooks/4018",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Japanese folk tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Japanese reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Japan is a country of islands, with wooded hills and bamboo groves where sparrows gather.",
+      "factCards": [
+        "bamboo-grove",
+        "himeji-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Rice is the daily food of Japan. A guest is welcomed with bows, tea and the best seat, and a polite guest takes the smaller gift.",
+      "factCards": [
+        "rice",
+        "guest"
+      ]
+    },
+    "moral": {
+      "lesson": "Kindness is returned. Greed chooses the big basket and regrets it.",
+      "reflectionQuestion": "Which basket would you have picked, and why?"
+    }
+  },
+  "moral": "Kindness comes back to you, but greed brings only trouble.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#14302B",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "An old man holds out a few grains of rice to a small brown sparrow, with green bamboo behind them.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "old-man",
+      "name": "Old Man",
+      "color": "#1F5F8B",
+      "face": {
+        "file": "art/face-old-man.png",
+        "alt": "The old man.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6E9F7",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Old Man",
+        "traits": [
+          {
+            "text": "Kind to birds",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Shares his rice",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never greedy",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "He cuts wood in the hills and shares his supper with a sparrow. When his friend is lost, he walks all day to find her.",
+        "portrait": {
+          "file": "art/char-old-man.card.heic",
+          "alt": "The old man in a blue cotton jacket, smiling, with a few grains of rice in his open hand.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#BFE3F2",
+          "#8CC7DE",
+          "#4E9CC2"
+        ]
+      }
+    },
+    {
+      "id": "sparrow",
+      "name": "Sparrow",
+      "color": "#A8501C",
+      "face": {
+        "file": "art/face-sparrow.png",
+        "alt": "The Sparrow.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sparrow",
+        "traits": [
+          {
+            "text": "Sings “Chun, chun!”",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Very polite",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Lives in the bamboo",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "She is small and brown, and she bows to everyone. She forgives quickly, and she never forgets a friend.",
+        "portrait": {
+          "file": "art/char-sparrow.card.heic",
+          "alt": "The Sparrow on a bamboo stem, bowing her head, with her wings a little open.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFE08A",
+          "#F7B85C",
+          "#E58A45"
+        ]
+      }
+    },
+    {
+      "id": "old-woman",
+      "name": "Old Woman",
+      "color": "#8E2F5A",
+      "face": {
+        "file": "art/face-old-woman.png",
+        "alt": "The old woman.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F6DCE7"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "bamboo-grove",
+      "kind": "place",
+      "title": "Bamboo grove",
+      "line": "A wood of tall green bamboo, growing close together.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "Japan is a country of islands, with green hills and many bamboo groves. Sparrows like to gather in them."
+      },
+      "picture": {
+        "file": "art/see-bamboo-grove.heic",
+        "alt": "Tall green bamboo stems growing close together, with light coming through the leaves.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F5A3C"
+    },
+    {
+      "id": "rice",
+      "kind": "object",
+      "title": "Bowl of rice",
+      "line": "Small white grains, cooked soft and eaten from a bowl.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "In Japan, people eat rice at almost every meal. It grows in fields full of water."
+      },
+      "picture": {
+        "file": "art/see-rice.heic",
+        "alt": "A plain bowl of white rice with a pair of wooden chopsticks beside it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#7A3B2E"
+    },
+    {
+      "id": "himeji-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "himeji-castle",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "A white heron has wide white wings. Long after this story, people in Japan built a castle that looks like one."
+        }
+      },
+      "background": "#1B3A5C"
+    },
+    {
+      "id": "guest",
+      "kind": "idea",
+      "title": "A guest",
+      "line": "A guest is someone who comes to visit your home.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "In Japan, a guest gets the best seat and a cup of tea. People bow to say hello and thank you."
+      },
+      "picture": {
+        "file": "art/see-guest.heic",
+        "alt": "A small tray with a teapot and one cup of green tea on a straw mat.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2E3F6E"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cottage.unfolded.heic",
+          "alt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cottage.folded.heic",
+          "alt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFF0",
+          "#FFF1C4",
+          "#7FB069"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "An old man and his wife lived below the green hills.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Their house had a thick straw roof. Behind it a "
+            },
+            {
+              "t": "bamboo grove",
+              "tap": "bamboo-grove"
+            },
+            {
+              "t": " whispered in the wind."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The "
+            },
+            {
+              "t": "old man",
+              "name": "old-man"
+            },
+            {
+              "t": " had a small friend, a brown "
+            },
+            {
+              "t": "Sparrow",
+              "name": "sparrow"
+            },
+            {
+              "t": ". Every morning she hopped along the porch to meet him."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Chun, chun!”",
+              "say": "sparrow",
+              "chip": true
+            },
+            {
+              "t": " she sang. "
+            },
+            {
+              "t": "“Good morning!”",
+              "say": "sparrow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cottage.unfolded.heic",
+          "alt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cottage.folded.heic",
+          "alt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFF0",
+          "#FFF1C4",
+          "#7FB069"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every evening the old man came home from the hills with firewood on his back."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He sat down with his bowl of "
+            },
+            {
+              "t": "rice",
+              "tap": "rice"
+            },
+            {
+              "t": ". He took one bite. Then he put a few grains in his hand."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“One for me,”",
+              "say": "old-man",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“and one for you, little friend.”",
+              "say": "old-man"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sparrow ate from his hand, grain by grain by grain."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cottage.unfolded.heic",
+          "alt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cottage.folded.heic",
+          "alt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFF0",
+          "#FFF1C4",
+          "#7FB069"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One day the old man went up the hill to cut wood. It was washing day."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His wife, the "
+            },
+            {
+              "t": "old woman",
+              "name": "old-woman"
+            },
+            {
+              "t": ", had a heap of clothes to wash. Her back ached. Her hands were sore."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She had cooked a bowl of rice paste to make the clothes smooth and stiff. But when she reached for it, the bowl was empty."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cottage.unfolded.heic",
+          "alt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cottage.folded.heic",
+          "alt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFF0",
+          "#FFF1C4",
+          "#7FB069"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Down hopped the Sparrow and bowed her little head."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I ate it,”",
+              "say": "sparrow",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“I thought it was my breakfast. I am sorry.”",
+              "say": "sparrow"
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the old woman was too tired and too cross to listen. "
+            },
+            {
+              "t": "Snip!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " went her scissors, and nipped the tip of the Sparrow’s tongue."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Shoo!”",
+              "say": "old-woman",
+              "chip": true
+            },
+            {
+              "t": " she cried. "
+            },
+            {
+              "t": "“Be off!”",
+              "say": "old-woman"
+            },
+            {
+              "t": " And the Sparrow flew away over the bamboo."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cottage.unfolded.heic",
+          "alt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cottage.folded.heic",
+          "alt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFF0",
+          "#FFF1C4",
+          "#7FB069"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That evening the porch was quiet. No hop, no song, no small brown friend."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Where is my Sparrow?”",
+              "say": "old-man",
+              "chip": true
+            },
+            {
+              "t": " asked the old man."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“She ate my paste, so I chased her away,”",
+              "say": "old-woman",
+              "chip": true
+            },
+            {
+              "t": " said the old woman, banging the pots."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old man could not eat his rice. At first light he tied on his sandals and went to find her."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-bamboo.unfolded.heic",
+          "alt": "An old man in straw sandals walks through a tall green bamboo grove. A white heron stands in a clear stream.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-bamboo.folded.heic",
+          "alt": "An old man walks among tall bamboo, calling, beside a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8F2E4",
+          "#FFF4C2",
+          "#4E9A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The bamboo stood tall and green on every side. A clear, cold stream ran over the stones."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A "
+            },
+            {
+              "t": "white heron",
+              "tap": "himeji-moment"
+            },
+            {
+              "t": " stood in the water, as still as a post."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Sparrow, Sparrow, where is your home?”",
+              "say": "old-man",
+              "chip": true
+            },
+            {
+              "t": " called the old man."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The heron only blinked. The bamboo only creaked."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-bamboo.unfolded.heic",
+          "alt": "An old man in straw sandals walks through a tall green bamboo grove. A white heron stands in a clear stream.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-bamboo.folded.heic",
+          "alt": "An old man walks among tall bamboo, calling, beside a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8F2E4",
+          "#FFF4C2",
+          "#4E9A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He walked on, up the hill and down the hill. "
+            },
+            {
+              "t": "“Sparrow, Sparrow, where is your home?”",
+              "say": "old-man",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The sun climbed high. His legs grew tired. "
+            },
+            {
+              "t": "“Sparrow, Sparrow, where is your home?”",
+              "say": "old-man",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Chun, chun! Here I am!”",
+              "say": "sparrow",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There on a little gate sat the Sparrow. "
+            },
+            {
+              "t": "“My tongue is quite well again,”",
+              "say": "sparrow",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“Come in, dear friend!”",
+              "say": "sparrow"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sparrow-house.unfolded.heic",
+          "alt": "A little house of pale wood among the bamboo. Sparrows bow on the porch beside two woven baskets, one big and one small.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sparrow-house.folded.heic",
+          "alt": "The Sparrow bows on the porch of her little house, between a big basket and a small one.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5EEF2",
+          "#FFEFC0",
+          "#8DBB6A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Behind the gate stood a small house of pale wood."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All the Sparrow’s family came and bowed. The old man bowed back."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You are our ",
+              "say": "sparrow",
+              "chip": true
+            },
+            {
+              "t": "guest",
+              "say": "sparrow",
+              "tap": "guest"
+            },
+            {
+              "t": ",”",
+              "say": "sparrow"
+            },
+            {
+              "t": " said the Sparrow. "
+            },
+            {
+              "t": "“Sit here, in the best place.”",
+              "say": "sparrow"
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They brought him hot tea and rice cakes and sweet red beans. Then the young sparrows danced, flip, flap, flutter, and the old man laughed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sparrow-house.unfolded.heic",
+          "alt": "A little house of pale wood among the bamboo. Sparrows bow on the porch beside two woven baskets, one big and one small.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sparrow-house.folded.heic",
+          "alt": "The Sparrow bows on the porch of her little house, between a big basket and a small one.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5EEF2",
+          "#FFEFC0",
+          "#8DBB6A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When the sun dipped low, it was time to go home.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The sparrows carried in two baskets. One was big and heavy. One was small and light."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A gift for you,”",
+              "say": "sparrow",
+              "chip": true
+            },
+            {
+              "t": " said the Sparrow. "
+            },
+            {
+              "t": "“Please choose.”",
+              "say": "sparrow"
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I am old,”",
+              "say": "old-man",
+              "chip": true
+            },
+            {
+              "t": " said the old man, "
+            },
+            {
+              "t": "“and the small one is enough. Thank you, little friend.”",
+              "say": "old-man"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cottage.unfolded.heic",
+          "alt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cottage.folded.heic",
+          "alt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFF0",
+          "#FFF1C4",
+          "#7FB069"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At home the old man lifted the lid of the small basket."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Out shone gold coins, rolls of silk, and coral as red as berries."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There was a big one too?”",
+              "say": "old-woman",
+              "chip": true
+            },
+            {
+              "t": " cried the old woman. "
+            },
+            {
+              "t": "“And you left it behind? I shall fetch it myself!”",
+              "say": "old-woman"
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“We have enough,”",
+              "say": "old-man",
+              "chip": true
+            },
+            {
+              "t": " said the old man. But she was already tying on her sandals."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sparrow-house.unfolded.heic",
+          "alt": "A little house of pale wood among the bamboo. Sparrows bow on the porch beside two woven baskets, one big and one small.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sparrow-house.folded.heic",
+          "alt": "The Sparrow bows on the porch of her little house, between a big basket and a small one.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D5EEF2",
+          "#FFEFC0",
+          "#8DBB6A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old woman marched through the bamboo. Stamp, stamp, stamp."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She did not bow. She did not say good day. She did not say sorry."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“No tea for me,”",
+              "say": "old-woman",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“I have come for the big basket.”",
+              "say": "old-woman"
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then please take it,”",
+              "say": "sparrow",
+              "chip": true
+            },
+            {
+              "t": " said the Sparrow, and she bowed as politely as ever."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "An old woman bends under a very big basket on a hill road in the early evening, under a pale pink sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "An old woman carries a very big basket on her back along a hill road.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9E8F5",
+          "#FFD9B8",
+          "#B08A5A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The big basket was heavy. It bumped on her back all along the hill road."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Gold,”",
+              "say": "old-woman",
+              "chip": true
+            },
+            {
+              "t": " she puffed. "
+            },
+            {
+              "t": "“Silk. Coral. Heaps and heaps of it!”",
+              "say": "old-woman"
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The evening sky turned pale and pink. Home was still far away, and she could not wait one step more."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She sat down on the road and pulled off the lid."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "An old woman bends under a very big basket on a hill road in the early evening, under a pale pink sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "An old woman carries a very big basket on her back along a hill road.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9E8F5",
+          "#FFD9B8",
+          "#B08A5A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Buzz!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " Out flew a cloud of bees."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Plop!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " Out hopped a fat brown toad, and sat on her foot."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Under the toad there was only mud and stones. Not one coin. Not one thread of silk."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Oh, oh, oh!”",
+              "say": "old-woman",
+              "chip": true
+            },
+            {
+              "t": " cried the old woman. She ran all the way home, with the bees humming behind her."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cottage.unfolded.heic",
+          "alt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cottage.folded.heic",
+          "alt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFF0",
+          "#FFF1C4",
+          "#7FB069"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old woman tumbled in with mud on her nose."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I was cross and greedy,”",
+              "say": "old-woman",
+              "chip": true
+            },
+            {
+              "t": " she puffed, "
+            },
+            {
+              "t": "“and I am sorry. The small basket was enough.”",
+              "say": "old-woman"
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "After that, she put out rice each morning for every sparrow in the hills. The old man’s friend always came first."
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And on washing days, she made two bowls of paste. Just in case."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

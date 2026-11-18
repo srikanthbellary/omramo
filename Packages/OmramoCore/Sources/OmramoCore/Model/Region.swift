@@ -30,6 +30,23 @@ public struct GeoPoint: Codable, Hashable, Sendable {
     }
 }
 
+/// Rules for the story map now that it carries a pin for every story (round 5).
+public enum StoryMapRules {
+    /// Up to this many pins, every pin carries its label; above it only the story being read
+    /// does, or the labels would cover the map and each other.
+    public static let labelledPinLimit = 6
+
+    public static func showsLabel(isReadingNow: Bool, pinCount: Int) -> Bool {
+        isReadingNow || pinCount <= labelledPinLimit
+    }
+
+    /// True when no pin lies within `degrees` of `point` in both latitude and longitude: a
+    /// "more cultures later" ring is only drawn where no story has arrived yet.
+    public static func isClear(_ point: GeoPoint, of pins: [GeoPoint], within degrees: Double = 10) -> Bool {
+        !pins.contains { abs($0.lat - point.lat) <= degrees && abs($0.lon - point.lon) <= degrees }
+    }
+}
+
 /// Where a story is from.
 public struct Region: Codable, Hashable, Sendable {
     public var id: RegionID
