@@ -13,10 +13,21 @@ extension LandmarkArt {
         asanteSky(&context)
         asanteForest(&context)
         asanteGround(&context)
-        asanteOpenSide(&context)
-        asanteWall(&context)
-        asanteWallLight(&context)
-        asanteRoof(&context)
+        // The house is the one subject. It is built in its own full-width numbers and set down
+        // a little smaller, round the middle of its base line, so the forest and the sky show
+        // on both sides of it and nothing touches the picture's edge.
+        let houseScale: CGFloat = 0.88
+        let houseX: CGFloat = 216 * (1 - houseScale)
+        let houseY: CGFloat = 296 * (1 - houseScale)
+        Art.group(&context, x: houseX, y: houseY, scale: houseScale) { g in
+            asanteGroundShadow(&g)
+            asanteOpenSide(&g)
+            asanteWall(&g)
+            asanteWallLight(&g)
+            asanteRoof(&g)
+        }
+        // The near plane: a dark spray of forest leaves in the top-right corner.
+        cornerSpray(&context, seed: 223, dark: Art.color(0x1C1030, 0.95), lit: Art.color(0xFFC878, 0.3))
         asanteFinish(&context)
     }
 
@@ -40,10 +51,15 @@ extension LandmarkArt {
 
         Art.blurred(&context, radius: 4, opacity: 0.5) { g in
             var clouds = Path()
-            clouds.addEllipse(in: CGRect(x: 180, y: 150, width: 170, height: 8))
-            clouds.addEllipse(in: CGRect(x: 300, y: 176, width: 140, height: 7))
-            clouds.addEllipse(in: CGRect(x: 96, y: 128, width: 110, height: 6))
+            clouds.addPath(cloudBand(170, 160, width: 180, height: 10))
+            clouds.addPath(cloudBand(296, 184, width: 150, height: 8))
+            clouds.addPath(cloudBand(90, 134, width: 120, height: 7))
             Art.fill(&g, clouds, Art.color(0xE88C7A))
+            // Their undersides, nearest the low sun, glow a little.
+            var lit = Path()
+            lit.addPath(cloudBand(174, 161, width: 110, height: 4))
+            lit.addPath(cloudBand(94, 135, width: 80, height: 3))
+            Art.fill(&g, lit, Art.color(0xFFC88A, 0.7))
         }
     }
 
@@ -72,6 +88,8 @@ extension LandmarkArt {
         asanteTallTree(&context, x: 252, baseY: 230, top: 150, spread: 24, color: haze)
         let far = canopy(from: -12, to: 444, baseY: 224, height: 48, bump: 34, depth: 80, seed: 3)
         Art.fill(&context, far, haze)
+        // Atmospheric perspective: the far forest sinks into the sky's own evening gold.
+        LandmarkArt.haze(&context, top: 120, bottom: 250, hex: 0xFFC078, alpha: 0.22)
 
         let near = canopy(from: -12, to: 444, baseY: 244, height: 42, bump: 26, depth: 70, seed: 9)
         let nearStops: [(Color, CGFloat)] = [
@@ -101,8 +119,12 @@ extension LandmarkArt {
         let earth = CGRect(x: 0, y: 304, width: unitWidth, height: 70)
         ripples(&context, in: earth, count: 36, seed: 19, color: Art.color(0xFFD6A0, 0.12), width: 0.7, length: 10...46)
         ripples(&context, in: earth, count: 24, seed: 27, color: Art.color(0x2A1438, 0.16), width: 0.7, length: 10...40)
+    }
 
-        // The building's own shadow, falling away from the light.
+    /// The building's own shadow on the swept earth, falling to the right, away from the light
+    /// (drawn in the house's own numbers, under the house).
+    private static func asanteGroundShadow(_ context: inout GraphicsContext) {
+        ArtStyle.contactShadow(&context, 232, 301, 196, 7, alpha: 0.3)
         let shadow = Art.polygon([pt(40, 300), pt(398, 300), pt(436, 322), pt(96, 322)])
         let shadowStops: [(Color, CGFloat)] = [
             (ArtStyle.coolShade.opacity(0.4), 0),
@@ -405,6 +427,9 @@ extension LandmarkArt {
             fillHorizontal(&g, Art.rect(20, 80, 400, 150), evening, from: 24, to: 412)
             Art.fill(&g, Art.rect(20, 209, 400, 14), ArtStyle.coolShade.opacity(0.26))
         }
+        // The one light on the whole roof: warm on its upper-left slope, an indigo core shadow
+        // toward the lower right, and a thin warm rim along the lit edge of the thatch.
+        model(&context, roof, light: 0.18, shade: 0.2, rim: 0.6)
 
         // The ridge: a thick roll of thatch, bound at intervals.
         var ridge = Path()

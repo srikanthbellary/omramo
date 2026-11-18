@@ -127,6 +127,92 @@ enum ArtStyle {
         }
     }
 
+    // MARK: Form and depth (round 4)
+
+    /// Models any flat shape with the one light: a warm rim on its upper-left side and an
+    /// indigo core shadow toward its lower right, both clipped to the shape. `bounds` is the
+    /// shape's rough bounding box. Call it straight after filling the shape.
+    static func form(
+        _ context: inout GraphicsContext,
+        _ shape: Path,
+        bounds: CGRect,
+        light: Double = 0.28,
+        shade: Double = 0.22
+    ) {
+        guard bounds.width > 0, bounds.height > 0 else { return }
+        let reach = max(bounds.width, bounds.height)
+        Art.clipped(&context, to: shape) { inner in
+            if shade > 0 {
+                let from = CGPoint(x: bounds.midX, y: bounds.midY)
+                let to = CGPoint(x: bounds.maxX, y: bounds.maxY)
+                Art.fillLinear(
+                    &inner,
+                    Path(bounds),
+                    [(coolShade.opacity(0), 0), (coolShade.opacity(shade * 0.5), 0.55), (coolShade.opacity(shade), 1)],
+                    from: from,
+                    to: to
+                )
+            }
+            if light > 0 {
+                let center = CGPoint(x: bounds.minX + bounds.width * 0.18, y: bounds.minY + bounds.height * 0.12)
+                Art.fillRadial(
+                    &inner,
+                    Path(bounds),
+                    [(warmLight.opacity(light), 0), (warmLight.opacity(light * 0.35), 0.5), (warmLight.opacity(0), 1)],
+                    center: center,
+                    radius: reach * 0.75
+                )
+            }
+        }
+    }
+
+    /// A thin warm edge of light along the upper-left contour of a shape: the shape's own
+    /// outline stroked in the key light, kept only inside the shape and only on the lit side.
+    static func rimEdge(
+        _ context: inout GraphicsContext,
+        _ shape: Path,
+        bounds: CGRect,
+        width: CGFloat = 3,
+        alpha: Double = 0.5
+    ) {
+        guard bounds.width > 0, bounds.height > 0 else { return }
+        Art.clipped(&context, to: shape) { inner in
+            // Only the upper-left half is lit: mask the stroke with a diagonal gradient.
+            var lit = inner
+            lit.clipToLayer { mask in
+                Art.fillLinear(
+                    &mask,
+                    Path(bounds.insetBy(dx: -width * 2, dy: -width * 2)),
+                    [(Color.white, 0), (Color.white.opacity(0.5), 0.4), (Color.white.opacity(0), 0.62)],
+                    from: CGPoint(x: bounds.minX, y: bounds.minY),
+                    to: CGPoint(x: bounds.maxX, y: bounds.maxY)
+                )
+            }
+            Art.stroke(&lit, shape, warmLight.opacity(alpha), width: width * 2)
+        }
+    }
+
+    /// Atmospheric perspective: a veil of the sky's own colour over everything drawn so far
+    /// between `top` and `bottom`. Draw the far plane, veil it, then draw the middle plane, so
+    /// distance reads as paler and closer in value to the sky.
+    static func atmosphere(
+        _ context: inout GraphicsContext,
+        width: CGFloat,
+        top: CGFloat,
+        bottom: CGFloat,
+        color: Color,
+        alpha: Double = 0.35
+    ) {
+        guard bottom > top else { return }
+        Art.fillLinear(
+            &context,
+            Art.rect(0, top, width, bottom - top),
+            [(color.opacity(alpha * 0.4), 0), (color.opacity(alpha), 0.7), (color.opacity(alpha * 0.6), 1)],
+            from: CGPoint(x: 0, y: top),
+            to: CGPoint(x: 0, y: bottom)
+        )
+    }
+
     /// The shared stipple ("paint tooth") for large flat areas: the same density and dot size
     /// in every story. About one dot for every 260 square units, capped.
     static func tooth(

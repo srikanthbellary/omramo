@@ -26,7 +26,8 @@ extension EnvironmentValues {
         set { self[PaneLayoutKey.self] = newValue }
     }
 
-    /// The window's safe-area insets (zero in simulated-Duo mode). Set by `PaneLayoutReader`.
+    /// The window's safe-area insets (zero on the letterboxed reference canvas). Set by
+    /// `PaneLayoutReader`.
     var windowSafeArea: EdgeInsets {
         get { self[WindowSafeAreaKey.self] }
         set { self[WindowSafeAreaKey.self] = newValue }
@@ -111,9 +112,10 @@ struct PaneLayoutReader<Content: View>: View {
 
     var body: some View {
         GeometryReader { proxy in
-            let layout = resolver.resolve(provider.input(for: proxy.size))
-            // The simulated canvas is a picture of a device: it has no real safe area.
-            let safeArea = layout.source == .simulated ? EdgeInsets() : proxy.safeAreaInsets
+            let layout = resolver.resolve(PaneLayoutProviders.input(from: provider, size: proxy.size, safeArea: proxy.safeAreaInsets))
+            // The letterboxed reference canvas is a picture of a device: it has no real safe
+            // area. A simulation that fills the window is laid out on the real screen.
+            let safeArea = PaneLayoutProviders.isLetterboxed(layout, in: proxy.size) ? EdgeInsets() : proxy.safeAreaInsets
             content()
                 .environment(\.paneLayout, layout)
                 .environment(\.windowSafeArea, safeArea)
@@ -124,6 +126,23 @@ struct PaneLayoutReader<Content: View>: View {
         // the 432 × 720 pane includes the status-bar and home-indicator areas.
         .ignoresSafeArea()
         .background(Color.black.ignoresSafeArea())
+    }
+}
+
+extension PaneLayoutProviders {
+    /// The provider's facts, plus the window's side insets (used only by a simulation that
+    /// fills the window: its panes start inside the Dynamic Island and the rounded corners).
+    static func input(from provider: any PaneLayoutProvider, size: CGSize, safeArea: EdgeInsets) -> PaneLayoutInput {
+        var input = provider.input(for: size)
+        input.safeAreaLeading = Double(safeArea.leading)
+        input.safeAreaTrailing = Double(safeArea.trailing)
+        return input
+    }
+
+    /// True when a simulated layout is drawn smaller than the window, as a picture of a device.
+    static func isLetterboxed(_ layout: PaneLayout, in size: CGSize) -> Bool {
+        guard layout.source == .simulated else { return false }
+        return abs(layout.canvas.width - Double(size.width)) > 0.5 || abs(layout.canvas.height - Double(size.height)) > 0.5
     }
 }
 
@@ -200,9 +219,13 @@ struct TwoPane<Backdrop: View, Leading: View, Trailing: View, Folded: View>: Vie
         case .single:
             return safeArea
         case .leading:
-            return EdgeInsets(top: safeArea.top, leading: safeArea.leading, bottom: safeArea.bottom, trailing: 0)
+            // A pane that already starts inside the window's side inset has none of its own.
+            let leading = max(0, safeArea.leading - CGFloat(layout.leading.x))
+            return EdgeInsets(top: safeArea.top, leading: leading, bottom: safeArea.bottom, trailing: 0)
         case .trailing:
-            return EdgeInsets(top: safeArea.top, leading: 0, bottom: safeArea.bottom, trailing: safeArea.trailing)
+            let end = CGFloat(layout.trailing?.maxX ?? layout.canvas.maxX)
+            let trailing = max(0, safeArea.trailing - max(0, CGFloat(layout.canvas.maxX) - end))
+            return EdgeInsets(top: safeArea.top, leading: 0, bottom: safeArea.bottom, trailing: trailing)
         }
     }
 }

@@ -26,20 +26,35 @@ struct OmramoApp: App {
 struct RootView: View {
     @Environment(AppEnvironment.self) private var appEnvironment
     @Environment(AppRouter.self) private var router
+    /// The splash is on screen (round 4). Decided once, at launch.
+    @State private var showsSplash = SplashView.plan().shows
 
     var body: some View {
         PaneLayoutReader(provider: appEnvironment.layoutProvider) {
-            switch appEnvironment.library {
-            case .idle, .loading:
-                // TODO(M6): designed loading state (gap G10) and the splash (screen 01).
-                AuroraBackdrop(aurora: .light)
-            case .failed(let message):
-                ContentFailureView(message: message)
-            case .loaded(let library):
-                RootScreens(library: library)
+            ZStack {
+                switch appEnvironment.library {
+                case .idle, .loading:
+                    // TODO(M6): designed loading state (gap G10). The content is small and
+                    // loads at launch, under the splash, so this is not seen today.
+                    AuroraBackdrop(aurora: .light)
+                case .failed(let message):
+                    ContentFailureView(message: message)
+                case .loaded(let library):
+                    RootScreens(library: library)
+                }
+
+                if showsSplash {
+                    // Screen 01: brief and calm, then a cross-fade to whatever is underneath.
+                    SplashView()
+                        .transition(.opacity)
+                        .zIndex(10)
+                }
             }
         }
         .statusBarHidden(false)
+        .task {
+            await dismissSplash()
+        }
         #if DEBUG
         .task {
             await DebugLaunch.applyRequestedOrientation()
@@ -47,6 +62,15 @@ struct RootView: View {
         #endif
     }
 
+    /// Holds the splash for `Motion.splashHold`, then fades it out. It never waits for
+    /// anything else, so it cannot keep a child from the library for longer than that.
+    private func dismissSplash() async {
+        guard showsSplash, !SplashView.plan().holds else { return }
+        try? await Task.sleep(for: .milliseconds(Int(Motion.splashHold * 1000)))
+        withAnimation(Motion.splash) {
+            showsSplash = false
+        }
+    }
 }
 
 /// The library, and the reader over it when a story is open.
@@ -72,6 +96,7 @@ private struct RootScreens: View {
             if case .reader(let storyID) = router.route, let story = library.story(id: storyID) {
                 ReaderScreen(
                     story: story,
+                    stories: library.stories,
                     landmarks: library.landmarks,
                     progress: appEnvironment.progress,
                     memory: appEnvironment.memory,
@@ -126,7 +151,8 @@ extension DebugLaunch {
     @MainActor
     static func applyRequestedOrientation() async {
         let mask: UIInterfaceOrientationMask
-        switch orientation() {
+        let isPhone = UIDevice.current.userInterfaceIdiom == .phone
+        switch requestedOrientation(isPhone: isPhone) {
         case "landscape": mask = .landscape
         case "portrait": mask = .portrait
         default: return

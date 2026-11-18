@@ -210,6 +210,27 @@ extension JatakaArt {
         return result
     }
 
+    /// Blobs scaled by `k` about the point (`ax`, `ay`): a canopy that grows or shrinks with
+    /// the window while it stays hung on its corner.
+    static func scaled(_ blobs: [Blob], by k: CGFloat, aboutX ax: CGFloat, aboutY ay: CGFloat = 0) -> [Blob] {
+        var result: [Blob] = []
+        for blob in blobs {
+            let moved: Blob = (ax + (blob.0 - ax) * k, ay + (blob.1 - ay) * k, blob.2 * k)
+            result.append(moved)
+        }
+        return result
+    }
+
+    /// Blobs with their heights multiplied by `ky` (a crown lifted for a short window).
+    static func lifted(_ blobs: [Blob], by ky: CGFloat) -> [Blob] {
+        var result: [Blob] = []
+        for blob in blobs {
+            let moved: Blob = (blob.0, blob.1 * ky, blob.2)
+            result.append(moved)
+        }
+        return result
+    }
+
     /// One big leaf with a midrib, for close-up pictures.
     static func bigLeaf(
         _ context: inout GraphicsContext,
@@ -478,7 +499,8 @@ extension JatakaArt {
             let a = rnd(&random) * 6.28
             let d = rnd(&random) * 17 * s
             let cx = x + cos(a) * d
-            let cy = y - 34 * s + sin(a) * d * 0.7 + 3
+            let rise: CGFloat = sin(a) * d * 0.7
+            let cy: CGFloat = y - 34 * s + rise + 3
             let fruit = CGRect(x: cx - 2.6 * s, y: cy - 3.3 * s, width: 5.2 * s, height: 6.6 * s)
             if rnd(&random) > 0.4 {
                 gold.addEllipse(in: fruit)
@@ -486,9 +508,23 @@ extension JatakaArt {
                 orange.addEllipse(in: fruit)
             }
         }
+        ArtStyle.contactShadow(&context, x + 3 * s, y, 13 * s, 2.6 * s, alpha: 0.2)
         Art.fill(&context, placed("M-2,0 q1,-12 -1,-22 l5,0 q-1,10 2,22Z", x: x, y: y, scale: s), trunk)
-        Art.fill(&context, Art.ellipse(x, y - 34 * s, 22 * s, 17 * s), crown)
-        Art.fill(&context, Art.ellipse(x - 6 * s, y - 39 * s, 13 * s, 9 * s), crownLight.opacity(0.9))
+        // The crown: three overlapping clumps instead of one ellipse, lit from the upper left.
+        var crownShape = Path()
+        crownShape.addEllipse(in: CGRect(x: x - 22 * s, y: y - 49 * s, width: 34 * s, height: 30 * s))
+        crownShape.addEllipse(in: CGRect(x: x - 6 * s, y: y - 51 * s, width: 28 * s, height: 26 * s))
+        crownShape.addEllipse(in: CGRect(x: x - 17 * s, y: y - 37 * s, width: 38 * s, height: 20 * s))
+        Art.fill(&context, crownShape, crown)
+        Art.clipped(&context, to: crownShape) { lit in
+            Art.fill(&lit, Art.ellipse(x + 10 * s, y - 24 * s, 17 * s, 11 * s), ArtStyle.coolShade.opacity(0.22))
+            Art.fill(&lit, Art.ellipse(x - 7 * s, y - 40 * s, 13 * s, 9 * s), crownLight.opacity(0.9))
+            Art.fill(&lit, Art.ellipse(x + 8 * s, y - 43 * s, 8 * s, 5 * s), crownLight.opacity(0.5))
+        }
+        var rim = Path()
+        rim.move(to: CGPoint(x: x - 21 * s, y: y - 33 * s))
+        rim.addQuadCurve(to: CGPoint(x: x - 4 * s, y: y - 49 * s), control: CGPoint(x: x - 20 * s, y: y - 48 * s))
+        Art.stroke(&context, rim, ArtStyle.warmLight.opacity(0.55), width: max(0.8, 1.5 * s))
         Art.fill(&context, gold, Art.color(0xFFB62E))
         Art.fill(&context, orange, Art.color(0xFF8A3D))
     }
@@ -502,29 +538,43 @@ extension JatakaArt {
         scale: CGFloat,
         withPalm: Bool = true,
         rich: Bool = false,
-        dusk: Bool = false
+        dusk: Bool = false,
+        haze: Double = 0
     ) {
         let sand = dusk ? Art.color(0xE9BE9A) : Art.color(0xE9D58A)
+        let sandLight = dusk ? Art.color(0xFFE0C0) : Art.color(0xFFF3C0)
         let grass = dusk ? Art.color(0x5F9A78) : Art.color(0x5DBB63)
+        let grassLight = dusk ? Art.color(0xA9C88A) : Art.color(0x9BDD72)
         let crown = dusk ? Art.color(0x2A6E66) : Art.color(0x1E8A63)
         let crownLight = dusk ? Art.color(0x6FAE7C) : Art.color(0x3DB877)
         let shade = dusk ? Art.color(0x4A3F78, 0.35) : Art.color(0x0E7C86, 0.35)
         let palmColor = dusk ? Art.color(0x2A5F66) : Art.color(0x1C7A5E)
-        Art.group(&context, x: x, y: y, scale: scale) { g in
-            Art.fill(&g, Art.ellipse(118, 34, 112, 9), shade)
-            Art.fill(&g, Art.svg("M10,30 C40,8 90,2 130,4 C176,6 210,16 226,30Z"), sand)
-            Art.fill(&g, Art.svg("M26,24 C56,6 100,1 134,4 C170,6 196,14 210,24Z"), grass)
-            mangoTree(&g, 70, 12, 0.95, seed: 2, crown: crown, crownLight: crownLight)
-            mangoTree(&g, 118, 8, 1.2, seed: 5, crown: crown, crownLight: crownLight)
-            mangoTree(&g, 166, 13, 0.9, seed: 7, crown: crown, crownLight: crownLight)
-            if withPalm {
-                palm(&g, 196, 16, 0.7, lean: 8, color: palmColor)
-            }
-            if rich {
-                mangoTree(&g, 44, 20, 0.66, seed: 11, crown: crown, crownLight: crownLight)
-                mangoTree(&g, 94, 19, 0.78, seed: 13, crown: crown, crownLight: crownLight)
-                mangoTree(&g, 142, 20, 0.82, seed: 17, crown: crown, crownLight: crownLight)
-                mangoTree(&g, 188, 22, 0.62, seed: 19, crown: crown, crownLight: crownLight)
+        // Drawn as one layer, so a far island can sink a little into the air (`haze`).
+        let clear = min(1, max(0.3, 1 - haze))
+        Art.layer(&context, opacity: clear) { layer in
+            Art.group(&layer, x: x, y: y, scale: scale) { g in
+                Art.fill(&g, Art.ellipse(118, 34, 112, 9), shade)
+                // Its reflection, broken by the water.
+                Art.fill(&g, Art.svg("M22,36 C70,48 168,48 214,36 C168,41 70,41 22,36Z"), crown.opacity(0.3))
+                let sandShape = Art.svg("M10,30 C40,8 90,2 130,4 C176,6 210,16 226,30Z")
+                Art.fill(&g, sandShape, sand)
+                let grassShape = Art.svg("M26,24 C56,6 100,1 134,4 C170,6 196,14 210,24Z")
+                Art.fill(&g, grassShape, grass)
+                ArtStyle.form(&g, grassShape, bounds: CGRect(x: 26, y: 1, width: 184, height: 23), light: 0.3, shade: 0.24)
+                Art.stroke(&g, Art.svg("M34,21 C60,7 100,3 132,5.5"), grassLight.opacity(0.7), width: ArtStyle.detailLine)
+                Art.stroke(&g, Art.svg("M13,29.4 C20,24 26,20 32,17"), sandLight.opacity(0.8), width: ArtStyle.detailLine)
+                mangoTree(&g, 70, 12, 0.95, seed: 2, crown: crown, crownLight: crownLight)
+                mangoTree(&g, 118, 8, 1.2, seed: 5, crown: crown, crownLight: crownLight)
+                mangoTree(&g, 166, 13, 0.9, seed: 7, crown: crown, crownLight: crownLight)
+                if withPalm {
+                    palm(&g, 196, 16, 0.7, lean: 8, color: palmColor)
+                }
+                if rich {
+                    mangoTree(&g, 44, 20, 0.66, seed: 11, crown: crown, crownLight: crownLight)
+                    mangoTree(&g, 94, 19, 0.78, seed: 13, crown: crown, crownLight: crownLight)
+                    mangoTree(&g, 142, 20, 0.82, seed: 17, crown: crown, crownLight: crownLight)
+                    mangoTree(&g, 188, 22, 0.62, seed: 19, crown: crown, crownLight: crownLight)
+                }
             }
         }
     }
@@ -561,10 +611,12 @@ extension JatakaArt {
         sunRadius: CGFloat,
         hillScale: CGFloat,
         palms: [CGFloat],
-        ripples rippleCount: Int
+        ripples rippleCount: Int,
+        palmScale: CGFloat = 1
     ) {
         let w = size.width
         let h = size.height
+        let hs = hillScale
         Art.fillLinear(&context, Art.rect(0, 0, w, h), mood.sky, from: CGPoint(x: 0, y: 0), to: CGPoint(x: 0, y: H))
 
         let glowRadius = sunRadius * 4.5
@@ -585,21 +637,51 @@ extension JatakaArt {
         ArtStyle.horizonGlow(&context, width: w, y: H, rise: bandRise, color: bandColor, alpha: 0.5)
         Art.fill(&context, Art.circle(sunX, H - 30, sunRadius), mood.sun)
 
-        let far = hills(width: w, y: H - 22 * hillScale, amp: 26 * hillScale, seed: 4, bottom: H + 8)
+        let skyTop = max(0, H - 170)
+        ArtStyle.tooth(&context, in: CGRect(x: 0, y: skyTop, width: w, height: H - skyTop), seed: 78, alpha: 0.05)
+
+        // The far plane: a pale farthest range, the far hills, then a veil of the sky's own
+        // colour so distance reads paler than the middle ground.
+        let farthest = hills(width: w, y: H - 38 * hs, amp: 30 * hs, seed: 23, bottom: H + 8, step: 10)
+        Art.fill(&context, farthest, mood.hillFar.opacity(0.5))
+        let far = hills(width: w, y: H - 22 * hs, amp: 26 * hs, seed: 4, bottom: H + 8)
         Art.fill(&context, far, mood.hillFar)
-        let middle = hills(width: w, y: H - 8 * hillScale, amp: 16 * hillScale, seed: 9, bottom: H + 8)
+        let veil = mood.isDusk ? Art.color(0xFBDCC2) : Art.color(0xF6FBD9)
+        ArtStyle.atmosphere(&context, width: w, top: H - 84 * hs, bottom: H + 8, color: veil, alpha: 0.3)
+        let middle = hills(width: w, y: H - 8 * hs, amp: 16 * hs, seed: 9, bottom: H + 8)
         Art.fill(&context, middle, mood.hillMid)
+        // Morning light catching the tops of the middle hills.
+        let crest: [(Color, CGFloat)] = [(mood.glowCore.opacity(0.28), 0), (mood.glowCore.opacity(0), 1)]
+        Art.clipped(&context, to: middle) { lit in
+            Art.fillLinear(
+                &lit,
+                Art.rect(0, H - 26 * hs, w, 22 * hs),
+                crest,
+                from: CGPoint(x: 0, y: H - 26 * hs),
+                to: CGPoint(x: 0, y: H - 4 * hs)
+            )
+        }
         for (i, x) in palms.enumerated() {
-            let s = 0.5 + CGFloat(i % 3) * 0.12
+            let s = (0.5 + CGFloat(i % 3) * 0.12) * palmScale
             let lean: CGFloat = i % 2 == 1 ? 5 : -4
             palm(&context, x, H - 2, s, lean: lean, color: mood.hillNear, trunk: mood.palmTrunk)
         }
-        let near = hills(width: w, y: H + 2, amp: 7 * hillScale, seed: 15, bottom: H + 8, step: 5)
+        let near = hills(width: w, y: H + 2, amp: 7 * hs, seed: 15, bottom: H + 8, step: 5)
         Art.fill(&context, near, mood.hillNear)
 
         let depth = max(1, h - H)
         Art.fillLinear(&context, Art.rect(0, H, w, depth), mood.water, from: CGPoint(x: 0, y: H), to: CGPoint(x: 0, y: h))
         Art.fill(&context, Art.rect(0, H, w, 9), mood.waterEdge.opacity(0.35))
+        // The far shore mirrored in the first stretch of water.
+        let mirrorDepth = min(depth, 30 * hs)
+        let mirror: [(Color, CGFloat)] = [(mood.hillNear.opacity(0.26), 0), (mood.hillNear.opacity(0), 1)]
+        Art.fillLinear(
+            &context,
+            Art.rect(0, H + 9, w, mirrorDepth),
+            mirror,
+            from: CGPoint(x: 0, y: H + 9),
+            to: CGPoint(x: 0, y: H + 9 + mirrorDepth)
+        )
         // The same warm light, lying on the first stretch of water under the horizon.
         let reflection: [(Color, CGFloat)] = [(bandColor.opacity(0.22), 0), (bandColor.opacity(0), 1)]
         let reflectionDepth = min(depth, 34)
@@ -641,6 +723,8 @@ extension JatakaArt {
         let duskStops: [(Color, CGFloat)] = [
             (Art.color(0xA9BF74), 0), (Art.color(0x4F8C68), 0.3), (Art.color(0x245660), 1),
         ]
+        // The bank's own shade on the water at its foot.
+        ArtStyle.contactShadow(&context, 770, H + 74, 170, 16, alpha: 0.3)
         Art.fillLinear(
             &context,
             turf,
@@ -648,6 +732,12 @@ extension JatakaArt {
             from: CGPoint(x: 0, y: H - 114),
             to: CGPoint(x: 0, y: H + 66)
         )
+        let turfBounds = CGRect(x: 628, y: H - 114, width: 264, height: 180)
+        ArtStyle.form(&context, turf, bounds: turfBounds, light: 0.26, shade: 0.22)
+        ArtStyle.rimEdge(&context, turf, bounds: turfBounds, width: 2.4, alpha: 0.4)
+        Art.clipped(&context, to: turf) { g in
+            ArtStyle.tooth(&g, in: turfBounds, seed: 43, color: Art.color(0xD6F08C), alpha: 0.12)
+        }
         let earth = Art.svg(
             "M650,606 C640,616 660,628 700,634 C760,644 800,640 892,650 L892,668 C800,660 750,660 694,646 C650,638 628,622 650,606Z"
         ).applying(shift)
@@ -742,10 +832,17 @@ extension JatakaArt {
         baseY: CGFloat,
         palette: [Color],
         fruit: Bool,
-        dusk: Bool
+        dusk: Bool,
+        girth: CGFloat = 1,
+        crownLift: CGFloat = 1
     ) {
-        let top: CGFloat = 150
+        // `crownLift` below 1 raises the crown toward the top edge, for a short picture.
+        let top: CGFloat = 150 * crownLift
         let span = max(40, baseY - top)
+        // `girth` thickens the trunk about the trailing edge, for tall windows.
+        func pt(_ x: CGFloat, _ y: CGFloat) -> CGPoint {
+            CGPoint(x: 892 - (892 - x) * girth, y: y)
+        }
         var trunk = Path()
         trunk.move(to: pt(784, baseY))
         trunk.addCurve(to: pt(790, top), control1: pt(812, baseY - span * 0.35), control2: pt(768, top + span * 0.35))
@@ -753,6 +850,8 @@ extension JatakaArt {
         trunk.addCurve(to: pt(874, baseY + 6), control1: pt(818, top + span * 0.35), control2: pt(854, baseY - span * 0.35))
         trunk.addCurve(to: pt(784, baseY), control1: pt(846, baseY + 3), control2: pt(812, baseY + 5))
         trunk.closeSubpath()
+        let trunkLeft: CGFloat = 892 - 124 * girth
+        let trunkBounds = CGRect(x: trunkLeft, y: top, width: 892 - trunkLeft, height: span + 8)
         let morningStops: [(Color, CGFloat)] = [
             (Art.color(0xCFA57C), 0), (Art.color(0x9A6E52), 0.42), (Art.color(0x5E4038), 1),
         ]
@@ -761,16 +860,46 @@ extension JatakaArt {
         ]
         let stops = dusk ? duskStops : morningStops
 
+        let designed: [Blob] = [
+            (850, 50, 90), (735, 44, 72), (640, 66, 54), (880, 165, 62), (775, 140, 58),
+            (690, 150, 38), (585, 48, 34), (835, 238, 34), (600, 110, 24),
+        ]
+        let base = lifted(designed, by: crownLift)
+        if !dusk {
+            // A hazy back layer under the crown's lower edge: the far side of the tree.
+            var backBlobs: [Blob] = []
+            for blob in base where blob.1 > 90 * crownLift {
+                let back: Blob = (blob.0 - 14, blob.1 + 14, blob.2 * 0.9)
+                backBlobs.append(back)
+            }
+            canopy(&context, backBlobs, seed: 16, palette: hazyGreens, density: 0.4)
+        }
+
         // Two limbs that reach up into the crown.
         let forkY = min(top + span * 0.34, 330)
         var limbs = Path()
         limbs.move(to: pt(800, forkY))
-        limbs.addCurve(to: pt(660, 110), control1: pt(770, forkY - 50), control2: pt(700, 170))
+        limbs.addCurve(
+            to: CGPoint(x: 660, y: 110 * crownLift),
+            control1: pt(770, forkY - 50),
+            control2: CGPoint(x: 700, y: 170 * crownLift)
+        )
         limbs.move(to: pt(806, forkY + 30))
-        limbs.addCurve(to: pt(880, 150), control1: pt(840, forkY - 10), control2: pt(872, 200))
+        limbs.addCurve(
+            to: CGPoint(x: 880, y: 150 * crownLift),
+            control1: pt(840, forkY - 10),
+            control2: CGPoint(x: 872, y: 200 * crownLift)
+        )
         Art.stroke(&context, limbs, dusk ? Art.color(0x7A5258) : Art.color(0x8A6048), width: 13)
 
-        Art.fillLinear(&context, trunk, stops, from: CGPoint(x: 776, y: 0), to: CGPoint(x: 876, y: 0))
+        ArtStyle.contactShadow(&context, 892 - 62 * girth, baseY + 6, 78 * girth, 9, alpha: 0.3)
+        Art.fillLinear(&context, trunk, stops, from: CGPoint(x: trunkLeft + 8, y: 0), to: CGPoint(x: 892 - 16 * girth, y: 0))
+        // The one light: a warm edge down the left of the trunk, shade on its right.
+        ArtStyle.form(&context, trunk, bounds: trunkBounds, light: 0.2, shade: 0.24)
+        ArtStyle.rimEdge(&context, trunk, bounds: trunkBounds, width: 3, alpha: 0.5)
+        Art.clipped(&context, to: trunk) { g in
+            ArtStyle.tooth(&g, in: trunkBounds, seed: 57, color: Art.color(0xFFE2BD), alpha: 0.1)
+        }
         // Smooth bark: a soft light edge and a few rings.
         var edge = Path()
         edge.move(to: pt(792, baseY - span * 0.06))
@@ -797,10 +926,6 @@ extension JatakaArt {
         feet.addQuadCurve(to: pt(886, baseY + 16), control: pt(876, baseY + 6))
         Art.stroke(&context, feet, dusk ? Art.color(0x6A4650) : Art.color(0x7A5442), width: 7)
 
-        let base: [Blob] = [
-            (850, 50, 90), (735, 44, 72), (640, 66, 54), (880, 165, 62), (775, 140, 58),
-            (690, 150, 38), (585, 48, 34), (835, 238, 34), (600, 110, 24),
-        ]
         let blobs = stretched(base, height: h, minX: 680)
         canopy(&context, blobs, seed: 14, palette: palette)
 
@@ -819,15 +944,48 @@ extension JatakaArt {
         }
     }
 
-    /// Dark, soft, out-of-focus leaves in the two bottom corners (the design's foreground).
-    static func cornerLeaves(_ context: inout GraphicsContext, width w: CGFloat, height h: CGFloat, color: Color) {
+    /// The near plane: dark, soft, out-of-focus leaves fanning up from the two bottom corners
+    /// (the design's foreground). `scale` grows them on a tall window. They stay in the
+    /// corners, under the chrome, and never reach the words.
+    static func cornerLeaves(
+        _ context: inout GraphicsContext,
+        width w: CGFloat,
+        height h: CGFloat,
+        color: Color,
+        scale: CGFloat = 1
+    ) {
         Art.blurred(&context, radius: 2.2, opacity: 0.95) { g in
-            let left = Art.svg("M-10,720 C-6,660 20,630 60,640 C40,668 34,700 40,720Z")
-                .applying(CGAffineTransform(translationX: 0, y: h - 720))
-            let right = Art.svg("M892,720 L892,600 C860,610 846,650 852,720Z")
-                .applying(CGAffineTransform(translationX: w - 892, y: h - 720))
-            Art.fill(&g, left, color)
-            Art.fill(&g, right, color)
+            var leaves = Path()
+            addLeaf(&leaves, -16, h + 18, 92 * scale, deg(-80))
+            addLeaf(&leaves, -12, h + 22, 80 * scale, deg(-50))
+            addLeaf(&leaves, -8, h + 24, 58 * scale, deg(-22))
+            addLeaf(&leaves, w + 14, h + 18, 98 * scale, deg(-102))
+            addLeaf(&leaves, w + 12, h + 22, 76 * scale, deg(-134))
+            addLeaf(&leaves, w + 8, h + 24, 52 * scale, deg(-160))
+            Art.fill(&g, leaves, color)
+            // A breath of the key light on the upper-left edge of each leaf group.
+            var edges = Path()
+            addLeaf(&edges, -16, h + 18, 78 * scale, deg(-84))
+            addLeaf(&edges, w + 14, h + 18, 82 * scale, deg(-106))
+            Art.fill(&g, edges, ArtStyle.warmLight.opacity(0.1))
+        }
+    }
+
+    /// The flat rock of scene-dusk with the Crocodile lying on it, pretending to be part of
+    /// it. `cx` is the middle of the rock and `waterY` its waterline; the rock is 200 units
+    /// wide at scale 1.
+    static func sleepingRock(_ context: inout GraphicsContext, cx: CGFloat, waterY: CGFloat, scale: CGFloat) {
+        let skin = youngCrocSkin()
+        Art.group(&context, x: cx - 560 * scale, y: waterY - 76 * scale, scale: scale) { g in
+            rock(&g, cx: 560, waterY: 76, width: 200, height: 40, flat: true, dusk: true)
+            let lyingFlat = Art.rect(440, -30, 240, 72)
+            Art.clipped(&g, to: lyingFlat) { c in
+                Art.group(&c, x: 650, y: 31, scale: 0.5, scaleX: -1) { body in
+                    croc(&body, skin: skin, lid: .shut, waterline: 200, waterOpacity: 0, mirrored: true)
+                }
+            }
+            Art.stroke(&g, Art.line(482, 42.5, 644, 42.5), ArtStyle.coolShade.opacity(0.3), width: ArtStyle.contourLine)
+            ArtStyle.contactShadow(&g, 566, 42, 84, 4, alpha: 0.3)
         }
     }
 }

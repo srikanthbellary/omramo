@@ -115,4 +115,50 @@ public enum PageFit {
         guard paneHeight > 0 else { return band }
         return max(designed, min(band, paneHeight * 0.56))
     }
+
+    // MARK: The folded card (round 4)
+
+    /// Share of a single pane's height the tap-to-see card takes: a partial sheet from the
+    /// bottom, so the line that was tapped stays in view above it.
+    public static let foldedCardShare: Double = 0.6
+
+    /// Height of the folded card.
+    ///
+    /// - Parameters:
+    ///   - paneHeight: the pane in points.
+    ///   - topReserved: height of the top controls' strip (their bottom edge plus a gap).
+    ///   - lineBand: the least room kept between that strip and the card for the tapped line
+    ///     (about three lines of text).
+    /// - Returns: `foldedCardShare` of the pane, less if that would leave under `lineBand`
+    ///   above the card, and never less than 45% of the pane (a card must stay a card).
+    public static func foldedCardHeight(paneHeight: Double, topReserved: Double, lineBand: Double) -> Double {
+        guard paneHeight > 0 else { return 0 }
+        let wanted = paneHeight * foldedCardShare
+        let allowed = paneHeight - max(0, topReserved) - max(0, lineBand)
+        return max(paneHeight * 0.45, min(wanted, allowed)).rounded()
+    }
+
+    /// How far the page (picture and words together) moves up while the folded card is open,
+    /// so the tapped line sits just above the card. Nothing is re-wrapped; the page slides.
+    ///
+    /// - Parameters:
+    ///   - lineTop, lineBottom: the tapped line (or its paragraph) in the pane, before moving.
+    ///   - visibleTop: the bottom of the top controls' strip.
+    ///   - cardTop: the top edge of the card.
+    ///   - margin: air kept between the line and the card, and between the line and the strip.
+    /// - Returns: 0 when the line already clears the card. Otherwise the distance that puts
+    ///   the line's bottom `margin` above the card — but never so far that the line's top
+    ///   would go under the top strip (a paragraph taller than the gap shows its first lines).
+    public static func foldedLineShift(
+        lineTop: Double,
+        lineBottom: Double,
+        visibleTop: Double,
+        cardTop: Double,
+        margin: Double
+    ) -> Double {
+        let needed = lineBottom + margin - cardTop
+        guard needed > 0 else { return 0 }
+        let room = max(0, lineTop - (visibleTop + margin))
+        return min(needed, room).rounded()
+    }
 }

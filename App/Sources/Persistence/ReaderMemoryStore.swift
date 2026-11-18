@@ -37,6 +37,19 @@ final class ReaderMemoryStore {
         save()
     }
 
+    // MARK: Sounds
+
+    /// Page-turn and card sounds. Off until someone switches them on.
+    var isSoundOn: Bool {
+        file.soundOn ?? false
+    }
+
+    func setSound(on: Bool) {
+        guard isSoundOn != on else { return }
+        file.soundOn = on
+        save()
+    }
+
     // MARK: Bookmark
 
     func bookmark(for storyID: StoryID) -> ReadingPosition? {

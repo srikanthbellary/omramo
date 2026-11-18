@@ -91,10 +91,29 @@ struct ReaderMetrics: Equatable {
             // fixed distance above the bottom edge — and above the footer chrome in any case.
             let area = spread.scene.textArea
             let chipsTop = height - bottomInset(CGFloat(Tokens.Spacing.footBottom + 3)) - CGFloat(Tokens.Size.chipHeight) * s
-            let leadingReserve = (referenceHeight - CGFloat(area?.leadingBottom ?? ReaderMetrics.defaultLeadingBottom)) * s
+            // The picture's share of the pane, bottom up (round 4). The scenes are recomposed
+            // for the pane's shape — on a tall window the horizon rises and the picture grows
+            // with the height; on a squat one (the simulated Duo on an iPhone held sideways)
+            // it shrinks — so the room kept for the picture follows the shape too:
+            // - a scene that says where its text area ends (`scene.textArea`) keeps that
+            //   share of the pane's height at any shape;
+            // - one that does not keeps the designed distance, less on a squat pane;
+            // - and on a tall pane no text runs into the lower `tallSceneShare` of the pane,
+            //   where the recomposed scene has its horizon and its subject.
+            // On the reference pane all three give the designed value.
+            let designHeight = referenceHeight * s
+            let stretch: CGFloat = designHeight > 0 ? height / designHeight : 1
+            let tallness: CGFloat = s > 0 ? min(1, max(0, extra / (ReaderMetrics.tallSceneRamp * s))) : 0
+            let sceneReserve = height * ReaderMetrics.tallSceneShare * tallness
+            func pictureReserve(_ authored: Double?, _ fallback: Double) -> CGFloat {
+                let designed = (referenceHeight - CGFloat(authored ?? fallback)) * s
+                let shaped = designed * (authored == nil ? min(1, stretch) : stretch)
+                return max(shaped, sceneReserve)
+            }
+            let leadingReserve = pictureReserve(area?.leadingBottom, ReaderMetrics.defaultLeadingBottom)
             let leadingBottom = min(height - leadingReserve, chipsTop - 12 * s)
             let pageTurnTop = height - bottomInset(CGFloat(Tokens.Spacing.pageTurnInset)) - CGFloat(Tokens.Size.pageTurn) * s
-            let trailingReserve = (referenceHeight - CGFloat(area?.trailingBottom ?? ReaderMetrics.defaultTrailingBottom)) * s
+            let trailingReserve = pictureReserve(area?.trailingBottom, ReaderMetrics.defaultTrailingBottom)
             let trailingBottom = min(height - trailingReserve, pageTurnTop - 12 * s)
             leadingCapacity = max(ReaderMetrics.minimumCapacity * s, leadingBottom - textTop)
             trailingCapacity = max(ReaderMetrics.minimumCapacity * s, trailingBottom - textTop)
@@ -129,6 +148,12 @@ struct ReaderMetrics: Equatable {
     /// chips (leading) and above the page chip and round button (trailing).
     static let defaultLeadingBottom = 648.0
     static let defaultTrailingBottom = 612.0
+    /// On a tall two-pane window (an iPad in portrait) the recomposed scenes keep about this
+    /// share of the pane's height, from the bottom, for the horizon and the subject; the
+    /// words stay above it. Reached gradually: nothing on the reference pane, all of it once
+    /// the pane is `tallSceneRamp` reference points taller than the design's.
+    static let tallSceneShare: CGFloat = 0.37
+    static let tallSceneRamp: CGFloat = 230
     /// Screen 10: picture to y 340, text from y 366.
     static let foldedPictureHeight: CGFloat = 340
     static let foldedTextGap: CGFloat = 26
@@ -274,6 +299,38 @@ struct ReaderPageLayout {
             previous = id
         }
         return total
+    }
+
+    /// Where a paragraph sits in its column on one screen, measured from the top of the column's
+    /// text: the top of its first piece and the bottom of its last (a paragraph continued
+    /// sentence by sentence counts as one). Nil when it is not on that screen or not measured.
+    func blockSpan(of blockID: BlockID, in pane: TextBlock.Pane, onScreen index: Int) -> (top: CGFloat, bottom: CGFloat)? {
+        guard let plan, index >= 0, index < plan.screenCount else { return nil }
+        let ids = pane == .leading ? plan.screens[index].leading : plan.screens[index].trailing
+        let wanted = blockID.fragmentParent
+        var total: CGFloat = 0
+        var previous: BlockID?
+        var top: CGFloat?
+        var bottom: CGFloat = 0
+        for id in ids {
+            if let previous {
+                let continues = id.isFragment && previous.isFragment && id.fragmentParent == previous.fragmentParent
+                if !continues {
+                    total += metrics.paragraphGap
+                }
+            }
+            let start = total
+            total += heights[id] ?? 0
+            if id.fragmentParent == wanted {
+                if top == nil {
+                    top = start
+                }
+                bottom = total
+            }
+            previous = id
+        }
+        guard let top else { return nil }
+        return (top, bottom)
     }
 
     /// How far below the designed top this screen's text is set (`PageFit.balancedOffset`):

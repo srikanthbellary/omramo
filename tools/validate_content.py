@@ -57,6 +57,47 @@ LANDMARK_LISTS = ("ancientSeven", "new7Wonders", "other")
 COLOR_RE = re.compile(r"^#(?:[0-9A-Fa-f]{6}|[0-9A-Fa-f]{8})$")
 
 
+MORAL_MAX_LENGTH = 120
+
+
+def moral_sentence_count(text):
+    """Mirrors MoralRule.sentenceCount in OmramoCore."""
+    marks = ".!?"
+    closers = "\"\u201d\u2019')"
+    count = 0
+    index = 0
+    ended_at_last = False
+    while index < len(text):
+        if text[index] in marks:
+            end = index + 1
+            while end < len(text) and (text[end] in marks or text[end] in closers):
+                end += 1
+            if end >= len(text):
+                count += 1
+                ended_at_last = True
+            elif text[end].isspace():
+                count += 1
+            index = end
+        else:
+            index += 1
+    return count if ended_at_last else 0
+
+
+def moral_problem(moral):
+    """Mirrors MoralRule.problem(in:) in OmramoCore. None when the moral is fine."""
+    if moral is None:
+        return "the story has no moral (one short sentence for the story-finished moment)"
+    text = moral.strip()
+    if not text:
+        return "the moral is empty"
+    if len(text) > MORAL_MAX_LENGTH:
+        return "the moral is %d characters long; keep it to %d or fewer" % (len(text), MORAL_MAX_LENGTH)
+    if moral_sentence_count(text) != 1:
+        return ("the moral must be exactly one sentence that ends with a full stop, "
+                "a question mark or an exclamation mark")
+    return None
+
+
 class Malformed(Exception):
     """The JSON does not have the shape of the schema (the Swift decoder would refuse it)."""
 
@@ -197,6 +238,7 @@ def shape_story(s):
         _need(pillar, "lesson", "str", "education." + pillar_name)
         _need(pillar, "factCards", "list", "education." + pillar_name, optional=True)
         _need(pillar, "reflectionQuestion", "str", "education." + pillar_name, optional=True)
+    _need(s, "moral", "str", "", optional=True)
 
     sample = _need(s, "sample", "obj", "")
     _need(sample, "freeSpreads", "int", "sample")
@@ -634,6 +676,11 @@ def validate_story(rep, file, story, landmarks, manuscript, art_exists=None):
             if tid not in target_ids:
                 rep.add(E, "education-fact-card-dangling", file, "education.%s.factCards[%d]" % (name, i),
                         '"%s" is not a tap target of this story' % tid)
+
+    # the one sentence shown to the child when the story is finished (Swift: MoralRule)
+    problem = moral_problem(story.get("moral"))
+    if problem:
+        rep.add(E, "moral-incomplete", file, "moral", problem)
 
     # tap targets and landmarks
     by_id = {lm["id"]: lm for lm in landmarks["landmarks"]}

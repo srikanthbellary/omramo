@@ -208,6 +208,13 @@ Known deviations allowed at M1: placeholder art; right-pane library cards incomp
 
 ## M6 — Splash, motion, accessibility, hardening
 
+> **Status after round 4 (14 Nov 2026) — the round-4 parts are uncompiled and unseen:** the splash, the
+> story-finished moment, the app icon and optional sounds are written (round 4); page-turn,
+> card and library motion were written in round 3 and have been seen on the Mac. Still open in
+> M6: the designed loading and error states, the accessibility pass on a device, the privacy
+> manifest review, the exact age rating (Q30) and release hardening. None of the *[Mac]*
+> criteria below is met until someone has looked. See `docs/BUILD.md` §6 and §7c.
+
 ### Scope
 - Splash (screen 01) with the wordmark across the hinge; folded variant.
 - Motion per `docs/DESIGN.md` §3.7 after Srikanth's review; Reduce Motion variants; haptics.

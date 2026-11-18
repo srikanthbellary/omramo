@@ -250,6 +250,81 @@ extension LandmarkArt {
         ArtStyle.horizonGlow(&wide, width: unitWidth + 48, y: y, rise: rise, color: Art.color(hex), alpha: alpha)
     }
 
+    /// Models a filled shape with the one light: warm on its upper left, indigo core shadow
+    /// toward its lower right and, when `rim` is above zero, a thin warm edge on the lit side.
+    /// Call it straight after filling the shape. The rim costs one layer: use it sparingly.
+    static func model(_ context: inout GraphicsContext, _ shape: Path, light: Double, shade: Double, rim: Double = 0) {
+        let bounds = shape.boundingRect
+        ArtStyle.form(&context, shape, bounds: bounds, light: light, shade: shade)
+        if rim > 0 {
+            ArtStyle.rimEdge(&context, shape, bounds: bounds, width: 1.2, alpha: rim)
+        }
+    }
+
+    /// A long, low evening cloud: a flat underside and a softly humped top, `width` wide and
+    /// `height` tall, starting at its left tip (`x`, `y`).
+    static func cloudBand(_ x: CGFloat, _ y: CGFloat, width w: CGFloat, height h: CGFloat) -> Path {
+        var path = Path()
+        path.move(to: pt(x, y))
+        path.addCurve(to: pt(x + w * 0.34, y - h * 0.7), control1: pt(x + w * 0.1, y - h * 0.1), control2: pt(x + w * 0.2, y - h * 0.8))
+        path.addCurve(to: pt(x + w * 0.62, y - h), control1: pt(x + w * 0.42, y - h * 0.6), control2: pt(x + w * 0.5, y - h * 1.15))
+        path.addCurve(to: pt(x + w, y), control1: pt(x + w * 0.8, y - h * 0.8), control2: pt(x + w * 0.9, y - h * 0.1))
+        path.addQuadCurve(to: pt(x, y), control: pt(x + w * 0.5, y + h * 0.35))
+        path.closeSubpath()
+        return path
+    }
+
+    /// One almond leaf growing from (`x`, `y`) along `angle` (radians).
+    static func leaf(_ x: CGFloat, _ y: CGFloat, length: CGFloat, width: CGFloat, angle: CGFloat) -> Path {
+        let dx: CGFloat = cos(angle)
+        let dy: CGFloat = sin(angle)
+        let tip = pt(x + dx * length, y + dy * length)
+        let mx: CGFloat = x + dx * length * 0.45
+        let my: CGFloat = y + dy * length * 0.45
+        var path = Path()
+        path.move(to: pt(x, y))
+        path.addQuadCurve(to: tip, control: pt(mx - dy * width, my + dx * width))
+        path.addQuadCurve(to: pt(x, y), control: pt(mx + dy * width, my - dx * width))
+        path.closeSubpath()
+        return path
+    }
+
+    /// The near plane of a garden or forest picture: a dark spray of leaves hanging in from the
+    /// top-right corner (the close button is top left), each with a sliver of the key light.
+    static func cornerSpray(_ context: inout GraphicsContext, seed: UInt32, dark: Color, lit: Color) {
+        var random = ArtRandom(seed)
+        let twigs = Art.svg("M446,-6 C420,10 396,14 368,34 M446,22 C426,30 410,40 394,62")
+        Art.stroke(&context, twigs, dark, width: ArtStyle.contourLine)
+        let anchors: [(CGFloat, CGFloat)] = [
+            (432, 2), (418, 9), (404, 14), (390, 21), (378, 28), (368, 34),
+            (436, 26), (422, 32), (410, 40), (400, 52), (394, 62),
+        ]
+        var leaves = Path()
+        var glints = Path()
+        for anchor in anchors {
+            for side in 0..<2 {
+                // One leaf hangs down, one reaches out to the left.
+                let base: CGFloat = side == 0 ? 1.9 : 2.8
+                let angle: CGFloat = base + random.next(in: -0.35...0.35)
+                let length: CGFloat = random.next(in: 14...22)
+                leaves.addPath(leaf(anchor.0, anchor.1, length: length, width: length * 0.3, angle: angle))
+                if side == 1 {
+                    glints.addPath(leaf(anchor.0 - 1, anchor.1 - 0.6, length: length * 0.8, width: length * 0.09, angle: angle + 0.1))
+                }
+            }
+        }
+        Art.fill(&context, leaves, dark)
+        Art.fill(&context, glints, lit)
+    }
+
+    /// The veil of sky colour that pushes the far plane back (art direction §3), across the
+    /// whole picture between `top` and `bottom`.
+    static func haze(_ context: inout GraphicsContext, top: CGFloat, bottom: CGFloat, hex: UInt32, alpha: Double) {
+        var wide = context
+        wide.translateBy(x: -24, y: 0)
+        ArtStyle.atmosphere(&wide, width: unitWidth + 48, top: top, bottom: bottom, color: Art.color(hex), alpha: alpha)
+    }
+
     /// The last pass of every landmark picture: the shared warm wash and soft vignette.
     static func finish(_ context: inout GraphicsContext, wash: Double, vignette: Double) {
         ArtStyle.finish(&context, CGSize(width: unitWidth, height: unitHeight), wash: wash, vignette: vignette)

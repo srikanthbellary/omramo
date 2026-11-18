@@ -155,7 +155,12 @@ Resolution order — a pure function, fully unit-tested:
 
 ### 5.4 Simulated Duo (works on a normal iPhone and in the simulator)
 
-In `unfolded` simulation the app draws the 892 × 720 reference canvas — two panes with a black 28 pt band between them — scaled to fit the available window (letterboxed), in landscape. This reproduces the screenshots in `docs/design/` on any simulator, which is how layouts are checked before hardware exists. In `folded` simulation it draws one 432 × 720 pane scaled to fit. The simulation is compiled out of Release builds.
+Three debug simulations, all through the one resolver (details and a table in `docs/BUILD.md` §4):
+- **`reference`** draws the 892 × 720 reference canvas — two panes with a black 28 pt band between them — scaled to fit the available window (letterboxed). This reproduces the screenshots in `docs/design/` on any simulator, which is how layouts are checked against the locked design before hardware exists. (Until round 4 this was what `unfolded` did.)
+- **`unfolded`** (round 4) lays the two panes over the **whole window**: the scene is full-bleed, a thin 12 pt gutter stands for the hinge, the panes start inside the window's side safe areas, and an iPhone turns to landscape. On a window squatter than the design's panes the design keeps a readable scale (`PaneLayout.minimumReferenceScale`, `isSquat`) and each screen shows less of a page.
+- **`folded`** on a window that is one pane anyway (any iPhone) is simply the real screen, edge to edge (round 3); only on a window wide enough for two panes does it draw one 432 × 720 pane scaled to fit.
+
+The simulation is compiled out of Release builds.
 
 ### 5.5 Rules every screen follows
 
@@ -212,7 +217,7 @@ Content/
 
 | Object | Fields |
 |---|---|
-| **Story** | `schemaVersion`, `id`, `contentVersion`, `title`, `subtitle?`, `tier` (`low` \| `medium` \| `advanced`), `language` (`en`), `region`, `setting`, `provenance`, `review`, `culturalReview`, `education`, `sample`, `theme`, `cover`, `parts[]`, `characters[]`, `tapTargets[]`, `spreads[]` |
+| **Story** | `schemaVersion`, `id`, `contentVersion`, `title`, `subtitle?`, `tier` (`low` \| `medium` \| `advanced`), `language` (`en`), `region`, `setting`, `provenance`, `review`, `culturalReview`, `education`, `moral` (round 4: one child-facing sentence for the story-finished moment; optional in the file, required by the validator), `sample`, `theme`, `cover`, `parts[]`, `characters[]`, `tapTargets[]`, `spreads[]` |
 | **Region** (replaces the earlier `origin`) | `id` — one of `indian` \| `egyptian` \| `japanese` \| `chinese` \| `nativeAmericanFirstNations` \| `arctic` \| `russian` \| `european` \| `african` \| `persianArabian`; `culture` (specific people or tradition, e.g. "Akan (Asante/Fante)" — required, never a continent); `place` (e.g. "Ghana, West Africa" — required); `label` (the origin chip text, e.g. "Akan · Ghana"); `pin?` { `lat`, `lon` } (optional, for the map moment and story map); `pinColor` |
 | **Setting** | `period` (free text, e.g. "Ancient India, over 2,000 years ago"); `latestYear?` (integer, negative = BCE; the latest year the story's world could be; omitted for present-day stories and set to a best estimate for "once upon a time" tales). Used only to check landmark anachronisms |
 | **Provenance** (replaces the earlier `source`) | `kind` — `publicDomainRetelling` \| `original`. For `publicDomainRetelling`: `tradition`, `sources[]` { `author`, `title`, `publisher?`, `year`, `gutenbergId?`, `url?`, `verified` (bool) } (at least one), `textBasis` (`sourceVerbatim` \| `omramoRetelling`), `rights` (free text; per-territory notes). For `original`: `credit` ("Original story written by us (Omramo)"), `premise`, `authors[]?`, `rights` |
@@ -241,6 +246,7 @@ Constraints added for region, provenance, education and landmarks:
 - `provenance.kind` is valid; a `publicDomainRetelling` has at least one source with author, title and year; an `original` has a `credit` and a `premise`.
 - `culturalReview.level: required` has a `reason`. In a release build, a required review that is not `approved` is an error (the story cannot ship); a standard review still `pending` is a warning.
 - `education.geography`, `.culture` and `.moral` each have a `lesson`; every id in `factCards[]` resolves to a tap target of this story.
+- `moral` (round 4, rule `moral-incomplete`) is present, not blank, at most 120 characters and exactly one sentence (`MoralRule` in the core; the same check in `tools/validate_content.py`).
 - Every `landmark.id` resolves in the landmark catalog. `appearance: framed` has a `framingDevice`.
 - **Anachronism rule:** if the story has `setting.latestYear` and the landmark's `built.from` is later, `appearance` must be `framed`. If the landmark's `region` differs from the story's `region.id`, `appearance` must be `framed` with kind `worldLink` or `mapMoment`. A landmark with `status: lost` or `unproven` must have `depiction: reconstruction`.
 - Warning: more than two landmark targets in one story.
@@ -475,7 +481,7 @@ Example entry (abridged). Fact-card wording is **Example (not a decision)** and 
 2. Runs versus stand-off ranges: runs are chosen because they are easy to hand-author and validate for three stories. A future authoring tool may prefer ranges; the model can load either behind `StoryDecoder`.
 3. Does a story need per-spread text colour (a scene that changes from light to dark mid-story)? The schema allows a `chrome` override per spread; a `textColor` override can be added the same way.
 4. Region filter: the ten region ids make a "by region" library filter possible, but the locked design filters by level only. Not built unless asked.
-5. Where the reflection question and the moral lesson are shown, if anywhere (PRD Q27). Until decided they are data only.
+5. Where the reflection question and the moral lesson are shown, if anywhere (PRD Q27). Until decided they are data only. Round 4, on the operator's brief, shows a **separate one-sentence `moral`** on the story-finished moment; `education.moral.lesson` (for editors and the parent view) and the reflection question are still not shown anywhere. Whether a child should be told the moral at all — or asked the question instead — remains Srikanth's call under Q27.
 6. Should a landmark's "seen" state be shared across stories (seen once, marked seen everywhere)? Assumption: seen state stays per story tap target, as for every other card.
 7. `setting.latestYear` for "once upon a time" tales is an editor's estimate; if that proves unreliable, replace it with an explicit `era` on the story and compare eras.
 8. With 32 stories the library needs the generated `index.json` of headers mentioned in §6.6, and bundling every story's art may exceed a sensible app size, which brings downloadable packs (§11) forward. Needs real art sizes to decide.

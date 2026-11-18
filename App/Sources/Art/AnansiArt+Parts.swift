@@ -37,8 +37,10 @@ extension AnansiArt {
         Art.color(0x1D1650), Art.color(0x33206C), Art.color(0x5A2E84),
         Art.color(0xA04A80), Art.color(0xF08A6A), Art.color(0xFFC98A),
     ]
+    /// The canopy of screen 04, pulled a little from teal toward the story's indigo ramp:
+    /// the two dark tones are bluer-violet, the two lit tones keep the locked sea-green.
     static let canopyPalette: [Color] = [
-        Art.color(0x10283F), Art.color(0x16385A), Art.color(0x2B6A7A), Art.color(0x8FD0B0),
+        Art.color(0x14234A), Art.color(0x1B3560), Art.color(0x2C6A7C), Art.color(0x9AD2AE),
     ]
     static let climbCanopy: [(CGFloat, CGFloat, CGFloat)] = [
         (640, 30, 120), (800, 40, 110), (500, 20, 80), (870, 120, 60),
@@ -83,6 +85,74 @@ extension AnansiArt {
         let yStart: CGFloat = a * p0.y + b * c1.y
         let yEnd: CGFloat = c * c2.y + d * p1.y
         return CGPoint(x: xStart + xEnd, y: yStart + yEnd)
+    }
+
+    /// A soft, uneven closed form (a clump of leaves, a stone, a hill): `n` points round an
+    /// ellipse, each pushed in or out a little, joined by curves. Seeded, so it never changes.
+    static func clump(
+        _ cx: CGFloat, _ cy: CGFloat, _ rx: CGFloat, _ ry: CGFloat,
+        seed: UInt32,
+        points n: Int = 11,
+        wobble: Double = 0.16
+    ) -> Path {
+        var random = ArtRandom(seed)
+        let count = max(5, n)
+        // A negative `wobble` would invert the range below, which traps at run time.
+        let reach: Double = abs(wobble)
+        var points: [CGPoint] = []
+        for i in 0..<count {
+            let a: CGFloat = CGFloat(i) / CGFloat(count) * 2 * CGFloat.pi
+            let k: CGFloat = 1 + random.next(in: -reach...reach)
+            points.append(pt(cx + cos(a) * rx * k, cy + sin(a) * ry * k))
+        }
+        var path = Path()
+        let first = points[0]
+        let last = points[count - 1]
+        path.move(to: pt((last.x + first.x) / 2, (last.y + first.y) / 2))
+        for i in 0..<count {
+            let p = points[i]
+            let q = points[(i + 1) % count]
+            path.addQuadCurve(to: pt((p.x + q.x) / 2, (p.y + q.y) / 2), control: p)
+        }
+        path.closeSubpath()
+        return path
+    }
+
+    /// A tuft of grass standing on (x, y): dark blades and one blade catching the light.
+    static func grass(_ context: inout GraphicsContext, _ x: CGFloat, _ y: CGFloat, _ s: CGFloat, seed: UInt32) {
+        var random = ArtRandom(seed)
+        var blades = Path()
+        var lit = Path()
+        for i in 0..<5 {
+            let step: CGFloat = CGFloat(i) - 2
+            let lean: CGFloat = (step * 4 + random.next(in: -2...2)) * s
+            let rise: CGFloat = (10 + random.next(in: 0...8)) * s
+            let base = pt(x + step * 1.6 * s, y)
+            let tip = pt(base.x + lean, y - rise)
+            let bend = pt(base.x + lean * 0.2, y - rise * 0.7)
+            blades.move(to: base)
+            blades.addQuadCurve(to: tip, control: bend)
+            if i == 1 {
+                lit.move(to: base)
+                lit.addQuadCurve(to: tip, control: bend)
+            }
+        }
+        Art.stroke(&context, blades, Art.color(0x120A26), width: 1.6 * s)
+        Art.stroke(&context, lit, ArtStyle.anansi.glowColor.opacity(0.3), width: 0.9 * s)
+    }
+
+    /// Canopy blobs (x, y, radius) grown by `k` about the top edge at x = `anchor`.
+    static func grown(
+        _ blobs: [(CGFloat, CGFloat, CGFloat)],
+        by k: CGFloat,
+        anchor: CGFloat
+    ) -> [(CGFloat, CGFloat, CGFloat)] {
+        var out: [(CGFloat, CGFloat, CGFloat)] = []
+        for item in blobs {
+            let x: CGFloat = anchor + (item.0 - anchor) * k
+            out.append((x, item.1 * k, item.2 * k))
+        }
+        return out
     }
 
     /// A round-capped stroke along SVG path data (arms, legs).
@@ -286,11 +356,12 @@ extension AnansiArt {
         _ context: inout GraphicsContext,
         _ x: CGFloat, _ y: CGFloat, _ h: CGFloat, _ s: CGFloat,
         _ color: Color,
-        seed: UInt32
+        seed: UInt32,
+        lit: Double = 0
     ) {
         var random = ArtRandom(seed)
         var crown = Path()
-        for _ in 0..<7 {
+        for i in 0..<7 {
             let u1: CGFloat = random.next(in: 0...1) - 0.5
             let u2: CGFloat = random.next(in: 0...1) - 0.5
             let u3: CGFloat = random.next(in: 0...1)
@@ -300,7 +371,8 @@ extension AnansiArt {
             let cy: CGFloat = crownTop + u2 * 18 * s
             let rx: CGFloat = (26 + u3 * 22) * s
             let ry: CGFloat = (9 + u4 * 8) * s
-            crown.addEllipse(in: CGRect(x: cx - rx, y: cy - ry, width: rx * 2, height: ry * 2))
+            // A clump with a slightly broken edge instead of a perfect ellipse.
+            crown.addPath(clump(cx, cy, rx, ry, seed: seed &+ UInt32(i) &* 13 &+ 5, points: 10, wobble: 0.12))
         }
 
         var trunk = Path()
@@ -318,9 +390,23 @@ extension AnansiArt {
         let y2 = y - h * 0.72
         boughs.move(to: pt(x, y2))
         boughs.addQuadCurve(to: pt(x + 34 * s, y2 - h * 0.26), control: pt(x + 18 * s, y2 - 12 * s))
+        let y3 = y - h * 0.86
+        boughs.move(to: pt(x, y3))
+        boughs.addQuadCurve(to: pt(x + 12 * s, y3 - h * 0.14), control: pt(x + 4 * s, y3 - 8 * s))
         Art.stroke(&context, boughs, color, width: 2.2 * s)
 
         Art.fill(&context, crown, color)
+        if lit > 0 {
+            // The one light: warm on the upper left of the crown, indigo under its right side.
+            let box = crown.boundingRect
+            if !box.isNull, !box.isInfinite {
+                ArtStyle.form(&context, crown, bounds: box, light: lit, shade: lit * 0.8)
+            }
+            var edge = Path()
+            edge.move(to: pt(x - 2.6 * s, y - h * 0.08))
+            edge.addCurve(to: pt(x - 1.4 * s, y - h * 0.94), control1: pt(x - 1.8 * s, y - h * 0.5), control2: pt(x - 0.9 * s, y - h * 0.8))
+            Art.stroke(&context, edge, ArtStyle.warmLight.opacity(lit * 1.2), width: max(0.8, 0.9 * s))
+        }
     }
 
     /// A tall forest trunk from the top edge down to `base`, with a small root flare.
@@ -340,13 +426,25 @@ extension AnansiArt {
         p.addCurve(to: pt(x + a, yF), control1: pt(x + a * 1.7, yF + 96), control2: pt(x + a * 1.1, yF + 60))
         p.addCurve(to: pt(x + a * 0.86, 0), control1: pt(x + a * 1.06, base * 0.6), control2: pt(x + a * 0.8, base * 0.3))
         p.closeSubpath()
-        let stops: [(Color, CGFloat)] = [(dark, 0), (dark, 0.45), (light, 1)]
+        // Lit from the upper left: the light tone on the left of the trunk, shade to the right.
+        let stops: [(Color, CGFloat)] = [(light, 0), (dark, 0.55), (dark, 1)]
         Art.fillLinear(&context, p, stops, from: pt(x - a, 0), to: pt(x + a, 0))
         if rim > 0 {
             var edge = Path()
-            edge.move(to: pt(x + a * 0.84, 6))
-            edge.addCurve(to: pt(x + a * 0.98, yF), control1: pt(x + a * 0.78, base * 0.3), control2: pt(x + a * 1.04, base * 0.6))
+            edge.move(to: pt(x - a * 0.84, 6))
+            edge.addCurve(to: pt(x - a * 0.98, yF), control1: pt(x - a * 0.78, base * 0.3), control2: pt(x - a * 1.04, base * 0.6))
             Art.stroke(&context, edge, Art.color(0xFFE9D2, rim), width: ArtStyle.detailLine)
+            var foot = Path()
+            foot.move(to: pt(x - a * 0.98, yF))
+            foot.addCurve(to: pt(x - a * 2.5, base - 2), control1: pt(x - a * 1.08, yF + 60), control2: pt(x - a * 1.66, yF + 96))
+            Art.stroke(&context, foot, Art.color(0xFFE9D2, rim * 0.5), width: ArtStyle.detailLine)
+            // Two bark lines in a darker tone of the trunk.
+            var bark = Path()
+            bark.move(to: pt(x - a * 0.2, 10))
+            bark.addQuadCurve(to: pt(x - a * 0.3, yF), control: pt(x - a * 0.05, base * 0.5))
+            bark.move(to: pt(x + a * 0.4, 4))
+            bark.addQuadCurve(to: pt(x + a * 0.46, yF + 20), control: pt(x + a * 0.52, base * 0.5))
+            Art.stroke(&context, bark, ArtStyle.coolShade.opacity(0.35), width: ArtStyle.detailLine)
         }
     }
 
@@ -522,7 +620,8 @@ extension AnansiArt {
                 let y = by + sin(an) * d * 0.62
                 let sz = 6 + random.next(in: 0...1) * 8
                 let la = random.next(in: 0...1) * 6.283
-                let litness: CGFloat = ((x - bx) - (y - by)) / br
+                // Leaves on the upper left of a clump catch the one light.
+                let litness: CGFloat = ((bx - x) - (y - by)) / br
                 let leafShape = tiltedEllipse(x, y, sz, sz * 0.42, rad(la * 57))
                 let roll = random.next(in: 0...1)
                 let pick = random.next()
@@ -543,6 +642,8 @@ extension AnansiArt {
         Art.fill(&context, mid, pal[1])
         Art.fill(&context, lit, pal[2])
         Art.fill(&context, bright, pal[3])
+        // A warm kiss of the key light on the brightest leaves.
+        Art.fill(&context, bright, ArtStyle.warmLight.opacity(0.2))
     }
 
     /// One mote of wisdom. kind 0 = web mark, 1 = four-point spark, anything else = a dot.
@@ -577,15 +678,23 @@ extension AnansiArt {
 
     // MARK: Sky and finish
 
-    /// The twilight sky. The warm band is anchored to the bottom edge (the last ~150 units);
-    /// everything above stays deep indigo to purple, whatever the height.
-    static func sky(_ context: inout GraphicsContext, _ w: CGFloat, _ h: CGFloat, _ colors: [Color]) {
+    /// The twilight sky. The warm band hangs on the horizon line (`horizon`, a y in units;
+    /// the last ~185 × `spread` units above it); everything above stays deep indigo to purple,
+    /// whatever the height.
+    static func sky(
+        _ context: inout GraphicsContext,
+        _ w: CGFloat, _ h: CGFloat,
+        _ colors: [Color],
+        horizon: CGFloat,
+        spread: CGFloat = 1
+    ) {
         guard colors.count >= 6, h > 0 else { return }
-        let l2 = min(1, max(0.05, (h - 245) / h))
-        let l1 = min(0.4, max(0, l2 - 0.05))
-        let l3 = min(1, max(l2, (h - 144) / h))
-        let l4 = min(1, max(l3, (h - 86) / h))
-        let l5 = min(1, max(l4, (h - 50) / h))
+        let hz: CGFloat = min(h, max(40, horizon))
+        let l2: CGFloat = min(1, max(0.05, (hz - 185 * spread) / h))
+        let l1: CGFloat = min(0.4, max(0, l2 - 0.05))
+        let l3: CGFloat = min(1, max(l2, (hz - 84 * spread) / h))
+        let l4: CGFloat = min(1, max(l3, (hz - 26 * spread) / h))
+        let l5: CGFloat = min(1, max(l4, (hz + 10) / h))
         let stops: [(Color, CGFloat)] = [
             (colors[0], 0), (colors[1], l1), (colors[2], l2), (colors[3], l3), (colors[4], l4), (colors[5], l5),
         ]

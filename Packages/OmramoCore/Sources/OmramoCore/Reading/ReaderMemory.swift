@@ -106,6 +106,9 @@ public struct ReaderMemoryFile: Codable, Hashable, Sendable {
     public var seenCharacterCards: [String: [CharacterID]]
     /// Characters whose first naming has been shown on screen, by story id ("friends met").
     public var friendsMet: [String: [CharacterID]]
+    /// Page-turn and card sounds (round 4). Nil = never chosen, which means off. Optional, so
+    /// files written before round 4 still read.
+    public var soundOn: Bool?
 
     public init(
         schemaVersion: Int = ReaderMemoryFile.currentSchemaVersion,
@@ -113,8 +116,10 @@ public struct ReaderMemoryFile: Codable, Hashable, Sendable {
         bookmarks: [String: ReadingPosition] = [:],
         seenTapTargets: [String: [TapTargetID]] = [:],
         seenCharacterCards: [String: [CharacterID]] = [:],
-        friendsMet: [String: [CharacterID]] = [:]
+        friendsMet: [String: [CharacterID]] = [:],
+        soundOn: Bool? = nil
     ) {
+        self.soundOn = soundOn
         self.schemaVersion = schemaVersion
         self.textSize = textSize
         self.bookmarks = bookmarks

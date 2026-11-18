@@ -62,7 +62,10 @@ extension JatakaArt {
         // Tuft.
         Art.fill(&context, Art.svg("M-6,-33 C-8,-42 -2,-46 -1,-40 C1,-48 8,-46 6,-38 C11,-43 14,-38 10,-32Z"), furDark)
 
-        Art.fillRadial(&context, Art.ellipse(0, 0, 34, 31.5), furStops(), center: CGPoint(x: -8.2, y: -12.6), radius: 52)
+        let skull = Art.ellipse(0, 0, 34, 31.5)
+        Art.fillRadial(&context, skull, furStops(), center: CGPoint(x: -8.2, y: -12.6), radius: 52)
+        // A thin warm edge on the lit side of the fur; the face itself stays as on screen 07.
+        ArtStyle.rimEdge(&context, skull, bounds: CGRect(x: -34, y: -31.5, width: 68, height: 63), width: 2, alpha: 0.42)
         let chinShade = Art.svg("M-30,6 C-26,22 -12,30 0,30 C12,30 26,22 30,6 C24,26 -24,26 -30,6Z")
         Art.fill(&context, chinShade, furDark.opacity(0.35))
         let face = Art.svg("M0,-15 C-9,-27 -30,-19 -27,0 C-25,17 -12,25 0,25 C12,25 25,17 27,0 C30,-19 9,-27 0,-15Z")
@@ -109,7 +112,9 @@ extension JatakaArt {
     }
 
     private static func monkeyTorso(_ context: inout GraphicsContext) {
-        Art.fillRadial(&context, Art.ellipse(0, -32, 21, 27), furStops(), center: CGPoint(x: -5, y: -42.8), radius: 38)
+        let chest = Art.ellipse(0, -32, 21, 27)
+        Art.fillRadial(&context, chest, furStops(), center: CGPoint(x: -5, y: -42.8), radius: 38)
+        ArtStyle.form(&context, chest, bounds: CGRect(x: -21, y: -59, width: 42, height: 54), light: 0.16, shade: 0.2)
         Art.fillRadial(&context, Art.ellipse(-2, -28, 13, 18.5), faceStops(), center: CGPoint(x: -3.3, y: -33.5), radius: 23)
     }
 
@@ -278,6 +283,22 @@ extension JatakaArt {
         let body = Art.svg(crocBody)
         let skinStops: [(Color, CGFloat)] = [(skin.top, 0), (skin.mid, 0.45), (skin.low, 1)]
         Art.fillLinear(&context, body, skinStops, from: CGPoint(x: 0, y: -33), to: CGPoint(x: 0, y: 48))
+        // The one light: a core shadow toward the tail and belly, a warm edge along the brow
+        // and the back. Drawn before the water wash, so only the dry part shows it.
+        let bodyBounds = CGRect(x: -3, y: -34, width: 359, height: 86)
+        if mirrored {
+            // Flipped by the caller: the picture's upper left is this drawing's upper right.
+            Art.clipped(&context, to: body) { lit in
+                let shadeStops: [(Color, CGFloat)] = [
+                    (ArtStyle.coolShade.opacity(0), 0), (ArtStyle.coolShade.opacity(0.2), 1),
+                ]
+                Art.fillLinear(&lit, Path(bodyBounds), shadeStops, from: CGPoint(x: 176, y: 9), to: CGPoint(x: -3, y: 52))
+                Art.glow(&lit, 300, -26, 150, ArtStyle.warmLight, alpha: 0.2)
+            }
+        } else {
+            ArtStyle.form(&context, body, bounds: bodyBounds, light: 0.14, shade: 0.2)
+            ArtStyle.rimEdge(&context, body, bounds: bodyBounds, width: 2.2, alpha: 0.5)
+        }
 
         Art.clipped(&context, to: body) { g in
             let jawBelly = Art.svg("M-5,8 C30,9 70,9 96,7 C110,20 60,40 0,24Z")
@@ -334,29 +355,22 @@ extension JatakaArt {
             Art.fill(&context, bumps, skin.line.opacity(0.45))
         }
 
-        // A soft blush under the eye, quieter on the old mother.
-        ArtStyle.cheek(&context, 101, -3.5, 7, alpha: elder ? 0.26 : 0.4)
-
-        // Eye.
+        // Eye: the yellow reptile eye of the locked design (screen 03) — a yellow ball in the
+        // crocodile's own colour, a dark upright pupil and one catchlight. No white.
         Art.fill(&context, Art.svg("M78,-17 C82,-30 104,-34 112,-20 C104,-9 84,-8 78,-17Z"), skin.socket)
         if lid == .shut {
             Art.fill(&context, Art.circle(95, -19, 9), skin.socket)
         } else {
-            // A yellow rim (the crocodile's own colour) around the shared eye of ArtStyle.
-            Art.fill(&context, Art.circle(95, -19, 9), skin.eye)
-            Art.stroke(&context, Art.circle(95, -19, 9), skin.line, width: ArtStyle.detailLine)
-            let eyeRadius: CGFloat = 7.6
-            let crocIris = Art.color(0x1D2B1D)
-            let look = CGPoint(x: lookX / 2.5, y: lookY / 2.5)
-            if mirrored {
-                // Un-flip the eye so its catchlight is on the upper left of the picture.
-                let flipped = CGPoint(x: -look.x, y: look.y)
-                Art.group(&context, x: 95, y: -19, scaleX: -1) { e in
-                    ArtStyle.eye(&e, 0, 0, eyeRadius, look: flipped, iris: crocIris, showsWhite: true)
-                }
-            } else {
-                ArtStyle.eye(&context, 95, -19, eyeRadius, look: look, iris: crocIris, showsWhite: true)
-            }
+            let ball = Art.circle(95, -19, 9)
+            Art.fill(&context, ball, skin.eye)
+            Art.stroke(&context, ball, skin.line, width: 1.4)
+            let pupilX: CGFloat = 95 + lookX
+            let pupilY: CGFloat = -18.5 + lookY
+            Art.fill(&context, Art.ellipse(pupilX, pupilY, 2.8, 6), Art.color(0x1D2B1D))
+            // The one catchlight sits on the upper left of the picture, so it changes side
+            // when the caller mirrors the animal.
+            let side: CGFloat = mirrored ? 2 : -2
+            Art.fill(&context, Art.circle(pupilX + side, pupilY - 3.5, 1.7), .white)
         }
         switch lid {
         case .sleepy:
