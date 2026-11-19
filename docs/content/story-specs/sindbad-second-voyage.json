@@ -1,0 +1,495 @@
+{
+  "id": "sindbad-second-voyage",
+  "title": "Sindbad’s Second Voyage",
+  "tier": "medium",
+  "region": {
+    "id": "persianArabian",
+    "culture": "Arabic (The Thousand and One Nights)",
+    "place": "Baghdad and Basra, Iraq",
+    "label": "Baghdad · Iraq",
+    "pin": { "lat": 33.3, "lon": 44.4 },
+    "pinColor": "#12A8B8"
+  },
+  "setting": {
+    "period": "The golden age of Baghdad, about 1,200 years ago",
+    "latestYear": 900
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Arabic tale from The Thousand and One Nights",
+    "sources": [
+      {
+        "author": "Andrew Lang (ed.)",
+        "title": "The Arabian Nights Entertainments",
+        "year": 1898,
+        "gutenbergId": 128,
+        "url": "https://www.gutenberg.org/ebooks/128",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of an Arabic tale from The Thousand and One Nights, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Reader in Arabic literature (Iraq)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Baghdad stands on the river Tigris; downstream lies the port of Basra, and beyond it the Gulf and the Indian Ocean. Sailing ships crossed that ocean on the monsoon winds.",
+      "factCards": ["basra", "baghdad-moment", "gulf-moment"]
+    },
+    "culture": {
+      "lesson": "In the golden age of Baghdad, merchants and sailors carried goods and stories between Iraq, India, Africa and China. The Thousand and One Nights gathered such stories over hundreds of years.",
+      "factCards": ["dhow", "the-nights"]
+    },
+    "moral": {
+      "lesson": "Each time Sindbad is stuck he rages for a minute, then looks at what he has (a tree, a turban, an old tale) and uses it. He is also very glad to get home, and then forgets why.",
+      "reflectionQuestion": "Sindbad promises twice never to go to sea again. Do you think he will keep his promise this time?"
+    }
+  },
+  "moral": "When you are alone and afraid, keep your wits about you.",
+  "theme": {
+    "textColor": "#0F2F3D",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A small man in a turban stands beside a huge smooth white egg among green trees, while the shadow of a giant wing slides over the ground."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "sindbad",
+      "name": "Sindbad",
+      "color": "#0E6E7C",
+      "chipBackground": "#D3EEF0",
+      "faceAlt": "Sindbad.",
+      "card": {
+        "label": "Character · a merchant of Baghdad",
+        "title": "Sindbad",
+        "traits": [
+          { "text": "Quick thinker", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Wears a long turban", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Glad to get home", "fill": "#D9F5E4", "ink": "#0B6B4A" }
+        ],
+        "body": "He buys and sells from port to port, and trouble finds him at every one. When he is stuck, he stops shouting and starts thinking.",
+        "portraitAlt": "Sindbad, a young man with a short dark beard and a white turban, smiling, with a sea-blue sash round his robe.",
+        "background": ["#C9ECEC", "#8FD0D2", "#3E9EAA"]
+      }
+    },
+    {
+      "id": "roc",
+      "name": "Roc",
+      "color": "#9A6A12",
+      "chipBackground": "#FBE9BF",
+      "faceAlt": "The Roc.",
+      "card": {
+        "label": "Character · the greatest bird of the tales",
+        "title": "The Roc",
+        "traits": [
+          { "text": "Wide as a cloud", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Called “rukh” in Arabic", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Never notices Sindbad", "fill": "#FFE0D6", "ink": "#B33A1C" }
+        ],
+        "body": "Sailors told of a bird so big that her egg looked like a white dome. To the Roc, a man is no more than a burr on her leg.",
+        "portraitAlt": "The head and one great wing of a white and gold bird like an eagle, with a tiny island far below it.",
+        "background": ["#FBEBC2", "#F2CB7A", "#D79A3C"]
+      }
+    },
+    {
+      "id": "merchant",
+      "name": "Merchant",
+      "color": "#7A3E6B",
+      "chipBackground": "#EEDDEA",
+      "faceAlt": "The diamond merchant."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "baghdad-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "hanging-gardens-babylon",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Find Baghdad on the map, and look a little to the south for the ruins of Babylon. There, people said, a king once built gardens in the sky, but no one has ever found them."
+        }
+      },
+      "background": "#1E4A38"
+    },
+    {
+      "id": "gulf-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "burj-khalifa",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "Sindbad sailed down the Gulf in a wooden ship. Long after this story, about 1,200 years later, the tallest building in the world rose on its shore."
+        }
+      },
+      "background": "#1B3558"
+    },
+    {
+      "id": "dhow",
+      "kind": "object",
+      "title": "Dhow",
+      "line": "A wooden sailing ship with a slanting sail, its planks sewn together with cord.",
+      "cultureNote": {
+        "label": "From the Arabian Sea",
+        "text": "Sailors of the Gulf and the Indian Ocean used the monsoon, a wind that blows one way for half the year and back for the other half. They sailed out on one wind and waited to come home on the other."
+      },
+      "pictureAlt": "A wooden ship with one tall slanting triangular sail, seen from the side on calm blue water.",
+      "background": "#1C4F63"
+    },
+    {
+      "id": "the-nights",
+      "kind": "idea",
+      "title": "The Nights",
+      "line": "The Thousand and One Nights is a great book of old tales, and Sindbad’s is one.",
+      "cultureNote": {
+        "label": "From the Arabic-speaking world",
+        "text": "The tales were gathered over hundreds of years from Arabic, Persian and Indian storytellers. In the book a clever queen, Shahrazad, tells a king a story night after night."
+      },
+      "pictureAlt": "An open handwritten book on a low wooden stand, with a small brass oil lamp burning beside it.",
+      "background": "#3A2A5E"
+    },
+    {
+      "id": "basra",
+      "kind": "place",
+      "title": "Basra",
+      "line": "A busy port in the south of Iraq, where two great rivers flow together towards the sea.",
+      "cultureNote": {
+        "label": "From Iraq",
+        "text": "In Sindbad’s time, ships left Basra for India, East Africa and China, and came back with spices, silk and ivory. Date palms still grow along its waterways."
+      },
+      "pictureAlt": "A mud-brick quay with tall date palms behind it and one wooden ship tied up, its sail furled.",
+      "background": "#6B4A1E"
+    }
+  ],
+  "scenes": {
+    "scene-harbour": {
+      "unfoldedAlt": "The flat port of Basra under a pale turquoise sky: a mud-brick quay with date palms and warehouses, and porters carrying bales. On the right Sindbad steps aboard a wooden ship with a long slanting sail.",
+      "foldedAlt": "Sindbad on the gangplank of a wooden ship, a bale on his shoulder, with date palms behind him.",
+      "fallbackColors": ["#CDEFF0", "#FBEBC8", "#D9B77A"]
+    },
+    "scene-egg": {
+      "unfoldedAlt": "A green island of fruit trees under a pale bright sky. On the right a huge smooth white dome with no door rises among the trees, with Sindbad tiny beside it and the shadow of a vast wing sliding over the ground.",
+      "foldedAlt": "Sindbad, very small, looks up at the curve of a huge smooth white egg among the trees.",
+      "fallbackColors": ["#CFEFEA", "#F7F1D8", "#7FB58A"]
+    },
+    "scene-valley": {
+      "unfoldedAlt": "A deep valley between sheer pale sandstone cliffs, with a strip of pale sky above and a floor that glitters with stones. On the right Sindbad stands small among them while a giant bird lifts away with a long serpent, and far serpents coil into holes in the rock.",
+      "foldedAlt": "Sindbad kneels on the glittering valley floor with a diamond as big as his fist in his hand.",
+      "fallbackColors": ["#D8EEF0", "#F3DDBE", "#C89A6A"]
+    },
+    "scene-nest": {
+      "unfoldedAlt": "A cliff top under a wide pale morning sky. On the right, in a big nest of sticks, Sindbad sits up with a slab of meat tied to his back, a large eagle flaps away, and astonished merchants in turbans run up with sticks.",
+      "foldedAlt": "Sindbad sits up in a nest of sticks, holding out a handful of diamonds to an astonished merchant.",
+      "fallbackColors": ["#CDEBF2", "#FDEFCB", "#C9A26B"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-harbour",
+      "part": "part-1",
+      "paras": [
+        "^<name:sindbad>Sindbad</name> of <tap:baghdad-moment>Baghdad</tap> had sworn never to go to sea again.",
+        "He had come home rich from his first voyage, and he was glad of dry land. He bought a house with a fountain in the courtyard. He gave feasts for his friends.",
+        "For a whole year he kept his promise. Then one morning he walked by the river, where the boats were unloading.",
+        "He smelled tar and wet rope. He heard sailors talk of islands where pepper grew, and of fish as long as a street.",
+        "<say:sindbad*>“One more voyage,”</say> said Sindbad to himself. <say:sindbad>“Only a short one.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-harbour",
+      "part": "part-1",
+      "paras": [
+        "So he bought bales of cloth and jars of sweet oil, and went down the river to Basra.",
+        "A ship lay at the quay with her long slanting sail tied up. Other merchants were going aboard, and Sindbad went with them.",
+        "A fair wind carried them down <tap:gulf-moment>the Gulf</tap> and out upon the wide ocean. They sailed from port to port, wherever there was something to sell.",
+        "At every port Sindbad sold a little and bought a little. His bales grew smaller and his purse grew heavier.",
+        "<say:sindbad*>“This is easy,”</say> he said. <say:sindbad>“I should have come sooner.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-egg",
+      "part": "part-1",
+      "paras": [
+        "One day they landed on an island of fruit trees and clear streams. Nobody lived there.",
+        "Sindbad ate his fill of fruit. Then he lay down by a stream, and the water sang him to sleep.",
+        "When he woke, the shore was empty. Far out on the water, the <tap:dhow>dhow</tap> was a white speck. Nobody had meant to leave him. Nobody had counted.",
+        "<say:sindbad*>“Fool!”</say> he shouted at himself. <say:sindbad>“You had a house! You had a fountain!”</say>",
+        "He shouted until he was hoarse. Then, since shouting moved no ships, he climbed the tallest tree to look about."
+      ]
+    },
+    {
+      "scene": "scene-egg",
+      "part": "part-1",
+      "paras": [
+        "From the treetop he saw sea on one side. On the other, far off among the trees, something large and white was shining.",
+        "He walked to it. It was a dome, smooth as a washed bowl and higher than a house. He paced round it: fifty paces, and no door.",
+        "Then the sky went dark, as if a cloud had crossed the sun. It was a bird as wide as a cloud, and it settled on the dome.",
+        "Sindbad remembered the sailors’ talk of the <name:roc>Roc</name>, the greatest bird in the world.",
+        "<say:sindbad*>“That is no dome,”</say> he whispered. <say:sindbad>“That is an <pop:1.3>egg</pop>.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-egg",
+      "part": "part-1",
+      "paras": [
+        "The Roc folded her wings and slept upon her egg. One leg came down beside Sindbad, as thick as a palm trunk.",
+        "He looked at the leg. He looked at the empty sea.",
+        "<say:sindbad*>“A bird this size does not live on one small island,”</say> he said. <say:sindbad>“Where she goes, there will be land.”</say>",
+        "He unwound his turban, yard after yard, and tied himself fast to the great leg. All night he did not dare to sneeze.",
+        "At dawn the Roc rose. <stretch>Up</stretch> went Sindbad, until the island was a leaf and the sea a blue plate. Then down she dropped, so fast that he could not breathe."
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-2",
+      "paras": [
+        "^The <name:roc>Roc</name> set him down in the deepest valley in the world.",
+        "He tore the knots loose and rolled away. The Roc snatched up a serpent longer than a ship, and was gone over the cliffs before he could stand.",
+        "The cliffs stood on every side like the walls of a well. No path climbed them. The sun reached the valley floor for one hour a day.",
+        "<name:sindbad>Sindbad</name> sat down, and the ground crunched. He looked. He was sitting on diamonds.",
+        "They lay about like gravel in a stream bed, and some were as big as his fist."
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-2",
+      "paras": [
+        "Sindbad laughed until the cliffs laughed back.",
+        "<say:sindbad*>“On the island I had fruit and water, and wanted only a ship,”</say> he said. <say:sindbad>“Here I have a king’s treasure, and I would give it all for a ladder.”</say>",
+        "As the light failed, the serpents came out. By day they hid from the Roc in holes in the rock. Now they slid over the stones, each one as thick as a ship’s mast.",
+        "Sindbad found a small cave and rolled a stone across its mouth. He sat with his back to it all night and did not sleep. Outside, something dry went rustling by, and by, and by."
+      ]
+    },
+    {
+      "scene": "scene-valley",
+      "part": "part-2",
+      "paras": [
+        "At last a grey light showed round the stone. The rustling stopped. Sindbad crept out, stiff and hungry.",
+        "<pop:1.3>Thump!</pop> A great piece of raw meat landed beside him. Thump! Another fell farther off. He looked up, and saw only cliff and sky.",
+        "Then he remembered <tap:the-nights>an old tale</tap> he had heard in Baghdad and never believed.",
+        "In it, merchants threw meat into a valley no man could climb down to. Diamonds stuck in the meat. Eagles carried the meat up to their nests, and the merchants chased the eagles off and picked out the stones.",
+        "<say:sindbad*>“So it is true,”</say> said Sindbad. <say:sindbad>“Then I know my way out.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-nest",
+      "part": "part-2",
+      "paras": [
+        "He filled his bag and sash with the best stones, tied the biggest piece of meat to his back with his turban, and lay face down.",
+        "Claws closed on the meat. The valley fell away, and an eagle dropped him in a nest on the cliff top.",
+        "Men came shouting and banging sticks, and the eagle flew. A <name:merchant>merchant</name> ran to the nest and found a man where his meat should be.",
+        "<say:sindbad*>“Do not be angry,”</say> said Sindbad. <say:sindbad>“I have enough for us both.”</say> He poured out his stones.",
+        "The merchant chose one, and only one. <say:merchant*>“This will keep me all my life,”</say> he said."
+      ]
+    },
+    {
+      "scene": "scene-harbour",
+      "part": "part-2",
+      "paras": [
+        "Sindbad went home the long way, with the merchants, stopping at one island after another. On one grew camphor trees so wide that a whole caravan could rest under a single one.",
+        "At last the ship came up the river to the date palms of <tap:basra>Basra</tap>. From there a riverboat took him home to Baghdad.",
+        "He gave much of his treasure to the poor. He sat by his fountain and told his friends about the egg, the valley and the long night in the cave.",
+        "<say:sindbad*>“I shall never go to sea again,”</say> said <name:sindbad>Sindbad</name>.",
+        "And he meant it, for a whole year."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "hanging-gardens-babylon",
+      "name": "Hanging Gardens of Babylon",
+      "era": "ancient",
+      "built": {
+        "from": -600,
+        "circa": true,
+        "note": "Said to have been built about 600 BCE. No trace has been found; the date is the traditional one, not a known one (CONTENT_PLAN §5)."
+      },
+      "status": "unproven",
+      "depiction": "reconstruction",
+      "country": "Iraq",
+      "place": "Babylon (traditional site), Iraq",
+      "coordinates": { "lat": 32.54, "lon": 44.42 },
+      "region": "persianArabian",
+      "lists": ["ancientSeven"],
+      "factCards": {
+        "low": {
+          "line": "Gardens on high steps, with trees on every step. Nobody has ever found them."
+        },
+        "medium": {
+          "line": "One of the Seven Wonders of the ancient world, said to have stood in Babylon about 2,600 years ago.",
+          "note": "Old writers said a king of Babylon built them. No one has found a trace of them, so this picture is an artist’s idea."
+        },
+        "advanced": {
+          "line": "The gardens are known only from Greek and Roman writers who lived long after the time they describe.",
+          "note": "Diggers at Babylon have found no sure trace of them. They may be a legend, or they may have stood in another city, Nineveh."
+        }
+      },
+      "art": {
+        "file": "art/hanging-gardens-babylon.heic",
+        "alt": "A drawing of how the gardens may have looked: stepped terraces of brick with trees and hanging plants on every level and water running down, beside a river.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E4A38",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A reconstruction of an unproven wonder: it must stay labelled as an artist’s idea.",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "burj-khalifa",
+      "name": "Burj Khalifa",
+      "era": "contemporary",
+      "built": {
+        "from": 2004,
+        "to": 2010,
+        "circa": false,
+        "note": "Building began in 2004 and the tower opened in 2010."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "United Arab Emirates",
+      "place": "Dubai, United Arab Emirates",
+      "coordinates": { "lat": 25.197, "lon": 55.274 },
+      "region": "persianArabian",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A thin silver tower, taller than any other building in the world."
+        },
+        "medium": {
+          "line": "The tallest building in the world, about 828 metres high, in the city of Dubai.",
+          "note": "It was built between 2004 and 2010 and has more than 160 floors."
+        },
+        "advanced": {
+          "line": "At about 828 metres, it has been the world’s tallest building since it opened in 2010.",
+          "note": "Seen from above it has three wings round a central core, a shape that helps so thin a tower stand firm in the wind."
+        }
+      },
+      "art": {
+        "file": "art/burj-khalifa.heic",
+        "alt": "A very tall, thin silver tower that narrows in steps to a needle point, far above the other towers of a city by the sea.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3558",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The owner asserts rights over the name and image in commercial use (CONTENT_PLAN §6.6): legal review needed before release.",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the second voyage of Sindbad the Sailor,",
+    "an Arabic tale from The Thousand and One Nights. It is not the wording of any earlier edition.",
+    "Documented source for the tale: Andrew Lang (ed.), \"The Arabian Nights Entertainments\" (1898),",
+    "Project Gutenberg ebook #128, https://www.gutenberg.org/ebooks/128",
+    "(US public domain; other territories not verified).",
+    "Source access: the mirror file 128.txt gave 404; 128-0.txt opened but the fetch stopped before the",
+    "Sindbad chapters. The text was written from knowledge of the traditional tale: a source check is needed.",
+    "Told in the third person; in the Nights Sindbad tells it himself to his guests. The frame (Sindbad the",
+    "Porter, the feast) is left out.",
+    "Softened for ability age 8 to 10: the serpents are heard outside the cave and never fought; nothing is",
+    "said of serpents swallowing elephants or of the Roc feeding on them; the ship leaves by oversight.",
+    "Left out: the rhinoceros-and-elephant passage, Sindbad's long lament, the trading at the island of Roha,",
+    "and the dated words Lang's text uses for peoples. Our telling names no people but merchants and sailors.",
+    "Departures from the cited book to check: the merchant taking only one stone and his words (from memory",
+    "of Lang; ours are our own wording); 'fifty paces' round the egg; the camphor tree shading a hundred men;",
+    "the eagle setting Sindbad down in its nest (some versions: on a hilltop); the riverboat from Basra to",
+    "Baghdad is our addition. The fountain, the feasts, the pepper islands and the sneeze are our inventions.",
+    "Reviewer please check: spellings Sindbad, Basra (Lang: Balsora), Shahrazad, 'rukh' for the Roc; the Basra",
+    "card (two rivers, trade to India, East Africa and China, date palms today); the dhow card (sewn planks,",
+    "monsoon); the Nights card (the Sindbad cycle joined the Nights late, in some manuscripts only: is 'and",
+    "Sindbad's is one' fair?); 'the Gulf' as the neutral name; Babylon 'a little to the south' of Baghdad",
+    "(about 85 km); Burj Khalifa figures (about 828 m, 2004 to 2010, more than 160 floors).",
+    "SOURCE CHECK (18 Nov 2026, against Gutenberg #128 on the mirror, 128-0.txt): the story is there and the",
+    "items above are settled: the merchant does take one stone (his words are reported, not quoted, in Lang);",
+    "the eagle does drop Sindbad in its nest; Lang's island is 'Rohat' and his port 'Balsora'. Two phrases",
+    "close to Lang ('from island to island'; a hundred men under one camphor tree) were reworded. Further",
+    "departures from Lang: he has no oath to stay home and names no port of departure (Basra is ours); his",
+    "object is a white ball, not a dome; Sindbad drinks wine before he sleeps and dozes on a rock when the",
+    "meat falls; he packs the stones in a leather wallet; the merchants first abuse him; Lang gives no reason",
+    "why the ship left (our 'nobody had counted' is an addition, not a softening).",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Reader in Arabic literature (Iraq)) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#0F2F3D",
+      "shade": "#1C6F80",
+      "mid": "#5DBFC4",
+      "light": "#DDF3F1",
+      "glow": "#FBE3A6",
+      "accent": "#E0822A",
+      "mood": "Hot clear sea-and-sand light: pale turquoise sky, white sails and a white egg, sandstone gold, small hard glints of diamond. Quiet and wide, with tiny figures in big places."
+    },
+    "light": "Bright day throughout, one warm light from the upper left. Every scene keeps a PALE sky or pale sunlit cliff behind the words. The valley is deep but not dark: pale sandstone walls in soft reflected light with a strip of pale sky above. The night in the cave is not drawn.",
+    "world": [
+      "Time and place: Abbasid Iraq, about 800 to 900 CE. Basra is flat and low: mud-brick and reed buildings with flat roofs, dense groves of date palms, canals and a wide brown-green river. No hills, no stone castles.",
+      "Ships are dhows: a long wooden hull with a raked stem, planks SEWN together with coconut-fibre cord (visible stitching along the seams, no iron nails), one or two masts, a long slanting yard with a white lateen (triangular) cotton sail. Steering oars or a stern rudder worked by ropes. No square sails, no galleons, no cannon, no flags.",
+      "Cargo on the quay: bales of cloth wrapped in matting and tied with rope, tall pottery jars sealed with clay, baskets of dates. Porters carry bales on the shoulder or back.",
+      "Dress for men: a long loose robe to the calf or ankle, a cloth sash at the waist, loose trousers beneath, a turban wound from one long strip of cloth, soft leather shoes or sandals. Colours: undyed cream, indigo, madder red, saffron, sea green. Merchants a little richer in cloth than porters and sailors, who wear short tunics or a waist cloth and a small head cloth.",
+      "The turban matters to the plot: it is one very long strip of white cloth. Tied to the Roc's leg and later round the meat, it should read as that same long white band. Without it Sindbad has a small cap or bare dark hair.",
+      "The island: evergreen fruit trees with round crowns, a clear stream, grass, no buildings or paths. The egg is a huge, perfectly smooth, slightly egg-pointed white dome about ten times a man's height, standing among the trees with no door, window or seam.",
+      "The Roc: an enormous white-and-gold bird like an eagle. Draw it mostly as a part: a wing across the sky, a shadow on the ground, a scaled golden leg and claw as thick as a palm trunk. Its size is felt because it never fits in the picture. Calm, not fierce; it never looks at Sindbad.",
+      "The valley: sheer pale sandstone cliffs like the walls of a well, a narrow floor strewn with clear and pale-yellow stones that catch the light (rough crystals, not cut jewels with facets). Serpents are far, small and few: long plain coils slipping into holes, no open mouths, no fangs.",
+      "The meat is a plain reddish slab, like a side of mutton, drawn simply; no blood. The eagle of the nest is an ordinary large brown eagle, far smaller than the Roc. Its nest is a wide untidy platform of sticks on a rock ledge.",
+      "The diamond merchants: five or six men in robes and turbans with long plain sticks for scaring birds, mouths open in surprise; comic, not threatening.",
+      "Baghdad (only talked of): a river city of brick with courtyards, fountains and gardens. If a courtyard is hinted, a small plain basin fountain and a brick arch.",
+      "Avoid: flying carpets, genie lamps, onion-domed 'Aladdin' skylines, crescent-topped minarets as decoration, scimitars, harem imagery, curly-toed slippers, camels in the harbour, European ships, cut gemstones, a monstrous or bloody Roc, frightening snakes. The Burj Khalifa, any tower, and the Hanging Gardens never appear in a scene."
+    ],
+    "characters": {
+      "sindbad": "A young man, lively and quick, with warm brown skin, a short dark beard and bright dark eyes. A cream robe with a sea-green sash, loose trousers, soft shoes, and a big white turban. Signature detail: the long white turban cloth, on his head or unwound in his hands as a rope.",
+      "roc": "A white bird with gold-edged feathers and a golden hooked beak, shaped like an eagle but far too large to see whole. Signature detail: one golden leg as thick as a palm trunk beside a tiny man.",
+      "merchant": "A stout middle-aged man with a grey-flecked beard, a plum-coloured robe and a pale turban, a long stick in his hand. Honest round face, eyebrows up in astonishment."
+    },
+    "scenes": {
+      "scene-harbour": {
+        "unfolded": "Far: flat horizon, pale turquoise sky, a line of date palms and low mud-brick roofs. Middle: the brick quay with stacked bales and jars, two porters. Near, on the trailing (right) half: a dhow moored side-on, its long yard and furled white sail slanting up, and Sindbad on the gangplank with a bale on his shoulder. The leading (left) pane's upper two thirds are calm pale sky above low palms and water.",
+        "folded": "Sindbad in the middle on the gangplank, smiling, a bale on his shoulder, the ship's sewn planks and slanting yard behind him, date palms and pale sky above."
+      },
+      "scene-egg": {
+        "unfolded": "Far: pale bright sky and a thin line of sea. Middle: round-crowned fruit trees. Near, on the trailing (right) half: the huge smooth white egg rising above the trees, Sindbad tiny at its foot looking up, and the soft shadow of one vast wing sliding over grass and egg. The edge of a white-and-gold wing may enter at the top right corner. The leading pane's upper two thirds stay open pale sky.",
+        "folded": "The curve of the egg fills the right of the band; Sindbad small in the middle with his head tipped back, turban cloth in his hands, pale sky above."
+      },
+      "scene-valley": {
+        "unfolded": "Far: a strip of pale sky between cliff tops. Middle: sheer pale sandstone walls, lighter and calmer on the leading (left) pane so dark words read on them. Near, on the trailing (right) half: the glittering floor, Sindbad small among the stones, the Roc's wing and claws lifting out of the top right with a long serpent hanging from them, two far serpents slipping into holes. No darkness: warm reflected light.",
+        "folded": "Sindbad kneeling in the middle with a rough diamond as big as his fist held up to the light, glinting stones round his knees, pale cliff behind."
+      },
+      "scene-nest": {
+        "unfolded": "Far: wide pale morning sky and distant low hills. Middle: the cliff edge. Near, on the trailing (right) half: the big nest of sticks on a rock ledge, Sindbad sitting up in it with the slab of meat tied to his back by the white turban cloth, a brown eagle flapping off, and merchants in turbans running up with sticks, astonished. The leading pane's upper two thirds are open pale sky.",
+        "folded": "Sindbad in the nest in the middle, holding out both hands full of diamonds; the merchant's astonished face and stick at one side, pale sky above."
+      }
+    },
+    "pictures": {
+      "dhow": "One dhow seen from the side on calm water: raked wooden hull with stitched seams, one mast, a single white slanting triangular sail filled with wind.",
+      "the-nights": "One open handwritten book on a low folding wooden stand, with a small brass oil lamp burning beside it, on a deep violet ground. Lines of script suggested by plain strokes, not real letters.",
+      "basra": "One stretch of mud-brick quay with three tall date palms behind it and a single moored dhow, its sail furled, on a warm brown-gold ground."
+    },
+    "portraits": {
+      "sindbad": "Half figure, smiling, in his cream robe and sea-green sash with the white turban; pale turquoise sky and one slanting sail behind.",
+      "roc": "The Roc's white-and-gold head and one great wing filling the frame against warm gold sky, with a tiny green island and a speck of sea far below to give the scale."
+    },
+    "cover": "Sindbad, small, standing beside the huge smooth white egg among green trees and looking up, as the shadow of a vast wing slides over the egg and the ground; pale turquoise sky above.",
+    "landmarks": {
+      "hanging-gardens-babylon": "Our own drawing of how the gardens may have looked, clearly a reconstruction: stepped terraces of baked brick, each level planted with trees and trailing plants, water running down channels, a broad river at the foot. Soft, slightly dreamlike edges to show it is an idea, not a record.",
+      "burj-khalifa": "Our own drawing of the Burj Khalifa by day: a very tall thin silver-blue tower narrowing in steps to a needle spire, standing far above a low line of other towers, with a strip of sea behind. No photograph traced, no logos."
+    }
+  }
+}

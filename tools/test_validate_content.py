@@ -363,9 +363,13 @@ class PrototypeStories(unittest.TestCase):
 
     def test_catalog_lists_one_story_per_tier(self):
         catalog = vc.load_json(os.path.join(ROOT, "catalog.json"))
-        self.assertEqual(catalog["stories"], ["monkey-and-crocodile", "anansi-wisdom", "urashima-taro"])
-        self.assertEqual([self.stories[s]["tier"] for s in catalog["stories"]], ["low", "medium", "advanced"])
-        self.assertEqual([self.stories[s]["region"]["id"] for s in catalog["stories"]],
+        # Round 5: the catalog grows toward the plan's 32 stories; the three prototypes stay
+        # in it, in this order, one a tier.
+        prototypes = [s for s in catalog["stories"] if s in self.stories]
+        self.assertEqual(prototypes, ["monkey-and-crocodile", "anansi-wisdom", "urashima-taro"])
+        self.assertEqual(catalog["stories"][0], "monkey-and-crocodile")
+        self.assertEqual([self.stories[s]["tier"] for s in prototypes], ["low", "medium", "advanced"])
+        self.assertEqual([self.stories[s]["region"]["id"] for s in prototypes],
                          ["indian", "african", "japanese"])
 
     def test_all_three_validate_with_text_fidelity(self):

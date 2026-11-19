@@ -1,0 +1,1365 @@
+{
+  "schemaVersion": 1,
+  "id": "bremen-town-musicians",
+  "contentVersion": 1,
+  "title": "The Bremen Town Musicians",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "european",
+    "culture": "German (Brothers Grimm)",
+    "place": "Lower Saxony and Bremen, northern Germany",
+    "label": "Germany",
+    "pin": {
+      "lat": 53.1,
+      "lon": 8.8
+    },
+    "pinColor": "#F2A007"
+  },
+  "setting": {
+    "period": "Northern Germany, about 200 years ago",
+    "latestYear": 1819
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "German folk tale collected by Jacob and Wilhelm Grimm",
+    "sources": [
+      {
+        "author": "Jacob and Wilhelm Grimm, translated by Margaret Hunt",
+        "title": "Household Tales by Brothers Grimm",
+        "publisher": "George Bell and Sons",
+        "year": 1884,
+        "gutenbergId": 5314,
+        "url": "https://www.gutenberg.org/ebooks/5314",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional German tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "German reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Northern Germany is flat farming country with mills and long roads; the old trading city of Bremen stands on the River Weser.",
+      "factCards": [
+        "mill",
+        "bremen-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "The Grimm brothers wrote down tales that people told at home. Town musician was a real job: towns paid players for markets and festivals.",
+      "factCards": [
+        "town-musician",
+        "timber-house"
+      ]
+    },
+    "moral": {
+      "lesson": "Nobody is too old to be useful; friends are stronger together. Four animals nobody wants make a home by using what each can still do.",
+      "reflectionQuestion": "What can you and your friends do together that you could not do alone?"
+    }
+  },
+  "moral": "You are never too old to be useful to your friends.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#14263A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A rooster on a cat on a dog on a donkey, all four singing outside a glowing window.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "donkey",
+      "name": "Donkey",
+      "color": "#4A5568",
+      "face": {
+        "file": "art/face-donkey.png",
+        "alt": "The old Donkey.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E3E7EE",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Donkey",
+        "traits": [
+          {
+            "text": "Old and steady",
+            "fill": "#E3E7EE",
+            "ink": "#3A4558"
+          },
+          {
+            "text": "Loud, proud voice",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Gathers friends",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He carried sacks to the mill for many years. When he is told he is too old, he does not sulk. He sets off down the road, and he asks everyone he meets to come too.",
+        "portrait": {
+          "file": "art/char-donkey.card.heic",
+          "alt": "The grey Donkey on the road, head up, ears up, mouth open in a song.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFE08A",
+          "#F7C56B",
+          "#E59A52"
+        ]
+      }
+    },
+    {
+      "id": "dog",
+      "name": "Dog",
+      "color": "#8A4B14",
+      "face": {
+        "file": "art/face-dog.png",
+        "alt": "The old Dog.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2C2"
+    },
+    {
+      "id": "cat",
+      "name": "Cat",
+      "color": "#6B3A7A",
+      "face": {
+        "file": "art/face-cat.png",
+        "alt": "The old Cat.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#EBDDF2"
+    },
+    {
+      "id": "rooster",
+      "name": "Rooster",
+      "color": "#B03A1E",
+      "face": {
+        "file": "art/face-rooster.png",
+        "alt": "The Rooster.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE0D6",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Rooster",
+        "traits": [
+          {
+            "text": "Loudest of all",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Sharp eyes",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Sleeps up high",
+            "fill": "#DCEBFA",
+            "ink": "#1F4E86"
+          }
+        ],
+        "body": "He crows with all his might, even on a bad day. He likes the highest seat he can find. From up there he is the first to see the light in the forest.",
+        "portrait": {
+          "file": "art/char-rooster.card.heic",
+          "alt": "The Rooster on a farm gate, chest out, crowing at the sky.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFD9A0",
+          "#FFB07A",
+          "#F0825A"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "mill",
+      "kind": "place",
+      "title": "The mill",
+      "line": "A place where big stones grind grain into flour for bread.",
+      "cultureNote": {
+        "label": "From northern Germany",
+        "text": "Northern Germany is flat and windy, so many of its mills have great sails. Donkeys carried the sacks."
+      },
+      "picture": {
+        "file": "art/see-mill.heic",
+        "alt": "A wooden windmill with four sails on a low green rise.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2C5A4A"
+    },
+    {
+      "id": "bremen-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "bremen-town-hall-roland",
+        "appearance": "natural"
+      },
+      "background": "#3A2A4F"
+    },
+    {
+      "id": "town-musician",
+      "kind": "idea",
+      "title": "Town musician",
+      "line": "A person whose job is to play music for the whole town.",
+      "cultureNote": {
+        "label": "In old Germany",
+        "text": "Long ago, German towns paid musicians to play at markets, weddings and festivals. It was a real job."
+      },
+      "picture": {
+        "file": "art/see-town-musician.heic",
+        "alt": "A town musician’s things in a market square: a lute leaning on a small drum, a curved horn and a soft hat.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#7A3B2A"
+    },
+    {
+      "id": "timber-house",
+      "kind": "object",
+      "title": "Timber house",
+      "line": "A house with a frame of dark wooden beams you can see.",
+      "cultureNote": {
+        "label": "From Germany",
+        "text": "Many old houses in Germany are built this way. People still live in them today."
+      },
+      "picture": {
+        "file": "art/see-timber-house.heic",
+        "alt": "A small house with dark wooden beams, pale walls and a thatched roof.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A3528"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A country road runs across flat green fields to a far-off town. A grey donkey walks along it past a wooden signpost, with a dog, a cat and a rooster.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A grey donkey walks along a country road past a wooden signpost.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F2",
+          "#FFF1C4",
+          "#8DB360"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "An old ",
+              "lead": true
+            },
+            {
+              "t": "Donkey",
+              "lead": true,
+              "name": "donkey"
+            },
+            {
+              "t": " had carried sacks to the ",
+              "lead": true
+            },
+            {
+              "t": "mill",
+              "lead": true,
+              "tap": "mill"
+            },
+            {
+              "t": " for many years.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now his legs were slow and his back was sore."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One morning he heard his master grumble at the gate."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“That Donkey is too old to be useful,” the man said. “He is not worth his oats.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A country road runs across flat green fields to a far-off town. A grey donkey walks along it past a wooden signpost, with a dog, a cat and a rooster.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A grey donkey walks along a country road past a wooden signpost.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F2",
+          "#FFF1C4",
+          "#8DB360"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Donkey’s long ears drooped. Then up they went again."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Too old?”",
+              "say": "donkey",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“My legs are slow, but my voice is as loud as ever. Hee-haw!”",
+              "say": "donkey"
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I know! I will go to ",
+              "say": "donkey",
+              "chip": true
+            },
+            {
+              "t": "Bremen",
+              "say": "donkey",
+              "tap": "bremen-moment"
+            },
+            {
+              "t": ", the great town by the river. They love music there.”",
+              "say": "donkey"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So he pushed open the gate and set off down the road."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A country road runs across flat green fields to a far-off town. A grey donkey walks along it past a wooden signpost, with a dog, a cat and a rooster.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A grey donkey walks along a country road past a wooden signpost.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F2",
+          "#FFF1C4",
+          "#8DB360"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Soon he met an old "
+            },
+            {
+              "t": "Dog",
+              "name": "dog"
+            },
+            {
+              "t": " lying by the road, puffing and panting."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Why are you puffing so, friend?”",
+              "say": "donkey",
+              "chip": true
+            },
+            {
+              "t": " asked the Donkey."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I cannot run fast any more,”",
+              "say": "dog",
+              "chip": true
+            },
+            {
+              "t": " puffed the Dog. "
+            },
+            {
+              "t": "“My master says I am no use. Where shall I go?”",
+              "say": "dog"
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Come with me to Bremen. I am going to be a ",
+              "say": "donkey",
+              "chip": true
+            },
+            {
+              "t": "town musician",
+              "say": "donkey",
+              "tap": "town-musician"
+            },
+            {
+              "t": ". You have a fine voice!”",
+              "say": "donkey"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A country road runs across flat green fields to a far-off town. A grey donkey walks along it past a wooden signpost, with a dog, a cat and a rooster.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A grey donkey walks along a country road past a wooden signpost.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F2",
+          "#FFF1C4",
+          "#8DB360"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Dog wagged his tail, and on they went, two together."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Before long they met an old "
+            },
+            {
+              "t": "Cat",
+              "name": "cat"
+            },
+            {
+              "t": " in the road, looking as gloomy as a week of rain."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My teeth are blunt,”",
+              "say": "cat",
+              "chip": true
+            },
+            {
+              "t": " she sighed. "
+            },
+            {
+              "t": "“I would rather sit by the fire than chase mice. So nobody wants me.”",
+              "say": "cat"
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Come with us to Bremen. You have a fine voice!”",
+              "say": "donkey",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A country road runs across flat green fields to a far-off town. A grey donkey walks along it past a wooden signpost, with a dog, a cat and a rooster.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A grey donkey walks along a country road past a wooden signpost.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F2",
+          "#FFF1C4",
+          "#8DB360"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Cat licked a paw, and on they went, three together."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At the next farm a "
+            },
+            {
+              "t": "Rooster",
+              "name": "rooster"
+            },
+            {
+              "t": " stood on the gate, crowing with all his might."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Guests are coming on Sunday,”",
+              "say": "rooster",
+              "chip": true
+            },
+            {
+              "t": " he cried, "
+            },
+            {
+              "t": "“and the cook wants me for the soup pot! So I am crowing while I can!”",
+              "say": "rooster"
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Come with us to Bremen instead. You have a fine voice!”",
+              "say": "donkey",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "Evening at the edge of a forest under a pale sky. A donkey and a dog rest under a big tree, a cat sits on a branch and a rooster perches at the top. A small light shines far off among the trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "A donkey and a dog rest under a big tree at dusk, with a cat on a branch and a rooster at the top.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9E6F2",
+          "#FFE3C2",
+          "#3F6B52"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Down flew the Rooster, and on they went, four together."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But Bremen was far, too far for one day. When the sky turned pale, they stopped at the edge of a forest."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Donkey and the Dog lay down under a big tree. The Cat climbed onto a branch. The Rooster flew to the very top."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "Evening at the edge of a forest under a pale sky. A donkey and a dog rest under a big tree, a cat sits on a branch and a rooster perches at the top. A small light shines far off among the trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "A donkey and a dog rest under a big tree at dusk, with a cat on a branch and a rooster at the top.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9E6F2",
+          "#FFE3C2",
+          "#3F6B52"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "From up there he saw something twinkle, far off among the trees."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A light!”",
+              "say": "rooster",
+              "chip": true
+            },
+            {
+              "t": " he crowed. "
+            },
+            {
+              "t": "“A little yellow light! There must be a house.”",
+              "say": "rooster"
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A house may have a bone in it,”",
+              "say": "dog",
+              "chip": true
+            },
+            {
+              "t": " said the Dog."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“And a warm fire,”",
+              "say": "cat",
+              "chip": true
+            },
+            {
+              "t": " said the Cat. So up they all got and walked toward the light."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-window.unfolded.heic",
+          "alt": "A timber house in the forest at dusk, its window glowing. A donkey stands at the window with a dog on his back, a cat on the dog and a rooster on the cat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-window.folded.heic",
+          "alt": "A rooster on a cat on a dog on a donkey, beside a glowing window.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCE4F2",
+          "#FFDDB8",
+          "#5A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The light shone from a ",
+              "lead": true
+            },
+            {
+              "t": "house",
+              "lead": true,
+              "tap": "timber-house"
+            },
+            {
+              "t": " deep in the forest.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Donkey was the tallest, so he looked in at the window."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“What do you see, Donkey?”",
+              "say": "rooster",
+              "chip": true
+            },
+            {
+              "t": " whispered the Rooster."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A table full of good things,”",
+              "say": "donkey",
+              "chip": true
+            },
+            {
+              "t": " said the Donkey, "
+            },
+            {
+              "t": "“bread and cheese and fat sausages. And three robbers eating it all up.”",
+              "say": "donkey"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-window.unfolded.heic",
+          "alt": "A timber house in the forest at dusk, its window glowing. A donkey stands at the window with a dog on his back, a cat on the dog and a rooster on the cat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-window.folded.heic",
+          "alt": "A rooster on a cat on a dog on a donkey, beside a glowing window.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCE4F2",
+          "#FFDDB8",
+          "#5A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“That supper would suit us,”",
+              "say": "dog",
+              "chip": true
+            },
+            {
+              "t": " said the Dog. "
+            },
+            {
+              "t": "“But how do we get them out?”",
+              "say": "dog"
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The four friends put their heads together, and soon they had a plan."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Donkey set his front hooves on the window sill. The Dog climbed onto the Donkey. The Cat climbed onto the Dog. And the Rooster flew up onto the Cat’s head."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-window.unfolded.heic",
+          "alt": "A timber house in the forest at dusk, its window glowing. A donkey stands at the window with a dog on his back, a cat on the dog and a rooster on the cat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-window.folded.heic",
+          "alt": "A rooster on a cat on a dog on a donkey, beside a glowing window.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCE4F2",
+          "#FFDDB8",
+          "#5A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Now,”",
+              "say": "donkey",
+              "chip": true
+            },
+            {
+              "t": " whispered the Donkey. "
+            },
+            {
+              "t": "“One, two, three, music!”",
+              "say": "donkey"
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Donkey brayed. The Dog barked. The Cat miaowed. The Rooster crowed. "
+            },
+            {
+              "t": "Hee-haw!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " Woof! Miaow! Cock-a-doodle-doo!"
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then "
+            },
+            {
+              "t": "Crash!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " In they all tumbled through the window."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The robbers jumped up. They were sure a monster had come for them, and they ran off into the forest as fast as they could go."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-window.unfolded.heic",
+          "alt": "A timber house in the forest at dusk, its window glowing. A donkey stands at the window with a dog on his back, a cat on the dog and a rooster on the cat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-window.folded.heic",
+          "alt": "A rooster on a cat on a dog on a donkey, beside a glowing window.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCE4F2",
+          "#FFDDB8",
+          "#5A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then the four friends sat down to supper. They ate until every plate shone."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "After that they blew out the candle, and each found the bed they liked best."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Donkey lay on the straw in the yard. The Dog lay behind the door. The Cat curled up by the warm fire. The Rooster flew up to the roof."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-window.unfolded.heic",
+          "alt": "A timber house in the forest at dusk, its window glowing. A donkey stands at the window with a dog on his back, a cat on the dog and a rooster on the cat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-window.folded.heic",
+          "alt": "A rooster on a cat on a dog on a donkey, beside a glowing window.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCE4F2",
+          "#FFDDB8",
+          "#5A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the dark of night, one robber crept back to look."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Two small lights glowed by the fire. “Hot coals,” he thought, and bent to light his candle."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But they were the Cat’s eyes! She hissed and scratched. The Dog nipped his leg. The Donkey gave him a kick."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And from the roof the Rooster screamed, "
+            },
+            {
+              "t": "“",
+              "say": "rooster"
+            },
+            {
+              "t": "Cock-a-doodle-doo!",
+              "say": "rooster",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": "”",
+              "say": "rooster"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "Morning in the yard of the timber house. The donkey lies on straw, the dog sits by the open door, the cat is on the window sill and the rooster stands on the roof.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "The donkey rests on straw in the sunny yard, with the dog, the cat and the rooster close by.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF5",
+          "#FFF3C9",
+          "#7FAE5C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The robber ran all the way back to his friends."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Do not go near that house!” he puffed. “A witch scratched my face, and a watchman with a stick poked my leg.”"
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A great monster thumped me with a club. And up on the roof sat a judge, shouting, ‘Bring that rascal to me!’”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "Morning in the yard of the timber house. The donkey lies on straw, the dog sits by the open door, the cat is on the window sill and the rooster stands on the roof.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "The donkey rests on straw in the sunny yard, with the dog, the cat and the rooster close by.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF5",
+          "#FFF3C9",
+          "#7FAE5C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The robbers never came back."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And the four friends liked the house so well that they stayed."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Donkey had his straw, the Dog his door, the Cat her fire and the Rooster his roof. Every evening they made music together."
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "As for Bremen, they never got there. "
+            },
+            {
+              "t": "“Bremen can wait,”",
+              "say": "donkey",
+              "chip": true
+            },
+            {
+              "t": " said the Donkey. And it is waiting still."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

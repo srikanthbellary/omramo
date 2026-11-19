@@ -1,0 +1,1779 @@
+{
+  "schemaVersion": 1,
+  "id": "firebird-and-horse-of-power",
+  "contentVersion": 1,
+  "title": "The Fire-Bird and the Horse of Power",
+  "tier": "advanced",
+  "language": "en",
+  "region": {
+    "id": "russian",
+    "culture": "Russian wonder tale (collected by Afanasyev)",
+    "place": "The northern forest of Russia",
+    "label": "Russia",
+    "pin": {
+      "lat": 61.0,
+      "lon": 36.0
+    },
+    "pinColor": "#E8562A"
+  },
+  "setting": {
+    "period": "Folk-tale Russia, in the time of the tsars",
+    "latestYear": 1700
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Russian wonder tale (Afanasyev)",
+    "sources": [
+      {
+        "author": "Arthur Ransome",
+        "title": "Old Peter's Russian Tales",
+        "year": 1916,
+        "gutenbergId": 16981,
+        "url": "https://www.gutenberg.org/ebooks/16981",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Russian wonder tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Ransome died in 1967 and his wording is protected in life + 70 countries until 2038; our text is retold from the traditional tale and uses none of his wording (CONTENT_PLAN CQ2). The underlying tale was collected by Alexander Afanasyev (d. 1871). Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Russian reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The archer rides through the taiga, the vast northern forest that crosses Russia, to a sea where midsummer nights stay light. Wooden building was the great art of that forest north, as the island churches of Kizhi still show.",
+      "factCards": [
+        "taiga",
+        "white-sea",
+        "kizhi-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "The Fire-Bird and the wise horse are old figures of Russian wonder tales, and the Fire-Bird lives on in Palekh lacquer painting and Stravinsky’s ballet. A tsar was a real ruler, but the tsar of a wonder tale rules a kingdom on no map.",
+      "factCards": [
+        "firebird-in-art",
+        "tsar-title"
+      ]
+    },
+    "moral": {
+      "lesson": "The archer ignores one clear warning, and every trouble that follows grows out of that single choice. He does not run from the cost: he tells the truth, keeps going, and pays it in the cauldron. At the end he lets the bird go.",
+      "reflectionQuestion": "The horse warned the archer only once. Why do you think the archer picked up the feather anyway, and was the trouble worth it?"
+    }
+  },
+  "moral": "Listen to a good friend’s warning, for every choice has a cost.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": {
+      "leading": "dark",
+      "trailing": "dark",
+      "folded": "dark"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "At night in a dark spruce forest, a young archer in a long belted coat stands beside his huge dark horse, whose hoof rests on the wing of a glowing golden bird, and the bird’s light fills the clearing.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "The Feather"
+    },
+    {
+      "id": "part-2",
+      "title": "The Princess"
+    },
+    {
+      "id": "part-3",
+      "title": "The Cauldron"
+    }
+  ],
+  "characters": [
+    {
+      "id": "archer",
+      "name": "The Archer",
+      "color": "#FFC978",
+      "face": {
+        "file": "art/face-archer.png",
+        "alt": "The archer.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#B2442A",
+      "card": {
+        "label": "Character · a huntsman of the tsar",
+        "title": "The Archer",
+        "traits": [
+          {
+            "text": "Sure with a bow",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Wears a belted kaftan",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Slow to listen",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "He is bold enough to pick up a burning feather and not yet wise enough to leave it. He pays for that choice himself, every step of the way, and he never once lies about it.",
+        "portrait": {
+          "file": "art/char-archer.card.heic",
+          "alt": "A young man with brown hair cut round under a fur-trimmed cap, in a long red belted kaftan, a bow over his shoulder, under a dark forest sky.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#7A3A22",
+          "#3E2418",
+          "#1A1210"
+        ]
+      }
+    },
+    {
+      "id": "horse",
+      "name": "The Horse",
+      "color": "#C9D6F2",
+      "face": {
+        "file": "art/face-horse.png",
+        "alt": "The Horse of Power.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#3A4A6A",
+      "card": {
+        "label": "Character · the archer’s warhorse",
+        "title": "The Horse of Power",
+        "traits": [
+          {
+            "text": "Speaks seldom",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Wise helper of tales",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Warns only once",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          }
+        ],
+        "body": "In Russian wonder tales a hero’s horse often knows far more than the hero. This one gives his warning once, then helps anyway, and waits for his rider to grow into the advice.",
+        "portrait": {
+          "file": "art/char-horse.card.heic",
+          "alt": "A huge dark horse with a long mane falling below his neck, head turned to look calmly out, lit faintly gold from one side in a night forest.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#2E3B52",
+          "#1B2436",
+          "#0C121E"
+        ]
+      }
+    },
+    {
+      "id": "vasilissa",
+      "name": "Vasilissa",
+      "color": "#F3D3E8",
+      "face": {
+        "file": "art/face-vasilissa.png",
+        "alt": "Princess Vasilissa.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#5E4A8A"
+    },
+    {
+      "id": "tsar",
+      "name": "The Tsar",
+      "color": "#E9C46A",
+      "face": {
+        "file": "art/face-tsar.png",
+        "alt": "The old tsar.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#7A2E2E"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "taiga",
+      "kind": "place",
+      "title": "The taiga",
+      "line": "The taiga is the great northern forest of spruce, pine, larch and birch that stretches across Russia.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "The taiga crosses Russia from the Baltic almost to the Pacific Ocean. It belongs to a belt of northern forest that also runs through Scandinavia, Canada and Alaska, the largest forest region on Earth. Its summers are short and its winters long and hard."
+      },
+      "picture": {
+        "file": "art/see-taiga.heic",
+        "alt": "One tall dark spruce tree beside a white-barked birch, standing on a mossy forest floor under a night sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#173126"
+    },
+    {
+      "id": "tsar-title",
+      "kind": "idea",
+      "title": "Tsar",
+      "line": "Tsar was the title of the rulers of Russia, and it means much the same as emperor.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "The word comes from Caesar, the family name of the first Roman emperors. Ivan the Fourth was the first ruler crowned tsar, in 1547, and the last, Nicholas the Second, gave up the throne in 1917. A wonder-tale tsar rules a kingdom on no map."
+      },
+      "picture": {
+        "file": "art/see-tsar-title.heic",
+        "alt": "An old Russian crown of gold filigree with a rim of dark fur, set with a few red and green stones, resting on a cushion.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A1E1E"
+    },
+    {
+      "id": "firebird-in-art",
+      "kind": "idea",
+      "title": "The Fire-Bird",
+      "line": "The Fire-Bird, zhar-ptitsa in Russian, has feathers that glow like embers, and heroes chase it in many wonder tales.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Painters in the village of Palekh paint the Fire-Bird in gold on small black lacquer boxes, a craft they began in the 1920s. Igor Stravinsky’s ballet The Firebird opened in Paris in 1910. In the tales, a single feather can light a dark room."
+      },
+      "picture": {
+        "file": "art/see-firebird-in-art.heic",
+        "alt": "One Fire-Bird with a long trailing tail, its gold and orange feathers glowing against a black ground.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2410"
+    },
+    {
+      "id": "white-sea",
+      "kind": "place",
+      "title": "The White Sea",
+      "line": "The White Sea is a cold arm of the Arctic Ocean that reaches deep into the north of Russia.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "The White Sea lies just south of the Arctic Circle. Around midsummer the sun there sets for only a few hours and the sky never grows fully dark, and Russians call these the white nights. Where the tale’s end of the world lies, the tale never says."
+      },
+      "picture": {
+        "file": "art/see-white-sea.heic",
+        "alt": "A pale sandy shore beside a still grey sea under a light midnight sky with one faint star.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#22324A"
+    },
+    {
+      "id": "kizhi-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "kizhi-pogost",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "In the tsar’s palace everything was made of wood. North of here, on an island in Lake Onega, builders raised a whole church of wood with twenty-two domes."
+        }
+      },
+      "background": "#22394A"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "The deep taiga at night: tall black spruces and a few pale birches under a dark blue sky with faint stars, which fills the calm upper part of both panes. Low on the right, a narrow path of fallen needles where a young archer on a huge dark horse looks down at a golden feather glowing like a lamp on the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "At night among dark spruces, the archer leans from the saddle of his great horse towards a glowing golden feather on the path.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0B1424",
+          "#14263A",
+          "#1E3226"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago, in the north of Russia, a young ",
+              "lead": true
+            },
+            {
+              "t": "archer",
+              "lead": true,
+              "name": "archer"
+            },
+            {
+              "t": " served the tsar.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He was a huntsman, the best the tsar had. He could put an arrow through a ring at fifty paces, and he could sleep in the saddle and wake at the snap of a twig. But the finest thing he owned was not his bow."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was his horse. The "
+            },
+            {
+              "t": "Horse of Power",
+              "name": "horse"
+            },
+            {
+              "t": " stood a head taller than any horse in the royal stables, dark as a wet log, with a mane that hung below his knees. He did not speak often. When he did, the archer had learned, it was wise to listen. Mostly."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One autumn night the two of them were riding home through the "
+            },
+            {
+              "t": "great forest",
+              "tap": "taiga"
+            },
+            {
+              "t": ". Spruces stood close on either side, black against a blacker sky, and the path between them was a pale thread of fallen needles. Nothing stirred in the branches, and even the wind had dropped."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then, far ahead, a light. It lay on the path, low and steady, the colour of a candle seen through honey. The horse’s ears went forward. The archer leaned from the saddle to look, and still the light did not flicker. It simply burned."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "The deep taiga at night: tall black spruces and a few pale birches under a dark blue sky with faint stars, which fills the calm upper part of both panes. Low on the right, a narrow path of fallen needles where a young archer on a huge dark horse looks down at a golden feather glowing like a lamp on the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "At night among dark spruces, the archer leans from the saddle of his great horse towards a glowing golden feather on the path.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0B1424",
+          "#14263A",
+          "#1E3226"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a feather. One long feather from some great bird’s wing lay across the path like a dropped sword, shining from quill to tip with its own gold fire. The spruce trunks around it glowed orange. The archer could have read a letter by it."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A feather of the Fire-Bird,”",
+              "say": "archer",
+              "chip": true
+            },
+            {
+              "t": " he breathed. Every child in Russia had heard of that bird, and not one grown man he knew had ever seen it. "
+            },
+            {
+              "t": "“The tsar would give me anything for this.”",
+              "say": "archer"
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The "
+            },
+            {
+              "t": "Horse of Power",
+              "name": "horse"
+            },
+            {
+              "t": " did not lower his head to look. "
+            },
+            {
+              "t": "“Let it be,”",
+              "say": "horse",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Pick it up, and it will cost you more than you can guess.”",
+              "say": "horse"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The archer sat in the saddle with the gold light on his face. He thought of the tsar’s hall, and of the reward a man might earn who walked in with such a thing in his hand. He thought of the horse’s warning too. But the feather was here, and the warning was only words."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He swung down, picked it up and tucked it inside his kaftan, where it lay warm against his ribs like a live coal. The horse said nothing more. He walked on into the dark, and the archer rode home with gold light leaking through his coat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "The tsar’s wooden palace hall at night by candlelight: dark log walls and carved posts rise into deep brown shadow, which fills the calm upper part of both panes. Low on the right, beside a green-tiled stove, the old tsar sits on a carved chair before a golden cage where the Fire-Bird glows, and the archer bows before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "In a dark wooden hall at night, the old tsar on his carved chair gazes at the Fire-Bird glowing in a golden cage.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A0F0A",
+          "#3A2216",
+          "#6A3A1E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Before dawn the archer climbed the palace steps, knelt before the "
+            },
+            {
+              "t": "tsar",
+              "tap": "tsar-title"
+            },
+            {
+              "t": " and opened his coat. Gold light spilled across the floor. The courtiers drew back as if he had let a fox loose among them."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The "
+            },
+            {
+              "t": "tsar",
+              "name": "tsar"
+            },
+            {
+              "t": " was old, with a long grey beard and a crown rimmed with sable, and he loved only the things nobody else had. He turned the feather over and over in his ringed hands. For a moment the archer thought he would smile."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A feather is a fine thing,”",
+              "say": "tsar",
+              "chip": true
+            },
+            {
+              "t": " the tsar said at last. "
+            },
+            {
+              "t": "“But a man who can find a feather can find the bird it fell from. Bring me the Fire-Bird, archer. Fail me, and you will lose your head.”",
+              "say": "tsar"
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nobody laughed. Nobody spoke for him. The archer bowed until his forehead touched the boards, and went out into the yard with the hollow feeling of a man who has put his foot down on a stair that is not there."
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Horse of Power was waiting by the stable door. The archer put his arms round the great dark neck and wept into the mane, as he had not wept since he was a boy. The horse let him. Then he blew softly through his nose."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "The deep taiga at night: tall black spruces and a few pale birches under a dark blue sky with faint stars, which fills the calm upper part of both panes. Low on the right, a narrow path of fallen needles where a young archer on a huge dark horse looks down at a golden feather glowing like a lamp on the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "At night among dark spruces, the archer leans from the saddle of his great horse towards a glowing golden feather on the path.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0B1424",
+          "#14263A",
+          "#1E3226"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Didn’t I warn you?”",
+              "say": "horse",
+              "chip": true
+            },
+            {
+              "t": " said the "
+            },
+            {
+              "t": "Horse of Power",
+              "name": "horse"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“I warned you, and you did not listen. But dry your face. This is only the first step. The hard road is still ahead.”",
+              "say": "horse"
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Go back to the tsar. Ask him for a hundred sacks of white wheat, and have them loaded on carts tonight. Then we will go hunting.”",
+              "say": "horse",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The tsar grumbled at the cost, but he gave the wheat. At dusk the carts creaked out of the city behind the horse, deep into the forest, to a clearing where the spruces stood back round a circle of grass and the stars looked straight down."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There the archer slit the sacks and scattered the grain until the whole clearing was pale with it. Then he and the horse stood among the trees at its edge and waited. The archer’s hands were cold. An owl went over without a sound. Midnight came."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And with midnight came a wind out of the east, warm as a summer afternoon, and the treetops began to glow. Then the sky above the clearing caught fire from end to end, and the birds came down."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "The deep taiga at night: tall black spruces and a few pale birches under a dark blue sky with faint stars, which fills the calm upper part of both panes. Low on the right, a narrow path of fallen needles where a young archer on a huge dark horse looks down at a golden feather glowing like a lamp on the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "At night among dark spruces, the archer leans from the saddle of his great horse towards a glowing golden feather on the path.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0B1424",
+          "#14263A",
+          "#1E3226"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They were firebirds, each the size of a peacock, with a long tail that trailed behind it like the tail of a falling star. Their feathers burned gold and orange, and they did not catch the light. They were the light."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They settled on the wheat and began to feed, and the clearing was as bright as noon. One was brighter than all the rest. That one, the archer knew, was the "
+            },
+            {
+              "t": "Fire-Bird",
+              "tap": "firebird-in-art"
+            },
+            {
+              "t": " of the stories, and it was pecking its way closer to the trees."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Horse of Power waited until it was a single stride away. Then he stepped out of the shadow and set one great hoof on the tip of its wing, gently, the way a man puts a hand on a letter to stop it blowing away."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The flock rose with a roar like a bonfire and was gone. The Fire-Bird beat its free wing and shrieked. The archer ran out and bound its legs with soft cord."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "By evening it was in the palace, in a cage of gold. It lit the hall from end to end, so that no candle was needed. The "
+            },
+            {
+              "t": "tsar",
+              "name": "tsar"
+            },
+            {
+              "t": " sat before it all night, gazing, and did not once look at the archer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "The tsar’s wooden palace hall at night by candlelight: dark log walls and carved posts rise into deep brown shadow, which fills the calm upper part of both panes. Low on the right, beside a green-tiled stove, the old tsar sits on a carved chair before a golden cage where the Fire-Bird glows, and the archer bows before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "In a dark wooden hall at night, the old tsar on his carved chair gazes at the Fire-Bird glowing in a golden cage.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A0F0A",
+          "#3A2216",
+          "#6A3A1E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For a month the Fire-Bird lit the tsar’s hall, and the tsar was almost content.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a "
+            },
+            {
+              "t": "wooden",
+              "tap": "kizhi-moment"
+            },
+            {
+              "t": " palace, as the great houses of the north were then. Pine logs as thick as a man’s waist were notched together at the corners. The gables were carved with suns and twisting vines, and under the bird’s light every carving seemed to move."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the tsar was a man who could never have enough. One night he sent for the archer, and the archer came and knelt where he had knelt before."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You found me a bird no one could find,”",
+              "say": "tsar",
+              "chip": true
+            },
+            {
+              "t": " said the tsar, stroking his beard. "
+            },
+            {
+              "t": "“Now find me a bride no one can win. Far away, at the end of the world, where the land stops and the sea begins, lives the Princess ",
+              "say": "tsar"
+            },
+            {
+              "t": "Vasilissa",
+              "say": "tsar",
+              "name": "vasilissa"
+            },
+            {
+              "t": ". Bring her here. I mean to marry her.”",
+              "say": "tsar"
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The archer did not argue. He knew by now what came of arguing. He bowed and went out to the stable, and in the dark the Horse of Power turned his long head towards him, as if he had been waiting."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sea.unfolded.heic",
+          "alt": "The shore at the end of the world under a white-night sky: a still, dark pewter sea and a soft grey-blue midnight sky with one faint star fill the calm upper part of both panes. Low on the right, a golden-roofed tent stands on pale sand with the huge dark horse beside it, and out on the water a girl rows a small silver boat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sea.folded.heic",
+          "alt": "On a pale shore at midnight, a golden-roofed tent and a dark horse, with a girl rowing a little silver boat on the dark sea behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#2A3446",
+          "#1C2638",
+          "#141C28"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“This is still not the hard road,”",
+              "say": "horse",
+              "chip": true
+            },
+            {
+              "t": " said the horse. "
+            },
+            {
+              "t": "“Ask the tsar for a tent with a roof of gold, and the finest food and drink in his kitchens. Then hold on tight, for it is a long way to the end of the world.”",
+              "say": "horse"
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They rode for many days. The spruce forest thinned to birch, and the birch to low pines and bog and grey rock, and every river they crossed ran north. Each night the dark came later and left sooner, until at last it did not come at all."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So they came to "
+            },
+            {
+              "t": "the end of the world",
+              "tap": "white-sea"
+            },
+            {
+              "t": ". It was a long shore of pale sand beside a sea as still as pewter. Over it hung a midnight sky that was neither night nor day, the grey of milk and ashes, with one faint star."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The archer pitched the golden tent on the sand, set out the dishes and the jugs, and hid among the rocks with the horse."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "trailing",
+          "kind": "pathText",
+          "path": "M14,66 C70,22 120,84 190,52 C250,26 300,70 388,30",
+          "runs": [
+            {
+              "t": "“Silver boat, golden oar…”"
+            }
+          ]
+        },
+        {
+          "id": "s07-b6",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far out on the water something moved. It was a narrow silver boat, and in it sat a girl rowing with a golden oar, slowly, the way a person walks who has nowhere in particular to be. She was singing to herself."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sea.unfolded.heic",
+          "alt": "The shore at the end of the world under a white-night sky: a still, dark pewter sea and a soft grey-blue midnight sky with one faint star fill the calm upper part of both panes. Low on the right, a golden-roofed tent stands on pale sand with the huge dark horse beside it, and out on the water a girl rows a small silver boat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sea.folded.heic",
+          "alt": "On a pale shore at midnight, a golden-roofed tent and a dark horse, with a girl rowing a little silver boat on the dark sea behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#2A3446",
+          "#1C2638",
+          "#141C28"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The girl saw the gold roof shining and stopped singing. She rowed in, pulled her boat up the sand and walked once all round the tent, her head on one side. Then she lifted the flap and went in."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The archer came out from the rocks. All the way north he had planned what clever things he would say. But when she looked up at him from the honey cakes, with crumbs on her fingers, he found he could only tell the truth."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I am the tsar’s archer,”",
+              "say": "archer",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“He sent me to fetch you to be his bride. He is old and greedy, and he keeps a bird of fire in a golden cage. That is the whole of it.”",
+              "say": "archer"
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Vasilissa",
+              "name": "vasilissa"
+            },
+            {
+              "t": " looked at him for a long moment. Then she laughed, and the laugh went out across the still water."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I have never been past the end of the world,”",
+              "say": "vasilissa",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“I should like to see this tsar for myself. And I should like to see your face when I tell him no.”",
+              "say": "vasilissa"
+            },
+            {
+              "t": " She brushed the crumbs from her hands and stood up."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-forest.unfolded.heic",
+          "alt": "The deep taiga at night: tall black spruces and a few pale birches under a dark blue sky with faint stars, which fills the calm upper part of both panes. Low on the right, a narrow path of fallen needles where a young archer on a huge dark horse looks down at a golden feather glowing like a lamp on the ground.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-forest.folded.heic",
+          "alt": "At night among dark spruces, the archer leans from the saddle of his great horse towards a glowing golden feather on the path.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0B1424",
+          "#14263A",
+          "#1E3226"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So they rode south together, the princess behind the archer on the broad back of the horse, her arms round his waist and her long braid blowing over his shoulder. The horse went more gently than the archer had ever known him go."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The nights grew dark again as they came south. They slept by small fires among the birches, and she asked him about everything: what grew in his country, what songs his mother had sung, whether the tsar’s people were happy. He found that he told her things he had told nobody."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“They are afraid,”",
+              "say": "archer",
+              "chip": true
+            },
+            {
+              "t": " he said, when she asked the last. Then he was quiet, because he had never said it aloud before."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Once, by the fire, she asked the "
+            },
+            {
+              "t": "horse",
+              "name": "horse"
+            },
+            {
+              "t": " why he served a man who never listened to him. The horse looked at the archer across the flames. "
+            },
+            {
+              "t": "“Because he is learning,”",
+              "say": "horse",
+              "chip": true
+            },
+            {
+              "t": " he said."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On the last evening they saw the palace roofs rising out of the forest against the dusk, and torches burning at the gate. Vasilissa’s arms tightened round the archer’s waist. Neither of them said a word, and the horse slowed to a walk."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "The tsar’s wooden palace hall at night by candlelight: dark log walls and carved posts rise into deep brown shadow, which fills the calm upper part of both panes. Low on the right, beside a green-tiled stove, the old tsar sits on a carved chair before a golden cage where the Fire-Bird glows, and the archer bows before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "In a dark wooden hall at night, the old tsar on his carved chair gazes at the Fire-Bird glowing in a golden cage.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A0F0A",
+          "#3A2216",
+          "#6A3A1E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The "
+            },
+            {
+              "t": "tsar",
+              "name": "tsar"
+            },
+            {
+              "t": " came down the steps to meet them in his heaviest robe, his crown set straight and his beard combed out to his belt. He took Vasilissa’s hand in both of his. "
+            },
+            {
+              "t": "“Tomorrow we shall be married,”",
+              "say": "tsar",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“and the bells will ring for a week.”",
+              "say": "tsar"
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Vasilissa drew her hand away, quite politely."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I shall marry no one,”",
+              "say": "vasilissa",
+              "chip": true
+            },
+            {
+              "t": " she said, "
+            },
+            {
+              "t": "“without my wedding dress. It lies at the bottom of the sea, beneath a stone as big as a hut, in a casket nobody has opened since my grandmother’s time. When it is brought to me, we can talk of bells.”",
+              "say": "vasilissa"
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The courtiers looked at their boots. The tsar’s face went slowly red from the collar upwards, like wine filling a cup. Then he smiled, for he had seen the answer, and the answer was standing beside the princess with road dust on its boots."
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Archer,”",
+              "say": "tsar",
+              "chip": true
+            },
+            {
+              "t": " he said softly. "
+            },
+            {
+              "t": "“You heard the princess. The sea, the stone, the casket. Fetch it. You know what happens if you fail.”",
+              "say": "tsar"
+            },
+            {
+              "t": " And the hall was so quiet that they heard the Fire-Bird shift on its golden perch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sea.unfolded.heic",
+          "alt": "The shore at the end of the world under a white-night sky: a still, dark pewter sea and a soft grey-blue midnight sky with one faint star fill the calm upper part of both panes. Low on the right, a golden-roofed tent stands on pale sand with the huge dark horse beside it, and out on the water a girl rows a small silver boat.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sea.folded.heic",
+          "alt": "On a pale shore at midnight, a golden-roofed tent and a dark horse, with a girl rowing a little silver boat on the dark sea behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#2A3446",
+          "#1C2638",
+          "#141C28"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "This time the horse did not say that he had told him so.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Now,”",
+              "say": "horse",
+              "chip": true
+            },
+            {
+              "t": " said the "
+            },
+            {
+              "t": "Horse of Power",
+              "name": "horse"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "“comes the hard road. Get on my back.”",
+              "say": "horse"
+            },
+            {
+              "t": " And they rode north again, so fast that the trees ran together into one long grey wall, and in three days they came to the shore at the end of the world."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A great crab was walking along the edge of the water, as broad as a cartwheel, its claws held up in front of it like a man carrying two buckets. The horse put his hoof down on its back and held it there. “Let me go!” creaked the crab, its legs scrabbling at the sand. “I am the eldest crab in all this sea. Let me go, and I will do whatever you ask.”"
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Bring up the casket from under the great stone,”",
+              "say": "horse",
+              "chip": true
+            },
+            {
+              "t": " said the horse, "
+            },
+            {
+              "t": "“and you shall go.”",
+              "say": "horse"
+            }
+          ]
+        },
+        {
+          "id": "s11-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The crab gave a shrill whistle, and the whole shallows began to stir. Up out of the water came crabs by the hundred, then by the thousand, clicking and climbing over one another, and between them they pushed a small iron-bound casket up onto the sand."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cauldron.unfolded.heic",
+          "alt": "The palace courtyard at night by torchlight: carved wooden gables and tented roofs stand against a black sky, and a column of white steam rises into the calm dark upper part of both panes. Low on the right, a great iron cauldron steams over a fire, a crowd watches from the shadows, and the archer stands at its rim with his dark horse beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cauldron.folded.heic",
+          "alt": "By torchlight at night, the archer stands at the rim of a steaming iron cauldron with his dark horse bending its head beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0E0A10",
+          "#2A1A16",
+          "#5A2E18"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the torchlit courtyard, "
+            },
+            {
+              "t": "Vasilissa",
+              "name": "vasilissa"
+            },
+            {
+              "t": " opened the casket and shook out a dress the colour of the sea at dusk, sewn all over with seed pearls. She held it up against herself. The tsar clapped his hands for the musicians."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Not yet,”",
+              "say": "vasilissa",
+              "chip": true
+            },
+            {
+              "t": " said Vasilissa. "
+            },
+            {
+              "t": "“One thing more. I will marry only when the man who fetched me has stepped into a cauldron of boiling water and climbed out again.”",
+              "say": "vasilissa"
+            },
+            {
+              "t": " And she glanced, just once, past the archer to the dark horse waiting by the gate."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The tsar did not even pause. Within the hour a great iron cauldron hung over a fire among the torches, and the water in it rolled and spat, and the steam stood up into the dark like a white tree. The whole city crowded in to watch."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The "
+            },
+            {
+              "t": "archer",
+              "name": "archer"
+            },
+            {
+              "t": " looked at the water and could not feel his feet. "
+            },
+            {
+              "t": "“Let me say goodbye to my horse,”",
+              "say": "archer",
+              "chip": true
+            },
+            {
+              "t": " he said. Nobody refused him that."
+            }
+          ]
+        },
+        {
+          "id": "s12-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Horse of Power bent his head over the cauldron and breathed on the water, three long breaths, as a man blows on hot soup. Then he put his nose to the archer’s ear. "
+            },
+            {
+              "t": "“Go in,”",
+              "say": "horse",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“This is the price of the feather. Pay it, and be done with it.”",
+              "say": "horse"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cauldron.unfolded.heic",
+          "alt": "The palace courtyard at night by torchlight: carved wooden gables and tented roofs stand against a black sky, and a column of white steam rises into the calm dark upper part of both panes. Low on the right, a great iron cauldron steams over a fire, a crowd watches from the shadows, and the archer stands at its rim with his dark horse beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cauldron.folded.heic",
+          "alt": "By torchlight at night, the archer stands at the rim of a steaming iron cauldron with his dark horse bending its head beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0E0A10",
+          "#2A1A16",
+          "#5A2E18"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The archer climbed the ladder, shut his eyes and stepped down into the cauldron. The crowd made one sound together, a long breath drawn in, and then nobody breathed at all."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The water closed over his head. It was not hot. It was like a summer river at evening, when the shallows have held the sun all day. He came up laughing, out of pure surprise."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When he climbed out, the torchlight seemed to follow him. It was his own face still, but clearer, the way a window is clearer after rain. He stood straighter, and even the tsar’s guards stepped back to let him by."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The "
+            },
+            {
+              "t": "tsar",
+              "name": "tsar"
+            },
+            {
+              "t": " stared. If one bath could do that for a young archer, what might it not do for an old tsar? He flung off his heavy robe, tossed his crown to a servant, scrambled up the ladder and jumped in with both feet."
+            }
+          ]
+        },
+        {
+          "id": "s13-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He came out again faster than he had gone in, like a cork from a bottle, howling and as red as a beetroot. He ran across the courtyard, out of the gate and down the road into the forest, still howling, and he was never seen in that city again."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "The tsar’s wooden palace hall at night by candlelight: dark log walls and carved posts rise into deep brown shadow, which fills the calm upper part of both panes. Low on the right, beside a green-tiled stove, the old tsar sits on a carved chair before a golden cage where the Fire-Bird glows, and the archer bows before him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "In a dark wooden hall at night, the old tsar on his carved chair gazes at the Fire-Bird glowing in a golden cage.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1A0F0A",
+          "#3A2216",
+          "#6A3A1E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The people did not go looking for him. They had been afraid of him for too long. Instead they lifted the archer onto their shoulders and carried him into the hall, and before the torches burned down they had made him tsar."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He looked for Vasilissa in the crowd. She was standing by the golden cage with the sea-coloured dress over her arm."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I will not send for a bride,”",
+              "say": "archer",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“I have seen how that goes. But if you would choose to stay…”",
+              "say": "archer"
+            },
+            {
+              "t": " "
+            },
+            {
+              "t": "“I chose,”",
+              "say": "vasilissa",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Vasilissa",
+              "name": "vasilissa"
+            },
+            {
+              "t": ", "
+            },
+            {
+              "t": "“on the shore. You were too busy telling the truth to notice.”",
+              "say": "vasilissa"
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They were married at midsummer. And the first thing the new tsar did, on the night of the wedding, was to carry the golden cage to the open window and lift its little door."
+            }
+          ]
+        },
+        {
+          "id": "s14-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Fire-Bird stepped out onto the sill and was gone, a streak of gold over the dark forest, and the hall went back to candlelight. The archer watched until the last spark had gone. Below the window, the Horse of Power blew softly through his nose, and the new tsar leaned out to listen."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

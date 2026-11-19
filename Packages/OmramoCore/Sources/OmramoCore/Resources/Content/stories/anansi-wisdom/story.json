@@ -50,7 +50,8 @@
     "level": "required",
     "status": "pending",
     "reason": "A living Akan oral tradition (Anansesem); the story, the names and every kente or symbol drawing need an Akan reader.",
-    "community": "Akan (Asante/Fante) reader"
+    "community": "Akan (Asante/Fante) reader",
+    "notes": "Needs cultural review before release."
   },
   "education": {
     "geography": {
@@ -72,7 +73,7 @@
       "reflectionQuestion": "What is something you know that you could teach a grown-up?"
     }
   },
-  "moral": "Nobody can keep all the wisdom, and even a child can teach a grown-up.",
+  "moral": "Nobody has all the wisdom, so even a child can teach a grown-up.",
   "sample": {
     "freeSpreads": 2
   },

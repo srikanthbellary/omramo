@@ -1,0 +1,459 @@
+{
+  "id": "why-possums-tail-is-bare",
+  "title": "Why the Possum’s Tail Is Bare",
+  "tier": "low",
+  "region": {
+    "id": "nativeAmericanFirstNations",
+    "culture": "Cherokee",
+    "place": "The southern Appalachian Mountains (the Cherokee homelands)",
+    "label": "Cherokee · Appalachia",
+    "pin": {
+      "lat": 35.5,
+      "lon": -83.3
+    },
+    "pinColor": "#D94F3D"
+  },
+  "setting": {
+    "period": "A Cherokee story, told for a very long time and still told today"
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Cherokee animal story",
+    "sources": [
+      {
+        "author": "James Mooney",
+        "title": "Myths of the Cherokee (story 18, “Why the Possum’s Tail is Bare”)",
+        "publisher": "Bureau of American Ethnology, Nineteenth Annual Report (Government Printing Office)",
+        "year": 1900,
+        "gutenbergId": 45634,
+        "url": "https://www.gutenberg.org/ebooks/45634",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Cherokee animal story, written for Omramo; it does not use the wording of the cited edition. The story belongs to the Cherokee people. James Mooney was an outside ethnographer who wrote it down from several Cherokee storytellers, east and west, whom he does not name for this story; they are the tellers to credit. The cited edition is a US government publication of 1900 and is in the US public domain (published before 1931); other territories not verified. A Cherokee consultant must confirm that we may retell this story, and how, before release. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Indigenous story (Cherokee). A widely published animal tale, but a Cherokee consultant must confirm it is right for us to retell and how.",
+    "community": "Cherokee consultant",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Great Smoky Mountains in the southern Appalachians are the Cherokee homelands; the opossum, the rabbit and the cricket are real animals of these eastern woodlands.",
+      "factCards": [
+        "smoky-mountains",
+        "opossum"
+      ]
+    },
+    "culture": {
+      "lesson": "The Cherokee tell animal stories for fun and for teaching, and tell them today. Cherokee people live in North Carolina and Oklahoma and have their own writing, the syllabary made by Sequoyah.",
+      "factCards": [
+        "cricket-barber",
+        "opossum",
+        "smoky-mountains"
+      ]
+    },
+    "moral": {
+      "lesson": "Boasting makes you easy to trick; be proud quietly. Possum is so busy being admired that he never checks what is being done to his tail.",
+      "reflectionQuestion": "What are you proud of, and how can you be proud of it quietly?"
+    }
+  },
+  "moral": "Boasting makes you easy to trick, so be proud quietly.",
+  "theme": {
+    "textColor": "#16302A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A grey possum holds up his long bushy tail and sings, while a rabbit watches from the ferns."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "possum",
+      "name": "Possum",
+      "color": "#4A4F73",
+      "chipBackground": "#E3E4F2",
+      "faceAlt": "Possum, with his white face and pink nose.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Possum",
+        "traits": [
+          {
+            "text": "Loves his tail",
+            "fill": "#E3E4F2",
+            "ink": "#3A3F66"
+          },
+          {
+            "text": "Sings every morning",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never looks down",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He has the finest tail in the woods, and he will tell you so. He combs it every morning. He sings about it every day.",
+        "portraitAlt": "Possum sitting in the morning sun, combing his long bushy tail.",
+        "background": [
+          "#CFE6DA",
+          "#8FC3A4",
+          "#3F8468"
+        ]
+      }
+    },
+    {
+      "id": "rabbit",
+      "name": "Rabbit",
+      "color": "#A8501C",
+      "chipBackground": "#FFE2A8",
+      "faceAlt": "Rabbit, with long ears and bright eyes.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Rabbit",
+        "traits": [
+          {
+            "text": "Carries the news",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Full of tricks",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "A bit of fluff",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He hops from den to den with the news. He has heard Possum’s song a few too many times. When his ears twitch, a trick is coming.",
+        "portraitAlt": "Rabbit standing on a mossy path, ears up, with his small fluffy tail.",
+        "background": [
+          "#FFE6A6",
+          "#F6BE6A",
+          "#D9853C"
+        ]
+      }
+    },
+    {
+      "id": "cricket",
+      "name": "Cricket",
+      "color": "#17694A",
+      "chipBackground": "#D9F5E4",
+      "faceAlt": "Cricket, small and black, with long feelers."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "smoky-mountains",
+      "kind": "place",
+      "title": "Smoky Mountains",
+      "line": "Old, rounded mountains covered in forest and often wrapped in blue mist.",
+      "cultureNote": {
+        "label": "Cherokee homelands",
+        "text": "These mountains are the homelands of the Cherokee people. Cherokee people live there today, in North Carolina, and in Oklahoma too."
+      },
+      "pictureAlt": "Blue forested mountain ridges fading into morning mist.",
+      "background": "#27506B"
+    },
+    {
+      "id": "cricket-barber",
+      "kind": "creature",
+      "title": "The cricket",
+      "line": "A small insect that sings by rubbing its wings together.",
+      "cultureNote": {
+        "label": "The Cherokee tell",
+        "text": "The Cherokee often call the cricket the barber. Crickets can nibble the hair right off a fur."
+      },
+      "pictureAlt": "A black field cricket on a green leaf.",
+      "background": "#1F5A3C"
+    },
+    {
+      "id": "opossum",
+      "kind": "creature",
+      "title": "The possum",
+      "line": "A real animal with a bare tail, which plays dead when it is scared.",
+      "cultureNote": {
+        "label": "The Cherokee tell",
+        "text": "Cherokee people tell this story today. Their language has its own writing, made by a man named Sequoyah."
+      },
+      "pictureAlt": "A real opossum with grey fur, a white face and a long bare tail, on a log.",
+      "background": "#4A3F5C"
+    }
+  ],
+  "scenes": {
+    "scene-woods": {
+      "unfoldedAlt": "In the mountain woods in the morning, a possum sits on a mossy log combing his long bushy tail. A rabbit watches from the ferns. Blue misty ridges rise far behind.",
+      "foldedAlt": "A possum combs his long bushy tail in the morning woods.",
+      "fallbackColors": [
+        "#CDE8E4",
+        "#FFF0C2",
+        "#4F8F63"
+      ]
+    },
+    "scene-combing": {
+      "unfoldedAlt": "Late in the afternoon a possum lies with his eyes shut outside his den in a hollow tree. A small cricket winds red string round and round his tail.",
+      "foldedAlt": "A cricket winds red string round a possum’s tail.",
+      "fallbackColors": [
+        "#DCEBD9",
+        "#FFE7AE",
+        "#6E8F4E"
+      ]
+    },
+    "scene-dance": {
+      "unfoldedAlt": "In the evening the animals sit in a ring in a forest clearing. A possum steps into the middle, his tail wrapped in red string.",
+      "foldedAlt": "A possum steps into a ring of animals, his tail wrapped in red string.",
+      "fallbackColors": [
+        "#F4DCC6",
+        "#FFDFA0",
+        "#5E7F58"
+      ]
+    },
+    "scene-grin": {
+      "unfoldedAlt": "A possum lies on his back in the clearing, grinning, with his thin bare tail curled beside him. The other animals stand around him.",
+      "foldedAlt": "A possum lies on his back and grins, his bare tail curled.",
+      "fallbackColors": [
+        "#F3D9CC",
+        "#FFE2A6",
+        "#5B7C56"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-woods",
+      "part": "part-1",
+      "paras": [
+        "^Long ago, in the misty blue <tap:smoky-mountains>mountains</tap>, <name:possum>Possum</name> had a splendid tail.",
+        "It was long and thick and bushy, and it swept the ground behind him.",
+        "Every morning he sat in the sun and combed it until it shone.",
+        "And every morning he sang, <say:possum*>“Look at my tail! Oh, look at my tail!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-woods",
+      "part": "part-1",
+      "paras": [
+        "<name:rabbit>Rabbit</name> lived close by. Rabbit had a tail too, but it was nothing much. It was only a bit of fluff.",
+        "<say:possum*>“Good morning, Rabbit!”</say> Possum would call. <say:possum>“Have you seen my tail today?”</say>",
+        "<say:rabbit*>“I saw it yesterday,”</say> said Rabbit. <say:rabbit>“And the day before. And the day before that.”</say>",
+        "But Possum was already singing again."
+      ]
+    },
+    {
+      "scene": "scene-woods",
+      "part": "part-1",
+      "paras": [
+        "Now, Rabbit was the one who carried the news. One morning he came hopping up the path.",
+        "<say:rabbit*>“Possum! There is to be a great dance tonight. All the animals are coming. Will you be there?”</say>",
+        "Possum stroked his tail. <say:possum*>“I will come,”</say> he said, <say:possum>“if I may have the best seat. Everyone should be able to see my tail.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-woods",
+      "part": "part-1",
+      "paras": [
+        "Rabbit’s ears twitched. He was tired of that tail. He was tired of it right down to his toes.",
+        "Then a trick popped into his head, and he smiled.",
+        "<say:rabbit*>“The best seat is yours,”</say> he said. <say:rabbit>“And I will send someone to comb your tail and dress it for the dance.”</say>",
+        "<say:possum*>“How kind!”</say> said Possum."
+      ]
+    },
+    {
+      "scene": "scene-combing",
+      "part": "part-1",
+      "paras": [
+        "That afternoon, <name:cricket>Cricket</name> came to Possum’s den.",
+        "Cricket is so good at cutting hair that the Cherokee often call him <tap:cricket-barber>the barber</tap>.",
+        "<say:cricket*>“Rabbit sent me,”</say> he chirped. <say:cricket>“Lie down, shut your eyes, and leave it all to me.”</say>",
+        "So Possum stretched out in the warm sun and shut his eyes."
+      ]
+    },
+    {
+      "scene": "scene-combing",
+      "part": "part-1",
+      "paras": [
+        "Cricket combed the tail from top to tip. Then he took a long red string.",
+        "<say:cricket*>“I will wrap it round and round,”</say> he said, <say:cricket>“to keep every hair smooth until the dance.”</say>",
+        "Round and round went the red string. And close behind the string, very softly, went Cricket.",
+        "<pop:1.3>Snip!</pop> Snip, snip."
+      ]
+    },
+    {
+      "scene": "scene-combing",
+      "part": "part-1",
+      "paras": [
+        "<say:possum*>“What is that tickling?”</say> asked Possum, with his eyes still shut.",
+        "<say:cricket*>“Only my comb,”</say> said Cricket. Snip, snip. Soon the tail was wrapped from top to tip, as neat as a red ribbon.",
+        "<say:cricket*>“There,”</say> said Cricket. <say:cricket>“Do not untie it until you dance.”</say>",
+        "<say:possum*>“I shall be the finest sight in the woods,”</say> said Possum."
+      ]
+    },
+    {
+      "scene": "scene-dance",
+      "part": "part-2",
+      "paras": [
+        "^That evening, all the animals came to the clearing.",
+        "Bear came, and Deer, and slow old Turtle. The Raccoons came, and a whole row of Squirrels.",
+        "Possum had the best seat, just as <name:rabbit>Rabbit</name> had promised. His tail lay beside him in its red string.",
+        "<say:possum*>“Wait until they see,”</say> he whispered."
+      ]
+    },
+    {
+      "scene": "scene-dance",
+      "part": "part-2",
+      "paras": [
+        "At last it was Possum’s turn to dance. He stepped into the middle of the circle and pulled the red string loose.",
+        "He did not look down. He looked at all the faces around him, and he sang.",
+        "<say:possum*>“Look at my tail! Oh, look at my tail!”</say>",
+        "The animals gave a great shout."
+      ]
+    },
+    {
+      "scene": "scene-dance",
+      "part": "part-2",
+      "paras": [
+        "Possum was pleased. He danced around the circle and sang louder. <say:possum*>“Look how long it is! Look how it sweeps the ground!”</say>",
+        "The animals shouted again. Somebody giggled.",
+        "<say:possum*>“Look how thick it is! Look how soft!”</say> sang Possum.",
+        "Now everyone was laughing. Bear laughed until he had to sit down."
+      ]
+    },
+    {
+      "scene": "scene-dance",
+      "part": "part-2",
+      "paras": [
+        "Possum stopped. <say:possum*>“Why are they laughing?”</say> he wondered.",
+        "He looked at Rabbit. Rabbit was looking at the sky.",
+        "So, at last, Possum looked down.",
+        "There was his tail. There was not one hair on it. It was as thin and bare as a lizard’s tail."
+      ]
+    },
+    {
+      "scene": "scene-grin",
+      "part": "part-2",
+      "paras": [
+        "Possum opened his mouth to speak. Nothing came out.",
+        "He opened it to sing. Nothing came out.",
+        "His ears went hot. He was so surprised, and so ashamed, that he could not say one word.",
+        "So he did the only thing he could think of. <pop:1.3>Flop!</pop> He rolled over on his back, and he grinned."
+      ]
+    },
+    {
+      "scene": "scene-grin",
+      "part": "part-2",
+      "paras": [
+        "The laughing soon stopped, and the dance went on. But Possum’s tail has been bare from that day to this.",
+        "He never sang about it again.",
+        "And when a <tap:opossum>possum</tap> is taken by surprise, he still rolls over on his back and grins.",
+        "He is not saying a word. He is only waiting for everyone to stop looking."
+      ]
+    }
+  ],
+  "landmarks": [],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a Cherokee animal story. It is not the",
+    "wording of any earlier edition. The story belongs to the Cherokee people, who tell it today.",
+    "Documented source for the tale: James Mooney, “Myths of the Cherokee” (Bureau of American",
+    "Ethnology, 19th Annual Report, 1900), story 18, “Why the Possum’s Tail is Bare”, Project",
+    "Gutenberg ebook #45634, https://www.gutenberg.org/ebooks/45634 (US public domain; other",
+    "territories not verified). Mooney was an outside ethnographer; the story was told to him by",
+    "several Cherokee storytellers, east and west, whom he does not name for this story; they are the tellers to credit.",
+    "Gutenberg could not be reached when this draft was written (HTTP 503), so the retelling was",
+    "made from the writer’s knowledge of the tale as Mooney printed it; check it against the source.",
+    "Changed or left out: the dance is the animals’ own dance in a forest clearing (the source sets it",
+    "in the townhouse, with drummers), so that no ceremony is described or invented; the older story",
+    "of how Rabbit lost his tail is left out; Rabbit is tired of the boasting rather than jealous.",
+    "No Cherokee words are used. No landmark, by design (CONTENT_PLAN 6.4).",
+    "Status: DRAFT. Text review pending. Cultural review (required: Cherokee consultant) pending.",
+    "Source check, 18 Nov 2026 (read on the Project Gutenberg mirror gutenberg.pglaf.org; gutenberg.org itself was unreachable):",
+    "Mooney's note to story 18 says only that he heard it from several Cherokee informants, east and west; he names no teller for this story, so no individual is credited for it here.",
+    "In Mooney the tale itself says the Cricket is one “whom the Indians call the barber”, and his note on the cricket says it is often called the barber because it gnaws the hair from furs.",
+    "Departures from Mooney, all ours: the Cricket comes in the afternoon (in the morning in the source); Rabbit has a small tail (in the source he has none); the council and the drummers are left out and the dance is the animals' own, in a forest clearing (a townhouse in the source); the animals named at the dance and Cricket's “Only my comb” are our additions."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#1F4A3A",
+      "shade": "#3F7A5A",
+      "mid": "#7FB08A",
+      "light": "#DCEBD9",
+      "glow": "#FFE7AE",
+      "accent": "#D94F3D",
+      "mood": "Soft green mountain woods under blue haze; warm, comic, gentle. The one strong colour is the red string."
+    },
+    "light": "Morning, then late afternoon, then early evening, always with a PALE sky; one warm light from the upper left in every picture.",
+    "world": [
+      "The southern Appalachians (Great Smoky Mountains): old, rounded, forested ridges in layers, each paler and bluer with distance; blue haze and morning mist in the hollows.",
+      "Rich hardwood forest: oak, hickory, tulip poplar, maple; rhododendron and mountain laurel; ferns, moss, mossy boulders, fallen logs, a clear rocky stream.",
+      "Real animals of these woods, drawn as animals (no clothes, hats or jewellery): Virginia opossum, eastern cottontail rabbit, black field cricket, black bear, white-tailed deer, box turtle, raccoons, grey squirrels.",
+      "The possum is the North American Virginia opossum (grey-white coat, white face, pink nose, dark ears, pink feet), NOT an Australian possum.",
+      "The red string is plain red thread or cord, with no pattern, beads or feathers. The comb is a simple small wooden comb.",
+      "The dance is the animals’ own gathering: a ring of animals in a grassy forest clearing. No drums, rattles, masks, fire, costumes or any ceremonial object; the source’s townhouse is deliberately not shown.",
+      "No people appear in any picture.",
+      "AVOID: tipis, feather headdresses, totem poles, face paint, arrows, generic “tribal” patterns or borders, desert or plains scenery. None of these belong to the Cherokee mountains.",
+      "AVOID any Cherokee syllabary lettering or Cherokee designs in the art unless a Cherokee consultant supplies and approves them.",
+      "The laughing animals are friendly, never jeering: open, round, warm faces; the joke is on the boasting, not on Possum’s body."
+    ],
+    "characters": {
+      "possum": "A plump Virginia opossum about the size of a cat: grey-white fur, white pointed face, pink nose, round dark ears, small bright black eyes, pink hands. In Part I and the dance his tail is long, thick and bushy, silver-grey, and he holds it high. In the last scene it is thin, bare and pinkish-grey. His grin shows a neat row of small teeth: funny, never scary.",
+      "rabbit": "An eastern cottontail: warm brown-grey coat, long upright ears that twitch, a white fluff of a tail no bigger than a berry, quick sideways eyes. Lean and springy.",
+      "cricket": "A black field cricket, glossy, with long feelers and strong back legs; drawn large enough to read (about the size of Possum’s paw). He carries a tiny wooden comb and the end of the red string."
+    },
+    "scenes": {
+      "scene-woods": {
+        "unfolded": "Far: layered blue ridges in mist under a pale morning sky. Middle: tall trunks and rhododendron thinning toward a sunny gap. Near, on the trailing (right) half: Possum on a mossy log, combing his huge bushy tail, chin up, singing; Rabbit low in the ferns at the centre-right, watching with one ear bent. The leading (left) pane’s upper two thirds are calm pale sky and far haze for the words.",
+        "folded": "Possum’s proud face and the fan of his bushy tail in the middle of the band, the log under him, Rabbit’s ears poking from ferns at one side; pale sky above."
+      },
+      "scene-combing": {
+        "unfolded": "Late afternoon, pale warm sky. Far: one soft ridge. Middle: an old hollow tree with a dark round doorway at its roots (Possum’s den) on the trailing half. Near: Possum stretched out on the grass with his eyes shut and a contented smile, his tail laid out toward the viewer, half wrapped in red string; Cricket standing on the tail, winding. A few loose tufts of grey hair in the grass that Possum cannot see. Leading pane’s upper two thirds: pale sky and thin leaves.",
+        "folded": "Possum’s sleepy, smiling face in the middle with eyes shut; the red-wrapped tail curving across the band below it with Cricket on top."
+      },
+      "scene-dance": {
+        "unfolded": "Early evening, sky still pale peach and cream. Far: dark-green treetops ringing a clearing. Middle and near, low across both panes: a wide ring of sitting animals (Bear, Deer, Turtle, Raccoons, a row of Squirrels, Rabbit at the edge) seen from just outside the ring. On the trailing half Possum steps into the middle of the ring, chest out, his tail wrapped in red string held up behind him. Leading pane’s upper two thirds: pale sky above the treetops.",
+        "folded": "Possum in the middle of the band, mid-step, proud face to the viewer, red-wrapped tail behind; a curve of animal faces beside and behind him."
+      },
+      "scene-grin": {
+        "unfolded": "Same clearing, same pale evening sky. Near, on the trailing half: Possum flat on his back in the grass, paws curled, grinning wide, his thin bare tail in a curl; the loose red string and a drift of grey fluff beside him. Around him the animals lean in, smiling: Bear sitting down holding his sides, Rabbit looking up at the sky. Leading pane’s upper two thirds: pale sky.",
+        "folded": "Possum’s upside-down grinning face in the middle of the band, bare tail curled above him, a few friendly faces looking down from the edges."
+      }
+    },
+    "pictures": {
+      "smoky-mountains": "One centred subject: rows of rounded, forested mountain ridges, each paler and bluer, with white mist lying in the valleys; morning light. No buildings, no people.",
+      "cricket-barber": "One centred subject: a real black field cricket on a broad green leaf, side view, feelers long, wings folded; drawn naturally, not as the character.",
+      "opossum": "One centred subject: a real Virginia opossum walking along a fallen log, side view, grey fur, white face, long bare tail clearly shown; natural, calm, by day."
+    },
+    "portraits": {
+      "possum": "Possum sitting in morning sun on his log, comb in one paw, the full bushy tail fanned across his lap, eyes half shut with pride.",
+      "rabbit": "Rabbit upright on a mossy path, ears high, one paw to his chin as if an idea has just arrived; his tiny white tail showing."
+    },
+    "cover": "Possum in the middle, standing on his log with his long bushy tail held high like a plume, mouth open in song; Rabbit small in the ferns below, looking up sideways; blue misty ridges and pale sky behind.",
+    "landmarks": {}
+  }
+}

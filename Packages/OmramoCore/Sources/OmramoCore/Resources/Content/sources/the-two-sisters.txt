@@ -1,0 +1,219 @@
+# The Two Sisters
+# Omramo retelling, Advanced tier. Manuscript for the text-fidelity check.
+#
+# This is our own retelling, written for Omramo, of a Skwxwu7mesh (Squamish) story about the two peaks
+# above Vancouver, as Chief Joe Capilano (Sahp-luk) told it. It is not the wording of any earlier edition.
+# Documented source: E. Pauline Johnson (Tekahionwake), "Legends of Vancouver" (1911), chapter
+# "The Two Sisters". Project Gutenberg ebook #3478, https://www.gutenberg.org/ebooks/3478
+# (US public domain; Johnson died in 1913).
+# Source read: the writer fetched the mirror copy (3478.txt; 3478-0.txt answered 404) through a
+# summarising tool that returned the ORDER OF EVENTS only, in neutral words.
+# No sentence of Johnson's was read for style or kept.
+# None of her trade-jargon terms is used (no Sagalie Tyee, tillicum, klootchman), nor 'potlatch'.
+# Frame: the present-day narrator on the bridge is ours. Johnson's own frame (an August walk with the
+# chief toward the canyon, and her likening of the peaks to the lions of Trafalgar Square) is not used;
+# we say only that the two walked on the North Shore and he told her the story looking at the peaks.
+# PLAN CORRECTED: the plan calls the sisters twins. The source does not: it says only that the chief's two
+# daughters came of age in the same spring ('twin' is used of the peaks). Our text never says twins.
+# Follows the source: the war with peoples of the north coast; the chief scornful because he always won;
+# the fighting set aside for the feast; the daughters coming to him seven days before it; his yes given
+# before he heard the wish; the wish to invite the northern enemy; welcome fires on the headlands; young
+# men sent by canoe; the northern peoples arriving with women and children and gifts; a feast of many days;
+# lasting peace, canoes used for fishing instead of war; the sisters raised onto the mountains.
+# Ours, not the source: the chief's long silence and his weighing of the risk (in the source he agrees at
+# once); the warriors' doubts; the herring, fern and preparation details; the mothers listening for
+# paddles; two canoes; the sisters watching from the rocks; the sixth morning; the last-day speeches;
+# the line 'No one brings their children to a war' (the plan's reading of the arrival).
+# Left out: the Creator by Johnson's name and any deity ('the story says the sisters were raised up onto
+# the mountains'); the source's opening about the making of the land; the northern peoples near what is now
+# Prince Rupert (we do not name any northern Nation); their gifts offered as to an acknowledged ruler; the
+# chief named as chief of the Capilanos; the sisters' 'children', Peace and Brotherhood; the dancing;
+# any detail of the coming-of-age custom (only 'a great feast for their coming of age, in the custom of
+# their people'). War is spoken of plainly and never shown.
+# Names: no Skwxwu7mesh Snichim word is used except the Nation's name. The peaks are 'the Two Sisters'
+# until the Nation supplies its own name and spelling. CONTENT_PLAN 3.3 gives 'Twin Sisters' and a
+# Squamish form (Ch'ich'iyuy Elxwikn); neither is used here: the Nation should confirm both names.
+# The Nation's name is spelled as in the plan (Unicode in the text); the reviewer confirms the spelling.
+# Reviewer to check (Skwxwu7mesh Nation, required): whether and how the story may be retold at all (CQ3);
+# the present-tense claims that the Nation lives near the north end of the bridge (Xwemelch'stn), on
+# Burrard Inlet and by Howe Sound and the Squamish River; 'lived around these waters for thousands of
+# years'; that the city was partly built where villages had stood (e.g. in Stanley Park); the feast as a
+# place where guests are witnesses and what is said cannot be unsaid (page 11 and the feast card); the
+# ending, which speaks of the sisters on the peaks in the present tense; the art; every card.
+# Facts to check: Chief Joe Capilano's 1906 journey to London to petition King Edward VII; he died in 1910;
+# Johnson was Mohawk, from Six Nations in Ontario, and lived in Vancouver from about 1909; the book 1911;
+# the bridge 1937-1938, opened November 1938, built so people could reach new houses on the North Shore
+# (British Pacific Properties); the two concrete lions at the south end (Charles Marega, about 1939);
+# main span about 470 m; tens of thousands of crossings a day ('thousands' in the text);
+# the settlers' reason for the name The Lions (said to be the look of two resting lions).
+# A source-check agent must still compare this text with Gutenberg #3478 and confirm nothing echoes it.
+# SOURCE CHECK (18 Nov 2026, against Johnson on the Gutenberg mirror):
+# - Echoes reworded: the spring marker (Johnson's flowering bushes; our earlier 'salmonberry' was hers,
+#   not ours, and is now the first fern shoots uncurling); the chief's 'favour granted before asked' line
+#   (now 'I have never once refused you two'); his orders (now paddlers and canoes first, the welcome
+#   fires a separate narrated line); 'honoured as never before' (now 'the whole coast to know how proud');
+#   'thousands cross and do not know' (now the busy bridge and 'a second name'); both 'keeping watch'
+#   lines (now 'looking down on the peace' and 'side by side above the water where the war ended');
+#   page 14's last-light-on-the-peaks image (now a cloud sliding off them); 'set high' (now 'raised up');
+#   the northern gifts of baskets and woven blankets (now dried fish and cedar boxes).
+# - Departure: our war has 'no beginning anyone living had seen'; Johnson calls the peoples old enemies but
+#   has them at war for weeks before the feast.
+# - Departure: Johnson gives the daughters a reason tied to their future sons; left out.
+# - Departure: in Johnson the sisters ask, and he speaks of commanding the invitation; left out.
+# - Ours: the sisters doing everything together (berries, one canoe, the same jokes).
+# - The lead added 'region': 'nativeAmericanFirstNations' to the lions-gate-bridge entry; kept.
+# Status: DRAFT. Text review pending. Cultural review (required: Skwxwu7mesh (Squamish) Nation) pending.
+#
+# Generated by tools/build_stories.py from docs/content/story-specs/the-two-sisters.json; edit the spec,
+# not this file.
+#
+# Format: lines starting with "#" are notes and are not story text. One paragraph per line.
+# A blank line separates paragraphs; a "# --- page" note marks a page (spread) break.
+
+# The Bridge
+
+# --- page 1
+If you cross the Lions Gate Bridge on a clear morning, look up.
+
+Below you, the sea runs fast and green through a narrow gap between two shores. A ship as long as a street slides under the bridge, stacked with steel boxes in red and blue, and its wake spreads behind it in a long white fan. Gulls hang in the wind beside the railing, barely moving their wings, and the air smells of salt and wet cedar.
+
+At the south end of the bridge, the dark cedars of Stanley Park crowd down to the water. Beyond them, the glass towers of the city stand pale in the mist. At the north end, the mountains of the North Shore rise so steeply that they seem to start in the sea itself.
+
+Lift your eyes above the nearest ridges, above the dark firs, to where the snow begins. There, high and far off, two rounded peaks stand side by side against the sky, so close together that from here they look like two people sitting shoulder to shoulder.
+
+# --- page 2
+People in the city call those peaks The Lions. Most of the drivers rushing over the bridge this morning, coffee cups wedged beside them, know them by no other name, if they notice them at all.
+
+But the peaks had a name long before there was a city here, or a bridge, or a single road. The Sḵwx̱wú7mesh, whose people have lived around these waters for thousands of years, call them the Two Sisters.
+
+The Sḵwx̱wú7mesh Nation lives here still. Its homes stand near the north end of this bridge, on the shores of Burrard Inlet, and to the north beside Howe Sound and the Squamish River. Its people still look up at the same two peaks you are looking at now.
+
+There is a story about how the sisters came to be up there. It is not a story about lions. It is about a war, and a feast, and two girls who asked their father for the one gift he least wanted to give.
+
+# --- page 3
+The story reached English readers through two friends. One was Chief Joe Capilano, a leader of the Sḵwx̱wú7mesh, who had once crossed an ocean to speak to the king in London on behalf of his people. The other was Pauline Johnson, a Mohawk poet from far in the east, who had come to live in Vancouver.
+
+More than a hundred years ago, before this bridge was built, the two of them walked together on the North Shore. The chief looked up at the peaks and told her what his people say about them. She listened, and later she wrote it down, and in 1911 it was printed in a book.
+
+Every telling of a story is a little different. A teller chooses where to begin, and what to leave in the quiet between the words.
+
+This is our telling, written with care for the people whose story it is. It begins long before the city, when the only roads on this water were the wakes of canoes, and the only lights on the shore were cooking fires.
+
+# --- page 4
+Long ago, there was no bridge, and no city, and no ship as long as a street. The same green water ran through the narrows. The same mountains stood behind, furred with fir and cedar to the snowline.
+
+Along the shores stood villages of long houses built from cedar planks, their roofs sloping down toward the hills and their fronts facing the sea. Smoke rose from them in the still mornings. Before each village lay a beach of grey pebbles, and on it, in rows, the canoes were drawn up out of reach of the tide.
+
+The year turned on the sea and the rivers. In spring the herring came, so many that the water shivered with them. Then came the berries on the hillsides. And at the end of summer the salmon came home from the ocean, crowding up the rivers until the shallows were more fish than water.
+
+On one of those shores, in the largest of the cedar houses, lived a great chief whose name was known all along the coast. His canoes were the fastest on the inlet, and in all his years he had never lost a fight.
+
+# --- page 5
+For as long as anyone could remember, his people had been at war with peoples of the north coast, many days’ paddling away. The war had no beginning that anyone living had seen. It was simply there, like weather.
+
+In some summers the long northern canoes came south, riding the tide in through the narrows before dawn. In others the chief’s own canoes went north to answer them. Either way, the young men went, and not all of them came home, and the houses where they had lived fell quiet.
+
+On summer nights the mothers of the village slept lightly. They listened through the cedar walls for the dip and knock of paddles out on the dark water, and when they heard it, they lay very still until they knew whose canoes they were.
+
+The chief was not afraid of the northern peoples. He had beaten them too often for that. He spoke of them with scorn, and his warriors laughed when he did.
+
+But in his house, through all those years of war, his two daughters were growing up. They did everything together: they gathered berries side by side, paddled one canoe, and laughed at the same jokes, until the village rarely spoke of one without the other.
+
+# The Sisters’ Wish
+
+# --- page 6
+In the same spring, both of the chief’s daughters came of age.
+
+It was the season when the first fern shoots were uncurling on the forest floor. The chief meant the whole coast to know how proud he was of them. There would be a great feast for their coming of age, in the custom of their people, and guests would come from all along the coast.
+
+For a whole moon the village made ready. Canoes went out and came back low in the water with fish. On the river flats people dug roots and dried berries in the sun, and the weavers made new cedar-bark mats for the guests to sit on.
+
+Only one thing was left as it was. The war went on. The chief told his warriors to put away their weapons until the feast was over, the way a man sets down a heavy load to rest his arms, meaning to pick it up again.
+
+Seven days before the feast, the two sisters came to find their father. He was down on the beach, looking over the canoes. They came across the pebbles together, their shoulders touching, and he saw from their faces that they had come to ask him something.
+
+# --- page 7
+The chief straightened and smiled. There was nothing in the world he would refuse these two, and he wanted them to know it.
+
+“You have a favour to ask,” he said. “Then ask it, and do not be afraid. I have never once refused you two, and I will not begin today. Name the gift, and it is yours: blankets of mountain-goat wool, a canoe carved for you alone.”
+
+The sisters looked at each other. One of them spoke, but it was clear the words belonged to both of them, and that they had been carrying them for a long time.
+
+“We do not want blankets or canoes, Father,” she said. “We want guests. Invite the peoples of the north to our feast. Not as enemies. As guests, to sit on our mats and eat our food and see us honoured.”
+
+On the beach behind him, a warrior mending a paddle stopped with his knife in the air. Gulls went on crying over the water. The chief said nothing at all. The smile had gone from his face, and in its place was something his daughters had never seen there before.
+
+# --- page 8
+He was silent for so long that the tide crept up to his feet and began to wet the pebbles around them. His daughters waited. They did not take back a single word.
+
+He was thinking of many things at once. A chief does not lightly send the first canoe toward an enemy. If he invited the northern peoples and they came, would they come as guests, or as a war party with a feast for an excuse? If he invited them and they laughed, every village on the coast would hear that the great chief had begged for peace.
+
+Behind him, his warriors were muttering. They had buried brothers in this war. Some of them had fathers who had never come home from the north.
+
+But he had already said yes. He had said it before he knew what they would ask, and a chief who takes back his word to his own daughters is not a chief anyone should follow.
+
+At last he lifted his head. “Choose our best paddlers,” he said. “Tomorrow they take two canoes up the coast, and they take no weapons. My daughters have asked for guests, and guests they shall have.”
+
+# --- page 9
+The young men who went north were the best paddlers in the village. They went at first light in two long cedar canoes, each one carved from the trunk of a single tree, and the whole village came down to the beach to watch them go.
+
+They carried no spears. They carried the chief’s words, which were simple: the daughters of the chief were to be honoured, and the peoples of the north were asked to come and eat at his fire.
+
+Fires were kept burning day and night on the points of land near the village, so that anyone paddling south would see the smoke and know it for a welcome.
+
+Then the waiting began. Each morning the sisters climbed the rocks above the beach and watched the place where the water met the sky. Each evening they came down again with nothing to tell. The warriors watched too, for different reasons, and they kept their weapons where they could reach them.
+
+On the sixth morning, one of the sisters caught the other’s arm and pointed. Far out, where the inlet opened to the sea, a line of dark marks had appeared on the water, and the line was growing longer.
+
+# --- page 10
+They were canoes, more than anyone had ever seen together on that water, and they came on steadily with the tide. In the village, the warriors gathered at the top of the beach. Nobody spoke. The chief stood at the water’s edge with his daughters beside him and waited, his hands empty.
+
+As the first canoes came close, the people on the beach began to make out who was in them. There were paddlers, and there were warriors. But there were also women sitting among the bundles, and old men wrapped in blankets, and children, small ones, leaning over the sides to look at the strange shore.
+
+A murmur ran along the beach, and then the warriors’ hands loosened. No one brings their children to a war. The northern peoples had understood the invitation exactly as it was meant, and they had answered it in the only way that could not be mistaken.
+
+The canoes grounded one after another on the pebbles. The northern chiefs stepped ashore with gifts in their arms, dried fish and cedar boxes from their own country. The chief walked down to meet them, and the feast began.
+
+# The Peaks
+
+# --- page 11
+The feast lasted for many days, and no one who was there ever forgot it.
+
+There was salmon roasted on cedar stakes beside the fires, and berries, and roots, and more food than the guests could eat. By day there were songs and games on the beach. Gifts went from hand to hand. Old enemies sat on the same cedar mats and passed the same bowls, and slowly, carefully, they began to talk.
+
+Every person there was a witness. Each one had eaten the chief’s food and heard his words, and on this coast, what is said before so many witnesses cannot afterwards be unsaid.
+
+On the last day, the chief stood up before them all, and the northern chiefs stood up to face him. They spoke for a long time, one after another. When they had finished, the war that no one living had seen begin was over.
+
+When the guests at last paddled north again, they went as friends, and friends they stayed. In the summers after that, the long canoes still went up and down the coast. But they carried fishing nets, and trade goods, and visiting families, and never again a war party.
+
+# --- page 12
+And the two sisters? The story says that what they had done was not forgotten. Nobody before them had thought to ask for peace as a gift. Nobody had believed it could be asked for at all.
+
+So, the story says, the sisters were raised up onto the mountains above the inlet, side by side. From there they could see the whole coast at once: the villages, the narrows, the canoes going to and fro on the water. There they were to stay for ever, two sisters looking down on the peace they had made.
+
+Snow gathers on their shoulders in winter and melts away in summer. Clouds settle over them and lift again. Eagles turn in the air below them. They do not move.
+
+Ever since, the people of the inlet have looked up at the two peaks white against the sky and remembered the feast, the canoes full of children, and the two girls who asked.
+
+And then, much later, other people came to the inlet, in ships with tall sails, from the far side of the world. They looked up at the peaks too, and they saw something quite different.
+
+# --- page 13
+The settlers thought the two rounded summits looked like a pair of great lions, lying side by side. So that is what they called them: The Lions. They built a city on the shore below, with streets and railways and a harbour full of ships, and the city grew until it filled the land between the water and the hills. Some of it was built where villages of the coast peoples had stood.
+
+In 1938 they finished a bridge across the narrows, so that people could drive to new houses on the North Shore. They named it for the peaks. At its south end, two lions made of concrete were set on either side of the road, crouched and watchful.
+
+The bridge is busy from dawn until long after dark. Most of the people on it could tell you the name of the peaks above them. Not many could tell you there is a second name, with a story folded up inside it.
+
+Now you are one of the ones who know. Next time you cross and the mist lifts off the mountains, you may still see two lions lying in the snow. But you will see two sisters too, sitting close together, looking down at the water.
+
+# --- page 14
+Come back to the bridge in the evening, when the traffic thins and the water in the narrows turns the colour of pewter. The ships have their lights on now. Along the shore, one window after another begins to glow.
+
+The city goes into shadow first. Then the forest on the lower slopes, then the ridges, one by one, as if someone were drawing a blanket slowly up the mountains.
+
+Only the two peaks are still clear of shadow. A thin cloud that has hidden them all afternoon slides away, and there they are, side by side, close enough to touch, small and white above the bridge and the towers and the dark water.
+
+Somewhere below them a canoe is coming home across the inlet, its paddles dipping in time. Somewhere a child is looking up.
+
+The snow fades to grey and then to blue, as slowly as embers cooling on a hearth. The first stars come out above the sisters. But they will be there in the morning, as they have been every morning since the feast, side by side above the water where the war ended.

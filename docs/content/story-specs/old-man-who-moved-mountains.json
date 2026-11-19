@@ -1,0 +1,580 @@
+{
+  "id": "old-man-who-moved-mountains",
+  "title": "The Old Man Who Moved the Mountains",
+  "tier": "low",
+  "region": {
+    "id": "chinese",
+    "culture": "Ancient Chinese (from the classic Liezi)",
+    "place": "The Taihang and Wangwu mountains, north China",
+    "label": "Ancient China",
+    "pin": {
+      "lat": 35.5,
+      "lon": 113
+    },
+    "pinColor": "#E0483A"
+  },
+  "setting": {
+    "period": "Ancient China, over 2,000 years ago",
+    "latestYear": -300
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Chinese fable from the Liezi",
+    "sources": [
+      {
+        "author": "Lionel Giles (translator)",
+        "title": "Taoist Teachings from the Book of Lieh Tzŭ",
+        "publisher": "John Murray",
+        "year": 1912,
+        "verified": false
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling, written for Omramo, of the classical fable of Yu Gong in the ancient Chinese book Liezi (chapter “Tang wen”), which is in the public domain everywhere. The cited English edition is a reference only and is unverified; Lionel Giles's English wording is not used (he died in 1958, so his wording is protected in life + 70 countries until 2029). Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Chinese reader",
+    "notes": "We tell the classical Liezi version only; no modern political use of the fable appears in the text, the cards or the art."
+  },
+  "education": {
+    "geography": {
+      "lesson": "North China's mountains stand beside the flat Yellow River plain; mountains decide where roads can go and how long a journey takes.",
+      "factCards": [
+        "north-china-mountains",
+        "great-wall-moment",
+        "machu-picchu-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Families of several generations live and work together and listen to their elders; the story gives Chinese a four-word saying every schoolchild knows, Yu Gong yi shan.",
+      "factCards": [
+        "big-family",
+        "carrying-pole"
+      ]
+    },
+    "moral": {
+      "lesson": "Big things are done a little at a time, by people who keep going.",
+      "reflectionQuestion": "What big job could you do a little at a time?"
+    }
+  },
+  "moral": "Big things get done a little at a time by people who keep going.",
+  "theme": {
+    "textColor": "#1E2A33",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "An old man with a white beard carries two baskets on a shoulder pole. A small boy walks beside him, and two great mountains rise behind them."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "yu-gong",
+      "name": "Yu Gong",
+      "color": "#8A4B14",
+      "chipBackground": "#FFE6B8",
+      "faceAlt": "Yu Gong, an old man with a white beard.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Yu Gong",
+        "traits": [
+          {
+            "text": "Nearly ninety",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never gives up",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Calm when teased",
+            "fill": "#DCEBFA",
+            "ink": "#1F4E86"
+          }
+        ],
+        "body": "His name means Foolish Old Man, but he is not foolish at all. Every schoolchild in China knows four words about him: Yu Gong yi shan. They mean “Yu Gong moves the mountains.”",
+        "portraitAlt": "Yu Gong smiling, with a carrying pole across his shoulders and a basket at each end.",
+        "background": [
+          "#FFE08A",
+          "#FFC06A",
+          "#F59A5A"
+        ]
+      }
+    },
+    {
+      "id": "wife",
+      "name": "Wife",
+      "color": "#7A2E5A",
+      "chipBackground": "#F8DDEA",
+      "faceAlt": "Yu Gong’s wife, an old woman with grey hair pinned up."
+    },
+    {
+      "id": "boy",
+      "name": "Little boy",
+      "color": "#1F6A3E",
+      "chipBackground": "#D6F2DC",
+      "faceAlt": "The little boy from next door, with a gap in his smile."
+    },
+    {
+      "id": "zhi-sou",
+      "name": "Zhi Sou",
+      "color": "#2B4F8C",
+      "chipBackground": "#D9E8FB",
+      "faceAlt": "Zhi Sou, an old man laughing.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Zhi Sou",
+        "traits": [
+          {
+            "text": "Lives by the river",
+            "fill": "#DCEBFA",
+            "ink": "#1F4E86"
+          },
+          {
+            "text": "Quick to laugh",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Sure he is right",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "His name means Wise Old Man. He is clever with words, and he likes to sit in the shade. Yu Gong gives him something new to think about.",
+        "portraitAlt": "Zhi Sou sitting under a willow by the river, laughing with one hand raised.",
+        "background": [
+          "#BFE3F2",
+          "#8FC7E0",
+          "#5FA3C8"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "north-china-mountains",
+      "kind": "place",
+      "title": "North China’s mountains",
+      "line": "A long wall of mountains stands beside the wide, flat Yellow River plain.",
+      "cultureNote": {
+        "label": "In north China",
+        "text": "The Taihang Mountains are real, and people live below them today. For a very long time, roads had to go round them or squeeze through narrow passes."
+      },
+      "pictureAlt": "A line of steep grey-blue mountains rising straight up from a flat yellow plain, with a small road bending round them.",
+      "background": "#2F5D73"
+    },
+    {
+      "id": "big-family",
+      "kind": "idea",
+      "title": "One big family",
+      "line": "Grandparents, parents and children all living and working in one home.",
+      "cultureNote": {
+        "label": "From ancient China",
+        "text": "In old China, a family often shared one home for many generations. The oldest people were listened to with great respect."
+      },
+      "pictureAlt": "A grandfather, a grandmother, their grown sons and small grandchildren sitting together in the yard of a farmhouse.",
+      "background": "#8A4A2A"
+    },
+    {
+      "id": "carrying-pole",
+      "kind": "object",
+      "title": "Carrying pole",
+      "line": "A pole across the shoulders, with a basket hanging from each end.",
+      "cultureNote": {
+        "label": "From ancient China",
+        "text": "With a pole, one person can carry two full baskets. People in China have carried loads this way for thousands of years, and some still do."
+      },
+      "pictureAlt": "A wooden pole with a woven basket of earth hanging from each end.",
+      "background": "#6B4A1F"
+    },
+    {
+      "id": "great-wall-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "great-wall-of-china",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Basket by basket, a family can move a great deal. Stone by stone, people in north China built something very, very long."
+        }
+      },
+      "background": "#2E4A3A"
+    },
+    {
+      "id": "machu-picchu-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "machu-picchu",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Yu Gong’s family worked hard on their mountains. Far away in Peru, other people worked on a mountain top, and built a town there."
+        }
+      },
+      "background": "#1F4A44"
+    }
+  ],
+  "scenes": {
+    "scene-mountains": {
+      "unfoldedAlt": "A small farmhouse with a thatched roof stands in front of two huge mountains that block the way. An old man looks up at them from his door.",
+      "foldedAlt": "An old man at the door of a farmhouse, looking up at two huge mountains.",
+      "fallbackColors": [
+        "#CFE6F2",
+        "#FFE9BF",
+        "#8FA77A"
+      ]
+    },
+    "scene-digging": {
+      "unfoldedAlt": "A family digs at the foot of a mountain. An old man, his sons, his grandchildren and a small boy carry baskets of earth on shoulder poles along a path.",
+      "foldedAlt": "An old man and a small boy carry baskets of earth along a path below a mountain.",
+      "fallbackColors": [
+        "#D5ECF3",
+        "#FFE3A8",
+        "#C29A5B"
+      ]
+    },
+    "scene-river-bend": {
+      "unfoldedAlt": "At a bend in a wide river, an old man sits under a willow and laughs. Another old man stands calmly on the path with two baskets on a pole.",
+      "foldedAlt": "An old man laughs under a willow by a river while another stands calmly with his baskets.",
+      "fallbackColors": [
+        "#CDEBF0",
+        "#FFF0BC",
+        "#6FA9A8"
+      ]
+    },
+    "scene-open-road": {
+      "unfoldedAlt": "Morning. The mountains are gone. A straight road runs from the farmhouse door across a wide golden plain, and the family stands looking at it.",
+      "foldedAlt": "An old man and a small boy stand at a gate, looking down a straight road across a wide golden plain.",
+      "fallbackColors": [
+        "#D9EEF7",
+        "#FFE7A6",
+        "#D9B95C"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-mountains",
+      "part": "part-1",
+      "paras": [
+        "^Long ago in China, an old man lived facing <tap:north-china-mountains>two great mountains</tap>.",
+        "His name was <name:yu-gong>Yu Gong</name>, which means Foolish Old Man. He was nearly ninety.",
+        "The mountains were called Taihang and Wangwu. They stood right in front of his door, as high as the clouds."
+      ]
+    },
+    {
+      "scene": "scene-mountains",
+      "part": "part-1",
+      "paras": [
+        "To reach the market, Yu Gong had to walk all the way round them. It took days and days.",
+        "One evening he came home with sore feet and a dusty beard. He called his <tap:big-family>whole family</tap> together.",
+        "His wife, his sons and his grandchildren all sat down.",
+        "<say:yu-gong*>“Those mountains are in our way,”</say> he said. <say:yu-gong>“Let us dig them away.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-mountains",
+      "part": "part-1",
+      "paras": [
+        "His sons nodded. His grandchildren cheered.",
+        "<name:wife>Yu Gong’s wife</name> folded her arms. <say:wife*>“Husband, you puff going up our little hill,”</say> she said. <say:wife>“And where will you put all that earth and stone?”</say>",
+        "Everybody looked east, where the river ran away to the sea.",
+        "<say:yu-gong*>“In the sea,”</say> said Yu Gong. <say:yu-gong>“The sea has plenty of room.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-digging",
+      "part": "part-1",
+      "paras": [
+        "The next morning they began. <pop:1.3>Crack!</pop> The sons broke the rock. The grandchildren dug the earth.",
+        "Yu Gong filled the baskets, and his wife tied them tight.",
+        "Each <tap:carrying-pole>carrying pole</tap> had a basket at both ends. Up it went, onto a shoulder.",
+        "Dig, lift, carry, tip. Dig, lift, carry, tip."
+      ]
+    },
+    {
+      "scene": "scene-digging",
+      "part": "part-1",
+      "paras": [
+        "Next door lived a <name:boy>little boy</name> who was just losing his milk teeth.",
+        "He watched over the wall. Then he came skipping across the yard.",
+        "<say:boy*>“I can carry too!”</say> he said, with a gap in his smile.",
+        "<say:yu-gong*>“Then here is a basket your size,”</say> said Yu Gong."
+      ]
+    },
+    {
+      "scene": "scene-digging",
+      "part": "part-1",
+      "paras": [
+        "It was a long, long way to the sea. They set off when snow lay on the path.",
+        "<pop:1.3>Splash!</pop> In went the earth and stones. Then they turned for home, and the peaches were ripe when they got there.",
+        "And the mountains? They looked just as big as before.",
+        "Still the family kept on, <tap:great-wall-moment>basket by basket</tap>."
+      ]
+    },
+    {
+      "scene": "scene-river-bend",
+      "part": "part-1",
+      "paras": [
+        "The path to the sea passed a bend in the river. There lived <name:zhi-sou>Zhi Sou</name>, whose name means Wise Old Man.",
+        "Every day he watched the baskets go by. One day he laughed out loud.",
+        "<say:zhi-sou*>“Yu Gong, you are old and tired!”</say> he called. <say:zhi-sou>“You could not pull one blade of grass off those mountains!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-river-bend",
+      "part": "part-2",
+      "paras": [
+        "^Yu Gong set down his baskets and looked at Zhi Sou.",
+        "He did not shout. He did not sulk. He rubbed his sore shoulder and smiled.",
+        "<say:yu-gong*>“You are right, I am old,”</say> he said. <say:yu-gong>“One day I will be gone. But I have children.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-river-bend",
+      "part": "part-2",
+      "paras": [
+        "<say:yu-gong*>“My children will have children,”</say> said Yu Gong. <say:yu-gong>“Their children will have children too, and on and on.”</say>",
+        "He pointed up at the two grey peaks.",
+        "<say:yu-gong*>“My family grows. The mountains do not. So why should we not finish?”</say>",
+        "Zhi Sou opened his mouth. He shut it again. The Wise Old Man had no answer at all."
+      ]
+    },
+    {
+      "scene": "scene-digging",
+      "part": "part-2",
+      "paras": [
+        "So the work went on. Dig, lift, carry, tip.",
+        "Winter came, and summer came. The little boy grew big new teeth.",
+        "Some days the family sang. Some days they grumbled. Every day they dug.",
+        "But high above the top of a <tap:machu-picchu-moment>mountain</tap>, somebody was listening."
+      ]
+    },
+    {
+      "scene": "scene-mountains",
+      "part": "part-2",
+      "paras": [
+        "It was the Lord of the Sky. He had heard every scrape of the hoes and every word by the river.",
+        "He had never known hearts so steady. That family would never stop.",
+        "That night he sent two giants, the strongest there ever were.",
+        "One took Taihang on his back. One took Wangwu. Away they tiptoed while everybody slept."
+      ]
+    },
+    {
+      "scene": "scene-open-road",
+      "part": "part-2",
+      "paras": [
+        "In the morning Yu Gong picked up his hoe and opened the door. He stopped. He rubbed his eyes.",
+        "No Taihang. No Wangwu. Only sky, and a wide plain, golden in the sun.",
+        "<say:boy*>“Yu Gong!”</say> shouted the little boy, hopping at the gate. <say:boy>“Who tipped them all?”</say>"
+      ]
+    },
+    {
+      "scene": "scene-open-road",
+      "part": "part-2",
+      "paras": [
+        "Now a road ran straight to the south, flat as a table. The family walked to market and were home before dark.",
+        "Zhi Sou came up from the river bend to stare. He still had no answer.",
+        "Yu Gong’s wife went to hang up the baskets.",
+        "<say:yu-gong*>“Keep them handy,”</say> said Yu Gong. <say:yu-gong>“I have been looking at our little hill.”</say>"
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "great-wall-of-china",
+      "name": "Great Wall of China",
+      "era": "ancient",
+      "built": {
+        "from": -700,
+        "to": 1644,
+        "circa": true,
+        "note": "Many walls built over 2,000 years; most of today's wall 1368–1644. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "China",
+      "place": "Across north China; our drawing shows the wall at Badaling, near Beijing",
+      "coordinates": {
+        "lat": 40.36,
+        "lon": 116.02
+      },
+      "region": "chinese",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long, long wall of stone and brick that climbs up and down the hills."
+        },
+        "medium": {
+          "line": "It is not one wall but many, built over about 2,000 years to guard north China.",
+          "note": "People say you can see it from the Moon. You cannot, not with your eyes alone."
+        },
+        "advanced": {
+          "line": "Many walls, begun about 2,700 years ago; most of the brick and stone wall seen today was built between 1368 and 1644.",
+          "note": "It cannot be seen from the Moon with the naked eye. How long it is depends on which of the many walls you count."
+        }
+      },
+      "art": {
+        "file": "art/great-wall-of-china.heic",
+        "alt": "A stone wall with square watchtowers winding along the tops of green hills into the distance.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2E4A3A",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "machu-picchu",
+      "name": "Machu Picchu",
+      "era": "medieval",
+      "built": {
+        "from": 1450,
+        "circa": true,
+        "note": "Built about 1450. Date to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Peru",
+      "place": "High in the Andes mountains of Peru",
+      "coordinates": {
+        "lat": -13.163,
+        "lon": -72.545
+      },
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A town of stone houses, built high up on the ridge of a mountain."
+        },
+        "medium": {
+          "line": "The Inca built this town on a mountain ridge in Peru about 600 years ago.",
+          "note": "Its stones fit together so closely that the walls need no mortar to hold them."
+        },
+        "advanced": {
+          "line": "An Inca town built about 1450 on a ridge in the Andes, with stones cut to fit together without mortar.",
+          "note": "The Inca left no written account of it, so historians still study what the town was for."
+        }
+      },
+      "art": {
+        "file": "art/machu-picchu.heic",
+        "alt": "Stone houses without roofs and green steps of land on a narrow mountain ridge, with a steep green peak behind.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A44",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the ancient Chinese fable of Yu Gong",
+    "(“Yu Gong yi shan”, the Foolish Old Man who moved the mountains), from the classic book",
+    "Liezi, chapter “Tang wen” (The Questions of Tang). The Liezi is public domain everywhere.",
+    "English reference only, unverified and not on Project Gutenberg (no Gutenberg number or link):",
+    "Lionel Giles, “Taoist Teachings from the Book of Lieh Tzŭ” (London: John Murray, 1912).",
+    "None of Giles's wording is used; the retelling was written from the classical tale itself.",
+    "Softened or changed: “when I die” became “one day I will be gone”; the neighbour's boy is not",
+    "called a widow's orphan; “sons and grandsons” is told as children and grandchildren; the",
+    "mountain spirit who reports to the Lord on High is left out; the market is our own detail.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Chinese reader) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#2F4A5C",
+      "shade": "#5E7F8C",
+      "mid": "#9DB58A",
+      "light": "#E9F1E4",
+      "glow": "#FFD98A",
+      "accent": "#D9573C",
+      "mood": "Clear, dry north-China morning: hazy blue-grey mountains, yellow earth, soft green millet, one touch of red-orange."
+    },
+    "light": "Early morning in every picture; ONE warm light from the upper left, long soft shadows to the right, pale calm sky.",
+    "world": [
+      "Landscape: steep, layered grey-blue mountains with cliff bands (the Taihang look) rising suddenly from a flat plain of yellow loess earth; keep the mountains hazy and pale near the top so dark ink and light chrome still read.",
+      "Farmhouse: low walls of rammed yellow earth, a thatched roof of millet straw, a wooden door, a packed-earth yard with a low earth wall. NOT a curved tile roof, NOT a pagoda, no red lanterns.",
+      "Fields: millet and beans (north China is millet country in this period), not flooded rice paddies and not rice terraces.",
+      "Trees and plants: pines on the slopes, a peach tree and a jujube by the house, willows at the river. No bamboo forest, no pandas.",
+      "Clothing: plain hemp robes that cross at the chest and tie with a cloth belt, knee-length for work, with loose trousers and straw sandals; earth, cream, faded indigo and brown. Men's hair in a topknot tied with cloth; women's hair pinned up in a bun. NO long braid (queue) — that is about 2,000 years later — and no cone-shaped straw hat cliché.",
+      "Tools: wooden spades and hoes with small metal or stone blades, woven wicker baskets, a springy wooden carrying pole with a basket on a cord at each end.",
+      "The river: wide, slow and yellow-brown with silt (the Yellow River country), sandy banks, reeds.",
+      "People: warm, individual faces across four generations; no caricature of eyes or skin; the old people are strong and dignified, never figures of fun.",
+      "The Lord of the Sky and the two giants are NOT shown in any scene; the wonder is shown only by its result, the open road. No dragons, no temple imagery.",
+      "No modern or political imagery of any kind (no banners, slogans, posters or 20th-century dress)."
+    ],
+    "characters": {
+      "yu-gong": "Nearly ninety, small and wiry, a little bent but strong; long white beard, white topknot tied with a faded red-orange cloth (his signature colour); cream hemp robe with brown belt, sleeves rolled; kind eyes that crinkle; usually with his carrying pole or hoe.",
+      "wife": "An old woman, sturdy and upright, grey hair pinned in a bun with a wooden pin; plum-brown robe with a cream apron; arms often folded, one eyebrow up, a smile she is trying to hide.",
+      "boy": "About six, round-cheeked, a gap where a front milk tooth has gone; hair in two small tufts tied on top of his head; short green tunic, bare feet; carries a child-sized basket and skips.",
+      "zhi-sou": "An old man, rounder and neater than Yu Gong, smooth blue robe that has never seen a day's digging; thin grey beard, topknot; sits on a low stool in the shade; laughing mouth, one hand raised."
+    },
+    "scenes": {
+      "scene-mountains": {
+        "unfolded": "Far: two huge hazy grey-blue mountains, Taihang and Wangwu, side by side, filling the right half and reaching toward the top but leaving a band of pale sky above. Middle: yellow plain, a thin path that has to bend away round the mountains. Near, low on the right: the earth-walled thatched farmhouse with Yu Gong at the door looking up, tiny against the mountains. The leading (left) pane's upper two thirds stay calm pale sky with only a far low ridge.",
+        "folded": "Yu Gong at his door in the middle of the band, seen from the side, head tilted up; the two mountains rise behind the roof; pale sky above."
+      },
+      "scene-digging": {
+        "unfolded": "Far: the foot of a mountain, pale and hazy. Middle: sons breaking rock and grandchildren digging on the right. Near, low across both panes: a line of walkers on a path, each with a carrying pole and two baskets — Yu Gong in front on the right half, the little boy just behind him with a small basket. Upper two thirds of the left pane: pale sky.",
+        "folded": "Yu Gong's face in the middle, pole across his shoulders, the little boy beside him looking up; the diggers small behind."
+      },
+      "scene-river-bend": {
+        "unfolded": "Far: low hills and pale sky. Middle: a wide yellow-brown river curving in a bend, reeds, a willow. Near, on the right half: Zhi Sou on a stool under the willow, laughing; Yu Gong standing calm on the path facing him, baskets set down, one hand rubbing his shoulder. Left pane upper two thirds: sky and far water only.",
+        "folded": "Zhi Sou laughing on the left and Yu Gong calm on the right, both faces in the middle of the band, the river bend behind them."
+      },
+      "scene-open-road": {
+        "unfolded": "Far: nothing but a low, wide horizon and a huge pale morning sky where the mountains used to be. Middle: a golden plain of ripe millet with a straight pale road running away to the south. Near, low on the right: the farmhouse gate, Yu Gong with his hoe, his wife, the little boy hopping, the family behind, all looking down the road. Left pane upper two thirds: open sky.",
+        "folded": "Yu Gong and the little boy at the gate in the middle, seen from a little behind and to the side so both faces show, the straight road running away between them."
+      }
+    },
+    "pictures": {
+      "north-china-mountains": "One centred subject: a wall of steep grey-blue mountains rising straight from a flat yellow plain, a small road bending round its foot; no people.",
+      "big-family": "One centred group: grandfather, grandmother, two grown sons, a daughter-in-law and three grandchildren sitting close together in the farmhouse yard; warm and still.",
+      "carrying-pole": "One centred object: a wooden carrying pole lying across a rock, a woven basket full of earth and stones on a cord at each end."
+    },
+    "portraits": {
+      "yu-gong": "Half-length, facing us and smiling, the carrying pole across his shoulders and a basket at each end, mountains soft behind him, warm gold background.",
+      "zhi-sou": "Half-length, seated under a willow branch by the river, laughing with one hand raised, cool blue background."
+    },
+    "cover": "Yu Gong in the middle, walking toward us with his carrying pole and two full baskets, the little boy skipping at his side with a small basket; the two great mountains rise behind them under a pale morning sky.",
+    "landmarks": {
+      "great-wall-of-china": "Our own drawing, by day: the brick and stone wall at Badaling winding along the crests of green hills, two square watchtowers, the wall getting smaller into the distance; no tourists, no photograph traced.",
+      "machu-picchu": "Our own drawing, by day: the classic view along the ridge — roofless grey stone houses and green stepped terraces, the steep green peak of Huayna Picchu behind, clouds below; no photograph traced."
+    }
+  }
+}

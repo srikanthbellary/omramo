@@ -1,0 +1,1192 @@
+{
+  "schemaVersion": 1,
+  "id": "herd-boy-and-weaving-maiden",
+  "contentVersion": 1,
+  "title": "The Herd Boy and the Weaving Maiden",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "chinese",
+    "culture": "Chinese festival story (Qixi)",
+    "place": "China",
+    "label": "China",
+    "pin": {
+      "lat": 34.3,
+      "lon": 108.9
+    },
+    "pinColor": "#E0483A"
+  },
+  "setting": {
+    "period": "Folk-tale time in China, and the night sky above it",
+    "latestYear": 1000
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Chinese folk tale (the Qixi festival story)",
+    "sources": [
+      {
+        "author": "Richard Wilhelm (ed.), trans. Frederick H. Martens",
+        "title": "The Chinese Fairy Book",
+        "year": 1921,
+        "gutenbergId": 29939,
+        "url": "https://www.gutenberg.org/ebooks/29939",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Chinese folk tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Chinese reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The night sky is a place every child on Earth can visit. The Milky Way, which people in China call the Silver River, runs between the bright stars Vega and Altair.",
+      "factCards": [
+        "silver-river",
+        "two-stars",
+        "bridge-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Silk was first made in China and was woven at home. The Qixi festival, on the seventh night of the seventh lunar month, remembers this story; Japan and Korea keep it too.",
+      "factCards": [
+        "silk",
+        "qixi"
+      ]
+    },
+    "moral": {
+      "lesson": "Love and work both matter. The two lose each other when they forget their work, and win a night together by doing it well and waiting.",
+      "reflectionQuestion": "Was it fair to part them? What would you have decided, if you ruled the sky?"
+    }
+  },
+  "moral": "Love needs patience, and the work still has to be done.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": {
+      "leading": "dark",
+      "trailing": "dark",
+      "folded": "dark"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A young woman and a young man meet at the top of an arch of black and white magpies, over a river of stars in a deep blue night sky.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "zhinu",
+      "name": "Zhinü",
+      "color": "#C2456E",
+      "face": {
+        "file": "art/face-zhinu.png",
+        "alt": "Zhinü, the Weaving Maiden.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FBDDE6",
+      "card": {
+        "label": "Character · the weaver of the sky",
+        "title": "Zhinü, the Weaving Maiden",
+        "traits": [
+          {
+            "text": "Weaves the sky’s silk",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Curious",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Proud of her work",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "She weaves the rose of dawn and the gold of evening on a loom in the sky. Her name is said “jir-nyoo”, and it means the Weaving Maiden.",
+        "portrait": {
+          "file": "art/char-zhinu.card.heic",
+          "alt": "Zhinü in a pale rose robe with long sleeves, her hair in a high knot, holding a skein of dawn-pink silk against a dark blue sky.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#6A3468",
+          "#3F2459",
+          "#1E1640"
+        ]
+      }
+    },
+    {
+      "id": "niulang",
+      "name": "Niulang",
+      "color": "#2F6FA8",
+      "face": {
+        "file": "art/face-niulang.png",
+        "alt": "Niulang, the Herd Boy.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6E6F7",
+      "card": {
+        "label": "Character · a poor farm boy",
+        "title": "Niulang, the Herd Boy",
+        "traits": [
+          {
+            "text": "Kind to his ox",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Ploughs his own field",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never gives up",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "He has a straw-roofed hut, a row of mulberry trees and one old ox. His name is said “nyoh-lahng”, and it means the Herd Boy.",
+        "portrait": {
+          "file": "art/char-niulang.card.heic",
+          "alt": "Niulang in a short blue jacket, his hair tied up in a cloth, with one hand on the neck of his old yellow ox, under a starry sky.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#2A5682",
+          "#1C3B66",
+          "#101F45"
+        ]
+      }
+    },
+    {
+      "id": "ox",
+      "name": "Old Ox",
+      "color": "#9A6A1F",
+      "face": {
+        "file": "art/face-ox.png",
+        "alt": "The Old Ox.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F6E3B5"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "silk",
+      "kind": "object",
+      "title": "Silk",
+      "line": "A fine, shining thread spun by silkworms, and the smooth cloth woven from it.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "Silk was first made in China, thousands of years ago. Families fed silkworms on mulberry leaves, unwound the cocoons into thread, and wove it on looms at home."
+      },
+      "picture": {
+        "file": "art/see-silk.heic",
+        "alt": "A skein of shining rose-pink silk thread with three white silkworm cocoons on a green mulberry leaf.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2350"
+    },
+    {
+      "id": "silver-river",
+      "kind": "place",
+      "title": "The Silver River",
+      "line": "The Milky Way: a pale band of far-off stars that crosses the whole night sky.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "In China the Milky Way is called Yinhe, the Silver River, or Tianhe, the Sky River. You can find it from anywhere on Earth on a clear, dark night, far from city lights."
+      },
+      "picture": {
+        "file": "art/see-silver-river.heic",
+        "alt": "The Milky Way as a pale silver band of stars slanting across a dark blue sky above a low black line of hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#141B45"
+    },
+    {
+      "id": "qixi",
+      "kind": "idea",
+      "title": "Qixi",
+      "line": "A festival on the seventh night of the seventh month of the old moon calendar.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "At Qixi, said “chee-shee”, people in China look up for the two stars, and girls once showed their skill by threading needles in the moonlight. Japan keeps the same story as Tanabata, and Korea as Chilseok."
+      },
+      "picture": {
+        "file": "art/see-qixi.heic",
+        "alt": "A needle with a long red thread held up against a half moon in a dark violet sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A1F4F"
+    },
+    {
+      "id": "bridge-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "golden-gate-bridge",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "A bridge joins two sides that could not meet. Far away from China, and long after this story was first told, people hung a bridge of steel across a wide strait of the sea."
+        }
+      },
+      "background": "#17405C"
+    },
+    {
+      "id": "two-stars",
+      "kind": "idea",
+      "title": "Vega and Altair",
+      "line": "Two of the brightest stars of summer, one on each side of the Milky Way.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "In China, Vega is the Weaving Maiden and Altair is the Herd Boy. With a third bright star, Deneb, they make a big triangle that sky-watchers in the northern half of the world look for on summer nights."
+      },
+      "picture": {
+        "file": "art/see-two-stars.heic",
+        "alt": "Two bright stars, one on each side of a pale band of small stars, in a dark blue sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1A2152"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-loom.unfolded.heic",
+          "alt": "The sky country at deep dusk: on the right, a young woman sits at a tall wooden loom that stands among dark clouds, and bands of rose and gold cloud-silk trail from it. The left half is calm dark violet sky with a few early stars.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-loom.folded.heic",
+          "alt": "Zhinü at her tall loom among dark clouds, with a band of rose and gold silk running through her hands.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#1B1642",
+          "#3C2560",
+          "#7A3F6E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "High above the clouds, a girl sat weaving the colours of the sky.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her name was "
+            },
+            {
+              "t": "Zhinü",
+              "name": "zhinu"
+            },
+            {
+              "t": ", which means the Weaving Maiden. Her grandmother, the Queen Mother, ruled the whole country of the sky."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On a loom as tall as a pine tree, Zhinü wove the "
+            },
+            {
+              "t": "silk",
+              "tap": "silk"
+            },
+            {
+              "t": " of the sky. She wove rose for the dawn and gold for the evening, and every day the sky wore what she had made."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was fine work, and it was never finished. As soon as one evening was done, the next dawn was waiting. Zhinü had never had a day of rest."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-meadow.unfolded.heic",
+          "alt": "A river meadow at night under many stars: on the right, a boy stands beside an old yellow ox near a small straw-roofed hut and a row of mulberry trees. The left half is calm dark blue sky above a low line of dark hills.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-meadow.folded.heic",
+          "alt": "Niulang with his arm over the neck of his old yellow ox, in front of a small straw-roofed hut at night.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#101A40",
+          "#1E2F5C",
+          "#1F3B3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far below, beside a slow brown river, lived a boy called "
+            },
+            {
+              "t": "Niulang",
+              "name": "niulang"
+            },
+            {
+              "t": ". The name means the Herd Boy, and it suited him."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He had no mother or father. He had a hut with a straw roof, a row of mulberry trees, and one old yellow ox."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Niulang shared his supper with the ox. Each evening he combed the burrs out of the old beast’s coat and told him about the day."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One night, under a sky full of stars, the "
+            },
+            {
+              "t": "Old Ox",
+              "name": "ox"
+            },
+            {
+              "t": " answered."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Tomorrow at dusk the sky maidens come down to wash their silk in the river,”",
+              "say": "ox",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Go and see.”",
+              "say": "ox"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-meadow.unfolded.heic",
+          "alt": "A river meadow at night under many stars: on the right, a boy stands beside an old yellow ox near a small straw-roofed hut and a row of mulberry trees. The left half is calm dark blue sky above a low line of dark hills.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-meadow.folded.heic",
+          "alt": "Niulang with his arm over the neck of his old yellow ox, in front of a small straw-roofed hut at night.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#101A40",
+          "#1E2F5C",
+          "#1F3B3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The next evening Niulang led the ox down to the river to drink. Down the sky came seven maidens, their arms full of silk."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Six washed their silk and flew home. The seventh was rinsing a skein of dawn-pink thread when it slipped from her fingers. Niulang waded in and caught it."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Thank you,”",
+              "say": "zhinu",
+              "chip": true
+            },
+            {
+              "t": " said Zhinü. "
+            },
+            {
+              "t": "“What is it like to live down here?”",
+              "say": "zhinu"
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He told her about ploughing, and rain on the roof, and the smell of cut grass. They talked until the stars came out."
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She came back the next evening, and the next. Then one evening she did not go home."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-meadow.unfolded.heic",
+          "alt": "A river meadow at night under many stars: on the right, a boy stands beside an old yellow ox near a small straw-roofed hut and a row of mulberry trees. The left half is calm dark blue sky above a low line of dark hills.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-meadow.folded.heic",
+          "alt": "Niulang with his arm over the neck of his old yellow ox, in front of a small straw-roofed hut at night.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#101A40",
+          "#1E2F5C",
+          "#1F3B3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Zhinü and Niulang were married under the mulberry trees, with the Old Ox for a guest."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He ploughed and she wove plain brown cloth, and at night they sat in the doorway and counted stars. They were so happy that they forgot everything else."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Some mornings the Old Ox stood unfed until noon. Weeds crept across the field."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The field is waiting,”",
+              "say": "ox",
+              "chip": true
+            },
+            {
+              "t": " said the Old Ox. "
+            },
+            {
+              "t": "“Tomorrow,”",
+              "say": "niulang",
+              "chip": true
+            },
+            {
+              "t": " said Niulang."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And far above them the great loom stood still. Dawn came up grey. Evening went down grey. All over the world, people looked up and wondered where the colours had gone."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-meadow.unfolded.heic",
+          "alt": "A river meadow at night under many stars: on the right, a boy stands beside an old yellow ox near a small straw-roofed hut and a row of mulberry trees. The left half is calm dark blue sky above a low line of dark hills.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-meadow.folded.heic",
+          "alt": "Niulang with his arm over the neck of his old yellow ox, in front of a small straw-roofed hut at night.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#101A40",
+          "#1E2F5C",
+          "#1F3B3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the sky country, the Queen Mother looked out at another grey evening and frowned."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She went to the weaving hall. Dust lay on the tall loom, and a spider had spun its own small web across the threads."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Where is my granddaughter?” she asked. No one dared to answer, so she looked down through the clouds herself. There was "
+            },
+            {
+              "t": "Zhinü",
+              "name": "zhinu"
+            },
+            {
+              "t": ", laughing in a doorway, with weeds all round the house."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The sky cannot go without its colours,” said the Queen Mother. “Bring her home.”"
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Two messengers in robes of white cloud bowed, and stepped off the edge of the sky."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-meadow.unfolded.heic",
+          "alt": "A river meadow at night under many stars: on the right, a boy stands beside an old yellow ox near a small straw-roofed hut and a row of mulberry trees. The left half is calm dark blue sky above a low line of dark hills.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-meadow.folded.heic",
+          "alt": "Niulang with his arm over the neck of his old yellow ox, in front of a small straw-roofed hut at night.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#101A40",
+          "#1E2F5C",
+          "#1F3B3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The messengers came at dusk, as quietly as mist.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They took Zhinü by the hands, and her feet left the ground. "
+            },
+            {
+              "t": "“Niulang!”",
+              "say": "zhinu",
+              "chip": true
+            },
+            {
+              "t": " she called. Already she was as high as the mulberry tops."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Niulang",
+              "name": "niulang"
+            },
+            {
+              "t": " ran. He ran until the field ended and there was nothing left to run on but air."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Behind him the Old Ox knelt in the grass. "
+            },
+            {
+              "t": "“You fed me when you had little,”",
+              "say": "ox",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Climb on my back and hold my horns.”",
+              "say": "ox"
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then the old beast leaped. His hooves struck the evening air like a road, and "
+            },
+            {
+              "t": "up",
+              "fx": "stretch"
+            },
+            {
+              "t": " they went, past the clouds, into the dark."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "Deep night: a great band of silver stars pours across the sky like a river, with a small figure on each bank, a young woman on the near right and a boy with an ox far across. The left half is calm dark sky where the river of stars thins to a pale mist.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Zhinü on the bank of a river made of stars, looking across it to a small far figure with an ox.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0D1236",
+          "#1D2A63",
+          "#3A4F8F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The stars grew big around them. Ahead flew the messengers, and between them Zhinü, looking back."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Faster, old friend!”",
+              "say": "niulang",
+              "chip": true
+            },
+            {
+              "t": " cried Niulang. The gap closed. Zhinü stretched out her hand, and his fingers brushed hers."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the Queen Mother stood waiting at the gate of the sky. She drew a long silver pin from her hair and scored one line across the dark."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The line shone. Then it filled with stars, thousands and thousands, and "
+            },
+            {
+              "t": "flooded",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " into a river too wide to swim and too deep to wade."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "People in China still call it the "
+            },
+            {
+              "t": "Silver River",
+              "tap": "silver-river"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "Deep night: a great band of silver stars pours across the sky like a river, with a small figure on each bank, a young woman on the near right and a boy with an ox far across. The left half is calm dark sky where the river of stars thins to a pale mist.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Zhinü on the bank of a river made of stars, looking across it to a small far figure with an ox.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0D1236",
+          "#1D2A63",
+          "#3A4F8F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Niulang sat down on one bank and would not leave. Zhinü sat on the other and would not weave."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "After many grey days, Zhinü stood up and went back to her loom."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“If the dawn must have colour,”",
+              "say": "zhinu",
+              "chip": true
+            },
+            {
+              "t": " she said, "
+            },
+            {
+              "t": "“it shall be the best I ever made.”",
+              "say": "zhinu"
+            },
+            {
+              "t": " Across the water, Niulang began to herd the cattle of the sky, and not one went hungry."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The magpies saw it all, and chattered about it in every tree. At last the Queen Mother heard, and her frown softened."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“One night a year,” she said. “The "
+            },
+            {
+              "t": "seventh night of the seventh month",
+              "tap": "qixi"
+            },
+            {
+              "t": ". If the work is done.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-bridge.unfolded.heic",
+          "alt": "Deep night: on the right, thousands of magpies fly wing to wing in an arch over the river of stars, and a young woman and a young man meet at the top. The left half is calm dark blue sky with a few magpies still flying up.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-bridge.folded.heic",
+          "alt": "Zhinü and Niulang take hands at the top of an arch of black and white magpies, with stars all round them.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0E1438",
+          "#232B66",
+          "#5A3E78"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All year Zhinü wove and Niulang herded, and the dawns were finer than ever before."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When the seventh night came, a sound rose from the earth like wind in dry leaves. It was wings."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Magpies were flying up from every wood and rooftop in the world. They locked wing to wing, thousands upon thousands, until a black and white "
+            },
+            {
+              "t": "bridge",
+              "tap": "bridge-moment"
+            },
+            {
+              "t": " arched from bank to bank."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Zhinü",
+              "name": "zhinu"
+            },
+            {
+              "t": " stepped on from one side, and "
+            },
+            {
+              "t": "Niulang",
+              "name": "niulang"
+            },
+            {
+              "t": " from the other. The bridge trembled under them, feather-soft."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They met at the very top, and for one whole night nobody in the sky did any work at all."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-bridge.unfolded.heic",
+          "alt": "Deep night: on the right, thousands of magpies fly wing to wing in an arch over the river of stars, and a young woman and a young man meet at the top. The left half is calm dark blue sky with a few magpies still flying up.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-bridge.folded.heic",
+          "alt": "Zhinü and Niulang take hands at the top of an arch of black and white magpies, with stars all round them.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0E1438",
+          "#232B66",
+          "#5A3E78"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They are up there still. On a clear summer night, look for the pale river of light overhead."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On one bank shines a bright star, and on the other bank another. People in China say those "
+            },
+            {
+              "t": "two stars",
+              "tap": "two-stars"
+            },
+            {
+              "t": " are the Weaving Maiden and the Herd Boy, each hard at work."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "If rain falls on the seventh night, people say it is their tears. Nobody can tell whether they are sad ones or happy ones."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And the next morning, look closely at the magpies. Some seem a little bald on top. So would you be, if two people in love had walked across your head."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

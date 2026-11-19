@@ -58,6 +58,25 @@ public struct LibraryEntry: Hashable, Sendable, Identifiable {
     }
 }
 
+/// One row of the library: the stories of one level, in catalog order (round 5: the catalog
+/// grew from three stories to the plan's thirty-two, so the library groups them by level).
+public struct LibraryShelf: Hashable, Sendable, Identifiable {
+    public var tier: Tier
+    public var stories: [Story]
+
+    public init(tier: Tier, stories: [Story]) {
+        self.tier = tier
+        self.stories = stories
+    }
+
+    public var id: Tier { tier }
+
+    /// "1 story", "11 stories".
+    public var countText: String {
+        stories.count == 1 ? "1 story" : "\(stories.count) stories"
+    }
+}
+
 /// Everything the app shows: the stories in catalog order and the shared landmarks.
 public struct Library: Hashable, Sendable {
     public var catalogVersion: Int
@@ -80,6 +99,21 @@ public struct Library: Hashable, Sendable {
 
     public func story(id: StoryID) -> Story? {
         stories.first { $0.id == id }
+    }
+
+    /// The stories grouped by level, lowest level first, each shelf in catalog order (the
+    /// catalog lists a level's stories region by region). A level with no story has no shelf.
+    public func shelves(matching filter: LibraryFilter = .all) -> [LibraryShelf] {
+        Tier.allCases.compactMap { tier in
+            guard filter.includes(tier) else { return nil }
+            let found = stories.filter { $0.tier == tier }
+            return found.isEmpty ? nil : LibraryShelf(tier: tier, stories: found)
+        }
+    }
+
+    /// The stories flagged "needs cultural review before release", in catalog order.
+    public var storiesNeedingCulturalReview: [Story] {
+        stories.filter { $0.culturalReview.needsReviewBeforeRelease }
     }
 
     /// The landmark a tap target points to, if it is a landmark target that resolves.

@@ -49,7 +49,8 @@
     "level": "required",
     "status": "pending",
     "reason": "Derived from Buddhist scripture (the Jataka collection).",
-    "community": "Buddhist reader"
+    "community": "Buddhist reader",
+    "notes": "Needs cultural review before release."
   },
   "education": {
     "geography": {

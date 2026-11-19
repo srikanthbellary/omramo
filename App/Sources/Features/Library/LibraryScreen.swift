@@ -33,12 +33,12 @@ struct LibraryScreen: View {
             finished: Set(log.file.finished),
             open: { storyID, source in router.open(storyID, from: source) }
         )
-        let stories = library.stories.filter { filter.includes($0.tier) }
+        let shelves = library.shelves(matching: filter)
 
         TwoPane {
             AuroraBackdrop(aurora: .light)
         } leading: {
-            LibraryMainPane(home: home, stories: stories, filter: $filter) {
+            LibraryMainPane(home: home, shelves: shelves, filter: $filter) {
                 EmptyView()
             }
         } trailing: {
@@ -46,7 +46,7 @@ struct LibraryScreen: View {
         } folded: {
             // One pane: the same column, scrolling, with the map, the streak card and the
             // friends after the stories. "Keep reading" is already on top.
-            LibraryMainPane(home: home, stories: stories, filter: $filter) {
+            LibraryMainPane(home: home, shelves: shelves, filter: $filter) {
                 StoryMapSection(library: library, readingNow: home.keepReading?.story.id)
                 LibrarySideCards(home: home, showsShelf: false)
                     .padding(.top, 14)
@@ -92,7 +92,8 @@ struct LibraryHome {
 private struct LibraryMainPane<Extra: View>: View {
     @Environment(\.pane) private var pane
     let home: LibraryHome
-    let stories: [Story]
+    /// The stories to show, level by level (one shelf when a level is chosen).
+    let shelves: [LibraryShelf]
     @Binding var filter: LibraryFilter
     /// Extra sections after the stories (the map and cards, when folded).
     @ViewBuilder var extra: () -> Extra
@@ -156,32 +157,50 @@ private struct LibraryMainPane<Extra: View>: View {
                     .padding(.leading, inset)
                     .padding(.top, pane.pt(9))
 
-                if stories.isEmpty {
+                if shelves.isEmpty {
                     // Estimate: the designs show no empty state for a level (gap G10).
                     Text(verbatim: "No stories at this level yet.")
                         .typeRole(Tokens.UIType.bodySmall)
                         .foregroundStyle(Color(rgba: Tokens.Palette.textSecondary))
                         .padding(.leading, inset)
                         .padding(.top, pane.pt(20))
-                } else {
-                    // The design shows three cards; more scroll sideways (estimate).
-                    ScrollView(.horizontal) {
-                        HStack(alignment: .top, spacing: pane.pt(12)) {
-                            ForEach(stories) { story in
-                                Button {
-                                    open(story.id, .cover(story.id))
-                                } label: {
-                                    StoryCardView(story: story, isFinished: home.finished.contains(story.id))
+                } else if filter == .all {
+                    // Every level: one shelf a level, each scrolling sideways (round 5; the
+                    // design's single row of three covers is one such shelf).
+                    ForEach(shelves) { shelf in
+                        ShelfHeader(shelf: shelf)
+                            .frame(width: cardWidth, alignment: .leading)
+                            .padding(.leading, inset)
+                            .padding(.top, pane.pt(16))
+                        ScrollView(.horizontal) {
+                            LazyHStack(alignment: .top, spacing: pane.pt(StoryCardView.gap)) {
+                                ForEach(shelf.stories) { story in
+                                    storyButton(story)
                                 }
-                                .buttonStyle(PressScaleButtonStyle())
-                                .accessibilityIdentifier("library.story.\(story.id.rawValue)")
+                            }
+                            .padding(.horizontal, inset)
+                            .padding(.top, pane.pt(10))
+                            .padding(.bottom, pane.pt(16))
+                        }
+                        .scrollIndicators(.hidden)
+                    }
+                } else {
+                    // One level: all of its covers at once, three to a row at the design width.
+                    ForEach(shelves) { shelf in
+                        ShelfHeader(shelf: shelf)
+                            .frame(width: cardWidth, alignment: .leading)
+                            .padding(.leading, inset)
+                            .padding(.top, pane.pt(16))
+                        LazyVGrid(columns: gridColumns(cardWidth: cardWidth), alignment: .leading, spacing: pane.pt(10)) {
+                            ForEach(shelf.stories) { story in
+                                storyButton(story)
                             }
                         }
-                        .padding(.horizontal, inset)
-                        .padding(.top, pane.pt(14))
-                        .padding(.bottom, pane.pt(28))
+                        .frame(width: cardWidth, alignment: .leading)
+                        .padding(.leading, inset)
+                        .padding(.top, pane.pt(10))
+                        .padding(.bottom, pane.pt(16))
                     }
-                    .scrollIndicators(.hidden)
                 }
 
                 extra()
@@ -202,6 +221,53 @@ private struct LibraryMainPane<Extra: View>: View {
                     .frame(height: fade)
             }
         }
+    }
+}
+
+extension LibraryMainPane {
+    /// One cover that opens its story, growing out of the cover.
+    fileprivate func storyButton(_ story: Story) -> some View {
+        let open = home.open
+        return Button {
+            open(story.id, .cover(story.id))
+        } label: {
+            StoryCardView(story: story, isFinished: home.finished.contains(story.id))
+        }
+        .buttonStyle(PressScaleButtonStyle())
+        .accessibilityIdentifier("library.story.\(story.id.rawValue)")
+    }
+
+    /// As many cover-wide columns as fit the card width: three at the design width.
+    fileprivate func gridColumns(cardWidth: CGFloat) -> [GridItem] {
+        let cover = pane.pt(Tokens.Size.storyCoverWidth)
+        let gap = pane.pt(StoryCardView.gap)
+        let count = max(2, Int((cardWidth + gap) / max(1, cover + gap)))
+        return Array(repeating: GridItem(.fixed(cover), spacing: gap, alignment: .topLeading), count: count)
+    }
+}
+
+/// The name of a level above its shelf, with how many stories it holds.
+private struct ShelfHeader: View {
+    @Environment(\.pane) private var pane
+    let shelf: LibraryShelf
+
+    var body: some View {
+        let tint = Color(rgba: Tokens.TierColors.colors(for: shelf.tier).pillText)
+        HStack(spacing: pane.pt(6)) {
+            TierGlyph(tier: shelf.tier, color: tint)
+            Text(verbatim: shelf.tier.displayName)
+                .typeRole(Tokens.UIType.segmentLabel)
+                .foregroundStyle(tint)
+            Text(verbatim: "· " + shelf.countText)
+                .typeRole(Tokens.UIType.storyCardPlace)
+                .foregroundStyle(Color(rgba: Tokens.Palette.ink.opacity(0.6)))
+            Spacer(minLength: 0)
+        }
+        .lineLimit(1)
+        .accessibilityElement(children: .ignore)
+        .accessibilityLabel(Text(verbatim: "Level: \(shelf.tier.displayName), \(shelf.countText)"))
+        .accessibilityAddTraits(.isHeader)
+        .accessibilityIdentifier("library.shelf.\(shelf.tier.rawValue)")
     }
 }
 

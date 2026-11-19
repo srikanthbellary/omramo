@@ -1,0 +1,448 @@
+{
+  "id": "tongue-cut-sparrow",
+  "title": "The Tongue-Cut Sparrow",
+  "tier": "low",
+  "region": {
+    "id": "japanese",
+    "culture": "Japanese folk tale",
+    "place": "Japan",
+    "label": "Japan",
+    "pin": { "lat": 36, "lon": 138 },
+    "pinColor": "#E8483F"
+  },
+  "setting": {
+    "period": "Old Japan, long ago",
+    "latestYear": 1600
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Japanese folk tale (Shita-kiri Suzume)",
+    "sources": [
+      {
+        "author": "Yei Theodora Ozaki",
+        "title": "Japanese Fairy Tales",
+        "year": 1908,
+        "gutenbergId": 4018,
+        "url": "https://www.gutenberg.org/ebooks/4018",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Japanese folk tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Japanese reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Japan is a country of islands, with wooded hills and bamboo groves where sparrows gather.",
+      "factCards": ["bamboo-grove", "himeji-moment"]
+    },
+    "culture": {
+      "lesson": "Rice is the daily food of Japan. A guest is welcomed with bows, tea and the best seat, and a polite guest takes the smaller gift.",
+      "factCards": ["rice", "guest"]
+    },
+    "moral": {
+      "lesson": "Kindness is returned. Greed chooses the big basket and regrets it.",
+      "reflectionQuestion": "Which basket would you have picked, and why?"
+    }
+  },
+  "moral": "Kindness comes back to you, but greed brings only trouble.",
+  "theme": {
+    "textColor": "#14302B",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "An old man holds out a few grains of rice to a small brown sparrow, with green bamboo behind them."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "old-man",
+      "name": "Old Man",
+      "color": "#1F5F8B",
+      "chipBackground": "#D6E9F7",
+      "faceAlt": "The old man.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Old Man",
+        "traits": [
+          { "text": "Kind to birds", "fill": "#D9F5E4", "ink": "#0B6B4A" },
+          { "text": "Shares his rice", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Never greedy", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "He cuts wood in the hills and shares his supper with a sparrow. When his friend is lost, he walks all day to find her.",
+        "portraitAlt": "The old man in a blue cotton jacket, smiling, with a few grains of rice in his open hand.",
+        "background": ["#BFE3F2", "#8CC7DE", "#4E9CC2"]
+      }
+    },
+    {
+      "id": "sparrow",
+      "name": "Sparrow",
+      "color": "#A8501C",
+      "chipBackground": "#FFE2A8",
+      "faceAlt": "The Sparrow.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sparrow",
+        "traits": [
+          { "text": "Sings “Chun, chun!”", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Very polite", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Lives in the bamboo", "fill": "#D9F5E4", "ink": "#0B6B4A" }
+        ],
+        "body": "She is small and brown, and she bows to everyone. She forgives quickly, and she never forgets a friend.",
+        "portraitAlt": "The Sparrow on a bamboo stem, bowing her head, with her wings a little open.",
+        "background": ["#FFE08A", "#F7B85C", "#E58A45"]
+      }
+    },
+    {
+      "id": "old-woman",
+      "name": "Old Woman",
+      "color": "#8E2F5A",
+      "chipBackground": "#F6DCE7",
+      "faceAlt": "The old woman."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "bamboo-grove",
+      "kind": "place",
+      "title": "Bamboo grove",
+      "line": "A wood of tall green bamboo, growing close together.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "Japan is a country of islands, with green hills and many bamboo groves. Sparrows like to gather in them."
+      },
+      "pictureAlt": "Tall green bamboo stems growing close together, with light coming through the leaves.",
+      "background": "#1F5A3C"
+    },
+    {
+      "id": "rice",
+      "kind": "object",
+      "title": "Bowl of rice",
+      "line": "Small white grains, cooked soft and eaten from a bowl.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "In Japan, people eat rice at almost every meal. It grows in fields full of water."
+      },
+      "pictureAlt": "A plain bowl of white rice with a pair of wooden chopsticks beside it.",
+      "background": "#7A3B2E"
+    },
+    {
+      "id": "himeji-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "himeji-castle",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "A white heron has wide white wings. Long after this story, people in Japan built a castle that looks like one."
+        }
+      },
+      "background": "#1B3A5C"
+    },
+    {
+      "id": "guest",
+      "kind": "idea",
+      "title": "A guest",
+      "line": "A guest is someone who comes to visit your home.",
+      "cultureNote": {
+        "label": "From Japan",
+        "text": "In Japan, a guest gets the best seat and a cup of tea. People bow to say hello and thank you."
+      },
+      "pictureAlt": "A small tray with a teapot and one cup of green tea on a straw mat.",
+      "background": "#2E3F6E"
+    }
+  ],
+  "scenes": {
+    "scene-cottage": {
+      "unfoldedAlt": "A small farmhouse with a thick straw roof at the foot of green wooded hills. An old man sits on the porch with a little brown sparrow beside him.",
+      "foldedAlt": "An old man on the porch of a straw-roofed house, with a little brown sparrow beside him.",
+      "fallbackColors": ["#CFEFF0", "#FFF1C4", "#7FB069"]
+    },
+    "scene-bamboo": {
+      "unfoldedAlt": "An old man in straw sandals walks through a tall green bamboo grove. A white heron stands in a clear stream.",
+      "foldedAlt": "An old man walks among tall bamboo, calling, beside a stream.",
+      "fallbackColors": ["#D8F2E4", "#FFF4C2", "#4E9A5B"]
+    },
+    "scene-sparrow-house": {
+      "unfoldedAlt": "A little house of pale wood among the bamboo. Sparrows bow on the porch beside two woven baskets, one big and one small.",
+      "foldedAlt": "The Sparrow bows on the porch of her little house, between a big basket and a small one.",
+      "fallbackColors": ["#D5EEF2", "#FFEFC0", "#8DBB6A"]
+    },
+    "scene-road": {
+      "unfoldedAlt": "An old woman bends under a very big basket on a hill road in the early evening, under a pale pink sky.",
+      "foldedAlt": "An old woman carries a very big basket on her back along a hill road.",
+      "fallbackColors": ["#D9E8F5", "#FFD9B8", "#B08A5A"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-cottage",
+      "part": "part-1",
+      "paras": [
+        "^An old man and his wife lived below the green hills.",
+        "Their house had a thick straw roof. Behind it a <tap:bamboo-grove>bamboo grove</tap> whispered in the wind.",
+        "The <name:old-man>old man</name> had a small friend, a brown <name:sparrow>Sparrow</name>. Every morning she hopped along the porch to meet him.",
+        "<say:sparrow*>“Chun, chun!”</say> she sang. <say:sparrow>“Good morning!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-cottage",
+      "part": "part-1",
+      "paras": [
+        "Every evening the old man came home from the hills with firewood on his back.",
+        "He sat down with his bowl of <tap:rice>rice</tap>. He took one bite. Then he put a few grains in his hand.",
+        "<say:old-man*>“One for me,”</say> he said, <say:old-man>“and one for you, little friend.”</say>",
+        "The Sparrow ate from his hand, grain by grain by grain."
+      ]
+    },
+    {
+      "scene": "scene-cottage",
+      "part": "part-1",
+      "paras": [
+        "One day the old man went up the hill to cut wood. It was washing day.",
+        "His wife, the <name:old-woman>old woman</name>, had a heap of clothes to wash. Her back ached. Her hands were sore.",
+        "She had cooked a bowl of rice paste to make the clothes smooth and stiff. But when she reached for it, the bowl was empty."
+      ]
+    },
+    {
+      "scene": "scene-cottage",
+      "part": "part-1",
+      "paras": [
+        "Down hopped the Sparrow and bowed her little head.",
+        "<say:sparrow*>“I ate it,”</say> she said. <say:sparrow>“I thought it was my breakfast. I am sorry.”</say>",
+        "But the old woman was too tired and too cross to listen. <pop:1.3>Snip!</pop> went her scissors, and nipped the tip of the Sparrow’s tongue.",
+        "<say:old-woman*>“Shoo!”</say> she cried. <say:old-woman>“Be off!”</say> And the Sparrow flew away over the bamboo."
+      ]
+    },
+    {
+      "scene": "scene-cottage",
+      "part": "part-1",
+      "paras": [
+        "That evening the porch was quiet. No hop, no song, no small brown friend.",
+        "<say:old-man*>“Where is my Sparrow?”</say> asked the old man.",
+        "<say:old-woman*>“She ate my paste, so I chased her away,”</say> said the old woman, banging the pots.",
+        "The old man could not eat his rice. At first light he tied on his sandals and went to find her."
+      ]
+    },
+    {
+      "scene": "scene-bamboo",
+      "part": "part-1",
+      "paras": [
+        "The bamboo stood tall and green on every side. A clear, cold stream ran over the stones.",
+        "A <tap:himeji-moment>white heron</tap> stood in the water, as still as a post.",
+        "<say:old-man*>“Sparrow, Sparrow, where is your home?”</say> called the old man.",
+        "The heron only blinked. The bamboo only creaked."
+      ]
+    },
+    {
+      "scene": "scene-bamboo",
+      "part": "part-1",
+      "paras": [
+        "He walked on, up the hill and down the hill. <say:old-man*>“Sparrow, Sparrow, where is your home?”</say>",
+        "The sun climbed high. His legs grew tired. <say:old-man*>“Sparrow, Sparrow, where is your home?”</say>",
+        "<say:sparrow*>“Chun, chun! Here I am!”</say>",
+        "There on a little gate sat the Sparrow. <say:sparrow*>“My tongue is quite well again,”</say> she said. <say:sparrow>“Come in, dear friend!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-sparrow-house",
+      "part": "part-1",
+      "paras": [
+        "Behind the gate stood a small house of pale wood.",
+        "All the Sparrow’s family came and bowed. The old man bowed back.",
+        "<say:sparrow*>“You are our <tap:guest>guest</tap>,”</say> said the Sparrow. <say:sparrow>“Sit here, in the best place.”</say>",
+        "They brought him hot tea and rice cakes and sweet red beans. Then the young sparrows danced, flip, flap, flutter, and the old man laughed."
+      ]
+    },
+    {
+      "scene": "scene-sparrow-house",
+      "part": "part-2",
+      "paras": [
+        "^When the sun dipped low, it was time to go home.",
+        "The sparrows carried in two baskets. One was big and heavy. One was small and light.",
+        "<say:sparrow*>“A gift for you,”</say> said the Sparrow. <say:sparrow>“Please choose.”</say>",
+        "<say:old-man*>“I am old,”</say> said the old man, <say:old-man>“and the small one is enough. Thank you, little friend.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-cottage",
+      "part": "part-2",
+      "paras": [
+        "At home the old man lifted the lid of the small basket.",
+        "Out shone gold coins, rolls of silk, and coral as red as berries.",
+        "<say:old-woman*>“There was a big one too?”</say> cried the old woman. <say:old-woman>“And you left it behind? I shall fetch it myself!”</say>",
+        "<say:old-man*>“We have enough,”</say> said the old man. But she was already tying on her sandals."
+      ]
+    },
+    {
+      "scene": "scene-sparrow-house",
+      "part": "part-2",
+      "paras": [
+        "The old woman marched through the bamboo. Stamp, stamp, stamp.",
+        "She did not bow. She did not say good day. She did not say sorry.",
+        "<say:old-woman*>“No tea for me,”</say> she said. <say:old-woman>“I have come for the big basket.”</say>",
+        "<say:sparrow*>“Then please take it,”</say> said the Sparrow, and she bowed as politely as ever."
+      ]
+    },
+    {
+      "scene": "scene-road",
+      "part": "part-2",
+      "paras": [
+        "The big basket was heavy. It bumped on her back all along the hill road.",
+        "<say:old-woman*>“Gold,”</say> she puffed. <say:old-woman>“Silk. Coral. Heaps and heaps of it!”</say>",
+        "The evening sky turned pale and pink. Home was still far away, and she could not wait one step more.",
+        "She sat down on the road and pulled off the lid."
+      ]
+    },
+    {
+      "scene": "scene-road",
+      "part": "part-2",
+      "paras": [
+        "<pop:1.3>Buzz!</pop> Out flew a cloud of bees.",
+        "<pop:1.3>Plop!</pop> Out hopped a fat brown toad, and sat on her foot.",
+        "Under the toad there was only mud and stones. Not one coin. Not one thread of silk.",
+        "<say:old-woman*>“Oh, oh, oh!”</say> cried the old woman. She ran all the way home, with the bees humming behind her."
+      ]
+    },
+    {
+      "scene": "scene-cottage",
+      "part": "part-2",
+      "paras": [
+        "The old woman tumbled in with mud on her nose.",
+        "<say:old-woman*>“I was cross and greedy,”</say> she puffed, <say:old-woman>“and I am sorry. The small basket was enough.”</say>",
+        "After that, she put out rice each morning for every sparrow in the hills. The old man’s friend always came first.",
+        "And on washing days, she made two bowls of paste. Just in case."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "himeji-castle",
+      "name": "Himeji Castle",
+      "era": "earlyModern",
+      "built": {
+        "from": 1601,
+        "to": 1609,
+        "circa": false,
+        "note": "The castle as it stands today. Older forts stood on the same hill before it; their dates are to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Japan",
+      "place": "Himeji, Japan",
+      "coordinates": { "lat": 34.839, "lon": 134.694 },
+      "region": "japanese",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A tall white castle on a hill. Its roofs curve up like a bird's wings."
+        },
+        "medium": {
+          "line": "A white castle in Himeji, Japan, finished about 400 years ago.",
+          "note": "People call it the White Heron Castle, for its white walls and wing-like roofs."
+        },
+        "advanced": {
+          "line": "A hilltop castle built between 1601 and 1609, called the White Heron Castle for its white walls and wing-like roofs.",
+          "note": "Its wooden towers are coated in white plaster. Most castles of its age in Japan have been lost; this one still stands."
+        }
+      },
+      "art": {
+        "file": "art/himeji-castle.heic",
+        "alt": "A white castle with many curved grey roofs, one above another, on a stone base on a green hill.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3A5C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a traditional Japanese folk tale,",
+    "Shita-kiri Suzume (The Tongue-Cut Sparrow). It is not the wording of any earlier edition.",
+    "Documented source for the tale: Yei Theodora Ozaki, \"Japanese Fairy Tales\" (1908 edition),",
+    "Project Gutenberg ebook #4018, https://www.gutenberg.org/ebooks/4018",
+    "(US public domain; other territories not verified).",
+    "Softened for ability age 6 to 8: the scissors only nip the tip of the Sparrow's tongue and she is soon well;",
+    "the old woman is tired and hasty on washing day, not wicked; the big basket holds bees, a toad, mud and",
+    "stones in place of the demons and snake of the source; she says sorry and changes her ways.",
+    "Left out: the old woman showing the cut tongue, the scolding speeches, and the sparrows' wish to punish her.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Japanese reader) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#1F4A3A",
+      "shade": "#3F7D56",
+      "mid": "#86BD7A",
+      "light": "#DDF1E4",
+      "glow": "#FFE9A8",
+      "accent": "#E8483F",
+      "mood": "Fresh bamboo greens and pale washed sky, warm straw and wood, one small note of vermilion; gentle and airy like a brush painting."
+    },
+    "light": "Soft morning to early evening; one warm light from the upper left in every picture. The road scene is early evening with a pale pink sky, never night.",
+    "world": [
+      "Old rural Japan before 1600: a small farmhouse (minka) with a thick, steep thatched roof, wooden posts, earth walls, sliding wooden doors and a narrow raised wooden porch (engawa). Woven straw mats on the floor inside.",
+      "Low wooded hills behind the house: cedar and pine on the slopes, bamboo at the foot. Draw slim native bamboo (madake) with clear rings and feathery leaves, not giant thick canes.",
+      "Clothes: plain indigo-blue or undyed cotton or hemp work clothes, a short jacket tied with a cloth belt, leggings, straw sandals (waraji). The old woman wears a plain cloth tied over her hair. No bright silk kimono, no fans, no formal hairpins.",
+      "Tools: firewood tied in a bundle on a wooden back frame; a round wooden washtub; washed cloth stretched flat on long boards to dry in the sun; a glazed bowl for the rice paste; small U-shaped spring scissors made of one piece of iron (nigiri-basami), not modern crossed scissors.",
+      "The sparrow is the Eurasian tree sparrow, the common sparrow of Japan: chestnut-brown cap, white cheeks with a black spot, black bib, streaked brown back. Keep the sparrows as birds; no clothes.",
+      "The white heron is a white egret: all white, slim neck, dark legs, standing in shallow water. It is only a bird in the stream. Himeji Castle never appears in any scene.",
+      "The two baskets are lidded wicker boxes (tsuzura) with carrying cords, one very big and one small. Treasure: small plain oval gold pieces, rolls of coloured silk, a branch of red coral.",
+      "Food at the sparrows' house: small cups of green tea, round white rice cakes, sweet red beans, on low trays.",
+      "The nuisance from the big basket is funny, not scary: round bumbling bees, one fat friendly toad, mud and stones. No stinging, no monsters, no snake.",
+      "Avoid: Mount Fuji, cherry blossom, torii gates, pagodas, samurai, geisha, lanterns everywhere, and any castle in the scenes. Avoid slanted-eye caricature; draw the old couple as warm, particular people."
+    ],
+    "characters": {
+      "old-man": "Small, thin and a little bent, with a round kind face, white topknot and wispy white eyebrows. Faded indigo-blue cotton jacket and leggings, straw sandals. Signature details: the bundle of firewood on his back, and an open hand with rice grains.",
+      "sparrow": "A plump little tree sparrow: chestnut cap, white cheeks with a black spot, bright black eye. Signature gesture: a polite bow with wings a little open.",
+      "old-woman": "Short and sturdy, sleeves tied back for work, a plain plum-coloured cloth over grey hair. Tired eyes and a cross mouth in Part I and most of Part II; a soft, sorry smile on the last page. Never ugly or witch-like."
+    },
+    "scenes": {
+      "scene-cottage": {
+        "unfolded": "Far: soft green wooded hills under a pale blue morning sky. Middle: bamboo behind the house. Near, on the trailing (right) half: the thatched farmhouse with its porch, the old man sitting with the Sparrow beside him, a washtub and drying boards at the side. The leading (left) pane's upper two thirds are calm pale sky above a low line of hills.",
+        "folded": "The porch close up: the old man's face in the middle, the Sparrow on the porch edge by his hand, the thatch above, pale sky at the top for the words."
+      },
+      "scene-bamboo": {
+        "unfolded": "Far: pale sky seen through thinning bamboo tops and a far hill. Middle: tall bamboo stems, densest on the trailing (right) half. Near: a clear stream over stones low across both panes, the white heron standing in it, the old man walking on the right with a hand cupped to his mouth. The leading pane's upper two thirds stay open pale sky with only a few leaf tips.",
+        "folded": "The old man in the middle among bamboo stems, calling, with the stream and the heron low in the band and pale sky above."
+      },
+      "scene-sparrow-house": {
+        "unfolded": "Far: pale sky and bamboo tops. Middle, on the trailing (right) half: a small neat house of pale new wood with a little gate and a porch, sparrows in a row bowing. Near: the two wicker baskets, one big and one small, side by side on the porch, with tea trays. The leading pane's upper two thirds are calm pale sky above low bamboo.",
+        "folded": "The Sparrow in the middle of the porch, bowing, with the big basket on one side and the small basket on the other."
+      },
+      "scene-road": {
+        "unfolded": "Early evening with a PALE sky, soft pink near the hills, never dark. Far: layered hills. Middle: a pale earth road winding down. Near, on the trailing (right) half: the old woman bent under the very big basket, a few round bees and a fat toad by the roadside as a hint. The leading pane's upper two thirds are open pale sky.",
+        "folded": "The old woman's face in the middle, puffing, with the big basket rising behind her head and the pale pink sky above."
+      }
+    },
+    "pictures": {
+      "bamboo-grove": "One centred clump of tall slim green bamboo with light coming through the leaves, on a deep green ground.",
+      "rice": "One plain bowl heaped with white rice, with a pair of wooden chopsticks resting beside it.",
+      "guest": "One small low tray with a teapot and a single cup of green tea on a straw mat."
+    },
+    "portraits": {
+      "old-man": "Half figure, smiling, in his indigo jacket, holding out an open hand with a few grains of rice; soft blue sky behind.",
+      "sparrow": "The Sparrow on a bamboo stem, bowing with her wings a little open; warm golden light behind."
+    },
+    "cover": "The old man kneeling with his open hand held out and the Sparrow hopping onto his fingers, in the middle of the picture; bamboo stems and pale sky behind.",
+    "landmarks": {
+      "himeji-castle": "Our own drawing of Himeji Castle by day: the white main tower with five tiers of curved grey-tiled roofs and white plastered walls, on its high stone base on a green hill, under a clear sky. A white heron flying past is welcome. No photograph traced."
+    }
+  }
+}

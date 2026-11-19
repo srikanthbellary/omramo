@@ -1,0 +1,527 @@
+{
+  "id": "savitri-and-satyavan",
+  "title": "Savitri and Satyavan",
+  "tier": "advanced",
+  "region": {
+    "id": "indian",
+    "culture": "Hindu epic (the Mahabharata)",
+    "place": "Ancient India",
+    "label": "Mahabharata · India",
+    "pin": { "lat": 28.6, "lon": 77.2 },
+    "pinColor": "#19C7A2"
+  },
+  "setting": {
+    "period": "Ancient India, in a story from the Mahabharata, told for more than 2,000 years",
+    "latestYear": -200
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Hindu epic: the Mahabharata (the tale of Savitri)",
+    "sources": [
+      {
+        "author": "Donald A. Mackenzie",
+        "title": "Indian Myth and Legend",
+        "year": 1913,
+        "gutenbergId": 47228,
+        "url": "https://www.gutenberg.org/ebooks/47228",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of the tale of Savitri from the Mahabharata, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Mackenzie died in 1936. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "From a sacred Hindu epic, the Mahabharata, with the god Yama as a character. A Hindu reviewer decides the wording, how Yama is named and drawn, and the cards.",
+    "community": "Hindu reviewer",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The story is set among the forests and small kingdoms of ancient northern India. India’s epics later travelled east with traders and priests, and their scenes were carved in stone as far away as Cambodia.",
+      "factCards": ["hermitage", "banyan-tree", "angkor-moment"]
+    },
+    "culture": {
+      "lesson": "The Mahabharata is one of the longest poems in the world, and Savitri’s tale is one of the many stories told inside it. Many Hindus still honour Savitri today.",
+      "factCards": ["her-own-choice", "boon"]
+    },
+    "moral": {
+      "lesson": "Savitri cannot fight death, so she talks to it, and her words are wise and fair enough to win. Her choice also has a cost: she chooses a husband knowing she may lose him within a year.",
+      "reflectionQuestion": "Savitri knew Satyavan had only one year to live, and she chose him anyway. Was that brave, or foolish, and why?"
+    }
+  },
+  "moral": "Courage and wise words can win what strength never could.",
+  "theme": {
+    "textColor": "#1E2A14",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A young woman in plain ochre cloth follows a tall, calm, crowned figure in red along a forest path at evening, and in his hand glows a small light."
+  },
+  "parts": [
+    { "id": "part-1", "title": "The Choice" },
+    { "id": "part-2", "title": "The Forest" },
+    { "id": "part-3", "title": "The Road South" }
+  ],
+  "characters": [
+    {
+      "id": "savitri",
+      "name": "Savitri",
+      "color": "#9A3D0A",
+      "chipBackground": "#FFE1C2",
+      "faceAlt": "Savitri.",
+      "card": {
+        "label": "Character · a princess of Madra",
+        "title": "Savitri",
+        "traits": [
+          { "text": "Chooses for herself", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Saffron silk, then bark", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Never stops walking", "fill": "#D9F5E4", "ink": "#0B6B4A" }
+        ],
+        "body": "A king’s daughter so sure of herself that no prince dares to ask for her. So she goes out and does the choosing herself, and then refuses to take her choice back.",
+        "portraitAlt": "A young woman with a long black braid, in a saffron and gold drape with gold earrings, standing very straight with her chin raised.",
+        "background": ["#FFF3DC", "#F6D9A8", "#E4A85C"]
+      }
+    },
+    {
+      "id": "satyavan",
+      "name": "Satyavan",
+      "color": "#2E5A1E",
+      "chipBackground": "#DDEFCF",
+      "faceAlt": "Satyavan.",
+      "card": {
+        "label": "Character · a prince of the forest",
+        "title": "Satyavan",
+        "traits": [
+          { "text": "His name means truthful", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Cuts wood for his parents", "fill": "#D9F5E4", "ink": "#0B6B4A" },
+          { "text": "Laughs easily", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "A prince who has never lived in a palace. He guides his blind father’s steps, knows every pool in the forest, and has no idea how little time he has.",
+        "portraitAlt": "A young man, bare-chested, with an ochre cloth round his waist and another over one shoulder, his hair tied up, an axe resting on his shoulder.",
+        "background": ["#F1F6E4", "#D3E6B8", "#93BF72"]
+      }
+    },
+    {
+      "id": "yama",
+      "name": "Yama",
+      "color": "#6A1E24",
+      "chipBackground": "#F3D9D2",
+      "faceAlt": "Yama."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "angkor-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "angkor-wat",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME STORY",
+          "line": "This story is part of a great poem that travelled far beyond India. In Cambodia, about 900 years ago, scenes from that poem were carved along the walls of a vast temple."
+        }
+      },
+      "background": "#2C3A22"
+    },
+    {
+      "id": "her-own-choice",
+      "kind": "idea",
+      "title": "Her own choice",
+      "line": "In some old Indian stories, a princess could choose her own husband instead of having one chosen for her.",
+      "cultureNote": {
+        "label": "From ancient India",
+        "text": "The Sanskrit word is svayamvara, meaning “own choice”. In the epics it is often a grand gathering where suitors compete. Savitri’s choice is unusual: she travels the country to find him herself. How often real princesses chose in this way is not known."
+      },
+      "pictureAlt": "A gold-painted two-wheeled chariot drawn by two white horses, standing on a forest road.",
+      "background": "#5A3A12"
+    },
+    {
+      "id": "hermitage",
+      "kind": "place",
+      "title": "Forest hermitage",
+      "line": "A small settlement in the forest where sages, their students and some families lived simply, far from cities.",
+      "cultureNote": {
+        "label": "From ancient India",
+        "text": "Sanskrit calls such a place an ashrama. The epics describe huts of reed and leaf, a fire for the daily offering, and deer that came close without fear. Some people chose this life; others, like Dyumatsena, came to it after losing everything. Ashrams still exist in India today."
+      },
+      "pictureAlt": "A thatched hut of reed and leaf beside a small square fire altar in a forest clearing.",
+      "background": "#2F4A24"
+    },
+    {
+      "id": "banyan-tree",
+      "kind": "object",
+      "title": "Banyan tree",
+      "line": "A great fig tree that lets roots down from its branches, and the roots thicken into new trunks.",
+      "cultureNote": {
+        "label": "From India today",
+        "text": "One banyan can spread until it looks like a small forest. On a summer festival day, Vat Purnima, many Hindu women honour Savitri by winding threads round a banyan and praying for their husbands’ long lives. The day and its customs differ from region to region."
+      },
+      "pictureAlt": "A broad banyan tree with many hanging roots reaching down from its branches into the ground.",
+      "background": "#3A4A1C"
+    },
+    {
+      "id": "boon",
+      "kind": "idea",
+      "title": "A boon",
+      "line": "A boon is a gift granted by a god or a great sage, often something the person has asked for.",
+      "cultureNote": {
+        "label": "From ancient India",
+        "text": "Boons appear everywhere in India’s epics, and a boon once granted cannot be taken back. That is why so many of these stories turn on asking well: the exact words of a wish can matter as much as the wish itself."
+      },
+      "pictureAlt": "A small clay oil lamp with a single flame, held in two cupped hands.",
+      "background": "#6A2E10"
+    }
+  ],
+  "scenes": {
+    "scene-palace": {
+      "unfoldedAlt": "The palace of Madra in pale morning light: a terrace of pale stone and carved wood above a lotus pool, with a carved gateway and low domed roofs far off on the left under a wide pale-gold sky. Low on the right, the king sits on a cushioned seat beside the sage Narada with his staff, and Savitri stands before them.",
+      "foldedAlt": "Savitri standing on the stone terrace before her seated father and the sage Narada, with the lotus pool at their feet.",
+      "fallbackColors": ["#FBEFD6", "#EED8A8", "#B98B4E"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-hermitage": {
+      "unfoldedAlt": "A forest hermitage in soft gold light: thatched huts of reed and leaf in a clearing ringed by tall sal trees, with a wide pale sky between the treetops. Low on the right, the blind old king and queen sit by a small fire altar while Savitri walks towards them with a clay water pot on her hip, and spotted deer graze at the edge.",
+      "foldedAlt": "Savitri with a water pot on her hip beside the blind old king and queen at the fire altar, a thatched hut behind them.",
+      "fallbackColors": ["#F7F0D8", "#DCE3B8", "#7E9A5A"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-forest": {
+      "unfoldedAlt": "Deep forest in the afternoon, with pale shafts of sunlight falling between tall sal and teak trunks and the canopy opening high above to a pale sky. Low on the right, under a great banyan with hanging roots, Satyavan stands with his axe and a bundle of wood and Savitri beside him, while a peacock walks through the dust.",
+      "foldedAlt": "Satyavan with his axe and bundle of wood and Savitri beside him under the hanging roots of a banyan.",
+      "fallbackColors": ["#F4EFD2", "#C9D9A2", "#5E7A3C"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-south-road": {
+      "unfoldedAlt": "Late evening under a pale rose-gold sky, where a forest path runs south out of thinning trees into tall gold grass. Low on the right, tall, calm Yama walks away holding a small glowing light in one hand, and Savitri follows a few steps behind him.",
+      "foldedAlt": "Savitri following tall Yama along the path through gold grass, the small light glowing in his hand.",
+      "fallbackColors": ["#FBE6DA", "#F2C9A8", "#B9875A"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-palace",
+      "part": "part-1",
+      "paras": [
+        "^This is one of the stories inside <tap:angkor-moment>the great poem</tap> of India, the Mahabharata.",
+        "Long ago, the kingdom of Madra was ruled by King Ashvapati, a just man with a full treasury, wide fields and no child. Year after year he and his queen prayed for one. Every morning, before the birds had begun, the king fed a fire of offering with butter and grain and spoke the old verses over it.",
+        "He kept that fire for many years. At last, the story says, a goddess stood up out of the flames, as bright as sun on a river, and promised him a daughter.",
+        "The baby was named <name:savitri>Savitri</name>, after the goddess, whose name belongs to the light of the rising sun.",
+        "> She was a quiet baby and a fierce child. At six she corrected the palace priest when he skipped a verse. At twelve she rode better than her cousins. And when she was grown, the princes who came to Madra to look at her went home again without a word."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-1",
+      "paras": [
+        "They were not unkind, those princes. They were afraid.",
+        "Savitri was too sure of herself. She looked at a man as if she were weighing him, and she said exactly what she thought, and her face, people said, was like a flame in a still room: lovely, but not easy to stand close to.",
+        "Her father watched the seasons turn and no proposal come. One evening he called her to the terrace above the lotus pool.",
+        "“No one is going to ask for you,” he said. “So stop waiting for them. Take a chariot and my oldest counsellors, go wherever you like, and come back with the man you want.”",
+        "It was more than permission. It was the right to <tap:her-own-choice>choose for herself</tap>, and she knew how rarely a king’s daughter was given it.",
+        "> She left at sunrise in a chariot of gold-painted wood, with two white horses and four grey-bearded ministers who complained about the dust. Behind her the palace roofs grew small. Ahead lay the whole of the kingdom, its cities and rivers, and beyond them the forests."
+      ]
+    },
+    {
+      "scene": "scene-hermitage",
+      "part": "part-1",
+      "paras": [
+        "She went first to the cities, because that was where princes were.",
+        "She watched them hunting and gambling and reviewing their soldiers. She ate at their tables and listened to them talk about themselves. Not one of them asked her a question.",
+        "So she turned the chariot into the forest, where the old sages lived, and the counsellors grumbled louder.",
+        "In one clearing stood the huts of a forest <tap:hermitage>hermitage</tap>, roofed with reed and leaf. A young man was coming up from the river with a water pot on his shoulder, and with his free hand he guided an old man whose eyes were clouded white.",
+        "He was talking as they walked, telling the old man where each root and stone lay, and making him laugh.",
+        "> Savitri did not get down from the chariot. She did not speak to him at all. She only asked a hermit his name, and the hermit told her: <name:satyavan>Satyavan</name>, son of Dyumatsena, who had once been a king. Then she turned her horses for home."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-1",
+      "paras": [
+        "She found her father on the terrace with a guest: the sage Narada, who wandered between earth and heaven, the story says, carrying news nobody else could know.",
+        "Savitri bowed to them both and told them plainly. <say:savitri*>“I have chosen Satyavan. His father, Dyumatsena, ruled a kingdom once. Then he went blind, and an enemy took his throne, and now the family lives in the forest. Satyavan cuts wood and carries water for them.”</say>",
+        "Narada closed his eyes. For a long moment the only sound was a bee working its way among the lotus flowers.",
+        "“He is a good choice,” said the sage. “He tells the truth. He is generous, and brave, and patient with his parents. He has only one fault, and it cannot be mended.”",
+        "> The king leaned forward. “What fault?” Narada looked at Savitri, not at her father, as he answered. “When the year has gone round once, Satyavan’s life will end.” Down in the pool a fish turned, and the lotus leaves rocked, and then the water was still again."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-1",
+      "paras": [
+        "Her father did not argue at first. He simply took her hands, the way he had when she was small.",
+        "“Choose again,” he said. “Go back out with the chariot. Go for a year if you like. There is no shame in it, Savitri. No one would blame you.”",
+        "Savitri looked out over the terrace, at the road she had come home on.",
+        "<say:savitri*>“Whether he lives one year or a hundred,”</say> she said, <say:savitri>“I chose him with my eyes open. You told me to choose, Father, and I did. If I take it back because it has become hard, then it was never a choice at all.”</say>",
+        "Narada smiled for the first time. “Let her go,” he told the king. “She has decided, and she is right to.”",
+        "> So Savitri set out a second time, along the same road, towards the same clearing in the forest. This time her father rode beside her, with priests and wedding gifts, and this time she knew exactly how long she had. One year."
+      ]
+    },
+    {
+      "scene": "scene-hermitage",
+      "part": "part-2",
+      "paras": [
+        "^They were married in the forest, under the trees, with the old blind king listening to every word.",
+        "Dyumatsena had been afraid of it. “She is a king’s daughter,” he had said. “How will she live on roots and fruit, and sleep on a mat of grass?” But Savitri had answered him herself, and he had stopped asking.",
+        "When her father’s chariots had gone, she took off her jewels one by one and gave them away. She unwound her silks of saffron and gold and put on a plain wrap of bark-cloth, the colour of dry earth, like the hermit women.",
+        "She learned to grind grain between two stones and to carry water up from the river without spilling it. She brought the old queen fruit and the old king his staff. She was up before anyone, and she did not complain.",
+        "> And <name:satyavan>Satyavan</name> showed her his forest. He knew which pools the deer drank from, which trees held bees, where the peacocks danced when the clouds came over. <say:satyavan*>“You walk like a queen even in bark,”</say> he told her. <say:satyavan>“The deer have noticed.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-hermitage",
+      "part": "part-2",
+      "paras": [
+        "She was happy. That was the hard part.",
+        "Satyavan laughed easily and listened well, and in the evenings he told her stories of the kingdom he barely remembered. She grew fond of his mother’s dry jokes and his father’s long silences. Some nights, lying awake on the grass mat, she forgot for a whole hour.",
+        "Then the morning came, and she counted again.",
+        "The rains arrived, roaring on the thatch for weeks, and the river rose brown and fast. The rains ended. The cool season came, with mist in the clearing at dawn, and then the heat, when the broad leaves of the teak trees turned brown and fell.",
+        "> She told no one. Not her husband, not his parents, not the hermits who blessed her each morning. She carried the number by herself, the way she carried the water pot, steady and upright, and every day it was a little lighter and a little heavier."
+      ]
+    },
+    {
+      "scene": "scene-hermitage",
+      "part": "part-2",
+      "paras": [
+        "Four mornings remained.",
+        "That was when Savitri began her vow: no food, no sleep, no sitting down, from that sunrise until the third night was over. Hermits made vows like that when something mattered more than comfort. She did not say what it was for.",
+        "The old queen found her at dawn on the second day, still upright beside the fire altar, her lips dry and cracked.",
+        "“Child, sit down,” she begged. “Drink something, at least. You will fall.”",
+        "<say:savitri*>“I made a promise,”</say> Savitri said gently. <say:savitri>“Let me keep it.”</say>",
+        "Dyumatsena could not see her, but he could hear how thin her voice had grown. He did not forbid it. He only sat near her through the long nights, so that she would not be alone, and sometimes he hummed old songs from his own palace, very quietly.",
+        "> On the fourth morning the sun came up red through the sal trees. Savitri made her offering at the fire, bowed to the hermits and to her husband’s parents, and still she did not eat. Out by the woodpile, Satyavan was sharpening his axe."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-2",
+      "paras": [
+        "<say:savitri*>“Take me with you today,”</say> she said.",
+        "Satyavan laughed. <say:satyavan*>“After three days without food? You can hardly stand.”</say> But she would not be put off, and in the end his parents gave their leave. The two of them walked out of the clearing together, she with a basket and he with the axe on his shoulder.",
+        "It was the most ordinary morning of the year.",
+        "Satyavan pointed things out as they went. Here was a tree split by lightning in the rains. Here a peacock dragged its long tail through the dust like a bride’s train. Here the river slid over flat brown stones, and the spotted deer lifted their heads to watch them pass.",
+        "> Savitri looked at all of it as if she would have to describe it later to someone who had never seen a forest. She answered when he spoke. She smiled. But her eyes kept going back to him, and to the light, and the slow slide of the sun."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-2",
+      "paras": [
+        "By the middle of the afternoon he had cut a good pile of wood, and he was singing as he worked.",
+        "Then he stopped singing. He set the axe down slowly, as if it had become too heavy to hold.",
+        "<say:satyavan*>“My head,”</say> he said. <say:satyavan>“It feels as if someone is driving a wedge into it. I need to lie down, only for a moment.”</say>",
+        "She led him to the shade of a great <tap:banyan-tree>banyan</tap>, where roots hung down from the branches like the ropes of a tent, and she sat against the trunk and took his head into her lap.",
+        "His eyes closed. His breathing grew slow, and slower. A peacock called once, far off, and then nothing called at all.",
+        "> Savitri did not cry out. She sat very still, her hand on his hair. And when she lifted her eyes, she saw that someone was standing among the hanging roots, a little way off, who had not been there before. He was watching them."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-3",
+      "paras": [
+        "^He was taller than any man, and his skin was as dark as rain clouds.",
+        "He wore red, and a plain gold crown, and in one hand he held a looped rope. His eyes were calm. They were not cruel eyes at all.",
+        "This was <name:yama>Yama</name>. The story says he is the lord of death, and also the lord of justice, who weighs what every life has been.",
+        "<say:yama*>“You know me,”</say> he said to Savitri. <say:yama>“Most of the time my messengers come instead of me. But your husband has lived truly and well, and a life like his I fetch with my own hands.”</say>",
+        "He bent over Satyavan and drew something out of him, gently, the way a weaver draws a thread from cloth. It was a light, no taller than the flame of a small lamp.",
+        "> Satyavan lay as if he were asleep, his face smooth, the wood still piled beside him. Yama turned and walked away through the trees, towards the south, the little light held in his hand. And Savitri laid her husband’s head down on the leaves, and got up, and followed."
+      ]
+    },
+    {
+      "scene": "scene-south-road",
+      "part": "part-3",
+      "paras": [
+        "For a long time she walked behind him without speaking. The trees thinned. The path ran on south through tall grass turned gold in the evening light.",
+        "At last Yama looked back.",
+        "<say:yama*>“Go home, daughter,”</say> he said. <say:yama>“You have done everything a wife can do, and more. No one may walk this road with me.”</say>",
+        "<say:savitri*>“How many steps have we taken side by side since the banyan?”</say> asked Savitri. <say:savitri>“Far more than seven, and seven, they say, is enough for friendship. You would not send a friend away without hearing her.”</say>",
+        "She spoke of what good people owe one another: to keep faith, and to be fair even when it costs them. She spoke of justice to the lord of justice, and he listened.",
+        "> <say:yama*>“That was well said,”</say> Yama told her. <say:yama>“Ask me for a <tap:boon>boon</tap>. Not his life, but anything else.”</say> Savitri thought of the old man in the clearing, feeling his way between the huts. <say:savitri*>“Give my husband’s father back his sight.”</say> <say:yama>“It is done. Now go home.”</say> She walked on."
+      ]
+    },
+    {
+      "scene": "scene-south-road",
+      "part": "part-3",
+      "paras": [
+        "The light went from gold to rose. Still she followed, and still she talked, and Yama found that he was slowing his pace to hear her.",
+        "She asked for the old king’s lost kingdom, and he gave it. She spoke of mercy: kindness to a friend is easy, she said, and the real test is kindness to someone who has done you harm. For that he gave her a third boon: sons for her own father, so that Madra would have a king after Ashvapati.",
+        "The path was almost too dim to see now. Her feet ached. She did not mention it.",
+        "<say:savitri*>“I have not noticed the miles,”</say> she said. <say:savitri>“Who would, beside a judge who listens to every word?”</say>",
+        "> Yama stopped. He laughed, a deep, surprised sound that rolled away across the grass. <say:yama*>“Ask!”</say> he said, before he had thought. <say:yama>“Ask whatever you like.”</say> <say:savitri*>“Then let me have children,”</say> said Savitri. <say:savitri>“Sons and daughters of Satyavan.”</say> <say:yama>“Granted,”</say> said Yama."
+      ]
+    },
+    {
+      "scene": "scene-hermitage",
+      "part": "part-3",
+      "paras": [
+        "<say:savitri*>“Then,”</say> she said quietly, <say:savitri>“you must give him back. I cannot have his children unless he lives.”</say>",
+        "For a moment Yama only looked at her. Then he smiled, the slow smile of someone beaten fairly at his own game, and he opened his hand.",
+        "<say:yama*>“Go,”</say> he said. <say:yama>“He will live, and live long.”</say> The little light was in her palm, warm as an egg, and when she looked up the road was empty.",
+        "She ran the whole way back. The banyan roots were grey in the dusk, and Satyavan lay where she had left him. She sat down, lifted his head into her lap again, and waited.",
+        "He opened his eyes. <say:satyavan*>“Is it evening already?”</say> he said. <say:satyavan>“I dreamed of a tall man in red, and you were arguing with him.”</say>",
+        "> They walked home in the last of the light, slowly, her arm round him. In the morning, riders would come from the old king’s city to tell him his throne was his again. But that was the morning. Tonight the lamps were lit at the hermitage, and Dyumatsena stood in the doorway, and he could see them coming."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "angkor-wat",
+      "name": "Angkor Wat",
+      "era": "medieval",
+      "built": {
+        "from": 1113,
+        "to": 1150,
+        "circa": true,
+        "note": "Built during the reign of King Suryavarman II, from about 1113 to about 1150. Work seems to have slowed or stopped after his death; some wall carvings were finished centuries later."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Cambodia",
+      "place": "Siem Reap, Cambodia",
+      "coordinates": { "lat": 13.412, "lon": 103.867 },
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A huge stone temple with five towers shaped like lotus buds, beside a wide still pool."
+        },
+        "medium": {
+          "line": "A vast stone temple in Cambodia, built for King Suryavarman II nearly 900 years ago.",
+          "note": "It was first made for the Hindu god Vishnu and later became a Buddhist temple, which it still is today. It is the largest religious monument in the world."
+        },
+        "advanced": {
+          "line": "The largest religious monument in the world, built in the first half of the 1100s and ringed by a wide moat.",
+          "note": "Its long stone galleries are carved with scenes from India’s epics, among them the great battle of the Mahabharata. Its dates are worked out from the reign of the king it was built for. It appears on Cambodia’s flag."
+        }
+      },
+      "art": {
+        "file": "art/angkor-wat.heic",
+        "alt": "A great stone temple with five towers shaped like lotus buds, mirrored in a wide pool, with palm trees on either side.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2C3A22",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building and still a working Buddhist temple: presented as architecture and history only, with respect and no religious teaching (CQ9).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the tale of Savitri from the Mahabharata",
+    "(the Vana Parva / Book of the Forest, where the sage Markandeya tells it). Not any edition's wording.",
+    "Documented source: Donald A. Mackenzie, \"Indian Myth and Legend\" (1913), chapter on Yama,",
+    "Project Gutenberg ebook #47228, https://www.gutenberg.org/ebooks/47228 (US public domain; died 1936).",
+    "The writer read Mackenzie's Savitri section through the pglaf.org mirror, for the ORDER OF EVENTS",
+    "only (via a summary tool); no sentence, image or phrase of his was taken. A source-check agent must",
+    "still compare this text with Gutenberg #47228 and confirm that nothing echoes it.",
+    "Where we follow the epic rather than Mackenzie: Savitri's journey by chariot to choose a husband (the",
+    "epic has it; Mackenzie skips it and says only that she loved Satyavan). Page 3 shows her first sight of",
+    "him at the hermitage; the details there (water pot, guiding his blind father) are our invention.",
+    "Compressed: Mackenzie (and the epic) has five boons: sight, kingdom, a hundred sons for her father, a",
+    "hundred sons for herself, then an unrestricted boon by which she asks for Satyavan. We tell four: the",
+    "fourth (children of Satyavan) is granted without exception and is itself the trap. 'A hundred sons'",
+    "is softened to 'sons' and 'sons and daughters'. Her arguments are reduced and told in our own words",
+    "(seven steps of friendship; keeping faith and fairness; mercy to those who harm us; a judge who listens).",
+    "Left out: the goddess named as Gayatri/Savitri and Brahma; Ashvapati's austerities in detail; Narada",
+    "persuading the king; Dyumatsena's formal consent scene; the hermits' blessing against widowhood; Yama",
+    "binding the soul with the noose; jackals at night; Savitri telling the whole tale to the hermits; the",
+    "usurper killed by his own minister (we say only that riders bring the news); Yama's promise of 400",
+    "years of life. No funeral, cremation or grief scene is shown.",
+    "Invented small details: the counsellors grumbling, Dyumatsena humming at night, Satyavan's jokes, the",
+    "light 'warm as an egg' placed in Savitri's palm (in the epic Yama simply releases the soul).",
+    "Light theme: the walk home is set 'in the last of the light', not by moonlight, to keep scenes pale.",
+    "Reviewer (Hindu) to check: how Yama is named and described (dark skin, crown, red garment, looped rope,",
+    "'lord of death, and also the lord of justice'); that the 'story says' framing is respectful; the",
+    "spelling Ashvapati / Dyumatsena / Satyavan / Madra; the goddess's name 'belongs to the light of the",
+    "rising sun' (Savitri / Savitr); the vow (triratra: three nights standing and fasting); 'seven steps'",
+    "(saptapadi) as friendship; the Vat Purnima card (dates and regions vary; Vat Savitri in the north).",
+    "Card facts to check: svayamvara meaning 'own choice'; ashrama; banyan aerial roots; boons irrevocable.",
+    "Landmark facts to check: Angkor Wat for Suryavarman II, about 1113-1150; first Vishnu, later Buddhist;",
+    "largest religious monument; Mahabharata reliefs incl. Kurukshetra; on Cambodia's flag. We do NOT say",
+    "Savitri herself is carved there (not verified).",
+    "SOURCE CHECK (18 Nov 2026, against Mackenzie on the Gutenberg mirror):",
+    "Echoes reworded: the seven-steps speech, watching his face, the four-days/three-nights vow, Yama coming",
+    "himself, mercy even to enemies, the road not seeming long, Satyavan's long sleep, death within a year,",
+    "anything but his life, the shining crown; the thumb-sized soul is now a light like a small lamp flame.",
+    "Departures from Mackenzie: Narada calls Satyavan a good choice (Mackenzie's Narada first says the",
+    "princess has done wrong); the suitors' fear and the king telling her to choose are from the epic, not",
+    "Mackenzie; Savitri answers Dyumatsena's worry herself (in Mackenzie Ashvapati does); the old queen's",
+    "pleading lines are ours; Yama's eyes are calm (Mackenzie: red, fearsome) and Yama himself explains",
+    "about his messengers; Satyavan lies smooth-faced as if asleep (Mackenzie: robbed of lustre);",
+    "Dyumatsena waits in the doorway (in Mackenzie he searches the forest with his wife).",
+    "Status: DRAFT. Text review pending. Cultural review (required: Hindu reviewer) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#1E2A14",
+      "shade": "#4E5A2A",
+      "mid": "#9AAE5E",
+      "light": "#FBF2DC",
+      "glow": "#FFD27A",
+      "accent": "#E07A1A",
+      "mood": "Warm forest gold and sandalwood, leaf green and saffron. Pale skies on every page (morning cream, afternoon gold, evening rose), deep green-brown only low in the trees. Saffron is Savitri's colour in Part I; ochre bark-cloth after. Yama's red is the one strong colour of Part III. Calm, wide, grown-up."
+    },
+    "light": "A LIGHT story: dark ink on pale skies on both panes of every page. Palace: clear pale morning. Hermitage: soft gold light that reads as morning or early evening. Forest: pale shafts of afternoon sun under a high canopy. South road: late evening, pale rose-gold sky, never night. No moon, no dark sky; the small light in Yama's hand is a soft gold glow, not a flame.",
+    "world": [
+      "Ancient India of the epic, drawn from early Indian art (the stone gateways of Sanchi, the wall paintings of Ajanta), NOT Mughal or Bollywood.",
+      "Palace of Madra: carved timber pillars and balconies on pale stone platforms, low rounded domes and barrel roofs, a carved torana (gateway of two posts and curved crossbars), a stepped lotus pool with pink and white lotuses.",
+      "Dress: unstitched draped cloth. Men wear a dhoti (lower cloth) and an uttariya (shoulder cloth); the king has a cloth headdress with a jewelled band, armlets and necklaces, not a turban.",
+      "Savitri in Part I: a saffron and gold sari-like drape, gold earrings, bangles and a necklace, long black hair in a thick braid. From page 6: plain ochre bark-cloth, no jewels, hair knotted simply.",
+      "Narada: an old sage with a white beard and hair piled on top, a pale cloth over one shoulder, a tall staff; the stringed vina is his usual attribute and may be drawn slung on his back.",
+      "Hermitage: a few small huts of reed and leaf thatch on bamboo frames, a swept earth clearing, a small square brick fire altar (vedi), clay pots, grass mats, a water pot on the hip.",
+      "Dyumatsena and his queen: old, thin, dignified, in plain ochre cloth; the king's eyes are pale and unfocused, a staff in his hand.",
+      "Forest: tall straight sal trees with long oval leaves, teak with very broad leaves, flame-of-the-forest; one great banyan with many hanging roots, some grown into pillars.",
+      "Animals: Indian peafowl (blue peacocks with long trains), spotted deer (chital), a few parakeets. Calm, at a distance.",
+      "Tools: Satyavan's axe is a simple iron head on a wooden haft; firewood tied in a bundle with a vine.",
+      "The south road: a narrow earth path out of thinning trees into tall gold grass, flat land, pale rose-gold sky.",
+      "Yama: tall, dark-skinned, calm and dignified, a crown, a red garment, a looped rope in one hand. Sober, never frightening. The Hindu reviewer decides how he is drawn.",
+      "Avoid: the Taj Mahal, onion domes, Mughal arches, turbaned maharajas, elephants-and-rubies clichés, tigers, snake charmers, stitched modern clothes; for Yama no skulls, no charging buffalo, no fire, no horns, no glowing eyes."
+    ],
+    "characters": {
+      "savitri": "A young woman about three heads tall, slim, upright, with small plain eyes and a direct gaze; long black hair in a thick braid. Part I: saffron and gold drape with gold earrings and bangles. Part II on: plain ochre bark-cloth, no jewels, a clay water pot or basket. Signature detail: she always stands very straight, chin a little raised, even when tired.",
+      "satyavan": "A young man about three heads tall, lean, bare-chested, with an ochre lower cloth and a cloth over one shoulder, hair tied up in a knot, easy smile. Signature detail: the axe on his shoulder and a bundle of wood.",
+      "yama": "Taller than any man (a head and a half above Savitri), dark-skinned, with a calm, still face, a simple gold crown, a red garment draped like a king's, a looped rope held loosely in one hand. Signature detail: the small gold light held in his other hand on the south road. Dignified, never menacing."
+    },
+    "scenes": {
+      "scene-palace": {
+        "unfolded": "Pale morning. The upper sixty per cent of both panes is a wide pale-gold sky, with low domed roofs and a carved torana far off on the left. Low on the right: a terrace of pale stone and carved timber pillars above a stepped lotus pool; the king seated on a cushioned seat, Narada beside him with his staff, Savitri standing before them in saffron. Serves pages 1, 2, 4 and 5.",
+        "folded": "Savitri standing on the terrace in saffron, her father seated and Narada beside him, the lotus pool at their feet; pale sky above for the words."
+      },
+      "scene-hermitage": {
+        "unfolded": "Soft gold light. The upper sixty per cent is pale sky seen between the tops of tall sal trees. Low on the right: two or three thatched huts of reed and leaf, the square fire altar with a thin thread of smoke, the blind old king and queen seated on grass mats, Savitri walking towards them in ochre with a water pot on her hip, spotted deer at the edge. Serves pages 3, 6, 7, 8 and 14 (on page 14 two small lamps glow in a doorway).",
+        "folded": "Savitri with the water pot beside the old king and queen at the fire altar, a hut behind; pale sky above."
+      },
+      "scene-forest": {
+        "unfolded": "Afternoon. The canopy is high, and the upper sixty per cent is pale sky and pale shafts of light between tall sal and teak trunks. Low on the right: a great banyan with hanging roots; Satyavan with his axe and bundle of wood and Savitri beside him; a peacock in the dust. Serves pages 9 to 11.",
+        "folded": "Satyavan and Savitri under the banyan's hanging roots, axe and wood beside them; pale light above."
+      },
+      "scene-south-road": {
+        "unfolded": "Late evening, a pale rose-gold sky filling the upper sixty per cent of both panes. A narrow path leaves the last trees on the left and runs into tall gold grass. Low on the right: Yama walking away, tall and calm in red, the small gold light in his hand; Savitri a few steps behind in ochre, still upright.",
+        "folded": "Savitri following Yama through the gold grass, the small light glowing in his hand; rose sky above."
+      }
+    },
+    "pictures": {
+      "her-own-choice": "One gold-painted two-wheeled chariot with two white horses, centred on a pale forest road.",
+      "hermitage": "One thatched hut of reed and leaf beside a small square fire altar with a thin thread of smoke, centred in a clearing.",
+      "banyan-tree": "One broad banyan tree with many hanging roots, some grown thick into pillars, centred on open ground.",
+      "boon": "Two cupped hands holding a small clay oil lamp with one steady flame, centred on a dark saffron ground."
+    },
+    "portraits": {
+      "savitri": "Half figure in her Part I saffron and gold drape, braid over one shoulder, standing very straight and looking out steadily; pale gold sky behind.",
+      "satyavan": "Half figure, bare-chested with the ochre shoulder cloth, axe on his shoulder, smiling; leaf-green forest light behind."
+    },
+    "cover": "The south road at evening: Savitri in plain ochre following tall, calm Yama in red through gold grass, the small gold light in his hand, under a pale rose-gold sky.",
+    "landmarks": {
+      "angkor-wat": "Our own drawing of the temple as it is today in clear light: five towers shaped like lotus buds, the central one tallest, mirrored in a wide pool, with palm trees on either side. Architecture only; no monks, no worship shown; no photograph traced."
+    }
+  }
+}

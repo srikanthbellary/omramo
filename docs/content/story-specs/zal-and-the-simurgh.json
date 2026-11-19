@@ -1,0 +1,560 @@
+{
+  "id": "zal-and-the-simurgh",
+  "title": "Zal and the Simurgh",
+  "tier": "advanced",
+  "region": {
+    "id": "persianArabian",
+    "culture": "Persian epic (Ferdowsi’s Shahnameh)",
+    "place": "The Alborz mountains, Iran",
+    "label": "Shahnameh · Iran",
+    "pin": { "lat": 35.95, "lon": 52.1 },
+    "pinColor": "#12A8B8"
+  },
+  "setting": {
+    "period": "Iran in the age of heroes, from Ferdowsi’s Shahnameh, finished about 1,000 years ago",
+    "latestYear": 1010
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Persian epic: Ferdowsi’s Shahnameh",
+    "sources": [
+      {
+        "author": "Elizabeth D. Renninger",
+        "title": "The Story of Rustem, and Other Persian Hero Tales from Firdusi",
+        "year": 1909,
+        "gutenbergId": 57827,
+        "url": "https://www.gutenberg.org/ebooks/57827",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a tale from Ferdowsi’s Shahnameh, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Renninger’s death year not verified; the Shahnameh itself is public domain everywhere. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Iranian reader (Persian literature)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Alborz mountains run in a high wall across northern Iran, along the south shore of the Caspian Sea, and Damavand, Iran’s highest peak, rises among them. The kings of ancient Persia ruled from halls far to the south, and their empire once reached the Aegean Sea.",
+      "factCards": ["alborz", "persepolis-moment", "mausoleum-moment"]
+    },
+    "culture": {
+      "lesson": "Zal’s story comes from the Shahnameh, the Book of Kings, which the poet Ferdowsi finished about 1,000 years ago. The Simurgh is the wise giant bird of Persian stories and art, and Iranian storytellers still perform these tales aloud.",
+      "factCards": ["shahnameh", "simurgh-feather", "naqqali"]
+    },
+    "moral": {
+      "lesson": "Sam abandons his son out of shame at what others will say, and a wild bird does what he would not. He cannot undo the years he lost, but he can kneel and ask, and Zal can choose to forgive.",
+      "reflectionQuestion": "Zal forgave his father, but he could not get back the years he had lost. Was he right to forgive, and would it have been harder or easier for you?"
+    }
+  },
+  "moral": "Being different is no fault, and a parent who was wrong can say sorry.",
+  "theme": {
+    "textColor": "#14204A",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": { "fill": "#FFC43D80", "fill2": "#FFAA3D61", "line": "#F08C14E6", "spark": "#F08A12" },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A huge bird with a long many-coloured tail glides down past snowy peaks in pale morning light, carrying on her back a tall young man with long white hair."
+  },
+  "parts": [
+    { "id": "part-1", "title": "The White-Haired Child" },
+    { "id": "part-2", "title": "The Nest" },
+    { "id": "part-3", "title": "The Return" }
+  ],
+  "characters": [
+    {
+      "id": "zal",
+      "name": "Zal",
+      "color": "#1D4E8F",
+      "chipBackground": "#DCEBFB",
+      "faceAlt": "Zal, a young man with long white hair.",
+      "card": {
+        "label": "Character · the white-haired child",
+        "title": "Zal",
+        "traits": [
+          { "text": "Hair white as snow", "fill": "#DCEBFB", "ink": "#1B4C93" },
+          { "text": "Raised in a nest", "fill": "#D9F5F2", "ink": "#0B6B66" },
+          { "text": "A Shahnameh hero", "fill": "#FFEBC2", "ink": "#8A4A00" }
+        ],
+        "body": "Born with hair as white as an old man’s, he is left on a mountain by his own father. He grows up among wings and wind, and comes down with a feather and a choice to make.",
+        "portraitAlt": "A tall young man with long white hair and a plain saffron robe, standing on a high rock with clouds below him.",
+        "background": ["#EEF4FB", "#CFE2F3", "#8FB8E0"]
+      }
+    },
+    {
+      "id": "simurgh",
+      "name": "The Simurgh",
+      "color": "#0E6E72",
+      "chipBackground": "#D6F3EF",
+      "faceAlt": "The Simurgh, a great bird with a crest.",
+      "card": {
+        "label": "Character · the great bird of Alborz",
+        "title": "The Simurgh",
+        "traits": [
+          { "text": "Wings that shade valleys", "fill": "#D9F5F2", "ink": "#0B6B66" },
+          { "text": "Wise and very old", "fill": "#E7E0FA", "ink": "#4A2E8F" },
+          { "text": "Painted on Persian tiles", "fill": "#FFE0D6", "ink": "#B33A1C" }
+        ],
+        "body": "In Persian stories she is the oldest and wisest of birds, nesting on a peak no person can climb. She finds a child nobody wanted and raises him as one of her own.",
+        "portraitAlt": "A great calm bird with a crest, a curved beak and a long sweeping tail of turquoise, saffron and rose, perched on a crag against a pale sky.",
+        "background": ["#E6F6F4", "#BFE6DF", "#7FC6C0"]
+      }
+    },
+    {
+      "id": "sam",
+      "name": "Sam",
+      "color": "#7A3B12",
+      "chipBackground": "#FFE7C7",
+      "faceAlt": "Sam, a warrior with a long beard."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "shahnameh",
+      "kind": "idea",
+      "title": "The Book of Kings",
+      "line": "The Shahnameh is a long Persian poem of kings and heroes, written by the poet Ferdowsi.",
+      "cultureNote": {
+        "label": "From Iran",
+        "text": "Ferdowsi worked on it for some thirty years and finished it about the year 1010. By most counts it runs to about 50,000 couplets. Written when Arabic was the language of learning, it helped keep the Persian language and its old stories alive."
+      },
+      "pictureAlt": "An open old Persian book with neat lines of script around a small painted picture of a rider.",
+      "background": "#1E2F5E"
+    },
+    {
+      "id": "persepolis-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "persepolis",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Far to the south of these mountains stand the stone halls of the real kings of ancient Persia. Iranians call the place Takht-e Jamshid, the Throne of Jamshid, after a king in this same book."
+        }
+      },
+      "background": "#4A2E1C"
+    },
+    {
+      "id": "alborz",
+      "kind": "place",
+      "title": "The Alborz",
+      "line": "A long, high wall of mountains in northern Iran, running along the south shore of the Caspian Sea.",
+      "cultureNote": {
+        "label": "From Iran",
+        "text": "Its highest peak is Damavand, about 5,600 metres, the tallest mountain in Iran and a volcano that has slept for thousands of years. Snow lies on its cone for much of the year, and it rises again and again in Persian poems and stories."
+      },
+      "pictureAlt": "The white snow cone of Mount Damavand rising above a ridge of jagged blue mountains.",
+      "background": "#163A5A"
+    },
+    {
+      "id": "mausoleum-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "mausoleum-halicarnassus",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "The Persian empire once stretched west to the Aegean Sea. There, at its edge, a Persian governor’s tomb was built so grand that it became a Wonder of the World."
+        }
+      },
+      "background": "#2A3A4A"
+    },
+    {
+      "id": "simurgh-feather",
+      "kind": "object",
+      "title": "The Simurgh’s feather",
+      "line": "A single long feather the Simurgh gives to Zal, to burn if ever he needs her help.",
+      "cultureNote": {
+        "label": "From Iran",
+        "text": "The Simurgh is one of the best-loved creatures of Persian art. Painters set her in the pages of Shahnameh books, and she flies across tiles, carpets and metalwork, usually with a long sweeping tail. She is not the Greek phoenix, though the two are often confused."
+      },
+      "pictureAlt": "One long feather striped in turquoise, saffron and rose, lying on a deep blue ground.",
+      "background": "#5A2A3A"
+    },
+    {
+      "id": "naqqali",
+      "kind": "idea",
+      "title": "Naqqali",
+      "line": "Naqqali is the Iranian art of telling the Shahnameh aloud, acted out by one storyteller.",
+      "cultureNote": {
+        "label": "From Iran",
+        "text": "A storyteller called a naqqal often performs in a tea-house, pacing and turning with a stick in hand, sometimes before a large painted scroll. In 2011 UNESCO listed naqqali as a tradition in urgent need of protection, because few masters are left to teach it."
+      },
+      "pictureAlt": "A storyteller in a long coat standing with a stick raised, in front of a large painted scroll.",
+      "background": "#6A4210"
+    }
+  ],
+  "scenes": {
+    "scene-court": {
+      "unfoldedAlt": "Sam’s palace garden in Zabulistan at pale dawn, the upper part of the picture a calm sky of pale rose and gold above dark cypress tips. Low on the right, a tiled pavilion with pointed arches stands beside a long pool, where Sam in his mail coat turns his back on a nurse holding a baby with white hair.",
+      "foldedAlt": "Sam with his back turned in the dawn garden, and behind him the nurse holding out the white-haired baby beside the pool.",
+      "fallbackColors": ["#F6E3D6", "#E9C9A8", "#6E8E6A"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-mountain": {
+      "unfoldedAlt": "The Alborz range under a pale blue sky, which fills the upper part of the picture, with the white cone of Damavand small and far off on the left. Low on the right, a high crag carries a great nest of branches, and on a rock below it lies a tiny bundle while the Simurgh circles above.",
+      "foldedAlt": "A tiny bundle on a sunlit rock below a high crag, with the Simurgh’s wide wings circling above it.",
+      "fallbackColors": ["#E4EEF7", "#B9CFE3", "#6F7E92"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-nest": {
+      "unfoldedAlt": "The top of the crag high above a floor of white cloud, under a wide pale turquoise sky that fills the upper part of the picture. Low on the right, in a nest of dark wood, the Simurgh spreads her wings over her chicks and a white-haired boy of about ten.",
+      "foldedAlt": "The white-haired boy sitting in the nest among the chicks, under the curve of the Simurgh’s wing.",
+      "fallbackColors": ["#E3F4F2", "#BDE3E0", "#F4F1EA"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-meeting": {
+      "unfoldedAlt": "The foot of the mountain in clear morning light, the upper part of the picture a pale sky with the snowy peaks soft behind. Low on the right, Sam kneels on a flat rock with horses and riders waiting behind him, as the Simurgh glides down with a white-haired young man on her back.",
+      "foldedAlt": "Sam kneeling on a rock, looking up, as the Simurgh lands before him with the white-haired young man on her back.",
+      "fallbackColors": ["#EFF3F6", "#D3DEE6", "#9AA58A"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-court",
+      "part": "part-1",
+      "paras": [
+        "^This tale comes from the <tap:shahnameh>Book of Kings</tap>, and it begins with a man who longed for a son.",
+        "His name was <name:sam>Sam</name>, son of Nariman, and in all of Iran there was no warrior like him. When he rode out, the enemy’s horses smelled him on the wind and would not go forward. His great mace hung by his saddle, and his name alone could end a quarrel.",
+        "He had palaces in Zabulistan, gardens where water ran in tiled channels between the cypresses, and more gold than he could count. What he did not have was a child. Year after year he stood at the window in the early light and watched the garden paths, as if a son might come walking up them.",
+        "> At last his wife told him that a child was coming. Sam, who had faced armies without a tremor, found that his hands shook. He went out into the garden and walked the paths until the stars went pale."
+      ]
+    },
+    {
+      "scene": "scene-court",
+      "part": "part-1",
+      "paras": [
+        "The baby came at last. He was strong and long-limbed, with a firm grip and a loud voice, and his eyes were dark and bright. But his hair was white. Not pale, not fair: white as the snow on the far peaks, like the hair of a man of ninety.",
+        "For a week no one dared to tell Sam. This was the man who guarded <tap:persepolis-moment>the kings of Persia</tap>, and who could say a hard word to him? The women hushed each other in the corridors. The baby’s mother held him close, named him <name:zal>Zal</name>, and told no one that she was afraid.",
+        "In the end it was the old nurse who went. She found Sam on the terrace above the pool and bowed low, and then, because there was no gentle way to say it, she said it plainly.",
+        "> “My lord, you have a son. He is whole and well, and he grips a finger like a blacksmith. Only his hair is white, white as an old man’s. Apart from that, he is perfect. Will you come and see?”"
+      ]
+    },
+    {
+      "scene": "scene-court",
+      "part": "part-1",
+      "paras": [
+        "<name:sam>Sam</name> came. He stood over the cradle a long time, and the child looked up at him with dark, steady eyes under that cap of snowy hair.",
+        "Then Sam thought of his warriors, and of the lords at the king’s table, and of how they would lean their heads together. <say:sam*>“They will say this is a child of ill luck,”</say> he said. <say:sam>“They will say it is a sign against my house. They will laugh at me behind their hands.”</say>",
+        "His counsellors agreed with him, as counsellors do. Only the mother begged. She knelt and held his sleeve and asked him to look again, only look. Sam would not look again. He gave the order that the child be carried to the mountains, far from any road, and left there.",
+        "> A rider took the bundle out through the garden gate before the sun was up. Sam did not watch him go. But that night, and for many nights after, the greatest warrior in Iran lay awake and listened to the fountains, and could not sleep."
+      ]
+    },
+    {
+      "scene": "scene-mountain",
+      "part": "part-1",
+      "paras": [
+        "North of the plains the <tap:alborz>Alborz mountains</tap> stand like a wall, ridge behind ridge, and above them all floats the white cone of Damavand. The rider climbed until his horse could climb no more. Then he laid the child on a flat rock in the sun, tucked the cloak around him, and turned back without a word.",
+        "The mountain was very quiet. Wind combed the dry grass. A lizard came out onto the warm stone, looked at the bundle, and went away again. The child slept, and woke, and found the world empty, and began to cry.",
+        "High above, on a crag no climber had ever reached, the <name:simurgh>Simurgh</name> lifted her head. She was the oldest of all birds. When she spread her wings, the story says, their shadow could cover a valley, and her eyes had watched the mountains since before there were kings.",
+        "> She had chicks of her own in the nest behind her, and she knew every sound these slopes could make. This one was new: thin and furious, rising on the wind. She opened her great wings and slid down the air towards it."
+      ]
+    },
+    {
+      "scene": "scene-mountain",
+      "part": "part-1",
+      "paras": [
+        "She came down beside the rock with a sound like a sail filling, and folded her wings, and looked. The child had stopped crying. He lay with both small hands spread open, staring up at her, at the curved beak and the crest and the long tail spilling colours over the stones.",
+        "She saw the fine cloak, and the white hair, and the empty slope where a horse’s hoofprints led away downhill. She understood more than she wished to. A man had done this. A father, very likely, with a house full of servants and no room in it for this.",
+        "The story says that pity moved in her then, the way warmth moves into stone at sunrise. She bent her head and breathed on him. Then, as carefully as if he were an egg, she closed her claws around the bundle.",
+        "> She climbed the air in wide, unhurried turns, the slope shrinking below, the rock and the hoofprints and the whole wide land of men falling away. The child did not cry. Above the last snow, above the clouds, her nest was waiting."
+      ]
+    },
+    {
+      "scene": "scene-nest",
+      "part": "part-2",
+      "paras": [
+        "^The nest sat on the very top of the crag, where only wind and birds ever came.",
+        "It was built of ebony and sandalwood, branches carried from forests a week’s ride away, and it smelled warm and sweet in the sun. Her chicks, already the size of goats, peered over the rim. They stared at the newcomer, and he stared at them, and nobody cried.",
+        "The <name:simurgh>Simurgh</name> fed him as she fed her own, though she had to learn what a human child could eat: soft things, warm things, given little and often. At night she drew him under her wing, where the wind could not reach, and he slept against feathers longer than his whole body.",
+        "> She could not call him by the name his mother had given him, for she had never heard it. She gave him a name of her own: Dastan. The chicks learned to say it before he did."
+      ]
+    },
+    {
+      "scene": "scene-nest",
+      "part": "part-2",
+      "paras": [
+        "Years went by on the mountain, and the boy grew. He grew tall and long-armed, quick on the rocks as a wild goat, and his hair grew long and stayed as white as the day he was born. In the nest it was nothing strange. The Simurgh’s own crest was white at the tips.",
+        "She taught him what she knew, which was a great deal. She taught him to read the weather in the colour of the morning, and the names of the stars that wheel over the peaks, and the talk of birds, which is mostly about wind. On clear days she carried him on her back over the whole of the land, so that he saw rivers like threads and cities like spilled salt.",
+        "<say:zal*>“Who lives in those?”</say> <name:zal>Zal</name> asked her once, when they passed over a city of roofs and gardens.",
+        "> <say:simurgh*>“Your own kind,”</say> said the Simurgh. <say:simurgh>“They build walls to keep the wind out, and then they wonder why they cannot hear it.”</say> She banked, and the city slid away under her wing, and he watched it until it was gone."
+      ]
+    },
+    {
+      "scene": "scene-mountain",
+      "part": "part-2",
+      "paras": [
+        "Below the mountain ran one of the old roads, and along it went the caravans: long strings of camels with bells at their necks, carrying silk and salt and copper from one end of the <tap:mausoleum-moment>empire</tap> to the other.",
+        "The drivers began to tell a strange thing. High on the crag, they said, where nobody could climb, a young man stood at the edge of a giant nest. He was taller than any of them. His hair blew out behind him like a white flag. And when the great bird came home, he ran to meet her.",
+        "Some called it a lie, and some a wonder, and some a warning. But a story that is told at every well and every inn will not stay small. It went from the caravan drivers to the market traders, and from the traders to the soldiers, and from the soldiers, at last, to the house of Sam.",
+        "> <name:sam>Sam</name> heard it at supper, from a guest who meant it as an idle tale. He set his cup down very slowly. He asked one question, then another. Then he said nothing at all, and the guest wondered what he had done wrong."
+      ]
+    },
+    {
+      "scene": "scene-court",
+      "part": "part-2",
+      "paras": [
+        "Sam had not slept well in all those years. His beard, which had been black when he sent the rider out, had gone grey and then white. He did not like to look at it in the water of the pool.",
+        "That night he dreamed. A young rider came towards him across a plain, with a banner streaming and horsemen behind him, and at the rider’s side walked a wise man in a white robe. The wise man stopped in front of Sam and looked at him without any kindness at all.",
+        "“You threw away a son for the colour of his hair,” he said. “Look at your own beard. Is it any darker? A bird has raised your child, a wild thing of the mountains, and done what you would not. What kind of father is that?”",
+        "> Sam woke in the grey hour with his face wet. In the morning he called his wise men and told them the dream, and they did not soften it. “It is true,” they said. “Go and find him. Go now.”"
+      ]
+    },
+    {
+      "scene": "scene-meeting",
+      "part": "part-2",
+      "paras": [
+        "He rode north with his horsemen behind him, the way the rider had gone so long ago, and the mountains rose up blue and then grey and then white. At the foot of the crag he left his horse and began to climb.",
+        "It was no use. The rock went up sheer and smooth, polished by a thousand winters, and his hands found nothing to hold. He tried one face and then another. He was an old man in a coat of mail, and the crag did not care who he was.",
+        "So he stood at the bottom with his men silent behind him, and lifted his white head. <say:sam*>“I was ashamed of the wrong thing,”</say> he cried. <say:sam>“I was afraid of what people would say, and I let it make me cruel. If my son is alive up there, let him forgive me.”</say>",
+        { "path": "M14,66 C70,22 120,84 190,52 C250,26 300,70 388,30", "text": "“Forgive me. Come down, my son.”" },
+        "> His voice went up the rock face and broke against the wind. For a long moment nothing answered. Then, high above, at the very top of the crag, something moved: a great head with a crest, turning to listen."
+      ]
+    },
+    {
+      "scene": "scene-nest",
+      "part": "part-3",
+      "paras": [
+        "^The Simurgh listened until the voice below had stopped, and then she turned to <name:zal>Zal</name>.",
+        "<say:simurgh*>“That is your father,”</say> she said. <say:simurgh>“He is Sam, son of Nariman, the greatest warrior in Iran, and he has come to take you home. You must go down to him. There is a whole life waiting for you in the world of people, Dastan, and it is larger than this nest.”</say>",
+        "Zal looked over the rim, at the small grey figure on the rock far below, and then back at her. He had never once thought of leaving. <say:zal*>“Have I been a burden to you?”</say> he asked. <say:zal>“Is that why? Have I grown too big, or eaten too much, or been too slow to learn? Tell me what I did, and I will mend it.”</say>",
+        "> The great bird bent her head until her eye was level with his. It was an old eye, gold at the rim, and it had seen kings come and go. <say:simurgh*>“You were the best thing this mountain ever held,”</say> she said. <say:simurgh>“That is why I will not hold you.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-nest",
+      "part": "part-3",
+      "paras": [
+        "Then she reached back with her beak and drew one long <tap:simurgh-feather>feather</tap> from her breast, striped turquoise and saffron and rose, and laid it in his hands.",
+        "<say:simurgh*>“Keep this against your heart,”</say> she said. <say:simurgh>“If ever you are in danger, or in trouble you cannot see a way through, put it to a flame. Wherever I am, I will know, and I will come.”</say>",
+        "Zal could not speak. He pressed his face against her neck feathers, the way he had when he was small, and breathed in sandalwood and wind.",
+        "The story says he kept it all his life, and that years later, on the night his own son Rostam was born, he burned it. The danger was great that night, and the wings came down out of the dark as she had promised. But that is another tale.",
+        "> Then she spread her wings, and he climbed onto her back as he had a thousand times. The nest, the chicks, the only home he had ever known, all dropped away behind them as she glided down towards the waiting men."
+      ]
+    },
+    {
+      "scene": "scene-meeting",
+      "part": "part-3",
+      "paras": [
+        "She came down onto the flat rock at the foot of the crag, and the horses shied and the soldiers stepped back. Zal slid from her back. For the first time since he was a baby, he stood among people.",
+        "Sam looked at him: at the height of him, the long white hair, the face that was his own face made young. Then the greatest warrior in Iran went down on his knees on the stone, and wept, and did not hide it.",
+        "<say:sam*>“I left you on a mountain because I was afraid of a few words,”</say> he said. <say:sam>“A bird had more heart than I did. I cannot give you back those years. I can only ask you to forgive me.”</say>",
+        "Zal looked at him for a long time. The soldiers waited. The wind moved in the grass. Then Zal stepped forward and took his father’s hands, and raised him up.",
+        "> <say:zal*>“I forgive you,”</say> he said. And Sam, holding his son’s hands, spoke the name the boy’s mother had given him all those years ago, a name Sam had never once said aloud. <say:sam*>“Zal,”</say> he said. <say:sam>“Zal. Come home.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-meeting",
+      "part": "part-3",
+      "paras": [
+        "Sam bowed low to the <name:simurgh>Simurgh</name>, as he had never bowed to any king, and thanked her. She lowered her great head to him once. Then she lifted into the air, and the wind of her wings flattened the grass for a hundred paces around.",
+        "They rode south together, father and son, at the head of the long column. Zal had never sat on a horse. He held on badly and laughed at himself, and Sam laughed with him, and the soldiers behind them looked at each other and began, slowly, to smile.",
+        "At the last pass he turned in the saddle. The mountain stood behind them, white against the morning, and far above it a great bird was circling, very small now, and very slow. He put his hand to his chest, where the feather lay against his heart, and kept it there until the road turned and she was gone.",
+        "> In Iran, <tap:naqqali>storytellers</tap> still tell this tale in the tea-houses, pacing and turning with a stick in hand. When they reach the moment the great wings come down to the old man on the rock, the whole room goes quiet, and listens."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "persepolis",
+      "name": "Persepolis",
+      "era": "ancient",
+      "built": {
+        "from": -518,
+        "to": -330,
+        "circa": true,
+        "note": "Begun under Darius the Great about 518 BCE and added to by later kings until the army of Alexander the Great burned it in 330 BCE. The ruins were never wholly lost; a UNESCO World Heritage Site."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Iran",
+      "place": "Marvdasht, Fars, Iran",
+      "coordinates": { "lat": 29.935, "lon": 52.891 },
+      "region": "persianArabian",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "Rows of tall stone columns and a wide stairway carved with people carrying gifts."
+        },
+        "medium": {
+          "line": "The ruins of a great stone city of the Persian kings, begun about 2,500 years ago in southern Iran.",
+          "note": "Darius the Great began it about 518 BCE, and the kings after him added to it. The army of Alexander the Great burned it in 330 BCE."
+        },
+        "advanced": {
+          "line": "A city of halls on a huge stone terrace, built by Persian kings from about 518 to 330 BCE.",
+          "note": "Its stairways show people from all over the empire bringing gifts to the king. Many think this was for Nowruz, the Persian New Year, but no ancient text says so, and scholars still argue about it."
+        }
+      },
+      "art": {
+        "file": "art/persepolis.heic",
+        "alt": "Tall slender stone columns and a broad double stairway carved with rows of people bringing gifts, on a great stone terrace below bare hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2E1C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "mausoleum-halicarnassus",
+      "name": "Mausoleum at Halicarnassus",
+      "era": "ancient",
+      "built": {
+        "from": -353,
+        "to": -350,
+        "circa": true,
+        "note": "Built for Mausolus, a satrap (governor) of Caria for the Persian empire, who died about 353 BCE; finished about 350 BCE under his wife Artemisia and her craftsmen. Dates approximate."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Türkiye",
+      "place": "Bodrum, Türkiye",
+      "coordinates": { "lat": 37.038, "lon": 27.424 },
+      "lists": ["ancientSeven"],
+      "factCards": {
+        "low": {
+          "line": "A tall white tomb with columns and a stone chariot on top. It is gone now."
+        },
+        "medium": {
+          "line": "The tomb of Mausolus, a governor for the Persian kings, built about 2,350 years ago where Bodrum in Türkiye is now.",
+          "note": "His wife Artemisia carried the work on after he died. It was so famous that grand tombs have been called mausoleums ever since."
+        },
+        "advanced": {
+          "line": "A tomb about 45 metres tall, one of the Seven Wonders, brought down by earthquakes in the Middle Ages.",
+          "note": "No true picture of it survives, so every drawing is a guess from old Greek and Roman descriptions and the pieces dug up. In about 1494 knights used its stones to build the castle at Bodrum; some of its statues are in the British Museum in London."
+        }
+      },
+      "art": {
+        "file": "art/mausoleum-halicarnassus.heic",
+        "alt": "A drawing of how the Mausoleum may have looked: a tall white tomb on a high base, ringed by columns, with a stepped roof and a statue of a four-horse chariot on top.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A3A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A lost wonder: our own reconstruction from the old descriptions, not traced from any modern drawing or model (CONTENT_PLAN §6.6).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the tale of Zal and the Simurgh from Ferdowsi's",
+    "Shahnameh (finished about 1010). It is not the wording of any earlier edition or translation.",
+    "Documented source: Elizabeth D. Renninger, \"The Story of Rustem, and Other Persian Hero Tales from",
+    "Firdusi\" (1909), chapter \"Zal of the White Hair\". Project Gutenberg ebook #57827,",
+    "https://www.gutenberg.org/ebooks/57827 (read via the gutenberg.pglaf.org mirror, 57827-0.txt).",
+    "The writer read the source through a summarising fetch for the ORDER OF EVENTS only; no sentence of",
+    "Renninger's was copied or paraphrased. A source-check agent must still compare the text line by line.",
+    "Names: Renninger spells the father 'Saum' and the hero's son 'Rustem'; we use Sam and Rostam, the",
+    "usual modern forms. Renninger calls the Simurgh 'she', so we do too (in Ferdowsi the gender is open).",
+    "Follows Renninger: no child for years; the white-haired son; servants afraid, the nurse tells Sam after",
+    "a week; Sam fears mockery; counsellors back him, the mother pleads; the child left on Mount Alborz;",
+    "the Simurgh pities him and carries him to a nest of ebony and sandalwood; raised with her chicks and",
+    "flown over the world; Sam's sleepless years and whitened hair; news from the mountain; the dream of a",
+    "rider with a wise man who rebukes him; Sam's wise men confirm it; he cannot climb and calls out in",
+    "repentance; the Simurgh tells Zal, who begs to stay; the feather to burn in danger; Sam thanks the bird.",
+    "Departures: in Renninger the mother names him Zal (kept); the name Dastan is NOT in Renninger but is",
+    "Ferdowsi's (the Simurgh's name for him) - reviewer to confirm. Sam saying the name aloud at the meeting",
+    "is our own beat. Sam's spoken plea is ours; in the source he prays to God; we keep it a cry of repentance.",
+    "Softened or left out: the 'unearthly voice' that also moves the Simurgh (we say pity, 'the story says');",
+    "Sam's complaint to God and fear that the child is of evil (devil) birth ('a child of ill luck' only);",
+    "the Mubid is 'a wise man in a white robe' and the priests are 'wise men' (mubads are Zoroastrian",
+    "priests; kept as plain figures, no religion taught). Left out: King Minuchir's court, the astrologers,",
+    "Rudabeh, the tests, and Rostam's birth beyond one line (no surgery). Invented colour, ours: the lizard,",
+    "the caravan road and goods, the guest at supper, Zal on horseback, the ride south.",
+    "Reviewer to check: Zabulistan as Sam's home; Nariman as Sam's father; 'Dastan' given by the Simurgh;",
+    "that the feather was burned at Rostam's birth (it is burned again later, so the text avoids 'only once');",
+    "the Alborz/Damavand siting of the nest (Ferdowsi names Alborz; Damavand is our geography).",
+    "Card facts to check: Shahnameh ~30 years, ~50,000 couplets, ~1010; Damavand ~5,600 m, dormant;",
+    "naqqali on UNESCO's Urgent Safeguarding list in 2011; Persepolis begun ~518 BCE, burned 330 BCE, Nowruz",
+    "reading disputed; Mausoleum ~45 m, finished ~350 BCE, stones reused from ~1494, statues in British Museum.",
+    "The 'empire' and 'kings of Persia' taps link a mythic age to the historical Achaemenid empire; the",
+    "framing lines say 'the real kings' to keep epic and history apart (CONTENT_PLAN 6.3).",
+    "SOURCE CHECK (18 Nov 2026, against Renninger on the Gutenberg mirror): mostly clean. Three mild echoes",
+    "reworded: the nurse's 'grips a finger like a young lion' (Renninger: heart of a lion) is now 'like a",
+    "blacksmith'; 'nothing else wrong with him' (Renninger: nothing amiss except the hair) is now 'Apart from",
+    "that, he is perfect'; the baby's 'fist in his mouth' (Renninger: sucking its fingers for hunger) is now",
+    "both hands spread open. 'Have I been a burden to you?' vs Renninger's 'art thou weary of me' judged fine.",
+    "Confirmed: Dastan is not in Renninger; the nest is ebony and sandalwood; the feather is burned at Rustem's",
+    "birth; the caravans are ours, not the source's.",
+    "Further departures from Renninger: there the Simurgh flies above the army all the way to Seistan (ours:",
+    "she parts at the mountain); Zal's reunion with his mother is left out; there the Simurgh speaks to Saum",
+    "praising Zal and Saum calls her 'Shah of Birds' (ours: she bows her head silently); Saum gives Zal robes",
+    "and an Arab horse (ours: Zal is new to riding); the child is left in the dead of night (ours: on a rock",
+    "in the sun); the feather is golden (ours: striped turquoise, saffron and rose).",
+    "Renninger names Sam's home city Seistan; our text says Zabulistan. Reviewer to choose (both are used for",
+    "Sam's realm in Shahnameh tradition; Zabulistan is the usual name of his land).",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Iranian reader (Persian literature)) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#14204A",
+      "shade": "#2E4A86",
+      "mid": "#3FA7B0",
+      "light": "#F4F1EA",
+      "glow": "#F2B544",
+      "accent": "#D9707A",
+      "mood": "Mountain blue and snow white with lapis in the shadows; turquoise in tiles and in the Simurgh's feathers; saffron and rose in robes, dawn skies and her long tail. Clear, high, airy and calm, like a page of a Persian painted manuscript opened in morning light."
+    },
+    "light": "A LIGHT story: every scene is daylight, pale dawn or clear morning. Skies are pale rose-gold (the court), pale blue (the mountain), pale turquoise above white cloud (the nest), and pale clear morning (the meeting). No night scene, even for the dream page, which uses the dawn garden. Dark lapis text must read on both panes, so the upper ~60 percent of every unfolded picture stays calm pale sky or wall.",
+    "world": [
+      "Look: inspired by Persian miniature painting (Timurid and Safavid Shahnameh pages) but our own: clear flat colour, fine outlines, high horizons, rocks drawn as soft stacked shapes, small gold accents; never copied from a real manuscript.",
+      "Sam's palace in Zabulistan: a garden of the chahar bagh kind, a long rectangular pool or channels of water edged with stone, tall dark cypresses and broad plane trees, beds of roses.",
+      "The pavilion: a raised open hall on slim columns with pointed arches, walls tiled in turquoise, lapis and white, a carpet on the floor, a low cushioned seat. No onion domes.",
+      "Sam: a mail coat over a long robe, a pointed steel helmet with a small plume, a long beard (black in Part I, white from page 9), a heavy mace at the saddle; a horse with a tasselled bridle.",
+      "Court dress: long robes in lapis, saffron, rose and turquoise, sashes, soft boots; women in long robes with veils or scarves falling from the head; the nurse older, in plain dark blue.",
+      "The baby: wrapped in a fine embroidered cloak; a full cap of snow-white hair; healthy, pink-cheeked, never sickly.",
+      "The Alborz: jagged, layered blue-grey ridges with snow on the tops; Damavand far off as a single smooth white cone; dry grass, thorn bushes and bare rock lower down; no forest on the high crag.",
+      "The crag and nest: a sheer pillar of pale rock rising above the clouds; on top a huge nest of dark ebony and pale sandalwood branches, wide enough for a room; two or three large fluffy chicks in soft grey-turquoise down.",
+      "The Simurgh: a huge bird with a long sweeping tail of many trailing plumes (turquoise, saffron, rose), a crest of long feathers, a curved hooked beak, calm wise gold-rimmed eyes, wings with long flame-shaped feathers; majestic and gentle, never menacing; claws drawn small and curled.",
+      "Zal grown: tall and slim, long white hair loose to the shoulders, a simple saffron robe or wrap, barefoot on the crag; at the meeting the same, with the feather tucked at his chest.",
+      "The caravan: a line of two-humped and one-humped camels with bells and striped saddle bags, drivers in turbans and long coats, on a dusty road at the foot of the mountains.",
+      "Sam's company at the meeting: a dozen riders with lances and pennants in saffron and lapis, horses waiting; nobody armed against the bird.",
+      "Nothing frightening: the baby is never in danger, no wolves, no eagles, no blood; the Simurgh's claws hold the bundle gently; Sam's grief is shown by posture, not tears streaming.",
+      "Avoid: Arabian Nights cliches (genies, flying carpets, lamps, onion domes, harem scenes), the Greek phoenix in flames, the Chinese fenghuang look, eagle-like predator poses, modern Iran (cars, wires, modern dress), and gory or menacing claws."
+    ],
+    "characters": {
+      "zal": "Baby in Part I: a strong pink-cheeked infant with a full cap of snow-white hair in an embroidered cloak. Part II-III: a tall slim boy, then a young man of about eighteen, about three heads tall, small plain dark eyes, long white hair loose to the shoulders, a simple saffron robe, barefoot on the crag. Signature detail: the white hair, and from page 12 the striped feather at his chest.",
+      "simurgh": "Enormous, many times a man's height, with a calm wise face, a crest of long feathers white at the tips, a curved beak, gold-rimmed eyes, wings of long flame-shaped feathers in turquoise and lapis, and a long sweeping tail in turquoise, saffron and rose. Signature detail: the tail trailing down the rock like a waterfall of colour. Majestic and gentle, never fierce.",
+      "sam": "A big broad warrior, about three heads tall, with a long beard (black on pages 1-3, white from page 9), a mail coat over a lapis robe, a pointed helmet with a small plume, a heavy mace. Signature detail: the beard that turns white; shown with his back turned on page 3 and kneeling on page 13."
+    },
+    "scenes": {
+      "scene-court": {
+        "unfolded": "Pale dawn in Sam's garden. The upper 60 percent of both panes: a calm sky of pale rose shading to gold, with only the tips of dark cypresses rising into it. Low across the picture: a long pool reflecting the sky, and on the right half the tiled pavilion with pointed arches. Sam stands at the pool's edge with his back turned; behind him the old nurse holds out the white-haired baby; the mother kneels at one side (page 3). The same scene serves pages 1-3 and the dream page (9).",
+        "folded": "Sam from behind, turned away, at the pool; the nurse beyond him holding the white-haired baby; pale rose sky above for the words."
+      },
+      "scene-mountain": {
+        "unfolded": "The Alborz under a pale blue sky that fills the upper 60 percent. Far left, small: the white cone of Damavand. On the right half: a sheer crag with the great nest on top; on a flat sunlit rock below lies the tiny bundled baby, and the Simurgh circles above him with wings spread. A faint road with a few camels at the far foot of the range (for page 8).",
+        "folded": "The bundled baby on a sunlit rock in the lower middle, the Simurgh's wide wings and long tail curving above him, pale sky for the words."
+      },
+      "scene-nest": {
+        "unfolded": "The crag top above a floor of white cloud, under a wide pale turquoise sky in the upper 60 percent. On the right half: the huge nest of dark and pale branches; the Simurgh with one wing half-spread over two or three fluffy chicks and a white-haired boy of about ten sitting among them, looking out over the cloud.",
+        "folded": "The white-haired boy in the nest among the chicks, under the curve of the Simurgh's wing, pale turquoise sky above."
+      },
+      "scene-meeting": {
+        "unfolded": "The foot of the mountain in clear pale morning; the upper 60 percent pale sky with snowy peaks soft and low. On the right half: Sam kneeling on a flat rock, helmet off, white beard; riders and horses with pennants waiting behind; the Simurgh gliding down with the white-haired young man on her back, her tail streaming. The same scene serves pages 10, 13 and 14.",
+        "folded": "Sam kneeling on the rock, looking up, as the Simurgh lands before him with the white-haired young man on her back."
+      }
+    },
+    "pictures": {
+      "shahnameh": "One open old Persian book, centred, with neat columns of script around a small painted picture of a rider, on a deep lapis ground.",
+      "alborz": "The white snow cone of Damavand, centred, rising above a ridge of jagged blue mountains.",
+      "simurgh-feather": "One long feather striped turquoise, saffron and rose, lying diagonally across a deep blue ground.",
+      "naqqali": "One storyteller in a long coat, centred, standing with a stick raised, in front of a large painted scroll of a rider and a great bird."
+    },
+    "portraits": {
+      "zal": "Half figure of the young Zal with long white hair blowing, saffron robe, the striped feather at his chest, standing on a high rock with white cloud below and pale sky behind.",
+      "simurgh": "Head, neck and one sweep of wing: the crest, the curved beak, the calm gold-rimmed eye, feathers in turquoise and lapis, the tail curling into the frame; pale turquoise sky behind."
+    },
+    "cover": "The Simurgh gliding down past snowy Alborz peaks in pale morning light, wings wide and tail streaming in turquoise, saffron and rose, with the white-haired young Zal on her back looking down towards the ground.",
+    "landmarks": {
+      "persepolis": "Our own drawing of the ruins as they are today in warm afternoon light: tall slender stone columns, some with capitals, on a great stone terrace, and the double stairway carved with rows of gift-bearers, bare hills behind. Architecture only; no photograph traced.",
+      "mausoleum-halicarnassus": "Our own reconstruction, clearly a drawing: a tall white tomb on a high stepped base, ringed by columns, with a stepped pyramid roof and a four-horse chariot statue on top, by a blue harbour. Based on old descriptions; not traced from any modern drawing."
+    }
+  }
+}

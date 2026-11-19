@@ -5,14 +5,23 @@
       "id": "taj-mahal",
       "name": "Taj Mahal",
       "era": "earlyModern",
-      "built": { "from": 1632, "to": 1653, "circa": true },
+      "built": {
+        "from": 1632,
+        "to": 1653,
+        "circa": true
+      },
       "status": "standing",
       "depiction": "asIs",
       "country": "India",
       "place": "Agra, on the River Yamuna",
-      "coordinates": { "lat": 27.175, "lon": 78.042 },
+      "coordinates": {
+        "lat": 27.175,
+        "lon": 78.042
+      },
       "region": "indian",
-      "lists": ["new7Wonders"],
+      "lists": [
+        "new7Wonders"
+      ],
       "factCards": {
         "low": {
           "line": "A great white building of shining stone, built to remember a queen who was loved."
@@ -34,20 +43,31 @@
       },
       "background": "#12305A",
       "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     },
     {
       "id": "lighthouse-of-alexandria",
       "name": "Lighthouse of Alexandria",
       "era": "ancient",
-      "built": { "from": -280, "circa": true },
+      "built": {
+        "from": -280,
+        "circa": true
+      },
       "status": "lost",
       "depiction": "reconstruction",
       "country": "Egypt",
       "place": "Alexandria",
-      "coordinates": { "lat": 31.214, "lon": 29.885 },
+      "coordinates": {
+        "lat": 31.214,
+        "lon": 29.885
+      },
       "region": "egyptian",
-      "lists": ["ancientSeven"],
+      "lists": [
+        "ancientSeven"
+      ],
       "factCards": {
         "low": {
           "line": "A tall tower with a fire on top, to guide ships home."
@@ -67,7 +87,10 @@
       },
       "background": "#0B2A4A",
       "rights": "Our own reconstruction drawing, not traced from any modern artist's reconstruction. Concept art drawn in code (see ART_PLACEHOLDERS.md).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     },
     {
       "id": "asante-traditional-buildings",
@@ -82,9 +105,14 @@
       "depiction": "asIs",
       "country": "Ghana",
       "place": "Villages near Kumasi, Ghana",
-      "coordinates": { "lat": 6.7, "lon": -1.6 },
+      "coordinates": {
+        "lat": 6.7,
+        "lon": -1.6
+      },
       "region": "african",
-      "lists": ["other"],
+      "lists": [
+        "other"
+      ],
       "factCards": {
         "low": {
           "line": "Houses with thick earth walls, covered in patterns that mean something."
@@ -106,20 +134,32 @@
       },
       "background": "#3A1F4D",
       "rights": "Our own illustration; no photograph. The wall patterns are drawn in the style of the buildings, not copied from one wall. Akan reader to review the drawing and the wording (CONTENT_PLAN §7).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     },
     {
       "id": "tokyo-skytree",
       "name": "Tokyo Skytree",
       "era": "contemporary",
-      "built": { "from": 2008, "to": 2012, "circa": false },
+      "built": {
+        "from": 2008,
+        "to": 2012,
+        "circa": false
+      },
       "status": "standing",
       "depiction": "asIs",
       "country": "Japan",
       "place": "Tokyo, Japan",
-      "coordinates": { "lat": 35.71, "lon": 139.811 },
+      "coordinates": {
+        "lat": 35.71,
+        "lon": 139.811
+      },
       "region": "japanese",
-      "lists": ["other"],
+      "lists": [
+        "other"
+      ],
       "factCards": {
         "low": {
           "line": "A very, very tall tower in Tokyo. It stays standing even when the ground shakes."
@@ -141,7 +181,1567 @@
       },
       "background": "#14254F",
       "rights": "Our own illustration; no photograph. The tower's operator licenses commercial use of its name and image (CONTENT_PLAN §6.6): legal review needed before release (PRD Q29).",
-      "review": { "facts": "pending", "art": "pending" }
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "bremen-town-hall-roland",
+      "name": "Bremen Town Hall and Roland",
+      "era": "medieval",
+      "built": {
+        "from": 1404,
+        "to": 1410,
+        "circa": true,
+        "note": "The stone Roland was set up in 1404 and the town hall was built in about 1405 to 1410; its decorated front was added about 200 years later. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Germany",
+      "place": "The market square, Bremen, Germany",
+      "coordinates": {
+        "lat": 53.076,
+        "lon": 8.807
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A stone knight named Roland has guarded Bremen’s market square for over 600 years."
+        },
+        "medium": {
+          "line": "The people of Bremen built their town hall and its stone knight, Roland, a little after 1400.",
+          "note": "Beside the town hall stands a bronze statue of a donkey, a dog, a cat and a rooster."
+        },
+        "advanced": {
+          "line": "Bremen’s town hall and its Roland statue, begun in 1404, stood for a trading city that ran its own affairs.",
+          "note": "Both are on the World Heritage List. A bronze statue of the four Town Musicians has stood beside the hall since the 1950s."
+        }
+      },
+      "art": {
+        "file": "art/bremen-town-hall-roland.heic",
+        "alt": "A tall stone knight with a sword and shield stands in a market square, in front of a town hall with a green roof and a row of arches.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A4F",
+      "rights": "Our own illustration; no photograph. The drawing shows the town hall and the Roland only. It must not copy the modern bronze Town Musicians statue beside the hall, which is a 20th-century artwork that may still be in copyright (CONTENT_PLAN §6.6). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "colossus-of-rhodes",
+      "name": "Colossus of Rhodes",
+      "era": "ancient",
+      "built": {
+        "from": -292,
+        "to": -280,
+        "circa": true,
+        "note": "Ancient writers say it took about 12 years to build. Dates and height to be fact-checked (CONTENT_PLAN §5.1)."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Greece",
+      "place": "Rhodes, Greece",
+      "coordinates": {
+        "lat": 36.451,
+        "lon": 28.226
+      },
+      "region": "european",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant bronze statue of the sun god, about as tall as a ten-floor building."
+        },
+        "medium": {
+          "line": "The people of Rhodes built it about 2,300 years ago: a bronze sun god about 33 metres tall.",
+          "note": "An earthquake brought it down after only about 54 years."
+        },
+        "advanced": {
+          "line": "Finished about 280 BCE and felled by an earthquake about 226 BCE, it stood for only about 54 years.",
+          "note": "Nobody knows exactly how or where it stood. It did not stand with one foot on each side of the harbour mouth; that picture was imagined many centuries later."
+        }
+      },
+      "art": {
+        "file": "art/colossus-of-rhodes.heic",
+        "alt": "A drawing of how the statue may have looked: a tall bronze figure with a crown of sun rays, standing with its feet together on a stone base beside a harbour.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#123A5C",
+      "rights": "Our own reconstruction drawing, not traced from any modern artist’s reconstruction; no photograph. The statue is lost and its pose is unknown: it is drawn standing on one base beside the harbour, never astride the harbour mouth. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "statue-of-liberty",
+      "name": "Statue of Liberty",
+      "era": "modern",
+      "built": {
+        "from": 1875,
+        "to": 1886,
+        "circa": true,
+        "note": "Dedicated in 1886; work on the statue began in France about 1875. Dates to be fact-checked (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "USA",
+      "place": "New York Harbor, USA",
+      "coordinates": {
+        "lat": 40.689,
+        "lon": -74.045
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant green statue of a woman, holding a torch high above a harbour."
+        },
+        "medium": {
+          "line": "A gift from the people of France to the United States, set up in New York Harbor in 1886.",
+          "note": "A poem calls her “The New Colossus”."
+        },
+        "advanced": {
+          "line": "Dedicated in 1886, the copper statue was made in France and shipped across the Atlantic in pieces.",
+          "note": "Emma Lazarus’s poem “The New Colossus” names her after the lost statue of Rhodes. Her copper skin has turned green in the air."
+        }
+      },
+      "art": {
+        "file": "art/statue-of-liberty.heic",
+        "alt": "A tall green statue of a woman in a robe and a crown of rays, holding a torch high, on a stone base on a small island in a harbour.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0F3F4F",
+      "rights": "Our own illustration; no photograph. The statue is believed clear to depict (a public work, long out of copyright); confirm the name is not a restricted mark (CONTENT_PLAN §6.6). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "great-wall-of-china",
+      "name": "Great Wall of China",
+      "era": "ancient",
+      "built": {
+        "from": -700,
+        "to": 1644,
+        "circa": true,
+        "note": "Many walls built over 2,000 years; most of today's wall 1368–1644. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "China",
+      "place": "Across north China; our drawing shows the wall at Badaling, near Beijing",
+      "coordinates": {
+        "lat": 40.36,
+        "lon": 116.02
+      },
+      "region": "chinese",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long, long wall of stone and brick that climbs up and down the hills."
+        },
+        "medium": {
+          "line": "It is not one wall but many, built over about 2,000 years to guard north China.",
+          "note": "People say you can see it from the Moon. You cannot, not with your eyes alone."
+        },
+        "advanced": {
+          "line": "Many walls, begun about 2,700 years ago; most of the brick and stone wall seen today was built between 1368 and 1644.",
+          "note": "It cannot be seen from the Moon with the naked eye. How long it is depends on which of the many walls you count."
+        }
+      },
+      "art": {
+        "file": "art/great-wall-of-china.heic",
+        "alt": "A stone wall with square watchtowers winding along the tops of green hills into the distance.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2E4A3A",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "machu-picchu",
+      "name": "Machu Picchu",
+      "era": "medieval",
+      "built": {
+        "from": 1450,
+        "circa": true,
+        "note": "Built about 1450. Date to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Peru",
+      "place": "High in the Andes mountains of Peru",
+      "coordinates": {
+        "lat": -13.163,
+        "lon": -72.545
+      },
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A town of stone houses, built high up on the ridge of a mountain."
+        },
+        "medium": {
+          "line": "The Inca built this town on a mountain ridge in Peru about 600 years ago.",
+          "note": "Its stones fit together so closely that the walls need no mortar to hold them."
+        },
+        "advanced": {
+          "line": "An Inca town built about 1450 on a ridge in the Andes, with stones cut to fit together without mortar.",
+          "note": "The Inca left no written account of it, so historians still study what the town was for."
+        }
+      },
+      "art": {
+        "file": "art/machu-picchu.heic",
+        "alt": "Stone houses without roofs and green steps of land on a narrow mountain ridge, with a steep green peak behind.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A44",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "saint-basils-cathedral",
+      "name": "Saint Basil’s Cathedral",
+      "era": "earlyModern",
+      "built": {
+        "from": 1555,
+        "to": 1561,
+        "circa": false
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Red Square, Moscow",
+      "coordinates": {
+        "lat": 55.752,
+        "lon": 37.623
+      },
+      "region": "russian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Its bright roofs are shaped like onions. No two are the same."
+        },
+        "medium": {
+          "line": "It was built on Red Square in Moscow more than 450 years ago, for a ruler named Ivan.",
+          "note": "Roofs with this shape are called onion domes. Each one has its own colours and pattern."
+        },
+        "advanced": {
+          "line": "Built from 1555 to 1561 for Tsar Ivan IV, it stands on Red Square with a cluster of onion domes around one tall central tower.",
+          "note": "Old records name its builders as Barma and Postnik, but no one is sure who they were. The bright colours were added later."
+        }
+      },
+      "art": {
+        "file": "art/saint-basils-cathedral.heic",
+        "alt": "A cluster of towers topped with bright onion-shaped domes, striped and patterned in red, green, blue, gold and white, around one tall pointed tower.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3160",
+      "rights": "Our own illustration; no photograph. A religious building, presented as architecture and history only (CONTENT_PLAN §5, CQ9). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "sydney-opera-house",
+      "name": "Sydney Opera House",
+      "era": "contemporary",
+      "built": {
+        "from": 1959,
+        "to": 1973,
+        "circa": false
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Australia",
+      "place": "Sydney, Australia",
+      "coordinates": {
+        "lat": -33.857,
+        "lon": 151.215
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A building beside the sea with a roof like big white sails."
+        },
+        "medium": {
+          "line": "It opened in 1973 in Sydney, Australia. Its roof looks like sails on the harbour.",
+          "note": "An architect from Denmark, Jørn Utzon, drew its shape."
+        },
+        "advanced": {
+          "line": "Building began in 1959 and took about 14 years, much longer than anyone had planned.",
+          "note": "Its curved roof shells are covered with about a million pale tiles."
+        }
+      },
+      "art": {
+        "file": "art/sydney-opera-house.heic",
+        "alt": "A white building with tall curved roofs like a row of sails, standing at the edge of a blue harbour by day.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#10355C",
+      "rights": "Our own illustration; no photograph. The name and image are trademarks of the Sydney Opera House Trust, with rules for commercial use (CONTENT_PLAN §6.6): legal review needed before release (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "hagia-sophia",
+      "name": "Hagia Sophia",
+      "era": "medieval",
+      "built": {
+        "from": 532,
+        "to": 537,
+        "circa": false,
+        "note": "The first dome fell after an earthquake in 558 and was rebuilt, a little taller, by about 562. Dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Türkiye",
+      "place": "Istanbul, Türkiye",
+      "coordinates": {
+        "lat": 41.009,
+        "lon": 28.98
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge old building with a great round dome on top, as high as a hill."
+        },
+        "medium": {
+          "line": "Built in Istanbul about 1,500 years ago, in less than six years. Its great dome was the wonder of its age.",
+          "note": "It has been a church, a mosque and a museum."
+        },
+        "advanced": {
+          "line": "Finished in 537 for the emperor Justinian, with a brick dome about 31 metres across that seems to float on a ring of windows.",
+          "note": "The first dome fell after an earthquake and was rebuilt taller. Over about 1,500 years the building has been a church, a mosque and a museum."
+        }
+      },
+      "art": {
+        "file": "art/hagia-sophia.heic",
+        "alt": "A great building of warm stone and brick with one wide, shallow dome above a ring of small windows, and smaller half-domes stepping down around it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3B2A5C",
+      "rights": "Our own illustration; no photograph. A religious building, presented as architecture and history only (CONTENT_PLAN §5, CQ9). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "himeji-castle",
+      "name": "Himeji Castle",
+      "era": "earlyModern",
+      "built": {
+        "from": 1601,
+        "to": 1609,
+        "circa": false,
+        "note": "The castle as it stands today. Older forts stood on the same hill before it; their dates are to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Japan",
+      "place": "Himeji, Japan",
+      "coordinates": {
+        "lat": 34.839,
+        "lon": 134.694
+      },
+      "region": "japanese",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall white castle on a hill. Its roofs curve up like a bird's wings."
+        },
+        "medium": {
+          "line": "A white castle in Himeji, Japan, finished about 400 years ago.",
+          "note": "People call it the White Heron Castle, for its white walls and wing-like roofs."
+        },
+        "advanced": {
+          "line": "A hilltop castle built between 1601 and 1609, called the White Heron Castle for its white walls and wing-like roofs.",
+          "note": "Its wooden towers are coated in white plaster. Most castles of its age in Japan have been lost; this one still stands."
+        }
+      },
+      "art": {
+        "file": "art/himeji-castle.heic",
+        "alt": "A white castle with many curved grey roofs, one above another, on a stone base on a green hill.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3A5C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "petra",
+      "name": "Petra",
+      "era": "ancient",
+      "built": {
+        "from": -300,
+        "to": 100,
+        "circa": true,
+        "note": "Carved and built over several hundred years, from about the 4th century BCE to the 1st century CE. Dates to verify (CONTENT_PLAN §5.1)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Jordan",
+      "place": "A desert valley in southern Jordan",
+      "coordinates": {
+        "lat": 30.329,
+        "lon": 35.444
+      },
+      "region": "persianArabian",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A city cut into rose-red rock, where caravans stopped to rest."
+        },
+        "medium": {
+          "line": "A people called the Nabataeans carved this caravan city into rose-red cliffs about 2,000 years ago.",
+          "note": "Traders and their camels stopped here for water on the long desert roads."
+        },
+        "advanced": {
+          "line": "A Nabataean trading city in Jordan, carved into sandstone cliffs between about 300 BCE and 100 CE.",
+          "note": "Much of the city still lies buried, and archaeologists keep finding more."
+        }
+      },
+      "art": {
+        "file": "art/petra.heic",
+        "alt": "A tall building front with columns, carved straight into a rose-red cliff at the end of a narrow rocky path.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2430",
+      "rights": "Our own illustration; no photograph. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "great-pyramid-giza",
+      "name": "Great Pyramid of Giza",
+      "era": "ancient",
+      "built": {
+        "from": -2600,
+        "to": -2560,
+        "circa": true,
+        "note": "Built as the tomb of King Khufu. The dates are approximate: Egyptologists place his reign within a few decades of these years."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Egypt",
+      "place": "Giza, Egypt",
+      "coordinates": {
+        "lat": 29.979,
+        "lon": 31.134
+      },
+      "region": "egyptian",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge pyramid of pale stone blocks in the desert, with four sides that meet in a point."
+        },
+        "medium": {
+          "line": "A stone pyramid at Giza in Egypt, built about 4,500 years ago as the tomb of King Khufu.",
+          "note": "It is made of about two million stone blocks. Of the Seven Wonders of the Ancient World, it is the only one still standing."
+        },
+        "advanced": {
+          "line": "For more than 3,000 years this pyramid, once about 146 metres high, was the tallest building in the world.",
+          "note": "How we know who built it: in 2013 papyrus diaries were found by the Red Sea, kept by a man named Merer, whose crew shipped white limestone to Giza for Khufu’s pyramid."
+        }
+      },
+      "art": {
+        "file": "art/great-pyramid-giza.heic",
+        "alt": "A great pyramid of pale stone under a clear sky, with two more pyramids behind it and tiny people at its foot.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3A1C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). An ancient monument long out of any copyright; the general freedom-of-panorama check of CONTENT_PLAN 6.6 still applies.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "chichen-itza",
+      "name": "Chichén Itzá",
+      "era": "medieval",
+      "built": {
+        "from": 600,
+        "to": 1200,
+        "circa": true,
+        "note": "The years in which the Maya city grew. Its great step pyramid, El Castillo, was built late in that time, about 1,000 years ago; the exact dates are to verify."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Mexico",
+      "place": "Yucatán, Mexico",
+      "coordinates": {
+        "lat": 20.683,
+        "lon": -88.569
+      },
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A grey stone pyramid with big steps on every side and a small square temple on top."
+        },
+        "medium": {
+          "line": "A step pyramid in the old Maya city of Chichén Itzá in Mexico, built about 1,000 years ago.",
+          "note": "The Maya built it. Maya people live today in Mexico and Central America, and many speak Mayan languages."
+        },
+        "advanced": {
+          "line": "Each of its four stairways has 91 steps; with the platform on top that makes 365, one for every day of the year.",
+          "note": "A smaller, older pyramid is hidden inside it. It was built about 3,500 years after the pyramids of Egypt, by people who had never heard of Egypt."
+        }
+      },
+      "art": {
+        "file": "art/chichen-itza.heic",
+        "alt": "A grey stone step pyramid with nine terraces, a stairway up the middle of each side and a square temple on top, on a green lawn with forest behind.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A3A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). To check in that review: whether the heritage authority of Mexico authority (INAH) sets conditions on commercial images of the site, and the general freedom-of-panorama point of CONTENT_PLAN 6.6.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "mount-fuji",
+      "name": "Mount Fuji",
+      "era": "natural",
+      "status": "natural",
+      "depiction": "asIs",
+      "country": "Japan",
+      "place": "Honshu, Japan",
+      "coordinates": {
+        "lat": 35.361,
+        "lon": 138.727
+      },
+      "region": "japanese",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall mountain shaped like a cone, with white snow on its top for most of the year."
+        },
+        "medium": {
+          "line": "Mount Fuji is the highest mountain in Japan, about 3,776 metres tall.",
+          "note": "It is a sleeping volcano. It last erupted in 1707, and it has been quiet ever since."
+        },
+        "advanced": {
+          "line": "Fuji is a volcano that is resting, not dead: in 1707 its last eruption dropped ash on the city of Edo, now Tokyo.",
+          "note": "One old story says the mountain got its name from the smoke in this tale. Nobody knows for certain where the name comes from."
+        }
+      },
+      "art": {
+        "file": "art/mount-fuji.heic",
+        "alt": "A tall, even cone of a mountain with snow on its top, above a lake and low hills, in clear morning light.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F3460",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "golden-gate-bridge",
+      "name": "Golden Gate Bridge",
+      "era": "modern",
+      "built": {
+        "from": 1933,
+        "to": 1937,
+        "circa": false,
+        "note": "Building began in January 1933 and the bridge opened in May 1937."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "United States",
+      "place": "San Francisco, USA",
+      "coordinates": {
+        "lat": 37.82,
+        "lon": -122.478
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long red-orange bridge hangs from two tall towers. Fog often hides its feet."
+        },
+        "medium": {
+          "line": "A hanging bridge of steel across the Golden Gate, the strait where San Francisco Bay meets the Pacific Ocean.",
+          "note": "It was built between 1933 and 1937. Its colour, called International Orange, helps ships to see it in fog."
+        },
+        "advanced": {
+          "line": "A suspension bridge opened in 1937, whose main span of about 1,280 metres was the longest in the world until 1964.",
+          "note": "The roadway hangs from two main cables, each spun from thousands of steel wires. The architect Irving Morrow chose the orange to suit the hills and to show in fog."
+        }
+      },
+      "art": {
+        "file": "art/golden-gate-bridge.heic",
+        "alt": "A long red-orange bridge with two tall towers, hung on great cables, crossing blue water with fog round its feet.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#17405C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Believed clear as a public work; confirm the name is not a restricted mark (CONTENT_PLAN 6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "novgorod-kremlin",
+      "name": "Novgorod Kremlin and Saint Sophia Cathedral",
+      "era": "medieval",
+      "built": {
+        "from": 1045,
+        "to": 1050,
+        "circa": false,
+        "note": "The dates of the stone cathedral. The fortress round it is older in origin, but the red brick walls seen today are later, from the 15th century; exact dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Veliky Novgorod, Russia",
+      "coordinates": {
+        "lat": 58.522,
+        "lon": 31.276
+      },
+      "region": "russian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A white cathedral with domes shaped like helmets, behind red walls beside a wide river."
+        },
+        "medium": {
+          "line": "A stone cathedral finished in 1050 in Novgorod, a trading city in the north-west of Russia.",
+          "note": "A prince of Novgorod had it built nearly 1,000 years ago. It is one of the oldest stone buildings in Russia, and it still stands."
+        },
+        "advanced": {
+          "line": "The cathedral of Saint Sophia, built from 1045 to 1050 inside Novgorod’s fortress, which is called a kremlin.",
+          "note": "The cathedral is older than the walls round it: the red brick walls seen today were built about 400 years later. Before that, the fortress had ramparts of earth, timber and stone."
+        }
+      },
+      "art": {
+        "file": "art/novgorod-kremlin.heic",
+        "alt": "A white cathedral with five domes, the middle one gold, behind red brick walls and a tower beside a wide river.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E3554",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building: presented as architecture and history only (CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "christ-the-redeemer",
+      "name": "Christ the Redeemer",
+      "era": "modern",
+      "built": {
+        "from": 1922,
+        "to": 1931,
+        "circa": false,
+        "note": "Building years of the statue on Corcovado mountain; it was opened in 1931."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Brazil",
+      "place": "Rio de Janeiro, Brazil",
+      "coordinates": {
+        "lat": -22.952,
+        "lon": -43.211
+      },
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall pale statue with its arms held wide, on a mountain top above the sea."
+        },
+        "medium": {
+          "line": "A statue about 30 metres tall on Corcovado mountain, above the harbour of Rio de Janeiro in Brazil.",
+          "note": "It was finished in 1931, after about nine years of work. Sailors coming into the bay can see it from far out at sea."
+        },
+        "advanced": {
+          "line": "A statue about 30 metres tall, built of concrete from 1922 to 1931 on a mountain about 700 metres high.",
+          "note": "Its skin is made of thousands of small tiles of pale soapstone, a soft stone that stands up well to sun and rain. Every piece had to be carried up the mountain."
+        }
+      },
+      "art": {
+        "file": "art/christ-the-redeemer.heic",
+        "alt": "A tall pale statue with its arms held wide, on the top of a steep green mountain above a bay with rounded hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#134A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Rights in the statue’s image are claimed by the Archdiocese of Rio, and the sculptor died in 1961, so copyright may still run in some countries (CONTENT_PLAN §6.6). Presented as a landmark and a work of engineering, with respect and no religious teaching (CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "colosseum",
+      "name": "Colosseum",
+      "era": "ancient",
+      "built": {
+        "from": 70,
+        "to": 80,
+        "circa": false,
+        "note": "Begun under the emperor Vespasian and opened by his son Titus in 80 CE. The exact start year (70 to 72 CE) is to verify (CONTENT_PLAN §5)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Italy",
+      "place": "Rome, Italy",
+      "coordinates": {
+        "lat": 41.89,
+        "lon": 12.492
+      },
+      "region": "european",
+      "lists": [
+        "new7Wonders"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge oval of pale stone in Rome, with rows and rows of arches."
+        },
+        "medium": {
+          "line": "Rome’s greatest arena, opened about 1,950 years ago, had seats for about 50,000 people.",
+          "note": "Two emperors, Vespasian and his son Titus, built it between 70 and 80 CE. People and animals were made to fight there; today it stands as a place to remember."
+        },
+        "advanced": {
+          "line": "An oval arena of stone, brick and concrete, built in Rome between 70 and 80 CE, with three rows of arches round the outside.",
+          "note": "Roman writers describe the shows held in it. Earthquakes, and builders who carried off its stone, brought down much of one side, which is why it looks broken today."
+        }
+      },
+      "art": {
+        "file": "art/colosseum.heic",
+        "alt": "A great oval arena of pale stone with three rows of arches, one side standing higher than the other, under a warm sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2E22",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Sensitive history: the cards say plainly, without detail, that people and animals were made to fight there (CONTENT_PLAN CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "temple-of-artemis-ephesus",
+      "name": "Temple of Artemis at Ephesus",
+      "era": "ancient",
+      "built": {
+        "from": -550,
+        "to": -323,
+        "circa": true,
+        "note": "The first great marble temple rose about 550 BCE and was burned down; a new one was begun about 323 BCE. Both dates are approximate."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Türkiye",
+      "place": "Ephesus, Türkiye",
+      "coordinates": {
+        "lat": 37.95,
+        "lon": 27.364
+      },
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A marble temple with more than 100 tall columns. It is gone now; one column stands."
+        },
+        "medium": {
+          "line": "A great marble temple at Ephesus, in today’s Türkiye, one of the Seven Wonders of the ancient world.",
+          "note": "The first great temple rose about 550 BCE and burned down; a new one was begun about 323 BCE. It is lost now, and one rebuilt column marks the place."
+        },
+        "advanced": {
+          "line": "A lost wonder: ancient writers describe a very wide marble temple ringed by more than 100 tall columns.",
+          "note": "Nobody alive has seen it. Our picture follows the old descriptions and the stones dug up at Ephesus, so parts of it are a careful guess."
+        }
+      },
+      "art": {
+        "file": "art/temple-of-artemis-ephesus.heic",
+        "alt": "A drawing of how the temple may have looked: a very wide marble temple with a forest of tall columns and a low triangular roof front, on a stepped base.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A3F5C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A reconstruction of a lost building: it must always be labelled as a drawing of how it may have looked. Shown as architecture and history only.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "parthenon",
+      "name": "Parthenon",
+      "era": "ancient",
+      "built": {
+        "from": -447,
+        "to": -432,
+        "circa": false,
+        "note": "The building went up from 447 BCE; its carvings were finished by 432 BCE. That is long after the mythical time of the story, so the medium card says it was built later (CONTENT_PLAN §6.2)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Greece",
+      "place": "Athens, Greece",
+      "coordinates": {
+        "lat": 37.972,
+        "lon": 23.727
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A temple of white marble on a rocky hill, with tall columns all the way round."
+        },
+        "medium": {
+          "line": "The Athenians built this marble temple for Athena on the Acropolis, about 2,400 years ago.",
+          "note": "It was built long after the time of this story. The contest of Athena and Poseidon was carved high on its western end."
+        },
+        "advanced": {
+          "line": "Built between 447 and 432 BCE, with eight columns across each end and seventeen along each side.",
+          "note": "In 1687 gunpowder stored inside it exploded and blew out the middle of the building. Most of the contest carving is lost; we know its design from drawings made a few years before the blast and from broken pieces kept in museums."
+        }
+      },
+      "art": {
+        "file": "art/parthenon.heic",
+        "alt": "A marble temple with a row of tall columns and a broken triangular roof front, on a rocky hilltop under a blue sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1D4466",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "statue-of-zeus-olympia",
+      "name": "Statue of Zeus at Olympia",
+      "era": "ancient",
+      "built": {
+        "from": -435,
+        "circa": true,
+        "note": "Made about 435 BCE by the sculptor Phidias for the temple of Zeus at Olympia. The exact years are not known. The statue is lost; our picture is a reconstruction."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Greece",
+      "place": "Olympia, Greece",
+      "coordinates": {
+        "lat": 37.638,
+        "lon": 21.63
+      },
+      "region": "european",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant statue of gold and ivory, sitting on a throne. It is gone now."
+        },
+        "medium": {
+          "line": "A seated statue of Zeus about 12 metres tall, made at Olympia around 435 BCE.",
+          "note": "The sculptor was Phidias, who also made the great statue of Athena for Athens. The statue of Zeus was lost more than 1,500 years ago."
+        },
+        "advanced": {
+          "line": "One of the Seven Wonders of the ancient world: gold and ivory laid over a wooden frame, about as tall as a four-storey house.",
+          "note": "Nothing of it survives, and nobody is sure how it was lost. We know its look from an ancient traveller named Pausanias, who described it, from small pictures on old coins, and from the sculptor’s workshop, which was dug up at Olympia."
+        }
+      },
+      "art": {
+        "file": "art/statue-of-zeus-olympia.heic",
+        "alt": "A drawing of how the statue may have looked: a huge seated figure of gold and ivory on a throne inside a temple, its head near the roof, holding a tall staff.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A55",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The statue is lost: the picture is our own reconstruction and must be labelled as one.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "hanging-gardens-babylon",
+      "name": "Hanging Gardens of Babylon",
+      "era": "ancient",
+      "built": {
+        "from": -600,
+        "circa": true,
+        "note": "Said to have been built about 600 BCE. No trace has been found; the date is the traditional one, not a known one (CONTENT_PLAN §5)."
+      },
+      "status": "unproven",
+      "depiction": "reconstruction",
+      "country": "Iraq",
+      "place": "Babylon (traditional site), Iraq",
+      "coordinates": {
+        "lat": 32.54,
+        "lon": 44.42
+      },
+      "region": "persianArabian",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Gardens on high steps, with trees on every step. Nobody has ever found them."
+        },
+        "medium": {
+          "line": "One of the Seven Wonders of the ancient world, said to have stood in Babylon about 2,600 years ago.",
+          "note": "Old writers said a king of Babylon built them. No one has found a trace of them, so this picture is an artist’s idea."
+        },
+        "advanced": {
+          "line": "The gardens are known only from Greek and Roman writers who lived long after the time they describe.",
+          "note": "Diggers at Babylon have found no sure trace of them. They may be a legend, or they may have stood in another city, Nineveh."
+        }
+      },
+      "art": {
+        "file": "art/hanging-gardens-babylon.heic",
+        "alt": "A drawing of how the gardens may have looked: stepped terraces of brick with trees and hanging plants on every level and water running down, beside a river.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E4A38",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A reconstruction of an unproven wonder: it must stay labelled as an artist’s idea.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "burj-khalifa",
+      "name": "Burj Khalifa",
+      "era": "contemporary",
+      "built": {
+        "from": 2004,
+        "to": 2010,
+        "circa": false,
+        "note": "Building began in 2004 and the tower opened in 2010."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "United Arab Emirates",
+      "place": "Dubai, United Arab Emirates",
+      "coordinates": {
+        "lat": 25.197,
+        "lon": 55.274
+      },
+      "region": "persianArabian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A thin silver tower, taller than any other building in the world."
+        },
+        "medium": {
+          "line": "The tallest building in the world, about 828 metres high, in the city of Dubai.",
+          "note": "It was built between 2004 and 2010 and has more than 160 floors."
+        },
+        "advanced": {
+          "line": "At about 828 metres, it has been the world’s tallest building since it opened in 2010.",
+          "note": "Seen from above it has three wings round a central core, a shape that helps so thin a tower stand firm in the wind."
+        }
+      },
+      "art": {
+        "file": "art/burj-khalifa.heic",
+        "alt": "A very tall, thin silver tower that narrows in steps to a needle point, far above the other towers of a city by the sea.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B3558",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The owner asserts rights over the name and image in commercial use (CONTENT_PLAN §6.6): legal review needed before release.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "angkor-wat",
+      "name": "Angkor Wat",
+      "era": "medieval",
+      "built": {
+        "from": 1113,
+        "to": 1150,
+        "circa": true,
+        "note": "Built during the reign of King Suryavarman II, from about 1113 to about 1150. Work seems to have slowed or stopped after his death; some wall carvings were finished centuries later."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Cambodia",
+      "place": "Siem Reap, Cambodia",
+      "coordinates": {
+        "lat": 13.412,
+        "lon": 103.867
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge stone temple with five towers shaped like lotus buds, beside a wide still pool."
+        },
+        "medium": {
+          "line": "A vast stone temple in Cambodia, built for King Suryavarman II nearly 900 years ago.",
+          "note": "It was first made for the Hindu god Vishnu and later became a Buddhist temple, which it still is today. It is the largest religious monument in the world."
+        },
+        "advanced": {
+          "line": "The largest religious monument in the world, built in the first half of the 1100s and ringed by a wide moat.",
+          "note": "Its long stone galleries are carved with scenes from India’s epics, among them the great battle of the Mahabharata. Its dates are worked out from the reign of the king it was built for. It appears on Cambodia’s flag."
+        }
+      },
+      "art": {
+        "file": "art/angkor-wat.heic",
+        "alt": "A great stone temple with five towers shaped like lotus buds, mirrored in a wide pool, with palm trees on either side.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2C3A22",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building and still a working Buddhist temple: presented as architecture and history only, with respect and no religious teaching (CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "bibliotheca-alexandrina",
+      "name": "Bibliotheca Alexandrina",
+      "era": "contemporary",
+      "built": {
+        "from": 1995,
+        "to": 2002,
+        "circa": false,
+        "note": "Building years of the new library, which opened in October 2002. The ancient Library of Alexandria it remembers was founded under the Ptolemies about 2,300 years ago and is lost."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Egypt",
+      "place": "Alexandria, Egypt",
+      "coordinates": {
+        "lat": 31.209,
+        "lon": 29.909
+      },
+      "region": "egyptian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge round building tilted toward the sea, its stone wall carved with letters from all over the world."
+        },
+        "medium": {
+          "line": "A great modern library in Alexandria, Egypt, opened in 2002 near where the ancient library once stood.",
+          "note": "Egypt built it with help from many other countries, to a design by Snøhetta, a firm of architects from Norway. Its round roof tilts toward the sea like a rising sun."
+        },
+        "advanced": {
+          "line": "The ancient Library of Alexandria was founded about 2,300 years ago and held many thousands of papyrus rolls.",
+          "note": "No one knows for certain how it was lost. Old stories blame a single great fire, but most historians now think it faded slowly over centuries as money and care ran out. The new library has room for millions of books."
+        }
+      },
+      "art": {
+        "file": "art/bibliotheca-alexandrina.heic",
+        "alt": "A huge round building tilted toward the sea like a rising sun, its grey granite wall carved with letters from many alphabets.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1C3A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A recent building (opened 2002, designed by Snøhetta): architectural copyright and the rules on depicting buildings differ by country (CONTENT_PLAN §6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "forbidden-city",
+      "name": "Forbidden City",
+      "era": "medieval",
+      "built": {
+        "from": 1406,
+        "to": 1420,
+        "circa": false,
+        "note": "Building years of the palace for the Ming emperor Yongle, who moved his capital to Beijing. Many halls burned and were rebuilt later, so much of what stands today is from the Qing dynasty (1644-1912); dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "China",
+      "place": "Beijing, China",
+      "coordinates": {
+        "lat": 39.916,
+        "lon": 116.397
+      },
+      "region": "chinese",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge palace of red walls and golden-yellow roofs in the middle of Beijing."
+        },
+        "medium": {
+          "line": "The palace of the emperors of China, in Beijing, with nearly 1,000 buildings inside its red walls.",
+          "note": "It was built from 1406 to 1420 for the Ming emperor Yongle. For about 500 years ordinary people could not go in, which is why it was called forbidden."
+        },
+        "advanced": {
+          "line": "Home to 24 emperors of the Ming and Qing dynasties for about 500 years, until the last emperor left in 1924.",
+          "note": "Yellow roof tiles were for the emperor alone. A legend says it has 9,999 rooms, one fewer than a palace in heaven; real counts are far lower. Since 1925 it has been the Palace Museum, open to everyone."
+        }
+      },
+      "art": {
+        "file": "art/forbidden-city.heic",
+        "alt": "A long palace hall with a double roof of golden-yellow tiles on a white marble terrace, behind a wide stone courtyard and red walls.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A1E1A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "lions-gate-bridge",
+      "name": "Lions Gate Bridge",
+      "era": "modern",
+      "built": {
+        "from": 1937,
+        "to": 1938,
+        "circa": false,
+        "note": "Building years of the bridge. It opened to traffic in November 1938 and was formally opened in 1939; exact dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Canada",
+      "place": "Vancouver, British Columbia, Canada",
+      "coordinates": {
+        "lat": 49.315,
+        "lon": -123.139
+      },
+      "region": "nativeAmericanFirstNations",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long green bridge hung from cables between two tall towers, high above the sea."
+        },
+        "medium": {
+          "line": "A suspension bridge across the First Narrows of Burrard Inlet in Vancouver, opened in 1938.",
+          "note": "It was built so that people could drive from the city to new houses on the North Shore. Two concrete lions guard its south end."
+        },
+        "advanced": {
+          "line": "A suspension bridge named for The Lions, the twin peaks above the city that the Sḵwx̱wú7mesh call the Two Sisters.",
+          "note": "Plans, photographs and newspapers record how the bridge was built in the 1930s. The peaks’ older name is far older than any of these records, and it has been kept by the Sḵwx̱wú7mesh in their own language."
+        }
+      },
+      "art": {
+        "file": "art/lions-gate-bridge.heic",
+        "alt": "A green suspension bridge with two tall towers crossing a narrow strait between forested shores, with two snowy peaks side by side behind it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#16343A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Believed clear; confirm that the name Lions Gate is not a restricted mark (CONTENT_PLAN §6.6). The concrete lions are sculptures by Charles Marega (died 1955); keep them small and simple. The card goes through the Sḵwx̱wú7mesh reviewer (CONTENT_PLAN §7).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "ilulissat-icefjord",
+      "name": "Ilulissat Icefjord",
+      "era": "natural",
+      "status": "natural",
+      "depiction": "asIs",
+      "country": "Greenland",
+      "place": "Ilulissat, Greenland",
+      "coordinates": {
+        "lat": 69.1,
+        "lon": -49.5
+      },
+      "region": "arctic",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long fjord so packed with icebergs that from above it looks like a white road to the sea."
+        },
+        "medium": {
+          "line": "A long fjord on Greenland’s west coast, beside the town of Ilulissat, filled with icebergs from one glacier.",
+          "note": "The glacier at its head, Sermeq Kujalleq, pushes ice into the fjord all year round. The icebergs drift out into Disko Bay, and UNESCO made the fjord a World Heritage Site in 2004."
+        },
+        "advanced": {
+          "line": "The fjord where Sermeq Kujalleq, one of the fastest-moving glaciers in the world, breaks apart into the sea.",
+          "note": "Scientists measure the glacier from satellites and on the ice to learn how Greenland’s ice sheet is changing. In recent decades its front has pulled back many kilometres. The town’s name, Ilulissat, means “icebergs” in Kalaallisut."
+        }
+      },
+      "art": {
+        "file": "art/ilulissat-icefjord.heic",
+        "alt": "A fjord packed with white and blue icebergs between dark rocky shores, under a pale sky, with a small red house on the rocks.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#173A52",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A natural place: no rights attach to the place itself; drawn from general knowledge, no photograph traced.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "kizhi-pogost",
+      "name": "Kizhi Pogost",
+      "era": "earlyModern",
+      "built": {
+        "from": 1714,
+        "to": 1714,
+        "circa": false,
+        "note": "The year the main Church of the Transfiguration was finished. The smaller Church of the Intercession beside it dates from 1764 and the bell tower from 1862."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Kizhi Island, Lake Onega, Karelia, Russia",
+      "coordinates": {
+        "lat": 62.068,
+        "lon": 35.224
+      },
+      "region": "russian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall wooden church with twenty-two silver-grey domes, standing on a grassy island in a lake."
+        },
+        "medium": {
+          "line": "Two wooden churches and a bell tower on Kizhi Island in Lake Onega, in the north-west of Russia.",
+          "note": "Village carpenters finished the tallest church, with its twenty-two domes, in 1714. The whole group is now a UNESCO World Heritage Site."
+        },
+        "advanced": {
+          "line": "The Church of the Transfiguration, finished in 1714, is built of pine and spruce logs, with domes roofed in aspen shingles.",
+          "note": "A legend says it was built without a single nail. That is only a legend: the log walls are held by notched corners, but nails fix the shingles on the domes. The builders’ names are not known for certain."
+        }
+      },
+      "art": {
+        "file": "art/kizhi-pogost.heic",
+        "alt": "A tall wooden church whose silver-grey shingled domes rise in tiers, twenty-two in all, beside a smaller church and a bell tower on a grassy island.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#22394A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building: presented as architecture and history only (CQ9). The main church has been under long restoration, sometimes with scaffolding or inner supports; draw it whole, as it is meant to stand.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "palace-of-knossos",
+      "name": "Palace of Knossos",
+      "era": "ancient",
+      "built": {
+        "from": -1900,
+        "to": -1400,
+        "circa": true,
+        "note": "Rough dates for the palace in use, about 1900 to 1400 BCE; it was damaged and rebuilt several times, and archaeologists still debate the exact phases."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Greece",
+      "place": "Knossos, Crete, Greece",
+      "coordinates": {
+        "lat": 35.298,
+        "lon": 25.163
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Red columns, wider at the top than the bottom, hold up stone rooms on a hill."
+        },
+        "medium": {
+          "line": "A Bronze Age palace on Crete with hundreds of rooms, corridors and stairs around a great courtyard.",
+          "note": "It was built by the people we now call the Minoans, nearly 4,000 years ago. Its walls were painted with dolphins, lilies and young people leaping over bulls."
+        },
+        "advanced": {
+          "line": "Dug up from 1900 by Arthur Evans, who named the Minoans after Minos and rebuilt parts of the palace in concrete.",
+          "note": "So some of what visitors see is modern. Whether its maze of rooms gave rise to the Labyrinth story is a guess, and the link between the double axe carved there and the word labyrinth is uncertain."
+        }
+      },
+      "art": {
+        "file": "art/palace-of-knossos.heic",
+        "alt": "Red columns that are wider at the top hold up a stone terrace on a hillside, with broad stairs and olive trees.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2A1E",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The red columns are Evans’s modern reconstruction; the card says so.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "eiffel-tower",
+      "name": "Eiffel Tower",
+      "era": "modern",
+      "built": {
+        "from": 1887,
+        "to": 1889,
+        "circa": false,
+        "note": "Built in about two years for the world’s fair held in Paris in 1889."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "France",
+      "place": "Paris, France",
+      "coordinates": {
+        "lat": 48.858,
+        "lon": 2.294
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall iron tower made of criss-crossing beams, wide at its four feet and pointed at the top."
+        },
+        "medium": {
+          "line": "An iron tower about 330 metres tall, built in Paris for the world’s fair of 1889.",
+          "note": "The engineer Gustave Eiffel’s company built it from about 18,000 iron parts and 2.5 million rivets. It was the tallest structure in the world until 1930."
+        },
+        "advanced": {
+          "line": "It was meant to stand for only 20 years, and was 300 metres tall when built; antennas added the rest.",
+          "note": "Eiffel saved it by making it useful. He ran weather and radio work from the top, and dropped objects down a wire from it to measure how air pushes back."
+        }
+      },
+      "art": {
+        "file": "art/eiffel-tower.heic",
+        "alt": "A tall iron tower in a lacy criss-cross pattern, wide at its four feet and narrowing to a point, against a pale daytime sky over trees.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A3A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Draw it by day: its night lighting is claimed as a protected work (CONTENT_PLAN §6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "great-mosque-of-djenne",
+      "name": "Great Mosque of Djenné",
+      "era": "modern",
+      "built": {
+        "from": 1906,
+        "to": 1907,
+        "circa": false,
+        "note": "Today’s building, put up by Djenné’s masons in 1906 and 1907 on the site of a mosque that the town’s tradition says was first built in the 13th century. What the older mosque looked like is not certain."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Mali",
+      "place": "Djenné, Mali",
+      "coordinates": {
+        "lat": 13.905,
+        "lon": -4.555
+      },
+      "region": "african",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge building of smooth brown mud, with three tall towers and wooden poles poking from its walls."
+        },
+        "medium": {
+          "line": "A mosque in Djenné, Mali, finished in 1907 and said to be the largest mud-brick building in the world.",
+          "note": "The town’s own masons built it where an older mosque had stood. Every year the people of Djenné climb its walls together and spread on fresh mud."
+        },
+        "advanced": {
+          "line": "A mosque of sun-dried mud brick on a raised platform, built in 1906 and 1907 where older mosques had stood.",
+          "note": "Djenné’s tradition says the first mosque here was built in the 13th century, but nobody knows how it looked. The palm-wood poles left in the walls serve as a ready-made ladder for the yearly re-plastering."
+        }
+      },
+      "art": {
+        "file": "art/great-mosque-of-djenne.heic",
+        "alt": "A great building of smooth brown mud brick on a raised platform, with three tall towers and rows of wooden poles jutting from its walls.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3218",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building in use: presented as architecture and history only (CQ9), and the drawing is to be reviewed by the Mande consultant (CONTENT_PLAN §7).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "persepolis",
+      "name": "Persepolis",
+      "era": "ancient",
+      "built": {
+        "from": -518,
+        "to": -330,
+        "circa": true,
+        "note": "Begun under Darius the Great about 518 BCE and added to by later kings until the army of Alexander the Great burned it in 330 BCE. The ruins were never wholly lost; a UNESCO World Heritage Site."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Iran",
+      "place": "Marvdasht, Fars, Iran",
+      "coordinates": {
+        "lat": 29.935,
+        "lon": 52.891
+      },
+      "region": "persianArabian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Rows of tall stone columns and a wide stairway carved with people carrying gifts."
+        },
+        "medium": {
+          "line": "The ruins of a great stone city of the Persian kings, begun about 2,500 years ago in southern Iran.",
+          "note": "Darius the Great began it about 518 BCE, and the kings after him added to it. The army of Alexander the Great burned it in 330 BCE."
+        },
+        "advanced": {
+          "line": "A city of halls on a huge stone terrace, built by Persian kings from about 518 to 330 BCE.",
+          "note": "Its stairways show people from all over the empire bringing gifts to the king. Many think this was for Nowruz, the Persian New Year, but no ancient text says so, and scholars still argue about it."
+        }
+      },
+      "art": {
+        "file": "art/persepolis.heic",
+        "alt": "Tall slender stone columns and a broad double stairway carved with rows of people bringing gifts, on a great stone terrace below bare hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2E1C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "mausoleum-halicarnassus",
+      "name": "Mausoleum at Halicarnassus",
+      "era": "ancient",
+      "built": {
+        "from": -353,
+        "to": -350,
+        "circa": true,
+        "note": "Built for Mausolus, a satrap (governor) of Caria for the Persian empire, who died about 353 BCE; finished about 350 BCE under his wife Artemisia and her craftsmen. Dates approximate."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Türkiye",
+      "place": "Bodrum, Türkiye",
+      "coordinates": {
+        "lat": 37.038,
+        "lon": 27.424
+      },
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall white tomb with columns and a stone chariot on top. It is gone now."
+        },
+        "medium": {
+          "line": "The tomb of Mausolus, a governor for the Persian kings, built about 2,350 years ago where Bodrum in Türkiye is now.",
+          "note": "His wife Artemisia carried the work on after he died. It was so famous that grand tombs have been called mausoleums ever since."
+        },
+        "advanced": {
+          "line": "A tomb about 45 metres tall, one of the Seven Wonders, brought down by earthquakes in the Middle Ages.",
+          "note": "No true picture of it survives, so every drawing is a guess from old Greek and Roman descriptions and the pieces dug up. In about 1494 knights used its stones to build the castle at Bodrum; some of its statues are in the British Museum in London."
+        }
+      },
+      "art": {
+        "file": "art/mausoleum-halicarnassus.heic",
+        "alt": "A drawing of how the Mausoleum may have looked: a tall white tomb on a high base, ringed by columns, with a stepped roof and a statue of a four-horse chariot on top.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A3A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A lost wonder: our own reconstruction from the old descriptions, not traced from any modern drawing or model (CONTENT_PLAN §6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     }
   ]
 }

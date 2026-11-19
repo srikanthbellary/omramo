@@ -251,14 +251,15 @@ final class MoralTests: XCTestCase {
 
     func testEveryBundledStoryHasAMoralOfOneSentence() throws {
         let library = try SampleContent.repository().loadLibrary()
-        XCTAssertEqual(library.stories.count, 3)
+        // Round 5: every story of the growing catalog, not only the three prototypes.
+        XCTAssertGreaterThanOrEqual(library.stories.count, 3)
         for story in library.stories {
             XCTAssertNil(MoralRule.problem(in: story.moral), story.id.rawValue)
             let moral = try XCTUnwrap(story.moral, story.id.rawValue)
             XCTAssertEqual(moral, moral.trimmingCharacters(in: .whitespacesAndNewlines), story.id.rawValue)
         }
-        // Three stories, three different things to remember.
-        XCTAssertEqual(Set(library.stories.compactMap(\.moral)).count, 3)
+        // Every story leaves a different thing to remember.
+        XCTAssertEqual(Set(library.stories.compactMap(\.moral)).count, library.stories.count)
     }
 
     func testTheValidatorRequiresTheMoral() throws {
@@ -305,7 +306,9 @@ final class NextStoryTests: XCTestCase {
         let low = try XCTUnwrap(stories.first { $0.tier == .low })
         let medium = try XCTUnwrap(stories.first { $0.tier == .medium })
         let advanced = try XCTUnwrap(stories.first { $0.tier == .advanced })
-        return (low, medium, advanced, stories)
+        // The catalog these rules were written against: one story a level (the three
+        // prototypes). The whole round-5 catalog is walked in `NextStoryCatalogTests`.
+        return (low, medium, advanced, [low, medium, advanced])
     }
 
     private func copy(_ story: Story, id: String) -> Story {

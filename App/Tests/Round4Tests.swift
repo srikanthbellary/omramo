@@ -169,7 +169,10 @@ final class StoryFinishedTests: XCTestCase {
         let medium = try XCTUnwrap(all.first { $0.tier == .medium })
         let advanced = try XCTUnwrap(all.first { $0.tier == .advanced })
         let log = makeLog()
-        let model = ReaderModel(story: low, progress: ReadingProgressStore(fileURL: nil), log: log, catalog: all)
+        // One story a level, as the catalog was when this was written; with the round-5
+        // catalog the next story after a Low one is another Low one (see Round5Tests).
+        let three = [low, medium, advanced]
+        let model = ReaderModel(story: low, progress: ReadingProgressStore(fileURL: nil), log: log, catalog: three)
         XCTAssertEqual(model.nextStory?.id, medium.id)
         log.markFinished(medium.id)
         XCTAssertEqual(model.nextStory?.id, advanced.id)
@@ -248,8 +251,9 @@ final class Round4LaunchTests: XCTestCase {
 
     func testTheTaglineSplitsAtTheHinge() {
         let halves = SplashView.taglineHalves()
-        XCTAssertEqual(halves.leading, "A magical book")
-        XCTAssertEqual(halves.trailing, "that you read.")
+        // Round 5: the tagline is "Turn the page. See the world." (one sentence a pane).
+        XCTAssertEqual(halves.leading, "Turn the page.")
+        XCTAssertEqual(halves.trailing, "See the world.")
         XCTAssertEqual(halves.leading + " " + halves.trailing, Brand.tagline)
         // A tagline with no such place stays whole, on the leading pane.
         let whole = SplashView.taglineHalves("Stories from everywhere.")

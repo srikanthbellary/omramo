@@ -19,6 +19,13 @@ import UIKit
 /// Every shot starts from `-OmramoResetState` (empty, in-memory stores), so page 1 of each
 /// story is what is photographed, whatever was read on that simulator before. Each waits for
 /// a known accessibility identifier, then a fixed moment for the transition to come to rest.
+///
+/// Round 5 (the stories round) adds the `testR5…` methods, which write `r5-*.png`: the library
+/// with the bigger catalog (all levels, and the Low level's grid) and every new story's reader
+/// — its first page and one page of each later scene — on an iPad (landscape and portrait)
+/// and an iPhone (portrait and the folded posture), plus one new tap-to-see card, one landmark
+/// card, one character card and one story-finished moment. The round-4 methods above them
+/// still write the `r4-*.png` set.
 final class ShotTests: XCTestCase {
     private var shotDir: String {
         ProcessInfo.processInfo.environment["OMRAMO_SHOT_DIR"] ?? "/tmp/omramo-shots"
@@ -192,6 +199,513 @@ final class ShotTests: XCTestCase {
         )
     }
 
+    // MARK: Round 5 — the bigger catalog and the new stories (`r5-*.png`)
+
+    /// The stories added in round 5, batch 1, with the short name used in file names. Later
+    /// batches add theirs here.
+    private static let newStories: [(id: String, short: String)] = [
+        ("shipwrecked-sailor", "sailor"),
+        ("tongue-cut-sparrow", "sparrow"),
+        ("old-man-who-moved-mountains", "mountains"),
+        ("why-possums-tail-is-bare", "possum"),
+        ("the-snow-house", "snow-house"),
+        ("peasant-and-bear", "peasant-bear"),
+        ("bremen-town-musicians", "bremen"),
+        ("north-wind-and-sun", "wind-sun"),
+        ("why-sun-and-moon-live-in-sky", "sun-moon"),
+        ("lion-and-hare", "lion-hare"),
+    ]
+
+    /// Pages photographed for each new story besides page 1: with four scenes over 12 to 14
+    /// pages, these land in the later scenes.
+    private static let laterPages = [5, 9, 12]
+
+    func testR5LibraryPortrait() throws {
+        try capture(arguments: [], orientation: .portrait, waitFor: "library.shelf.low", name: "library-portrait", round: "r5")
+    }
+
+    func testR5LibraryLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        try capture(arguments: [], orientation: .landscapeLeft, waitFor: "library.shelf.low", name: "library-landscape", round: "r5")
+    }
+
+    func testR5LibraryWithReadingPortrait() throws {
+        try capture(arguments: ["-OmramoDemoState"], reset: false, orientation: .portrait, waitFor: "library.shelf.low", name: "library-reading-portrait", round: "r5")
+    }
+
+    func testR5LibraryWithReadingLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        try capture(arguments: ["-OmramoDemoState"], reset: false, orientation: .landscapeLeft, waitFor: "library.shelf.low", name: "library-reading-landscape", round: "r5")
+    }
+
+    func testR5LibraryFoldedPosture() throws {
+        try XCTSkipIf(isPad, "the folded-posture shot is taken on an iPhone")
+        try capture(arguments: ["-OmramoPosture", "folded"], orientation: .portrait, waitFor: "library.shelf.low", name: "library-folded", round: "r5")
+    }
+
+    func testR5LibraryUnfoldedPosture() throws {
+        try XCTSkipIf(isPad, "the unfolded-posture shots are taken on an iPhone")
+        try capture(arguments: ["-OmramoPosture", "unfolded"], orientation: .landscapeLeft, waitFor: "library.shelf.low", name: "library-unfolded", round: "r5")
+    }
+
+    /// The Low level on its own: the grid of all eleven covers.
+    func testR5LibraryLowLevelPortrait() throws {
+        try capture(arguments: [], orientation: .portrait, waitFor: "library.shelf.low", name: "library-low-portrait", round: "r5", tapping: "Level: Low")
+    }
+
+    func testR5LibraryLowLevelLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        try capture(arguments: [], orientation: .landscapeLeft, waitFor: "library.shelf.low", name: "library-low-landscape", round: "r5", tapping: "Level: Low")
+    }
+
+    /// Page 1 of every new story: iPad and iPhone, held upright.
+    func testR5ReadersPortrait() throws {
+        for story in ShotTests.newStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id],
+                orientation: .portrait,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-portrait",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every new story on an iPad held sideways (two panes).
+    func testR5ReadersLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        for story in ShotTests.newStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id],
+                orientation: .landscapeLeft,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-landscape",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every new story in the folded posture on an iPhone (the picture band).
+    func testR5ReadersFoldedPosture() throws {
+        try XCTSkipIf(isPad, "the folded-posture shots are taken on an iPhone")
+        for story in ShotTests.newStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id, "-OmramoPosture", "folded"],
+                orientation: .portrait,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-folded",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every new story as the unfolded Duo on an iPhone held sideways.
+    func testR5ReadersUnfoldedPosture() throws {
+        try XCTSkipIf(isPad, "the unfolded-posture shots are taken on an iPhone")
+        for story in ShotTests.newStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id, "-OmramoPosture", "unfolded"],
+                orientation: .landscapeLeft,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-unfolded",
+                round: "r5"
+            )
+        }
+    }
+
+    /// The later scenes of every new story: an iPad sideways, an iPhone upright.
+    func testR5LaterScenes() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        for story in ShotTests.newStories {
+            for page in ShotTests.laterPages {
+                try capture(
+                    arguments: ["-OmramoOpenStory", story.id, "-OmramoOpenPage", String(page)],
+                    orientation: orientation,
+                    waitFor: "reader.next",
+                    name: "reader-\(story.short)-p\(page)-\(side)",
+                    round: "r5"
+                )
+            }
+        }
+    }
+
+    /// The later scenes of every new story on an iPad held upright (the tall recomposition).
+    func testR5LaterScenesTall() throws {
+        try XCTSkipUnless(isPad, "the tall shots are taken on an iPad")
+        for story in ShotTests.newStories {
+            for page in ShotTests.laterPages {
+                try capture(
+                    arguments: ["-OmramoOpenStory", story.id, "-OmramoOpenPage", String(page)],
+                    orientation: .portrait,
+                    waitFor: "reader.next",
+                    name: "reader-\(story.short)-p\(page)-portrait",
+                    round: "r5"
+                )
+            }
+        }
+    }
+
+    /// One new tap-to-see card, one new landmark card and one new character card.
+    func testR5Cards() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        let cards: [(story: String, card: String, name: String)] = [
+            ("tongue-cut-sparrow", "bamboo-grove", "tap-to-see-bamboo-grove"),
+            ("the-snow-house", "nunavut", "tap-to-see-nunavut"),
+            ("bremen-town-musicians", "bremen-moment", "landmark-bremen"),
+            ("tongue-cut-sparrow", "himeji-moment", "landmark-himeji"),
+            ("peasant-and-bear", "bear", "character-bear"),
+            ("why-possums-tail-is-bare", "possum", "character-possum"),
+        ]
+        for card in cards {
+            try capture(
+                arguments: ["-OmramoOpenStory", card.story, "-OmramoOpenCard", card.card],
+                orientation: orientation,
+                waitFor: "card.\(card.card)",
+                name: "\(card.name)-\(side)",
+                round: "r5"
+            )
+        }
+    }
+
+    /// The story-finished moment of one new story, with its polished moral.
+    func testR5Finished() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        try capture(
+            arguments: ["-OmramoOpenFinished", "the-snow-house"],
+            orientation: orientation,
+            waitFor: "finished.moment",
+            name: "finished-snow-house-\(side)",
+            round: "r5"
+        )
+    }
+
+    /// The splash with the round-5 tagline.
+    func testR5Splash() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        try capture(arguments: ["-OmramoShowSplash"], orientation: orientation, waitFor: "splash", name: "splash-\(side)", round: "r5")
+    }
+
+    // MARK: Round 5, batch 2 — the Medium stories (`r5-*.png`)
+
+    /// The ten Medium stories added in batch 2, with the short name used in file names.
+    private static let mediumStories: [(id: String, short: String)] = [
+        ("tiger-brahman-jackal", "tiger"),
+        ("khufu-and-the-magician", "khufu"),
+        ("bamboo-cutter-and-moon-child", "moon-child"),
+        ("herd-boy-and-weaving-maiden", "weaver"),
+        ("iktomi-and-the-muskrat", "iktomi"),
+        ("long-day-at-fish-camp", "fish-camp"),
+        ("sadko", "sadko"),
+        ("androcles-and-the-lion", "androcles"),
+        ("horse-and-the-olive", "olive"),
+        ("sindbad-second-voyage", "sindbad"),
+    ]
+
+    /// Pages photographed for each Medium story besides page 1: with four scenes over nine or
+    /// ten pages, these land in the later scenes.
+    private static let mediumLaterPages = [4, 7, 9]
+
+    /// The Medium level on its own: the grid of all eleven covers.
+    func testR5LibraryMediumLevelPortrait() throws {
+        try capture(arguments: [], orientation: .portrait, waitFor: "library.shelf.low", name: "library-medium-portrait", round: "r5", tapping: "Level: Medium")
+    }
+
+    func testR5LibraryMediumLevelLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        try capture(arguments: [], orientation: .landscapeLeft, waitFor: "library.shelf.low", name: "library-medium-landscape", round: "r5", tapping: "Level: Medium")
+    }
+
+    /// Page 1 of every Medium story: iPad and iPhone, held upright.
+    func testR5MediumReadersPortrait() throws {
+        for story in ShotTests.mediumStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id],
+                orientation: .portrait,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-portrait",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every Medium story on an iPad held sideways (two panes).
+    func testR5MediumReadersLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        for story in ShotTests.mediumStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id],
+                orientation: .landscapeLeft,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-landscape",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every Medium story in the folded posture on an iPhone (the picture band).
+    func testR5MediumReadersFoldedPosture() throws {
+        try XCTSkipIf(isPad, "the folded-posture shots are taken on an iPhone")
+        for story in ShotTests.mediumStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id, "-OmramoPosture", "folded"],
+                orientation: .portrait,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-folded",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every Medium story as the unfolded Duo on an iPhone held sideways.
+    func testR5MediumReadersUnfoldedPosture() throws {
+        try XCTSkipIf(isPad, "the unfolded-posture shots are taken on an iPhone")
+        for story in ShotTests.mediumStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id, "-OmramoPosture", "unfolded"],
+                orientation: .landscapeLeft,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-unfolded",
+                round: "r5"
+            )
+        }
+    }
+
+    /// The later scenes of every Medium story: an iPad sideways, an iPhone upright.
+    func testR5MediumLaterScenes() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        for story in ShotTests.mediumStories {
+            for page in ShotTests.mediumLaterPages {
+                try capture(
+                    arguments: ["-OmramoOpenStory", story.id, "-OmramoOpenPage", String(page)],
+                    orientation: orientation,
+                    waitFor: "reader.next",
+                    name: "reader-\(story.short)-p\(page)-\(side)",
+                    round: "r5"
+                )
+            }
+        }
+    }
+
+    /// The later scenes of every Medium story on an iPad held upright (the tall recomposition).
+    func testR5MediumLaterScenesTall() throws {
+        try XCTSkipUnless(isPad, "the tall shots are taken on an iPad")
+        for story in ShotTests.mediumStories {
+            for page in ShotTests.mediumLaterPages {
+                try capture(
+                    arguments: ["-OmramoOpenStory", story.id, "-OmramoOpenPage", String(page)],
+                    orientation: .portrait,
+                    waitFor: "reader.next",
+                    name: "reader-\(story.short)-p\(page)-portrait",
+                    round: "r5"
+                )
+            }
+        }
+    }
+
+    /// Batch 2 cards: tap-to-see, landmarks (a standing one, a natural one, a lost wonder and
+    /// the unproven one) and character cards, from a light story and a dark one.
+    func testR5MediumCards() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        let cards: [(story: String, card: String, name: String)] = [
+            ("long-day-at-fish-camp", "drying-rack", "tap-to-see-drying-rack"),
+            ("sadko", "gusli", "tap-to-see-gusli"),
+            ("khufu-and-the-magician", "pyramid-moment", "landmark-pyramid"),
+            ("bamboo-cutter-and-moon-child", "fuji-moment", "landmark-fuji"),
+            ("horse-and-the-olive", "zeus-moment", "landmark-zeus"),
+            ("sindbad-second-voyage", "baghdad-moment", "landmark-hanging-gardens"),
+            ("iktomi-and-the-muskrat", "iktomi", "character-iktomi"),
+            ("herd-boy-and-weaving-maiden", "zhinu", "character-zhinu"),
+        ]
+        for card in cards {
+            try capture(
+                arguments: ["-OmramoOpenStory", card.story, "-OmramoOpenCard", card.card],
+                orientation: orientation,
+                waitFor: "card.\(card.card)",
+                name: "\(card.name)-\(side)",
+                round: "r5"
+            )
+        }
+    }
+
+    /// The story-finished moment of two Medium stories (a light one and a dark one).
+    func testR5MediumFinished() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        for story in [("long-day-at-fish-camp", "fish-camp"), ("sadko", "sadko")] {
+            try capture(
+                arguments: ["-OmramoOpenFinished", story.0],
+                orientation: orientation,
+                waitFor: "finished.moment",
+                name: "finished-\(story.1)-\(side)",
+                round: "r5"
+            )
+        }
+    }
+
+    // MARK: Round 5, batch 3 — the Advanced stories (`r5-*.png`)
+
+    /// The nine Advanced stories added in batch 3, with the short name used in file names.
+    private static let advancedStories: [(id: String, short: String)] = [
+        ("savitri-and-satyavan", "savitri"),
+        ("eloquent-peasant", "eloquent-peasant"),
+        ("ballad-of-mulan", "mulan"),
+        ("the-two-sisters", "two-sisters"),
+        ("woman-who-raised-a-bear", "bear-woman"),
+        ("firebird-and-horse-of-power", "firebird"),
+        ("daedalus-and-icarus", "icarus"),
+        ("the-griots-apprentice", "griot"),
+        ("zal-and-the-simurgh", "zal"),
+    ]
+
+    /// Pages photographed for each Advanced story besides page 1: with four scenes over 14
+    /// pages in three parts, these land in the later scenes.
+    private static let advancedLaterPages = [5, 10, 13]
+
+    /// The Advanced level on its own: the grid of all ten covers.
+    func testR5LibraryAdvancedLevelPortrait() throws {
+        try capture(arguments: [], orientation: .portrait, waitFor: "library.shelf.low", name: "library-advanced-portrait", round: "r5", tapping: "Level: Advanced")
+    }
+
+    func testR5LibraryAdvancedLevelLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        try capture(arguments: [], orientation: .landscapeLeft, waitFor: "library.shelf.low", name: "library-advanced-landscape", round: "r5", tapping: "Level: Advanced")
+    }
+
+    /// Page 1 of every Advanced story: iPad and iPhone, held upright (text on one pane).
+    func testR5AdvancedReadersPortrait() throws {
+        for story in ShotTests.advancedStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id],
+                orientation: .portrait,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-portrait",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every Advanced story on an iPad held sideways (text on both panes).
+    func testR5AdvancedReadersLandscape() throws {
+        try XCTSkipUnless(isPad, "landscape shots are taken on an iPad")
+        for story in ShotTests.advancedStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id],
+                orientation: .landscapeLeft,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-landscape",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every Advanced story in the folded posture on an iPhone (the picture band).
+    func testR5AdvancedReadersFoldedPosture() throws {
+        try XCTSkipIf(isPad, "the folded-posture shots are taken on an iPhone")
+        for story in ShotTests.advancedStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id, "-OmramoPosture", "folded"],
+                orientation: .portrait,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-folded",
+                round: "r5"
+            )
+        }
+    }
+
+    /// Page 1 of every Advanced story as the unfolded Duo on an iPhone held sideways.
+    func testR5AdvancedReadersUnfoldedPosture() throws {
+        try XCTSkipIf(isPad, "the unfolded-posture shots are taken on an iPhone")
+        for story in ShotTests.advancedStories {
+            try capture(
+                arguments: ["-OmramoOpenStory", story.id, "-OmramoPosture", "unfolded"],
+                orientation: .landscapeLeft,
+                waitFor: "reader.next",
+                name: "reader-\(story.short)-unfolded",
+                round: "r5"
+            )
+        }
+    }
+
+    /// The later scenes of every Advanced story: an iPad sideways, an iPhone upright.
+    func testR5AdvancedLaterScenes() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        for story in ShotTests.advancedStories {
+            for page in ShotTests.advancedLaterPages {
+                try capture(
+                    arguments: ["-OmramoOpenStory", story.id, "-OmramoOpenPage", String(page)],
+                    orientation: orientation,
+                    waitFor: "reader.next",
+                    name: "reader-\(story.short)-p\(page)-\(side)",
+                    round: "r5"
+                )
+            }
+        }
+    }
+
+    /// The later scenes of every Advanced story on an iPad held upright (the tall recomposition).
+    func testR5AdvancedLaterScenesTall() throws {
+        try XCTSkipUnless(isPad, "the tall shots are taken on an iPad")
+        for story in ShotTests.advancedStories {
+            for page in ShotTests.advancedLaterPages {
+                try capture(
+                    arguments: ["-OmramoOpenStory", story.id, "-OmramoOpenPage", String(page)],
+                    orientation: .portrait,
+                    waitFor: "reader.next",
+                    name: "reader-\(story.short)-p\(page)-portrait",
+                    round: "r5"
+                )
+            }
+        }
+    }
+
+    /// Batch 3 cards: tap-to-see, landmarks (a framed one, a natural one, a lost wonder and a
+    /// natural place) and character cards.
+    func testR5AdvancedCards() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        let cards: [(story: String, card: String, name: String)] = [
+            ("woman-who-raised-a-bear", "kayak", "tap-to-see-kayak"),
+            ("the-griots-apprentice", "balafon", "tap-to-see-balafon"),
+            ("savitri-and-satyavan", "angkor-moment", "landmark-angkor"),
+            ("daedalus-and-icarus", "knossos-moment", "landmark-knossos"),
+            ("zal-and-the-simurgh", "mausoleum-moment", "landmark-mausoleum"),
+            ("woman-who-raised-a-bear", "icefjord-moment", "landmark-icefjord"),
+            ("zal-and-the-simurgh", "simurgh", "character-simurgh"),
+            ("ballad-of-mulan", "mulan", "character-mulan"),
+        ]
+        for card in cards {
+            try capture(
+                arguments: ["-OmramoOpenStory", card.story, "-OmramoOpenCard", card.card],
+                orientation: orientation,
+                waitFor: "card.\(card.card)",
+                name: "\(card.name)-\(side)",
+                round: "r5"
+            )
+        }
+    }
+
+    /// The story-finished moment of two Advanced stories (a light one and the dark one).
+    func testR5AdvancedFinished() throws {
+        let orientation: UIDeviceOrientation = isPad ? .landscapeLeft : .portrait
+        let side = isPad ? "landscape" : "portrait"
+        for story in [("daedalus-and-icarus", "icarus"), ("firebird-and-horse-of-power", "firebird")] {
+            try capture(
+                arguments: ["-OmramoOpenFinished", story.0],
+                orientation: orientation,
+                waitFor: "finished.moment",
+                name: "finished-\(story.1)-\(side)",
+                round: "r5"
+            )
+        }
+    }
+
     // MARK: Helpers
 
     private func reader(_ storyID: String, _ short: String, _ orientation: UIDeviceOrientation) throws {
@@ -242,7 +756,9 @@ final class ShotTests: XCTestCase {
         reset: Bool = true,
         orientation: UIDeviceOrientation,
         waitFor identifier: String,
-        name: String
+        name: String,
+        round: String = "r4",
+        tapping label: String? = nil
     ) throws {
         XCUIDevice.shared.orientation = orientation
         let app = XCUIApplication()
@@ -251,12 +767,18 @@ final class ShotTests: XCTestCase {
 
         let landmark = app.descendants(matching: .any).matching(identifier: identifier).firstMatch
         XCTAssertTrue(landmark.waitForExistence(timeout: 20), "\(identifier) never appeared for \(name)")
+        if let label {
+            // A control to press first (a level of the library's filter), found by its label.
+            let control = app.buttons[label].firstMatch
+            XCTAssertTrue(control.waitForExistence(timeout: 5), "no button “\(label)” for \(name)")
+            control.tap()
+        }
         // Art, the rotation, the splash and any transition come to rest.
         Thread.sleep(forTimeInterval: settle)
 
         try FileManager.default.createDirectory(atPath: shotDir, withIntermediateDirectories: true)
         let data = XCUIScreen.main.screenshot().pngRepresentation
-        let url = URL(fileURLWithPath: shotDir).appendingPathComponent("r4-\(device)-\(name).png")
+        let url = URL(fileURLWithPath: shotDir).appendingPathComponent("\(round)-\(device)-\(name).png")
         try data.write(to: url)
         app.terminate()
     }

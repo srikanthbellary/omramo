@@ -1,0 +1,478 @@
+{
+  "id": "why-sun-and-moon-live-in-sky",
+  "title": "Why the Sun and the Moon Live in the Sky",
+  "tier": "low",
+  "region": {
+    "id": "african",
+    "culture": "Efik",
+    "place": "Calabar and the Cross River, south-eastern Nigeria",
+    "label": "Efik · Nigeria",
+    "pin": {
+      "lat": 5,
+      "lon": 8.3
+    },
+    "pinColor": "#FF9F1C"
+  },
+  "setting": {
+    "period": "An Efik story from the Cross River, told for a very long time"
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Efik folk tale (a “why” story)",
+    "sources": [
+      {
+        "author": "Elphinstone Dayrell",
+        "title": "Folk Stories from Southern Nigeria, West Africa (story XVI, “Why the Sun and the Moon live in the Sky”)",
+        "publisher": "Longmans, Green and Co.",
+        "year": 1910,
+        "gutenbergId": 34655,
+        "url": "https://www.gutenberg.org/ebooks/34655",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Efik tale, written for Omramo; it does not use the wording of the cited edition. The cited edition was written down by Elphinstone Dayrell, a colonial district officer, and speaks of “natives”; our retelling drops that voice entirely. The cited edition is in the US public domain (published before 1931); other territories not verified (Dayrell’s death year not verified). Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Living oral tradition (Efik); the only source is a colonial-era collection. An Efik reader should confirm tone, names and details.",
+    "community": "Efik reader",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Cross River country around Calabar in south-eastern Nigeria, where land, river and sea meet, and where the tide comes up the shore and goes back twice a day.",
+      "factCards": [
+        "cross-river",
+        "tide"
+      ]
+    },
+    "culture": {
+      "lesson": "Visiting and welcoming guests; a family building a compound of houses round a yard; “why” stories, which the Efik and many other peoples tell to explain the world.",
+      "factCards": [
+        "compound",
+        "cross-river"
+      ]
+    },
+    "moral": {
+      "lesson": "Think ahead before you make a big promise. The Sun is a kind and generous host, but he promises before he asks how many guests are coming.",
+      "reflectionQuestion": "What would you have asked the Water before you said yes?"
+    }
+  },
+  "moral": "Think ahead before you make a big promise.",
+  "theme": {
+    "textColor": "#12303A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "The Sun and the Moon sit on the thatched roof of their house while shining water full of fish rises all around them."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "sun",
+      "name": "the Sun",
+      "color": "#A64B12",
+      "chipBackground": "#FFE2A8",
+      "faceAlt": "The Sun, a smiling man with a golden glow.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sun",
+        "traits": [
+          {
+            "text": "Warm and generous",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Loves a visit",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Promises too fast",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He is a kind friend and a happy host. He says yes first and thinks about it afterwards.",
+        "portraitAlt": "The Sun, a smiling man with a golden glow, holding out his arms in welcome.",
+        "background": [
+          "#FFD35A",
+          "#FFAE45",
+          "#FF8A4D"
+        ]
+      }
+    },
+    {
+      "id": "moon",
+      "name": "the Moon",
+      "color": "#3F4C9A",
+      "chipBackground": "#E3E6FA",
+      "faceAlt": "The Moon, a calm woman with a soft silver glow.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Moon",
+        "traits": [
+          {
+            "text": "Calm and steady",
+            "fill": "#E3E6FA",
+            "ink": "#2F3A80"
+          },
+          {
+            "text": "A bright smile",
+            "fill": "#FFF1C4",
+            "ink": "#8A5A00"
+          },
+          {
+            "text": "Asks good questions",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "She is the Sun’s wife. She builds beside him, wall after wall. When things go wrong, she does not fuss.",
+        "portraitAlt": "The Moon, a calm woman with a soft silver glow, smiling with a bundle of palm leaves in her arms.",
+        "background": [
+          "#C9D2F7",
+          "#9AA9E8",
+          "#6C7BD0"
+        ]
+      }
+    },
+    {
+      "id": "water",
+      "name": "the Water",
+      "color": "#0F6470",
+      "chipBackground": "#BDEBEF",
+      "faceAlt": "The Water, a broad kind face made of blue-green waves.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Water",
+        "traits": [
+          {
+            "text": "Deep, slow voice",
+            "fill": "#CFF0F2",
+            "ink": "#0B5560"
+          },
+          {
+            "text": "Never comes alone",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Very polite",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          }
+        ],
+        "body": "He is the Sun’s great friend. Fish, crabs and prawns go everywhere with him. He always asks before he comes in.",
+        "portraitAlt": "The Water, a broad kind face in a rolling blue-green wave, with small silver fish swimming in it.",
+        "background": [
+          "#8FE0DC",
+          "#3FB6BE",
+          "#147F92"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "cross-river",
+      "kind": "place",
+      "title": "Cross River",
+      "line": "A wide river in Nigeria that flows into the sea.",
+      "cultureNote": {
+        "label": "The Efik tell",
+        "text": "The Efik people live beside this river, in and around the city of Calabar. This story was written down there long ago."
+      },
+      "pictureAlt": "A wide calm river reaching the sea, with mangrove trees standing on tall roots along its bank.",
+      "background": "#0E5F66"
+    },
+    {
+      "id": "compound",
+      "kind": "object",
+      "title": "A compound",
+      "line": "A family’s houses, built close together around one shared yard.",
+      "cultureNote": {
+        "label": "In southern Nigeria",
+        "text": "Many families live this way, with room for grandparents, cousins and guests. Making a visitor welcome matters a great deal."
+      },
+      "pictureAlt": "Earth-walled houses with palm-thatch roofs standing around a swept yard.",
+      "background": "#8A4A22"
+    },
+    {
+      "id": "tide",
+      "kind": "idea",
+      "title": "The tide",
+      "line": "Twice a day the sea climbs up the shore and slides back.",
+      "cultureNote": {
+        "label": "Near Calabar",
+        "text": "Here the tide pushes a long way up the rivers. People who fish there watch for it every day."
+      },
+      "pictureAlt": "A wave sliding up a muddy shore towards mangrove roots, with a small crab at its edge.",
+      "background": "#14607A"
+    }
+  ],
+  "scenes": {
+    "scene-visit": {
+      "unfoldedAlt": "Where a wide river meets the sea, the Sun sits in a canoe beside the Water, a friendly face in the waves. Mangroves and palms line the shore.",
+      "foldedAlt": "The Sun in a canoe talks with the Water among the mangrove trees.",
+      "fallbackColors": [
+        "#BFEBEA",
+        "#FFF0B8",
+        "#2E9C8F"
+      ]
+    },
+    "scene-building": {
+      "unfoldedAlt": "The Sun and the Moon build a great compound: red earth walls, a wide swept yard and a big roof of palm thatch.",
+      "foldedAlt": "The Sun and the Moon tie palm thatch onto the roof of a new house.",
+      "fallbackColors": [
+        "#CDEEF2",
+        "#FFE9B0",
+        "#C9773E"
+      ]
+    },
+    "scene-flood": {
+      "unfoldedAlt": "On a bright day the Water flows in at the gate of the compound with fish and crabs, while the Sun and the Moon climb up onto the thatched roof.",
+      "foldedAlt": "The Sun and the Moon sit on the roof as water full of fish fills the yard.",
+      "fallbackColors": [
+        "#BCE8F2",
+        "#FFF1BC",
+        "#1E93A8"
+      ]
+    },
+    "scene-sky": {
+      "unfoldedAlt": "The Sun and the Moon sit high in a pale sky. Far below, calm wide water covers everything but the tip of a thatched roof and the tops of the palms.",
+      "foldedAlt": "The Sun and the Moon side by side in a pale sky above calm water.",
+      "fallbackColors": [
+        "#D9F0F2",
+        "#FFF4CF",
+        "#5FB7C2"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-visit",
+      "part": "part-1",
+      "paras": [
+        "^Long ago, <name:sun>the Sun</name> and <name:water>the Water</name> both lived on the earth.",
+        "They were great friends.",
+        "The Water’s home was down where the <tap:cross-river>wide river</tap> meets the sea. Mangrove trees stood there on long legs, with their toes in the mud.",
+        "Every few days the Sun paddled down in his canoe to visit."
+      ]
+    },
+    {
+      "scene": "scene-visit",
+      "part": "part-1",
+      "paras": [
+        "The two friends talked and laughed all afternoon. The Water’s laugh was deep, like waves rolling in.",
+        "But the Water never came to the Sun’s house. Not once.",
+        "So one day the Sun asked him. <say:sun*>“My friend, I visit you so often. Why do you never visit me?”</say>"
+      ]
+    },
+    {
+      "scene": "scene-visit",
+      "part": "part-1",
+      "paras": [
+        "<say:water*>“Ah,”</say> said the Water in his deep, slow voice. <say:water>“Your house is too small, my friend.”</say>",
+        "<say:water*>“I never go anywhere alone. My people come with me, and my people are many. We would push you right out of your own door.”</say>",
+        "The Sun laughed. But the Water was not joking."
+      ]
+    },
+    {
+      "scene": "scene-visit",
+      "part": "part-1",
+      "paras": [
+        "<say:water*>“If you want me to come,”</say> said the Water, <say:water>“build a big <tap:compound>compound</tap>. A very big one. Very big indeed!”</say>",
+        "<say:sun*>“I will!”</say> said the Sun at once. <say:sun>“I promise. I will build the biggest compound you ever saw.”</say>",
+        "He promised it quickly. He did not stop to ask how many people the Water had."
+      ]
+    },
+    {
+      "scene": "scene-building",
+      "part": "part-1",
+      "paras": [
+        "The Sun hurried home. His wife, <name:moon>the Moon</name>, met him at the door with a wide, bright smile.",
+        "<say:sun*>“The Water is coming to visit!”</say> he said. <say:sun>“We must build a compound big enough for all his people.”</say>",
+        "<say:moon*>“How many people?”</say> asked the Moon.",
+        "<say:sun*>“Many,”</say> said the Sun. <say:sun>“I forgot to ask.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-building",
+      "part": "part-1",
+      "paras": [
+        "<say:moon*>“Then we had better build it very big,”</say> said the Moon calmly.",
+        "So they began the very next morning. They pressed red earth into thick walls. They swept a yard as wide as a field.",
+        "They tied palm leaves into thatch for a great roof."
+      ]
+    },
+    {
+      "scene": "scene-building",
+      "part": "part-1",
+      "paras": [
+        "Day after day they built. Wall after wall, room after room, roof after roof.",
+        "At last it was done. It was bigger than the market. It was the biggest compound anyone had ever seen.",
+        "<say:sun*>“There,”</say> said the Sun, wiping his hands. <say:sun>“Room for everybody.”</say>",
+        "The Moon looked at the great empty yard. <say:moon*>“We shall see,”</say> she said."
+      ]
+    },
+    {
+      "scene": "scene-flood",
+      "part": "part-2",
+      "paras": [
+        "^The next morning, a deep voice called at the gate.",
+        "<say:water*>“Is it safe for me to come in?”</say>",
+        "<say:sun*>“Yes, come in, my friend!”</say> called the Sun.",
+        "<pop:1.3>Whoosh!</pop> In flowed the Water, cool and shining, across the yard. With him came little silver fish and crabs that walked sideways."
+      ]
+    },
+    {
+      "scene": "scene-flood",
+      "part": "part-2",
+      "paras": [
+        "More water came, and more. Soon it was as deep as the Sun’s knees.",
+        "Fish swam in at the door. A crab sat down on the Moon’s best stool.",
+        "<say:water*>“Is it still safe for me to come in?”</say> asked the Water.",
+        "<say:sun*>“Yes, yes, come in, my friend!”</say> said the Sun. He had promised, after all."
+      ]
+    },
+    {
+      "scene": "scene-flood",
+      "part": "part-2",
+      "paras": [
+        "In came bigger fish, and prawns with long whiskers, and more crabs than anyone could count.",
+        "The water rose as high as a tall man’s head.",
+        "The Sun and the Moon scrambled up onto the roof.",
+        "<say:water*>“My friend,”</say> rumbled the Water, <say:water>“do you still want my people to come in?”</say>"
+      ]
+    },
+    {
+      "scene": "scene-flood",
+      "part": "part-2",
+      "paras": [
+        "The Sun looked at the Moon. The Moon looked at the Sun.",
+        "It is hard to send away a guest you begged to come.",
+        "<say:sun*>“Yes,”</say> said the Sun, more quietly. <say:sun>“Come in, my friend.”</say>",
+        "So in came the rest of the Water’s people. Up went the water, over the walls, over the thatch, over the top of the roof."
+      ]
+    },
+    {
+      "scene": "scene-sky",
+      "part": "part-2",
+      "paras": [
+        "There was nowhere left to stand. So the Sun took the Moon’s hand, and up they went.",
+        "Up past the palm tops. Up past the birds. Up, up, <stretch>up</stretch> into the sky.",
+        "Far below, the Water spread out wide and calm. Only the tip of the roof showed.",
+        "<say:moon*>“Well,”</say> said the Moon, <say:moon>“there is plenty of room up here.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-sky",
+      "part": "part-2",
+      "paras": [
+        "And there they have lived ever since. The Sun shines from the sky by day. The Moon smiles down by night.",
+        "The Water still misses his friends. Twice a day he <tap:tide>creeps up the shore</tap> to see if they have come home.",
+        "Then, very politely, he goes away again."
+      ]
+    }
+  ],
+  "landmarks": [],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a traditional “why” story told by the Efik people",
+    "of Calabar and the Cross River, south-eastern Nigeria. It is not the wording of any earlier edition.",
+    "Documented source for the tale: Elphinstone Dayrell, “Folk Stories from Southern Nigeria, West Africa”",
+    "(London: Longmans, Green and Co., 1910), story XVI, Project Gutenberg ebook #34655,",
+    "https://www.gutenberg.org/ebooks/34655 (US public domain; other territories not verified).",
+    "Dayrell was a colonial district officer and his book speaks of “natives”. That voice is dropped entirely.",
+    "Project Gutenberg could not be reached while this draft was written (HTTP 503), so the retelling works from",
+    "the editor’s knowledge of the tale and the content plan; check it against the ebook before text review.",
+    "Our additions: the Moon’s lines, the canoe, the building details, the roof-top scene and the tide ending.",
+    "Softened: nobody is to blame and nobody is hurt; the Water warns the Sun and asks before he comes in.",
+    "Status: DRAFT. Text review pending. Cultural review (required: Efik reader) pending.",
+    "Source check, 18 Nov 2026 (read on the Project Gutenberg mirror gutenberg.pglaf.org; gutenberg.org itself was unreachable):",
+    "Dayrell (Longmans, Green and Co., London, 1910; introduction by Andrew Lang) does not say which people told story XVI. The Efik attribution follows docs/CONTENT_PLAN.md and the Calabar and Cross River setting of the collection; the Efik reader must confirm it.",
+    "Kept from the source: the Sun as husband and the Moon as wife, her smile, the Water's warning that the place must be very big, his asking whether it is safe to enter, the levels (knee, a man's head, the roof, over the roof) and the two sitting on the roof. Ours: the canoe, the building details, the Moon's lines, the named water creatures and the tide ending. Nobody is to blame and nobody is hurt."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#0E5F66",
+      "shade": "#1E8F96",
+      "mid": "#5FB7C2",
+      "light": "#D9F0F2",
+      "glow": "#FFE9A8",
+      "accent": "#E8742A",
+      "mood": "Bright, warm and wet: blue-green water, red earth, golden thatch, a pale calm sky. Comic and gentle, never stormy."
+    },
+    "light": "Clear daytime in every scene (mid-morning to early afternoon); ONE warm light from the upper left; the sky stays pale so the dark ink reads on every page.",
+    "world": [
+      "The Cross River estuary near Calabar: flat, low, green country where a very wide brown-green river opens into the sea; mud banks, creeks and still water.",
+      "Mangroves with arching stilt roots (“long legs”) at the water’s edge; oil palms and raffia palms behind them; thick green forest far off. Do not draw nipa palm (a 20th-century arrival) or desert or savanna.",
+      "Houses are rectangular, with walls of red-brown earth over a frame of sticks and pitched roofs of palm-leaf thatch mats, set round a swept earth yard. Never round grass “huts”. (An Efik reader should confirm the house shapes.)",
+      "A dugout canoe with a pointed paddle, drawn up on mud or afloat. Clay water pots, calabash bowls, a low carved wooden stool, woven baskets and fish traps.",
+      "Water creatures true to the place: small silver fish, prawns with long whiskers, fiddler crabs, mudskippers on the mud; egrets and a kingfisher.",
+      "Dress: plain wrappers of cloth in solid colours or simple stripes. Keep it simple and dignified; an Efik reader should confirm the dress.",
+      "AVOID: nsibidi signs and anything of the Ekpe society (masks, regalia, staffs) — these are society-owned; no “tribal” masks, face paint, bones, spears, grass skirts or animal skins.",
+      "AVOID: anachronisms (no Victorian-style gowns, no metal roofs, no outboard motors) and any frightening flood imagery: the water is clear, bright and friendly, with no waves crashing and nothing swept away.",
+      "The Sun, the Moon and the Water are people in this story, as in the Efik telling. They are never drawn as a cartoon sun-disc with a face or a crescent with a nose."
+    ],
+    "characters": {
+      "sun": "A big, warm, cheerful man with deep brown skin and a round, open face; a soft golden glow all round his head and shoulders (the glow is how we know he is the Sun). An orange-gold wrapper. Wide gestures, always welcoming.",
+      "moon": "A calm, graceful woman with deep brown skin and a wide bright smile; a soft silver-white glow round her head. A pale blue-white wrapper and head tie. Still hands, steady eyes, a little amused.",
+      "water": "A great flowing friend: a broad, kind face and big rounded shoulders shaped out of blue-green water, with no hard edges, so that he is part of the river. Small silver fish and a crab or two always swim inside him. Heavy-lidded, gentle eyes."
+    },
+    "scenes": {
+      "scene-visit": {
+        "unfolded": "Far: the pale sky and the bright line where the wide river meets the sea. Middle: a mud bank with mangroves on stilt roots and two or three palms, on the trailing (right) half. Near, low across the right: the Sun sitting in his dugout canoe, leaning towards the Water, whose broad face rises from the river beside him. The leading (left) pane’s upper two thirds are calm pale sky over flat water.",
+        "folded": "The Sun’s glowing face in the middle of the band, in his canoe, with the Water’s face rising from the river just below and beside him and mangrove roots framing the edge."
+      },
+      "scene-building": {
+        "unfolded": "Far: pale sky, a line of palms. Middle, on the trailing half: the great compound going up — long red earth walls, a wide swept yard, one great pitched roof half covered in golden thatch. Near: the Moon passing a bundle of palm leaves up to the Sun on a ladder. The leading pane’s upper two thirds are calm pale sky above a low wall and the yard.",
+        "folded": "The Sun and the Moon face to face in the middle, tying thatch onto the roof, his gold glow and her silver glow side by side, with the red wall below them."
+      },
+      "scene-flood": {
+        "unfolded": "Bright daytime. Far: pale sky and palm tops. Middle, on the trailing half: the compound’s gate with the Water pouring gently through it, his face in the flow, clear blue-green water filling the yard, silver fish, prawns and sideways crabs everywhere, a wooden stool afloat with a crab on it. Near, right: the Sun and the Moon climbing onto the thatched roof, surprised but not afraid. The leading pane’s upper two thirds are pale sky over the far wall and still water.",
+        "folded": "The Sun and the Moon sitting on the roof ridge in the middle of the band, looking down, with shining water and fish rising below them and the Water’s friendly face at the bottom."
+      },
+      "scene-sky": {
+        "unfolded": "A PALE, wide, calm sky filling most of the picture. High on the trailing half: the Sun and the Moon sitting side by side in the sky, hand in hand, each with their glow. Low across both panes: calm wide water to the horizon, with only the tip of the thatched roof and a few palm tops showing, and the Water’s face small and peaceful in the ripples. The leading pane’s upper two thirds are empty pale sky.",
+        "folded": "The Sun’s and the Moon’s faces together in the middle of the band, gold and silver glows touching, with a strip of calm water and one palm top at the very bottom."
+      }
+    },
+    "pictures": {
+      "cross-river": "One centred subject: the wide river opening into the sea, seen from a little above, with a fringe of mangroves on stilt roots along the near bank. No people, no boats.",
+      "compound": "One centred subject: a family compound — three or four rectangular earth-walled houses with palm-thatch roofs round a swept yard, one clay pot by a door. No people.",
+      "tide": "One centred subject: the edge of the sea sliding up a muddy shore towards mangrove roots, a wet line on the mud showing how far it comes, one small crab at the water’s edge."
+    },
+    "portraits": {
+      "sun": "Head and shoulders, three-quarter view, laughing, arms opening in welcome; golden glow behind him; warm yellow-to-orange background.",
+      "moon": "Head and shoulders, calm wide smile, a bundle of palm leaves in her arms; silver glow behind her; soft blue-violet background.",
+      "water": "His broad kind face and rounded shoulders rising out of a rolling blue-green wave, two silver fish and a small crab swimming in him; teal background."
+    },
+    "cover": "The Sun and the Moon sitting close together on the ridge of their thatched roof, in the middle of the picture, looking down with round eyes as bright water full of little fish and crabs rises around the house; pale sky above; the Water’s friendly face in the ripples below.",
+    "landmarks": {}
+  }
+}

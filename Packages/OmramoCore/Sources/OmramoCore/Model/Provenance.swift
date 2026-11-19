@@ -84,6 +84,32 @@ public struct CulturalReview: Codable, Hashable, Sendable {
     public var by: String?
     public var date: String?
     public var notes: String?
+
+    /// The words of the flag a story carries while a required review is open.
+    public static let releaseFlag = "Needs cultural review before release"
+
+    /// True while the story is flagged "needs cultural review before release": a required
+    /// review that has not been approved. The story must not ship in this state
+    /// (`StoryValidator` in release mode refuses it).
+    public var needsReviewBeforeRelease: Bool {
+        level == .required && status != .approved
+    }
+
+    /// The flag in one line for editors, e.g. "Needs cultural review before release —
+    /// Cherokee consultant: Indigenous story." Nil when the story is not flagged.
+    public var releaseFlagLine: String? {
+        guard needsReviewBeforeRelease else { return nil }
+        var line = CulturalReview.releaseFlag
+        let who = (community ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        let why = (reason ?? "").trimmingCharacters(in: .whitespacesAndNewlines)
+        if !who.isEmpty {
+            line += " — " + who
+        }
+        if !why.isEmpty {
+            line += ": " + why
+        }
+        return line
+    }
 }
 
 /// What a story teaches. All three pillars are required.

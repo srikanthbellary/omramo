@@ -36,6 +36,7 @@ public enum ValidationCode: String, CaseIterable, Hashable, Sendable {
     case provenanceIncomplete = "provenance-incomplete"
     case originalIncomplete = "original-incomplete"
     case culturalReviewNoReason = "cultural-review-no-reason"
+    case culturalReviewNoCommunity = "cultural-review-no-community"
     case culturalReviewNotApproved = "cultural-review-not-approved"
     case reviewPending = "review-pending"
     case educationIncomplete = "education-incomplete"

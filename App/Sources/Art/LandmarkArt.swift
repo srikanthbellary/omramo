@@ -29,6 +29,75 @@ enum LandmarkArt {
             painter = { g in LandmarkArt.paintAsante(&g) }
         case "tokyo-skytree":
             painter = { g in LandmarkArt.paintSkytree(&g) }
+        // Round 5, batch 1 (App/Sources/Art/Landmarks/).
+        case "sydney-opera-house":
+            painter = { g in LandmarkArt.paintSydneyOperaHouse(&g) }
+        case "himeji-castle":
+            painter = { g in LandmarkArt.paintHimejiCastle(&g) }
+        case "great-wall-of-china":
+            painter = { g in LandmarkArt.paintGreatWall(&g) }
+        case "machu-picchu":
+            painter = { g in LandmarkArt.paintMachuPicchu(&g) }
+        case "hagia-sophia":
+            painter = { g in LandmarkArt.paintHagiaSophia(&g) }
+        case "saint-basils-cathedral":
+            painter = { g in LandmarkArt.paintSaintBasils(&g) }
+        case "bremen-town-hall-roland":
+            painter = { g in LandmarkArt.paintBremenRoland(&g) }
+        case "colossus-of-rhodes":
+            painter = { g in LandmarkArt.paintColossus(&g) }
+        case "statue-of-liberty":
+            painter = { g in LandmarkArt.paintStatueOfLiberty(&g) }
+        case "petra":
+            painter = { g in LandmarkArt.paintPetra(&g) }
+        // Round 5, batch 2.
+        case "great-pyramid-giza":
+            painter = { g in LandmarkArt.paintGreatPyramid(&g) }
+        case "chichen-itza":
+            painter = { g in LandmarkArt.paintChichenItza(&g) }
+        case "mount-fuji":
+            painter = { g in LandmarkArt.paintMountFuji(&g) }
+        case "golden-gate-bridge":
+            painter = { g in LandmarkArt.paintGoldenGate(&g) }
+        case "novgorod-kremlin":
+            painter = { g in LandmarkArt.paintNovgorod(&g) }
+        case "christ-the-redeemer":
+            painter = { g in LandmarkArt.paintChristRedeemer(&g) }
+        case "colosseum":
+            painter = { g in LandmarkArt.paintColosseum(&g) }
+        case "temple-of-artemis-ephesus":
+            painter = { g in LandmarkArt.paintTempleOfArtemis(&g) }
+        case "parthenon":
+            painter = { g in LandmarkArt.paintParthenon(&g) }
+        case "statue-of-zeus-olympia":
+            painter = { g in LandmarkArt.paintZeusOlympia(&g) }
+        case "hanging-gardens-babylon":
+            painter = { g in LandmarkArt.paintHangingGardens(&g) }
+        case "burj-khalifa":
+            painter = { g in LandmarkArt.paintBurjKhalifa(&g) }
+        // Round 5, batch 3.
+        case "angkor-wat":
+            painter = { g in LandmarkArt.paintAngkor(&g) }
+        case "bibliotheca-alexandrina":
+            painter = { g in LandmarkArt.paintBibliotheca(&g) }
+        case "forbidden-city":
+            painter = { g in LandmarkArt.paintForbiddenCity(&g) }
+        case "lions-gate-bridge":
+            painter = { g in LandmarkArt.paintLionsGate(&g) }
+        case "ilulissat-icefjord":
+            painter = { g in LandmarkArt.paintIlulissat(&g) }
+        case "kizhi-pogost":
+            painter = { g in LandmarkArt.paintKizhi(&g) }
+        case "palace-of-knossos":
+            painter = { g in LandmarkArt.paintKnossos(&g) }
+        case "eiffel-tower":
+            painter = { g in LandmarkArt.paintEiffel(&g) }
+        case "great-mosque-of-djenne":
+            painter = { g in LandmarkArt.paintDjenne(&g) }
+        case "persepolis":
+            painter = { g in LandmarkArt.paintPersepolis(&g) }
+        case "mausoleum-halicarnassus":
+            painter = { g in LandmarkArt.paintMausoleum(&g) }
         default:
             return false
         }

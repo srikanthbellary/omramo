@@ -1,0 +1,211 @@
+# The Eloquent Peasant
+# Omramo retelling, Advanced tier. Manuscript for the text-fidelity check.
+#
+# This is our own retelling, written for Omramo, of the ancient Egyptian tale of the Eloquent Peasant.
+# It is not the wording of any earlier edition or translation.
+# Documented source: W. M. Flinders Petrie, "Egyptian Tales, Translated from the Papyri, First Series"
+# (1895), Project Gutenberg ebook #7386, https://www.gutenberg.org/ebooks/7386. In that book the tale is
+# titled "The Peasant and the Workman", under the heading "In the Sekhet Hemat, IXth Dynasty".
+# Source read: the mirror's 7386-0.txt gave 404; 7386.txt worked. The writer read it through a fetch tool
+# as a neutral summary (names, order of events, the papyri), for the order of events only. No sentence,
+# image or turn of phrase of Petrie's was used. A source-check agent must still compare the text with #7386.
+# Names: we use modern readings. Petrie -> ours: Sekhti -> Khunanup (Khun-Anup); Hemti son of Asri ->
+# Nemtynakht (son of Isri; older books also read Djehutinakht); Meruitensa -> Rensi son of Meru;
+# Neb-ka-n-ra -> Nebkaura (Nebkaure Khety, a Herakleopolitan king); Sekhet Hemat ('salt country') ->
+# the Salt Field, thought to be the Wadi Natrun; Henenseten (Petrie identifies it as Herakleopolis,
+# modern Ihnasya / Ahnas) -> Herakleopolis. Egyptologist to confirm every reading.
+# Departures from Petrie, following later translations of the fuller papyri (reviewer to confirm):
+# barley, not Petrie's 'corn'; TEN days of pleading with Nemtynakht (Petrie: a whole day); the ninth
+# petition's appeal to Anubis (not in Petrie's text as read). The wife's barley and the goods list
+# are given loosely; the six heaps of barley follow the later translations' six measures (to check).
+# Nine petitions become three spoken speeches (first, the scales, the last) plus a short account of the
+# rest. The speeches' images (steersman, orphan and widow, scales and plumb line, fine words versus just
+# deeds) follow the tale's themes in our own words; none is a translation of a petition.
+# Softened / left out: the beating with tamarisk is one strike; the beating by Rensi's men at the third
+# petition is left out (a gatekeeper turns him away instead); the 'Demon of Silence' threat is left out;
+# the officials' advice to bring a witness is folded into their dismissal. The exact rations (Petrie:
+# four loaves and two jugs of beer a day; corn for the wife) are given as a loaf and a jug of beer.
+# Ending: the source's end is damaged. We keep its judgement (the donkeys back and Nemtynakht's goods and
+# house to the peasant) and leave out the offices and the peasant becoming the king's favourite.
+# Our own additions: the boatman, the gatekeeper, the market crowd, the king reading twice ('the servants
+# said'), the scene of Nemtynakht's silence, the cool-season walk home, the wife counting donkeys.
+# Card and text facts to check: Wadi Natrun named for natron and identified with the Salt Field; uses of
+# natron; donkeys tamed in NE Africa over 5,000 years ago; horses in Egypt after this tale, camels much
+# later; Ma'at's feather and the weighing of the heart; literacy 'a few in every hundred' (estimates vary);
+# 'parts of four copies survive' (Berlin P3023, P3025, P10499 and the Butler papyrus, plus Amherst
+# fragments; Petrie names three plus fragments); 'almost 4,000 years old' (late Middle Kingdom copies).
+# Landmark facts to check: Bibliotheca Alexandrina built 1995-2002, opened Oct 2002, by Snohetta with
+# international support; granite wall carved with signs of many scripts; room for millions of books;
+# ancient library founded under the Ptolemies about 2,300 years ago; its loss gradual and uncertain.
+# Open question for the editor: the 'jug of beer' is true to the source and to Egyptian diet; keep or
+# change for the young end of the audience? And is the Anubis line right at this level?
+# SOURCE CHECK (18 Nov 2026, against Petrie on the Gutenberg mirror):
+# Echoes reworded: the king's last word ('Judge it yourself' -> 'The case is yours to settle'); the
+# king's orders (were clause by clause; now reordered and compressed: bread, silence, scribe); the cloth
+# (no 'fringe'; now 'the longest length of linen'); 'tread on my clothes' (now the linen's worth);
+# the orphan's-father / widow's-husband image (now: the bereaved go to his door); 'a few sacks of salt'
+# (now 'because a salt-seller says so'); 'Do not be afraid' (now 'No one here will harm you').
+# Departures from Petrie: in Petrie the peasant already knows the land is the steward's and says so
+# before the beating; ours learns it later from a boatman. In Petrie he first sends his account through
+# one of the steward's followers, who puts it to the nobles; ours tells Rensi directly. Rensi's oath that
+# the peasant shall be remembered for ever is left out.
+# Factual: Petrie places the Sekhet Hemat at the edge of the Fayum lake, not the Wadi Natrun. The Wadi
+# Natrun identification is that of later scholars; the salt-field card and geography lesson now say
+# 'most scholars place it' and the card names Petrie's view. region.place keeps the plan's wording.
+# Status: DRAFT. Text review pending. Cultural review (standard: Egyptologist (accuracy read)) pending.
+#
+# Generated by tools/build_stories.py from docs/content/story-specs/eloquent-peasant.json; edit the spec,
+# not this file.
+#
+# Format: lines starting with "#" are notes and are not story text. One paragraph per line.
+# A blank line separates paragraphs; a "# --- page" note marks a page (spread) break.
+
+# The Salt Road
+
+# --- page 1
+At the edge of the western desert, in a valley of salt, there lived a man named Khunanup.
+
+His house was mud brick, flat-roofed, with two date palms leaning over it. Beyond them lay a shallow lake, and round its rim the ground had dried into a white crust that cracked under the foot like the top of a loaf. That crust was salt and natron, and it was why people called this place the Salt Field.
+
+Nothing grew there that a family could live on for long. So when the barley in the store jar ran low, Khunanup loaded his donkeys and went down into the valley of the Nile to trade.
+
+He loaded them with everything the desert edge could give: sacks of salt and natron, bundles of reeds and rushes, pelts of desert animals, bags of seeds, live birds in cages, and straight staves of wood bound with cord.
+
+To his wife he said, “Measure out the barley that is left. Keep enough for you and the children until I come back.” She measured it into six small heaps on the floor. He looked at them for a long moment, then picked up his stick and whistled the donkeys awake.
+
+# --- page 2
+For days the little string of donkeys picked its way south along the desert edge. The ground was stone and gravel, and the sun stood on their backs from morning until dusk.
+
+Then, between one hill and the next, the world turned green. Below lay the valley: barley standing in square fields, canals as straight as ruled lines, and the river beyond, flat and shining.
+
+Here the road shrank to a narrow raised path, with a canal on one side and a field of barley on the other. Beside the path stood a fine house with a garden wall. It belonged to a man called Nemtynakht, who looked after these lands for a much greater man.
+
+Nemtynakht was standing at his gate when the donkeys came by. He looked at their packs. He looked at the peasant, alone and far from home. And a thought came to him as smooth as oil.
+
+He called a servant. “Bring me the longest length of linen we have,” he said. “The good one.” And when it came, he had it laid across the whole path, from the lip of the canal to the first stalks of his barley.
+
+# --- page 3
+Khunanup came along the path with his donkeys and stopped. The cloth lay in front of him, fine linen, much too good for the dust.
+
+“Mind your feet, peasant,” said Nemtynakht. “That linen is worth more than your whole load.”
+
+“I meant no harm, sir,” said Khunanup, and he turned his donkeys up the bank, where the footing was steep and crumbling. But up there the barley grew right to the edge. “And now you would trample my grain?” cried Nemtynakht.
+
+“Your cloth is on the road, and your barley is on the bank,” said Khunanup. “Where would you have me walk? In the canal?” As he spoke, the first donkey stretched out its neck and pulled up one mouthful of barley, ears and all.
+
+Nemtynakht smiled. “Your donkey eats my barley. So your donkey is mine.” He struck the peasant once with a tamarisk switch and drove all the donkeys through his gate. “Complain if you like. Who listens to a peasant?”
+
+# --- page 4
+For ten days Khunanup came back to that gate. He stood in the dust outside the garden wall and called through it, morning and evening.
+
+“Give me back my donkeys. One mouthful of barley, and you have taken everything I own. My children are waiting for grain.”
+
+Sometimes a servant laughed at him from the roof. Mostly nobody answered at all. Behind the wall, his donkeys brayed when they heard his voice, and that was the worst of it.
+
+On the eleventh morning he asked a boatman whose land this was. The boatman pointed upstream with his chin. All of it, he said, belonged to the household of the High Steward, Rensi son of Meru, who sat in judgement for the king in the city of Herakleopolis.
+
+Khunanup had sold salt in village markets all his life. He had never spoken to anyone greater than a headman. He stood a while by the canal, turning the name over in his mouth like a pebble, and then he began to walk.
+
+# --- page 5
+He found Rensi at the river landing, coming down the steps of his house to his boat. The boat had a painted cabin and two great steering oars, and a crowd of officials in long white kilts walked behind him, talking all at once.
+
+Khunanup pushed to the front and told his story: the cloth, the barley, the single mouthful, the stick, the donkeys behind the wall. Rensi listened without a word. Then he turned to the men around him.
+
+“Most likely he is some landowner’s peasant who has run off to a neighbour,” said one. “Is a man like Nemtynakht to be punished because a salt-seller says so? Let the donkeys go back, and that is the end of it.” The others nodded.
+
+Rensi said nothing at all. He stood with one foot on the gangplank, looking at the peasant, and the officials began to shift and cough.
+
+Khunanup saw that silence and took it for the end. Something rose in him then that was not fear. He took one step closer, lifted his head, and spoke to the king’s High Steward as if they were the only two men on the bank.
+
+# The Speeches
+
+# --- page 6
+The first speech came out of him like water through a broken dyke.
+
+“My lord,” he said, “you stand at the steering oar of this whole land. When you hold the oar true, the boat runs straight and every one of us aboard comes safe to the landing. But if the steersman leans, the whole boat leans with him.”
+
+“In my village they say that when a child loses its father, or a woman is left alone, it is to your door they go, and they do not come away empty. I have walked a long way to learn whether that is true.”
+
+“Do ma’at, my lord: keep the world level, so the weak do not slide off it. My donkeys are all I have. Give them back, and I will tell every traveller on the salt road that the steward’s word is good.”
+
+He stopped, out of breath. The officials had gone quiet. Rensi looked at him for a long time, and his face gave nothing away. Then he stepped down into his boat, and the oarsmen pushed off, and the peasant was left alone on the landing.
+
+# --- page 7
+But Rensi did not go about his business that day. He had himself rowed to the palace, and he went in to the king, Nebkaura, with the peasant’s words still going round in his head.
+
+“My lord,” he said, “there is a peasant at my landing who speaks better than any poet at your court. His donkeys were stolen, and he has come to me for justice. And every word he uses is the right one.”
+
+The king leaned forward and smiled. “Send bread to him each day, and grain to his house in the Salt Field, from a hand he cannot trace,” he said. “But keep your lips shut and let him run on. Put a scribe beside you, and bring me every word.”
+
+So the next morning, when Khunanup came back, a scribe was waiting in the steward’s courtyard. He sat cross-legged on a mat, a papyrus roll open across his knees and a reed pen behind his ear, and he did not look up.
+
+# --- page 8
+Day after day Khunanup came to the courtyard, and day after day Rensi sat in his chair and said nothing. Each evening a man the peasant did not know pressed a loaf and a jug of beer into his hands at the gate. He thought it was some kindness of the city, and he ate it without asking.
+
+The second time he spoke, his voice was harder. “You are the scales, my lord. A scale does not lean toward the richer man. You are the plumb line hanging straight beside the wall. If you tip, who will set the world level again? A crooked balance cheats a whole market, and you are the balance for all Egypt.”
+
+The scribe’s pen scratched. Rensi’s face did not change. Khunanup stared at him and felt the anger climb up his throat.
+
+“Do you hear me?” he shouted. “I might as well plead with the river and beg it to run backwards!” The pigeons on the roof went up all at once, and still the steward said nothing.
+
+# --- page 9
+The days became weeks. The barley in the fields outside the city turned from green to gold, and still Khunanup came, and still the steward was silent.
+
+He spoke a fourth time, and a fifth. He spoke on the steps of the temple, and at the landing as the boat came in. He spoke to Rensi’s back as the steward walked away. People in the market began to know his face. Some of them laughed. A few stopped to listen.
+
+One morning the gatekeeper put his staff across the doorway. “I have come to speak to the steward,” said Khunanup. “Not today,” said the gatekeeper. “Not any day. Go home, salt man.”
+
+Khunanup sat down in the dust outside the gate. He thought of his wife counting out barley that must be gone by now. He thought of going home with nothing.
+
+Then he stood up, shook out his kilt, and waited. When the steward came out at noon, Khunanup was there in front of him, as he had been every day. “My lord,” he said, “I have not finished.”
+
+# --- page 10
+This was the ninth time he had stood before Rensi, and he knew it would be the last. He was tired now. His voice was quiet, and the scribe had to lean forward to catch it.
+
+“You speak well, my lord, when you speak at all. Your judges speak well. The whole city is full of fine words. But a fine word is not a just deed. A lovely sentence never filled an empty jar or brought a donkey home.”
+
+“I have pleaded with you nine times, and nine times you have looked at me as if I were the wind. So I will stop pleading here. I will take my case to Anubis instead.” It was a quiet thing to say, and a fearful one. The Egyptians believed that Anubis led the dead to their judgement, where each heart was weighed and no gift could tip the scales.
+
+Then he turned his back on the High Steward and walked out through the gate into the glare of noon. He had gone twenty paces down the street when he heard sandals slapping behind him. Two of Rensi’s guards were running to catch him.
+
+# The Answer
+
+# --- page 11
+Khunanup thought they had come to punish him for his words.
+
+He did not run. He let them take his arms and walk him back through the gate and into the courtyard, where Rensi had risen from his chair for the first time in all those days.
+
+“Come, Khunanup. No one here will harm you,” said the steward. It was the first time the peasant had heard his voice, and the first time anyone in that city had spoken his name. “Sit down. There is something you must see.”
+
+The scribe came forward with his arms full. He knelt and began to unroll the papyrus across the floor, sheet joined to sheet, and it kept on coming: column after column of small black marks, with here and there a line in red.
+
+“Your words,” said Rensi. “All of them. The first speech on the landing, and the one about the scales, and what you said today. Nine speeches, every one.” The peasant looked down at the long pale road of writing and could not read a single mark of it.
+
+# --- page 12
+Then Rensi told him the rest. The king had ordered the silence. The bread at the gate each evening had come from the steward’s own kitchens. And all this time, out in the Salt Field, his wife and children had been sent grain, though no one told them where it came from.
+
+Khunanup did not know what to feel first. He had been fed like a guest and treated like a stone. For all those weeks he had believed no one was listening, and the whole time someone had been writing down every breath.
+
+“You let me beg,” he said slowly, “so that the king could enjoy the begging.” “I let you speak,” said Rensi, “so that the king could hear you. Now every word is written, and the king himself will read it.”
+
+The rolls went to the palace that same afternoon. Later the servants said that the king read them through twice, that he laughed aloud at some lines and sat silent a long while over others. Then he sent word back to Rensi: “The case is yours to settle.”
+
+# --- page 13
+Nemtynakht was brought to the courtyard the next morning. He came in his best linen, with oil in his hair, and he smiled at the officials he knew. Then he saw the peasant standing beside the steward’s chair, and the smile went out of his face.
+
+Rensi did not make a speech. He had heard enough speeches. He had the scribe read out the peasant’s first complaint from the landing, and then he gave his judgement in a few plain words.
+
+“The donkeys go back to their owner, with every sack they carried. And because you took from a man who had almost nothing, Nemtynakht, all that you have goes to him: your house, your fields, your barley, your goods.”
+
+Nemtynakht opened his mouth. Then he looked at the long roll on the scribe’s knees, and shut it again.
+
+Khunanup found that he had nothing to say either. He, who had talked through nine long speeches, stood in the courtyard with his hands empty and his throat tight, and all he could do was bow low to the steward, and then, lower, to the scribe.
+
+# --- page 14
+He went home by the river road when the heat began to ease, with his own donkeys in front of him and Nemtynakht’s behind. Every pack was heavy with grain, and the sacks swayed as the animals walked.
+
+At the landing he stopped to look back once at the city: the pale walls, the steward’s boat at its post, the palms along the water. Somewhere behind those walls a scribe was already copying the nine speeches onto a fresh roll, his pen dipping and scratching, dipping and scratching.
+
+Other scribes copied that roll, and others copied theirs, because people liked the story and wanted it for themselves. Parts of four of those copies, almost 4,000 years old, lie in museums today, and people still read them.
+
+But Khunanup knew nothing of that. He was walking north, his stick on his shoulder, toward a mud-brick house by a lake of salt, where the six heaps of barley were long gone and a woman stood in the doorway, shading her eyes, counting donkeys.

@@ -1,0 +1,1286 @@
+{
+  "schemaVersion": 1,
+  "id": "tiger-brahman-jackal",
+  "contentVersion": 1,
+  "title": "The Tiger, the Brahman and the Jackal",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "indian",
+    "culture": "Punjabi folk tale",
+    "place": "The Punjab, India and Pakistan",
+    "label": "Punjab",
+    "pin": {
+      "lat": 31.0,
+      "lon": 74.0
+    },
+    "pinColor": "#19C7A2"
+  },
+  "setting": {
+    "period": "Folk-tale time in the Punjab, the land of five rivers",
+    "latestYear": 1850
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Punjabi folk tale",
+    "sources": [
+      {
+        "author": "Joseph Jacobs",
+        "title": "Indian Fairy Tales",
+        "year": 1892,
+        "gutenbergId": 7128,
+        "url": "https://www.gutenberg.org/ebooks/7128",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Punjabi folk tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Punjabi reader (India and Pakistan)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Punjab is a wide, flat farming land in the north of India and Pakistan, named for its five rivers. Wheat and mustard grow there, watered from rivers and wells.",
+      "factCards": [
+        "punjab",
+        "well-wheel"
+      ]
+    },
+    "culture": {
+      "lesson": "A Brahman is a Hindu priest and teacher; the story treats him simply as a gentle, learned man. In a village quarrel people ask others to judge, often elders sitting under a pipal tree. Tigers no longer live in the Punjab, but about three thousand still live wild in India, in protected forests.",
+      "factCards": [
+        "priest-and-teacher",
+        "pipal-tree"
+      ]
+    },
+    "moral": {
+      "lesson": "The Brahman's kindness is right, but he trusts tears and promises without thinking. The Jackal wins without a fight: he stays calm and lets the Tiger's pride and temper do the work.",
+      "reflectionQuestion": "Was the Brahman wrong to open the cage? What would you have done?"
+    }
+  },
+  "moral": "Be kind with your eyes open, for a cool head beats a hot temper.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#2B2038",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A sandy-gold jackal bows politely before a bamboo cage with a large tiger glaring out through the bars, while a thin old man in white stands by with his staff.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "brahman",
+      "name": "Brahman",
+      "color": "#1B4F86",
+      "face": {
+        "file": "art/face-brahman.png",
+        "alt": "The Brahman.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E3EEFA",
+      "card": {
+        "label": "Character · a priest and teacher",
+        "title": "The Brahman",
+        "traits": [
+          {
+            "text": "Soft-hearted",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Keeps his word",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Wears a white dhoti",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          }
+        ],
+        "body": "He owns little more than a staff and a bundle, and he cannot bear to see anyone cry. A promise from him is a promise kept, even to a tiger.",
+        "portrait": {
+          "file": "art/char-brahman.card.heic",
+          "alt": "A thin, kindly old man in a plain white cotton dhoti and shawl, holding a wooden staff, with a small cloth bundle on his shoulder.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#F6E3B4",
+          "#E9C47E",
+          "#C9954A"
+        ]
+      }
+    },
+    {
+      "id": "jackal",
+      "name": "Jackal",
+      "color": "#8A4A00",
+      "face": {
+        "file": "art/face-jackal.png",
+        "alt": "The Jackal.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · the clever one of the fields",
+        "title": "The Jackal",
+        "traits": [
+          {
+            "text": "Quick-witted",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Plays the fool",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Trickster of Indian tales",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He is small and sandy-gold, and he would never win a fight with a tiger. So he wins with his wits, and looks as slow as he can.",
+        "portrait": {
+          "file": "art/char-jackal.card.heic",
+          "alt": "A slim sandy-gold jackal with pointed ears and a bushy tail, sitting with his head tilted and one paw raised to scratch his ear.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#DDEBC8",
+          "#B5CE8E",
+          "#7FA35C"
+        ]
+      }
+    },
+    {
+      "id": "tiger",
+      "name": "Tiger",
+      "color": "#B33A1C",
+      "face": {
+        "file": "art/face-tiger.png",
+        "alt": "The Tiger.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFD9B8"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "punjab",
+      "kind": "place",
+      "title": "The Punjab",
+      "line": "A wide, flat farming land in the north of India and Pakistan, watered by five rivers.",
+      "cultureNote": {
+        "label": "From the Punjab",
+        "text": "The name Punjab means “five waters” in Persian. Its rivers run down from the Himalaya mountains, and farmers there grow much of the wheat that India and Pakistan eat."
+      },
+      "picture": {
+        "file": "art/see-punjab.heic",
+        "alt": "Five pale blue rivers winding side by side across a flat golden plain of wheat fields.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4E5A"
+    },
+    {
+      "id": "priest-and-teacher",
+      "kind": "idea",
+      "title": "A Brahman",
+      "line": "A Brahman is a Hindu priest and teacher who learns the old prayers and teaches them.",
+      "cultureNote": {
+        "label": "From India",
+        "text": "In Hindu tradition, a Brahman’s work is to study, to teach and to lead the prayers at weddings and festivals. Indian folk tales often tell of a poor Brahman who is gentle and learned."
+      },
+      "picture": {
+        "file": "art/see-priest-and-teacher.heic",
+        "alt": "An old hand-written book of long, narrow pages lying open on a low wooden stand.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2A4E"
+    },
+    {
+      "id": "pipal-tree",
+      "kind": "object",
+      "title": "Pipal tree",
+      "line": "A big shady fig tree with heart-shaped leaves that end in long thin tips.",
+      "cultureNote": {
+        "label": "From the Punjab",
+        "text": "Many people in India hold the pipal sacred, so it is not cut down lightly. Travellers rest in its shade, and village elders often meet under one to settle a quarrel."
+      },
+      "picture": {
+        "file": "art/see-pipal-tree.heic",
+        "alt": "One heart-shaped green pipal leaf with a long, thin pointed tip, hanging from a twig.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#22503A"
+    },
+    {
+      "id": "well-wheel",
+      "kind": "object",
+      "title": "Well-wheel",
+      "line": "A wooden wheel that lifts water out of a well in a chain of clay pots.",
+      "cultureNote": {
+        "label": "From the Punjab",
+        "text": "An ox, a buffalo or a camel walks in a circle to turn the wheel, and the pots tip their water into a channel for the fields. Today most farms in the Punjab use motor pumps instead."
+      },
+      "picture": {
+        "file": "art/see-well-wheel.heic",
+        "alt": "A wooden wheel standing over a round brick well, with a loop of small clay pots spilling water.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6B3F22"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cage.unfolded.heic",
+          "alt": "A dusty road under thorny acacia trees, with pale gold sky and far wheat fields on the left. On the right stands a strong cage of bamboo and wood with a large tiger inside, and a thin old man in white passing by with his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cage.folded.heic",
+          "alt": "A large tiger looks out between the bamboo bars of a cage, with the old Brahman standing just in front of it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6EBCB",
+          "#EFD9A0",
+          "#C9A363"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A tiger sat in a cage beside a dusty road.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a trap of strong bamboo, set by a village in the "
+            },
+            {
+              "t": "Punjab",
+              "tap": "punjab"
+            },
+            {
+              "t": ", the land of five rivers. The "
+            },
+            {
+              "t": "Tiger",
+              "name": "tiger"
+            },
+            {
+              "t": " had roared at the bars and bitten the bars. The bars had not minded at all."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Along the road came a poor "
+            },
+            {
+              "t": "Brahman",
+              "name": "brahman"
+            },
+            {
+              "t": ", with a staff in his hand and a cloth bundle on his shoulder. "
+            },
+            {
+              "t": "“Holy one! Kind one!”",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": " cried the Tiger. "
+            },
+            {
+              "t": "“Open this door!”",
+              "say": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I think not, my friend,”",
+              "say": "brahman",
+              "chip": true
+            },
+            {
+              "t": " said the Brahman mildly. "
+            },
+            {
+              "t": "“You would eat me.”",
+              "say": "brahman"
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Eat you? Never! I would carry your bundle for the rest of my days!”",
+              "say": "tiger",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cage.unfolded.heic",
+          "alt": "A dusty road under thorny acacia trees, with pale gold sky and far wheat fields on the left. On the right stands a strong cage of bamboo and wood with a large tiger inside, and a thin old man in white passing by with his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cage.folded.heic",
+          "alt": "A large tiger looks out between the bamboo bars of a cage, with the old Brahman standing just in front of it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6EBCB",
+          "#EFD9A0",
+          "#C9A363"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now a "
+            },
+            {
+              "t": "Brahman",
+              "tap": "priest-and-teacher"
+            },
+            {
+              "t": " is a priest and a teacher, and this one had a soft heart."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Tiger wept. He swore by every stripe on his back that he would never harm so good a man. Great tears rolled down his nose."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the Brahman lifted the latch. Out sprang the Tiger, not weeping now."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“What a simple man you are!”",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": " he purred. "
+            },
+            {
+              "t": "“I have sat in that box for days, and I am hollow. You shall be my dinner.”",
+              "say": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Is that fair?”",
+              "say": "brahman",
+              "chip": true
+            },
+            {
+              "t": " said the Brahman, and his staff shook in his hand. "
+            },
+            {
+              "t": "“Let us ask the first three we meet.”",
+              "say": "brahman"
+            },
+            {
+              "t": " The Tiger yawned and agreed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-pipal.unfolded.heic",
+          "alt": "A pale morning sky and a long road across flat fields on the left. On the right a huge old pipal tree with heart-shaped leaves shades the road, and the Brahman stands small beneath it, looking up.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-pipal.folded.heic",
+          "alt": "The Brahman looks up into the heart-shaped leaves of a huge old pipal tree.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF0D2",
+          "#F3E2A6",
+          "#8FA862"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Go and ask,”",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": " said the Tiger, stretching out in the dust. "
+            },
+            {
+              "t": "“I shall wait here. A Brahman always keeps his word.”",
+              "say": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That was true, and a great nuisance. The Brahman walked until he came to an old "
+            },
+            {
+              "t": "pipal tree",
+              "tap": "pipal-tree"
+            },
+            {
+              "t": ", whose heart-shaped leaves shivered in the smallest breeze."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Pipal tree, I let a tiger out of a trap, and now he wishes to eat me. Is that fair?”",
+              "say": "brahman",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The leaves rustled crossly. “Fair? All day long travellers cool themselves under my leaves. Then they snap off my twigs for their goats and walk on. Do not come to me for thanks.”"
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One answer, and it was against him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-well.unfolded.heic",
+          "alt": "Pale sky over green wheat and yellow mustard fields on the left. On the right an old grey buffalo walks round a wooden well-wheel that lifts clay pots of water, while the Brahman stands beside her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-well.folded.heic",
+          "alt": "An old grey buffalo plods round a wooden well-wheel hung with clay pots, with the Brahman beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E8F1DC",
+          "#F5E7A8",
+          "#86AE5E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Farther on, he heard a creak and a splash. An old buffalo was plodding round a "
+            },
+            {
+              "t": "well-wheel",
+              "tap": "well-wheel"
+            },
+            {
+              "t": ", and with every turn a row of clay pots tipped water into a ditch for the wheat."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Brahman told his trouble a second time. "
+            },
+            {
+              "t": "“Is that fair, mother buffalo?”",
+              "say": "brahman",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The buffalo did not stop walking. “When I gave milk, they fed me the best seed cake and scratched my ears,” she said. “Now I am old, they tie me to this wheel and throw me scraps. Only a fool waits for thanks.”"
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Round she went again, and the pots went splash. Two answers, and both against him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A long pale road runs between wheat and mustard fields under a soft gold late-afternoon sky, with a mud-brick village far off on the left. On the right a sandy-gold jackal trots up to the Brahman, who leans on his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A sandy-gold jackal looks up at the Brahman on a pale road between fields.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFD0",
+          "#F6D99A",
+          "#D2B06A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There was nobody left to ask but the road itself, so the Brahman bent down and asked it."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The road answered in a dry, dusty whisper. “Feet tramp on me all day, and hooves, and bullock carts with squealing wheels. I carry every one of them to market and home again. What do they leave me? Dust, and whatever spills from their sacks.”"
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Three answers,”",
+              "say": "brahman",
+              "chip": true
+            },
+            {
+              "t": " said the Brahman, counting on his fingers, "
+            },
+            {
+              "t": "“and not one for me.”",
+              "say": "brahman"
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He looked down the long pale road, which led away to anywhere he liked. Then he sighed, turned round, and started back to the Tiger. He had given his word."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A long pale road runs between wheat and mustard fields under a soft gold late-afternoon sky, with a mud-brick village far off on the left. On the right a sandy-gold jackal trots up to the Brahman, who leans on his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A sandy-gold jackal looks up at the Brahman on a pale road between fields.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFD0",
+          "#F6D99A",
+          "#D2B06A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Halfway back, a ",
+              "lead": true
+            },
+            {
+              "t": "Jackal",
+              "lead": true,
+              "name": "jackal"
+            },
+            {
+              "t": " came trotting out of the mustard field.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Good day, teacher!”",
+              "say": "jackal",
+              "chip": true
+            },
+            {
+              "t": " said the Jackal. "
+            },
+            {
+              "t": "“Why so sad? You look like a kite with its string cut.”",
+              "say": "jackal"
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the "
+            },
+            {
+              "t": "Brahman",
+              "name": "brahman"
+            },
+            {
+              "t": " told him everything: the cage, the tears, the promise, the tree, the buffalo and the road."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Jackal scratched one ear. "
+            },
+            {
+              "t": "“How very muddling,”",
+              "say": "jackal",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Would you say it again?”",
+              "say": "jackal"
+            },
+            {
+              "t": " The Brahman said it again. The Jackal scratched the other ear."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It is no use. My head is a basket with a hole in it. Take me to the place, and perhaps I shall see what you mean.”",
+              "say": "jackal",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cage.unfolded.heic",
+          "alt": "A dusty road under thorny acacia trees, with pale gold sky and far wheat fields on the left. On the right stands a strong cage of bamboo and wood with a large tiger inside, and a thin old man in white passing by with his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cage.folded.heic",
+          "alt": "A large tiger looks out between the bamboo bars of a cage, with the old Brahman standing just in front of it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6EBCB",
+          "#EFD9A0",
+          "#C9A363"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Tiger was waiting by the cage, sharpening his claws on a thorn tree."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The shadows have grown a good deal since you left,”",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": " he growled. "
+            },
+            {
+              "t": "“And who is this? I asked for one dinner, not two.”",
+              "say": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“One moment more, my lord,”",
+              "say": "brahman",
+              "chip": true
+            },
+            {
+              "t": " said the Brahman. "
+            },
+            {
+              "t": "“Only let me explain things to this jackal. It takes him a while to get hold of a thing.”",
+              "say": "brahman"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Jackal bowed very low and looked as slow as he could."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the Brahman told the tale once more. He told it slowly. He put in every bit of it, even the buffalo’s scraps, and the Tiger’s tail began to twitch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cage.unfolded.heic",
+          "alt": "A dusty road under thorny acacia trees, with pale gold sky and far wheat fields on the left. On the right stands a strong cage of bamboo and wood with a large tiger inside, and a thin old man in white passing by with his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cage.folded.heic",
+          "alt": "A large tiger looks out between the bamboo bars of a cage, with the old Brahman standing just in front of it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6EBCB",
+          "#EFD9A0",
+          "#C9A363"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My head is spinning like a potter’s wheel!”",
+              "say": "jackal",
+              "chip": true
+            },
+            {
+              "t": " wailed the "
+            },
+            {
+              "t": "Jackal",
+              "name": "jackal"
+            },
+            {
+              "t": ", clutching his ears. "
+            },
+            {
+              "t": "“Let me see. The Brahman sat in the cage, and down the road came my lord the Tiger…”",
+              "say": "jackal"
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“No, you donkey!”",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": " roared the Tiger. "
+            },
+            {
+              "t": "“It was I who sat in the cage!”",
+              "say": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Of course! It was I who sat in the cage. No, that cannot be right. The cage sat in the bundle, and the bundle sat on the buffalo, and the buffalo lifted the latch…”",
+              "say": "jackal",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Leave the buffalo out of it!”",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": " howled the Tiger."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then it is hopeless, my lord,”",
+              "say": "jackal",
+              "chip": true
+            },
+            {
+              "t": " sighed the Jackal. "
+            },
+            {
+              "t": "“Eat your dinner. I shall never, never understand.”",
+              "say": "jackal"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cage.unfolded.heic",
+          "alt": "A dusty road under thorny acacia trees, with pale gold sky and far wheat fields on the left. On the right stands a strong cage of bamboo and wood with a large tiger inside, and a thin old man in white passing by with his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cage.folded.heic",
+          "alt": "A large tiger looks out between the bamboo bars of a cage, with the old Brahman standing just in front of it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6EBCB",
+          "#EFD9A0",
+          "#C9A363"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That was too much for the Tiger. "
+            },
+            {
+              "t": "“Then I shall ",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": "show",
+              "say": "tiger",
+              "fx": "stretch"
+            },
+            {
+              "t": " you!”",
+              "say": "tiger"
+            },
+            {
+              "t": " he roared. "
+            },
+            {
+              "t": "“Use your eyes. Here stands the Tiger. There stands the Brahman. This is the cage. And the Tiger was inside it!”",
+              "say": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Tiger, Brahman, cage,”",
+              "say": "jackal",
+              "chip": true
+            },
+            {
+              "t": " said the Jackal, pointing at the wrong one each time. "
+            },
+            {
+              "t": "“But inside, my lord? How could so grand a tiger fit through so small a door?”",
+              "say": "jackal"
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Like ",
+              "say": "tiger",
+              "chip": true
+            },
+            {
+              "t": "this",
+              "say": "tiger",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": ", you fool!”",
+              "say": "tiger"
+            },
+            {
+              "t": " The Tiger bounded into the cage and glared out through the bars. "
+            },
+            {
+              "t": "“Now do you see?”",
+              "say": "tiger"
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“As clear as well water,”",
+              "say": "jackal",
+              "chip": true
+            },
+            {
+              "t": " said the Jackal, and he dropped the latch. "
+            },
+            {
+              "t": "Clack!",
+              "fx": "pop",
+              "scale": 1.3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-road.unfolded.heic",
+          "alt": "A long pale road runs between wheat and mustard fields under a soft gold late-afternoon sky, with a mud-brick village far off on the left. On the right a sandy-gold jackal trots up to the Brahman, who leans on his staff.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-road.folded.heic",
+          "alt": "A sandy-gold jackal looks up at the Brahman on a pale road between fields.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFD0",
+          "#F6D99A",
+          "#D2B06A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Tiger stared at the bars. The bars still did not mind at all."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There,”",
+              "say": "jackal",
+              "chip": true
+            },
+            {
+              "t": " said the Jackal, dusting his paws. "
+            },
+            {
+              "t": "“Now everything is back where the village put it. I do like things tidy.”",
+              "say": "jackal"
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Brahman’s staff stopped shaking. He shouldered his bundle, and the two of them set off down the road together."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Behind them the Tiger sat down to think it over. At evening the villagers would come and carry the cage, tiger and all, deep into the forest, far from anybody’s goats."
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Brahman walked through the pipal’s shade with his eyes wide open, and beside him trotted the Jackal, grinning."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

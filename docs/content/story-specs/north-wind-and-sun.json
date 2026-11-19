@@ -1,0 +1,572 @@
+{
+  "id": "north-wind-and-sun",
+  "title": "The North Wind and the Sun",
+  "tier": "low",
+  "region": {
+    "id": "european",
+    "culture": "Ancient Greek (Aesop’s fables)",
+    "place": "Greece and the Aegean Sea",
+    "label": "Ancient Greece",
+    "pin": {
+      "lat": 37.5,
+      "lon": 24
+    },
+    "pinColor": "#F5A623"
+  },
+  "setting": {
+    "period": "Ancient Greece, about 2,500 years ago",
+    "latestYear": -500
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Aesop’s fables (ancient Greek)",
+    "sources": [
+      {
+        "author": "Aesop, translated by V. S. Vernon Jones",
+        "title": "Aesop’s Fables",
+        "publisher": "William Heinemann",
+        "year": 1912,
+        "gutenbergId": 11339,
+        "url": "https://www.gutenberg.org/ebooks/11339",
+        "verified": true
+      },
+      {
+        "author": "Joseph Jacobs",
+        "title": "The Fables of Aesop",
+        "publisher": "Macmillan",
+        "year": 1894,
+        "gutenbergId": 28,
+        "url": "https://www.gutenberg.org/ebooks/28",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Greek fable, written for Omramo; it does not use the wording of the cited editions. The cited editions are in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Classicist / Greek reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Greece and its islands in the Aegean Sea: a land of windy winters and hot sun, of hill roads, olive trees and small harbours.",
+      "factCards": [
+        "aegean-sea",
+        "colossus-moment",
+        "liberty-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Fables are very short stories with a point. They were told in Greece about 2,500 years ago, people say by a storyteller named Aesop, and are still told everywhere.",
+      "factCards": [
+        "fable",
+        "cloak",
+        "colossus-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "Gentleness wins where force fails: the Wind pushes and the traveller holds on; the Sun warms and the traveller chooses for himself.",
+      "reflectionQuestion": "When has asking gently worked better for you than pushing?"
+    }
+  },
+  "moral": "A gentle way often works better than force.",
+  "theme": {
+    "textColor": "#13293D",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A traveller in a red-brown cloak on a hill road above a blue sea. A smiling sun shines on him from one side, and a grey cloud with puffed cheeks blows at him from the other."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "north-wind",
+      "name": "North Wind",
+      "color": "#2B5A85",
+      "chipBackground": "#D6E6F2",
+      "faceAlt": "The North Wind, a grey-blue cloud with puffed-out cheeks.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The North Wind",
+        "traits": [
+          {
+            "text": "Loud and proud",
+            "fill": "#D6E6F2",
+            "ink": "#1F4A70"
+          },
+          {
+            "text": "Blows from the north",
+            "fill": "#E3E8F5",
+            "ink": "#33407A"
+          },
+          {
+            "text": "Runs out of puff",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He can bend the olive trees and turn the sea white. He is sure that makes him the strongest. He has not tried being gentle yet.",
+        "portraitAlt": "The North Wind, a great grey-blue cloud with a face, cheeks puffed out to blow.",
+        "background": [
+          "#C4DCEC",
+          "#93B8D4",
+          "#5F8FB8"
+        ]
+      }
+    },
+    {
+      "id": "sun",
+      "name": "Sun",
+      "color": "#9A4A0A",
+      "chipBackground": "#FFE7A8",
+      "faceAlt": "The Sun, round and gold, with a calm smile.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sun",
+        "traits": [
+          {
+            "text": "Says very little",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Warm and patient",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Never pushes",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "The Sun does not boast and does not hurry. A little warmth, then a little more. That is all.",
+        "portraitAlt": "The Sun, a round gold face with a calm smile, shining over a blue sea.",
+        "background": [
+          "#FFE38A",
+          "#FFC25A",
+          "#FF9E4D"
+        ]
+      }
+    },
+    {
+      "id": "traveller",
+      "name": "Traveller",
+      "color": "#1F6548",
+      "chipBackground": "#DDF0DC",
+      "faceAlt": "The traveller, a man with a short dark beard and a wide sun hat."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "fable",
+      "kind": "idea",
+      "title": "A fable",
+      "line": "A very short story that leaves you with something to think about.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "People say a storyteller named Aesop told fables like this one about 2,500 years ago. They are still told all over the world."
+      },
+      "pictureAlt": "A Greek storyteller sitting on a stone step with one hand raised, in the middle of a tale.",
+      "background": "#6B3A1E"
+    },
+    {
+      "id": "aegean-sea",
+      "kind": "place",
+      "title": "Aegean Sea",
+      "line": "A blue sea full of islands, on the eastern side of Greece.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "Greece has many hundreds of islands. Winters there are windy, and summers are hot and bright."
+      },
+      "pictureAlt": "A bright blue sea dotted with rocky islands, seen from high above.",
+      "background": "#0B4F7A"
+    },
+    {
+      "id": "colossus-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "colossus-of-rhodes",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "The Greeks called the sun god Helios. Long after this story, on the island of Rhodes, they built a giant statue of him."
+        }
+      },
+      "background": "#123A5C"
+    },
+    {
+      "id": "cloak",
+      "kind": "object",
+      "title": "Woollen cloak",
+      "line": "A big piece of woollen cloth, pinned at one shoulder.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "Greek travellers wore a cloak by day. At night it was their blanket."
+      },
+      "pictureAlt": "A red-brown woollen cloak with a round bronze pin at the shoulder.",
+      "background": "#5A2A2A"
+    },
+    {
+      "id": "liberty-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "statue-of-liberty",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "A giant statue once stood beside a Greek harbour. Far away and much later, people raised another giant beside a harbour."
+        }
+      },
+      "background": "#0F3F4F"
+    }
+  ],
+  "scenes": {
+    "scene-sky": {
+      "unfoldedAlt": "High above a Greek coast with a blue sea and small islands, a great grey-blue cloud with a face puffs out its cheeks beside a calm, smiling sun.",
+      "foldedAlt": "A grey-blue cloud with puffed cheeks and a smiling sun, high above a blue sea with islands.",
+      "fallbackColors": [
+        "#CFE9F5",
+        "#FFF1C9",
+        "#2F8FB5"
+      ]
+    },
+    "scene-wind": {
+      "unfoldedAlt": "A gale on a hill road above the sea. Olive trees bend, the waves are white, and a traveller leans into the wind, holding his cloak tight.",
+      "foldedAlt": "A traveller leans into the wind on a hill road, holding his cloak tight. Olive trees bend behind him.",
+      "fallbackColors": [
+        "#D8E3EA",
+        "#EFEFE2",
+        "#5E8F9E"
+      ]
+    },
+    "scene-sun": {
+      "unfoldedAlt": "The same hill road in warm gold light. The sea is smooth and blue, and the traveller walks with his cloak hanging loose.",
+      "foldedAlt": "The traveller on the sunny hill road, pushing back his hat, his cloak hanging loose.",
+      "fallbackColors": [
+        "#CDEBF2",
+        "#FFE9A8",
+        "#2A9DB8"
+      ]
+    },
+    "scene-rest": {
+      "unfoldedAlt": "The traveller rests in the shade of an old olive tree above a small harbour with fishing boats. His cloak lies folded beside him.",
+      "foldedAlt": "The traveller rests under an olive tree, his folded cloak beside him, with a small harbour below.",
+      "fallbackColors": [
+        "#D3EEF0",
+        "#FFE3A6",
+        "#1F8FA8"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-sky",
+      "part": "part-1",
+      "paras": [
+        "^This very old <tap:fable>fable</tap> from Greece begins high in the sky.",
+        "<name:north-wind>The North Wind</name> was boasting again. He was a great grey cloud with puffed-out cheeks.",
+        "<say:north-wind*>“I am the strongest thing in the sky!”</say> he boomed. <say:north-wind>“Stronger than rain. Stronger than thunder. Stronger than you!”</say>",
+        "<name:sun>The Sun</name> smiled, and said nothing at all."
+      ]
+    },
+    {
+      "scene": "scene-sky",
+      "part": "part-1",
+      "paras": [
+        "Far below lay the blue <tap:aegean-sea>Aegean Sea</tap>, dotted with islands. A pale road ran along the hills above it.",
+        "Along that road came a <name:traveller>traveller</name>, wrapped in a thick woollen cloak.",
+        "<say:sun*>“Do you see that man?”</say> said the Sun. <say:sun>“Whoever can get his cloak off him is the stronger. Shall we try?”</say>"
+      ]
+    },
+    {
+      "scene": "scene-sky",
+      "part": "part-1",
+      "paras": [
+        "<say:north-wind*>“Easy!”</say> laughed the North Wind. <say:north-wind>“I will have it off before he can blink. Me first!”</say>",
+        "<say:sun*>“You first,”</say> said the <tap:colossus-moment>Sun</tap>, and slipped behind a cloud to watch.",
+        "The North Wind swooped down to the hill road. He took a little breath, and he puffed."
+      ]
+    },
+    {
+      "scene": "scene-wind",
+      "part": "part-1",
+      "paras": [
+        "The olive trees shivered. Their leaves flashed silver, and dust skipped along the road.",
+        "<say:traveller*>“Brr,”</say> said the traveller. <say:traveller>“The wind is getting up.”</say>",
+        "He tucked in his chin, wrapped himself up snugly, and held his <tap:cloak>cloak</tap> tighter.",
+        "<say:north-wind*>“Hmph,”</say> said the North Wind. <say:north-wind>“That was only a puff.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-wind",
+      "part": "part-1",
+      "paras": [
+        "So he took a bigger breath, and he blew.",
+        "Off flew the traveller’s hat. The goats’ bells clanged on the hillside, and far below the waves turned white.",
+        "<say:traveller*>“My hat!”</say> cried the traveller. He ran, he caught it, he jammed it back on, and held his cloak tighter."
+      ]
+    },
+    {
+      "scene": "scene-wind",
+      "part": "part-1",
+      "paras": [
+        "Now the North Wind was cross. He took the biggest breath of his life, and he <pop:1.3>HOWLED</pop>.",
+        "Branches cracked. Fishing boats ran for the shore. Sand stung the traveller’s knees.",
+        "He bent almost double. He gripped the wool in both fists, and held his cloak tighter than ever."
+      ]
+    },
+    {
+      "scene": "scene-wind",
+      "part": "part-1",
+      "paras": [
+        "The North Wind puffed. He blew. He wheezed. Then he had no breath left at all.",
+        "He flopped onto a hilltop like a wet grey blanket.",
+        "<say:north-wind*>“It cannot be done,”</say> he panted. <say:north-wind>“That cloak is stuck to him. Nobody could get it off.”</say>",
+        "<say:sun*>“May I try?”</say> asked the Sun."
+      ]
+    },
+    {
+      "scene": "scene-sun",
+      "part": "part-2",
+      "paras": [
+        "^The Sun came out from behind the cloud, quiet as a cat.",
+        "No puffing. No blowing. Only a soft gold light on the road.",
+        "The stones grew warm. The bees came back to the thyme. The sea lay down smooth and blue.",
+        "<say:traveller*>“That is better,”</say> said the traveller, and he let his cloak hang loose."
+      ]
+    },
+    {
+      "scene": "scene-sun",
+      "part": "part-2",
+      "paras": [
+        "The Sun shone a little warmer.",
+        "Lizards crept out to bask on the wall. The air smelled of hot pine.",
+        "<say:traveller*>“Phew,”</say> said the traveller. He pushed back his hat. Then he undid the pin at his shoulder.",
+        "On his hilltop, the North Wind opened one eye."
+      ]
+    },
+    {
+      "scene": "scene-sun",
+      "part": "part-2",
+      "paras": [
+        "The Sun shone warmer still.",
+        "<say:traveller*>“Too hot for wool!”</say> said the traveller, and he laughed out loud.",
+        "Off came the cloak. He shook it, folded it, and tucked it under his arm.",
+        "<say:north-wind*>“Oh,”</say> said the North Wind, in a very small voice."
+      ]
+    },
+    {
+      "scene": "scene-rest",
+      "part": "part-2",
+      "paras": [
+        "The traveller cooled his dusty feet in the sea at a little <tap:liberty-moment>harbour</tap>. Then he climbed to an old olive tree and lay in its shade, the folded cloak beside him.",
+        "<say:north-wind*>“That is not fair,”</say> grumbled the North Wind. <say:north-wind>“I worked so hard. You hardly did a thing!”</say>",
+        "<say:sun*>“You pushed, my friend,”</say> said the Sun. <say:sun>“I only asked.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-rest",
+      "part": "part-2",
+      "paras": [
+        "The afternoon grew hot and still. Under the olive tree, the traveller fanned himself with his hat.",
+        "Then a small, cool breeze came up from the sea. It did not puff or blow or howl. It only lifted his hair.",
+        "<say:traveller*>“Ah,”</say> said the traveller. <say:traveller>“Thank you, wind.”</say>",
+        "And high over the islands, the North Wind went quite pink with pleasure."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "colossus-of-rhodes",
+      "name": "Colossus of Rhodes",
+      "era": "ancient",
+      "built": {
+        "from": -292,
+        "to": -280,
+        "circa": true,
+        "note": "Ancient writers say it took about 12 years to build. Dates and height to be fact-checked (CONTENT_PLAN §5.1)."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Greece",
+      "place": "Rhodes, Greece",
+      "coordinates": {
+        "lat": 36.451,
+        "lon": 28.226
+      },
+      "region": "european",
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant bronze statue of the sun god, about as tall as a ten-floor building."
+        },
+        "medium": {
+          "line": "The people of Rhodes built it about 2,300 years ago: a bronze sun god about 33 metres tall.",
+          "note": "An earthquake brought it down after only about 54 years."
+        },
+        "advanced": {
+          "line": "Finished about 280 BCE and felled by an earthquake about 226 BCE, it stood for only about 54 years.",
+          "note": "Nobody knows exactly how or where it stood. It did not stand with one foot on each side of the harbour mouth; that picture was imagined many centuries later."
+        }
+      },
+      "art": {
+        "file": "art/colossus-of-rhodes.heic",
+        "alt": "A drawing of how the statue may have looked: a tall bronze figure with a crown of sun rays, standing with its feet together on a stone base beside a harbour.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#123A5C",
+      "rights": "Our own reconstruction drawing, not traced from any modern artist’s reconstruction; no photograph. The statue is lost and its pose is unknown: it is drawn standing on one base beside the harbour, never astride the harbour mouth. Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "statue-of-liberty",
+      "name": "Statue of Liberty",
+      "era": "modern",
+      "built": {
+        "from": 1875,
+        "to": 1886,
+        "circa": true,
+        "note": "Dedicated in 1886; work on the statue began in France about 1875. Dates to be fact-checked (CONTENT_PLAN §5.1)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "USA",
+      "place": "New York Harbor, USA",
+      "coordinates": {
+        "lat": 40.689,
+        "lon": -74.045
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A giant green statue of a woman, holding a torch high above a harbour."
+        },
+        "medium": {
+          "line": "A gift from the people of France to the United States, set up in New York Harbor in 1886.",
+          "note": "A poem calls her “The New Colossus”."
+        },
+        "advanced": {
+          "line": "Dedicated in 1886, the copper statue was made in France and shipped across the Atlantic in pieces.",
+          "note": "Emma Lazarus’s poem “The New Colossus” names her after the lost statue of Rhodes. Her copper skin has turned green in the air."
+        }
+      },
+      "art": {
+        "file": "art/statue-of-liberty.heic",
+        "alt": "A tall green statue of a woman in a robe and a crown of rays, holding a torch high, on a stone base on a small island in a harbour.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0F3F4F",
+      "rights": "Our own illustration; no photograph. The statue is believed clear to depict (a public work, long out of copyright); confirm the name is not a restricted mark (CONTENT_PLAN §6.6). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a traditional Greek fable from the collection known as Aesop’s fables. It is not the wording of any earlier edition.",
+    "Tradition: ancient Greek fables, told for about 2,500 years; people say a storyteller named Aesop told them.",
+    "Documented source: “Aesop’s Fables”, translated by V. S. Vernon Jones (London: William Heinemann, 1912), Project Gutenberg ebook #11339, https://www.gutenberg.org/ebooks/11339",
+    "Also in: Joseph Jacobs, “The Fables of Aesop” (London: Macmillan, 1894), Project Gutenberg ebook #28, https://www.gutenberg.org/ebooks/28 (both US public domain; other territories not verified).",
+    "Project Gutenberg could not be reached on the day of writing (HTTP 503), so the retelling was written from knowledge of the traditional fable; an editor should re-read both sources against it.",
+    "Expanded: the fable is a few lines long, so each contestant gets a build of three, and a refrain returns.",
+    "Left out: the old stated moral. The Sun says one short kind line, and the story ends on an outcome we added (the Wind tries a gentle breeze). Nothing needed softening.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Classicist / Greek reader) pending.",
+    "Source check, 18 Nov 2026 (read on the Project Gutenberg mirror gutenberg.pglaf.org; gutenberg.org itself was unreachable):",
+    "Vernon Jones is printed as “Æsop's Fables: A New Translation” (1912; the Gutenberg text names no publisher). Jacobs is “The Fables of Æsop”, Macmillan, 1894, where the fable is called “The Wind and the Sun”. The Sun's proposal and the cloud follow Jacobs; the warming in stages follows Vernon Jones; only Vernon Jones names the North Wind."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#0B4F7A",
+      "shade": "#5E7F5A",
+      "mid": "#2A9DB8",
+      "light": "#D3EEF0",
+      "glow": "#FFE3A6",
+      "accent": "#B5482E",
+      "mood": "Clear Aegean light: sea blue, olive silver-green, pale stone, with one warm red-brown note in the traveller’s cloak."
+    },
+    "light": "Late morning moving to afternoon; ONE warm light from the upper left in every picture (the Sun sits upper left whenever it is in view). In the gale the sky is pale grey-blue, never dark.",
+    "world": [
+      "Landscape: dry, rocky Greek hills above the sea; pale limestone, dusty earth road (not paved), low dry-stone terrace walls, small rocky islands on the horizon.",
+      "Plants: old olive trees with twisted trunks and silver-green leaves, thyme and low scrub, a few pines; no palm trees, no cactus (prickly pear came from the Americas much later).",
+      "Animals: goats with small bronze bells on the hillside, bees, small lizards on the wall.",
+      "Sea and boats: small wooden fishing boats with one mast and one square sail, or oars; no triangular sails, no modern hulls.",
+      "Buildings (small, far off, at the harbour only): low houses of stone and mud brick with clay-tile or flat roofs. AVOID whitewashed cube houses with blue domes, windmills and church towers (all much later).",
+      "Clothing: a knee-length tunic, a rectangular woollen cloak pinned at one shoulder with a round bronze pin, a wide-brimmed felt sun hat with a chin cord, leather sandals or short boots, a walking stick.",
+      "AVOID: Roman togas, laurel wreaths, marble temples on every hill, statues or columns as decoration, Greek-key borders used as a cliché.",
+      "The framed landmarks (the Colossus, the Statue of Liberty) never appear in any scene; only on their own cards.",
+      "The Wind and the Sun are friendly picture-book sky characters, not gods: no chariot, no wings, no halo of a particular god. The Sun must not look like the Colossus statue."
+    ],
+    "characters": {
+      "north-wind": "A great rounded grey-blue cloud with a face: heavy brows, big puffed cheeks, a round blowing mouth; trailing wisps instead of arms. Blustery, never frightening. Pale grey-blue with deeper blue shadows; goes soft pink at the edges on the last page.",
+      "sun": "A round warm-gold disc with a calm, kind face and half-closed smiling eyes; short soft rays. Says little, so the face stays still and gentle.",
+      "traveller": "A man of about thirty with brown skin, dark curly hair and a short dark beard; cream knee-length tunic, red-brown woollen cloak pinned at the right shoulder with a round bronze pin, wide-brimmed straw-coloured hat, sandals, a walking stick. Cheerful and practical."
+    },
+    "scenes": {
+      "scene-sky": {
+        "unfolded": "A high view. Far: pale sky and the line of the sea with small islands. Middle: the Greek coast and a pale road winding along the hills, a tiny cloaked figure on it. Near, on the trailing half: the smiling Sun at the upper left of that half and the North Wind cloud beside it on the right, cheeks puffed, lit from the Sun’s side. The leading pane’s upper two thirds are calm pale sky for the words.",
+        "folded": "The North Wind’s puffed face in the middle of the band with the Sun’s calm face just to its upper left; a strip of blue sea and islands below."
+      },
+      "scene-wind": {
+        "unfolded": "The hill road in the gale. Far: pale grey-blue sky, white-capped sea, a fishing boat running for shore. Middle: olive trees bent hard to the right, leaves flashing silver, goats on the slope. Near, on the trailing half: the traveller leaning into the wind, both fists gripping his cloak, hat pulled down. A corner of the North Wind’s cheek may enter at the top left edge, low enough to leave the leading pane’s upper two thirds pale and calm.",
+        "folded": "The traveller’s face in the middle, chin tucked into the cloak, one bent olive tree behind him and white waves below."
+      },
+      "scene-sun": {
+        "unfolded": "The same road, same viewpoint, in warm gold light. Far: smooth blue sea, clear islands. Middle: upright olive trees, bees over thyme, a lizard on the dry-stone wall. Near, on the trailing half: the traveller walking easily, hat pushed back, cloak hanging loose from one shoulder. The leading pane’s upper two thirds are pale warm sky.",
+        "folded": "The traveller’s face in the middle, smiling, hat pushed back, one hand at the pin on his shoulder; gold light on the wall behind."
+      },
+      "scene-rest": {
+        "unfolded": "Far: calm sea and islands. Middle: a small harbour below with two or three fishing boats and a few low houses. Near, low on the trailing half: the traveller lying in the shade of an old olive tree, cloak folded beside him, hat in hand. Keep the tree’s crown low and to the right so the top of both panes stays pale sky.",
+        "folded": "The traveller’s contented face in the middle, resting against the olive trunk, the folded red-brown cloak beside him and a glimpse of harbour below."
+      }
+    },
+    "pictures": {
+      "fable": "One centred subject: a Greek storyteller in a plain tunic sitting on a stone step, one hand raised mid-tale. Not a portrait of Aesop (nobody knows what he looked like); no listeners needed.",
+      "aegean-sea": "One centred subject: a bright blue sea from high above, dotted with small rocky islands, one tiny square-sailed boat for scale.",
+      "cloak": "One centred subject: the red-brown woollen cloak, draped as if on a shoulder, with its round bronze pin catching the light."
+    },
+    "portraits": {
+      "north-wind": "The North Wind full face, cheeks puffed and brows up, mid-boast, over a small strip of white-capped sea.",
+      "sun": "The Sun full face with a calm smile, soft short rays, over a smooth blue sea."
+    },
+    "cover": "The traveller in the middle on the hill road; the smiling Sun at the upper left warms one side of him while the North Wind puffs from the right and blows half his cloak out; blue sea and islands behind.",
+    "landmarks": {
+      "colossus-of-rhodes": "Our own reconstruction, by day: a tall bronze figure of a young man with a crown of sun rays, standing upright with feet together on a pale stone base beside (not across) a harbour, small square-sailed boats below for scale. Simple and modest; one arm may be raised to shade the eyes. Not traced from any modern reconstruction.",
+      "statue-of-liberty": "By day: the green copper statue with torch raised and crown of rays, on its stone base on a small island, harbour water around it. No modern skyline needed; no night lighting."
+    }
+  }
+}

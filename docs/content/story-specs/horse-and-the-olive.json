@@ -1,0 +1,509 @@
+{
+  "id": "horse-and-the-olive",
+  "title": "The Horse and the Olive",
+  "tier": "medium",
+  "region": {
+    "id": "european",
+    "culture": "Ancient Greek myth",
+    "place": "Athens, Greece",
+    "label": "Ancient Athens",
+    "pin": { "lat": 37.97, "lon": 23.73 },
+    "pinColor": "#F5A623"
+  },
+  "setting": {
+    "period": "A story the ancient Greeks told about the first days of Athens",
+    "latestYear": -400
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Greek myth of the naming of Athens",
+    "sources": [
+      {
+        "author": "James Baldwin",
+        "title": "Old Greek Stories",
+        "year": 1895,
+        "gutenbergId": 11582,
+        "url": "https://www.gutenberg.org/ebooks/11582",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of the ancient Greek myth of the naming of Athens, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Reader in Greek history and myth"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Athens grew up round a steep, flat-topped rock near the sea, the Acropolis. The land is dry and stony, with hot summers and little rain, which is exactly where olive trees do well.",
+      "factCards": ["acropolis", "temple-moment"]
+    },
+    "culture": {
+      "lesson": "The ancient Greeks told stories of many gods to explain the sea, the sky and how their cities began; this one says how Athens got its name. The olive gave Greek homes food, lamp oil and a sign of peace.",
+      "factCards": ["greek-gods", "olive-oil", "olive-wreath", "zeus-moment"]
+    },
+    "moral": {
+      "lesson": "The horse is a splendid gift and the people are right to cheer it; the olive is plain and they are right to choose it. A child can weigh what dazzles today against what is still useful in a hundred years.",
+      "reflectionQuestion": "The olive won by one pebble. Which jar would your pebble have gone into, and why?"
+    }
+  },
+  "moral": "The gift that dazzles wins the cheers, but the useful gift is the one that lasts.",
+  "theme": {
+    "textColor": "#12294A",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A white horse rears on a bare rocky hilltop beside a small grey-green olive tree, with the blue sea far behind them."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "athena",
+      "name": "Athena",
+      "color": "#5B6B2E",
+      "chipBackground": "#E8EED2",
+      "faceAlt": "Athena.",
+      "card": {
+        "label": "Character · goddess of wisdom",
+        "title": "Athena",
+        "traits": [
+          { "text": "Thinks before speaking", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Wears a crested helmet", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Never boasts", "fill": "#D9F5E4", "ink": "#0B6B4A" }
+        ],
+        "body": "The Greeks said she was the goddess of wisdom and of weaving, building and every clever craft. She gives quietly and lets her gift speak for her.",
+        "portraitAlt": "Athena with her crested helmet pushed back from her calm face, holding a small twig of olive leaves.",
+        "background": ["#E4EDD0", "#BFD0A0", "#8FA66B"]
+      }
+    },
+    {
+      "id": "poseidon",
+      "name": "Poseidon",
+      "color": "#1F5F8B",
+      "chipBackground": "#D6E9F7",
+      "faceAlt": "Poseidon.",
+      "card": {
+        "label": "Character · god of the sea",
+        "title": "Poseidon",
+        "traits": [
+          { "text": "Loud as the surf", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Carries a trident", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Hates to lose", "fill": "#FFE0D6", "ink": "#B33A1C" }
+        ],
+        "body": "The Greeks said he ruled the sea and could shake the earth with his three-pronged spear, the trident. He loves to give splendid gifts, and he sulks when he loses.",
+        "portraitAlt": "Poseidon with a sea-blue beard and hair like wet seaweed, holding his three-pronged spear, with spray behind him.",
+        "background": ["#CFE8F5", "#8CC7DE", "#4E9CC2"]
+      }
+    },
+    {
+      "id": "cecrops",
+      "name": "Cecrops",
+      "color": "#8A4A00",
+      "chipBackground": "#FFE9B8",
+      "faceAlt": "King Cecrops."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "acropolis",
+      "kind": "place",
+      "title": "The high rock",
+      "line": "A steep rock in the middle of Athens, flat on top, called the Acropolis.",
+      "cultureNote": {
+        "label": "From Greece",
+        "text": "Acropolis means “high city” in Greek. Long ago people lived on the rock because it was easy to guard and had a spring, and today anyone can climb it."
+      },
+      "pictureAlt": "A steep, flat-topped rock of pale stone standing alone above a dry plain.",
+      "background": "#2A4A6B"
+    },
+    {
+      "id": "greek-gods",
+      "kind": "idea",
+      "title": "Greek gods",
+      "line": "The ancient Greeks told stories of many gods, each ruling one part of the world.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "The Greeks said Poseidon ruled the sea, Zeus the sky, and Athena wisdom and crafts. Their stories explained storms, seasons and how cities began, and people still read them today as stories."
+      },
+      "pictureAlt": "A tall clay jar painted with a row of small dark figures of gods.",
+      "background": "#5A3324"
+    },
+    {
+      "id": "zeus-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "statue-of-zeus-olympia",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "The Greeks called Zeus the king of their gods. Long after people first told this story, a sculptor named Phidias made a giant statue of him at Olympia."
+        }
+      },
+      "background": "#3A2A55"
+    },
+    {
+      "id": "olive-oil",
+      "kind": "object",
+      "title": "Olive oil",
+      "line": "A golden oil pressed out of ripe olives, the small fruit of the olive tree.",
+      "cultureNote": {
+        "label": "From Greece",
+        "text": "Greek families eat olive oil at almost every meal, and long ago they also burned it in lamps and rubbed it on their skin. An olive tree grows in dry, stony ground and can live for hundreds of years."
+      },
+      "pictureAlt": "A small clay jug pouring golden oil into a shallow bowl.",
+      "background": "#4A5320"
+    },
+    {
+      "id": "olive-wreath",
+      "kind": "idea",
+      "title": "Olive branch",
+      "line": "A leafy twig of the olive tree, carried or worn as a sign of peace and honour.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "Winners at the ancient Olympic games were given no gold, only a crown of olive leaves. Today an olive branch still means peace in many countries of the world."
+      },
+      "pictureAlt": "A crown of grey-green olive leaves bent into a ring.",
+      "background": "#2F4A3A"
+    },
+    {
+      "id": "temple-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "parthenon",
+        "appearance": "natural"
+      },
+      "background": "#1D4466"
+    }
+  ],
+  "scenes": {
+    "scene-hill": {
+      "unfoldedAlt": "A steep, flat-topped rocky hill stands above a dry plain under a clear, pale blue sky, with the sea far off. On and around the hill, on the right, people are building a little town of mud-brick huts with thatched roofs, among goats and a small spring.",
+      "foldedAlt": "People build mud-brick huts with thatched roofs on a rocky hilltop, with goats beside a spring.",
+      "fallbackColors": ["#DCEEF8", "#F3E9D2", "#C9B48A"]
+    },
+    "scene-gods": {
+      "unfoldedAlt": "On the bare hilltop the townspeople stand in a half circle under a bright pale sky. Before them, on the right, stand two tall shining figures: Poseidon with his three-pronged spear, and Athena with her helmet pushed back, a spear and a round shield; white clouds are piled high above like a throne.",
+      "foldedAlt": "Tall Poseidon with his three-pronged spear and tall Athena with her spear and shield stand before the small townspeople.",
+      "fallbackColors": ["#E3F0FA", "#F6EEDC", "#D2C09A"]
+    },
+    "scene-horse": {
+      "unfoldedAlt": "Poseidon strikes the rock with his three-pronged spear under a pale bright sky. On the right a white horse leaps out of the split stone in a burst of sea spray, its mane flying, while the people fall back in wonder.",
+      "foldedAlt": "A white horse leaps out of split rock in a burst of sea spray, its mane flying.",
+      "fallbackColors": ["#D9ECF7", "#EAF4F6", "#BFB198"]
+    },
+    "scene-olive": {
+      "unfoldedAlt": "In warm, pale golden light Athena kneels on the right beside a young grey-green olive tree growing from the bare rock, heavy with small fruit. An old woman and a small girl step near to touch its leaves, under a wide pale sky.",
+      "foldedAlt": "Athena kneels beside a young olive tree growing out of bare rock, and a small girl reaches up to its fruit.",
+      "fallbackColors": ["#E6F1F4", "#FBEFCB", "#C8BE8E"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-hill",
+      "part": "part-1",
+      "paras": [
+        "^The ancient Greeks told of a town that had no name.",
+        "It began as a few huts on a <tap:acropolis>high rock</tap> near the sea. The rock was steep on every side and flat on top, like a table set down on the dry plain.",
+        "<name:cecrops>King Cecrops</name> and his people had built the huts themselves, of mud brick and thatch. They had piled up a wall of stones. They had a spring of cold water and forty goats.",
+        "<say:cecrops*>“We have everything a town needs,”</say> said Cecrops, <say:cecrops>“except something to call it.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-hill",
+      "part": "part-1",
+      "paras": [
+        "It was not an easy place. The soil was thin and full of stones. All summer long the sun baked the hillsides, and hardly a drop of rain fell.",
+        "Still, the people were proud of it. Every stone in that wall had been carried up in somebody’s arms.",
+        "Far above, two of the <tap:greek-gods>gods</tap> were watching. One was <name:poseidon>Poseidon</name>, lord of the sea, whose voice was like waves in a cave. The other was <name:athena>Athena</name>, the grey-eyed goddess of wisdom and of clever hands.",
+        "Each of them looked at the brave little town on its rock, and each of them wanted it."
+      ]
+    },
+    {
+      "scene": "scene-gods",
+      "part": "part-1",
+      "paras": [
+        "<say:poseidon*>“It stands beside my sea,”</say> boomed Poseidon. <say:poseidon>“It is mine!”</say>",
+        "<say:athena*>“Its people build with their hands and think before they speak,”</say> said Athena. <say:athena>“It is mine.”</say>",
+        "They argued until the clouds shook. At last <tap:zeus-moment>Zeus</tap>, the king of the gods, grew tired of the noise.",
+        "“Enough,” he said. “Go down to the rock, both of you, and each give the town one gift. Its people shall choose, and whoever gives the better gift shall name it.”",
+        "So the two of them came down onto the hilltop, taller than the huts and shining like bronze. The goats ran. The people stood very still."
+      ]
+    },
+    {
+      "scene": "scene-horse",
+      "part": "part-1",
+      "paras": [
+        "Poseidon went first. He strode to the middle of the rock and lifted his great three-pronged spear.",
+        "<pop:1.3>Crack!</pop> The hill shook. The stone split open, salt spray burst out of it, and through the spray leaped an animal no one there had ever seen.",
+        "It was a horse, white as sea foam. He tossed his mane and drummed his hooves on the rock, and the children hid behind their mothers.",
+        "<say:poseidon*>“No runner will ever catch you again!”</say> roared <name:poseidon>Poseidon</name>. <say:poseidon>“Harness him to a chariot, and your enemies will scatter like sparrows!”</say>",
+        "The people cheered until their throats were sore."
+      ]
+    },
+    {
+      "scene": "scene-olive",
+      "part": "part-2",
+      "paras": [
+        "^Then it was <name:athena>Athena</name>’s turn, and she did not shout.",
+        "She pushed her helmet back from her face and knelt on the bare rock. She pressed the end of her spear into a crack in the stone, as gently as a gardener.",
+        "A green shoot curled out of the crack. It grew to a thin grey trunk, no taller than a man. It put out narrow leaves, silver underneath, and then a scatter of small hard fruit.",
+        "Nobody cheered. The wind turned the little leaves over, green, silver, green.",
+        "“Is that all?” said somebody at the back, and somebody else laughed."
+      ]
+    },
+    {
+      "scene": "scene-olive",
+      "part": "part-2",
+      "paras": [
+        "Athena did not mind the laughing. She picked one of the small fruits and held it out on her palm.",
+        "<say:athena*>“This is an olive,”</say> she said. <say:athena>“Soak it in sea water and it is good to eat. Press it, and it gives <tap:olive-oil>golden oil</tap>: oil for your bread, oil for your lamps, oil to rub on tired skin and to soothe the sick.”</say>",
+        "<say:athena*>“The tree asks for no rich soil and very little rain. It will grow on your stones. And it will still be giving fruit to your grandchildren’s grandchildren.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-gods",
+      "part": "part-2",
+      "paras": [
+        "Then she broke off one leafy twig. <say:athena*>“And when you carry <tap:olive-wreath>a branch</tap> of it in your hand,”</say> she said, <say:athena>“strangers will know that you come in peace.”</say>",
+        "The people looked from the tree to the horse and back again.",
+        "“But the horse!” cried a young man. “No enemy would ever dare to come near us!”",
+        "An old woman shook her head. She had known hungry winters. “Can we eat a gallop?” she asked. “Can we light a lamp with it?”",
+        "A small girl said nothing at all. She held one olive up to the sun and turned it round and round."
+      ]
+    },
+    {
+      "scene": "scene-gods",
+      "part": "part-2",
+      "paras": [
+        "<name:cecrops>King Cecrops</name> set two clay jars on the ground, one for the horse and one for the olive. Every man and woman dropped a pebble into the jar they chose. Clink. Clink. Clink.",
+        "Then he tipped them out and counted, twice, to be sure.",
+        "<say:cecrops*>“The olive has it,”</say> he said, <say:cecrops>“by one pebble.”</say>",
+        "Poseidon’s beard bristled like a wave about to break. He stamped back down to the sea, and for a whole week the waves banged on the shore like fists.",
+        "But he did not take back his horse."
+      ]
+    },
+    {
+      "scene": "scene-hill",
+      "part": "part-2",
+      "paras": [
+        "The people kept the white horse and were glad of him. He carried riders and news along the dusty roads, far more often than he ever went to war.",
+        "As for the town, it had a name at last. They called it Athens, after <name:athena>Athena</name>.",
+        "The people cut twigs from her tree and planted them, and their children planted more. Before long, olive trees silvered every hillside around the rock.",
+        "The oil went down to the harbour in tall clay jars, and ships carried it to every port on the sea. Athens grew rich, one jar at a time."
+      ]
+    },
+    {
+      "scene": "scene-olive",
+      "part": "part-2",
+      "paras": [
+        "Long afterwards, the Athenians built Athena a <tap:temple-moment>marble temple</tap> on top of that same rock. High on one end they carved the contest in stone: the goddess and the sea god, face to face.",
+        "And beside their temples they always kept one olive tree growing, for they said it was the very tree she planted.",
+        "Kings have come and gone since then. The marble has cracked, and most of the carved gods have fallen.",
+        "But climb the rock today and you will find an olive tree there, planted in memory of the first one. The wind still turns its leaves over, green, silver, green."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "parthenon",
+      "name": "Parthenon",
+      "era": "ancient",
+      "built": {
+        "from": -447,
+        "to": -432,
+        "circa": false,
+        "note": "The building went up from 447 BCE; its carvings were finished by 432 BCE. That is long after the mythical time of the story, so the medium card says it was built later (CONTENT_PLAN §6.2)."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Greece",
+      "place": "Athens, Greece",
+      "coordinates": { "lat": 37.972, "lon": 23.727 },
+      "region": "european",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A temple of white marble on a rocky hill, with tall columns all the way round."
+        },
+        "medium": {
+          "line": "The Athenians built this marble temple for Athena on the Acropolis, about 2,400 years ago.",
+          "note": "It was built long after the time of this story. The contest of Athena and Poseidon was carved high on its western end."
+        },
+        "advanced": {
+          "line": "Built between 447 and 432 BCE, with eight columns across each end and seventeen along each side.",
+          "note": "In 1687 gunpowder stored inside it exploded and blew out the middle of the building. Most of the contest carving is lost; we know its design from drawings made a few years before the blast and from broken pieces kept in museums."
+        }
+      },
+      "art": {
+        "file": "art/parthenon.heic",
+        "alt": "A marble temple with a row of tall columns and a broken triangular roof front, on a rocky hilltop under a blue sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1D4466",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "statue-of-zeus-olympia",
+      "name": "Statue of Zeus at Olympia",
+      "era": "ancient",
+      "built": {
+        "from": -435,
+        "circa": true,
+        "note": "Made about 435 BCE by the sculptor Phidias for the temple of Zeus at Olympia. The exact years are not known. The statue is lost; our picture is a reconstruction."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Greece",
+      "place": "Olympia, Greece",
+      "coordinates": { "lat": 37.638, "lon": 21.630 },
+      "region": "european",
+      "lists": ["ancientSeven"],
+      "factCards": {
+        "low": {
+          "line": "A giant statue of gold and ivory, sitting on a throne. It is gone now."
+        },
+        "medium": {
+          "line": "A seated statue of Zeus about 12 metres tall, made at Olympia around 435 BCE.",
+          "note": "The sculptor was Phidias, who also made the great statue of Athena for Athens. The statue of Zeus was lost more than 1,500 years ago."
+        },
+        "advanced": {
+          "line": "One of the Seven Wonders of the ancient world: gold and ivory laid over a wooden frame, about as tall as a four-storey house.",
+          "note": "Nothing of it survives, and nobody is sure how it was lost. We know its look from an ancient traveller named Pausanias, who described it, from small pictures on old coins, and from the sculptor’s workshop, which was dug up at Olympia."
+        }
+      },
+      "art": {
+        "file": "art/statue-of-zeus-olympia.heic",
+        "alt": "A drawing of how the statue may have looked: a huge seated figure of gold and ivory on a throne inside a temple, its head near the roof, holding a tall staff.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A55",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The statue is lost: the picture is our own reconstruction and must be labelled as one.",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the ancient Greek myth of the naming of Athens.",
+    "It is not the wording of any earlier edition.",
+    "Documented source for the tale: James Baldwin, \"Old Greek Stories\" (1895), chapter \"The Horse and the",
+    "Olive\", Project Gutenberg ebook #11582, https://www.gutenberg.org/ebooks/11582",
+    "(US public domain; other territories not verified).",
+    "Source read: yes, once, through the mirror gutenberg.pglaf.org/1/1/5/8/11582/11582-0.txt (plot only;",
+    "no sentence of ours follows Baldwin's wording).",
+    "Names: Baldwin calls the sea god Neptune (Roman) and the goddess Athena. We use the Greek names",
+    "Poseidon, Athena and Zeus throughout. (The plan expected Jupiter in Baldwin; he is only mentioned there.)",
+    "Departures from Baldwin, all taken from older Greek and Roman tellings or from the editorial plan:",
+    "- Zeus sets the contest. In Baldwin an old townsman asks the two strangers for gifts they can see.",
+    "  (In Apollodorus, Zeus appoints the judges.)",
+    "- The people vote with pebbles in two jars and the olive wins by one pebble. In Baldwin the people",
+    "  choose by shouting when Cecrops asks them. A vote won by a single vote is in Varro's version",
+    "  (quoted by Augustine), where the women outvote the men by one; we kept the one vote, not the split.",
+    "- Poseidon sulks and the waves bang on the shore for a week. Baldwin gives the loser no reaction;",
+    "  Apollodorus has him flood the plain in anger. Softened to a noisy week of surf.",
+    "- The horse stays in Athens. In Baldwin it wanders north to Thessaly.",
+    "- Athena presses the butt of her spear into a crack of bare rock. Baldwin: spear point, a grassy plot.",
+    "- 'Soak it in sea water and it is good to eat' is our line (raw olives are bitter and are cured in brine).",
+    "- Plan fix: the plan had the horse used 'for ploughing'. Greeks ploughed with oxen, so our horse",
+    "  carries riders and news instead.",
+    "Left out: Baldwin's whole first part (Cecrops as a shipwrecked stranger, the people's plan to sacrifice",
+    "him, the nickname 'serpent man'); the older tradition that Cecrops was half snake; the old name Cranae;",
+    "the music at the olive's birth. In the oldest Greek versions Poseidon's gift is a salt spring, not a",
+    "horse; the horse comes from Roman-era tellings (Virgil, Servius) and is the form Baldwin uses.",
+    "Framing: gods are told as 'the Greeks told / said'; the narrator never states them as fact.",
+    "Reviewer to check: the spelling Cecrops (Greek Kekrops); 'grey-eyed' for Athena's epithet glaukopis;",
+    "that the west pediment of the Parthenon showed this contest (page 10 and the Parthenon cards);",
+    "'beside their temples they always kept one olive tree' (the sacred olive by the Erechtheion);",
+    "'you will find an olive tree there today, planted in memory' (a modern replanting, early 1900s; confirm);",
+    "olive-oil card: 'hundreds of years' for a tree's life; olive-wreath card: Olympic crown of wild olive;",
+    "acropolis card: 'easy to guard and had a spring'; Zeus card: Phidias, about 12 m, lost, the workshop",
+    "found at Olympia; Parthenon card: 8 by 17 columns, the 1687 explosion, drawings of 1674.",
+    "SOURCE CHECK (18 Nov 2026, against Gutenberg #11582 on the mirror): one echo (the horse 'faster than the",
+    "wind' and the chariots, in the sea god's speech) was reworded. Further departures from Baldwin: his gods",
+    "first promise wealth against wisdom; his people do not cheer the horse and an old man rejects it; his",
+    "olive rises full-grown; his town has wooden houses, a market and a gated wall (the mud brick, the spring",
+    "and the forty goats are ours); his people choose with one voice (ours: by one pebble); the lamps, the",
+    "medicine and the peace branch come from the wider tradition. Fact to check on page 10: most figures of",
+    "the western gable are destroyed and the fragments are in museums; the text now says 'most have fallen'.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Reader in Greek history and myth) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#12294A",
+      "shade": "#5E7A52",
+      "mid": "#9DB08A",
+      "light": "#E3F0FA",
+      "glow": "#FBE7B0",
+      "accent": "#F5A623",
+      "mood": "A bright, dry Attic day: clear blue-white sky, pale honey limestone, silver-green olive, one band of deep sea blue. Sunlit and quiet, more air than detail."
+    },
+    "light": "High, clear Mediterranean daylight from the upper left in every picture, with short crisp shadows. The olive scene is a little warmer (pale gold late afternoon) but the sky stays pale. No night, no storm-dark sky; Poseidon's spray is white against pale blue.",
+    "world": [
+      "The place is the Acropolis rock of Athens as bare nature: a steep-sided, flat-topped outcrop of pale grey-honey limestone, about 150 m above the sea, standing alone on a dry plain ringed by low bare hills. The sea (the Saronic Gulf) is a thin blue band about 6 km away, never at the foot of the rock.",
+      "The first town is early and humble: small one-room huts of sun-dried mud brick on rough stone footings, wooden posts, roofs of thatch or of clay on brushwood. A rough dry-stone wall. A spring trickling into a hollow in the rock. No marble, no columns, no temples, no statues in any scene.",
+      "Plants of dry Attica: thyme and thorny scrub, tufts of yellow grass, a few dark cypress or pine far off. The ground is stones and thin red-brown earth. Before Athena's gift there is no olive tree anywhere in the pictures; on page 9 the same hill view may show young olives on the slopes.",
+      "The olive tree as it really looks: a thin, twisting grey trunk, narrow leaves dark green above and silver-white beneath, small oval fruit, green ripening to purple-black. Athena's tree is young, no taller than a man, and grows straight out of a crack in bare rock.",
+      "Dress: undyed or earth-coloured wool tunics pinned at the shoulders and belted, a cloak over one shoulder, bare feet or simple leather sandals. Women wear a long tunic and may cover their hair with a cloth. Children in short tunics. No togas, no Roman armour.",
+      "Athena: tall, grey-eyed, calm. A long belted robe (peplos) to the feet, a bronze helmet with a horsehair crest pushed back off her face, a long spear and a round shield. The Greeks often drew a small owl with her; one small owl on a rock is welcome, once.",
+      "Poseidon: big, bare-armed, with a sea-blue beard and hair like wet seaweed, a cloak the colour of deep water, a trident (a long spear with three prongs). Blustery and comic-grand, never cruel. Both gods are about twice the height of the people and faintly bronze-bright.",
+      "Zeus is never drawn as a figure. On page 3 he is only a pile of white cloud shaped a little like a throne, with light behind it.",
+      "The horse: pure white, sturdy and short-backed like the horses on Greek pots, with a mane like breaking foam. No wings, no saddle, no stirrups, no horseshoes. Wild and lively, not frightening.",
+      "Goats are small, shaggy and dark or piebald, with back-curving horns. Everyday things: plain clay jars and bowls, baskets, a wooden bucket at the spring.",
+      "The vote: two plain clay jars on the ground and smooth pebbles from the beach. The oil jars of page 9 are tall two-handled clay jars with a narrow neck (amphorae), plain or with one dark band; the ships are small wooden boats with one square sail and a row of oars, seen far off.",
+      "Avoid: the Parthenon or any marble building in a scene; Roman armour and togas; medieval castles; a winged Pegasus; meander-pattern borders everywhere; people who look like white marble statues (the Athenians are sun-browned, dark-haired, particular people); lightning bolts and a bearded Zeus in the sky; laurel wreaths on every head."
+    ],
+    "characters": {
+      "athena": "Tall and still, with grey eyes and dark hair tied back under a bronze helmet whose crest is pushed back off her brow. A long pale robe belted at the waist, spear and round shield. Signature detail: one small twig of olive in her hand; she kneels to be level with the people.",
+      "poseidon": "Broad and bare-armed, with a curling sea-blue beard, hair like wet weed and big eyebrows. A deep-water blue cloak. Signature detail: the trident held high, and a little spray always blowing round him. Proud and huffy, never cruel.",
+      "cecrops": "A lean, grey-haired king who looks like one of his own people: a plain wool tunic and cloak, a simple band of cloth round his head and a wooden staff, no crown and no gold. Signature detail: a pebble held up between finger and thumb. Fully human; no serpent tail."
+    },
+    "scenes": {
+      "scene-hill": {
+        "unfolded": "Far: a pale blue-white sky, low bare hills and a thin band of blue sea. Middle, on the trailing (right) half: the steep, flat-topped rock rising from the dry plain. Near, on and under the rock at the right: a few mud-brick huts with thatch, a rough stone wall half built, people carrying stones, goats, the spring. The leading (left) pane's upper two thirds are calm pale sky above a low line of hills.",
+        "folded": "The hilltop close up: two huts and the stone wall, a man and a woman lifting a stone together, goats by the spring, pale sky above for the words."
+      },
+      "scene-gods": {
+        "unfolded": "Far: bright pale sky with white clouds piled like a throne, high up and to the right, light behind them. Middle: the flat bare hilltop with the edge of the huts. Near, on the trailing (right) half: the townspeople in a half circle with their backs partly to us, small; before them Poseidon with his trident and Athena with helmet pushed back, spear and shield, twice their height. Two plain clay jars stand on the ground near the king. The leading pane's upper two thirds stay open pale sky.",
+        "folded": "Poseidon and Athena standing side by side in the middle, seen from among the people, whose heads are low in the band; cloud and pale sky above."
+      },
+      "scene-horse": {
+        "unfolded": "Far: pale bright sky and the thin line of sea. Middle, on the trailing (right) half: Poseidon with his trident just struck down, the rock split in a jagged line. Near, right of centre: the white horse leaping out of the split in a fan of white spray, mane flying; people falling back with their arms up, a child behind her mother. The leading pane's upper two thirds are clear pale sky with a few flecks of spray.",
+        "folded": "The white horse in the middle, rearing out of the cracked rock in spray, with Poseidon's trident and arm at the edge and pale sky above."
+      },
+      "scene-olive": {
+        "unfolded": "Far: a wide pale sky warming to pale gold near the hills. Middle: the bare hilltop, the people standing back in a loose group. Near, on the trailing (right) half: Athena kneeling with her spear laid down, beside the young grey-green olive tree growing from a crack in the rock, heavy with small fruit; an old woman and a small girl stepping close, the girl holding one olive up to the light. The leading pane's upper two thirds are calm pale sky.",
+        "folded": "The young olive tree in the middle with Athena kneeling beside it and the small girl reaching up to a fruit; silver leaf undersides showing; pale sky above."
+      }
+    },
+    "pictures": {
+      "acropolis": "The Acropolis rock alone, as bare nature: one steep, flat-topped outcrop of pale limestone above a dry plain, no buildings on it, on a deep blue ground.",
+      "greek-gods": "One tall clay jar in the Greek black-figure manner: an orange-red body with a single band of small dark figures (one with a trident, one with a helmet and shield), centred on a deep brown ground.",
+      "olive-oil": "One small clay jug tipped to pour a thin stream of golden oil into a shallow clay bowl, centred on a deep olive-green ground.",
+      "olive-wreath": "One crown of grey-green olive leaves with a few small olives, bent into a ring and seen from the front, centred on a deep green ground."
+    },
+    "portraits": {
+      "athena": "Half figure, calm and almost smiling, helmet pushed back, holding up one small twig of olive; soft silver-green light behind.",
+      "poseidon": "Half figure, chest out and beard blowing, the trident upright in his fist, white spray and pale sea blue behind."
+    },
+    "cover": "The bare hilltop in bright daylight: the white horse rearing on one side and the small grey-green olive tree on the other, with a small girl standing between them looking up at the tree; pale sky and a thin band of blue sea behind. No gods' faces needed, no buildings.",
+    "landmarks": {
+      "parthenon": "Our own drawing of the Parthenon as it stands today: seen from the north-west on its rock, honey-white marble columns, eight across the end, the broken triangular gable, the roof gone, under a clear blue sky. No scaffolding, no crowds. No photograph traced.",
+      "statue-of-zeus-olympia": "Our own reconstruction, plainly a drawing: a huge seated figure on a throne inside a dim temple hall, skin of ivory and robe of gold, the head almost touching the roof beams, a tall staff in the left hand and a small winged figure standing on the right palm, with a tiny person at the foot for scale. Soft and grand, not glaring. No photograph traced."
+    }
+  }
+}

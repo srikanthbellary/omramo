@@ -1,0 +1,536 @@
+{
+  "id": "shipwrecked-sailor",
+  "title": "The Shipwrecked Sailor",
+  "tier": "low",
+  "region": {
+    "id": "egyptian",
+    "culture": "Ancient Egyptian (Middle Kingdom)",
+    "place": "Egypt and the Red Sea",
+    "label": "Ancient Egypt",
+    "pin": {
+      "lat": 26,
+      "lon": 33
+    },
+    "pinColor": "#F0A81C"
+  },
+  "setting": {
+    "period": "Ancient Egypt, about 4,000 years ago",
+    "latestYear": -1900
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Egyptian tale of the Middle Kingdom, known from a single papyrus",
+    "sources": [
+      {
+        "author": "W. M. Flinders Petrie",
+        "title": "Egyptian Tales, Translated from the Papyri, First Series",
+        "publisher": "Methuen & Co.",
+        "year": 1895,
+        "gutenbergId": 7386,
+        "url": "https://www.gutenberg.org/ebooks/7386",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional ancient Egyptian tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Egyptologist accuracy read"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Red Sea, east of Egypt and the Nile, and the voyage south toward the land the Egyptians called Punt. Nobody is sure today exactly where Punt was, and the card says so.",
+      "factCards": [
+        "red-sea",
+        "incense",
+        "lighthouse-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Egyptians wrote stories on papyrus. This is one of the oldest adventure stories known, and its papyrus is kept in a museum in Russia.",
+      "factCards": [
+        "papyrus",
+        "incense"
+      ]
+    },
+    "moral": {
+      "lesson": "Stay brave and calm when things go wrong; be thankful to those who help you. The Sailor thanks the Serpent in the only way the Serpent wants: by telling his story well.",
+      "reflectionQuestion": "Who helped you once when you were afraid, and how did you thank them?"
+    }
+  },
+  "moral": "When things go wrong, stay brave and thank those who help you.",
+  "theme": {
+    "textColor": "#0F2A3F",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A small sailor sits on a green island beside a great golden serpent with blue eyebrows. Both look out to sea."
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "sailor",
+      "name": "Sailor",
+      "color": "#A8501C",
+      "chipBackground": "#FFE2A8",
+      "faceAlt": "The Sailor.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sailor",
+        "traits": [
+          {
+            "text": "Far from home",
+            "fill": "#D6ECFA",
+            "ink": "#0E4C7A"
+          },
+          {
+            "text": "Says thank you",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Tells a good story",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "A great wave washed him onto an island, all alone. He was very frightened. Then he made a friend, and he never forgot him.",
+        "portraitAlt": "The Sailor in a white linen kilt, standing on the sand and waving.",
+        "background": [
+          "#8FD3F0",
+          "#5BB5DC",
+          "#2F8FC0"
+        ]
+      }
+    },
+    {
+      "id": "serpent",
+      "name": "Serpent",
+      "color": "#1B4F9C",
+      "chipBackground": "#FFE7A0",
+      "faceAlt": "The golden Serpent.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Serpent",
+        "traits": [
+          {
+            "text": "Gold scales",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Blue eyebrows",
+            "fill": "#D6E4FA",
+            "ink": "#1B3F8A"
+          },
+          {
+            "text": "Lord of Punt",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He is huge and golden, and as gentle as a cat with her kitten. He lives alone on his island. He wants only one gift: a good word.",
+        "portraitAlt": "The great golden Serpent, coiled and smiling, with blue eyebrows and a long beard.",
+        "background": [
+          "#FFD86B",
+          "#F7B544",
+          "#E8923A"
+        ]
+      }
+    },
+    {
+      "id": "captain",
+      "name": "Captain",
+      "color": "#17694A",
+      "chipBackground": "#BDEFE0",
+      "faceAlt": "The Captain of the great ship."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "red-sea",
+      "kind": "place",
+      "title": "The Red Sea",
+      "line": "A long, narrow sea between Africa and Arabia, east of Egypt.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Egyptian ships sailed down this sea to a land they called Punt. Today nobody is sure exactly where Punt was."
+      },
+      "pictureAlt": "A long blue sea lying between two dry, sandy shores.",
+      "background": "#0B4F7A"
+    },
+    {
+      "id": "opera-house-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "sydney-opera-house",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "A sail is a wide cloth that catches the wind. Far away, and long after this story, people gave a building a roof shaped like sails."
+        }
+      },
+      "background": "#10355C"
+    },
+    {
+      "id": "incense",
+      "kind": "object",
+      "title": "Incense",
+      "line": "Dried tree sap that gives off a sweet smell when it burns.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Egyptians loved sweet smells. They sent ships a very long way to bring incense home from Punt."
+      },
+      "pictureAlt": "A small bowl of golden lumps of incense, with a curl of smoke rising from it.",
+      "background": "#5A3418"
+    },
+    {
+      "id": "lighthouse-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "lighthouse-of-alexandria",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "A harbour is a safe place for ships to stop. Long after this story, sailors coming home to Egypt had a great light to guide them in."
+        }
+      },
+      "background": "#0B2A4A"
+    },
+    {
+      "id": "papyrus",
+      "kind": "object",
+      "title": "Papyrus",
+      "line": "A kind of paper made from tall reeds that grow by the Nile.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "This story was written on papyrus about 4,000 years ago. It is one of the oldest adventure stories we know. The papyrus is kept in a museum in Russia."
+      },
+      "pictureAlt": "A roll of pale brown papyrus, partly open, with a reed pen lying beside it.",
+      "background": "#3D4A1E"
+    }
+  ],
+  "scenes": {
+    "scene-ship": {
+      "unfoldedAlt": "A great wooden Egyptian ship with one wide square sail and rows of oars crosses a blue sea. Far off, low dark clouds are gathering.",
+      "foldedAlt": "A great Egyptian ship with a wide square sail on a blue sea.",
+      "fallbackColors": [
+        "#CFEAF2",
+        "#FFE9B0",
+        "#1C7FA6"
+      ]
+    },
+    "scene-island": {
+      "unfoldedAlt": "A sailor sits alone on the sandy shore of a green island, under fig trees heavy with fruit. The sea is empty.",
+      "foldedAlt": "A sailor sits alone under a fig tree on a sandy shore.",
+      "fallbackColors": [
+        "#C6EEE6",
+        "#FFF0B8",
+        "#2FA39A"
+      ]
+    },
+    "scene-serpent": {
+      "unfoldedAlt": "A great golden serpent with blue eyebrows and a long beard bends its head kindly towards a small sailor, among the trees of the island.",
+      "foldedAlt": "A golden serpent with blue eyebrows looks kindly at a small sailor.",
+      "fallbackColors": [
+        "#D3EEDD",
+        "#FFE6A6",
+        "#3C9A6B"
+      ]
+    },
+    "scene-home": {
+      "unfoldedAlt": "The ship comes into a harbour on the Nile in the morning. Palm trees and flat-roofed houses stand on the bank, and children run to meet it.",
+      "foldedAlt": "A ship comes into a harbour with palm trees and flat-roofed houses.",
+      "fallbackColors": [
+        "#D9EEF0",
+        "#FFE2A0",
+        "#3F8E8A"
+      ]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-ship",
+      "part": "part-1",
+      "paras": [
+        "^Long ago in Egypt, a <name:sailor>Sailor</name> set out across the <tap:red-sea>Red Sea</tap>.",
+        "His ship was the biggest on the water. A hundred and twenty sailors rowed it, each one braver than a lion.",
+        "They were going to the king’s mines, far, far away.",
+        "<say:captain*>“The wind will be kind,”</say> said the <name:captain>Captain</name>. <say:captain>“We will be home before the figs are ripe.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-ship",
+      "part": "part-1",
+      "paras": [
+        "Up went the great square <tap:opera-house-moment>sail</tap>. The wind filled it, round and white.",
+        "For days the ship ran over the blue water, and the sailors sang.",
+        "Then the sky turned dark. The wind began to howl. Waves stood up as tall as houses.",
+        "<say:captain*>“Hold on!”</say> shouted the Captain. <say:captain>“Hold on, my lions!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-ship",
+      "part": "part-1",
+      "paras": [
+        "The ship went up, and the ship went down. Up, and down.",
+        "Then came the biggest wave of all. <pop:1.3>Crash!</pop> It swept the Sailor off the deck and into the sea.",
+        "He caught hold of a plank of wood. All night long the dark water carried him."
+      ]
+    },
+    {
+      "scene": "scene-island",
+      "part": "part-1",
+      "paras": [
+        "In the morning a wave set him down on warm sand. He was on an island.",
+        "He looked for the great ship. He saw only water.",
+        "<say:sailor*>“I am all alone,”</say> said the Sailor.",
+        "For three days he lay in the shade of a fig tree, too sad to move."
+      ]
+    },
+    {
+      "scene": "scene-island",
+      "part": "part-1",
+      "paras": [
+        "Then he grew hungry. He stood up and looked around.",
+        "What an island! There were figs and grapes, fat melons, fish in the pools and birds in every tree.",
+        "He ate until he was full. Then he lit a little fire, to thank his gods.",
+        "That was when the thunder began."
+      ]
+    },
+    {
+      "scene": "scene-serpent",
+      "part": "part-1",
+      "paras": [
+        "But it was not thunder. The trees shook. The ground shook. The Sailor shook most of all.",
+        "He hid his face in his hands. When he peeped out, a great <name:serpent>Serpent</name> was coming towards him.",
+        "His scales shone like gold. His eyebrows were blue as the bluest stone. He wore a long beard, like a king’s."
+      ]
+    },
+    {
+      "scene": "scene-serpent",
+      "part": "part-1",
+      "paras": [
+        "The Serpent rose up above him.",
+        "<say:serpent*>“Who brought you here, little one?”</say> he asked. <say:serpent>“Who brought you here? Who brought you to my island?”</say>",
+        "The Sailor lay flat on the sand. He opened his mouth, but no words came out.",
+        "So the Serpent picked him up in his mouth, as softly as a cat carries her kitten, and carried him away to his den."
+      ]
+    },
+    {
+      "scene": "scene-serpent",
+      "part": "part-2",
+      "paras": [
+        "^The Serpent set him down without a scratch.",
+        "<say:serpent*>“Now, little one,”</say> he said, <say:serpent>“who brought you here?”</say>",
+        "So the Sailor told him about the ship, the storm and the great wave. <say:sailor*>“I will never see my home again,”</say> he said.",
+        "<say:serpent*>“Do not be afraid, little one,”</say> said the Serpent. <say:serpent>“In four months a ship will come from your own land and take you home.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-serpent",
+      "part": "part-2",
+      "paras": [
+        "So they waited, and counted the moons together.",
+        "One evening the Serpent told a story of his own. <say:serpent*>“Once there were seventy-five of us here: brothers, sisters, children. Now there is only me.”</say>",
+        "The Sailor said nothing. He just sat a little closer.",
+        "<say:serpent*>“I was sad for a long time,”</say> said the Serpent. <say:serpent>“But I learned to be brave. So will you.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-serpent",
+      "part": "part-2",
+      "paras": [
+        "The Sailor wanted to give something back.",
+        "<say:sailor*>“When I get home,”</say> he said, <say:sailor>“I will send you ships full of <tap:incense>incense</tap> and perfume!”</say>",
+        "The Serpent laughed until his gold scales rattled.",
+        "<say:serpent*>“Little one, I am the lord of Punt. All the sweet smells in the world grow right here. Just say a good word for me in your town.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-island",
+      "part": "part-2",
+      "paras": [
+        "One moon passed, then two, then three, then four.",
+        "One morning the Sailor climbed a tall tree and looked out to sea. <pop:1.3>A sail!</pop>",
+        "It was a ship from Egypt, and he knew every face on board.",
+        "<say:captain*>“There he is!”</say> roared the Captain. <say:captain>“We have looked for you on every shore!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-serpent",
+      "part": "part-2",
+      "paras": [
+        "The Serpent heaped the ship with gifts: incense and perfume, sweet wood, and long white tusks of ivory.",
+        "The Sailor bowed low. <say:sailor*>“Thank you, my friend. I will come back to see you.”</say>",
+        "<say:serpent*>“You cannot,”</say> said the Serpent kindly. <say:serpent>“When you sail away, my island will slip under the waves. No one will find it again. Go home, little one.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-home",
+      "part": "part-2",
+      "paras": [
+        "North they sailed for two months, just as the Serpent had said.",
+        "The Sailor looked back once. Where the island had been, there was only bright water.",
+        "At last the ship slid into the <tap:lighthouse-moment>harbour</tap> of his own town. There were the palm trees. There were the flat brown roofs. And there, running along the bank, were his children."
+      ]
+    },
+    {
+      "scene": "scene-home",
+      "part": "part-2",
+      "paras": [
+        "That night the whole town came to listen.",
+        "He told them about the storm, the wave and the island of figs.",
+        "Most of all, he told them about a great gold Serpent with blue eyebrows, who was kind to a frightened sailor.",
+        "Someone wrote it all down on <tap:papyrus>papyrus</tap>. Four thousand years later, the good word has reached you."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "sydney-opera-house",
+      "name": "Sydney Opera House",
+      "era": "contemporary",
+      "built": {
+        "from": 1959,
+        "to": 1973,
+        "circa": false
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Australia",
+      "place": "Sydney, Australia",
+      "coordinates": {
+        "lat": -33.857,
+        "lon": 151.215
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A building beside the sea with a roof like big white sails."
+        },
+        "medium": {
+          "line": "It opened in 1973 in Sydney, Australia. Its roof looks like sails on the harbour.",
+          "note": "An architect from Denmark, Jørn Utzon, drew its shape."
+        },
+        "advanced": {
+          "line": "Building began in 1959 and took about 14 years, much longer than anyone had planned.",
+          "note": "Its curved roof shells are covered with about a million pale tiles."
+        }
+      },
+      "art": {
+        "file": "art/sydney-opera-house.heic",
+        "alt": "A white building with tall curved roofs like a row of sails, standing at the edge of a blue harbour by day.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#10355C",
+      "rights": "Our own illustration; no photograph. The name and image are trademarks of the Sydney Opera House Trust, with rules for commercial use (CONTENT_PLAN §6.6): legal review needed before release (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of the ancient Egyptian tale of the Shipwrecked Sailor",
+    "(Middle Kingdom, about 4,000 years ago; known from one papyrus, kept in Russia). It is not the wording of any earlier edition.",
+    "Documented source for the tale: W. M. Flinders Petrie, “Egyptian Tales, Translated from the Papyri, First Series”",
+    "(London: Methuen, 1895), Project Gutenberg ebook #7386, https://www.gutenberg.org/ebooks/7386",
+    "(US public domain; other territories not verified). The Gutenberg text is the second edition of 1899.",
+    "Left out: the frame story (the sailor reporting to his lord), the Serpent’s first threat, the animal sacrifices and the baboons and apes among the gifts.",
+    "Softened: in the papyrus the shipmates are lost and the Serpent’s family is burned by a falling star. Here the crew comes back for the Sailor, and the Serpent says only that he is now alone.",
+    "Numbers: Petrie gives a ship of 150 cubits and 150 sailors; later translations read 120 and 120, and we follow those. The Serpent’s question, four months, seventy-five serpents and two months home are from the tale.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Egyptologist accuracy read) pending.",
+    "Source check, 18 Nov 2026 (read on the Project Gutenberg mirror gutenberg.pglaf.org; gutenberg.org itself was unreachable):",
+    "Petrie's text (the Gutenberg ebook is the second edition, London 1899) has a ship of 150 cubits with 150 sailors, three days alone, four months, seventy-five serpents and two months home; the papyrus is in the Hermitage, St Petersburg. The sea is not named in the tale.",
+    "Details that follow later translations rather than Petrie (no later edition is cited yet; open question for the Egyptologist): the hundred and twenty sailors, the Serpent's blue (lapis) eyebrows — Petrie has only “his colour as that of true lazuli” — the Serpent asking for a good word in the Sailor's town (in Petrie he wishes the Sailor a good name there), and the Sailor knowing the faces on the rescue ship.",
+    "Ours: the Captain and his lines, the fig tree (a thicket in the source), the Serpent's laugh (a smile in the source) and the crew's safe return. In Petrie the Serpent's kin are not said to be lost; later translations tell of a falling star, which we leave out."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#0E4C7A",
+      "shade": "#1C7FA6",
+      "mid": "#3FA98F",
+      "light": "#CFEAF2",
+      "glow": "#FFE2A0",
+      "accent": "#E8A21C",
+      "mood": "Clear sea blue, island green and warm gold under a pale morning sky; calm and friendly, never stormy-dark."
+    },
+    "light": "Bright morning; ONE warm light from the upper left in every picture. The Serpent’s gold catches it.",
+    "world": [
+      "Period: Egypt’s Middle Kingdom (12th Dynasty), about 1900 BCE. Keep everything earlier than the famous New Kingdom look: no chariots, no horses, no camels, no Tutankhamun-style gold masks.",
+      "The ship: a long wooden seagoing ship with a gently curved hull, ONE mast in the middle with a wide rectangular sail (wider than tall) hung between two yards, a row of oars along each side, and two big steering oars at the stern. A thick rope runs high along the ship from bow to stern. Never a triangular (lateen) sail, never a dhow or a galleon.",
+      "Sailors: brown-skinned Egyptian men with short black hair, bare chests and short white linen kilts. Ordinary people do not wear the striped royal headcloth, crowns or heavy jewellery.",
+      "The island: an island of plenty in a warm sea. Sycomore fig trees with clusters of small figs on the trunk and branches, grapevines, melons on the ground, date and doum palms, clear pools with fish, water birds (ducks, a heron). Pale sand, turquoise shallows.",
+      "The Serpent: drawn as the papyrus describes, not as a monster. Body overlaid with gold, eyebrows of blue lapis lazuli, and the long, narrow plaited beard of an Egyptian god, curving a little at the tip. Large calm eyes, a closed friendly mouth, no fangs, no hood, no wings, no fire. Not a European dragon and not a striking cobra.",
+      "Home: a Nile-side town. Flat-roofed mud-brick houses, some whitewashed; date palms; reed beds of papyrus at the water’s edge; a simple quay of mud brick and stone; small reed and wooden boats. Green fields close to the river, pale desert hills far behind.",
+      "Gifts from Punt: lumps of golden-brown incense resin in baskets and jars, sealed perfume jars, logs of dark sweet wood, curved white ivory tusks. No monkeys or apes as cargo.",
+      "Colours of Egyptian art are welcome as accents: lapis blue, turquoise, gold, white linen, red ochre.",
+      "AVOID: pyramids or the Sphinx on every horizon; invented or decorative hieroglyphs (use none unless an Egyptologist supplies them); gods’ figures or temple scenes; the Lighthouse of Alexandria or any later building in a scene (framed landmarks appear only on their cards); a dark, frightening storm (the storm is a band of grey cloud far off, under a still-pale sky)."
+    ],
+    "characters": {
+      "sailor": "A young Egyptian man, slim and strong, brown skin, short black hair, a short white linen kilt, bare feet. Open, worried eyebrows at first; a wide smile later. Signature detail: a plain cord around his neck with one small blue bead.",
+      "serpent": "Enormous, about as long as nine or ten people lying head to toe, with a thick coiled body of warm gold scales. Lapis-blue eyebrows, a long narrow plaited beard like an Egyptian god’s, big gentle dark eyes. He usually holds his head low, near the Sailor, so he never looms.",
+      "captain": "An older, broad Egyptian sailor with a little grey in his short hair, white kilt, a wide collar of plain beads, a loud happy face. One hand often raised, pointing or waving."
+    },
+    "scenes": {
+      "scene-ship": {
+        "unfolded": "Far: a pale sky and a calm horizon, with a low band of grey storm cloud only at the far right. Middle: open blue water with long, rolling waves. Near, on the trailing (right) half: the great ship in three-quarter view, sail full and round, oars out, tiny sailors on deck. The leading (left) pane’s upper two thirds stay calm pale sky for the words.",
+        "folded": "The ship from the side in the middle of the band, its wide square sail filling the centre, the Captain and the Sailor small at the bow; pale sky above, blue waves below."
+      },
+      "scene-island": {
+        "unfolded": "Far: an empty blue sea and pale sky. Middle: the curve of a sandy shore and turquoise shallows, a plank of wood at the water’s edge. Near, on the trailing (right) half: big fig trees heavy with fruit, vines and melons, with the Sailor sitting small beneath them, looking out to sea. The leading pane’s upper two thirds are pale sky.",
+        "folded": "The Sailor sitting under a fig tree, his face in the middle of the band, figs above him, sand and a strip of sea below."
+      },
+      "scene-serpent": {
+        "unfolded": "Far: palms and pale sky. Middle: a green clearing on the island with fig trees. Near, low across both panes: the Serpent’s golden coils, his head on the trailing (right) half bent down towards the small Sailor, who looks up at him. They are clearly friends. The leading pane’s upper two thirds are pale sky.",
+        "folded": "The Serpent’s kind face in the middle of the band, blue eyebrows and beard clear, with the Sailor sitting just below it beside a golden coil."
+      },
+      "scene-home": {
+        "unfolded": "Far: pale desert hills and morning sky. Middle: the wide river, a mud-brick quay, flat-roofed houses and date palms on the trailing (right) half, children running along the bank. Near: the ship gliding in from the left, low in the picture, sail coming down, the Sailor at the bow with his arm raised. The leading pane’s upper two thirds are pale sky.",
+        "folded": "The Sailor at the bow of the ship, face in the middle of the band, waving; palms, flat roofs and running children behind him."
+      }
+    },
+    "pictures": {
+      "red-sea": "One centred subject: a long, narrow blue sea seen from a high place, running away to the horizon between two dry, sandy shores. One tiny square-sailed ship for scale. No labels.",
+      "incense": "One centred subject: a small stone bowl of golden-brown lumps of incense resin, one thin curl of pale smoke rising. Plain dark background.",
+      "papyrus": "One centred subject: a roll of pale brown papyrus, partly unrolled, with a reed pen and a small ink palette beside it. The writing is only soft rows of marks, not readable signs. One papyrus reed stem may stand behind."
+    },
+    "portraits": {
+      "sailor": "The Sailor standing on the sand, waving, sea behind him; face and shoulders in the upper middle of the card.",
+      "serpent": "The Serpent coiled like a big gold cushion, head raised a little, smiling; blue eyebrows and beard clear; warm gold background."
+    },
+    "cover": "The Sailor sitting on a coil of the golden Serpent, the two of them side by side in the middle, looking out over a blue sea from the green island. Pale sky above for the title.",
+    "landmarks": {
+      "sydney-opera-house": "Our own drawing, by day: the white sail-shaped roofs of the Sydney Opera House on its point of land, blue harbour water in front, pale sky behind. No logos, no lettering, no night lighting, no other named structure."
+    }
+  }
+}

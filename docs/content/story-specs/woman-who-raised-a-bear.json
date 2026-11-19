@@ -1,0 +1,524 @@
+{
+  "id": "woman-who-raised-a-bear",
+  "title": "The Woman Who Raised a Bear",
+  "tier": "advanced",
+  "region": {
+    "id": "arctic",
+    "culture": "Kalaallit (Greenlandic Inuit)",
+    "place": "The west coast of Greenland",
+    "label": "Kalaallit · Greenland",
+    "pin": { "lat": 66.0, "lon": -53.0 },
+    "pinColor": "#2F9BE0"
+  },
+  "setting": {
+    "period": "A Kalaallit story, told in Greenland for many generations and still told today"
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Kalaallit (Greenlandic Inuit) story",
+    "sources": [
+      {
+        "author": "Knud Rasmussen (edited and translated by W. Worster)",
+        "title": "Eskimo Folk-Tales",
+        "year": 1921,
+        "gutenbergId": 28932,
+        "url": "https://www.gutenberg.org/ebooks/28932",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Kalaallit (Greenlandic Inuit) story, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Rasmussen died in 1933; Worster's death year not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "An Indigenous story from Greenland. A Kalaallit reviewer checks the telling, the hunting, the houses and clothing in the art, and every card.",
+    "community": "Kalaallit (Greenlandic) reviewer",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "Greenland is the largest island in the world, and most of it lies under an ice sheet, so its people live along the coasts. Sea ice, icebergs and the animals of the ice shape the life of every settlement in this story.",
+      "factCards": ["greenland", "polar-bear", "icefjord-moment"]
+    },
+    "culture": {
+      "lesson": "In a Kalaallit hunting settlement the catch is shared, so an old woman with no hunter still eats. The kayak, the stone lamp and the sharing of meat are the everyday world the story takes for granted.",
+      "factCards": ["kayak", "sharing-the-catch"]
+    },
+    "moral": {
+      "lesson": "The old woman loves the bear enough to send him away for good, because staying would get him killed. The story does not soften what that costs her or the settlement.",
+      "reflectionQuestion": "The old woman could have kept the bear a little longer. Why did she send him away, and was she right?"
+    }
+  },
+  "moral": "Loving someone can mean letting them go.",
+  "theme": {
+    "textColor": "#12233A",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": { "fill": "#FFC43D80", "fill2": "#FFAA3D61", "line": "#F08C14E6", "spark": "#F08A12" },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "An old woman in a sealskin anorak stands at the edge of the sea ice under a clear pale sky, one hand raised, while a great white bear walks away from her among blue-white icebergs."
+  },
+  "parts": [
+    { "id": "part-1", "title": "The Cub" },
+    { "id": "part-2", "title": "The Hunter" },
+    { "id": "part-3", "title": "The Letting Go" }
+  ],
+  "characters": [
+    {
+      "id": "woman",
+      "name": "The Woman",
+      "color": "#7A3B2A",
+      "chipBackground": "#F6E3CF",
+      "faceAlt": "The old woman.",
+      "card": {
+        "label": "Character · the old woman by the shore",
+        "title": "The Old Woman",
+        "traits": [
+          { "text": "Lives on shared meat", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Talks to her bear", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Waits for clear skies", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "Her husband is gone and she has no children, so she eats what the hunters give her. Then a frozen cub is put into her hands, and for the first time in years she has someone to feed.",
+        "portraitAlt": "An old woman with grey hair tied up in a top-knot, in a sealskin anorak, sitting beside a half-moon stone lamp whose long low flame lights her face.",
+        "background": ["#FBF3E6", "#F1DFC4", "#D9B98E"]
+      }
+    },
+    {
+      "id": "bear",
+      "name": "The Bear",
+      "color": "#1F4E6E",
+      "chipBackground": "#E3EEF5",
+      "faceAlt": "The bear.",
+      "card": {
+        "label": "Character · the bear she raised",
+        "title": "The Bear",
+        "traits": [
+          { "text": "Keeps his claws in", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Wears a sinew collar", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Hunts in any weather", "fill": "#D9F5E4", "ink": "#0B6B4A" }
+        ],
+        "body": "He grows up on a sleeping platform beside a lamp and learns to understand every word that is said to him. He becomes the finest hunter in the settlement, and that is what puts him in danger.",
+        "portraitAlt": "A young polar bear lying on sealskins on a sleeping platform, a wide braided collar round his neck, his nose lifted toward someone out of sight.",
+        "background": ["#EEF4F7", "#CFE0EA", "#8FB4CC"]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "greenland",
+      "kind": "place",
+      "title": "Greenland",
+      "line": "The largest island in the world, most of it buried under a vast sheet of ice.",
+      "cultureNote": {
+        "label": "From Greenland",
+        "text": "About 56,000 people live in Greenland, most of them Kalaallit, the Greenlandic Inuit. Nearly everyone lives along the coasts, because the ice sheet covers about four fifths of the land. Kalaallisut, the Greenlandic language, is the country’s official language."
+      },
+      "pictureAlt": "The island of Greenland seen from high above, white in the middle and dark at its rocky edges, in a blue sea.",
+      "background": "#1E3348"
+    },
+    {
+      "id": "polar-bear",
+      "kind": "creature",
+      "title": "Polar bear",
+      "line": "The great white bear of the Arctic, which lives out on the sea ice and hunts seals.",
+      "cultureNote": {
+        "label": "From Greenland",
+        "text": "In Kalaallisut the polar bear is called nanoq. It is the largest meat-eater that lives on land, and a big male can weigh as much as five grown men. Hunters in Greenland may still hunt polar bears, but only a set number each year."
+      },
+      "pictureAlt": "One polar bear standing on a floe of sea ice, looking back over its shoulder.",
+      "background": "#24435C"
+    },
+    {
+      "id": "kayak",
+      "kind": "object",
+      "title": "Kayak",
+      "line": "A narrow one-person hunting boat, a wooden frame covered tightly in sealskin and driven with a double paddle.",
+      "cultureNote": {
+        "label": "From the Kalaallit",
+        "text": "The English word kayak comes from the Inuit languages; in Kalaallisut it is qajaq. Frames were often made of driftwood, because few trees grow in Greenland. Greenlanders still build kayaks by hand, and every summer they race them and show off their rolls at a national championship."
+      },
+      "pictureAlt": "One slim sealskin kayak resting on a stand of wooden posts, a harpoon laid along its deck.",
+      "background": "#3A2A1E"
+    },
+    {
+      "id": "sharing-the-catch",
+      "kind": "idea",
+      "title": "Sharing the catch",
+      "line": "When a hunter brings home a seal, the meat is divided among many households instead of kept by one.",
+      "cultureNote": {
+        "label": "From the Kalaallit",
+        "text": "In Greenland’s hunting settlements a catch was shared out by custom, and those with no hunter of their own, such as widows and the old, were given their part. Sharing food is still a strong value in Greenland today, though the details differ from place to place."
+      },
+      "pictureAlt": "A row of neat bundles of meat and blubber laid out on a flat stone, one bundle for each household.",
+      "background": "#4A2E22"
+    },
+    {
+      "id": "icefjord-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "ilulissat-icefjord",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Icebergs like these drift along Greenland’s west coast. Many of them are born in one fjord, at Ilulissat, where a great glacier meets the sea."
+        }
+      },
+      "background": "#173A52"
+    }
+  ],
+  "scenes": {
+    "scene-settlement": {
+      "unfoldedAlt": "A small settlement on a rocky shore in early spring under a wide pale sky, with icebergs resting in the bay. Low on the right half stand a few low houses of stone and turf with long entrance passages, kayaks on stands, a drying rack of fish and a team of dogs; the upper part of both panes is calm pale sky.",
+      "foldedAlt": "The old woman’s low stone and turf house nearest the shore, with a kayak on its stand beside it and an iceberg in the bay behind.",
+      "fallbackColors": ["#EEF4F7", "#C9DCE8", "#5E6F7A"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-house": {
+      "unfoldedAlt": "Inside the old woman’s house in warm cream lamplight: pale turf walls and a skin-lined roof above, calm and plain. Low on the right, she sits on the sleeping platform among sealskins beside a half-moon stone lamp with a long low flame, feeding a small bear cub from her hands under a drying rack.",
+      "foldedAlt": "The old woman on the sleeping platform by the stone lamp, holding out food to a small white cub on the skins beside her.",
+      "fallbackColors": ["#FBF3E6", "#EED9B8", "#9C7650"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-ice": {
+      "unfoldedAlt": "The sea ice far out from shore under a high pale sky, flat and white to a blue line of open water. Low on the right, the grown bear hauls a seal across the ice toward home, a wide braided collar at his neck, with two hunters and a kayak far behind and the settlement a tiny mark on the shore.",
+      "foldedAlt": "The bear on the white sea ice, dragging a seal by its flipper toward the shore.",
+      "fallbackColors": ["#E9F1F6", "#BFD6E4", "#7FA3BA"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-farewell": {
+      "unfoldedAlt": "A clear, cloudless pale morning over the sea ice, with blue-white icebergs standing far out. Low on the right, the great bear walks away across the ice toward the icebergs, and on the shore the old woman stands alone at the ice edge with one hand raised; the upper part of both panes is empty pale sky.",
+      "foldedAlt": "The old woman at the edge of the ice with her hand raised, the bear small and white among the icebergs beyond her.",
+      "fallbackColors": ["#F3F6F8", "#CFE0EA", "#8FB4CC"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-settlement",
+      "part": "part-1",
+      "paras": [
+        "^At the very edge of a small settlement, nearest the sea, <name:woman>an old woman</name> lived alone.",
+        "Her husband was long dead, and she had never had children. No one hunted for her. Yet each time the men came home with a catch, someone cut a share for the old woman too, and on this coast of <tap:greenland>Greenland</tap> that share had kept her alive through many winters.",
+        "Then came a day near the end of winter when the light stayed longer and the dogs began to howl at the ice. The hunters were coming in, and they were dragging something huge and white.",
+        "They had killed a she-bear out on the ice. That evening the meat was cut and carried from house to house. The old woman’s share was a rack of ribs, and she put them in her pot to boil over the lamp.",
+        "> She was still watching the pot when a voice called at her window. Then the wife of the man who had killed the bear came stooping in through the long passage, and in her arms lay something small and stiff with frost."
+      ]
+    },
+    {
+      "scene": "scene-house",
+      "part": "part-1",
+      "paras": [
+        "“A cub,” the hunter’s wife said. “It was out on the ice with its mother. We thought you might want it.”",
+        "<name:woman>The old woman</name> took it in both hands. It weighed no more than a half-grown pup, and it was cold right through. Its eyes were shut. Its fur had frozen into points.",
+        "She moved her lamp a little to one side so the flame would not singe it, then laid <name:bear>the cub</name> on the drying rack where the warm air rose. She sat down on the platform to wait.",
+        "The hunter’s wife went home. The lamp burned low and steady. Water began to drip from the rack, one drop and then another, and after a long while one hind paw twitched. The old woman lifted the cub down and tucked it inside her anorak, against her own warm skin, and held it there.",
+        "> Near morning she felt it stir. A cold nose pushed out at the neck of her anorak and snuffed along her chin and cheek, slowly, as if learning her. The old woman laughed aloud in her empty house."
+      ]
+    },
+    {
+      "scene": "scene-house",
+      "part": "part-1",
+      "paras": [
+        "Bears hunt seals for their fat, the hunters told her, so she warmed blubber for him over the lamp and fed him the soft pieces from her fingers. When they were gone, he licked the oil from her palms.",
+        "At night he slept beside her on the platform, pressed against her back like a hot stone. She talked to him while she sewed and while she trimmed the lamp, the way you talk to a person, and she called him her son.",
+        "<say:woman*>“Wake up, son, the day is here,”</say> she would say, or <say:woman>“Mind the lamp, son, you will burn your nose.”</say> And because she spoke to him like that, morning and night, he began to understand her.",
+        "He grew fast. By the time the first autumn snow came, the cub who had fitted inside her anorak was too heavy to lift, a young <tap:polar-bear>bear</tap> with black lips and wide paws. When he was hungry he came and pressed his nose to her cheek.",
+        "> The neighbours began to stop at her passage with a strip of blubber or a dried fish. “For your son,” they would say, half joking, and they stooped to peer in at the bear by the lamp, and he peered back."
+      ]
+    },
+    {
+      "scene": "scene-settlement",
+      "part": "part-1",
+      "paras": [
+        "Every morning now the children of the settlement came crowding to her window. “Let him out!” they called through the skin. “Let him come and play!”",
+        "<say:woman*>“Keep your claws in,”</say> the old woman told <name:bear>the bear</name> each time, before he went shambling out through the passage. <say:woman>“They are only small, and you are not.”</say>",
+        "And he did keep them in. The children threw themselves on him in heaps, and he rolled them over in the snow and sat on them, gently, until they shrieked. He bit their toy harpoons in two. But when he shoved them, it was always with a soft paw.",
+        "A bear does not stay small, though. By his second winter he could knock a boy flat without meaning to, and one by one the children went home crying. Then the young men took their place, wrestling him on the hard snow, until even the strongest of them would not try.",
+        "> He lay outside her house in the evenings, a great white heap beside the passage, and the men stood round him with their arms folded, looking at those shoulders and saying nothing. They were all thinking the same thing."
+      ]
+    },
+    {
+      "scene": "scene-house",
+      "part": "part-1",
+      "paras": [
+        "“A bear that size could hunt,” said one of the men at last. “He could smell out a seal’s breathing hole from far across the ice.”",
+        "The old woman said nothing for a long time. Then she sat down with <name:bear>her son</name> by the lamp and spoke to him slowly, as she always did, so that every word would go in.",
+        "<say:woman*>“Go with the men and do what they tell you,”</say> she said. <say:woman>“Never go near the houses of strangers. They do not know you. To them you are only a bear, and they will come at you with harpoons.”</say>",
+        "The bear laid his chin on her knee and listened. She was sure he understood the words. Whether he understood the danger, she could not tell. She told him again, all of it, and then a third time, until the lamp burned low.",
+        "> At first light the men called at her window. The bear rose, pushed his nose against her face, once, the way he did, and went out through the passage. She heard the dogs barking, and then the crunch of his paws going away over the ice."
+      ]
+    },
+    {
+      "scene": "scene-ice",
+      "part": "part-2",
+      "paras": [
+        "^Out on the sea ice, the men soon learned what a bear could do.",
+        "They showed him how to come at the seals with the breeze in his face, never at his back, and he learned it. He went flat on his belly when they did. He waited at the breathing holes as long as they waited, and longer.",
+        "Then a seal came up to breathe. Before any man could lift his harpoon, <name:bear>the bear</name> was on it, one blow of a paw, and the seal lay still on the ice. No one had taught him that. It was in him.",
+        "The men walked home that evening shaking their heads and laughing. Nobody had ever seen a hunter so patient, or so quick.",
+        "> The bear did not walk with them. He went ahead, alone, dragging the seal by one flipper all the way across the ice, and he did not stop until he had laid it down at the old woman’s passage."
+      ]
+    },
+    {
+      "scene": "scene-settlement",
+      "part": "part-2",
+      "paras": [
+        "For the first time in years, the old woman had meat to give away.",
+        "She cut up the seal herself, kneeling in the snow outside her house. Then she <tap:sharing-the-catch>shared it out</tap> as the hunters had always shared with her. A piece went to this house and a piece to that one, and the best went to the old man who could no longer hunt.",
+        "After that the bear went out with the hunters every day the weather allowed, and on many days when it did not. Wind did not stop him. Fog did not stop him. When the men stayed home mending their gear, he went alone and came back with a seal.",
+        "<say:woman*>“My son brought that,”</say> the old woman would say, when anyone praised the meat. She tried to say it plainly. It never came out plainly.",
+        "> Then, one grey afternoon, the bear came home with no seal at all. He came fast, low to the ice, and when he pushed in through the passage she saw a long graze along his shoulder, where a harpoon had passed very close."
+      ]
+    },
+    {
+      "scene": "scene-house",
+      "part": "part-2",
+      "paras": [
+        "The hunters of a settlement to the north had seen a bear alone on the ice and done what any hunter would do. Word of it came down the coast a few days later. They had not known he was anyone’s son.",
+        "“Mark him,” the neighbours told the old woman. “Give him something no one can mistake.”",
+        "So she sat by the lamp night after night, twisting dried sinew into thread and braiding the thread into a thick collar. When it was done she fastened it round his neck, and he scratched at it for a day and then forgot it.",
+        "The collar did its work. Hunters all along that coast came to know it, and when they saw a bear wearing it, they lowered their harpoons. When the water was open he swam out beside the <tap:kayak>kayaks</tap>, and when it froze he waited at the breathing holes. He never came home without a catch.",
+        "> To look at, he was a bear like any other, people said, yet no one in the settlement could match his strength, and no one had brought home more seals. Seasons turned, and the old woman’s house was never short of meat. But a story like that does not stay in one settlement. It travels."
+      ]
+    },
+    {
+      "scene": "scene-settlement",
+      "part": "part-2",
+      "paras": [
+        "Far up the coast, away to the north, people heard of a bear that no one could catch. One hunter there laughed at the story. He swore he would go and kill that bear himself, collar or no collar.",
+        "“Leave it alone,” his companions told him. “That bear feeds an old woman. Without it she has nothing.” But he would not listen.",
+        "The news reached her as news always did, with a traveller’s sledge. He stopped at her house to eat, and before he went on he told her quietly, looking at the lamp instead of at her.",
+        "That night she took <name:bear>the bear</name>’s great head between her hands. <say:woman*>“Listen to me,”</say> she said. <say:woman>“You were raised among people. Treat every one of them as you would treat me. Never hurt a person. Never. Only if someone comes to kill you may you fight.”</say>",
+        "> He breathed warm against her wrists and did not move. Many days later a storm came down out of the north, and that evening the bear did not come home. She sat up by the lamp, listening to the snow hiss against the window."
+      ]
+    },
+    {
+      "scene": "scene-house",
+      "part": "part-2",
+      "paras": [
+        "It was nearly morning when she heard him in the passage. He came in slowly, with snow packed in his fur, and pushed his nose against her face as he always did. Then he climbed up to his place at the end of the platform and lay down without a sound.",
+        "When the storm blew itself out, the men found a man lying in the snow not far from her house. He was dead. They knew who he was. It was the hunter from the north who had sworn to kill the bear.",
+        "Later, his own companions sent word of what had happened. The man had tracked the bear into the storm and given him no peace. He had come at him with his harpoon, again and again, until the bear turned.",
+        "The bear had done only what she had told him he might do. But the old woman knew that would not matter to the man’s people, and neither would the collar.",
+        "> That night she sat with him by the lamp and talked to him for a long time. The bear lay with his chin on her knee. Now and then she stopped, and he lifted his head to see why."
+      ]
+    },
+    {
+      "scene": "scene-house",
+      "part": "part-3",
+      "paras": [
+        "^In the end she said it with tears running down her face.",
+        "<say:woman*>“You must go away from here,”</say> she told <name:bear>her son</name>. <say:woman>“Far away, where no one knows you. If you stay, they will come for you, and they will kill you, and I will have to watch.”</say>",
+        "The bear understood. He sank down before her and hid his face between his paws on the cold stones. A sound came out of him that she had never heard before, low and long, like the wind in the passage.",
+        "But she did not send him that day, nor the next. She would not send him out under a sky that might turn. Each morning she crawled out through the passage and studied the sky, and if she found one wisp of cloud anywhere above the mountains, she went back in and said nothing.",
+        "> Then came a morning when the sky was clear from edge to edge and very still. Not one cloud. She stood in the cold a long time, looking at it, before she went back in to wake him."
+      ]
+    },
+    {
+      "scene": "scene-farewell",
+      "part": "part-3",
+      "paras": [
+        "Before they went out, she rubbed her fingertips along the black crust the lamp had laid on the wall above it. While the bear was turned away, nosing at the passage, she drew those dark fingers once along his flank. He did not see.",
+        "<say:woman*>“Go north,”</say> she told him, out on the shore. <say:woman>“Go to the other bears, out where no hunter goes, and stay with them. Do not come back to people. Not even to me.”</say>",
+        "He pushed his nose against her face, slowly, the way he had on that first morning inside her anorak. Then he turned and walked out onto the ice.",
+        "She stood at the edge where the shore ice began. He went at a steady pace, not hurrying, out past the places where the men hunted, out toward the <tap:icefjord-moment>icebergs</tap> standing white in the still air. Once, far out, he stopped and looked back.",
+        "> She lifted her hand high. She kept it raised long after her arm began to ache, until he was only a white mark moving far out among the white of the icebergs, and then not even that."
+      ]
+    },
+    {
+      "scene": "scene-farewell",
+      "part": "part-3",
+      "paras": [
+        "She did not go in. She stayed on the shore until the light went, crying, and nobody told her to stop.",
+        "The whole settlement felt the loss. The children who had tumbled with him in the snow, taller now, came down to the shore and stood a little way off. The hunters who had hunted beside him came too, and said nothing, and looked north.",
+        "That evening a neighbour brought her a share of seal, as the hunters had done in the years before the bear. She took it and thanked him. It was good meat. She could not eat it.",
+        "The bear never came back. No seal was ever left again at her passage, and no great white shape ever came up from the ice at dusk. She had told him not to come, and he had understood her. He always had.",
+        "> Winters came and went without him. But stories still came down the coast on travellers’ sledges, as stories always had, and one winter a traveller sat by her lamp and told her one about a bear in the far north."
+      ]
+    },
+    {
+      "scene": "scene-settlement",
+      "part": "part-3",
+      "paras": [
+        "Up beyond the last settlements, the traveller said, out on the ice where bears gather, hunters sometimes see one that dwarfs all the rest. From far off they take it for a hill of drifting ice, until it moves.",
+        "<say:woman*>“And?”</say> said <name:woman>the old woman</name>. Her hands were very still in her lap.",
+        "“And it has a dark streak down its flank,” said the traveller. “Just one. Long and dark, as if someone had drawn a hand down its fur. No one up there knows where it came from.”",
+        "The old woman looked down at her own hands for a long while. Then she reached out and trimmed the lamp, and the flame ran long and steady along the edge of the stone.",
+        "> When spring came and the ice began to loosen, she walked down to the shore on every clear morning. She stood at the very edge, one hand shading her eyes, and looked north past the icebergs, as far as she could see."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "ilulissat-icefjord",
+      "name": "Ilulissat Icefjord",
+      "era": "natural",
+      "status": "natural",
+      "depiction": "asIs",
+      "country": "Greenland",
+      "place": "Ilulissat, Greenland",
+      "coordinates": { "lat": 69.1, "lon": -49.5 },
+      "region": "arctic",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A long fjord so packed with icebergs that from above it looks like a white road to the sea."
+        },
+        "medium": {
+          "line": "A long fjord on Greenland’s west coast, beside the town of Ilulissat, filled with icebergs from one glacier.",
+          "note": "The glacier at its head, Sermeq Kujalleq, pushes ice into the fjord all year round. The icebergs drift out into Disko Bay, and UNESCO made the fjord a World Heritage Site in 2004."
+        },
+        "advanced": {
+          "line": "The fjord where Sermeq Kujalleq, one of the fastest-moving glaciers in the world, breaks apart into the sea.",
+          "note": "Scientists measure the glacier from satellites and on the ice to learn how Greenland’s ice sheet is changing. In recent decades its front has pulled back many kilometres. The town’s name, Ilulissat, means “icebergs” in Kalaallisut."
+        }
+      },
+      "art": {
+        "file": "art/ilulissat-icefjord.heic",
+        "alt": "A fjord packed with white and blue icebergs between dark rocky shores, under a pale sky, with a small red house on the rocks.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#173A52",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A natural place: no rights attach to the place itself; drawn from general knowledge, no photograph traced.",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a traditional Kalaallit (Greenlandic Inuit) story.",
+    "It is not the wording of any earlier edition or translation.",
+    "Documented source: Knud Rasmussen, \"Eskimo Folk-Tales\", edited and translated by W. Worster (1921),",
+    "story \"The Woman Who Had a Bear as a Foster-Son\"; Project Gutenberg ebook #28932,",
+    "https://www.gutenberg.org/ebooks/28932 . The title's word is not used in the app (CONTENT_PLAN 1).",
+    "Rights: US public domain (pre-1931). Rasmussen died in 1933; Worster's death year not verified.",
+    "Source read: YES, for the order of events only, from the pglaf mirror (28932.txt; 28932-0.txt was 404),",
+    "through a summarising fetch, not line by line. No sentence or turn of phrase of Worster's was used.",
+    "Order of events kept from the source: an old woman living nearest the shore, fed by the hunters' shares;",
+    "a she-bear brought home and a frozen cub given her by the wife of the man who killed it; the lamp moved",
+    "aside and the cub thawed on the drying rack; blubber fed to it; it sleeps by her and, spoken to like a",
+    "person, comes to understand people; it sniffs her face when it wants food; neighbours bring food;",
+    "children call it out at her window, she tells it to keep its claws in, it breaks their toy harpoons;",
+    "it grows too strong for children, then for men; the men take it hunting and tell it to stay downwind;",
+    "northern hunters nearly kill it; she marks it with a broad collar of braided sinew; it hunts at sea in",
+    "summer and on the ice in winter and others share its catch; a man from farther away swears to kill it",
+    "though his companions object; she tells it people are its kin and it may fight only if attacked; it",
+    "comes home late in a storm; a dead stranger, the man from the north, is found; word comes he would not",
+    "leave the bear alone; weeping, she tells it to go; it presses its muzzle to the floor and weeps; she",
+    "waits for a cloudless morning; she secretly strokes oil and soot down its side; it sniffs her and goes",
+    "north to its own kind; she weeps all day and the settlement mourns; it never returns; in the far north",
+    "a huge bear with a black mark on its side is said to be seen.",
+    "Softenings: no killing is shown. The she-bear's death is one plain sentence. In the source the bear",
+    "drags the dead man home and she finds the body; here the men find him lying in the snow near her house,",
+    "and the fight is told after the fact in one line ('until the bear turned'). The source's detail of the",
+    "man's state of dress is left out. REVIEW: keep the death at all for ages 10-12, or soften further?",
+    "Added (not in the source): the old woman's warning never to go near strangers' houses (plan beat 5); the",
+    "graze on his shoulder after the northern hunters' attack; the first seal laid at her passage and her",
+    "sharing it out (plan beat 6); the traveller who brings the news (plan beat 9); the neighbour's share",
+    "after he leaves; the traveller who brings the story of the marked bear; the closing image at the shore.",
+    "Changed from the editorial plan, to follow the source: the cub is a gift from the hunter's wife (the",
+    "plan had her ask for it and the men laugh); the danger is the death of the man from the north, not",
+    "uneasy neighbours; the bear does NOT leave seals near the settlement after he goes (plan beat 13): the",
+    "source says he never came back and brought no more food, so the text says so; the ending uses the",
+    "source's black mark instead. The farewell is on a clear MORNING (the source waits for a cloudless dawn),",
+    "not the plan's pale evening; the scene-farewell alts say morning.",
+    "Name and address: the source gives the bear no name; she and the villagers call it 'little bear'. Our",
+    "text has her call him 'son' (the plan's beat 3); no Kalaallisut name is invented. REVIEW: is 'son' right?",
+    "Size: the source says the bear was no bigger than an ordinary bear; the far-north bear of the ending is",
+    "said to be huge (the source compares it to an iceberg; we say 'a hill of drifting ice').",
+    "OPEN QUESTION (place): the source mentions people from beyond Angmagssalik (now Tasiilaq, EAST",
+    "coast). The story may come from East Greenland (Tunumiit / Iivit), not the west coast. The header keeps",
+    "the plan's 'west coast' and pin; the text names no coast. A reviewer must say which coast, and whether",
+    "'Kalaallit' is the right name for the tellers; if East, the region place, pin and label may change.",
+    "Reviewer to check: the stone and turf house with a long passage and gut-skin window; the half-moon",
+    "soapstone lamp, its trimming, and the drying rack above it; the sleeping platform; boiling meat in a pot",
+    "over the lamp; a sinew collar; seal hunting at breathing holes and from kayaks; how a catch is shared",
+    "(the best share to an old man who can no longer hunt is our invention); a hunter's wife entering by the",
+    "passage; mourning customs; whether sending a traveller's news 'with a sledge' reads rightly.",
+    "Card facts to check: Greenland about 56,000 people, most of them Kalaallit; ice sheet about four fifths",
+    "of the land; Kalaallisut the official language; nanoq (polar bear) and qajaq (kayak) in Kalaallisut; a",
+    "big male polar bear as heavy as five grown men; polar bear hunting under yearly quotas; driftwood frames;",
+    "a yearly national kayak championship; sharing customs (past tense for the old custom, present for the",
+    "value). Landmark facts to check: Sermeq Kujalleq among the fastest glaciers; icebergs drift into Disko",
+    "Bay; UNESCO 2004; 'Ilulissat' means 'icebergs'; the glacier front has pulled back many km lately.",
+    "Language: the old outsider name for Inuit is not used in any app-shown text; no snow houses appear.",
+    "SOURCE CHECK (18 Nov 2026, against Worster on the Gutenberg mirror): echoes reworded: the oil-and-soot",
+    "stroke, the muzzle pressed to the floor, 'would not let him be', keeping downwind, bears and blubber,",
+    "the broad sinew collar, 'where the bears are many' and 'a black mark on its side', 'your own kind',",
+    "'no bigger than other bears... stronger than any man', the all-day weeping and mourning, the",
+    "summer/winter pattern, and 'your own family' (kin). None of these phrasings remains in the text.",
+    "Departures from the source, not noted above: the source puts a long time between the man's death and",
+    "the farewell (ours: the same night and the cloudless days soon after); the shore farewell, his look",
+    "back and her raised hand are ours (in the source he sniffs at her and goes); in the source the men",
+    "ask for the collar (ours: the neighbours); that she cannot eat the neighbour's meat is ours.",
+    "Factual: the source never says she was a widow, that she was childless, or that no one hunted for her;",
+    "those three details are ours (page 1 and the woman's card).",
+    "Status: DRAFT. Text review pending. Cultural review (required: Kalaallit (Greenlandic) reviewer) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#12233A",
+      "shade": "#3E5A73",
+      "mid": "#8FB4CC",
+      "light": "#EEF4F7",
+      "glow": "#F2C063",
+      "accent": "#7A5235",
+      "mood": "Sea-ice white and pale Arctic blue over slate-grey rock and dark water; the warm gold of the stone lamp only indoors and in small places; sealskin browns in clothing, kayaks and skins. Wide, quiet, cold and clear outside, close and warm inside. Grown-up picture-book, calm rather than dramatic."
+    },
+    "light": "A LIGHT story: every scene keeps a pale sky or a pale wall behind the words on both panes. Outside it is the long clear light of late winter and spring in the Arctic, low sun, soft blue shadows on snow and ice; the farewell is a cloudless pale morning. Inside the house the light is cream and lamp-gold, with the upper part of the picture kept pale (plain turf wall and skin-lined roof). Never night, never a dark storm on the page; the storm is only told.",
+    "world": [
+      "Setting: a small Greenlandic hunting settlement of a few houses on a rocky shore, in the time before modern houses. Dark rock, patches of snow, low tough plants (crowberry, moss, small willow) in spring; no trees at all.",
+      "Winter houses: low and half sunk into the slope, walls of stone and turf blocks with grass growing on the turf, a roof of driftwood beams covered with turf and skins, entered by a long low tunnel passage you stoop or crawl through. One window of scraped gut-skin, pale and translucent, in the front wall. NO snow houses.",
+      "Inside: a broad sleeping platform along the back wall, raised above a floor of flat stones, covered with sealskins; a skin-lined roof; walls of turf. The bear's place is at one end of the platform.",
+      "The lamp: a shallow half-moon dish of grey soapstone, burning seal oil, with a long low line of small flames along its straight edge (a wick of moss); a pot of soapstone hangs above it; above the lamp a drying rack of wooden rods on which kamiks and mittens dry. Soot darkens the wall above.",
+      "Dress: anoraks with hoods, sealskin trousers, and kamiks (soft sealskin boots) for everyone; the old woman wears a plain sealskin anorak and trousers, fur side in, and long kamiks. Women traditionally tie their hair up in a top-knot on the crown of the head. Men's hair is cut to the shoulder or shorter.",
+      "Kayaks: slim, low one-person boats of sealskin stretched over a wooden frame, pointed at both ends, resting upturned or upright on stands of stone or wooden posts above the reach of dogs; a double-bladed paddle and a harpoon with a coiled line on the deck.",
+      "Winter travel: dog sledges with wooden runners pulled by teams of Greenland dogs (thick-coated, curled tails, in fan hitch, each dog on its own line).",
+      "Drying racks of wood and stone hung with split fish and strips of meat near the houses. Meat is shown only as neat bundles or strips; never blood.",
+      "Seal hunting: on the ice, hunters wait still at a seal's breathing hole with a harpoon; in open water they go out in kayaks. Seals are ringed seals, small and grey with pale rings. A caught seal is shown whole and still, never wounded.",
+      "The bear: a real polar bear: long neck, small ears, black nose and lips, yellow-cream white coat, huge furred paws. As a cub on pages 2 to 3 he is the size of a half-grown dog; by Part II he is full grown. From page 8 he wears a broad collar of braided pale sinew. From page 12 a single long dark streak of soot runs down his left side.",
+      "The sea: sea ice white and flat in late winter, with blue lines of open water at its edge; icebergs in the bay are white with blue shadows and clefts, some tall and sharp, some low and rounded.",
+      "Children play with bone and wood toys and small toy harpoons; they wear the same sealskin dress as adults, smaller.",
+      "Avoid: igloos or snow houses, penguins (they live only in the far south), totem poles, any Alaskan or Canadian details, cartoon or cuddly-toy bears, a fierce or roaring bear, cola-advert bears, wolves, trees, wooden cabins, red Danish houses in the story scenes (they belong only to the landmark card, which shows today), guns, metal pots, woven cloth, and any blood or wound."
+    ],
+    "characters": {
+      "woman": "An old woman, about three heads tall, small and a little bent, with a lined brown face and small plain eyes; grey hair drawn up in a top-knot. A plain sealskin anorak and trousers and long soft kamiks. Signature detail: her hands, broad and strong, often reaching out (to the cub, to the lamp, to the bear's head); on page 12 her fingertips are black with soot.",
+      "bear": "A polar bear, at first a small cub with a thin frosted coat (pages 2 to 3), then a young bear, then full grown and powerful but calm, head often low and turned toward her. Signature detail: from page 8 a broad braided sinew collar; from page 12 one long dark soot streak down his side. Expression only through posture: nose pushed to her face, chin on her knee, muzzle pressed to the stones."
+    },
+    "scenes": {
+      "scene-settlement": {
+        "unfolded": "Late winter into spring, clear pale light. The upper 60 percent of both panes is calm pale sky. Low on the right half: three or four low stone and turf houses half sunk into the slope with long entrance passages, a gut-skin window glowing faintly, kayaks on stands, a drying rack of fish, a dog team resting; the old woman's house is the one nearest the sea. On the far left, low, the bay with sea ice and two or three icebergs. Serves the arrival, the children's games (add children and the young bear in the snow), the sharing, the news, and the last page (the old woman alone at the shore edge, looking north).",
+        "folded": "The old woman's low house nearest the shore in the lower middle, a kayak on its stand beside it, an iceberg in the bay behind, pale sky above for the words."
+      },
+      "scene-house": {
+        "unfolded": "Inside the house, warm cream and lamp-gold. The upper 60 percent is the plain pale turf wall and skin-lined roof, calm. Low on the right: the sleeping platform with sealskins, the half-moon soapstone lamp with its long low flame, the drying rack above it, and the old woman sitting on the platform feeding the small cub from her hands. Serves the thawing, the growing, the collar-making and the night talks (then the bear is full grown, chin on her knee).",
+        "folded": "The old woman on the platform by the lamp holding out food to the small white cub, lamplight on both faces, the pale wall above for the words."
+      },
+      "scene-ice": {
+        "unfolded": "Far out on the flat sea ice under a high pale sky that fills the upper 60 percent. Low on the right: the grown bear, collar on, hauling a whole seal by one flipper toward home; far behind, two hunters with harpoons and a kayak at the blue edge of open water; at the far left horizon the settlement a tiny dark mark on the shore. No blood.",
+        "folded": "The bear on the white ice in the middle, dragging the seal by its flipper, a pale sky above."
+      },
+      "scene-farewell": {
+        "unfolded": "A clear, cloudless pale morning, very still. The upper 60 percent of both panes is empty pale sky. Low on the right: the full-grown bear walking away across the sea ice toward blue-white icebergs, one dark soot streak on his side; on the shore at the lower left of the right half, the old woman alone at the ice edge, small, one hand raised. Serves the farewell and the day of grief (then the bear is gone and a few people stand a little way off).",
+        "folded": "The old woman at the ice edge in the foreground with her hand raised, the bear small and white among the icebergs beyond her, pale sky above."
+      }
+    },
+    "pictures": {
+      "greenland": "The island of Greenland seen from high above, its white ice sheet in the middle and dark rocky coasts at its edges, centred in a blue sea.",
+      "polar-bear": "One polar bear standing on a floe of sea ice, looking back over its shoulder, centred on a pale blue ground.",
+      "kayak": "One slim sealskin kayak resting on a stand of wooden posts, a harpoon and coiled line laid along its deck, centred.",
+      "sharing-the-catch": "A row of neat bundles of meat and blubber laid out on a flat stone, one for each household, centred; no blood."
+    },
+    "portraits": {
+      "woman": "Half figure, sitting by the half-moon soapstone lamp, its long low flame lighting her lined face from below; grey top-knot, sealskin anorak; her hands open in her lap; warm cream ground.",
+      "bear": "The young bear lying on sealskins on the sleeping platform, the braided collar round his neck, nose lifted toward someone out of the picture; pale blue and cream ground."
+    },
+    "cover": "A clear pale morning: the old woman stands at the edge of the sea ice in the foreground with one hand raised, and the great white bear, a dark streak on his side, walks away from her among blue-white icebergs, looking back once.",
+    "landmarks": {
+      "ilulissat-icefjord": "Our own drawing of the place as it is today, in clear pale light: a fjord packed with white and blue icebergs between dark rocky shores, with one small red house on the rocks in the foreground for scale. Drawn from general knowledge; no photograph traced."
+    }
+  }
+}

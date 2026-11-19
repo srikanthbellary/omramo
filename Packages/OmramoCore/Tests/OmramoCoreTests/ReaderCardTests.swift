@@ -13,9 +13,12 @@ enum PrototypeContent {
         try SampleContent.repository().loadStory(id: id)
     }
 
+    /// The three prototype stories of rounds 1–2, one a level, in catalog order. (The whole
+    /// round-5 catalog is held to its own rules in `Round5Tests.swift`: not every planned
+    /// story has a landmark, by design.)
     static func allStories() throws -> [Story] {
         let repository = try SampleContent.repository()
-        return try repository.loadCatalog().stories.map { try repository.loadStory(id: $0) }
+        return try [SampleContent.storyID, anansiID, urashimaID].map { try repository.loadStory(id: $0) }
     }
 }
 

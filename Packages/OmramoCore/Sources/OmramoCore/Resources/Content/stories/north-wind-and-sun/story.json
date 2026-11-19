@@ -1,0 +1,1215 @@
+{
+  "schemaVersion": 1,
+  "id": "north-wind-and-sun",
+  "contentVersion": 1,
+  "title": "The North Wind and the Sun",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "european",
+    "culture": "Ancient Greek (Aesop’s fables)",
+    "place": "Greece and the Aegean Sea",
+    "label": "Ancient Greece",
+    "pin": {
+      "lat": 37.5,
+      "lon": 24
+    },
+    "pinColor": "#F5A623"
+  },
+  "setting": {
+    "period": "Ancient Greece, about 2,500 years ago",
+    "latestYear": -500
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Aesop’s fables (ancient Greek)",
+    "sources": [
+      {
+        "author": "Aesop, translated by V. S. Vernon Jones",
+        "title": "Aesop’s Fables",
+        "publisher": "William Heinemann",
+        "year": 1912,
+        "gutenbergId": 11339,
+        "url": "https://www.gutenberg.org/ebooks/11339",
+        "verified": true
+      },
+      {
+        "author": "Joseph Jacobs",
+        "title": "The Fables of Aesop",
+        "publisher": "Macmillan",
+        "year": 1894,
+        "gutenbergId": 28,
+        "url": "https://www.gutenberg.org/ebooks/28",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Greek fable, written for Omramo; it does not use the wording of the cited editions. The cited editions are in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Classicist / Greek reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Greece and its islands in the Aegean Sea: a land of windy winters and hot sun, of hill roads, olive trees and small harbours.",
+      "factCards": [
+        "aegean-sea",
+        "colossus-moment",
+        "liberty-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Fables are very short stories with a point. They were told in Greece about 2,500 years ago, people say by a storyteller named Aesop, and are still told everywhere.",
+      "factCards": [
+        "fable",
+        "cloak",
+        "colossus-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "Gentleness wins where force fails: the Wind pushes and the traveller holds on; the Sun warms and the traveller chooses for himself.",
+      "reflectionQuestion": "When has asking gently worked better for you than pushing?"
+    }
+  },
+  "moral": "A gentle way often works better than force.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#13293D",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A traveller in a red-brown cloak on a hill road above a blue sea. A smiling sun shines on him from one side, and a grey cloud with puffed cheeks blows at him from the other.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "north-wind",
+      "name": "North Wind",
+      "color": "#2B5A85",
+      "face": {
+        "file": "art/face-north-wind.png",
+        "alt": "The North Wind, a grey-blue cloud with puffed-out cheeks.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6E6F2",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The North Wind",
+        "traits": [
+          {
+            "text": "Loud and proud",
+            "fill": "#D6E6F2",
+            "ink": "#1F4A70"
+          },
+          {
+            "text": "Blows from the north",
+            "fill": "#E3E8F5",
+            "ink": "#33407A"
+          },
+          {
+            "text": "Runs out of puff",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He can bend the olive trees and turn the sea white. He is sure that makes him the strongest. He has not tried being gentle yet.",
+        "portrait": {
+          "file": "art/char-north-wind.card.heic",
+          "alt": "The North Wind, a great grey-blue cloud with a face, cheeks puffed out to blow.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#C4DCEC",
+          "#93B8D4",
+          "#5F8FB8"
+        ]
+      }
+    },
+    {
+      "id": "sun",
+      "name": "Sun",
+      "color": "#9A4A0A",
+      "face": {
+        "file": "art/face-sun.png",
+        "alt": "The Sun, round and gold, with a calm smile.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE7A8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sun",
+        "traits": [
+          {
+            "text": "Says very little",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Warm and patient",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Never pushes",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "The Sun does not boast and does not hurry. A little warmth, then a little more. That is all.",
+        "portrait": {
+          "file": "art/char-sun.card.heic",
+          "alt": "The Sun, a round gold face with a calm smile, shining over a blue sea.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFE38A",
+          "#FFC25A",
+          "#FF9E4D"
+        ]
+      }
+    },
+    {
+      "id": "traveller",
+      "name": "Traveller",
+      "color": "#1F6548",
+      "face": {
+        "file": "art/face-traveller.png",
+        "alt": "The traveller, a man with a short dark beard and a wide sun hat.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#DDF0DC"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "fable",
+      "kind": "idea",
+      "title": "A fable",
+      "line": "A very short story that leaves you with something to think about.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "People say a storyteller named Aesop told fables like this one about 2,500 years ago. They are still told all over the world."
+      },
+      "picture": {
+        "file": "art/see-fable.heic",
+        "alt": "A Greek storyteller sitting on a stone step with one hand raised, in the middle of a tale.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6B3A1E"
+    },
+    {
+      "id": "aegean-sea",
+      "kind": "place",
+      "title": "Aegean Sea",
+      "line": "A blue sea full of islands, on the eastern side of Greece.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "Greece has many hundreds of islands. Winters there are windy, and summers are hot and bright."
+      },
+      "picture": {
+        "file": "art/see-aegean-sea.heic",
+        "alt": "A bright blue sea dotted with rocky islands, seen from high above.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0B4F7A"
+    },
+    {
+      "id": "colossus-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "colossus-of-rhodes",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "The Greeks called the sun god Helios. Long after this story, on the island of Rhodes, they built a giant statue of him."
+        }
+      },
+      "background": "#123A5C"
+    },
+    {
+      "id": "cloak",
+      "kind": "object",
+      "title": "Woollen cloak",
+      "line": "A big piece of woollen cloth, pinned at one shoulder.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "Greek travellers wore a cloak by day. At night it was their blanket."
+      },
+      "picture": {
+        "file": "art/see-cloak.heic",
+        "alt": "A red-brown woollen cloak with a round bronze pin at the shoulder.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2A2A"
+    },
+    {
+      "id": "liberty-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "statue-of-liberty",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "A giant statue once stood beside a Greek harbour. Far away and much later, people raised another giant beside a harbour."
+        }
+      },
+      "background": "#0F3F4F"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sky.unfolded.heic",
+          "alt": "High above a Greek coast with a blue sea and small islands, a great grey-blue cloud with a face puffs out its cheeks beside a calm, smiling sun.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sky.folded.heic",
+          "alt": "A grey-blue cloud with puffed cheeks and a smiling sun, high above a blue sea with islands.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F5",
+          "#FFF1C9",
+          "#2F8FB5"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "This very old ",
+              "lead": true
+            },
+            {
+              "t": "fable",
+              "lead": true,
+              "tap": "fable"
+            },
+            {
+              "t": " from Greece begins high in the sky.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The North Wind",
+              "name": "north-wind"
+            },
+            {
+              "t": " was boasting again. He was a great grey cloud with puffed-out cheeks."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I am the strongest thing in the sky!”",
+              "say": "north-wind",
+              "chip": true
+            },
+            {
+              "t": " he boomed. "
+            },
+            {
+              "t": "“Stronger than rain. Stronger than thunder. Stronger than you!”",
+              "say": "north-wind"
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun",
+              "name": "sun"
+            },
+            {
+              "t": " smiled, and said nothing at all."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sky.unfolded.heic",
+          "alt": "High above a Greek coast with a blue sea and small islands, a great grey-blue cloud with a face puffs out its cheeks beside a calm, smiling sun.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sky.folded.heic",
+          "alt": "A grey-blue cloud with puffed cheeks and a smiling sun, high above a blue sea with islands.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F5",
+          "#FFF1C9",
+          "#2F8FB5"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far below lay the blue "
+            },
+            {
+              "t": "Aegean Sea",
+              "tap": "aegean-sea"
+            },
+            {
+              "t": ", dotted with islands. A pale road ran along the hills above it."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Along that road came a "
+            },
+            {
+              "t": "traveller",
+              "name": "traveller"
+            },
+            {
+              "t": ", wrapped in a thick woollen cloak."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Do you see that man?”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the Sun. "
+            },
+            {
+              "t": "“Whoever can get his cloak off him is the stronger. Shall we try?”",
+              "say": "sun"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sky.unfolded.heic",
+          "alt": "High above a Greek coast with a blue sea and small islands, a great grey-blue cloud with a face puffs out its cheeks beside a calm, smiling sun.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sky.folded.heic",
+          "alt": "A grey-blue cloud with puffed cheeks and a smiling sun, high above a blue sea with islands.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE9F5",
+          "#FFF1C9",
+          "#2F8FB5"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Easy!”",
+              "say": "north-wind",
+              "chip": true
+            },
+            {
+              "t": " laughed the North Wind. "
+            },
+            {
+              "t": "“I will have it off before he can blink. Me first!”",
+              "say": "north-wind"
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You first,”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the "
+            },
+            {
+              "t": "Sun",
+              "tap": "colossus-moment"
+            },
+            {
+              "t": ", and slipped behind a cloud to watch."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The North Wind swooped down to the hill road. He took a little breath, and he puffed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-wind.unfolded.heic",
+          "alt": "A gale on a hill road above the sea. Olive trees bend, the waves are white, and a traveller leans into the wind, holding his cloak tight.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-wind.folded.heic",
+          "alt": "A traveller leans into the wind on a hill road, holding his cloak tight. Olive trees bend behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8E3EA",
+          "#EFEFE2",
+          "#5E8F9E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The olive trees shivered. Their leaves flashed silver, and dust skipped along the road."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Brr,”",
+              "say": "traveller",
+              "chip": true
+            },
+            {
+              "t": " said the traveller. "
+            },
+            {
+              "t": "“The wind is getting up.”",
+              "say": "traveller"
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He tucked in his chin, wrapped himself up snugly, and held his "
+            },
+            {
+              "t": "cloak",
+              "tap": "cloak"
+            },
+            {
+              "t": " tighter."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Hmph,”",
+              "say": "north-wind",
+              "chip": true
+            },
+            {
+              "t": " said the North Wind. "
+            },
+            {
+              "t": "“That was only a puff.”",
+              "say": "north-wind"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-wind.unfolded.heic",
+          "alt": "A gale on a hill road above the sea. Olive trees bend, the waves are white, and a traveller leans into the wind, holding his cloak tight.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-wind.folded.heic",
+          "alt": "A traveller leans into the wind on a hill road, holding his cloak tight. Olive trees bend behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8E3EA",
+          "#EFEFE2",
+          "#5E8F9E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So he took a bigger breath, and he blew."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Off flew the traveller’s hat. The goats’ bells clanged on the hillside, and far below the waves turned white."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My hat!”",
+              "say": "traveller",
+              "chip": true
+            },
+            {
+              "t": " cried the traveller. He ran, he caught it, he jammed it back on, and held his cloak tighter."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-wind.unfolded.heic",
+          "alt": "A gale on a hill road above the sea. Olive trees bend, the waves are white, and a traveller leans into the wind, holding his cloak tight.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-wind.folded.heic",
+          "alt": "A traveller leans into the wind on a hill road, holding his cloak tight. Olive trees bend behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8E3EA",
+          "#EFEFE2",
+          "#5E8F9E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now the North Wind was cross. He took the biggest breath of his life, and he "
+            },
+            {
+              "t": "HOWLED",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Branches cracked. Fishing boats ran for the shore. Sand stung the traveller’s knees."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He bent almost double. He gripped the wool in both fists, and held his cloak tighter than ever."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-wind.unfolded.heic",
+          "alt": "A gale on a hill road above the sea. Olive trees bend, the waves are white, and a traveller leans into the wind, holding his cloak tight.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-wind.folded.heic",
+          "alt": "A traveller leans into the wind on a hill road, holding his cloak tight. Olive trees bend behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D8E3EA",
+          "#EFEFE2",
+          "#5E8F9E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The North Wind puffed. He blew. He wheezed. Then he had no breath left at all."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He flopped onto a hilltop like a wet grey blanket."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It cannot be done,”",
+              "say": "north-wind",
+              "chip": true
+            },
+            {
+              "t": " he panted. "
+            },
+            {
+              "t": "“That cloak is stuck to him. Nobody could get it off.”",
+              "say": "north-wind"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“May I try?”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " asked the Sun."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sun.unfolded.heic",
+          "alt": "The same hill road in warm gold light. The sea is smooth and blue, and the traveller walks with his cloak hanging loose.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sun.folded.heic",
+          "alt": "The traveller on the sunny hill road, pushing back his hat, his cloak hanging loose.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFE9A8",
+          "#2A9DB8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun came out from behind the cloud, quiet as a cat.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "No puffing. No blowing. Only a soft gold light on the road."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The stones grew warm. The bees came back to the thyme. The sea lay down smooth and blue."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“That is better,”",
+              "say": "traveller",
+              "chip": true
+            },
+            {
+              "t": " said the traveller, and he let his cloak hang loose."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sun.unfolded.heic",
+          "alt": "The same hill road in warm gold light. The sea is smooth and blue, and the traveller walks with his cloak hanging loose.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sun.folded.heic",
+          "alt": "The traveller on the sunny hill road, pushing back his hat, his cloak hanging loose.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFE9A8",
+          "#2A9DB8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun shone a little warmer."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Lizards crept out to bask on the wall. The air smelled of hot pine."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Phew,”",
+              "say": "traveller",
+              "chip": true
+            },
+            {
+              "t": " said the traveller. He pushed back his hat. Then he undid the pin at his shoulder."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On his hilltop, the North Wind opened one eye."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sun.unfolded.heic",
+          "alt": "The same hill road in warm gold light. The sea is smooth and blue, and the traveller walks with his cloak hanging loose.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sun.folded.heic",
+          "alt": "The traveller on the sunny hill road, pushing back his hat, his cloak hanging loose.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEBF2",
+          "#FFE9A8",
+          "#2A9DB8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun shone warmer still."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Too hot for wool!”",
+              "say": "traveller",
+              "chip": true
+            },
+            {
+              "t": " said the traveller, and he laughed out loud."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Off came the cloak. He shook it, folded it, and tucked it under his arm."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Oh,”",
+              "say": "north-wind",
+              "chip": true
+            },
+            {
+              "t": " said the North Wind, in a very small voice."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-rest.unfolded.heic",
+          "alt": "The traveller rests in the shade of an old olive tree above a small harbour with fishing boats. His cloak lies folded beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-rest.folded.heic",
+          "alt": "The traveller rests under an olive tree, his folded cloak beside him, with a small harbour below.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEF0",
+          "#FFE3A6",
+          "#1F8FA8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The traveller cooled his dusty feet in the sea at a little "
+            },
+            {
+              "t": "harbour",
+              "tap": "liberty-moment"
+            },
+            {
+              "t": ". Then he climbed to an old olive tree and lay in its shade, the folded cloak beside him."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“That is not fair,”",
+              "say": "north-wind",
+              "chip": true
+            },
+            {
+              "t": " grumbled the North Wind. "
+            },
+            {
+              "t": "“I worked so hard. You hardly did a thing!”",
+              "say": "north-wind"
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You pushed, my friend,”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the Sun. "
+            },
+            {
+              "t": "“I only asked.”",
+              "say": "sun"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-rest.unfolded.heic",
+          "alt": "The traveller rests in the shade of an old olive tree above a small harbour with fishing boats. His cloak lies folded beside him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-rest.folded.heic",
+          "alt": "The traveller rests under an olive tree, his folded cloak beside him, with a small harbour below.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D3EEF0",
+          "#FFE3A6",
+          "#1F8FA8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The afternoon grew hot and still. Under the olive tree, the traveller fanned himself with his hat."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then a small, cool breeze came up from the sea. It did not puff or blow or howl. It only lifted his hair."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Ah,”",
+              "say": "traveller",
+              "chip": true
+            },
+            {
+              "t": " said the traveller. "
+            },
+            {
+              "t": "“Thank you, wind.”",
+              "say": "traveller"
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And high over the islands, the North Wind went quite pink with pleasure."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,221 @@
+# The Fire-Bird and the Horse of Power
+# Omramo retelling, Advanced tier. Manuscript for the text-fidelity check.
+#
+# This is our own retelling, written for Omramo, of a traditional Russian wonder tale: the archer, the
+# Fire-Bird, the wise horse and Princess Vasilissa (Afanasyev's collection, 1855-1863; Afanasyev d. 1871).
+# It is not the wording of any earlier edition or translation.
+# Documented source for the tale: Arthur Ransome, "Old Peter's Russian Tales" (1916), "The Fire-Bird,
+# the Horse of Power, and the Princess Vasilissa". Project Gutenberg ebook #16981,
+# https://www.gutenberg.org/ebooks/16981 (US public domain; Ransome died in 1967, so his wording is
+# protected in life + 70 countries until 2038).
+# Rights care (CQ2): the writer did NOT open Ransome's text, on purpose, so that no phrase of his could
+# carry over. The telling was written from general knowledge of the traditional Afanasyev tale.
+# Shape kept from the tale: the horse's warning about the feather; the tsar's demand on pain of death; the
+# grain spread at midnight and the horse's hoof on the bird's wing; the gold-roofed tent and food; the
+# princess in a silver boat with a golden oar; the wedding dress under a stone in the sea; the crab who
+# calls up the others; the bath in boiling water, made harmless by the horse; the tsar's own leap.
+# Softened: in the tale the archer lures the princess with food and wine and carries her off while she
+# sleeps; here he tells her the truth and she chooses to come. In the tale the tsar is boiled to death;
+# here he leaps out howling and runs away into the forest. The tsar's threat is said once.
+# Changed from the editorial plan: the grain is 'white wheat', as the writer recalls the Afanasyev tale
+# (beloyarovaya pshenitsa; to verify), not maize, which the plan suggested and which may echo an English
+# telling; maize also fits old Russia poorly. Please check against the Russian text.
+# Changed from the plan: the tap target for the title tsar has the id 'tsar-title', because a character
+# id and a tap id must not be equal and the tsar is a character ('tsar').
+# Our additions: the ride home and the talk by the fire; Vasilissa's glance at the horse before her
+# second demand (so her test reads as trust, not cruelty); her line 'I chose, on the shore'; the new tsar
+# freeing the Fire-Bird from its cage at the end (the plan's suggestion: the cost of the feather is paid
+# back). The tale ends with the wedding; the freeing is ours.
+# The horse's magic: as the writer recalls it, the tale's horse protects the archer with a charm before
+# he enters the cauldron (to verify); here the horse breathes on the water. A reviewer may prefer a charm.
+# The crab: the tale's word (rak, as recalled) usually means crayfish; English tellings vary. We use crab.
+# The 'end of the world' is never placed on a map in the tale; the White Sea card says so plainly.
+# Reviewer to check: the forms Vasilissa (Vasilisa), tsar, kaftan, zhar-ptitsa; the bells at the wedding;
+# that the wooden palace, carved gables and tiled stove read rightly to a Russian reader.
+# Card facts to check: taiga crossing Russia from the Baltic almost to the Pacific, part of the largest
+# forest region on Earth; tsar from Caesar, Ivan IV crowned 1547, Nicholas II abdicated 1917; Palekh
+# lacquer begun in the 1920s; Stravinsky's The Firebird, Paris, 1910; White Sea just south of the Arctic
+# Circle, white nights. Landmark facts to check: Transfiguration 1714, 22 domes, pine and spruce logs,
+# aspen shingles fixed with nails; Intercession 1764; bell tower 1862; UNESCO listing (1990);
+# builders' names uncertain (a legend names a master Nestor).
+# Kizhi is framed as a map moment (CONTENT_PLAN 6.3): folk-tale time versus a church finished in 1714.
+# SOURCE CHECK (18 Nov 2026, against Ransome on the Gutenberg mirror, by a separate checker):
+# Echoes reworded: the horse's warning over the feather; the tsar's sword oath (now 'Fail me, and you
+# will lose your head'); Ransome's 'the trouble is not yet' refrain, replaced in all three places by our
+# own 'first step / hard road' device; 'I told you' (now 'Didn't I warn you?'); 'a little silver boat'
+# (now 'narrow'); the boiling-water demand; 'under a great grey stone'; 'No bird called'.
+# Departures from Ransome: he has no golden cage (the bird is tied and thrown down before the tsar); his
+# casket is golden (ours iron-bound); his grain is spread on an open field and the archer hides in an oak
+# (ours: a forest clearing, hiding among the trees); in his cauldron scene the horse only advises and the
+# PRINCESS waves her hand over the cauldron (ours: the horse breathes on the water); he ends with a
+# golden stable for the horse (left out); his princess wakes to wedding bells (dropped). His 'edge of the
+# world' versus our 'end of the world' is not treated as an echo.
+# Status: DRAFT. Text review pending. Cultural review (standard: Russian reader) pending.
+#
+# Generated by tools/build_stories.py from docs/content/story-specs/firebird-and-horse-of-power.json; edit the spec,
+# not this file.
+#
+# Format: lines starting with "#" are notes and are not story text. One paragraph per line.
+# A blank line separates paragraphs; a "# --- page" note marks a page (spread) break.
+
+# The Feather
+
+# --- page 1
+Long ago, in the north of Russia, a young archer served the tsar.
+
+He was a huntsman, the best the tsar had. He could put an arrow through a ring at fifty paces, and he could sleep in the saddle and wake at the snap of a twig. But the finest thing he owned was not his bow.
+
+It was his horse. The Horse of Power stood a head taller than any horse in the royal stables, dark as a wet log, with a mane that hung below his knees. He did not speak often. When he did, the archer had learned, it was wise to listen. Mostly.
+
+One autumn night the two of them were riding home through the great forest. Spruces stood close on either side, black against a blacker sky, and the path between them was a pale thread of fallen needles. Nothing stirred in the branches, and even the wind had dropped.
+
+Then, far ahead, a light. It lay on the path, low and steady, the colour of a candle seen through honey. The horse’s ears went forward. The archer leaned from the saddle to look, and still the light did not flicker. It simply burned.
+
+# --- page 2
+It was a feather. One long feather from some great bird’s wing lay across the path like a dropped sword, shining from quill to tip with its own gold fire. The spruce trunks around it glowed orange. The archer could have read a letter by it.
+
+“A feather of the Fire-Bird,” he breathed. Every child in Russia had heard of that bird, and not one grown man he knew had ever seen it. “The tsar would give me anything for this.”
+
+The Horse of Power did not lower his head to look. “Let it be,” he said. “Pick it up, and it will cost you more than you can guess.”
+
+The archer sat in the saddle with the gold light on his face. He thought of the tsar’s hall, and of the reward a man might earn who walked in with such a thing in his hand. He thought of the horse’s warning too. But the feather was here, and the warning was only words.
+
+He swung down, picked it up and tucked it inside his kaftan, where it lay warm against his ribs like a live coal. The horse said nothing more. He walked on into the dark, and the archer rode home with gold light leaking through his coat.
+
+# --- page 3
+Before dawn the archer climbed the palace steps, knelt before the tsar and opened his coat. Gold light spilled across the floor. The courtiers drew back as if he had let a fox loose among them.
+
+The tsar was old, with a long grey beard and a crown rimmed with sable, and he loved only the things nobody else had. He turned the feather over and over in his ringed hands. For a moment the archer thought he would smile.
+
+“A feather is a fine thing,” the tsar said at last. “But a man who can find a feather can find the bird it fell from. Bring me the Fire-Bird, archer. Fail me, and you will lose your head.”
+
+Nobody laughed. Nobody spoke for him. The archer bowed until his forehead touched the boards, and went out into the yard with the hollow feeling of a man who has put his foot down on a stair that is not there.
+
+The Horse of Power was waiting by the stable door. The archer put his arms round the great dark neck and wept into the mane, as he had not wept since he was a boy. The horse let him. Then he blew softly through his nose.
+
+# --- page 4
+“Didn’t I warn you?” said the Horse of Power. “I warned you, and you did not listen. But dry your face. This is only the first step. The hard road is still ahead.”
+
+“Go back to the tsar. Ask him for a hundred sacks of white wheat, and have them loaded on carts tonight. Then we will go hunting.”
+
+The tsar grumbled at the cost, but he gave the wheat. At dusk the carts creaked out of the city behind the horse, deep into the forest, to a clearing where the spruces stood back round a circle of grass and the stars looked straight down.
+
+There the archer slit the sacks and scattered the grain until the whole clearing was pale with it. Then he and the horse stood among the trees at its edge and waited. The archer’s hands were cold. An owl went over without a sound. Midnight came.
+
+And with midnight came a wind out of the east, warm as a summer afternoon, and the treetops began to glow. Then the sky above the clearing caught fire from end to end, and the birds came down.
+
+# --- page 5
+They were firebirds, each the size of a peacock, with a long tail that trailed behind it like the tail of a falling star. Their feathers burned gold and orange, and they did not catch the light. They were the light.
+
+They settled on the wheat and began to feed, and the clearing was as bright as noon. One was brighter than all the rest. That one, the archer knew, was the Fire-Bird of the stories, and it was pecking its way closer to the trees.
+
+The Horse of Power waited until it was a single stride away. Then he stepped out of the shadow and set one great hoof on the tip of its wing, gently, the way a man puts a hand on a letter to stop it blowing away.
+
+The flock rose with a roar like a bonfire and was gone. The Fire-Bird beat its free wing and shrieked. The archer ran out and bound its legs with soft cord.
+
+By evening it was in the palace, in a cage of gold. It lit the hall from end to end, so that no candle was needed. The tsar sat before it all night, gazing, and did not once look at the archer.
+
+# The Princess
+
+# --- page 6
+For a month the Fire-Bird lit the tsar’s hall, and the tsar was almost content.
+
+It was a wooden palace, as the great houses of the north were then. Pine logs as thick as a man’s waist were notched together at the corners. The gables were carved with suns and twisting vines, and under the bird’s light every carving seemed to move.
+
+But the tsar was a man who could never have enough. One night he sent for the archer, and the archer came and knelt where he had knelt before.
+
+“You found me a bird no one could find,” said the tsar, stroking his beard. “Now find me a bride no one can win. Far away, at the end of the world, where the land stops and the sea begins, lives the Princess Vasilissa. Bring her here. I mean to marry her.”
+
+The archer did not argue. He knew by now what came of arguing. He bowed and went out to the stable, and in the dark the Horse of Power turned his long head towards him, as if he had been waiting.
+
+# --- page 7
+“This is still not the hard road,” said the horse. “Ask the tsar for a tent with a roof of gold, and the finest food and drink in his kitchens. Then hold on tight, for it is a long way to the end of the world.”
+
+They rode for many days. The spruce forest thinned to birch, and the birch to low pines and bog and grey rock, and every river they crossed ran north. Each night the dark came later and left sooner, until at last it did not come at all.
+
+So they came to the end of the world. It was a long shore of pale sand beside a sea as still as pewter. Over it hung a midnight sky that was neither night nor day, the grey of milk and ashes, with one faint star.
+
+The archer pitched the golden tent on the sand, set out the dishes and the jugs, and hid among the rocks with the horse.
+
+“Silver boat, golden oar…”
+
+Far out on the water something moved. It was a narrow silver boat, and in it sat a girl rowing with a golden oar, slowly, the way a person walks who has nowhere in particular to be. She was singing to herself.
+
+# --- page 8
+The girl saw the gold roof shining and stopped singing. She rowed in, pulled her boat up the sand and walked once all round the tent, her head on one side. Then she lifted the flap and went in.
+
+The archer came out from the rocks. All the way north he had planned what clever things he would say. But when she looked up at him from the honey cakes, with crumbs on her fingers, he found he could only tell the truth.
+
+“I am the tsar’s archer,” he said. “He sent me to fetch you to be his bride. He is old and greedy, and he keeps a bird of fire in a golden cage. That is the whole of it.”
+
+Vasilissa looked at him for a long moment. Then she laughed, and the laugh went out across the still water.
+
+“I have never been past the end of the world,” she said. “I should like to see this tsar for myself. And I should like to see your face when I tell him no.” She brushed the crumbs from her hands and stood up.
+
+# --- page 9
+So they rode south together, the princess behind the archer on the broad back of the horse, her arms round his waist and her long braid blowing over his shoulder. The horse went more gently than the archer had ever known him go.
+
+The nights grew dark again as they came south. They slept by small fires among the birches, and she asked him about everything: what grew in his country, what songs his mother had sung, whether the tsar’s people were happy. He found that he told her things he had told nobody.
+
+“They are afraid,” he said, when she asked the last. Then he was quiet, because he had never said it aloud before.
+
+Once, by the fire, she asked the horse why he served a man who never listened to him. The horse looked at the archer across the flames. “Because he is learning,” he said.
+
+On the last evening they saw the palace roofs rising out of the forest against the dusk, and torches burning at the gate. Vasilissa’s arms tightened round the archer’s waist. Neither of them said a word, and the horse slowed to a walk.
+
+# --- page 10
+The tsar came down the steps to meet them in his heaviest robe, his crown set straight and his beard combed out to his belt. He took Vasilissa’s hand in both of his. “Tomorrow we shall be married,” he said, “and the bells will ring for a week.”
+
+Vasilissa drew her hand away, quite politely.
+
+“I shall marry no one,” she said, “without my wedding dress. It lies at the bottom of the sea, beneath a stone as big as a hut, in a casket nobody has opened since my grandmother’s time. When it is brought to me, we can talk of bells.”
+
+The courtiers looked at their boots. The tsar’s face went slowly red from the collar upwards, like wine filling a cup. Then he smiled, for he had seen the answer, and the answer was standing beside the princess with road dust on its boots.
+
+“Archer,” he said softly. “You heard the princess. The sea, the stone, the casket. Fetch it. You know what happens if you fail.” And the hall was so quiet that they heard the Fire-Bird shift on its golden perch.
+
+# The Cauldron
+
+# --- page 11
+This time the horse did not say that he had told him so.
+
+“Now,” said the Horse of Power, “comes the hard road. Get on my back.” And they rode north again, so fast that the trees ran together into one long grey wall, and in three days they came to the shore at the end of the world.
+
+A great crab was walking along the edge of the water, as broad as a cartwheel, its claws held up in front of it like a man carrying two buckets. The horse put his hoof down on its back and held it there. “Let me go!” creaked the crab, its legs scrabbling at the sand. “I am the eldest crab in all this sea. Let me go, and I will do whatever you ask.”
+
+“Bring up the casket from under the great stone,” said the horse, “and you shall go.”
+
+The crab gave a shrill whistle, and the whole shallows began to stir. Up out of the water came crabs by the hundred, then by the thousand, clicking and climbing over one another, and between them they pushed a small iron-bound casket up onto the sand.
+
+# --- page 12
+In the torchlit courtyard, Vasilissa opened the casket and shook out a dress the colour of the sea at dusk, sewn all over with seed pearls. She held it up against herself. The tsar clapped his hands for the musicians.
+
+“Not yet,” said Vasilissa. “One thing more. I will marry only when the man who fetched me has stepped into a cauldron of boiling water and climbed out again.” And she glanced, just once, past the archer to the dark horse waiting by the gate.
+
+The tsar did not even pause. Within the hour a great iron cauldron hung over a fire among the torches, and the water in it rolled and spat, and the steam stood up into the dark like a white tree. The whole city crowded in to watch.
+
+The archer looked at the water and could not feel his feet. “Let me say goodbye to my horse,” he said. Nobody refused him that.
+
+The Horse of Power bent his head over the cauldron and breathed on the water, three long breaths, as a man blows on hot soup. Then he put his nose to the archer’s ear. “Go in,” he said. “This is the price of the feather. Pay it, and be done with it.”
+
+# --- page 13
+The archer climbed the ladder, shut his eyes and stepped down into the cauldron. The crowd made one sound together, a long breath drawn in, and then nobody breathed at all.
+
+The water closed over his head. It was not hot. It was like a summer river at evening, when the shallows have held the sun all day. He came up laughing, out of pure surprise.
+
+When he climbed out, the torchlight seemed to follow him. It was his own face still, but clearer, the way a window is clearer after rain. He stood straighter, and even the tsar’s guards stepped back to let him by.
+
+The tsar stared. If one bath could do that for a young archer, what might it not do for an old tsar? He flung off his heavy robe, tossed his crown to a servant, scrambled up the ladder and jumped in with both feet.
+
+He came out again faster than he had gone in, like a cork from a bottle, howling and as red as a beetroot. He ran across the courtyard, out of the gate and down the road into the forest, still howling, and he was never seen in that city again.
+
+# --- page 14
+The people did not go looking for him. They had been afraid of him for too long. Instead they lifted the archer onto their shoulders and carried him into the hall, and before the torches burned down they had made him tsar.
+
+He looked for Vasilissa in the crowd. She was standing by the golden cage with the sea-coloured dress over her arm.
+
+“I will not send for a bride,” he said. “I have seen how that goes. But if you would choose to stay…” “I chose,” said Vasilissa, “on the shore. You were too busy telling the truth to notice.”
+
+They were married at midsummer. And the first thing the new tsar did, on the night of the wedding, was to carry the golden cage to the open window and lift its little door.
+
+The Fire-Bird stepped out onto the sill and was gone, a streak of gold over the dark forest, and the hall went back to candlelight. The archer watched until the last spark had gone. Below the window, the Horse of Power blew softly through his nose, and the new tsar leaned out to listen.

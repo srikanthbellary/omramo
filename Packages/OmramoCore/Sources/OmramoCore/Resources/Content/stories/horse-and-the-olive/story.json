@@ -1,0 +1,1165 @@
+{
+  "schemaVersion": 1,
+  "id": "horse-and-the-olive",
+  "contentVersion": 1,
+  "title": "The Horse and the Olive",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "european",
+    "culture": "Ancient Greek myth",
+    "place": "Athens, Greece",
+    "label": "Ancient Athens",
+    "pin": {
+      "lat": 37.97,
+      "lon": 23.73
+    },
+    "pinColor": "#F5A623"
+  },
+  "setting": {
+    "period": "A story the ancient Greeks told about the first days of Athens",
+    "latestYear": -400
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Greek myth of the naming of Athens",
+    "sources": [
+      {
+        "author": "James Baldwin",
+        "title": "Old Greek Stories",
+        "year": 1895,
+        "gutenbergId": 11582,
+        "url": "https://www.gutenberg.org/ebooks/11582",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of the ancient Greek myth of the naming of Athens, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Reader in Greek history and myth"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Athens grew up round a steep, flat-topped rock near the sea, the Acropolis. The land is dry and stony, with hot summers and little rain, which is exactly where olive trees do well.",
+      "factCards": [
+        "acropolis",
+        "temple-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "The ancient Greeks told stories of many gods to explain the sea, the sky and how their cities began; this one says how Athens got its name. The olive gave Greek homes food, lamp oil and a sign of peace.",
+      "factCards": [
+        "greek-gods",
+        "olive-oil",
+        "olive-wreath",
+        "zeus-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "The horse is a splendid gift and the people are right to cheer it; the olive is plain and they are right to choose it. A child can weigh what dazzles today against what is still useful in a hundred years.",
+      "reflectionQuestion": "The olive won by one pebble. Which jar would your pebble have gone into, and why?"
+    }
+  },
+  "moral": "The gift that dazzles wins the cheers, but the useful gift is the one that lasts.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#12294A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A white horse rears on a bare rocky hilltop beside a small grey-green olive tree, with the blue sea far behind them.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "athena",
+      "name": "Athena",
+      "color": "#5B6B2E",
+      "face": {
+        "file": "art/face-athena.png",
+        "alt": "Athena.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E8EED2",
+      "card": {
+        "label": "Character · goddess of wisdom",
+        "title": "Athena",
+        "traits": [
+          {
+            "text": "Thinks before speaking",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Wears a crested helmet",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never boasts",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "The Greeks said she was the goddess of wisdom and of weaving, building and every clever craft. She gives quietly and lets her gift speak for her.",
+        "portrait": {
+          "file": "art/char-athena.card.heic",
+          "alt": "Athena with her crested helmet pushed back from her calm face, holding a small twig of olive leaves.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#E4EDD0",
+          "#BFD0A0",
+          "#8FA66B"
+        ]
+      }
+    },
+    {
+      "id": "poseidon",
+      "name": "Poseidon",
+      "color": "#1F5F8B",
+      "face": {
+        "file": "art/face-poseidon.png",
+        "alt": "Poseidon.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6E9F7",
+      "card": {
+        "label": "Character · god of the sea",
+        "title": "Poseidon",
+        "traits": [
+          {
+            "text": "Loud as the surf",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Carries a trident",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Hates to lose",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "The Greeks said he ruled the sea and could shake the earth with his three-pronged spear, the trident. He loves to give splendid gifts, and he sulks when he loses.",
+        "portrait": {
+          "file": "art/char-poseidon.card.heic",
+          "alt": "Poseidon with a sea-blue beard and hair like wet seaweed, holding his three-pronged spear, with spray behind him.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#CFE8F5",
+          "#8CC7DE",
+          "#4E9CC2"
+        ]
+      }
+    },
+    {
+      "id": "cecrops",
+      "name": "Cecrops",
+      "color": "#8A4A00",
+      "face": {
+        "file": "art/face-cecrops.png",
+        "alt": "King Cecrops.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE9B8"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "acropolis",
+      "kind": "place",
+      "title": "The high rock",
+      "line": "A steep rock in the middle of Athens, flat on top, called the Acropolis.",
+      "cultureNote": {
+        "label": "From Greece",
+        "text": "Acropolis means “high city” in Greek. Long ago people lived on the rock because it was easy to guard and had a spring, and today anyone can climb it."
+      },
+      "picture": {
+        "file": "art/see-acropolis.heic",
+        "alt": "A steep, flat-topped rock of pale stone standing alone above a dry plain.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A4A6B"
+    },
+    {
+      "id": "greek-gods",
+      "kind": "idea",
+      "title": "Greek gods",
+      "line": "The ancient Greeks told stories of many gods, each ruling one part of the world.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "The Greeks said Poseidon ruled the sea, Zeus the sky, and Athena wisdom and crafts. Their stories explained storms, seasons and how cities began, and people still read them today as stories."
+      },
+      "picture": {
+        "file": "art/see-greek-gods.heic",
+        "alt": "A tall clay jar painted with a row of small dark figures of gods.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3324"
+    },
+    {
+      "id": "zeus-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "statue-of-zeus-olympia",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "The Greeks called Zeus the king of their gods. Long after people first told this story, a sculptor named Phidias made a giant statue of him at Olympia."
+        }
+      },
+      "background": "#3A2A55"
+    },
+    {
+      "id": "olive-oil",
+      "kind": "object",
+      "title": "Olive oil",
+      "line": "A golden oil pressed out of ripe olives, the small fruit of the olive tree.",
+      "cultureNote": {
+        "label": "From Greece",
+        "text": "Greek families eat olive oil at almost every meal, and long ago they also burned it in lamps and rubbed it on their skin. An olive tree grows in dry, stony ground and can live for hundreds of years."
+      },
+      "picture": {
+        "file": "art/see-olive-oil.heic",
+        "alt": "A small clay jug pouring golden oil into a shallow bowl.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A5320"
+    },
+    {
+      "id": "olive-wreath",
+      "kind": "idea",
+      "title": "Olive branch",
+      "line": "A leafy twig of the olive tree, carried or worn as a sign of peace and honour.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "Winners at the ancient Olympic games were given no gold, only a crown of olive leaves. Today an olive branch still means peace in many countries of the world."
+      },
+      "picture": {
+        "file": "art/see-olive-wreath.heic",
+        "alt": "A crown of grey-green olive leaves bent into a ring.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2F4A3A"
+    },
+    {
+      "id": "temple-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "parthenon",
+        "appearance": "natural"
+      },
+      "background": "#1D4466"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hill.unfolded.heic",
+          "alt": "A steep, flat-topped rocky hill stands above a dry plain under a clear, pale blue sky, with the sea far off. On and around the hill, on the right, people are building a little town of mud-brick huts with thatched roofs, among goats and a small spring.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hill.folded.heic",
+          "alt": "People build mud-brick huts with thatched roofs on a rocky hilltop, with goats beside a spring.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEEF8",
+          "#F3E9D2",
+          "#C9B48A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The ancient Greeks told of a town that had no name.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It began as a few huts on a "
+            },
+            {
+              "t": "high rock",
+              "tap": "acropolis"
+            },
+            {
+              "t": " near the sea. The rock was steep on every side and flat on top, like a table set down on the dry plain."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "King Cecrops",
+              "name": "cecrops"
+            },
+            {
+              "t": " and his people had built the huts themselves, of mud brick and thatch. They had piled up a wall of stones. They had a spring of cold water and forty goats."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“We have everything a town needs,”",
+              "say": "cecrops",
+              "chip": true
+            },
+            {
+              "t": " said Cecrops, "
+            },
+            {
+              "t": "“except something to call it.”",
+              "say": "cecrops"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hill.unfolded.heic",
+          "alt": "A steep, flat-topped rocky hill stands above a dry plain under a clear, pale blue sky, with the sea far off. On and around the hill, on the right, people are building a little town of mud-brick huts with thatched roofs, among goats and a small spring.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hill.folded.heic",
+          "alt": "People build mud-brick huts with thatched roofs on a rocky hilltop, with goats beside a spring.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEEF8",
+          "#F3E9D2",
+          "#C9B48A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was not an easy place. The soil was thin and full of stones. All summer long the sun baked the hillsides, and hardly a drop of rain fell."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Still, the people were proud of it. Every stone in that wall had been carried up in somebody’s arms."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far above, two of the "
+            },
+            {
+              "t": "gods",
+              "tap": "greek-gods"
+            },
+            {
+              "t": " were watching. One was "
+            },
+            {
+              "t": "Poseidon",
+              "name": "poseidon"
+            },
+            {
+              "t": ", lord of the sea, whose voice was like waves in a cave. The other was "
+            },
+            {
+              "t": "Athena",
+              "name": "athena"
+            },
+            {
+              "t": ", the grey-eyed goddess of wisdom and of clever hands."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Each of them looked at the brave little town on its rock, and each of them wanted it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-gods.unfolded.heic",
+          "alt": "On the bare hilltop the townspeople stand in a half circle under a bright pale sky. Before them, on the right, stand two tall shining figures: Poseidon with his three-pronged spear, and Athena with her helmet pushed back, a spear and a round shield; white clouds are piled high above like a throne.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-gods.folded.heic",
+          "alt": "Tall Poseidon with his three-pronged spear and tall Athena with her spear and shield stand before the small townspeople.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E3F0FA",
+          "#F6EEDC",
+          "#D2C09A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It stands beside my sea,”",
+              "say": "poseidon",
+              "chip": true
+            },
+            {
+              "t": " boomed Poseidon. "
+            },
+            {
+              "t": "“It is mine!”",
+              "say": "poseidon"
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Its people build with their hands and think before they speak,”",
+              "say": "athena",
+              "chip": true
+            },
+            {
+              "t": " said Athena. "
+            },
+            {
+              "t": "“It is mine.”",
+              "say": "athena"
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They argued until the clouds shook. At last "
+            },
+            {
+              "t": "Zeus",
+              "tap": "zeus-moment"
+            },
+            {
+              "t": ", the king of the gods, grew tired of the noise."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Enough,” he said. “Go down to the rock, both of you, and each give the town one gift. Its people shall choose, and whoever gives the better gift shall name it.”"
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the two of them came down onto the hilltop, taller than the huts and shining like bronze. The goats ran. The people stood very still."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-horse.unfolded.heic",
+          "alt": "Poseidon strikes the rock with his three-pronged spear under a pale bright sky. On the right a white horse leaps out of the split stone in a burst of sea spray, its mane flying, while the people fall back in wonder.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-horse.folded.heic",
+          "alt": "A white horse leaps out of split rock in a burst of sea spray, its mane flying.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9ECF7",
+          "#EAF4F6",
+          "#BFB198"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Poseidon went first. He strode to the middle of the rock and lifted his great three-pronged spear."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Crack!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " The hill shook. The stone split open, salt spray burst out of it, and through the spray leaped an animal no one there had ever seen."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a horse, white as sea foam. He tossed his mane and drummed his hooves on the rock, and the children hid behind their mothers."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“No runner will ever catch you again!”",
+              "say": "poseidon",
+              "chip": true
+            },
+            {
+              "t": " roared "
+            },
+            {
+              "t": "Poseidon",
+              "name": "poseidon"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“Harness him to a chariot, and your enemies will scatter like sparrows!”",
+              "say": "poseidon"
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The people cheered until their throats were sore."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-olive.unfolded.heic",
+          "alt": "In warm, pale golden light Athena kneels on the right beside a young grey-green olive tree growing from the bare rock, heavy with small fruit. An old woman and a small girl step near to touch its leaves, under a wide pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-olive.folded.heic",
+          "alt": "Athena kneels beside a young olive tree growing out of bare rock, and a small girl reaches up to its fruit.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E6F1F4",
+          "#FBEFCB",
+          "#C8BE8E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then it was ",
+              "lead": true
+            },
+            {
+              "t": "Athena",
+              "lead": true,
+              "name": "athena"
+            },
+            {
+              "t": "’s turn, and she did not shout.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She pushed her helmet back from her face and knelt on the bare rock. She pressed the end of her spear into a crack in the stone, as gently as a gardener."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A green shoot curled out of the crack. It grew to a thin grey trunk, no taller than a man. It put out narrow leaves, silver underneath, and then a scatter of small hard fruit."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nobody cheered. The wind turned the little leaves over, green, silver, green."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Is that all?” said somebody at the back, and somebody else laughed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-olive.unfolded.heic",
+          "alt": "In warm, pale golden light Athena kneels on the right beside a young grey-green olive tree growing from the bare rock, heavy with small fruit. An old woman and a small girl step near to touch its leaves, under a wide pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-olive.folded.heic",
+          "alt": "Athena kneels beside a young olive tree growing out of bare rock, and a small girl reaches up to its fruit.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E6F1F4",
+          "#FBEFCB",
+          "#C8BE8E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Athena did not mind the laughing. She picked one of the small fruits and held it out on her palm."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“This is an olive,”",
+              "say": "athena",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“Soak it in sea water and it is good to eat. Press it, and it gives ",
+              "say": "athena"
+            },
+            {
+              "t": "golden oil",
+              "say": "athena",
+              "tap": "olive-oil"
+            },
+            {
+              "t": ": oil for your bread, oil for your lamps, oil to rub on tired skin and to soothe the sick.”",
+              "say": "athena"
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The tree asks for no rich soil and very little rain. It will grow on your stones. And it will still be giving fruit to your grandchildren’s grandchildren.”",
+              "say": "athena",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-gods.unfolded.heic",
+          "alt": "On the bare hilltop the townspeople stand in a half circle under a bright pale sky. Before them, on the right, stand two tall shining figures: Poseidon with his three-pronged spear, and Athena with her helmet pushed back, a spear and a round shield; white clouds are piled high above like a throne.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-gods.folded.heic",
+          "alt": "Tall Poseidon with his three-pronged spear and tall Athena with her spear and shield stand before the small townspeople.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E3F0FA",
+          "#F6EEDC",
+          "#D2C09A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then she broke off one leafy twig. "
+            },
+            {
+              "t": "“And when you carry ",
+              "say": "athena",
+              "chip": true
+            },
+            {
+              "t": "a branch",
+              "say": "athena",
+              "tap": "olive-wreath"
+            },
+            {
+              "t": " of it in your hand,”",
+              "say": "athena"
+            },
+            {
+              "t": " she said, "
+            },
+            {
+              "t": "“strangers will know that you come in peace.”",
+              "say": "athena"
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The people looked from the tree to the horse and back again."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“But the horse!” cried a young man. “No enemy would ever dare to come near us!”"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "An old woman shook her head. She had known hungry winters. “Can we eat a gallop?” she asked. “Can we light a lamp with it?”"
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A small girl said nothing at all. She held one olive up to the sun and turned it round and round."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-gods.unfolded.heic",
+          "alt": "On the bare hilltop the townspeople stand in a half circle under a bright pale sky. Before them, on the right, stand two tall shining figures: Poseidon with his three-pronged spear, and Athena with her helmet pushed back, a spear and a round shield; white clouds are piled high above like a throne.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-gods.folded.heic",
+          "alt": "Tall Poseidon with his three-pronged spear and tall Athena with her spear and shield stand before the small townspeople.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E3F0FA",
+          "#F6EEDC",
+          "#D2C09A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "King Cecrops",
+              "name": "cecrops"
+            },
+            {
+              "t": " set two clay jars on the ground, one for the horse and one for the olive. Every man and woman dropped a pebble into the jar they chose. Clink. Clink. Clink."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he tipped them out and counted, twice, to be sure."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The olive has it,”",
+              "say": "cecrops",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“by one pebble.”",
+              "say": "cecrops"
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Poseidon’s beard bristled like a wave about to break. He stamped back down to the sea, and for a whole week the waves banged on the shore like fists."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But he did not take back his horse."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hill.unfolded.heic",
+          "alt": "A steep, flat-topped rocky hill stands above a dry plain under a clear, pale blue sky, with the sea far off. On and around the hill, on the right, people are building a little town of mud-brick huts with thatched roofs, among goats and a small spring.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hill.folded.heic",
+          "alt": "People build mud-brick huts with thatched roofs on a rocky hilltop, with goats beside a spring.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#DCEEF8",
+          "#F3E9D2",
+          "#C9B48A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The people kept the white horse and were glad of him. He carried riders and news along the dusty roads, far more often than he ever went to war."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "As for the town, it had a name at last. They called it Athens, after "
+            },
+            {
+              "t": "Athena",
+              "name": "athena"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The people cut twigs from her tree and planted them, and their children planted more. Before long, olive trees silvered every hillside around the rock."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The oil went down to the harbour in tall clay jars, and ships carried it to every port on the sea. Athens grew rich, one jar at a time."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-olive.unfolded.heic",
+          "alt": "In warm, pale golden light Athena kneels on the right beside a young grey-green olive tree growing from the bare rock, heavy with small fruit. An old woman and a small girl step near to touch its leaves, under a wide pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-olive.folded.heic",
+          "alt": "Athena kneels beside a young olive tree growing out of bare rock, and a small girl reaches up to its fruit.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E6F1F4",
+          "#FBEFCB",
+          "#C8BE8E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long afterwards, the Athenians built Athena a "
+            },
+            {
+              "t": "marble temple",
+              "tap": "temple-moment"
+            },
+            {
+              "t": " on top of that same rock. High on one end they carved the contest in stone: the goddess and the sea god, face to face."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And beside their temples they always kept one olive tree growing, for they said it was the very tree she planted."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Kings have come and gone since then. The marble has cracked, and most of the carved gods have fallen."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But climb the rock today and you will find an olive tree there, planted in memory of the first one. The wind still turns its leaves over, green, silver, green."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

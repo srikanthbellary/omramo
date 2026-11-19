@@ -5,7 +5,7 @@ import Foundation
 public enum Brand {
     public static let displayName = "Omramo"
     public static let wordmark = "OMRAMO"
-    public static let tagline = "A magical book that you read."
+    public static let tagline = "Turn the page. See the world."
     public static let domain = "omramo.com"
     public static let privacyURLString = "https://omramo.com/privacy"
     public static let termsURLString = "https://omramo.com/terms"

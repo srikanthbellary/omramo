@@ -1,0 +1,237 @@
+# The Woman Who Raised a Bear
+# Omramo retelling, Advanced tier. Manuscript for the text-fidelity check.
+#
+# This is our own retelling, written for Omramo, of a traditional Kalaallit (Greenlandic Inuit) story.
+# It is not the wording of any earlier edition or translation.
+# Documented source: Knud Rasmussen, "Eskimo Folk-Tales", edited and translated by W. Worster (1921),
+# story "The Woman Who Had a Bear as a Foster-Son"; Project Gutenberg ebook #28932,
+# https://www.gutenberg.org/ebooks/28932 . The title's word is not used in the app (CONTENT_PLAN 1).
+# Rights: US public domain (pre-1931). Rasmussen died in 1933; Worster's death year not verified.
+# Source read: YES, for the order of events only, from the pglaf mirror (28932.txt; 28932-0.txt was 404),
+# through a summarising fetch, not line by line. No sentence or turn of phrase of Worster's was used.
+# Order of events kept from the source: an old woman living nearest the shore, fed by the hunters' shares;
+# a she-bear brought home and a frozen cub given her by the wife of the man who killed it; the lamp moved
+# aside and the cub thawed on the drying rack; blubber fed to it; it sleeps by her and, spoken to like a
+# person, comes to understand people; it sniffs her face when it wants food; neighbours bring food;
+# children call it out at her window, she tells it to keep its claws in, it breaks their toy harpoons;
+# it grows too strong for children, then for men; the men take it hunting and tell it to stay downwind;
+# northern hunters nearly kill it; she marks it with a broad collar of braided sinew; it hunts at sea in
+# summer and on the ice in winter and others share its catch; a man from farther away swears to kill it
+# though his companions object; she tells it people are its kin and it may fight only if attacked; it
+# comes home late in a storm; a dead stranger, the man from the north, is found; word comes he would not
+# leave the bear alone; weeping, she tells it to go; it presses its muzzle to the floor and weeps; she
+# waits for a cloudless morning; she secretly strokes oil and soot down its side; it sniffs her and goes
+# north to its own kind; she weeps all day and the settlement mourns; it never returns; in the far north
+# a huge bear with a black mark on its side is said to be seen.
+# Softenings: no killing is shown. The she-bear's death is one plain sentence. In the source the bear
+# drags the dead man home and she finds the body; here the men find him lying in the snow near her house,
+# and the fight is told after the fact in one line ('until the bear turned'). The source's detail of the
+# man's state of dress is left out. REVIEW: keep the death at all for ages 10-12, or soften further?
+# Added (not in the source): the old woman's warning never to go near strangers' houses (plan beat 5); the
+# graze on his shoulder after the northern hunters' attack; the first seal laid at her passage and her
+# sharing it out (plan beat 6); the traveller who brings the news (plan beat 9); the neighbour's share
+# after he leaves; the traveller who brings the story of the marked bear; the closing image at the shore.
+# Changed from the editorial plan, to follow the source: the cub is a gift from the hunter's wife (the
+# plan had her ask for it and the men laugh); the danger is the death of the man from the north, not
+# uneasy neighbours; the bear does NOT leave seals near the settlement after he goes (plan beat 13): the
+# source says he never came back and brought no more food, so the text says so; the ending uses the
+# source's black mark instead. The farewell is on a clear MORNING (the source waits for a cloudless dawn),
+# not the plan's pale evening; the scene-farewell alts say morning.
+# Name and address: the source gives the bear no name; she and the villagers call it 'little bear'. Our
+# text has her call him 'son' (the plan's beat 3); no Kalaallisut name is invented. REVIEW: is 'son' right?
+# Size: the source says the bear was no bigger than an ordinary bear; the far-north bear of the ending is
+# said to be huge (the source compares it to an iceberg; we say 'a hill of drifting ice').
+# OPEN QUESTION (place): the source mentions people from beyond Angmagssalik (now Tasiilaq, EAST
+# coast). The story may come from East Greenland (Tunumiit / Iivit), not the west coast. The header keeps
+# the plan's 'west coast' and pin; the text names no coast. A reviewer must say which coast, and whether
+# 'Kalaallit' is the right name for the tellers; if East, the region place, pin and label may change.
+# Reviewer to check: the stone and turf house with a long passage and gut-skin window; the half-moon
+# soapstone lamp, its trimming, and the drying rack above it; the sleeping platform; boiling meat in a pot
+# over the lamp; a sinew collar; seal hunting at breathing holes and from kayaks; how a catch is shared
+# (the best share to an old man who can no longer hunt is our invention); a hunter's wife entering by the
+# passage; mourning customs; whether sending a traveller's news 'with a sledge' reads rightly.
+# Card facts to check: Greenland about 56,000 people, most of them Kalaallit; ice sheet about four fifths
+# of the land; Kalaallisut the official language; nanoq (polar bear) and qajaq (kayak) in Kalaallisut; a
+# big male polar bear as heavy as five grown men; polar bear hunting under yearly quotas; driftwood frames;
+# a yearly national kayak championship; sharing customs (past tense for the old custom, present for the
+# value). Landmark facts to check: Sermeq Kujalleq among the fastest glaciers; icebergs drift into Disko
+# Bay; UNESCO 2004; 'Ilulissat' means 'icebergs'; the glacier front has pulled back many km lately.
+# Language: the old outsider name for Inuit is not used in any app-shown text; no snow houses appear.
+# SOURCE CHECK (18 Nov 2026, against Worster on the Gutenberg mirror): echoes reworded: the oil-and-soot
+# stroke, the muzzle pressed to the floor, 'would not let him be', keeping downwind, bears and blubber,
+# the broad sinew collar, 'where the bears are many' and 'a black mark on its side', 'your own kind',
+# 'no bigger than other bears... stronger than any man', the all-day weeping and mourning, the
+# summer/winter pattern, and 'your own family' (kin). None of these phrasings remains in the text.
+# Departures from the source, not noted above: the source puts a long time between the man's death and
+# the farewell (ours: the same night and the cloudless days soon after); the shore farewell, his look
+# back and her raised hand are ours (in the source he sniffs at her and goes); in the source the men
+# ask for the collar (ours: the neighbours); that she cannot eat the neighbour's meat is ours.
+# Factual: the source never says she was a widow, that she was childless, or that no one hunted for her;
+# those three details are ours (page 1 and the woman's card).
+# Status: DRAFT. Text review pending. Cultural review (required: Kalaallit (Greenlandic) reviewer) pending.
+#
+# Generated by tools/build_stories.py from docs/content/story-specs/woman-who-raised-a-bear.json; edit the spec,
+# not this file.
+#
+# Format: lines starting with "#" are notes and are not story text. One paragraph per line.
+# A blank line separates paragraphs; a "# --- page" note marks a page (spread) break.
+
+# The Cub
+
+# --- page 1
+At the very edge of a small settlement, nearest the sea, an old woman lived alone.
+
+Her husband was long dead, and she had never had children. No one hunted for her. Yet each time the men came home with a catch, someone cut a share for the old woman too, and on this coast of Greenland that share had kept her alive through many winters.
+
+Then came a day near the end of winter when the light stayed longer and the dogs began to howl at the ice. The hunters were coming in, and they were dragging something huge and white.
+
+They had killed a she-bear out on the ice. That evening the meat was cut and carried from house to house. The old woman’s share was a rack of ribs, and she put them in her pot to boil over the lamp.
+
+She was still watching the pot when a voice called at her window. Then the wife of the man who had killed the bear came stooping in through the long passage, and in her arms lay something small and stiff with frost.
+
+# --- page 2
+“A cub,” the hunter’s wife said. “It was out on the ice with its mother. We thought you might want it.”
+
+The old woman took it in both hands. It weighed no more than a half-grown pup, and it was cold right through. Its eyes were shut. Its fur had frozen into points.
+
+She moved her lamp a little to one side so the flame would not singe it, then laid the cub on the drying rack where the warm air rose. She sat down on the platform to wait.
+
+The hunter’s wife went home. The lamp burned low and steady. Water began to drip from the rack, one drop and then another, and after a long while one hind paw twitched. The old woman lifted the cub down and tucked it inside her anorak, against her own warm skin, and held it there.
+
+Near morning she felt it stir. A cold nose pushed out at the neck of her anorak and snuffed along her chin and cheek, slowly, as if learning her. The old woman laughed aloud in her empty house.
+
+# --- page 3
+Bears hunt seals for their fat, the hunters told her, so she warmed blubber for him over the lamp and fed him the soft pieces from her fingers. When they were gone, he licked the oil from her palms.
+
+At night he slept beside her on the platform, pressed against her back like a hot stone. She talked to him while she sewed and while she trimmed the lamp, the way you talk to a person, and she called him her son.
+
+“Wake up, son, the day is here,” she would say, or “Mind the lamp, son, you will burn your nose.” And because she spoke to him like that, morning and night, he began to understand her.
+
+He grew fast. By the time the first autumn snow came, the cub who had fitted inside her anorak was too heavy to lift, a young bear with black lips and wide paws. When he was hungry he came and pressed his nose to her cheek.
+
+The neighbours began to stop at her passage with a strip of blubber or a dried fish. “For your son,” they would say, half joking, and they stooped to peer in at the bear by the lamp, and he peered back.
+
+# --- page 4
+Every morning now the children of the settlement came crowding to her window. “Let him out!” they called through the skin. “Let him come and play!”
+
+“Keep your claws in,” the old woman told the bear each time, before he went shambling out through the passage. “They are only small, and you are not.”
+
+And he did keep them in. The children threw themselves on him in heaps, and he rolled them over in the snow and sat on them, gently, until they shrieked. He bit their toy harpoons in two. But when he shoved them, it was always with a soft paw.
+
+A bear does not stay small, though. By his second winter he could knock a boy flat without meaning to, and one by one the children went home crying. Then the young men took their place, wrestling him on the hard snow, until even the strongest of them would not try.
+
+He lay outside her house in the evenings, a great white heap beside the passage, and the men stood round him with their arms folded, looking at those shoulders and saying nothing. They were all thinking the same thing.
+
+# --- page 5
+“A bear that size could hunt,” said one of the men at last. “He could smell out a seal’s breathing hole from far across the ice.”
+
+The old woman said nothing for a long time. Then she sat down with her son by the lamp and spoke to him slowly, as she always did, so that every word would go in.
+
+“Go with the men and do what they tell you,” she said. “Never go near the houses of strangers. They do not know you. To them you are only a bear, and they will come at you with harpoons.”
+
+The bear laid his chin on her knee and listened. She was sure he understood the words. Whether he understood the danger, she could not tell. She told him again, all of it, and then a third time, until the lamp burned low.
+
+At first light the men called at her window. The bear rose, pushed his nose against her face, once, the way he did, and went out through the passage. She heard the dogs barking, and then the crunch of his paws going away over the ice.
+
+# The Hunter
+
+# --- page 6
+Out on the sea ice, the men soon learned what a bear could do.
+
+They showed him how to come at the seals with the breeze in his face, never at his back, and he learned it. He went flat on his belly when they did. He waited at the breathing holes as long as they waited, and longer.
+
+Then a seal came up to breathe. Before any man could lift his harpoon, the bear was on it, one blow of a paw, and the seal lay still on the ice. No one had taught him that. It was in him.
+
+The men walked home that evening shaking their heads and laughing. Nobody had ever seen a hunter so patient, or so quick.
+
+The bear did not walk with them. He went ahead, alone, dragging the seal by one flipper all the way across the ice, and he did not stop until he had laid it down at the old woman’s passage.
+
+# --- page 7
+For the first time in years, the old woman had meat to give away.
+
+She cut up the seal herself, kneeling in the snow outside her house. Then she shared it out as the hunters had always shared with her. A piece went to this house and a piece to that one, and the best went to the old man who could no longer hunt.
+
+After that the bear went out with the hunters every day the weather allowed, and on many days when it did not. Wind did not stop him. Fog did not stop him. When the men stayed home mending their gear, he went alone and came back with a seal.
+
+“My son brought that,” the old woman would say, when anyone praised the meat. She tried to say it plainly. It never came out plainly.
+
+Then, one grey afternoon, the bear came home with no seal at all. He came fast, low to the ice, and when he pushed in through the passage she saw a long graze along his shoulder, where a harpoon had passed very close.
+
+# --- page 8
+The hunters of a settlement to the north had seen a bear alone on the ice and done what any hunter would do. Word of it came down the coast a few days later. They had not known he was anyone’s son.
+
+“Mark him,” the neighbours told the old woman. “Give him something no one can mistake.”
+
+So she sat by the lamp night after night, twisting dried sinew into thread and braiding the thread into a thick collar. When it was done she fastened it round his neck, and he scratched at it for a day and then forgot it.
+
+The collar did its work. Hunters all along that coast came to know it, and when they saw a bear wearing it, they lowered their harpoons. When the water was open he swam out beside the kayaks, and when it froze he waited at the breathing holes. He never came home without a catch.
+
+To look at, he was a bear like any other, people said, yet no one in the settlement could match his strength, and no one had brought home more seals. Seasons turned, and the old woman’s house was never short of meat. But a story like that does not stay in one settlement. It travels.
+
+# --- page 9
+Far up the coast, away to the north, people heard of a bear that no one could catch. One hunter there laughed at the story. He swore he would go and kill that bear himself, collar or no collar.
+
+“Leave it alone,” his companions told him. “That bear feeds an old woman. Without it she has nothing.” But he would not listen.
+
+The news reached her as news always did, with a traveller’s sledge. He stopped at her house to eat, and before he went on he told her quietly, looking at the lamp instead of at her.
+
+That night she took the bear’s great head between her hands. “Listen to me,” she said. “You were raised among people. Treat every one of them as you would treat me. Never hurt a person. Never. Only if someone comes to kill you may you fight.”
+
+He breathed warm against her wrists and did not move. Many days later a storm came down out of the north, and that evening the bear did not come home. She sat up by the lamp, listening to the snow hiss against the window.
+
+# --- page 10
+It was nearly morning when she heard him in the passage. He came in slowly, with snow packed in his fur, and pushed his nose against her face as he always did. Then he climbed up to his place at the end of the platform and lay down without a sound.
+
+When the storm blew itself out, the men found a man lying in the snow not far from her house. He was dead. They knew who he was. It was the hunter from the north who had sworn to kill the bear.
+
+Later, his own companions sent word of what had happened. The man had tracked the bear into the storm and given him no peace. He had come at him with his harpoon, again and again, until the bear turned.
+
+The bear had done only what she had told him he might do. But the old woman knew that would not matter to the man’s people, and neither would the collar.
+
+That night she sat with him by the lamp and talked to him for a long time. The bear lay with his chin on her knee. Now and then she stopped, and he lifted his head to see why.
+
+# The Letting Go
+
+# --- page 11
+In the end she said it with tears running down her face.
+
+“You must go away from here,” she told her son. “Far away, where no one knows you. If you stay, they will come for you, and they will kill you, and I will have to watch.”
+
+The bear understood. He sank down before her and hid his face between his paws on the cold stones. A sound came out of him that she had never heard before, low and long, like the wind in the passage.
+
+But she did not send him that day, nor the next. She would not send him out under a sky that might turn. Each morning she crawled out through the passage and studied the sky, and if she found one wisp of cloud anywhere above the mountains, she went back in and said nothing.
+
+Then came a morning when the sky was clear from edge to edge and very still. Not one cloud. She stood in the cold a long time, looking at it, before she went back in to wake him.
+
+# --- page 12
+Before they went out, she rubbed her fingertips along the black crust the lamp had laid on the wall above it. While the bear was turned away, nosing at the passage, she drew those dark fingers once along his flank. He did not see.
+
+“Go north,” she told him, out on the shore. “Go to the other bears, out where no hunter goes, and stay with them. Do not come back to people. Not even to me.”
+
+He pushed his nose against her face, slowly, the way he had on that first morning inside her anorak. Then he turned and walked out onto the ice.
+
+She stood at the edge where the shore ice began. He went at a steady pace, not hurrying, out past the places where the men hunted, out toward the icebergs standing white in the still air. Once, far out, he stopped and looked back.
+
+She lifted her hand high. She kept it raised long after her arm began to ache, until he was only a white mark moving far out among the white of the icebergs, and then not even that.
+
+# --- page 13
+She did not go in. She stayed on the shore until the light went, crying, and nobody told her to stop.
+
+The whole settlement felt the loss. The children who had tumbled with him in the snow, taller now, came down to the shore and stood a little way off. The hunters who had hunted beside him came too, and said nothing, and looked north.
+
+That evening a neighbour brought her a share of seal, as the hunters had done in the years before the bear. She took it and thanked him. It was good meat. She could not eat it.
+
+The bear never came back. No seal was ever left again at her passage, and no great white shape ever came up from the ice at dusk. She had told him not to come, and he had understood her. He always had.
+
+Winters came and went without him. But stories still came down the coast on travellers’ sledges, as stories always had, and one winter a traveller sat by her lamp and told her one about a bear in the far north.
+
+# --- page 14
+Up beyond the last settlements, the traveller said, out on the ice where bears gather, hunters sometimes see one that dwarfs all the rest. From far off they take it for a hill of drifting ice, until it moves.
+
+“And?” said the old woman. Her hands were very still in her lap.
+
+“And it has a dark streak down its flank,” said the traveller. “Just one. Long and dark, as if someone had drawn a hand down its fur. No one up there knows where it came from.”
+
+The old woman looked down at her own hands for a long while. Then she reached out and trimmed the lamp, and the flame ran long and steady along the edge of the stone.
+
+When spring came and the ice began to loosen, she walked down to the shore on every clear morning. She stood at the very edge, one hand shading her eyes, and looked north past the icebergs, as far as she could see.

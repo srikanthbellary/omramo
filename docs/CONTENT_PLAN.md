@@ -1,6 +1,6 @@
 # Omramo — Content plan: launch story catalog and landmarks (v2)
 
-**Status:** proposal for Srikanth's review. Nothing here is written, illustrated, reviewed or cleared yet.
+**Status:** the plan is Srikanth's proposal-as-adopted for the build (round 5 writes it out). **Written and drawn: all 32 stories** — the three prototypes and, in round 5 (18 Nov 2026), the ten other Low stories (batch 1), the ten other Medium stories (batch 2) and the nine other Advanced stories (batch 3), with all 37 landmarks; see §2a. Every text is a draft (`review.text: pending`), every picture is concept art drawn in code (`review.art: pending`), and nothing has been through cultural review, fact-check or legal clearance.
 **Reads with:** `docs/PRD.md` (§4a, §12), `docs/ARCHITECTURE.md` (§6), `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md` (milestone C1).
 
 **Owner requirements this plan answers (13 Nov 2026):**
@@ -63,6 +63,84 @@ Conventions: **Decided / Assumption / TBD — open question** as in the PRD. No 
 | **Persian / Arabian** | The Lion and the Hare (Persian) | Sindbad's Second Voyage (Arabic) | Zal and the Simurgh (Persian) |
 
 **Counts:** 32 stories — Low 11, Medium 11, Advanced 10. **29 public-domain retellings, 3 originals.** **12 flagged for required cultural review** (§7).
+
+### 2a. Status of each story (round 5)
+
+"Draft" = text written as our own retelling (or original), built from `docs/content/story-specs/<id>.json`, validated, with concept art drawn in code; text, art, facts and cultural review all still **pending**. ⚑ = carries the flag **needs cultural review before release** (§7).
+
+| # | Story | Tier | Status |
+|---|---|---|---|
+| L1 | `monkey-and-crocodile` | Low | Draft (rounds 1–4; moral polished in round 5) ⚑ Buddhist reader |
+| L2 | `shipwrecked-sailor` | Low | Draft — round 5 batch 1 |
+| L3 | `tongue-cut-sparrow` | Low | Draft — round 5 batch 1 |
+| L4 | `old-man-who-moved-mountains` | Low | Draft — round 5 batch 1 |
+| L5 | `why-possums-tail-is-bare` | Low | Draft — round 5 batch 1 ⚑ Cherokee consultant |
+| L6 | `the-snow-house` | Low | Draft (original) — round 5 batch 1 ⚑ Inuit consultant (Nunavut) |
+| L7 | `peasant-and-bear` | Low | Draft — round 5 batch 1 |
+| L8 | `bremen-town-musicians` | Low | Draft — round 5 batch 1 |
+| L9 | `north-wind-and-sun` | Low | Draft — round 5 batch 1 |
+| L10 | `why-sun-and-moon-live-in-sky` | Low | Draft — round 5 batch 1 ⚑ Efik reader |
+| L11 | `lion-and-hare` | Low | Draft — round 5 batch 1 ⚑ reviewer familiar with Rumi and Sufi tradition (light) |
+| M1 | `tiger-brahman-jackal` | Medium | Draft — round 5 batch 2 |
+| M2 | `khufu-and-the-magician` | Medium | Draft — round 5 batch 2 |
+| M3 | `bamboo-cutter-and-moon-child` | Medium | Draft — round 5 batch 2 |
+| M4 | `herd-boy-and-weaving-maiden` | Medium | Draft — round 5 batch 2 |
+| M5 | `iktomi-and-the-muskrat` | Medium | Draft — round 5 batch 2 ⚑ Dakota consultant |
+| M6 | `long-day-at-fish-camp` | Medium | Draft (original) — round 5 batch 2 ⚑ Yup'ik consultant |
+| M7 | `sadko` | Medium | Draft — round 5 batch 2 |
+| M8 | `androcles-and-the-lion` | Medium | Draft — round 5 batch 2 |
+| M9 | `horse-and-the-olive` | Medium | Draft — round 5 batch 2 |
+| M10 | `anansi-wisdom` | Medium | Draft (rounds 2–4; moral polished in round 5) ⚑ Akan reader |
+| M11 | `sindbad-second-voyage` | Medium | Draft — round 5 batch 2 |
+| A1 | `savitri-and-satyavan` | Advanced | Draft — round 5 batch 3 ⚑ Hindu reviewer |
+| A2 | `eloquent-peasant` | Advanced | Draft — round 5 batch 3 |
+| A3 | `urashima-taro` | Advanced | Draft (rounds 2–4; moral polished in round 5) |
+| A4 | `ballad-of-mulan` | Advanced | Draft — round 5 batch 3 |
+| A5 | `the-two-sisters` | Advanced | Draft — round 5 batch 3 ⚑ Sḵwx̱wú7mesh (Squamish) Nation |
+| A6 | `woman-who-raised-a-bear` | Advanced | Draft — round 5 batch 3 ⚑ Kalaallit (Greenlandic) reviewer |
+| A7 | `firebird-and-horse-of-power` | Advanced | Draft — round 5 batch 3 |
+| A8 | `daedalus-and-icarus` | Advanced | Draft — round 5 batch 3 |
+| A9 | `the-griots-apprentice` | Advanced | Draft (original) — round 5 batch 3 ⚑ Mande consultant, ideally from a jeli family |
+| A10 | `zal-and-the-simurgh` | Advanced | Draft — round 5 batch 3 |
+
+All twelve §7 stories are now in the catalog and carry the flag (`culturalReview { level: required, status: pending, community, reason, notes: "Needs cultural review before release." }`; the release-mode validators refuse them).
+
+Things the drafts of batch 1 did that this plan left open (each is listed in the story's manuscript header, `Content/sources/<id>.txt`, for the reviewers):
+
+- **Sources.** gutenberg.org was unreachable from the authoring box on 18 Nov 2026; where a mirror could be read the tale was read there, otherwise the retelling was written from knowledge of the traditional tale. No source wording is used. Each manuscript header says which.
+- **Softenings (examples).** Sparrow: the scissors "nip the tip" of the tongue, the big basket holds bees, a toad and mud, the old woman says sorry. Sailor: the crew is not lost; the serpent's family "now there is only me". Lion and Hare: the animals bring the lion his dinner (no victim) and the lion climbs out of the well and leaves. Bremen: "too old to be useful", no talk of killing. Peasant and Bear: a warm ending (a loaf and turnips left on a stump).
+- **Names and words.** The Snow House: the girl is Elisapie; three Inuktitut words (iglu, qamutiik, qulliq) — all for the Inuit consultant. Possum: no Cherokee words; the dance is the animals' own. Sun and Moon: no Efik names. Old Man: Yu Gong and Zhi Sou with the meanings of their names.
+- **Landmarks added to the shared catalog (10):** `sydney-opera-house`, `himeji-castle`, `great-wall-of-china`, `machu-picchu`, `hagia-sophia`, `saint-basils-cathedral`, `bremen-town-hall-roland`, `colossus-of-rhodes`, `statue-of-liberty`, `petra`, each with fact cards for the three tiers (facts pending review; several dates and details beyond §5.1 come from general knowledge and are marked in the review notes).
+- **Morals** are one short sentence each (round 5 rule: at most about 14 words for Low, 18 for Medium and Advanced, no semicolon).
+
+Things the drafts of batch 2 did that this plan left open or had wrong (each is in the story's manuscript header for the reviewers):
+
+- **Sources.** All nine sources were read on the Gutenberg mirror, first by the writers (for the order of events) and then by a source-check pass that compared wording. Phrases that stayed close to a translator (most in the Tiger and Iktomi drafts, some in Khufu) were reworded; the manuscript headers list what was changed and where each telling departs from its cited book.
+- **M4, the variant.** Wilhelm's version (the cited book) has the Herd Boy take the maiden's clothes while she bathes. Ours follows the other old form of the tale: they marry, both neglect their work, they are parted, and may meet once a year if the work is done. The Queen Mother (her grandmother here) draws the river; magpies make the bridge (Wilhelm: crows).
+- **M6, a correction to this plan.** §3.2 says "the summer of the midnight sun". At the Kuskokwim (about 61° N) the June sun does set for a few hours; the sky stays light. The story says so ("the sun was only now sliding down" near midnight) and a test keeps the phrase "midnight sun" out. The boy is Nick, the elder Lena (everyday English names; Yup'ik names are left to the consultant); three Yugtun words (quyana, uluaq, akutaq). King-salmon fishing on the Kuskokwim has been restricted in recent years: the consultant decides whether the story names the fish.
+- **M7, the source gap.** Our Sadko follows the traditional bylina (the wager on the golden-finned fish, the tribute owed, the broken strings, Chernava); Ransome's chapter, the plan's cited book, tells a different shape and none of his details is used. A public-domain translation of the bylina would be a truer documented source (open; CQ2). Saint Nicholas is left out.
+- **M2.** The prophecy is left out, as planned; Dedi's two refusals carry the story. The plan's "Giza and Memphis": the text names no city for the palace (both lie west of the river; the pyramid is seen "beyond the green fields").
+- **M5.** The hospitality sentence is our paraphrase of the custom Zitkala-Ša states, not a Dakota formula; the consultant's first question is whether an Iktomi story may be published for reading in every season at all (§1.3).
+- **M8.** The Colosseum card is labelled "SOON AFTER THIS STORY" (about forty years). The arena in the scenes is a circus-like ground, not the Colosseum.
+- **M9.** Greek names (Zeus, Poseidon, Athena) for Baldwin's Roman ones; the people vote with pebbles and the olive wins by one; the horse stays.
+- **Softenings (examples).** Khufu: the goose trick happens "behind a cloth, quick as a blink". Tiger: he is carried off into the forest by the villagers. Iktomi: the bone bounces off his nose. Sindbad: the serpents are heard, never fought. Bamboo-Cutter: nobody is hurt or dies; the two last suitors "quietly gave up". Androcles: slavery said plainly in two sentences; no fighting shown in the arena.
+- **Landmarks added to the shared catalog (12; 26 of 37 now):** `great-pyramid-giza`, `chichen-itza`, `mount-fuji` (natural: no built date), `golden-gate-bridge`, `novgorod-kremlin`, `christ-the-redeemer`, `colosseum`, `temple-of-artemis-ephesus` (lost: a reconstruction), `parthenon`, `statue-of-zeus-olympia` (lost: a reconstruction), `hanging-gardens-babylon` (unproven: a reconstruction, and the cards say no trace has been found), `burj-khalifa`. Landmarks outside the ten story regions carry no `region`.
+- **Levelling.** Ten pages in two parts, 86–112 words a page (the tests allow up to 118), four scenes, three or four tap-to-see words (one a place, one "how people live there"), two character cards. Three of the ten are dark stories with light text, like the Anansi prototype (Bamboo-Cutter, Herd Boy, Sadko).
+
+Things the drafts of batch 3 did that this plan left open or had wrong (each is in the story's manuscript header for the reviewers):
+
+- **Levelling.** Fourteen pages in three titled parts, 154–211 words a page (the tests allow 120–240), 2,400–2,760 words a story, text on both panes like Urashima (three or four paragraphs on the leading pane, one on the trailing), four scenes, four or five tap-to-see words, two or three character cards. One dark story (the Fire-Bird). `tools/build_stories.py` learned trailing-pane paragraphs and `pathText` lines (three stories use one curved line: the Fire-Bird, the Griot, Zal).
+- **Sources.** Six sources were read on the Gutenberg mirror for the order of events only (Mackenzie, Petrie, Johnson, Rasmussen/Worster, Baldwin, Renninger); the Fire-Bird was written from the Afanasyev tale without opening Ransome (his wording is protected outside the US until 2038), Mulan from the Chinese ballad itself. A source-check pass compared the wording afterwards (see each header's SOURCE CHECK block).
+- **A1 Savitri.** Mackenzie leaves out her journey to choose; the epic has it, and so do we. Four boons, not five; "a hundred sons" becomes "sons". Yama is drawn calm and dignified; how he is named and drawn is the Hindu reviewer's call.
+- **A2 Eloquent Peasant.** Modern readings of the names (Khunanup, Rensi, Nemtynakht, Nebkaura) for Petrie's (Sekhti, Meruitensa, Hemti); three speeches for nine; the barley, the ten days and the Anubis line follow later translations of the papyri, not Petrie. The peasant is struck once with a stick; the later beating is left out.
+- **A4 Mulan.** Retold from the ballad, no film element; no family name; the camel (one reading) over the swift horse; Mulan ties her hair in a man's knot rather than cutting it. The frontier is an earth wall in the art; the stone wall is only on its card.
+- **A5 Two Sisters.** Opens today on the Lions Gate Bridge (`presentDayNarrator`) and names Chief Joe Capilano and Pauline Johnson as the people through whom the story reached English readers. Johnson does not call the sisters twins: the text says "two daughters". No deity is named ("the story says the sisters were set high on the mountains"); no trade-jargon words; no ceremony details; the peaks' Squamish name is left for the Nation to give. **The Lions Gate Bridge entry carries `region: nativeAmericanFirstNations`** (it stands in Sḵwx̱wú7mesh territory, §6.4): the validators require a landmark outside the story's region to be framed with a world-link or map device, and this one's device is the present-day narrator. It is never presented as a First Nations landmark; the reviewer reads its card.
+- **A6 Woman Who Raised a Bear.** Follows Rasmussen closely: the cub is brought frozen and thawed over the lamp; the bear is collared; a hunter from the north who tries to kill it dies in the storm (told afterwards in one line, open question for ages 10–12); she marks the bear with soot and sends it north; it never comes back. The source mentions people "from beyond Angmagssalik" (east coast): the tale may be East Greenlandic; the reviewer decides the place.
+- **A7 Fire-Bird.** White wheat, not maize; the princess chooses to come (no drugging, no abduction) and chooses the archer at the end; the old tsar leaps out of the cauldron and runs away (he is not boiled); the new tsar frees the Fire-Bird. The tap word "tsar" is `tsar-title` (the character is `tsar`).
+- **A8 Daedalus.** The nephew is one vague line; Baldwin has no tower prison (guards on the ships and roads); the warning is given on the roof the evening before (as Ovid); the fall is two calm sentences; the wings hang in an unnamed temple in Sicily.
+- **A9 Griot's Apprentice (original).** Sira sings and her cousin Lamine plays the balafon ("the men played and the women sang", to confirm); names chosen to avoid famous jeli and noble lineages; the ending has a real cost (the merchant pays the old debt but will never again have this family sing for his).
+- **A10 Zal.** Sam and Rostam for Renninger's Saum and Rustem; the Simurgh is "she" as in Renninger; the mother names the child, the Simurgh calls him Dastan (Ferdowsi); the voice from heaven becomes pity; the mobad becomes "a wise man in a white robe".
+- **Landmarks added (11; all 37 now):** `angkor-wat`, `bibliotheca-alexandrina`, `forbidden-city`, `lions-gate-bridge`, `ilulissat-icefjord` (natural), `kizhi-pogost`, `palace-of-knossos` (natural in its story), `eiffel-tower` (drawn by day), `great-mosque-of-djenne`, `persepolis`, `mausoleum-halicarnassus` (lost: a reconstruction).
 
 ---
 

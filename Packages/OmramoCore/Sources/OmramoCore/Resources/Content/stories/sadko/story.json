@@ -1,0 +1,1210 @@
+{
+  "schemaVersion": 1,
+  "id": "sadko",
+  "contentVersion": 1,
+  "title": "Sadko",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "russian",
+    "culture": "Russian bylina (sung story)",
+    "place": "Novgorod, Russia",
+    "label": "Novgorod · Russia",
+    "pin": {
+      "lat": 58.5,
+      "lon": 31.3
+    },
+    "pinColor": "#E8562A"
+  },
+  "setting": {
+    "period": "Novgorod the Great, about 900 years ago",
+    "latestYear": 1200
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Russian bylina of Novgorod",
+    "sources": [
+      {
+        "author": "Arthur Ransome",
+        "title": "Old Peter's Russian Tales",
+        "year": 1916,
+        "gutenbergId": 16981,
+        "url": "https://www.gutenberg.org/ebooks/16981",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Russian bylina of Novgorod, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Ransome died in 1967 and his wording is protected in life + 70 countries until 2038; our text is retold from the traditional bylina and uses none of his wording (CONTENT_PLAN CQ2). Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Russian reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Novgorod stands on the River Volkhov, just north of Lake Ilmen in north-west Russia. Rivers joined it to the Baltic Sea and to lands far to the south, so boats did the work of roads.",
+      "factCards": [
+        "lake-ilmen",
+        "river-roads",
+        "novgorod-moment",
+        "harbour-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Medieval Novgorod was a city of merchants, and its musicians played the gusli at their feasts. Sadko’s story is a bylina: a story sung from memory for centuries before it was written down.",
+      "factCards": [
+        "gusli",
+        "bylina"
+      ]
+    },
+    "moral": {
+      "lesson": "Sadko’s music wins him everything, and he loses it only when he stops playing. He turns down a palace of pearl for a small river at home. The child can weigh what he gave up each time.",
+      "reflectionQuestion": "Sadko broke his own gusli. What did he lose by doing it, and what did he save?"
+    }
+  },
+  "moral": "Your gift is worth more than gold, and no palace is better than home.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": {
+      "leading": "dark",
+      "trailing": "dark",
+      "folded": "dark"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A young man sits on a white stone at the edge of a dark lake at night, playing a small wing-shaped harp on his knees, while a huge crowned head with a green beard rises from the water.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "sadko",
+      "name": "Sadko",
+      "color": "#FFC978",
+      "face": {
+        "file": "art/face-sadko.png",
+        "alt": "Sadko.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#C8452B",
+      "card": {
+        "label": "Character · a musician of Novgorod",
+        "title": "Sadko",
+        "traits": [
+          {
+            "text": "Plays the gusli",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Bold with a wager",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Misses home",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "He starts with nothing but a gusli and ends with thirty ships. It takes a trip to the bottom of the sea to show him which one matters more.",
+        "portrait": {
+          "file": "art/char-sadko.card.heic",
+          "alt": "A young man with brown hair cut round, in a belted tunic with an embroidered collar, holding a small wing-shaped gusli against his chest under a night sky.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#2F5C8A",
+          "#1E3554",
+          "#0E1B33"
+        ]
+      }
+    },
+    {
+      "id": "sea-tsar",
+      "name": "Sea Tsar",
+      "color": "#8FE3C8",
+      "face": {
+        "file": "art/face-sea-tsar.png",
+        "alt": "The Sea Tsar.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#1F7A6B",
+      "card": {
+        "label": "Character · ruler under the water",
+        "title": "The Sea Tsar",
+        "traits": [
+          {
+            "text": "Pays his debts",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Loves a dance tune",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Heavy on his feet",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "A tsar is a king, and this one rules every lake and sea in the old songs of Russia. When he dances on the sea floor, storms blow up above.",
+        "portrait": {
+          "file": "art/char-sea-tsar.card.heic",
+          "alt": "A huge, jolly king with a long green beard and a crown of coral and shells, in a robe that ripples like water, in deep green light.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#1F7A6B",
+          "#134A4A",
+          "#0A2A33"
+        ]
+      }
+    },
+    {
+      "id": "chernava",
+      "name": "Chernava",
+      "color": "#C9D6F2",
+      "face": {
+        "file": "art/face-chernava.png",
+        "alt": "Chernava.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#55668F"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "novgorod-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "novgorod-kremlin",
+        "appearance": "natural"
+      },
+      "background": "#1E3554"
+    },
+    {
+      "id": "gusli",
+      "kind": "object",
+      "title": "Gusli",
+      "line": "A flat wooden harp that rests on the knees and is played with the fingers.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "People digging in Novgorod have found gusli about 900 years old, kept whole by the wet ground. Musicians in Russia still play the gusli today."
+      },
+      "picture": {
+        "file": "art/see-gusli.heic",
+        "alt": "A small wing-shaped wooden gusli with seven strings, lying flat and seen from above.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3420"
+    },
+    {
+      "id": "lake-ilmen",
+      "kind": "place",
+      "title": "Lake Ilmen",
+      "line": "A wide, shallow lake a short walk south of the city of Novgorod.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Many rivers run into Lake Ilmen, but only one runs out: the Volkhov. It flows north past Novgorod, and its water reaches the Baltic Sea in the end."
+      },
+      "picture": {
+        "file": "art/see-lake-ilmen.heic",
+        "alt": "A wide, flat lake under a starry sky, with one white stone on the near shore.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#163B4F"
+    },
+    {
+      "id": "bylina",
+      "kind": "idea",
+      "title": "A sung story",
+      "line": "A bylina is an old Russian story that is sung aloud, not read from a book.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Singers in the north of Russia kept Sadko’s story in their heads for hundreds of years. Nobody wrote the songs down until less than 300 years ago."
+      },
+      "picture": {
+        "file": "art/see-bylina.heic",
+        "alt": "An old singer with a white beard sitting on a wooden bench, one hand raised as he sings.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2A45"
+    },
+    {
+      "id": "river-roads",
+      "kind": "idea",
+      "title": "River roads",
+      "line": "Long ago, traders moved their goods by boat, because rivers were easier than forest tracks.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Novgorod’s merchants sent furs, wax and honey down the rivers and brought back silver, cloth and salt. Where one river ended, they dragged their boats over the land to the next."
+      },
+      "picture": {
+        "file": "art/see-river-roads.heic",
+        "alt": "A wooden river ship with one square red sail and a carved prow, loaded with barrels and bundles of fur.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A4A"
+    },
+    {
+      "id": "harbour-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "christ-the-redeemer",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Sailors everywhere know a harbour by the great thing that stands above it. Far from Sadko’s sea and long after his story, a statue on a mountain came to watch over the harbour of Rio de Janeiro."
+        }
+      },
+      "background": "#134A4A"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-novgorod.unfolded.heic",
+          "alt": "Novgorod at deep dusk beside the River Volkhov: log houses with steep plank roofs, boats tied at wooden quays, and a white cathedral with helmet-shaped domes behind pale ramparts. On the right, Sadko sits on the bank with his gusli; the left is dark blue sky with the first stars.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-novgorod.folded.heic",
+          "alt": "Sadko on the river bank at dusk with his gusli on his knees, the white cathedral and lamplit log houses behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#14233F",
+          "#2B4468",
+          "#6A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago, the city of Novgorod stood rich and busy beside a river.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Boats crowded its wooden quays. Merchants in fur-trimmed coats counted their silver, and above the log roofs rose a "
+            },
+            {
+              "t": "white cathedral",
+              "tap": "novgorod-moment"
+            },
+            {
+              "t": " with domes like helmets."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sadko",
+              "name": "sadko"
+            },
+            {
+              "t": " counted no silver. He owned one thing in the world, a gusli of maple wood, and he could make its strings laugh or weep."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the merchants sent for him whenever they feasted. He played until the candles burned low, and they paid him with his supper."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a thin living, but the music was his own."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-lake.unfolded.heic",
+          "alt": "Lake Ilmen at night under many stars, its dark water heaving. On the right, Sadko plays his gusli on a white stone at the water’s edge as the huge Sea Tsar rises, crowned with coral, shell and waterweed; the left is calm night sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-lake.folded.heic",
+          "alt": "Sadko on a white stone at night, playing, with the Sea Tsar’s crowned head and green beard rising from the lake beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0C1730",
+          "#17365A",
+          "#0F4A4F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then came a week when nobody sent for him. Not one door opened. Not one servant came running."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On the seventh day Sadko walked out of the city to the wide grey lake called Ilmen. He sat on a white stone and laid the "
+            },
+            {
+              "t": "gusli",
+              "tap": "gusli"
+            },
+            {
+              "t": " across his knees."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“If nobody will listen,”",
+              "say": "sadko",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“I will play for the water.”",
+              "say": "sadko"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He played from noon until the stars came out. And though no wind blew, the lake began to heave. Waves slapped the stone. Far out, something huge was rising."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-lake.unfolded.heic",
+          "alt": "Lake Ilmen at night under many stars, its dark water heaving. On the right, Sadko plays his gusli on a white stone at the water’s edge as the huge Sea Tsar rises, crowned with coral, shell and waterweed; the left is calm night sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-lake.folded.heic",
+          "alt": "Sadko on a white stone at night, playing, with the Sea Tsar’s crowned head and green beard rising from the lake beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0C1730",
+          "#17365A",
+          "#0F4A4F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Up through the black water came a crown of shell and coral. Under it came a green beard as wide as a fishing net, streaming like a waterfall."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was the "
+            },
+            {
+              "t": "Sea Tsar",
+              "name": "sea-tsar"
+            },
+            {
+              "t": ", king of every water from lake to ocean."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I held a feast below,”",
+              "say": "sea-tsar",
+              "chip": true
+            },
+            {
+              "t": " he boomed, "
+            },
+            {
+              "t": "“and your playing was the best of it. I pay my debts, Sadko.”",
+              "say": "sea-tsar"
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Tomorrow, tell the merchants there are fish with golden fins in ",
+              "say": "sea-tsar",
+              "chip": true
+            },
+            {
+              "t": "Lake Ilmen",
+              "say": "sea-tsar",
+              "tap": "lake-ilmen"
+            },
+            {
+              "t": ". They will laugh. Wager with them. Then cast a silk net three times.”",
+              "say": "sea-tsar"
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The crown sank. The lake lay flat as a plate."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-novgorod.unfolded.heic",
+          "alt": "Novgorod at deep dusk beside the River Volkhov: log houses with steep plank roofs, boats tied at wooden quays, and a white cathedral with helmet-shaped domes behind pale ramparts. On the right, Sadko sits on the bank with his gusli; the left is dark blue sky with the first stars.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-novgorod.folded.heic",
+          "alt": "Sadko on the river bank at dusk with his gusli on his knees, the white cathedral and lamplit log houses behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#14233F",
+          "#2B4468",
+          "#6A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The next evening Sadko was sent for at last. He sang the "
+            },
+            {
+              "t": "old songs of heroes",
+              "tap": "bylina"
+            },
+            {
+              "t": ". Then he laid his hands flat on the strings."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There are fish with golden fins in Lake Ilmen,”",
+              "say": "sadko",
+              "chip": true
+            },
+            {
+              "t": " he said."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The merchants roared with laughter. Sadko set his gusli on the table. "
+            },
+            {
+              "t": "“I wager this, which is all I have, against six shops full of goods.”",
+              "say": "sadko",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They rowed out by torchlight. Sadko cast the silk net once, twice, three times. Each time it came up with one fish, and each fish had fins of "
+            },
+            {
+              "t": "red gold",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "By morning the musician was a merchant."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-novgorod.unfolded.heic",
+          "alt": "Novgorod at deep dusk beside the River Volkhov: log houses with steep plank roofs, boats tied at wooden quays, and a white cathedral with helmet-shaped domes behind pale ramparts. On the right, Sadko sits on the bank with his gusli; the left is dark blue sky with the first stars.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-novgorod.folded.heic",
+          "alt": "Sadko on the river bank at dusk with his gusli on his knees, the white cathedral and lamplit log houses behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#14233F",
+          "#2B4468",
+          "#6A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Twelve good years went by. Sadko built thirty ships, and every one had a red sail."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In Novgorod, "
+            },
+            {
+              "t": "rivers were the roads",
+              "tap": "river-roads"
+            },
+            {
+              "t": ". His ships carried furs, wax and honey down them and out to the open sea. They came home heavy with silver, cloth and salt."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He wore a coat trimmed with fur now, and he feasted in a hall of his own."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the gusli hung on its peg, and dust lay along the strings. Sadko was too busy to play."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And in twelve years of sailing, he had never once thanked the Sea Tsar."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ship.unfolded.heic",
+          "alt": "A dark sea at night with waves racing past. On the right, Sadko’s red-sailed wooden ships stand dead still with full sails, and an oak plank is lowered from the nearest one; the left is dark sky and a low moon behind thin cloud.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ship.folded.heic",
+          "alt": "Sadko at the rail of a red-sailed ship at night, his gusli under his arm, looking down at an oak plank on the dark water.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0B1428",
+          "#1B2F52",
+          "#12404A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One night, far out at sea, all thirty ships stopped dead.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The wind was fair. The red sails stood full. Waves raced past on either side, yet the ships sat as if nailed to the water."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The sailors rolled a barrel of silver over the side. It sank, and nothing changed."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It is not silver he wants,”",
+              "say": "sadko",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Sadko",
+              "name": "sadko"
+            },
+            {
+              "t": " quietly. "
+            },
+            {
+              "t": "“It is me.”",
+              "say": "sadko"
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He took down his dusty gusli. The sailors lowered an oak plank, and he stepped onto it. At once the ships leaped forward like horses let go, and the dark sea was empty."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "The floor of the sea in deep green-gold light. On the right, a palace of white stone and shell, where the huge Sea Tsar dances while fish and river-maidens circle him and small Sadko plays his gusli; the left is calm dark green water with a few rising bubbles.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "The Sea Tsar dancing with his robe swirling in green underwater light, and Sadko small beside him with his gusli.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0A2A33",
+          "#12504F",
+          "#2E6B4A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sadko lay down on the plank, hugged the gusli and fell asleep to the rocking of the waves."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He woke on the floor of the sea. Green-gold light fell through the water. Before him stood a palace of white stone and shell, and fish swam in and out of its windows like swallows."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On a throne of coral sat the "
+            },
+            {
+              "t": "Sea Tsar",
+              "name": "sea-tsar"
+            },
+            {
+              "t": ", drumming his fingers."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Twelve years you have sailed my sea,”",
+              "say": "sea-tsar",
+              "chip": true
+            },
+            {
+              "t": " he rumbled, "
+            },
+            {
+              "t": "“and paid me nothing. Not a coin. Not a tune. Now ",
+              "say": "sea-tsar"
+            },
+            {
+              "t": "play!",
+              "say": "sea-tsar",
+              "fx": "stretch"
+            },
+            {
+              "t": "”",
+              "say": "sea-tsar"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "The floor of the sea in deep green-gold light. On the right, a palace of white stone and shell, where the huge Sea Tsar dances while fish and river-maidens circle him and small Sadko plays his gusli; the left is calm dark green water with a few rising bubbles.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "The Sea Tsar dancing with his robe swirling in green underwater light, and Sadko small beside him with his gusli.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0A2A33",
+          "#12504F",
+          "#2E6B4A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sadko played. The Sea Tsar hitched up his robe and danced. He stamped and spun, faster and faster, for a day and a night."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A quiet river-maiden slipped to Sadko’s side. Her name was "
+            },
+            {
+              "t": "Chernava",
+              "name": "chernava"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“When he dances, the sea above us goes wild,”",
+              "say": "chernava",
+              "chip": true
+            },
+            {
+              "t": " she whispered. "
+            },
+            {
+              "t": "“Ships are running for the ",
+              "say": "chernava"
+            },
+            {
+              "t": "harbour",
+              "say": "chernava",
+              "tap": "harbour-moment"
+            },
+            {
+              "t": ". The fishermen’s wives stand on the shore and count the sails.”",
+              "say": "chernava"
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sadko looked at his hands. Then he pulled, and every string snapped."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My gusli is broken, great Tsar,”",
+              "say": "sadko",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“There is no mending it down here.”",
+              "say": "sadko"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "The floor of the sea in deep green-gold light. On the right, a palace of white stone and shell, where the huge Sea Tsar dances while fish and river-maidens circle him and small Sadko plays his gusli; the left is calm dark green water with a few rising bubbles.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "The Sea Tsar dancing with his robe swirling in green underwater light, and Sadko small beside him with his gusli.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#0A2A33",
+          "#12504F",
+          "#2E6B4A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sea Tsar sat down with a bump that shook the palace. He was sorry, but he was not angry."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then stay,”",
+              "say": "sea-tsar",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Choose a bride from my daughters. You shall have a palace of pearl.”",
+              "say": "sea-tsar"
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The river-maidens glided past, bright with gold and sea-pearls. But Sadko had lived in golden rooms, and he had found them cold."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Last of all came Chernava, in plain grey. A small river near Novgorod had the very same name."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I choose Chernava,”",
+              "say": "sadko",
+              "chip": true
+            },
+            {
+              "t": " said Sadko. And he lay down to sleep in the green light."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-novgorod.unfolded.heic",
+          "alt": "Novgorod at deep dusk beside the River Volkhov: log houses with steep plank roofs, boats tied at wooden quays, and a white cathedral with helmet-shaped domes behind pale ramparts. On the right, Sadko sits on the bank with his gusli; the left is dark blue sky with the first stars.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-novgorod.folded.heic",
+          "alt": "Sadko on the river bank at dusk with his gusli on his knees, the white cathedral and lamplit log houses behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#14233F",
+          "#2B4468",
+          "#6A4A3A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He woke with his cheek on wet grass. Beside him ran the little Chernava river, and beyond it the domes of Novgorod showed pale under the last stars of the night."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Round the bend of the Volkhov came a red sail. Then another. Then all thirty. The sailors shouted when they saw him waving from the bank."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sadko",
+              "name": "sadko"
+            },
+            {
+              "t": " never went to sea again. He strung his gusli with new strings."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And on still evenings he sat on the white stone by the lake and played for anyone who cared to listen, above the water or under it."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

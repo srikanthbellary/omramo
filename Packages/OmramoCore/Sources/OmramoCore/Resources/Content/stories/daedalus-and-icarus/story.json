@@ -1,0 +1,1613 @@
+{
+  "schemaVersion": 1,
+  "id": "daedalus-and-icarus",
+  "contentVersion": 1,
+  "title": "Daedalus and Icarus",
+  "tier": "advanced",
+  "language": "en",
+  "region": {
+    "id": "european",
+    "culture": "Ancient Greek myth",
+    "place": "Athens and Crete, Greece",
+    "label": "Ancient Crete",
+    "pin": {
+      "lat": 35.3,
+      "lon": 25.2
+    },
+    "pinColor": "#F5A623"
+  },
+  "setting": {
+    "period": "A myth the ancient Greeks told about Bronze Age Crete",
+    "latestYear": -1400
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Greek myth",
+    "sources": [
+      {
+        "author": "James Baldwin",
+        "title": "Old Greek Stories",
+        "year": 1895,
+        "gutenbergId": 11582,
+        "url": "https://www.gutenberg.org/ebooks/11582",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of an ancient Greek myth, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Greek reader (and a classicist)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Crete is the largest Greek island, lying across the south of the Aegean Sea on the old sea roads between Greece, Asia and Egypt. The flight crosses the islands of the Aegean, and the sea near Ikaria still carries the name Icarian.",
+      "factCards": [
+        "crete",
+        "icarian-sea",
+        "knossos-moment",
+        "eiffel-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "The Greeks told many myths about clever makers, and Daedalus was the greatest of them. Long before those myths were written down, Bronze Age people on Crete built great palaces, kept bees and painted their walls with the sea.",
+      "factCards": [
+        "labyrinth",
+        "beeswax",
+        "knossos-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "Daedalus has the skill to beat a king and the sky, and he gives his son a clear warning. Icarus has the wings but not yet the judgement. The child can weigh the joy of flying against the cost of not listening, and notice that the father is not blameless either.",
+      "reflectionQuestion": "Icarus was not wicked, only thrilled. Why do you think he flew higher, and what could have helped him listen?"
+    }
+  },
+  "moral": "Great skill needs good judgement, so listen when someone who loves you warns you.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#0F2340",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A man and a boy fly side by side high over a pale blue sea on wings of feathers, the boy tipping his face up toward the sun while his father looks back at him.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "The Maker"
+    },
+    {
+      "id": "part-2",
+      "title": "The Wings"
+    },
+    {
+      "id": "part-3",
+      "title": "The Sky"
+    }
+  ],
+  "characters": [
+    {
+      "id": "daedalus",
+      "name": "Daedalus",
+      "color": "#8A4A00",
+      "face": {
+        "file": "art/face-daedalus.png",
+        "alt": "Daedalus.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE9B8",
+      "card": {
+        "label": "Character · the great maker",
+        "title": "Daedalus",
+        "traits": [
+          {
+            "text": "Can make anything",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Builder of the Labyrinth",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Watches the birds",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "The Greeks said no one before him ever made statues that seemed to breathe. He can out-think a king and the sea, but he cannot make his son see the danger he sees.",
+        "portrait": {
+          "file": "art/char-daedalus.card.heic",
+          "alt": "A lean grey-bearded man with curling dark-and-grey hair, in a short patterned kilt, holding a long grey feather up to the light of a window.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#3E6E9A",
+          "#24476B",
+          "#12263F"
+        ]
+      }
+    },
+    {
+      "id": "icarus",
+      "name": "Icarus",
+      "color": "#1B4F86",
+      "face": {
+        "file": "art/face-icarus.png",
+        "alt": "Icarus.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#DCE9FA",
+      "card": {
+        "label": "Character · the maker’s son",
+        "title": "Icarus",
+        "traits": [
+          {
+            "text": "Quick and eager",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Long Minoan curls",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Hungry for the sky",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He has grown up in a workshop full of wonders, so nothing seems impossible to him. When the wings are finished, he feels the whole sky is his to climb.",
+        "portrait": {
+          "file": "art/char-icarus.card.heic",
+          "alt": "A boy of about twelve with long dark curls, in a short blue-and-white kilt, laughing as he holds one small white feather between his fingers against a pale sky.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#5E9FCB",
+          "#2F6A9A",
+          "#173B5E"
+        ]
+      }
+    },
+    {
+      "id": "minos",
+      "name": "King Minos",
+      "color": "#8E2F2A",
+      "face": {
+        "file": "art/face-minos.png",
+        "alt": "King Minos.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F6DCD6"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "knossos-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "palace-of-knossos",
+        "appearance": "natural"
+      },
+      "background": "#5A2A1E"
+    },
+    {
+      "id": "crete",
+      "kind": "place",
+      "title": "Crete",
+      "line": "The largest of the Greek islands, long and mountainous, lying across the southern edge of the Aegean Sea.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "Crete sits in the middle of the sea between Greece, Türkiye and Egypt, so ships crossing between them passed close by. About 4,000 years ago its harbours were busy with traders carrying oil, wine, copper and painted pots."
+      },
+      "picture": {
+        "file": "art/see-crete.heic",
+        "alt": "The long island of Crete seen from high above, with a ridge of mountains down its middle and pale blue sea all round.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A6B"
+    },
+    {
+      "id": "labyrinth",
+      "kind": "idea",
+      "title": "The Labyrinth",
+      "line": "A maze of passages built so that anyone who went in would lose the way back out.",
+      "cultureNote": {
+        "label": "From ancient Greece",
+        "text": "In the Greek myth the Labyrinth hid the Minotaur, a creature half man and half bull. Nobody knows if a real building lay behind the story. We still call any tangle of paths a labyrinth."
+      },
+      "picture": {
+        "file": "art/see-labyrinth.heic",
+        "alt": "A round maze of pale stone walls seen from directly above, its paths winding in toward an empty centre.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3A24"
+    },
+    {
+      "id": "beeswax",
+      "kind": "object",
+      "title": "Beeswax",
+      "line": "The soft yellow wax that bees make to build their honeycomb, which softens in warmth and hardens when cool.",
+      "cultureNote": {
+        "label": "From ancient Crete",
+        "text": "People on Crete have kept bees for thousands of years; clay hives and a famous gold pendant of two bees have been found there. Wax made candles, sealed jars and covered the writing tablets of later Greeks."
+      },
+      "picture": {
+        "file": "art/see-beeswax.heic",
+        "alt": "A small clay pot full of golden beeswax, with one fat honeybee resting on its rim.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6A4A12"
+    },
+    {
+      "id": "eiffel-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "eiffel-tower",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "People never stopped reaching for the sky. Long after this story, an engineer built an iron tower in Paris and dropped things from it to learn how air pushes on whatever falls."
+        }
+      },
+      "background": "#2A3A4A"
+    },
+    {
+      "id": "icarian-sea",
+      "kind": "place",
+      "title": "The Icarian Sea",
+      "line": "The part of the Aegean Sea around the island of Ikaria, still named after Icarus today.",
+      "cultureNote": {
+        "label": "From Greece",
+        "text": "Greek writers already used the name more than 2,000 years ago, and some said Icarus was buried on the island. Ikaria lies well to the north of Crete, and nobody can say which came first, the myth or the name."
+      },
+      "picture": {
+        "file": "art/see-icarian-sea.heic",
+        "alt": "A green, rocky island rising from a calm blue sea, with a few white feathers floating on the water in front of it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1B4A6E"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-workshop.unfolded.heic",
+          "alt": "A maker’s workshop high in a stone tower on Crete in pale morning light, its wide window open to a white sky and a calm blue sea. Low on the right, tools lie on a long bench beside rows of feathers laid out by size, a pot of beeswax and candles, while a boy kneels on the floor playing with a feather.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-workshop.folded.heic",
+          "alt": "A boy kneeling on a workshop floor beside rows of laid-out feathers, blowing one small feather into the air.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E6",
+          "#E9DCC4",
+          "#B8794A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In Athens, long ago, there lived a man called ",
+              "lead": true
+            },
+            {
+              "t": "Daedalus",
+              "lead": true,
+              "name": "daedalus"
+            },
+            {
+              "t": ", the cleverest maker the Greeks ever told of.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His workshop rang from dawn to dusk. Out of it came axes, augers and plumb lines, folding stools, and wooden toys that walked across a table by themselves. Out of it came statues so lifelike that, people said, their owners had to tie them up at night to stop them wandering away."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Children crowded his doorway to watch the shavings curl from his plane. Rich men waited months for one of his doors. He could look at a bird’s wing for an hour and then draw every feather from memory."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But in those years something went wrong in the workshop, something he would regret for the rest of his life, and Athens would no longer have him."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So Daedalus took his son, "
+            },
+            {
+              "t": "Icarus",
+              "name": "icarus"
+            },
+            {
+              "t": ", who was small enough then to ride on his shoulders, and found a ship sailing south. For three days they watched the coast of Greece sink behind them. On the fourth morning, mountains rose out of the sea."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "A palace on a hillside under a wide, pale blue sky, with red columns wider at the top, painted walls, broad stairs and silver-green olive trees. Low on the right, a king in a patterned robe stands on a terrace beside a grey-bearded man, both looking out at the sea.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "A king and a grey-bearded man on a terrace between red columns, gazing out over the sea.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF3F6",
+          "#F3E4CF",
+          "#A8452E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The island was "
+            },
+            {
+              "t": "Crete",
+              "tap": "crete"
+            },
+            {
+              "t": ", long and high and ringed with harbours, and its king was "
+            },
+            {
+              "t": "Minos",
+              "name": "minos"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Ships came to Crete from everywhere. They brought copper and tin, ivory and linen, and they sailed away loaded with oil and wine and painted jars. A king who sat in the middle of so many sea roads was rich, and Minos was the richest king of his day."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He had heard of Daedalus. He came down to the harbour himself to meet the ship, and he took the maker’s hand in both of his."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Stay with me,”",
+              "say": "minos",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Build for me. Whatever you need, you shall have: timber, bronze, gold, a hundred men to carry it. Only make me things that no other king can own.”",
+              "say": "minos"
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus looked up at the hill above the harbour, where the king’s house stood among the olive trees, and he felt the old itch in his fingers. A man who has lost his home can still have work. He bowed, and said yes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "A palace on a hillside under a wide, pale blue sky, with red columns wider at the top, painted walls, broad stairs and silver-green olive trees. Low on the right, a king in a patterned robe stands on a terrace beside a grey-bearded man, both looking out at the sea.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "A king and a grey-bearded man on a terrace between red columns, gazing out over the sea.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF3F6",
+          "#F3E4CF",
+          "#A8452E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So "
+            },
+            {
+              "t": "Daedalus",
+              "name": "daedalus"
+            },
+            {
+              "t": " built. On the hill he raised a "
+            },
+            {
+              "t": "palace",
+              "tap": "knossos-moment"
+            },
+            {
+              "t": " for Minos with more rooms than anyone could count, stacked around courtyards and joined by stairs, with shafts that let daylight fall into the deepest halls."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He painted its columns red and made them wider at the top than at the foot, like tree trunks stood on their heads. On the walls his painters set blue dolphins leaping, and lilies, and young people somersaulting over the horns of bulls."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For the king’s daughter he laid a dancing floor in the open air, smooth as still water. He piped fresh water down from the hills so that fountains played in the courtyards all summer."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Icarus grew up running through those corridors. He knew every stair and every hiding place, and the guards let him ride their shoulders the way his father once had."
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then one evening Minos took Daedalus out onto the terrace, away from the servants, and spoke in a low voice. "
+            },
+            {
+              "t": "“There is one more thing I need,”",
+              "say": "minos",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Something to keep a secret in. Something no one can find their way out of.”",
+              "say": "minos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-workshop.unfolded.heic",
+          "alt": "A maker’s workshop high in a stone tower on Crete in pale morning light, its wide window open to a white sky and a calm blue sea. Low on the right, tools lie on a long bench beside rows of feathers laid out by size, a pot of beeswax and candles, while a boy kneels on the floor playing with a feather.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-workshop.folded.heic",
+          "alt": "A boy kneeling on a workshop floor beside rows of laid-out feathers, blowing one small feather into the air.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E6",
+          "#E9DCC4",
+          "#B8794A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The secret, the Greeks said, was the Minotaur, a creature half man and half bull that the king wanted hidden from every eye. Daedalus did not ask to see it. He went to his workshop and began to draw."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "What he drew was the "
+            },
+            {
+              "t": "Labyrinth",
+              "tap": "labyrinth"
+            },
+            {
+              "t": ". Its passages doubled back on themselves, split and rejoined, dropped down steps and climbed again, until a man who walked in could not have said whether he was near the middle or close to the door."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It took two years to build. When it was done, Daedalus walked it once himself, with a ball of thread unwinding behind him, and even he was glad to see daylight again."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Minos was delighted. He gave Daedalus a workshop at the top of a tower, with a window that looked straight out to sea, and everything a maker could want."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Everything except one thing. When Daedalus said, after many years, that he wished to sail on to some new country, the king smiled and gave no answer. The next morning there were guards at the foot of the tower stairs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-palace.unfolded.heic",
+          "alt": "A palace on a hillside under a wide, pale blue sky, with red columns wider at the top, painted walls, broad stairs and silver-green olive trees. Low on the right, a king in a patterned robe stands on a terrace beside a grey-bearded man, both looking out at the sea.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-palace.folded.heic",
+          "alt": "A king and a grey-bearded man on a terrace between red columns, gazing out over the sea.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF3F6",
+          "#F3E4CF",
+          "#A8452E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus went down to the terrace and asked again, plainly. "
+            },
+            {
+              "t": "“A maker like you is worth more than a fleet,”",
+              "say": "minos",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "King Minos",
+              "name": "minos"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“Would I let a fleet sail off to my enemies? You will stay on Crete. You and the boy both.”",
+              "say": "minos"
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "From that day every ship leaving the harbour was searched from keel to masthead. Soldiers watched the roads. Daedalus still worked, because a prisoner who works is fed, but he made nothing he cared about."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the evenings he sat at the tower window while Icarus, tall now and restless, paced behind him. Below them the gulls rode the wind off the cliffs. Often they did not beat their wings at all. They simply leaned, and the air carried them wherever they chose."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Look at them,”",
+              "say": "icarus",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Icarus",
+              "name": "icarus"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“Nobody searches them.”",
+              "say": "icarus"
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus did not answer for a long time. Then he laughed, softly, for the first time in months. "
+            },
+            {
+              "t": "“Minos rules the land,”",
+              "say": "daedalus",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“and he rules the sea. But he does not rule the air.”",
+              "say": "daedalus"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-workshop.unfolded.heic",
+          "alt": "A maker’s workshop high in a stone tower on Crete in pale morning light, its wide window open to a white sky and a calm blue sea. Low on the right, tools lie on a long bench beside rows of feathers laid out by size, a pot of beeswax and candles, while a boy kneels on the floor playing with a feather.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-workshop.folded.heic",
+          "alt": "A boy kneeling on a workshop floor beside rows of laid-out feathers, blowing one small feather into the air.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E6",
+          "#E9DCC4",
+          "#B8794A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Feathers began to arrive at the top of the tower.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Icarus brought them. He climbed the cliffs where the gulls nested and came back with a sack of them over his shoulder. He begged long grey ones from the kitchens, where the cooks plucked geese, and swept up the small soft ones that drifted into the corners of the yard."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus sorted them on the floor. He laid them out in rows, shortest at one end, each a little longer than the last. Every row rose in a gentle slope, like the reed pipes a shepherd ties together to play."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he bound them. Through the middle of each quill went a stitch of linen thread. The ends he fixed with warm "
+            },
+            {
+              "t": "wax",
+              "tap": "beeswax"
+            },
+            {
+              "t": ", pressed down with his thumb, and when a whole frame was done he bent it gently, so that it curved the way a real wing curves."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He worked after dark, the shutters closed, a few candles stuck along the bench. By day he made small things for the king: a lamp, a lock, a box with a hidden drawer. If the guards wondered why the tower smelled of honey, they never asked."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-workshop.unfolded.heic",
+          "alt": "A maker’s workshop high in a stone tower on Crete in pale morning light, its wide window open to a white sky and a calm blue sea. Low on the right, tools lie on a long bench beside rows of feathers laid out by size, a pot of beeswax and candles, while a boy kneels on the floor playing with a feather.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-workshop.folded.heic",
+          "alt": "A boy kneeling on a workshop floor beside rows of laid-out feathers, blowing one small feather into the air.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E6",
+          "#E9DCC4",
+          "#B8794A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Icarus was meant to help. Mostly he did. He held the thread taut while his father tied it, and fetched the candle closer, and kept the wax pot warm in a dish of hot water."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But when the night wind gusted through a crack in the shutters and lifted a row of feathers into the air, he was after them at once, snatching, laughing, skidding across the floor. And when his father’s back was turned, he pressed his thumb into the soft yellow wax just to see the whorls of his thumbprint left in it."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Icarus,”",
+              "say": "daedalus",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Daedalus",
+              "name": "daedalus"
+            },
+            {
+              "t": ", without looking up. "
+            },
+            {
+              "t": "“That row took me an hour.”",
+              "say": "daedalus"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I’ll catch them all,”",
+              "say": "icarus",
+              "chip": true
+            },
+            {
+              "t": " said Icarus, and he did, every one, and laid them back crookedly in their places."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Later, when the boy had fallen asleep on a heap of sacks, Daedalus straightened every feather that had gone back crooked. Then he sat for a while with the candle burning down, watching him breathe, and put out his hand to move a curl from his son’s eyes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-workshop.unfolded.heic",
+          "alt": "A maker’s workshop high in a stone tower on Crete in pale morning light, its wide window open to a white sky and a calm blue sea. Low on the right, tools lie on a long bench beside rows of feathers laid out by size, a pot of beeswax and candles, while a boy kneels on the floor playing with a feather.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-workshop.folded.heic",
+          "alt": "A boy kneeling on a workshop floor beside rows of laid-out feathers, blowing one small feather into the air.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E6",
+          "#E9DCC4",
+          "#B8794A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It took the whole of a winter. When spring came, two pairs of wings leaned against the workshop wall, one great and one smaller, their feathers every shade of grey, their straps of soft leather oiled and ready."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus buckled the larger pair along his arms and across his shoulders. He stood in the middle of the room with the shutters thrown open. Then he spread his arms, and brought them down once, hard."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The candles blew flat. Dust leaped off the floor. And Daedalus rose, slowly, until his feet hung a hand’s width above the boards, then an arm’s length. He hovered there, rocking a little, white with astonishment, though he had known all winter that it would work."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Icarus did not make a sound. His mouth was open, and his eyes were full of his father, floating in the candlelight."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then it was his turn. Every night for a month they practised in secret, hopping from the bench to the floor, gliding the length of the room, mending a strap here, a feather there. Icarus learned fast. Far too fast, his father sometimes thought, watching him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-tower.unfolded.heic",
+          "alt": "The flat top of a tall stone tower at dawn, under a huge pale gold and rose sky with a few gulls. Low on the right, a father and son stand at the edge with feathered wings strapped along their arms, the sea far below.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-tower.folded.heic",
+          "alt": "A man and a boy at the edge of a tower top at dawn, arms spread in feathered wings.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEEDC",
+          "#F6D7C2",
+          "#6B9CC0"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On the last evening Daedalus took his son up the ladder onto the flat roof of the tower. The sea lay below them, wrinkled and grey-blue, going on until it met the sky."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Listen to me now,”",
+              "say": "daedalus",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“and remember it when I am too far ahead to shout. Fly the middle way. Too low, and the spray will soak your feathers and drag you down into the waves. Too high, and the sun will soften the wax, and the feathers will come loose.”",
+              "say": "daedalus"
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Do not look for your own road across the sky. Keep your eyes on me, and follow where I go.”",
+              "say": "daedalus",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The middle way,”",
+              "say": "icarus",
+              "chip": true
+            },
+            {
+              "t": " said Icarus. "
+            },
+            {
+              "t": "“Not too low. Not too high. I know.”",
+              "say": "icarus"
+            },
+            {
+              "t": " He nodded at every word. But his eyes had already gone up past his father’s shoulder to where the first star was coming out, high and white over the sea."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus saw where he was looking. He said it all again, slowly, from the beginning, and Icarus said it back to him. Then there was nothing left to say, so they climbed down to sleep for a few hours before the light."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-tower.unfolded.heic",
+          "alt": "The flat top of a tall stone tower at dawn, under a huge pale gold and rose sky with a few gulls. Low on the right, a father and son stand at the edge with feathered wings strapped along their arms, the sea far below.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-tower.folded.heic",
+          "alt": "A man and a boy at the edge of a tower top at dawn, arms spread in feathered wings.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEEDC",
+          "#F6D7C2",
+          "#6B9CC0"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They woke in the grey before dawn. On the roof the air was cold and smelled of salt, and the gulls were already awake, crying on the cliffs below."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus buckled his son’s wings first. He checked every strap twice. He ran his thumb along each line of wax, the way he had a thousand times that winter, and his hands, which had never once shaken over any work, would not keep still."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he took the boy’s face between his palms and kissed him on the forehead, and on each eyelid, as he had when Icarus was very small. Icarus felt something wet on his cheek and thought it was the sea wind."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Stay close,”",
+              "say": "daedalus",
+              "chip": true
+            },
+            {
+              "t": " said Daedalus. That was all."
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The rim of the sun came up out of the sea, and the whole sky turned to gold. A gust swept up the face of the tower. Daedalus opened his arms to it and stepped off the edge, and a heartbeat later his son stepped after him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sea.unfolded.heic",
+          "alt": "The open Aegean seen from high in a pale, bright noon sky, with small islands below like stones and one fishing boat with a square sail. Low on the right, a winged man flies on ahead, and on the blue water beneath lies a scatter of white feathers.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sea.folded.heic",
+          "alt": "A winged man flying low over a bright sea, a scatter of feathers on the water below him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F2F6F8",
+          "#CFE3EF",
+          "#3E7FB0"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For a moment they simply fell, and then the wind took them.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It pressed up under the feathers like a hand under a swimmer. Daedalus beat his wings and felt himself climb, and behind him he heard Icarus whoop. The tower shrank. The palace became a toy of red and white on its hill, and then the whole of Crete was a long brown island lying in the blue."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They flew north, over open water. Far below, a fisherman hauling his net looked up and let it fall. A shepherd on a hillside stood with his mouth open among his goats. A man ploughing stopped his oxen in the furrow and stared. Each of them thought, the Greeks said, that he had seen two gods passing over."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Islands slid beneath them like stepping stones across a stream. Paros went by, white with marble, and little Delos, and at last Samos rose far off to the east. Each island behind them was one more sea that Minos could not search."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sea.unfolded.heic",
+          "alt": "The open Aegean seen from high in a pale, bright noon sky, with small islands below like stones and one fishing boat with a square sail. Low on the right, a winged man flies on ahead, and on the blue water beneath lies a scatter of white feathers.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sea.folded.heic",
+          "alt": "A winged man flying low over a bright sea, a scatter of feathers on the water below him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F2F6F8",
+          "#CFE3EF",
+          "#3E7FB0"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Icarus",
+              "name": "icarus"
+            },
+            {
+              "t": " had never felt anything like it. On the tower he had always been the one waiting, the one told to be careful. Up here the wind did what he asked. He tipped one wing and swung round in a great circle; he folded both and dropped, and opened them, and shot upward again laughing."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Ahead of him his father flew steadily on, never higher, never lower, a dark shape shrinking against the glitter of the sea."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Icarus looked up. Above him there was nothing at all, only blue going on and on, deeper and deeper the higher he looked. Nobody had ever been up there. Not a king. Not even the gulls. He thought of his father’s words, and they seemed small and far away, like the islands."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So he climbed. He beat his wings and rose toward "
+            },
+            {
+              "t": "the sky",
+              "tap": "eiffel-moment"
+            },
+            {
+              "t": ", up through air that grew thin and bright, until the sea below was only a shining floor. The sun was close now. He felt it on his shoulders and on the backs of his wings, warm as an oven door."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sea.unfolded.heic",
+          "alt": "The open Aegean seen from high in a pale, bright noon sky, with small islands below like stones and one fishing boat with a square sail. Low on the right, a winged man flies on ahead, and on the blue water beneath lies a scatter of white feathers.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sea.folded.heic",
+          "alt": "A winged man flying low over a bright sea, a scatter of feathers on the water below him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F2F6F8",
+          "#CFE3EF",
+          "#3E7FB0"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The first feather slipped free so gently that he did not notice it. It drifted away below him, turning over and over, white against the blue."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then another went, and three more together. The wax along his arms had turned soft and shining, and the rows his father had laid so carefully were coming apart. Icarus beat harder. The more he beat, the faster they flew from him, until he was flapping bare arms at the empty air."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Father!”",
+              "say": "icarus",
+              "chip": true
+            },
+            {
+              "t": " he called, once. Then he fell, a long way, into the bright water, and the sea took him."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far ahead, Daedalus heard something on the wind, or thought he did. He turned in the air. Behind him there was only the sky, and the sea, and the sun."
+            }
+          ]
+        },
+        {
+          "id": "s13-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Icarus!”",
+              "say": "daedalus",
+              "chip": true
+            },
+            {
+              "t": " he cried. "
+            },
+            {
+              "t": "“Icarus, where are you?”",
+              "say": "daedalus"
+            },
+            {
+              "t": " He flew back and down, calling, calling, low over the waves. Then he saw them: feathers, a whole drift of small grey feathers, floating on the water, rising and falling with the swell."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sea.unfolded.heic",
+          "alt": "The open Aegean seen from high in a pale, bright noon sky, with small islands below like stones and one fishing boat with a square sail. Low on the right, a winged man flies on ahead, and on the blue water beneath lies a scatter of white feathers.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sea.folded.heic",
+          "alt": "A winged man flying low over a bright sea, a scatter of feathers on the water below him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F2F6F8",
+          "#CFE3EF",
+          "#3E7FB0"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Daedalus came down on the nearest island, a rocky place of thyme and wild goats. He sat on the shore with his wings dragging on the stones, and he did not move until the sun went down."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Greeks said he laid his son to rest on that island, and that it has been called Ikaria ever since. The water round it they named "
+            },
+            {
+              "t": "the Icarian Sea",
+              "tap": "icarian-sea"
+            },
+            {
+              "t": ", and sailors still call it so."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then Daedalus did the only thing left to him. He put the wings on again and flew west, alone, over sea after sea. He came down at last on the island of Sicily, where no king of Crete could reach him."
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He built many things there in the years that followed. But the first thing he did was to walk up to a temple on a hill, take off the wings, and hang them on its wall."
+            }
+          ]
+        },
+        {
+          "id": "s14-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He never flew again. Sometimes, people said, he climbed the hill and stood beneath them for a while in the cool shade. He would look at the rows of feathers, shortest to longest, every one still in its place."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

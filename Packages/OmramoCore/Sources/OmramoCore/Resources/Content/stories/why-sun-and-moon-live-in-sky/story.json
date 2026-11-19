@@ -1,0 +1,1282 @@
+{
+  "schemaVersion": 1,
+  "id": "why-sun-and-moon-live-in-sky",
+  "contentVersion": 1,
+  "title": "Why the Sun and the Moon Live in the Sky",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "african",
+    "culture": "Efik",
+    "place": "Calabar and the Cross River, south-eastern Nigeria",
+    "label": "Efik · Nigeria",
+    "pin": {
+      "lat": 5,
+      "lon": 8.3
+    },
+    "pinColor": "#FF9F1C"
+  },
+  "setting": {
+    "period": "An Efik story from the Cross River, told for a very long time"
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Efik folk tale (a “why” story)",
+    "sources": [
+      {
+        "author": "Elphinstone Dayrell",
+        "title": "Folk Stories from Southern Nigeria, West Africa (story XVI, “Why the Sun and the Moon live in the Sky”)",
+        "publisher": "Longmans, Green and Co.",
+        "year": 1910,
+        "gutenbergId": 34655,
+        "url": "https://www.gutenberg.org/ebooks/34655",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Efik tale, written for Omramo; it does not use the wording of the cited edition. The cited edition was written down by Elphinstone Dayrell, a colonial district officer, and speaks of “natives”; our retelling drops that voice entirely. The cited edition is in the US public domain (published before 1931); other territories not verified (Dayrell’s death year not verified). Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Living oral tradition (Efik); the only source is a colonial-era collection. An Efik reader should confirm tone, names and details.",
+    "community": "Efik reader",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Cross River country around Calabar in south-eastern Nigeria, where land, river and sea meet, and where the tide comes up the shore and goes back twice a day.",
+      "factCards": [
+        "cross-river",
+        "tide"
+      ]
+    },
+    "culture": {
+      "lesson": "Visiting and welcoming guests; a family building a compound of houses round a yard; “why” stories, which the Efik and many other peoples tell to explain the world.",
+      "factCards": [
+        "compound",
+        "cross-river"
+      ]
+    },
+    "moral": {
+      "lesson": "Think ahead before you make a big promise. The Sun is a kind and generous host, but he promises before he asks how many guests are coming.",
+      "reflectionQuestion": "What would you have asked the Water before you said yes?"
+    }
+  },
+  "moral": "Think ahead before you make a big promise.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#12303A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "The Sun and the Moon sit on the thatched roof of their house while shining water full of fish rises all around them.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "sun",
+      "name": "the Sun",
+      "color": "#A64B12",
+      "face": {
+        "file": "art/face-sun.png",
+        "alt": "The Sun, a smiling man with a golden glow.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Sun",
+        "traits": [
+          {
+            "text": "Warm and generous",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Loves a visit",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Promises too fast",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "He is a kind friend and a happy host. He says yes first and thinks about it afterwards.",
+        "portrait": {
+          "file": "art/char-sun.card.heic",
+          "alt": "The Sun, a smiling man with a golden glow, holding out his arms in welcome.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFD35A",
+          "#FFAE45",
+          "#FF8A4D"
+        ]
+      }
+    },
+    {
+      "id": "moon",
+      "name": "the Moon",
+      "color": "#3F4C9A",
+      "face": {
+        "file": "art/face-moon.png",
+        "alt": "The Moon, a calm woman with a soft silver glow.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E3E6FA",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Moon",
+        "traits": [
+          {
+            "text": "Calm and steady",
+            "fill": "#E3E6FA",
+            "ink": "#2F3A80"
+          },
+          {
+            "text": "A bright smile",
+            "fill": "#FFF1C4",
+            "ink": "#8A5A00"
+          },
+          {
+            "text": "Asks good questions",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "She is the Sun’s wife. She builds beside him, wall after wall. When things go wrong, she does not fuss.",
+        "portrait": {
+          "file": "art/char-moon.card.heic",
+          "alt": "The Moon, a calm woman with a soft silver glow, smiling with a bundle of palm leaves in her arms.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#C9D2F7",
+          "#9AA9E8",
+          "#6C7BD0"
+        ]
+      }
+    },
+    {
+      "id": "water",
+      "name": "the Water",
+      "color": "#0F6470",
+      "face": {
+        "file": "art/face-water.png",
+        "alt": "The Water, a broad kind face made of blue-green waves.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#BDEBEF",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Water",
+        "traits": [
+          {
+            "text": "Deep, slow voice",
+            "fill": "#CFF0F2",
+            "ink": "#0B5560"
+          },
+          {
+            "text": "Never comes alone",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Very polite",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          }
+        ],
+        "body": "He is the Sun’s great friend. Fish, crabs and prawns go everywhere with him. He always asks before he comes in.",
+        "portrait": {
+          "file": "art/char-water.card.heic",
+          "alt": "The Water, a broad kind face in a rolling blue-green wave, with small silver fish swimming in it.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#8FE0DC",
+          "#3FB6BE",
+          "#147F92"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "cross-river",
+      "kind": "place",
+      "title": "Cross River",
+      "line": "A wide river in Nigeria that flows into the sea.",
+      "cultureNote": {
+        "label": "The Efik tell",
+        "text": "The Efik people live beside this river, in and around the city of Calabar. This story was written down there long ago."
+      },
+      "picture": {
+        "file": "art/see-cross-river.heic",
+        "alt": "A wide calm river reaching the sea, with mangrove trees standing on tall roots along its bank.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#0E5F66"
+    },
+    {
+      "id": "compound",
+      "kind": "object",
+      "title": "A compound",
+      "line": "A family’s houses, built close together around one shared yard.",
+      "cultureNote": {
+        "label": "In southern Nigeria",
+        "text": "Many families live this way, with room for grandparents, cousins and guests. Making a visitor welcome matters a great deal."
+      },
+      "picture": {
+        "file": "art/see-compound.heic",
+        "alt": "Earth-walled houses with palm-thatch roofs standing around a swept yard.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#8A4A22"
+    },
+    {
+      "id": "tide",
+      "kind": "idea",
+      "title": "The tide",
+      "line": "Twice a day the sea climbs up the shore and slides back.",
+      "cultureNote": {
+        "label": "Near Calabar",
+        "text": "Here the tide pushes a long way up the rivers. People who fish there watch for it every day."
+      },
+      "picture": {
+        "file": "art/see-tide.heic",
+        "alt": "A wave sliding up a muddy shore towards mangrove roots, with a small crab at its edge.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#14607A"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-visit.unfolded.heic",
+          "alt": "Where a wide river meets the sea, the Sun sits in a canoe beside the Water, a friendly face in the waves. Mangroves and palms line the shore.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-visit.folded.heic",
+          "alt": "The Sun in a canoe talks with the Water among the mangrove trees.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFEBEA",
+          "#FFF0B8",
+          "#2E9C8F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago, ",
+              "lead": true
+            },
+            {
+              "t": "the Sun",
+              "lead": true,
+              "name": "sun"
+            },
+            {
+              "t": " and ",
+              "lead": true
+            },
+            {
+              "t": "the Water",
+              "lead": true,
+              "name": "water"
+            },
+            {
+              "t": " both lived on the earth.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They were great friends."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Water’s home was down where the "
+            },
+            {
+              "t": "wide river",
+              "tap": "cross-river"
+            },
+            {
+              "t": " meets the sea. Mangrove trees stood there on long legs, with their toes in the mud."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every few days the Sun paddled down in his canoe to visit."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-visit.unfolded.heic",
+          "alt": "Where a wide river meets the sea, the Sun sits in a canoe beside the Water, a friendly face in the waves. Mangroves and palms line the shore.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-visit.folded.heic",
+          "alt": "The Sun in a canoe talks with the Water among the mangrove trees.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFEBEA",
+          "#FFF0B8",
+          "#2E9C8F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The two friends talked and laughed all afternoon. The Water’s laugh was deep, like waves rolling in."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the Water never came to the Sun’s house. Not once."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So one day the Sun asked him. "
+            },
+            {
+              "t": "“My friend, I visit you so often. Why do you never visit me?”",
+              "say": "sun",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-visit.unfolded.heic",
+          "alt": "Where a wide river meets the sea, the Sun sits in a canoe beside the Water, a friendly face in the waves. Mangroves and palms line the shore.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-visit.folded.heic",
+          "alt": "The Sun in a canoe talks with the Water among the mangrove trees.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFEBEA",
+          "#FFF0B8",
+          "#2E9C8F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Ah,”",
+              "say": "water",
+              "chip": true
+            },
+            {
+              "t": " said the Water in his deep, slow voice. "
+            },
+            {
+              "t": "“Your house is too small, my friend.”",
+              "say": "water"
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I never go anywhere alone. My people come with me, and my people are many. We would push you right out of your own door.”",
+              "say": "water",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun laughed. But the Water was not joking."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-visit.unfolded.heic",
+          "alt": "Where a wide river meets the sea, the Sun sits in a canoe beside the Water, a friendly face in the waves. Mangroves and palms line the shore.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-visit.folded.heic",
+          "alt": "The Sun in a canoe talks with the Water among the mangrove trees.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BFEBEA",
+          "#FFF0B8",
+          "#2E9C8F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“If you want me to come,”",
+              "say": "water",
+              "chip": true
+            },
+            {
+              "t": " said the Water, "
+            },
+            {
+              "t": "“build a big ",
+              "say": "water"
+            },
+            {
+              "t": "compound",
+              "say": "water",
+              "tap": "compound"
+            },
+            {
+              "t": ". A very big one. Very big indeed!”",
+              "say": "water"
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I will!”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the Sun at once. "
+            },
+            {
+              "t": "“I promise. I will build the biggest compound you ever saw.”",
+              "say": "sun"
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He promised it quickly. He did not stop to ask how many people the Water had."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-building.unfolded.heic",
+          "alt": "The Sun and the Moon build a great compound: red earth walls, a wide swept yard and a big roof of palm thatch.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-building.folded.heic",
+          "alt": "The Sun and the Moon tie palm thatch onto the roof of a new house.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEEF2",
+          "#FFE9B0",
+          "#C9773E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun hurried home. His wife, "
+            },
+            {
+              "t": "the Moon",
+              "name": "moon"
+            },
+            {
+              "t": ", met him at the door with a wide, bright smile."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The Water is coming to visit!”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“We must build a compound big enough for all his people.”",
+              "say": "sun"
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“How many people?”",
+              "say": "moon",
+              "chip": true
+            },
+            {
+              "t": " asked the Moon."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Many,”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the Sun. "
+            },
+            {
+              "t": "“I forgot to ask.”",
+              "say": "sun"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-building.unfolded.heic",
+          "alt": "The Sun and the Moon build a great compound: red earth walls, a wide swept yard and a big roof of palm thatch.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-building.folded.heic",
+          "alt": "The Sun and the Moon tie palm thatch onto the roof of a new house.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEEF2",
+          "#FFE9B0",
+          "#C9773E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then we had better build it very big,”",
+              "say": "moon",
+              "chip": true
+            },
+            {
+              "t": " said the Moon calmly."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So they began the very next morning. They pressed red earth into thick walls. They swept a yard as wide as a field."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They tied palm leaves into thatch for a great roof."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-building.unfolded.heic",
+          "alt": "The Sun and the Moon build a great compound: red earth walls, a wide swept yard and a big roof of palm thatch.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-building.folded.heic",
+          "alt": "The Sun and the Moon tie palm thatch onto the roof of a new house.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CDEEF2",
+          "#FFE9B0",
+          "#C9773E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Day after day they built. Wall after wall, room after room, roof after roof."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last it was done. It was bigger than the market. It was the biggest compound anyone had ever seen."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“There,”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the Sun, wiping his hands. "
+            },
+            {
+              "t": "“Room for everybody.”",
+              "say": "sun"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Moon looked at the great empty yard. "
+            },
+            {
+              "t": "“We shall see,”",
+              "say": "moon",
+              "chip": true
+            },
+            {
+              "t": " she said."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-flood.unfolded.heic",
+          "alt": "On a bright day the Water flows in at the gate of the compound with fish and crabs, while the Sun and the Moon climb up onto the thatched roof.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-flood.folded.heic",
+          "alt": "The Sun and the Moon sit on the roof as water full of fish fills the yard.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BCE8F2",
+          "#FFF1BC",
+          "#1E93A8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The next morning, a deep voice called at the gate.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Is it safe for me to come in?”",
+              "say": "water",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Yes, come in, my friend!”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " called the Sun."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Whoosh!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " In flowed the Water, cool and shining, across the yard. With him came little silver fish and crabs that walked sideways."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-flood.unfolded.heic",
+          "alt": "On a bright day the Water flows in at the gate of the compound with fish and crabs, while the Sun and the Moon climb up onto the thatched roof.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-flood.folded.heic",
+          "alt": "The Sun and the Moon sit on the roof as water full of fish fills the yard.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BCE8F2",
+          "#FFF1BC",
+          "#1E93A8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "More water came, and more. Soon it was as deep as the Sun’s knees."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Fish swam in at the door. A crab sat down on the Moon’s best stool."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Is it still safe for me to come in?”",
+              "say": "water",
+              "chip": true
+            },
+            {
+              "t": " asked the Water."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Yes, yes, come in, my friend!”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the Sun. He had promised, after all."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-flood.unfolded.heic",
+          "alt": "On a bright day the Water flows in at the gate of the compound with fish and crabs, while the Sun and the Moon climb up onto the thatched roof.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-flood.folded.heic",
+          "alt": "The Sun and the Moon sit on the roof as water full of fish fills the yard.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BCE8F2",
+          "#FFF1BC",
+          "#1E93A8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In came bigger fish, and prawns with long whiskers, and more crabs than anyone could count."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The water rose as high as a tall man’s head."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun and the Moon scrambled up onto the roof."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My friend,”",
+              "say": "water",
+              "chip": true
+            },
+            {
+              "t": " rumbled the Water, "
+            },
+            {
+              "t": "“do you still want my people to come in?”",
+              "say": "water"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-flood.unfolded.heic",
+          "alt": "On a bright day the Water flows in at the gate of the compound with fish and crabs, while the Sun and the Moon climb up onto the thatched roof.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-flood.folded.heic",
+          "alt": "The Sun and the Moon sit on the roof as water full of fish fills the yard.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#BCE8F2",
+          "#FFF1BC",
+          "#1E93A8"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Sun looked at the Moon. The Moon looked at the Sun."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It is hard to send away a guest you begged to come."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Yes,”",
+              "say": "sun",
+              "chip": true
+            },
+            {
+              "t": " said the Sun, more quietly. "
+            },
+            {
+              "t": "“Come in, my friend.”",
+              "say": "sun"
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So in came the rest of the Water’s people. Up went the water, over the walls, over the thatch, over the top of the roof."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sky.unfolded.heic",
+          "alt": "The Sun and the Moon sit high in a pale sky. Far below, calm wide water covers everything but the tip of a thatched roof and the tops of the palms.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sky.folded.heic",
+          "alt": "The Sun and the Moon side by side in a pale sky above calm water.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9F0F2",
+          "#FFF4CF",
+          "#5FB7C2"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There was nowhere left to stand. So the Sun took the Moon’s hand, and up they went."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Up past the palm tops. Up past the birds. Up, up, "
+            },
+            {
+              "t": "up",
+              "fx": "stretch"
+            },
+            {
+              "t": " into the sky."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far below, the Water spread out wide and calm. Only the tip of the roof showed."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Well,”",
+              "say": "moon",
+              "chip": true
+            },
+            {
+              "t": " said the Moon, "
+            },
+            {
+              "t": "“there is plenty of room up here.”",
+              "say": "moon"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-sky.unfolded.heic",
+          "alt": "The Sun and the Moon sit high in a pale sky. Far below, calm wide water covers everything but the tip of a thatched roof and the tops of the palms.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-sky.folded.heic",
+          "alt": "The Sun and the Moon side by side in a pale sky above calm water.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9F0F2",
+          "#FFF4CF",
+          "#5FB7C2"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And there they have lived ever since. The Sun shines from the sky by day. The Moon smiles down by night."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Water still misses his friends. Twice a day he "
+            },
+            {
+              "t": "creeps up the shore",
+              "tap": "tide"
+            },
+            {
+              "t": " to see if they have come home."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then, very politely, he goes away again."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

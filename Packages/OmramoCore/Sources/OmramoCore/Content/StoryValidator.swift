@@ -321,6 +321,10 @@ public struct StoryValidator: Sendable {
                 issues.append(.init(.error, .culturalReviewNoReason, at: "culturalReview.reason",
                                     "a required cultural review must say why it is required"))
             }
+            if isBlank(cultural.community) {
+                issues.append(.init(.error, .culturalReviewNoCommunity, at: "culturalReview.community",
+                                    "a required cultural review must name the community or reviewer who should read the story"))
+            }
             if cultural.status != .approved {
                 issues.append(.init(pendingSeverity, .culturalReviewNotApproved, at: "culturalReview.status",
                                     "required cultural review is \(cultural.status.rawValue); the story cannot ship until it is approved"))

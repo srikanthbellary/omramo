@@ -1,0 +1,1191 @@
+{
+  "schemaVersion": 1,
+  "id": "long-day-at-fish-camp",
+  "contentVersion": 1,
+  "title": "The Long Day at Fish Camp",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "arctic",
+    "culture": "Yup’ik",
+    "place": "Kuskokwim River, Alaska",
+    "label": "Yup’ik · Alaska",
+    "pin": {
+      "lat": 60.8,
+      "lon": -161.8
+    },
+    "pinColor": "#2F9BE0"
+  },
+  "setting": {
+    "period": "The Kuskokwim River, Alaska, today"
+  },
+  "provenance": {
+    "kind": "original",
+    "credit": "Original story written by us (Omramo)",
+    "premise": "At his family’s summer fish camp on the Kuskokwim River, a boy pulls a net by himself for the first time and lands a king salmon he badly wants to keep. His grandmother asks where a first catch goes, and he carries it downriver to an elder, and walks home with empty arms and something better than a fish.",
+    "rights": "Original text written for Omramo. No traditional or sacred narrative is used. A Yup’ik consultant, ideally a co-author, is sought for names, Yugtun words and customs (CONTENT_PLAN CQ4)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Indigenous setting (Yup’ik, south-west Alaska). An original story: names, Yugtun words, the first-catch custom, fish-camp work and every card must be checked by a Yup’ik consultant, ideally a co-author.",
+    "community": "Yup’ik consultant",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Kuskokwim is a great river that winds across the flat tundra of south-west Alaska to the Bering Sea. In June the sun sets there for only a few hours and the sky never grows dark; there is no snow in this story, on purpose.",
+      "factCards": [
+        "kuskokwim"
+      ]
+    },
+    "culture": {
+      "lesson": "Yup’ik families move to fish camp in summer to catch salmon, cut it, dry it on racks and smoke it for the winter, wasting nothing and taking only what they will use. A first catch is given away, often to an elder. Yup’ik families never lived in snow houses: their old winter homes were sod houses, and today they live in modern houses.",
+      "factCards": [
+        "drying-rack",
+        "first-catch",
+        "sod-house"
+      ]
+    },
+    "moral": {
+      "lesson": "Nick wants to keep the first fish that is truly his, and that wish is fair. Giving it away costs him something, and he comes home with a welcome, a story about his grandfather and a place among the people who provide.",
+      "reflectionQuestion": "Nick came home with empty arms and felt taller. What do you think he was carrying?"
+    }
+  },
+  "moral": "The best part of catching something good is giving it away.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#1B2E44",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A boy in a hoodie and rubber boots hugs a big silver salmon wrapped in green grass, on a river bank under a pale gold evening sky.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "nick",
+      "name": "Nick",
+      "color": "#1F5F8B",
+      "face": {
+        "file": "art/face-nick.png",
+        "alt": "Nick.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6E9F7",
+      "card": {
+        "label": "Character · the boy with the first fish",
+        "title": "Nick",
+        "traits": [
+          {
+            "text": "Nine years old",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Pulls his own net",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Gives his first catch",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "Nick spends every summer at his family’s fish camp on the river. This June he lands a king salmon by himself, and has to decide what a first fish is for.",
+        "portrait": {
+          "file": "art/char-nick.card.heic",
+          "alt": "A boy of about nine in a blue hoodie and a cap, hugging a big silver salmon wrapped in green grass.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFE3B0",
+          "#F5B97A",
+          "#D98A5A"
+        ]
+      }
+    },
+    {
+      "id": "grandma",
+      "name": "Grandma",
+      "color": "#A8501C",
+      "face": {
+        "file": "art/face-grandma.png",
+        "alt": "Grandma.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · Nick’s grandmother",
+        "title": "Grandma",
+        "traits": [
+          {
+            "text": "Cuts with an uluaq",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Asks, never scolds",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Wastes nothing",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "Grandma cuts the family’s salmon at fish camp, quick and neat, all the long evening. She does not tell Nick what to do with his fish. She asks him a question instead.",
+        "portrait": {
+          "file": "art/char-grandma.card.heic",
+          "alt": "A grandmother in a flowered cotton overshirt with a hood and a headscarf, holding a curved fish knife at a wooden cutting table.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#CFE6E4",
+          "#8FBFC0",
+          "#4E8C96"
+        ]
+      }
+    },
+    {
+      "id": "lena",
+      "name": "Lena",
+      "color": "#8E2F5A",
+      "face": {
+        "file": "art/face-lena.png",
+        "alt": "Old Lena.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F6DCE7"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "drying-rack",
+      "kind": "object",
+      "title": "Drying rack",
+      "line": "A frame of wooden poles where strips of salmon hang to dry in the wind.",
+      "cultureNote": {
+        "label": "From the Yup’ik",
+        "text": "At fish camp, Yup’ik families cut salmon into strips, dry them in the wind and then smoke them. The dried fish feeds the family all through the long winter."
+      },
+      "picture": {
+        "file": "art/see-drying-rack.heic",
+        "alt": "A rack of peeled wooden poles hung with rows of red salmon strips under a blue tarp roof.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#7A2E22"
+    },
+    {
+      "id": "kuskokwim",
+      "kind": "place",
+      "title": "Kuskokwim River",
+      "line": "A great brown river that winds across the flat land of Alaska to the Bering Sea.",
+      "cultureNote": {
+        "label": "From Alaska",
+        "text": "No roads join the villages along the Kuskokwim to the rest of Alaska. People travel by boat in summer, and in winter they drive over the thick river ice."
+      },
+      "picture": {
+        "file": "art/see-kuskokwim.heic",
+        "alt": "A wide brown river looping across flat green tundra, with one small aluminium boat on it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A5C"
+    },
+    {
+      "id": "first-catch",
+      "kind": "idea",
+      "title": "A first catch",
+      "line": "The first fish or animal a young person catches all by themselves.",
+      "cultureNote": {
+        "label": "From the Yup’ik",
+        "text": "Many Yup’ik families give a first catch away, often to an elder. It shows that the young person will grow up to bring food to other people too."
+      },
+      "picture": {
+        "file": "art/see-first-catch.heic",
+        "alt": "A child’s two hands holding out a silver salmon wrapped in long green grass.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2E3F6E"
+    },
+    {
+      "id": "sod-house",
+      "kind": "idea",
+      "title": "Sod house",
+      "line": "A warm winter house with thick walls of earth and grass, set partly under the ground.",
+      "cultureNote": {
+        "label": "From the Yup’ik",
+        "text": "Long ago, Yup’ik families did not live in snow houses. They spent the winter in sod houses framed with driftwood, and today they live in modern houses in villages."
+      },
+      "picture": {
+        "file": "art/see-sod-house.heic",
+        "alt": "A low rounded house covered in green grass, with a short tunnel doorway framed in grey driftwood.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3D4A2A"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-camp.unfolded.heic",
+          "alt": "A summer fish camp on a low grassy river bank under a pale gold evening sky. On the right stand plywood cabins, a smokehouse with a wisp of smoke, and long racks of red salmon strips under a blue tarp, with an aluminium skiff on the mud below.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-camp.folded.heic",
+          "alt": "A grandmother cuts salmon at a wooden table beside racks of red salmon strips under a blue tarp.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FCE9C4",
+          "#F6C9A0",
+          "#8FA36A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At fish camp in June, the day never really ends.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The sun rolled low around the sky, and the river shone like the side of a fish. Smoke slipped out of the smokehouse, sweet and sharp."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Under a blue tarp hung the "
+            },
+            {
+              "t": "drying racks",
+              "tap": "drying-rack"
+            },
+            {
+              "t": ", row after row of red salmon strips, turning a little in the wind."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At the cutting table stood "
+            },
+            {
+              "t": "Grandma",
+              "name": "grandma"
+            },
+            {
+              "t": " with her uluaq, the curved knife she used for fish. Flick, flick it went, and a salmon lay open like a book."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick",
+              "name": "nick"
+            },
+            {
+              "t": " was nine, and his job was to carry. He took the strips to the racks, one bucket at a time."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-net.unfolded.heic",
+          "alt": "A wide brown river under a pale gold and peach sky, with a low green shore far away. On the right a boy in an aluminium skiff hauls a net with white floats, and a big silver salmon comes over the side.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-net.folded.heic",
+          "alt": "A boy in a skiff pulls a net hand over hand as a big silver salmon comes over the side.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBE6BC",
+          "#F3C6A2",
+          "#9C8A6E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For three summers Nick had helped with the nets. He had held the rope and bailed the skiff. But the fish had always been somebody else’s."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Tonight Uncle Joe cut the motor out on the wide brown "
+            },
+            {
+              "t": "Kuskokwim",
+              "tap": "kuskokwim"
+            },
+            {
+              "t": ". He nodded at the short net, strung between its white floats."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“This one is yours,” he said. “I’ll just keep the boat straight.”"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick pulled, hand over hand. The net came up dripping, empty, empty. Then it pulled back."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A weight. A silver flash. "
+            },
+            {
+              "t": "Thump!",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " Over the side slid a king salmon, nearly as long as his arm."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-camp.unfolded.heic",
+          "alt": "A summer fish camp on a low grassy river bank under a pale gold evening sky. On the right stand plywood cabins, a smokehouse with a wisp of smoke, and long racks of red salmon strips under a blue tarp, with an aluminium skiff on the mud below.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-camp.folded.heic",
+          "alt": "A grandmother cuts salmon at a wooden table beside racks of red salmon strips under a blue tarp.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FCE9C4",
+          "#F6C9A0",
+          "#8FA36A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick carried the fish up the muddy bank himself, hugging it with both arms. Nobody was allowed to help."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His cousins came running. His aunt whistled. Even the dogs stood up to look."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick could see it all already. His strips on the rack, the reddest in the row. His name on the lid of a jar. All winter he would eat that fish, and tell everyone at the table who had caught it."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He laid it on the cutting table, right in front of Grandma."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-camp.unfolded.heic",
+          "alt": "A summer fish camp on a low grassy river bank under a pale gold evening sky. On the right stand plywood cabins, a smokehouse with a wisp of smoke, and long racks of red salmon strips under a blue tarp, with an aluminium skiff on the mud below.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-camp.folded.heic",
+          "alt": "A grandmother cuts salmon at a wooden table beside racks of red salmon strips under a blue tarp.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FCE9C4",
+          "#F6C9A0",
+          "#8FA36A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandma wiped her uluaq on her apron and looked the fish over from nose to tail. "
+            },
+            {
+              "t": "“That is a fine fish,”",
+              "say": "grandma",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“Whose is it?”",
+              "say": "grandma"
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Mine!”",
+              "say": "nick",
+              "chip": true
+            },
+            {
+              "t": " said Nick."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Mm. And where does a ",
+              "say": "grandma",
+              "chip": true
+            },
+            {
+              "t": "first catch",
+              "say": "grandma",
+              "tap": "first-catch"
+            },
+            {
+              "t": " go?”",
+              "say": "grandma"
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick knew. Last summer his cousin Mary had carried her first fish to the neighbours, and the summer before, so had her brother. Nick had watched them go and thought it a fine thing to do. It had not been his fish then."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He looked down at his rubber boots."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-camp.unfolded.heic",
+          "alt": "A summer fish camp on a low grassy river bank under a pale gold evening sky. On the right stand plywood cabins, a smokehouse with a wisp of smoke, and long racks of red salmon strips under a blue tarp, with an aluminium skiff on the mud below.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-camp.folded.heic",
+          "alt": "A grandmother cuts salmon at a wooden table beside racks of red salmon strips under a blue tarp.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FCE9C4",
+          "#F6C9A0",
+          "#8FA36A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Could I give away the second one?”",
+              "say": "nick",
+              "chip": true
+            },
+            {
+              "t": " he asked. "
+            },
+            {
+              "t": "“I’ll catch a second one tomorrow. A bigger one.”",
+              "say": "nick"
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The second one is never the first one,”",
+              "say": "grandma",
+              "chip": true
+            },
+            {
+              "t": " said Grandma. She was not cross. She was already pulling long wet grass from the bank."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Take it to ",
+              "say": "grandma",
+              "chip": true
+            },
+            {
+              "t": "Lena",
+              "say": "grandma",
+              "name": "lena"
+            },
+            {
+              "t": ", downriver. Her knees are keeping her off the water this summer, and she has no one to pull a net for her.”",
+              "say": "grandma"
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She wrapped the salmon in the grass, cool and green, and put the bundle in his arms. It was heavier than before."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick did not say yes. But he started walking."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-bank.unfolded.heic",
+          "alt": "A narrow path along a river bank through tall grass, pink fireweed and low willow, under a huge pale peach sky. On the right a boy walks with a big fish wrapped in green grass in his arms, and a small cloud of mosquitoes round his cap.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-bank.folded.heic",
+          "alt": "A boy carries a big grass-wrapped fish along a path through tall grass and pink fireweed.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBE3C8",
+          "#F7BFA0",
+          "#7F9A5E"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The path to Lena’s cabin ran along the top of the bank.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Tall grass brushed his rain pants. Fireweed stood in it, just turning pink, and mosquitoes sang round his ears. He could not slap them. Both arms were full of fish."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Beside him the river slid by, wide as a lake and brown as tea."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He practised what to say. "
+            },
+            {
+              "t": "“This is for you, because of your knees.”",
+              "say": "nick",
+              "chip": true
+            },
+            {
+              "t": " No. "
+            },
+            {
+              "t": "“Grandma made me bring this.”",
+              "say": "nick"
+            },
+            {
+              "t": " Worse."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was eleven at night. The sun still sat above the flat green tundra, and the whole sky was the colour of a peach."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-porch.unfolded.heic",
+          "alt": "A small weathered grey cabin by the river under a pale peach sky, with one short drying rack and a cutting table at the water’s edge. On the right an old woman in a headscarf sits on the step with a mug of tea.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-porch.folded.heic",
+          "alt": "An old woman in a headscarf sits on the step of a small grey cabin, a curved fish knife on the table beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FADFC6",
+          "#F2B79C",
+          "#8C8F74"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Lena’s cabin was small and grey, with one short rack beside it. Old "
+            },
+            {
+              "t": "Lena",
+              "name": "lena"
+            },
+            {
+              "t": " sat on the step with a mug of tea, watching the river."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick walked up to her and held out the bundle. Every word he had practised flew away, all but three."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It’s my first.”",
+              "say": "nick",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Lena put down her tea. She folded back the grass and took the salmon in both hands, as carefully as if it were much heavier than it was."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Quyana,”",
+              "say": "lena",
+              "chip": true
+            },
+            {
+              "t": " she said. It was the Yup’ik word for thank you, and she said it slowly. Then she looked at the fish for a long time."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-porch.unfolded.heic",
+          "alt": "A small weathered grey cabin by the river under a pale peach sky, with one short drying rack and a cutting table at the water’s edge. On the right an old woman in a headscarf sits on the step with a mug of tea.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-porch.folded.heic",
+          "alt": "An old woman in a headscarf sits on the step of a small grey cabin, a curved fish knife on the table beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FADFC6",
+          "#F2B79C",
+          "#8C8F74"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then she got up, slow on her knees, and carried the salmon to her table by the water. "
+            },
+            {
+              "t": "“Come and watch. My mother showed me this cut.”",
+              "say": "lena",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her uluaq rocked once behind the head and slid along the backbone. Two red sides fell open."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Strips for my rack. The head for soup. The eggs go to my sister, the belly to the Charles family, and the scraps to Peter’s dogs.”",
+              "say": "lena",
+              "chip": true
+            },
+            {
+              "t": " She counted on her fingers. "
+            },
+            {
+              "t": "“Your one fish is going to four houses, Nick.”",
+              "say": "lena"
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She rinsed the knife. "
+            },
+            {
+              "t": "“My mother used to say the fish know a hand that gives. They come to it again.”",
+              "say": "lena",
+              "chip": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-porch.unfolded.heic",
+          "alt": "A small weathered grey cabin by the river under a pale peach sky, with one short drying rack and a cutting table at the water’s edge. On the right an old woman in a headscarf sits on the step with a mug of tea.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-porch.folded.heic",
+          "alt": "An old woman in a headscarf sits on the step of a small grey cabin, a curved fish knife on the table beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FADFC6",
+          "#F2B79C",
+          "#8C8F74"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Afterwards they sat on the step. Lena gave him a bowl of akutaq, last summer’s blueberries whipped soft and sweet with fat."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Your grandfather was smaller than you when he caught his first,”",
+              "say": "lena",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“He brought it to my mother. She grew up in a ",
+              "say": "lena"
+            },
+            {
+              "t": "sod house",
+              "say": "lena",
+              "tap": "sod-house"
+            },
+            {
+              "t": ", my mother, and she knew a good fish. He dropped it twice on the way, she told me.”",
+              "say": "lena"
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick laughed with his mouth full."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When he stood to go, she put a dry red strip from her own rack in his hand. That would be gone before he got home. The story about his grandfather would not."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-camp.unfolded.heic",
+          "alt": "A summer fish camp on a low grassy river bank under a pale gold evening sky. On the right stand plywood cabins, a smokehouse with a wisp of smoke, and long racks of red salmon strips under a blue tarp, with an aluminium skiff on the mud below.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-camp.folded.heic",
+          "alt": "A grandmother cuts salmon at a wooden table beside racks of red salmon strips under a blue tarp.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FCE9C4",
+          "#F6C9A0",
+          "#8FA36A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nick walked home chewing. It was nearly midnight, and the sun was only now sliding down to the edge of the tundra. His arms were empty. They swung at his sides, and he felt a little taller."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Grandma was still at her table. "
+            },
+            {
+              "t": "“Well?”",
+              "say": "grandma",
+              "chip": true
+            },
+            {
+              "t": " she asked. "
+            },
+            {
+              "t": "“She said quyana,”",
+              "say": "nick",
+              "chip": true
+            },
+            {
+              "t": " said Nick."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“And what did you say?”",
+              "say": "grandma",
+              "chip": true
+            },
+            {
+              "t": " Nick grinned. "
+            },
+            {
+              "t": "“Tomorrow, can I pull the net again?”",
+              "say": "nick",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“One more day,”",
+              "say": "grandma",
+              "chip": true
+            },
+            {
+              "t": " said Grandma. "
+            },
+            {
+              "t": "“When the racks are full, we stop.”",
+              "say": "grandma"
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Behind her the racks hung red in the wind, the smoke climbed into the gold, and the "
+            },
+            {
+              "t": "long",
+              "fx": "stretch"
+            },
+            {
+              "t": " day went on."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

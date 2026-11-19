@@ -1,0 +1,1395 @@
+{
+  "schemaVersion": 1,
+  "id": "lion-and-hare",
+  "contentVersion": 1,
+  "title": "The Lion and the Hare",
+  "tier": "low",
+  "language": "en",
+  "region": {
+    "id": "persianArabian",
+    "culture": "Persian (told by the poet Rumi)",
+    "place": "Persia (Iran)",
+    "label": "Persia",
+    "pin": {
+      "lat": 32,
+      "lon": 53
+    },
+    "pinColor": "#12A8B8"
+  },
+  "setting": {
+    "period": "Told in Persia about 800 years ago; the tale itself is older",
+    "latestYear": 1273
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Persian animal tale, told by Rumi in the Masnavi; older in Kalila and Dimna, and first told in India",
+    "sources": [
+      {
+        "author": "Jalal al-Din Rumi, translated by James W. Redhouse",
+        "title": "The Mesnevi of Mevlana Jelalu-’d-din Muhammed er-Rumi, Book the First (Tale V, “The Lion and the Beasts”)",
+        "publisher": "Trübner & Co.",
+        "year": 1881,
+        "gutenbergId": 61724,
+        "url": "https://www.gutenberg.org/ebooks/61724",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Persian animal tale, written for Omramo; it does not use the wording of the cited edition. We retell only the animal tale and use none of Rumi’s spiritual commentary or religious teaching. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Our direct source is a Sufi religious teaching poem (Rumi’s Masnavi). We retell only the animal tale, without the spiritual commentary; a reviewer should confirm that is respectful (light review).",
+    "community": "Reviewer familiar with Rumi and Sufi tradition",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "Persia (today Iran) is a dry land of hills, green valleys and wells. The story crossed India, Persia and Arabia along the caravan roads.",
+      "factCards": [
+        "persia",
+        "well",
+        "petra-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Stories travel: this one began in India, was told in Persian by the poet Rumi, then in Arabic, and reached Europe. Poets taught with animal stories.",
+      "factCards": [
+        "persia",
+        "petra-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "Wit can protect the small from a bully. The Hare cannot fight or roar, so he thinks, and the Lion’s own temper does the rest.",
+      "reflectionQuestion": "Why did the Hare want the Lion to be angry?"
+    }
+  },
+  "moral": "Quick thinking can keep the small safe from a bully.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#1D2B3A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "coral",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A lion leans over an old stone well with a small hare beside him. A lion and a hare look back up from the water.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "hare",
+      "name": "Hare",
+      "color": "#1F5F8B",
+      "face": {
+        "file": "art/face-hare.png",
+        "alt": "The little Hare.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6ECF7",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Hare",
+        "traits": [
+          {
+            "text": "Smallest of all",
+            "fill": "#D6ECF7",
+            "ink": "#1A4F75"
+          },
+          {
+            "text": "Very long ears",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Thinks first",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He is the smallest animal in the valley. He cannot roar and he cannot fight. So he listens, and then he thinks.",
+        "portrait": {
+          "file": "art/char-hare.card.heic",
+          "alt": "The little Hare sitting up in the grass with his long ears raised.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#BFE6E4",
+          "#8CCFC4",
+          "#4FA89A"
+        ]
+      }
+    },
+    {
+      "id": "lion",
+      "name": "Lion",
+      "color": "#A34A12",
+      "face": {
+        "file": "art/face-lion.png",
+        "alt": "The Lion.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A8",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "The Lion",
+        "traits": [
+          {
+            "text": "Very loud",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Never full",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Hates to wait",
+            "fill": "#F3E3D0",
+            "ink": "#6B3F1A"
+          }
+        ],
+        "body": "He roars from his rock and likes to see everyone run. He wants his dinner big, and he wants it now. He is so busy roaring that he never stops to think.",
+        "portrait": {
+          "file": "art/char-lion.card.heic",
+          "alt": "The Lion on his rock with his mouth wide open, roaring.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFD98A",
+          "#F5B458",
+          "#E08A3C"
+        ]
+      }
+    },
+    {
+      "id": "gazelle",
+      "name": "Gazelle",
+      "color": "#17694A",
+      "face": {
+        "file": "art/face-gazelle.png",
+        "alt": "The Gazelle.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D9F2DC"
+    },
+    {
+      "id": "tortoise",
+      "name": "Tortoise",
+      "color": "#5E5A14",
+      "face": {
+        "file": "art/face-tortoise.png",
+        "alt": "The old Tortoise.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#EFEBC2"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "petra-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "petra",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "A caravan is a long line of camels carrying goods and travellers. Long ago, caravans rested in desert cities like this one, far to the west."
+        }
+      },
+      "background": "#5A2430"
+    },
+    {
+      "id": "persia",
+      "kind": "place",
+      "title": "Persia",
+      "line": "A land of dry hills, green valleys and gardens, now called Iran.",
+      "cultureNote": {
+        "label": "From Persia",
+        "text": "The poet Rumi told this story in the Persian language about 800 years ago. It was already old then: it began in India."
+      },
+      "picture": {
+        "file": "art/see-persia.heic",
+        "alt": "A green valley with a stream and poplar trees, between dry golden hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E5C4E"
+    },
+    {
+      "id": "wild-hare",
+      "kind": "creature",
+      "title": "The hare",
+      "line": "A hare is not a rabbit: it has longer ears and longer legs.",
+      "cultureNote": {
+        "label": "In Iran today",
+        "text": "Hares still live in the dry hills of Iran. They do not dig burrows. They rest in a hollow in the grass."
+      },
+      "picture": {
+        "file": "art/see-wild-hare.heic",
+        "alt": "A sandy-brown hare sitting up in dry grass, with long black-tipped ears.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6A4A22"
+    },
+    {
+      "id": "well",
+      "kind": "object",
+      "title": "A well",
+      "line": "A deep hole lined with stone, dug to reach water under the ground.",
+      "cultureNote": {
+        "label": "From Persia",
+        "text": "Persia is a dry land. Long ago, people there dug wells and tunnels to bring water to their fields and gardens."
+      },
+      "picture": {
+        "file": "art/see-well.heic",
+        "alt": "An old well with a low ring of rough stones, and dark water far down inside.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#274B63"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "A lion stands on a rock above a green valley with a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#FFEFC0",
+          "#6FA85A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "This story walked from India to Persia with the ",
+              "lead": true
+            },
+            {
+              "t": "caravans",
+              "lead": true,
+              "tap": "petra-moment"
+            },
+            {
+              "t": ".",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It rode on swaying camels, over mountains and across wide sands."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At every well where the camels drank, somebody told it. Beside every fire, somebody told it again."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Now it has come all the way to you."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "A lion stands on a rock above a green valley with a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#FFEFC0",
+          "#6FA85A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the dry golden hills of "
+            },
+            {
+              "t": "Persia",
+              "tap": "persia"
+            },
+            {
+              "t": " lay a green valley."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A cold stream ran through it. Deer drank there, and gazelles, and a fox, and a slow old tortoise, and one small hare."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It would have been the best valley in the world, but for the "
+            },
+            {
+              "t": "Lion",
+              "name": "lion"
+            },
+            {
+              "t": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "A lion stands on a rock above a green valley with a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#FFEFC0",
+          "#6FA85A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every day the Lion stood on his rock and roared."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every day he chased the deer from the grass and the gazelles from the stream. He chased the fox. He even chased the tortoise, which was not hard."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nobody could eat in peace. Nobody could drink in peace. Nobody could even nap."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-council.unfolded.heic",
+          "alt": "The animals of the valley sit together under a great plane tree in the evening. A little hare sits in the long grass, thinking.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-council.folded.heic",
+          "alt": "A little hare sits thinking in the grass under a great plane tree.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEDD",
+          "#FFE6AE",
+          "#7FA650"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One evening the animals met under the great plane tree."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I have not finished a meal since spring,”",
+              "say": "tortoise",
+              "chip": true
+            },
+            {
+              "t": " said the "
+            },
+            {
+              "t": "Tortoise",
+              "name": "tortoise"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“We cannot fight him,”",
+              "say": "gazelle",
+              "chip": true
+            },
+            {
+              "t": " said the "
+            },
+            {
+              "t": "Gazelle",
+              "name": "gazelle"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“We cannot outroar him. But perhaps we can make a bargain with him.”",
+              "say": "gazelle"
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the long grass sat the little "
+            },
+            {
+              "t": "Hare",
+              "name": "hare"
+            },
+            {
+              "t": ". He said nothing. He only listened."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "A lion stands on a rock above a green valley with a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#FFEFC0",
+          "#6FA85A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So they all went to the foot of the Lion’s rock."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Great Lion,”",
+              "say": "gazelle",
+              "chip": true
+            },
+            {
+              "t": " said the Gazelle, "
+            },
+            {
+              "t": "“stay in your den. Every day, one of us will bring your dinner to you.”",
+              "say": "gazelle"
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion yawned. He liked chasing. But he liked resting more."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Agreed,”",
+              "say": "lion",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“But it must come every day. And it must never be late.”",
+              "say": "lion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "A lion stands on a rock above a green valley with a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#FFEFC0",
+          "#6FA85A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So it began. One day it was fish from the stream. The next day it was honey from the rocks. The Tortoise brought figs, and that took him from dawn to dark."
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The valley was quiet now. But was the Lion pleased? He was not."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“More!”",
+              "say": "lion",
+              "chip": true
+            },
+            {
+              "t": " he grumbled from his den. "
+            },
+            {
+              "t": "“Bigger! Sooner!”",
+              "say": "lion"
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And each day he said it a little louder."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-council.unfolded.heic",
+          "alt": "The animals of the valley sit together under a great plane tree in the evening. A little hare sits in the long grass, thinking.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-council.folded.heic",
+          "alt": "A little hare sits thinking in the grass under a great plane tree.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEDD",
+          "#FFE6AE",
+          "#7FA650"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then came the day it was the little Hare’s turn."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But the Hare did not set off. He sat under the plane tree and twitched his "
+            },
+            {
+              "t": "long ears",
+              "tap": "wild-hare"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Hurry, Hare!”",
+              "say": "gazelle",
+              "chip": true
+            },
+            {
+              "t": " said the Gazelle. "
+            },
+            {
+              "t": "“The sun is climbing. He will be so angry!”",
+              "say": "gazelle"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Good,”",
+              "say": "hare",
+              "chip": true
+            },
+            {
+              "t": " said the Hare. "
+            },
+            {
+              "t": "“I have a plan, and it needs an angry lion. Give me a little time.”",
+              "say": "hare"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "A lion stands on a rock above a green valley with a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#FFEFC0",
+          "#6FA85A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At noon the Hare hopped up to the rock, with empty paws.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion had been waiting since breakfast. His tummy growled. Then he growled."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Late!”",
+              "say": "lion",
+              "chip": true,
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " he roared. "
+            },
+            {
+              "t": "“Late, and nothing in your paws! Where is my dinner?”",
+              "say": "lion"
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Hare bowed so low that his ears touched the dust."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-valley.unfolded.heic",
+          "alt": "A green valley with a stream between dry golden hills. Deer, gazelles, a fox, a tortoise and a hare are by the water. A lion stands on a rock above them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-valley.folded.heic",
+          "alt": "A lion stands on a rock above a green valley with a stream.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFEFEA",
+          "#FFEFC0",
+          "#6FA85A"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“O King,”",
+              "say": "hare",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“I was bringing you a fine fat fish. But another lion stopped me on the road.”",
+              "say": "hare"
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Another lion?”",
+              "say": "lion",
+              "chip": true
+            },
+            {
+              "t": " said the Lion."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A big one,”",
+              "say": "hare",
+              "chip": true
+            },
+            {
+              "t": " said the Hare. "
+            },
+            {
+              "t": "“He said he was king of this valley. Then he took your dinner and ate it.”",
+              "say": "hare"
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion’s tail went stiff. "
+            },
+            {
+              "t": "“King? In my valley? ",
+              "say": "lion",
+              "chip": true
+            },
+            {
+              "t": "Show me!",
+              "say": "lion",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": "”",
+              "say": "lion"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hills.unfolded.heic",
+          "alt": "At noon a little hare leads a lion along a dusty path over dry hills, past grey rocks and tall dark cypress trees.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hills.folded.heic",
+          "alt": "A little hare hops along a dusty path with a lion close behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEF2",
+          "#FFE6B0",
+          "#D9A85C"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the Hare led the way, and the Lion stamped along behind."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Up the hot hills they went, past grey rocks and tall dark cypress trees. The dust puffed. The sun beat down."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Is it far?”",
+              "say": "lion",
+              "chip": true
+            },
+            {
+              "t": " puffed the Lion."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Not far, O King,”",
+              "say": "hare",
+              "chip": true
+            },
+            {
+              "t": " said the Hare. And he hopped a little faster."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-well.unfolded.heic",
+          "alt": "A lion leans over an old stone well in the dry hills, with a little hare at the rim beside his paw. In the water below, a lion and a hare look up.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-well.folded.heic",
+          "alt": "A lion and a little hare look down into an old stone well.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D4ECEF",
+          "#FFE2A6",
+          "#C99A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last they came to an old, deep "
+            },
+            {
+              "t": "well",
+              "tap": "well"
+            },
+            {
+              "t": ", with a ring of stones around it."
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Hare stopped. He began to shake, from his ears to his tail."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“He lives down there,”",
+              "say": "hare",
+              "chip": true
+            },
+            {
+              "t": " he whispered. "
+            },
+            {
+              "t": "“I am too afraid to look alone. Hold me, O King, and we will look together.”",
+              "say": "hare"
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the Lion picked him up in his paws."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-well.unfolded.heic",
+          "alt": "A lion leans over an old stone well in the dry hills, with a little hare at the rim beside his paw. In the water below, a lion and a hare look up.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-well.folded.heic",
+          "alt": "A lion and a little hare look down into an old stone well.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D4ECEF",
+          "#FFE2A6",
+          "#C99A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion leaned over the stones and looked down."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far below, in the dark round water, a lion looked up. And in his paws he held a small hare."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“So it is true!”",
+              "say": "lion",
+              "chip": true
+            },
+            {
+              "t": " roared the Lion. "
+            },
+            {
+              "t": "“Get out of my valley!”",
+              "say": "lion"
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And from deep in the well, a roar came back: my valley … valley … valley."
+            }
+          ]
+        },
+        {
+          "id": "s12-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nobody roars back at a lion."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-well.unfolded.heic",
+          "alt": "A lion leans over an old stone well in the dry hills, with a little hare at the rim beside his paw. In the water below, a lion and a hare look up.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-well.folded.heic",
+          "alt": "A lion and a little hare look down into an old stone well.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D4ECEF",
+          "#FFE2A6",
+          "#C99A5B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion dropped the Hare, and he leaped."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Splash!",
+              "fx": "pop",
+              "scale": 1.3
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The water was cold. The water was deep. And there was no other lion in it at all."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He scrambled up the rough stones, paw over paw, and flopped out onto the dust. His mane hung flat. He looked no bigger than a wet cat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-council.unfolded.heic",
+          "alt": "The animals of the valley sit together under a great plane tree in the evening. A little hare sits in the long grass, thinking.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-council.folded.heic",
+          "alt": "A little hare sits thinking in the grass under a great plane tree.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EEDD",
+          "#FFE6AE",
+          "#7FA650"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion did not roar. He crept away over the hills, dripping, and he never came back."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Hare skipped home to the green valley."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That evening the deer ate, the gazelles drank, and the Tortoise finished a whole meal, very slowly."
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And if you ever look down a well and a face looks up at you — wave. Do not roar."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

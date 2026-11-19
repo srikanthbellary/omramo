@@ -1,0 +1,182 @@
+# Iktomi and the Muskrat
+# Omramo retelling, Medium tier. Manuscript for the text-fidelity check.
+#
+# This is our own retelling, written for Omramo, of a Dakota Iktomi story. It is not the wording of any
+# earlier edition, and it is not a traditional telling by a Dakota storyteller.
+# Documented source: Zitkala-Sa (Gertrude Simmons Bonnin, Yankton Dakota), "Old Indian Legends" (1901),
+# chapter "Iktomi and the Muskrat". Project Gutenberg ebook #338, https://www.gutenberg.org/ebooks/338
+# (US public domain; the author died in 1938; other territories not verified).
+# The 1901 title word 'Indian' appears only in this citation, never in the story or the cards.
+# Source read: yes, through the Gutenberg mirror (gutenberg.pglaf.org/3/3/338/338.txt), as a summary;
+# the retelling was then written fresh. A source-check pass should still compare for echoes of her wording.
+# SOFTENED: in the source the muskrat drops a sharp bone into Iktomi's open throat and he almost chokes
+# to death. Here the bone bounces off his nose. In the source Iktomi also nearly chokes with fright at
+# the first greeting; here he nearly swallows his spoon.
+# LEFT OUT: the source's greeting word (a stereotype in English today); Iktomi saying he took the voice
+# for a spirit; the muskrat mocking him for carrying the weight; the description of Iktomi's face paint.
+# DEPARTS FROM THE SOURCE: (1) Race terms. Source: if Iktomi wins he need not share, if the muskrat wins
+# he gets half. Ours: the winner eats the fish. (2) Source: Iktomi drops the stone part-way and sprints.
+# Ours: he carries it all the way and drops it on his toe (invented comic beat). (3) Source: he peers
+# into the water and begs the reflection for a bone. Ours: he bends to drink and plunges an arm in.
+# (4) Source: he laments not sharing 'like a real Dakota'. Ours: 'as anybody should', because we did not
+# want to put a claim about who is a real Dakota into a trickster's mouth without advice. (5) The last
+# page (practising the sentence on the way home, forgetting it by morning) is our invention, not hers.
+# (6) 'Nobody had said which way to go' is our line; the source simply has the muskrat swim.
+# (7) Muskrat's line about his short legs and the muskrat lodge passage are ours (natural history).
+# KEPT FROM THE SOURCE: the lake, the wild rice, the large willow, the pot of boiled fish, the horn
+# spoon, the humming and drumming on the pot, the stone fetched from the far side of the lake and wrapped
+# in his blanket, the reflection, the tree, the bone, and the muskrat's closing advice (in our words).
+# CHANGED FROM THE EDITORIAL PLAN: the plan had a cottonwood; the source has a willow, so ours is a willow.
+# The plan started and ended the race at the fire, which leaves the muskrat nothing to swim across; as in
+# the source, the race now starts on the far side of the lake and ends at the pot.
+# FOR THE DAKOTA CONSULTANT - first question: may this story be published in an app that is read in
+# every season? Some Dakota and Lakota families tell Iktomi stories only in winter. CONTENT_PLAN 1.3
+# excludes narratives told only in a certain season; if that applies here, the story must be withdrawn
+# or handled as the consultant advises (for example a note on when such stories are told).
+# Check 2: the name and spelling 'Iktomi' (also written Unktomi / Inktomi in Dakota dialects), and the
+# spelling and use of 'Zitkala-Sa' with her English name.
+# Check 3: 'Dakota (Yankton)'. The Yankton (Ihanktonwan) are also called Western Dakota or Nakota;
+# which name should the app show? Is the map pin (43.0 N, 98.5 W, near Yankton land) acceptable?
+# Check 4: the narrator's sentence 'among the Dakota, when a visitor finds you eating, there is one right
+# thing to say'. The source calls it 'the custom of the plains people'. Is our wording true and welcome?
+# Check 5: the hospitality sentence itself, 'Sit beside me, my friend, and share my food' (our wording).
+# Check 6: card 'storyteller': the sentence 'some families tell them only on winter nights', and whether
+# to say it at all; that she wrote the stories down in 1901 so that all children could read them.
+# Check 7: card 'guest-custom': 'Being generous is still greatly honoured among the Dakota today.'
+# Check 8: card 'great-plains': the states named (South Dakota, North Dakota, Minnesota, Nebraska);
+# Dakota communities also live in Montana and in Canada. Should the card name them?
+# Check 9: Iktomi's character card: 'a spider trickster who can look like a man' (the source says
+# 'spider fairy'), and 'people laugh at him and learn'. Is 'trickster' the right English word?
+# Check 10: Iktomi is drawn as a man in deerskin, as the source describes. Is any drawing of him welcome?
+# The art brief leaves off the face paint the source describes and keeps beadwork to plain bands,
+# so that no real design is copied. Advise on paint, beadwork, hair and the red hair bands.
+# Check 11: 'He hummed a dance song': a detail from the source. Acceptable for a comic character?
+# Check 12: words used in English: moccasins, lodge (for the muskrat's house only), prairie, kit.
+# No Dakota-language word is used except the name Iktomi. No tipi is named in the text; the art brief
+# allows one plain tipi far off. Advise.
+# Check 13: wild rice at a prairie lake (from the source); the horn spoon (buffalo horn in the source).
+# Facts for an editor: muskrat lodges of cattails and mud with underwater entrances; a young muskrat
+# is a kit; western meadowlarks and willows on the northern plains.
+# SOURCE CHECK (18 Nov 2026, against Gutenberg #338 on the mirror): the first draft stayed close to her
+# wording in the race offer, the stone, the begging for a bone, the lament and the hospitality sentence.
+# All were reworded: the hospitality line is now ours ('Come and sit, my friend. There is plenty for two.'),
+# a paraphrase of the custom she states, not a quotation and not a Dakota formula. Consultant: check 4 and 5
+# above now refer to this wording. The lament is ours ('A pot shared is half a pot').
+# CORRECTION to departure (6): in the source the two agree to run on opposite sides of the lake, so the
+# muskrat's swim breaks the agreed course. Ours says nobody had said which way to go, so that he is not
+# cheating. Further departures: the source's fire is already out (ours smokes, and the smoke is the goal);
+# her muskrat says Iktomi is nimble as a deer; her stone is half-buried in the shallows; her lake is white;
+# the spoon left by the ashes, the mud and the mosquitoes are ours.
+# Status: DRAFT. Text review pending. Cultural review (required: Dakota consultant) pending.
+#
+# Generated by tools/build_stories.py from docs/content/story-specs/iktomi-and-the-muskrat.json; edit the spec,
+# not this file.
+#
+# Format: lines starting with "#" are notes and are not story text. One paragraph per line.
+# A blank line separates paragraphs; a "# --- page" note marks a page (spread) break.
+
+# Part I
+
+# --- page 1
+Iktomi sat by a prairie lake with a whole pot of fish.
+
+All around him the grass of the Great Plains ran out to the edge of the sky. Wild rice stood thick in the shallows, and an old willow leaned over the water.
+
+Iktomi was a trickster, who liked playing tricks far better than working. Meals did not come to him every day, but today he had more boiled fish than he could eat in two.
+
+He stirred it with his horn spoon. He sniffed the steam. He hummed a dance song, and he did not look up once.
+
+# --- page 2
+“Good day, my friend!” said a voice from the wild rice.
+
+Iktomi jumped so hard that he nearly swallowed his spoon. There at his elbow stood Muskrat, sleek and dripping, fresh from the lake.
+
+“Good day,” said Iktomi, and that was all he said.
+
+Now, among the Dakota, when a visitor finds you eating, you ask him to sit down and share the meal. “Come and sit, my friend. There is plenty for two.” Iktomi knew it as well as he knew his own name.
+
+Muskrat smiled and waited to be asked. Iktomi hummed louder and tapped time on the rim of the pot.
+
+# --- page 3
+Muskrat looked at his wet toes. The lake behind him seemed a very good place to be.
+
+Iktomi wanted every last fish for himself. He also wanted to look like the most generous fellow on the prairie.
+
+He put down his spoon. “My friend, I have a fine idea!” he cried. “We shall run a race, from the far side of the lake back to this fire, and the winner eats the fish.”
+
+“Race you?” said Muskrat. “You have long legs, and look at mine. They are no longer than your thumb.”
+
+“Then I will run with a heavy rock tied on my back,” said Iktomi grandly. “Nobody can call that unfair.”
+
+# --- page 4
+They walked round to the far side of the lake, where grey stones lay in the shallows. Iktomi chose the biggest, to show how fair he was.
+
+He spread out his blanket and rolled the stone into it. Muskrat pushed from below, Iktomi heaved from above, and up it went onto his back.
+
+“Light as a duck feather,” said Iktomi, with his knees shaking.
+
+Far across the water, a thin thread of smoke showed where the pot was waiting. The first to reach the fire would win.
+
+“Ready?” asked Muskrat politely. “Go!” shouted Iktomi, and he was off.
+
+# Part II
+
+# --- page 5
+The shore of the lake was much longer than it looked.
+
+Iktomi ran through mud that sucked at his moccasins. He ran through reeds that slapped his face. The stone went thump, thump, thump against his back, and the mosquitoes sang in both his ears.
+
+Halfway round he stopped to puff, and he looked across the water. Nothing moved on the other shore. No grass shook. No small brown runner hurried along it.
+
+“Poor fellow,” said Iktomi. “He is so slow that I cannot even see him. I shall eat one fish for him.”
+
+He laughed, hitched up his stone and ran on.
+
+# --- page 6
+But Muskrat was not on the other shore. Muskrat was not on any shore at all.
+
+Nobody had said which way to go, so he had slipped into the lake without a splash. Now he swam straight across the middle, with only his nose and whiskers showing.
+
+Out among the cattails stood his house, a round lodge of reeds heaped up in the water. He had dived and paddled here since he was a kit no bigger than a duck’s egg.
+
+A long V of ripples spread out behind him, and the thread of smoke grew nearer with every stroke.
+
+# --- page 7
+The afternoon was nearly gone when Iktomi staggered up to the willow tree.
+
+There lay the ashes, still warm. There lay his horn spoon. But there was no pot, no fish and no Muskrat.
+
+Iktomi let go of the blanket. Down came the stone, thump, right on his toe.
+
+He hopped round the ashes on one foot, howling. Then he sat down and held his toe in both hands.
+
+“He swam!” he groaned. “Of course he swam. And I carried a rock round a lake! A pot shared is half a pot. A pot raced for is no pot at all.”
+
+# --- page 8
+All that running had made him thirsty. He limped to the lake and bent down to drink.
+
+Then he stared. Down in the deep green water sat Muskrat, with the pot between his paws, picking a fish clean.
+
+“So that is where you are hiding!” cried Iktomi. He plunged in his arm up to the shoulder and caught a handful of cold water.
+
+Somebody laughed. The laugh came from over his head.
+
+Iktomi looked up. On a branch of the old willow sat the real Muskrat with the real pot. The one in the lake was only his picture in the water.
+
+# --- page 9
+“Muskrat! Dear, kind Muskrat!” called Iktomi. “Throw me down a little. One fish. Even one bone would do!”
+
+He tipped back his head and opened his mouth as wide as it would go.
+
+Muskrat chose a bone and dropped it with care. It hit Iktomi on the nose, plink, and fell in the grass. Iktomi was on his knees at once, hunting for it.
+
+Muskrat laughed until the branch shook. “Next time a friend comes while you are eating,” he said, “try saying this: ‘Come and sit, my friend. There is plenty for two.’ It is not hard.”
+
+# --- page 10
+Iktomi limped home across the prairie with an empty stomach and a toe as fat as a plum. Behind him, in the willow, Muskrat was scraping the pot.
+
+All the way he practised. “Come and sit, my friend. There is plenty for two,” he told a meadowlark on a grass stem. “Come and sit, my friend,” he told a grasshopper, and a grey stone, and the first pale star.
+
+By the time he reached home he had it perfectly. He lay down very pleased with himself.
+
+And by morning, the storytellers say, he had forgotten every word.

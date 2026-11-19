@@ -1,0 +1,502 @@
+{
+  "id": "khufu-and-the-magician",
+  "title": "King Khufu and the Magician",
+  "tier": "medium",
+  "region": {
+    "id": "egyptian",
+    "culture": "Ancient Egyptian tale",
+    "place": "Memphis and Giza, Egypt",
+    "label": "Ancient Egypt",
+    "pin": { "lat": 29.9, "lon": 31.2 },
+    "pinColor": "#F0A81C"
+  },
+  "setting": {
+    "period": "Ancient Egypt in the age of the pyramid builders, about 4,500 years ago",
+    "latestYear": -2500
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Egyptian tale (the Westcar Papyrus)",
+    "sources": [
+      {
+        "author": "W. M. Flinders Petrie",
+        "title": "Egyptian Tales, Translated from the Papyri, First Series",
+        "year": 1895,
+        "gutenbergId": 7386,
+        "url": "https://www.gutenberg.org/ebooks/7386",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of an ancient Egyptian tale from the Westcar Papyrus, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Egyptologist (accuracy read)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Egypt is a desert country with one great river, the Nile. People lived along its banks and travelled on it by boat: under sail with the north wind going upstream, by oar and current coming back.",
+      "factCards": ["nile", "river-boat", "pyramid-moment"]
+    },
+    "culture": {
+      "lesson": "King Khufu built the Great Pyramid at Giza as his tomb, about 4,500 years ago. Kings were told stories at court, and scribes wrote such stories on rolls of papyrus; this tale comes from one. Far away and much later the Maya also built pyramids, with no link to Egypt.",
+      "factCards": ["papyrus-roll", "pyramid-moment", "chichen-moment"]
+    },
+    "moral": {
+      "lesson": "The king has the power to order anything, and the old magician tells him no twice: once to protect a prisoner, once to keep what is not his to give. The king could punish him and chooses to listen. Power and right are two different things.",
+      "reflectionQuestion": "Dedi said no to the most powerful man in Egypt. Why do you think the king laughed instead of growing angry?"
+    }
+  },
+  "moral": "Being powerful does not make a thing right, and a wise king listens.",
+  "theme": {
+    "textColor": "#33210F",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A tiny white-haired old man with a staff stands before a king on a chair, with a cross-looking goose on the floor between them."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "khufu",
+      "name": "King Khufu",
+      "color": "#8A4A00",
+      "chipBackground": "#FFE9B8",
+      "faceAlt": "King Khufu.",
+      "card": {
+        "label": "Character · the king of Egypt",
+        "title": "King Khufu",
+        "traits": [
+          { "text": "Builds a pyramid", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Loves a good tale", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Used to hearing yes", "fill": "#FFE0D6", "ink": "#B33A1C" }
+        ],
+        "body": "He rules all Egypt, and nobody tells him no. He is waiting for his great tomb to be finished, and he is not good at waiting.",
+        "portraitAlt": "King Khufu on his chair in a white kilt and a broad bead collar, leaning forward with his chin on his fist.",
+        "background": ["#F6DFA6", "#E3B765", "#B9822F"]
+      }
+    },
+    {
+      "id": "dedi",
+      "name": "Dedi",
+      "color": "#0B6B4A",
+      "chipBackground": "#D9F5E4",
+      "faceAlt": "Dedi the magician.",
+      "card": {
+        "label": "Character · a very old magician",
+        "title": "Dedi",
+        "traits": [
+          { "text": "110 years old", "fill": "#D9F5E4", "ink": "#0B6B4A" },
+          { "text": "Reads papyrus rolls", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Can say no", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "He is tiny, cheerful and always hungry, and he never travels without his books. He speaks softly, even to a king, and he means what he says.",
+        "portraitAlt": "Dedi, a tiny smiling old man with short white hair, in a plain white kilt, leaning on a tall staff.",
+        "background": ["#CFEBDD", "#8CC9B4", "#4A9A8A"]
+      }
+    },
+    {
+      "id": "prince",
+      "name": "Hordedef",
+      "color": "#1B4F86",
+      "chipBackground": "#DCE9FA",
+      "faceAlt": "Prince Hordedef."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "pyramid-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "great-pyramid-giza",
+        "appearance": "natural"
+      },
+      "background": "#5A3A1C"
+    },
+    {
+      "id": "chichen-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "chichen-itza",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Far away across the ocean, and thousands of years later, a different people, the Maya, also built pyramids of stone. The Maya and the Egyptians never met; each had the idea on their own."
+        }
+      },
+      "background": "#1F4A3A"
+    },
+    {
+      "id": "nile",
+      "kind": "place",
+      "title": "The Nile",
+      "line": "A very long river that flows north through the desert of Egypt to the sea.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Almost everyone in ancient Egypt lived beside the Nile, because the land away from it was dry desert. The king’s city of Memphis and the pyramids of Giza both stood near its west bank."
+      },
+      "pictureAlt": "A wide blue-green river with a strip of green fields and palm trees on each bank and pale desert beyond.",
+      "background": "#1F4F5C"
+    },
+    {
+      "id": "river-boat",
+      "kind": "object",
+      "title": "River boat",
+      "line": "A long wooden boat with one tall sail and many oars, for travelling on the Nile.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "In Egypt the wind blows mostly from the north, and the Nile flows from the south. So people sailed up the river with the wind, and rowed or drifted back down with the water."
+      },
+      "pictureAlt": "A long wooden river boat with upturned ends, one tall sail and a row of oars, on calm water.",
+      "background": "#1B3A5C"
+    },
+    {
+      "id": "papyrus-roll",
+      "kind": "object",
+      "title": "Papyrus roll",
+      "line": "A long sheet for writing, made from river reeds and rolled up to keep it safe.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Egyptian scribes wrote on papyrus in black and red ink. This story of Khufu and Dedi comes from one such roll, written about 3,600 years ago and kept today in a museum in Berlin."
+      },
+      "pictureAlt": "A half-unrolled papyrus roll with rows of small dark marks, beside a scribe’s wooden palette with black and red ink.",
+      "background": "#5A4A1C"
+    }
+  ],
+  "scenes": {
+    "scene-court": {
+      "unfoldedAlt": "The king’s hall of slim painted columns, open on one side to a pale hot sky and the river. On the right King Khufu sits on his chair with his sons standing before him.",
+      "foldedAlt": "King Khufu on his chair between two painted columns, with a prince standing before him.",
+      "fallbackColors": ["#F7EDD3", "#EDD9A6", "#C9A566"]
+    },
+    "scene-river": {
+      "unfoldedAlt": "A long river boat with a tall sail and rowers on the pale blue-green Nile under a wide pale sky. On the right bank, among palms and mud-brick houses, a tiny old man lies on a couch at his door.",
+      "foldedAlt": "Old Dedi on a couch of palm sticks at his door, with the prince’s boat on the river behind him.",
+      "fallbackColors": ["#E2F0EC", "#F6E8BC", "#6FA79B"]
+    },
+    "scene-magic": {
+      "unfoldedAlt": "The king’s hall seen from another side, with pale sunlit wall and floor on the left. On the right small white-haired Dedi lifts his staff over a cross-looking goose while King Khufu leans forward, astonished.",
+      "foldedAlt": "Dedi with his staff raised and a cackling goose at his feet, with the astonished king behind.",
+      "fallbackColors": ["#F9F0DA", "#F0DBA4", "#BC8E52"]
+    },
+    "scene-pyramid": {
+      "unfoldedAlt": "A pale-gold late afternoon over green fields and a harbour basin. On the right King Khufu and Dedi stand on a terrace, looking at the half-built great pyramid with its long ramp and tiny workers.",
+      "foldedAlt": "King Khufu and tiny Dedi side by side on a terrace, seen from behind, with the half-built pyramid beyond them.",
+      "fallbackColors": ["#FBEBC4", "#F3D194", "#C89B58"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-court",
+      "part": "part-1",
+      "paras": [
+        "^<name:khufu>King Khufu</name> was building the biggest tomb in the world.",
+        "It was a stone pyramid on the rock at Giza, and only half done. Day after day the king’s <tap:pyramid-moment>great tomb</tap> swallowed stone, and still it wanted more.",
+        "The king could only wait, and waiting made him cross. Each afternoon he sat in his cool hall of columns and called for his sons.",
+        "<say:khufu*>“Tell me a tale of wonders,”</say> he said.",
+        "One son told of a magician who folded a lake in half like a blanket. Another told of a wax crocodile that came alive. The king yawned. Those magicians had all died long ago."
+      ]
+    },
+    {
+      "scene": "scene-court",
+      "part": "part-1",
+      "paras": [
+        "Then <name:prince>Prince Hordedef</name> stood up. He was the quiet son, the one who was always reading.",
+        "<say:prince*>“Those are old tales, Father,”</say> he said. <say:prince>“Nobody alive saw them happen. I know of a magician who is living today.”</say>",
+        "The king stopped yawning.",
+        "<say:prince*>“His name is <name:dedi>Dedi</name>, and he is a hundred and ten years old. Every day he eats five hundred loaves and drinks a hundred jugs of beer. A lion follows him about like a dog, and nobody needs to hold its lead. People say that if a head is cut off, he can put it back.”</say>",
+        "<say:khufu*>“Five hundred loaves?”</say> said the king."
+      ]
+    },
+    {
+      "scene": "scene-court",
+      "part": "part-1",
+      "paras": [
+        "<say:prince*>“There is one thing more,”</say> said the prince. <say:prince>“Dedi knows about the secret rooms of Thoth.”</say>",
+        "Now the king sat up straight. The Egyptians said that Thoth was the god of wisdom and of writing, and that his temple held secret rooms no one could find. Khufu had hunted for their plan for years. He wanted rooms just like them inside his own tomb.",
+        "<say:khufu*>“Go yourself, my son,”</say> said the king. <say:khufu>“Take my best boat up the <tap:nile>Nile</tap> and bring this Dedi to me.”</say>",
+        "Before the sun went down, the sailors were loading the boats."
+      ]
+    },
+    {
+      "scene": "scene-river",
+      "part": "part-1",
+      "paras": [
+        "The prince’s <tap:river-boat>river boat</tap> went south with the wind in its big square sail. Mud-brick villages and palm trees slid by.",
+        "He found <name:dedi>Dedi</name> at his door, lying in the shade on a bed of palm ribs, while two servants rubbed the aches out of his head and his feet.",
+        "The prince bowed low. <say:prince*>“May your old age be long and free of aches. My father the king invites you to his table.”</say>",
+        "<say:dedi*>“Welcome, king’s son,”</say> said Dedi, holding out his hands to be pulled up. <say:dedi>“I will come. But my books come too.”</say>",
+        "So Dedi sailed in the prince’s boat, and his books sailed behind."
+      ]
+    },
+    {
+      "scene": "scene-court",
+      "part": "part-2",
+      "paras": [
+        "^Dedi walked into the hall of columns leaning on his staff.",
+        "He was as small as a boy and as wrinkled as a dried fig. Behind him came two servants with a chest of <tap:papyrus-roll>papyrus rolls</tap>.",
+        "<say:khufu*>“So you are Dedi. Why have you never come to my court?”</say> asked <name:khufu>King Khufu</name>.",
+        "<say:dedi*>“Nobody ever sent for me, my lord,”</say> said Dedi. <say:dedi>“Today somebody did, and here I am.”</say>",
+        "The king leaned forward. <say:khufu*>“Is it true that you can put back a head that has been cut off?”</say> <say:dedi*>“I know how it is done, my lord,”</say> said Dedi."
+      ]
+    },
+    {
+      "scene": "scene-magic",
+      "part": "part-2",
+      "paras": [
+        "<say:khufu*>“Then we shall see it,”</say> said the king. He clapped his hands. <say:khufu>“Fetch a prisoner from the prison.”</say>",
+        "The guards turned to go. Nobody ever said no to Khufu.",
+        "<say:dedi*>“Not a person, my lord king,”</say> said Dedi quietly. <say:dedi>“A herdsman would not do that to his oxen. It is not right.”</say>",
+        "The fan-bearers forgot to fan. The king could have ordered it with one word. He looked a long time at the small old man, and the small old man looked back.",
+        "<say:khufu*>“Bring a goose,”</say> said King Khufu."
+      ]
+    },
+    {
+      "scene": "scene-magic",
+      "part": "part-2",
+      "paras": [
+        "The goose came in under a servant’s arm, hissing at everybody.",
+        "It was done behind a cloth, quick as a blink. Then the goose’s body lay at the west side of the hall, and its head lay at the east side, looking most offended.",
+        "Dedi lifted his staff and spoke words that no one else knew.",
+        "The body got up and <pop:1.3>waddled</pop>. The head went hop, hop, hop across the floor. They met in the middle, and there stood one whole goose, cackling crossly at the king.",
+        "The court gasped, and then it laughed."
+      ]
+    },
+    {
+      "scene": "scene-magic",
+      "part": "part-2",
+      "paras": [
+        "When the hall was quiet again, the king asked what he had wanted to ask all along.",
+        "<say:khufu*>“Now, Dedi. The secret rooms of Thoth. How many are there?”</say>",
+        "<say:dedi*>“Forgive me, my lord. I do not know the number,”</say> said Dedi. <say:dedi>“I only know where the answer is kept. It lies in a chest of flint, in a temple in the City of the Sun.”</say>",
+        "<say:khufu*>“Then bring the chest to me.”</say>",
+        "Dedi shook his white head. <say:dedi*>“It is not mine to bring, my lord. Not even for a king.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-magic",
+      "part": "part-2",
+      "paras": [
+        "Twice in one afternoon the old man had said no.",
+        "The princes stared at the floor. The goose, for once, kept quiet. King Khufu frowned until his eyebrows met. Then, slowly, he began to laugh.",
+        "<say:khufu*>“I have a hundred men who say yes to everything,”</say> he said. <say:khufu>“I had better keep the one who says no.”</say>",
+        "He gave his orders. Dedi was to live in <name:prince>Prince Hordedef</name>’s house. Every day he was to have an ox, a thousand loaves, a hundred jugs of beer and a hundred bunches of onions.",
+        "<say:dedi*>“The onions are a kind thought,”</say> said Dedi."
+      ]
+    },
+    {
+      "scene": "scene-pyramid",
+      "part": "part-2",
+      "paras": [
+        "Late that afternoon the king and the magician stood on the palace terrace.",
+        "Beyond the green fields, the half-built <tap:chichen-moment>pyramid</tap> caught the last light. Tiny men hauled a stone up its long ramp, singing as they pulled.",
+        "<say:khufu*>“Year after year of stone, and still no top,”</say> said Khufu. <say:khufu>“Could your words finish it by morning, Dedi?”</say>",
+        "<say:dedi*>“Some things are better made by many hands, my lord,”</say> said Dedi. <say:dedi>“Besides, I have a thousand loaves to eat.”</say>",
+        "The king laughed. Down in the courtyard a goose was still complaining to anyone who would listen. And far off, one more stone slid into its place."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "great-pyramid-giza",
+      "name": "Great Pyramid of Giza",
+      "era": "ancient",
+      "built": {
+        "from": -2600,
+        "to": -2560,
+        "circa": true,
+        "note": "Built as the tomb of King Khufu. The dates are approximate: Egyptologists place his reign within a few decades of these years."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Egypt",
+      "place": "Giza, Egypt",
+      "coordinates": { "lat": 29.979, "lon": 31.134 },
+      "region": "egyptian",
+      "lists": ["ancientSeven"],
+      "factCards": {
+        "low": {
+          "line": "A huge pyramid of pale stone blocks in the desert, with four sides that meet in a point."
+        },
+        "medium": {
+          "line": "A stone pyramid at Giza in Egypt, built about 4,500 years ago as the tomb of King Khufu.",
+          "note": "It is made of about two million stone blocks. Of the Seven Wonders of the Ancient World, it is the only one still standing."
+        },
+        "advanced": {
+          "line": "For more than 3,000 years this pyramid, once about 146 metres high, was the tallest building in the world.",
+          "note": "How we know who built it: in 2013 papyrus diaries were found by the Red Sea, kept by a man named Merer, whose crew shipped white limestone to Giza for Khufu’s pyramid."
+        }
+      },
+      "art": {
+        "file": "art/great-pyramid-giza.heic",
+        "alt": "A great pyramid of pale stone under a clear sky, with two more pyramids behind it and tiny people at its foot.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3A1C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). An ancient monument long out of any copyright; the general freedom-of-panorama check of CONTENT_PLAN 6.6 still applies.",
+      "review": { "facts": "pending", "art": "pending" }
+    },
+    {
+      "id": "chichen-itza",
+      "name": "Chichén Itzá",
+      "era": "medieval",
+      "built": {
+        "from": 600,
+        "to": 1200,
+        "circa": true,
+        "note": "The years in which the Maya city grew. Its great step pyramid, El Castillo, was built late in that time, about 1,000 years ago; the exact dates are to verify."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Mexico",
+      "place": "Yucatán, Mexico",
+      "coordinates": { "lat": 20.683, "lon": -88.569 },
+      "lists": ["new7Wonders"],
+      "factCards": {
+        "low": {
+          "line": "A grey stone pyramid with big steps on every side and a small square temple on top."
+        },
+        "medium": {
+          "line": "A step pyramid in the old Maya city of Chichén Itzá in Mexico, built about 1,000 years ago.",
+          "note": "The Maya built it. Maya people live today in Mexico and Central America, and many speak Mayan languages."
+        },
+        "advanced": {
+          "line": "Each of its four stairways has 91 steps; with the platform on top that makes 365, one for every day of the year.",
+          "note": "A smaller, older pyramid is hidden inside it. It was built about 3,500 years after the pyramids of Egypt, by people who had never heard of Egypt."
+        }
+      },
+      "art": {
+        "file": "art/chichen-itza.heic",
+        "alt": "A grey stone step pyramid with nine terraces, a stairway up the middle of each side and a square temple on top, on a green lawn with forest behind.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1F4A3A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). To check in that review: whether the heritage authority of Mexico authority (INAH) sets conditions on commercial images of the site, and the general freedom-of-panorama point of CONTENT_PLAN 6.6.",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of an ancient Egyptian tale: the fourth story of the",
+    "Westcar Papyrus (Papyrus Berlin 3033), in which Prince Hordedef brings the magician Dedi to King Khufu.",
+    "It is not the wording of any earlier edition or translation.",
+    "Documented source: W. M. Flinders Petrie, \"Egyptian Tales, Translated from the Papyri, First Series\"",
+    "(1895; the Gutenberg text is the 1899 second edition), \"Tales of the Magicians\", Hordedef's Tale,",
+    "Project Gutenberg ebook #7386, https://www.gutenberg.org/ebooks/7386",
+    "(US public domain; other territories not verified).",
+    "Source read: yes, through the mirror gutenberg.pglaf.org/7/3/8/7386/7386.txt, as a detailed summary",
+    "made for the writer; the retelling was then written without the translator's sentences in view.",
+    "Names follow Petrie: Dedi (modern books: Djedi), Hordedef (Hardjedef, Djedefhor). We say Thoth where",
+    "Petrie says Tahuti, because Thoth is the name children will meet elsewhere.",
+    "Softened: the beheading is done behind a cloth in one sentence, with no blood, and reads as stage magic.",
+    "The king's order for a prisoner keeps no mention of the man's punishment.",
+    "Left out: the prophecy of the three children of Rud-didet who will be kings (CONTENT_PLAN M2 note),",
+    "so here Dedi only says the chest is not his to bring; the prince's gold-and-ebony carrying chair;",
+    "the long formal greetings about old age and burial; Dedi's side of beef; the duck and the ox",
+    "(the source restores a duck, then a goose, then an ox; we keep the goose alone).",
+    "Departs from Petrie: he has a chest of 'whetstone' in a 'plan-room' at Heliopolis; we follow later",
+    "translations (flint) and call Heliopolis 'the City of the Sun'. Petrie has Dedi on a palmstick couch",
+    "(kept); later translations say a mat. Dedi's refusal in the source is 'not a man; we do not do so even",
+    "to our cattle'; our 'It is not right' is added. The king's hard look, his laugh and his line about",
+    "men who say yes are our invention: in the source he simply sends for a bird. The source does not say",
+    "the king was bored, nor that Hordedef was a reader (later Egyptian tradition did remember him as a sage).",
+    "The two tales the other sons tell (the folded lake, the wax crocodile) are the earlier Westcar tales.",
+    "Page 10 (the terrace, the pyramid, the closing talk) is our invention and frames the tale.",
+    "Plan correction: the plan put the pyramid 'across the river' from a hall at Memphis. Memphis and Giza",
+    "are both on the west bank, about 20 km apart, so the text names no city for the palace and says",
+    "'beyond the green fields'. The 'nile' card mentions Memphis. Reviewer: is a palace near Giza acceptable?",
+    "Reviewer to check: what 'the secret rooms of Thoth' should be (Petrie: 'the designs of the dwelling of",
+    "Tahuti', a phrase he calls uncertain; our 'his temple held secret rooms' is a simplification);",
+    "Thoth as 'god of wisdom and of writing'; the Westcar roll as about 3,600 years old and kept in Berlin;",
+    "fan-bearers, a chest for rolls and work songs in the Old Kingdom; sailing south with the north wind;",
+    "landmark facts: about two million blocks, about 146 m, tallest building for over 3,000 years, the Merer",
+    "papyri (Wadi al-Jarf, 2013); El Castillo's 91 steps a side, the inner pyramid, and its date.",
+    "SOURCE CHECK (18 Nov 2026, against Gutenberg #7386 on the mirror): several lines of the first draft were",
+    "close to Petrie's rendering of the papyrus (the king's first question and Dedi's answer, the couch and the",
+    "servants, the lion's halter, the cattle, the list of rations). They were reworded; the facts of the tale",
+    "stay (110 years, 500 loaves, 100 jugs, the lion, the ox, 1,000 loaves and 100 bunches of onions).",
+    "Further departures from Petrie: he tells the west side / east side placing of the duck, ours of the goose;",
+    "his order of the earlier tales is the wax crocodile, then the lake (ours reversed); he states Dedi's",
+    "powers as fact (ours: 'people say'); Dedi's size, wrinkles and staff are ours; the bored king of the",
+    "papyrus is Seneferu in another son's tale, not Khufu.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Egyptologist (accuracy read)) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#33210F",
+      "shade": "#9A6B34",
+      "mid": "#D9B36A",
+      "light": "#F8EED6",
+      "glow": "#FFE2A0",
+      "accent": "#2F8F8A",
+      "mood": "Sand gold and limestone white under a pale hot sky, with small cool notes of lotus blue-green and Nile water; dry, bright, still and a little hazy. Quieter than the Low stories."
+    },
+    "light": "High pale daylight in the hall and on the river, one warm light from the upper left in every picture. The pyramid scene is a late PALE-gold afternoon, never sunset red and never night. Every scene keeps a pale sky or a pale sunlit wall behind the words, because the text is dark.",
+    "world": [
+      "Old Kingdom Egypt, Fourth Dynasty, about 2550 BCE. This is a thousand years before Tutankhamun and Ramesses: nothing New Kingdom may appear.",
+      "The palace is of whitewashed mud brick with a flat roof, not stone. The hall has slim painted wooden columns with simple palm-leaf or lotus-bud tops, or plain square pillars; reed mats on the floor; one side open to sky and river. No giant carved temple columns, no painted battle walls.",
+      "Dress: men wear a plain white linen kilt to the knee, bare chest, bare feet or simple sandals; short black wigs or cropped black hair; broad bead collars in blue-green, red and gold for the court. Skin warm red-brown. Servants and rowers wear a short plain kilt only.",
+      "The king's chair is a low-backed wooden throne with lion-paw legs on a low platform. Fan-bearers hold long-handled fans or sunshades of feathers or palm leaf.",
+      "River boats: long wooden hulls with ends that curve up, a tall narrow sail on a two-legged (A-shaped) mast, steering oars at the stern, a row of oarsmen, a small light cabin of matting. No wheel, no rudder, no triangular lateen sail (that is thousands of years later).",
+      "The river bank: date palms, papyrus reeds, green fields of barley and flax in a narrow strip, then pale desert and low cliffs at once. Villages of small flat-roofed mud-brick houses. Long-horned cattle, donkeys, ducks and geese.",
+      "The goose is a white-fronted goose like those in the famous Old Kingdom painting of the geese of Meidum: grey-brown body, barred flanks, a white patch above an orange-pink bill, orange legs. It is always whole in every picture, and always cross.",
+      "Papyrus rolls are pale tan, tied with a cord, kept in a small wooden chest. A scribe's palette is a narrow wooden slat with two round cakes of ink, black and red. Any writing is rows of small plain marks only: never invent readable hieroglyphs.",
+      "Food for Dedi's rations: conical and round loaves, tall red clay beer jars with mud stoppers, bunches of green onions.",
+      "The pyramid in scene-pyramid is HALF BUILT: the lower part cased in smooth white limestone, rough steps above, no top; one long straight ramp of rubble and mud brick; tiny workers hauling a block on a wooden sledge with ropes. The workers are paid crews, not slaves: no whips, no chains. No Sphinx and no second or third pyramid yet (they come after Khufu). No wheels, pulleys or cranes.",
+      "The pyramid stands on the desert edge on the SAME side of the river as the palace: between them are green fields and a harbour basin or canal, not the whole Nile.",
+      "Avoid: horses, chariots, camels, the blue-and-gold striped Tutankhamun mask look, cobra-and-vulture crown overload, Cleopatra, mummies, cats as props, eye-of-Horus decoration everywhere, obelisks, palm-tree-and-three-pyramids postcard views in the scenes. Thoth appears nowhere as a figure (no ibis-headed god, no baboon). Chichen Itza never appears in any scene."
+    ],
+    "characters": {
+      "khufu": "A solid, broad-faced man of middle age with heavy dark eyebrows that can meet in a frown, clean-shaven or with the small straight royal chin beard. White linen kilt, a broad bead collar, and a plain headcloth with simple stripes or a plain close cap with a thin gold band. Signature detail: he leans forward on his chair, chin on his fist, bored or keen. Grand, a little comic, never cruel.",
+      "dedi": "A tiny, cheerful, very old man, as small as a boy, deeply wrinkled, with short white hair and white eyebrows, thin arms and legs, bright eyes. A plain white kilt, no jewels. Signature detail: a plain wooden staff taller than he is, and a calm small smile.",
+      "prince": "A slim, quiet young man with a short black wig, white kilt and a narrower bead collar than his father's. Signature detail: a papyrus roll tucked under one arm."
+    },
+    "scenes": {
+      "scene-court": {
+        "unfolded": "Far: a pale hot sky and a thin line of river and palms seen through the open side of the hall. Middle: slim painted columns, widely spaced. Near, on the trailing (right) half: King Khufu on his chair on a low platform, two or three sons standing before him, Prince Hordedef a step forward; a fan-bearer behind. The leading (left) pane's upper two thirds are open pale sky between two columns, calm for the words.",
+        "folded": "King Khufu's face and shoulders in the middle, between two columns, leaning forward on his fist; the prince's head and shoulder low at one side; pale sky above for the words."
+      },
+      "scene-river": {
+        "unfolded": "Far: a wide pale sky and a low line of pale desert cliffs. Middle: the blue-green Nile across both panes, with the prince's boat under its tall sail, rowers resting. Near, on the trailing (right) half: the bank with date palms, a small mud-brick house and Dedi stretched on a low couch of palm sticks at the door, a servant at his feet. The leading pane's upper two thirds are open pale sky above the water.",
+        "folded": "Dedi on his couch in the middle, propped on one elbow and smiling, the doorway behind him, the boat's sail small on the river at one side, pale sky above."
+      },
+      "scene-magic": {
+        "unfolded": "The same hall from the other side, looking toward a pale sunlit plastered wall, so the upper left is a calm cream wall with one soft column shadow. Near, on the trailing (right) half: Dedi, tiny, with his staff lifted; the goose standing whole on the reed mat before him, neck up, cackling; King Khufu half risen from his chair, astonished; two courtiers with hands to their mouths. A folded linen cloth lies on the floor. No blade, no blood, no separate head or body anywhere.",
+        "folded": "Dedi in the middle with his staff raised, the goose at his feet with its bill open, and the king's astonished face behind his shoulder; pale wall above for the words."
+      },
+      "scene-pyramid": {
+        "unfolded": "Late pale-gold afternoon, the sky a soft cream-gold, never dark. Far, low on the leading (left) pane and reaching toward the middle: the half-built pyramid on the desert edge, small and hazy, white below and stepped above, with its long ramp and dots of workers. Middle: green fields and a harbour basin with a few moored boats. Near, on the trailing (right) half: a whitewashed terrace with a low wall; King Khufu and tiny Dedi side by side, seen from behind or in profile, looking out. The leading pane's upper two thirds are open pale-gold sky above the small far pyramid.",
+        "folded": "The king and Dedi from behind in the middle, one tall and broad, one tiny with his staff, the half-built pyramid small between them in the distance, pale-gold sky above."
+      }
+    },
+    "pictures": {
+      "nile": "One centred view looking down on a curve of blue-green river with a narrow green strip and palms on each bank and pale desert at both edges.",
+      "river-boat": "One centred Old Kingdom river boat in side view: curved-up ends, a two-legged mast with a tall narrow sail, a row of oars, a steering oar at the stern, on calm water.",
+      "papyrus-roll": "One centred half-unrolled papyrus roll with rows of small plain marks, a scribe's narrow wooden palette with a black and a red ink cake lying beside it."
+    },
+    "portraits": {
+      "khufu": "Half figure on his chair, leaning forward with his chin on his fist and one eyebrow up, bead collar bright against the white linen; warm sand-gold light behind.",
+      "dedi": "Half figure, tiny and smiling, both hands folded on top of his tall staff, short white hair, a papyrus roll tucked in his belt; soft blue-green light behind."
+    },
+    "cover": "Dedi, tiny, with his staff, standing calmly in the middle before King Khufu on his chair, the whole cross goose on the floor between them looking up at the king; slim columns and pale sky behind.",
+    "landmarks": {
+      "great-pyramid-giza": "Our own drawing of the Great Pyramid as it stands today, by day: pale weathered stone in visible courses, a clear sky, the two other Giza pyramids smaller behind it, a few tiny people at its foot for scale, pale sand. No photograph traced.",
+      "chichen-itza": "Our own drawing of El Castillo at Chichen Itza by day: a grey limestone step pyramid of nine terraces, one broad stairway up the middle of each visible side, a square temple on top, a flat green lawn in front and low green forest behind, under a clear sky. No people climbing. No photograph traced."
+    }
+  }
+}

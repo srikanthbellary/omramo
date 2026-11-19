@@ -1,0 +1,495 @@
+{
+  "id": "the-griots-apprentice",
+  "title": "The Griot’s Apprentice",
+  "tier": "advanced",
+  "region": {
+    "id": "african",
+    "culture": "Mande (Mandinka / Malinke)",
+    "place": "Djenné, inland Niger Delta, Mali",
+    "label": "Mande · Mali",
+    "pin": { "lat": 13.9, "lon": -4.6 },
+    "pinColor": "#FFA41C"
+  },
+  "setting": {
+    "period": "The Mali Empire, about 700 years ago",
+    "latestYear": 1350
+  },
+  "provenance": {
+    "kind": "original",
+    "credit": "Original story written by us (Omramo)",
+    "premise": "In the Mali Empire, a girl learning to be a jeli, a singer of history, is sent to sing a rich merchant’s family history at a feast in Djenné. The merchant has paid her grandfather to leave out a shameful part, and she must decide what a keeper of memory owes to the truth.",
+    "rights": "Original text written for Omramo. No traditional or sacred narrative is used, and nothing of the Sunjata epic is retold. A Mande cultural consultant, ideally from a jeli family and ideally a co-author, is sought for names, customs and words (CONTENT_PLAN CQ4)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "A living tradition: jeliya (the griot’s art) belongs to Mande families today. An original story must be accurate about the jeli’s duties, music, names, dress and Djenné; ideally co-written.",
+    "community": "Mande cultural consultant, ideally from a jeli (griot) family",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The River Niger rises in the hills of Guinea, swings north to the edge of the Sahara and back south again. Each year its floods spread over a wide inland delta in Mali, where Djenné stands on an island of high ground.",
+      "factCards": ["river-niger", "salt-and-gold", "mosque-moment"]
+    },
+    "culture": {
+      "lesson": "In Mande families a jeli, often called a griot, keeps the history of families and of the people in song and speech, learned by ear from older jeliw. Jeliw still sing at namings and weddings in Mali, Guinea, Senegal and The Gambia today.",
+      "factCards": ["jeli", "balafon"]
+    },
+    "moral": {
+      "lesson": "Sira’s grandfather took the merchant’s gold because he was old and afraid; Sira must choose between the gold and the truth in front of a whole courtyard. Telling the truth costs her and him something real, and it gives a poor family back its place in a story.",
+      "reflectionQuestion": "Sira’s grandfather took the gold and then sent Sira to sing. Was he being a coward, or was he trusting her? What would you have sung?"
+    }
+  },
+  "moral": "Tell the truth, even when a powerful person would pay you to keep quiet.",
+  "theme": {
+    "textColor": "#2A1A10",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A girl of about twelve in an indigo wrap and head-wrap stands singing in a mud-brick courtyard at golden evening, one hand raised, while a boy plays a wooden balafon beside her and guests on mats look up."
+  },
+  "parts": [
+    { "id": "part-1", "title": "The Apprentice" },
+    { "id": "part-2", "title": "The Feast" },
+    { "id": "part-3", "title": "The Truth" }
+  ],
+  "characters": [
+    {
+      "id": "apprentice",
+      "name": "Sira",
+      "color": "#2F3F86",
+      "chipBackground": "#DCE2F7",
+      "faceAlt": "Sira.",
+      "card": {
+        "label": "Character · a jeli’s apprentice",
+        "title": "Sira",
+        "traits": [
+          { "text": "Born a jeli","fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Never forgets a name", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Afraid, and sings anyway", "fill": "#FFE0D6", "ink": "#B33A1C" }
+        ],
+        "body": "She has spent half her life learning other families’ histories by heart, seven generations deep. At twelve she must decide whether a history can be sold.",
+        "portraitAlt": "A girl of about twelve with braided hair under an indigo head-wrap, in a white and indigo cotton wrap, standing very straight with her chin up against a pale ochre wall.",
+        "background": ["#3A4A8A", "#2A2F5E", "#1A1A38"]
+      }
+    },
+    {
+      "id": "grandfather",
+      "name": "Grandfather",
+      "color": "#7A3A12",
+      "chipBackground": "#FBE3C4",
+      "faceAlt": "Sira’s grandfather.",
+      "card": {
+        "label": "Character · a great jeli, grown old",
+        "title": "Jeli Madi",
+        "traits": [
+          { "text": "Keeper of seven families", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Losing his voice", "fill": "#E6E1F5", "ink": "#4A3A86" },
+          { "text": "Ashamed of the gold", "fill": "#FFE0D6", "ink": "#B33A1C" }
+        ],
+        "body": "For fifty years his voice filled courtyards from Djenné to the river towns. Now it cracks after a few lines, and he has made one bargain he cannot sing his way out of.",
+        "portraitAlt": "An old man with a short white beard in a wide white cotton robe and a white cap, sitting cross-legged on a mat, one thin hand resting on the keys of a balafon.",
+        "background": ["#8A5A2A", "#5A3218", "#2E1A0C"]
+      }
+    },
+    {
+      "id": "merchant",
+      "name": "Bakary",
+      "color": "#5A2A6E",
+      "chipBackground": "#EEDDF3",
+      "faceAlt": "Bakary the merchant."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "jeli",
+      "kind": "idea",
+      "title": "Jeli",
+      "line": "A jeli, often called a griot, keeps the history of families and peoples in song and speech.",
+      "cultureNote": {
+        "label": "From the Mande",
+        "text": "The jeli’s art passes down inside jeli families, from parent or grandparent to child, by ear and by heart. Jeliw (the plural) still sing at weddings and namings across West Africa today, and they still sing of Sunjata, the founder of Mali."
+      },
+      "pictureAlt": "An old singer in a wide white robe, standing with one hand lifted and his mouth open in song.",
+      "background": "#5A3218"
+    },
+    {
+      "id": "river-niger",
+      "kind": "place",
+      "title": "The River Niger",
+      "line": "One of Africa’s great rivers, flowing more than 4,000 kilometres through West Africa to the sea.",
+      "cultureNote": {
+        "label": "From Mali",
+        "text": "The Niger bends north to the edge of the Sahara near Timbuktu, then turns south again. In Mali it spreads into a wide inland delta that floods every year, and Djenné stands on high ground there, an island when the water is up."
+      },
+      "pictureAlt": "A long, narrow wooden boat poled across a wide, pale brown river under a hazy sky.",
+      "background": "#2E4A5A"
+    },
+    {
+      "id": "balafon",
+      "kind": "object",
+      "title": "Balafon",
+      "line": "A wooden xylophone with round gourds hung beneath its keys to make each note ring out.",
+      "cultureNote": {
+        "label": "From the Mande",
+        "text": "The Mande say their oldest balafon, the Sosso Bala, is still kept today by a jeli family in a village in Guinea. The kora, a harp with a gourd body, is just as famous, but nobody is sure how old it is."
+      },
+      "pictureAlt": "A balafon of pale wooden keys on a curved frame, with a row of round gourds of different sizes hanging underneath.",
+      "background": "#6A3A1A"
+    },
+    {
+      "id": "salt-and-gold",
+      "kind": "idea",
+      "title": "Salt for gold",
+      "line": "Mali grew rich by trading gold from the south for salt from the desert in the north.",
+      "cultureNote": {
+        "label": "From Mali",
+        "text": "Slabs of rock salt were cut at Taghaza in the Sahara and carried south by camel to Timbuktu, then by boat up the river. Gold came north from the lands near the forests. In 1324 Mali’s king, Mansa Musa, carried so much gold to Mecca that people wrote about it for centuries."
+      },
+      "pictureAlt": "Two grey-white slabs of rock salt standing on end beside a small brass scale holding a pinch of gold dust.",
+      "background": "#4A3A2A"
+    },
+    {
+      "id": "mosque-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "great-mosque-of-djenne",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "TODAY’S BUILDING, LONG AFTER",
+          "line": "A great mosque stood in Djenné in Sira’s time, but nobody knows for sure how it looked. The one that stands there today was built in 1907, and the whole town re-plasters it every year."
+        }
+      },
+      "background": "#5A3218"
+    }
+  ],
+  "scenes": {
+    "scene-compound": {
+      "unfoldedAlt": "A walled mud-brick compound in a river town in the early morning, under a wide pale sky. Low on the right, beneath a great baobab, a girl stands singing while a boy plays a balafon, and an old man in white listens from a mat by the doorway.",
+      "foldedAlt": "Sira singing under the baobab in the early morning, with her grandfather on his mat behind her.",
+      "fallbackColors": ["#F4E8D2", "#E8C99A", "#A8683A"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-river": {
+      "unfoldedAlt": "The flooded River Niger in late afternoon, wide and pale under a hazy gold-white sky. Low on the right, a long wooden boat stacked with grey slabs of salt is poled towards a town of earth-coloured houses on its island, with a girl sitting in the bow.",
+      "foldedAlt": "Sira sitting in the bow of a salt boat on the wide river, with the earth houses of Djenné ahead.",
+      "fallbackColors": ["#F2E6CF", "#C9C7B4", "#7A8A86"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-feast": {
+      "unfoldedAlt": "A merchant’s great courtyard of smooth mud-brick walls at evening, under a pale gold sky. Low on the right, guests in white and indigo sit on mats with bowls before them while a girl stands singing and a man in a huge embroidered robe sits on a raised seat watching her.",
+      "foldedAlt": "Sira standing in the lamplit courtyard, singing, with the merchant in his embroidered robe behind her.",
+      "fallbackColors": ["#F6E2B8", "#E4B878", "#8A5030"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-dawn": {
+      "unfoldedAlt": "A riverbank at dawn under a wide pale rose sky, the water still and shining. Low on the right, an old man and a girl sit side by side on the bank looking out over the river, a balafon on the ground beside them.",
+      "foldedAlt": "Sira and her grandfather sitting together on the riverbank at dawn, the old man’s hand on her shoulder.",
+      "fallbackColors": ["#F8E4DC", "#E8C4B0", "#8A7A70"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-compound",
+      "part": "part-1",
+      "paras": [
+        "^Every morning before the first cock crowed, Sira’s grandfather made her say the names.",
+        "<name:apprentice>Sira</name> sat on the cold step of his doorway with her knees under her chin, and the names came out of the dark one after another. A father, his father, his father’s father, back seven generations, for each family her grandfather sang for. Who had married whom. Who had crossed which river. Who had dug the first well in which town.",
+        "If she missed one, he did not scold her. He only said <say:grandfather*>“Again,”</say> from his mat inside the door, and she began that family from the top.",
+        "Sira was born into a family of <tap:jeli>jeliw</tap>, and a jeli keeps what no one writes down. In the great towns, scholars wrote in Arabic, but the deeds of families lived in voices. Lose a name, her <name:grandfather>grandfather</name> said, and you lose a person twice.",
+        "> By the time the sky above the wall turned the colour of milk, she had reached the family of Bakary the merchant, and she slowed down. That family she said with special care. That family paid for the roof over their heads and the millet in their pot."
+      ]
+    },
+    {
+      "scene": "scene-compound",
+      "part": "part-1",
+      "paras": [
+        "When the light came, her cousin Lamine carried out the balafon and set it under the baobab. Its wooden keys sat on a frame of bent sticks, and beneath each key hung a gourd, small ones for the high notes, big as a water pot for the low. Lamine was fourteen and played better than he talked.",
+        "Sira did not play. In their family the men played and the women sang, and her grandfather said her voice could carry across a market without shouting. He taught her the way he had been taught, line by line. He sang; she sang it back. Nothing was written, so nothing could be lost, except by forgetting.",
+        "Strangers would one day call people like them griots. Sira had never heard the word. She knew only what her grandfather told her: <say:grandfather*>“A family without its jeli is a family without a past. And a family without a past has nothing to stand on.”</say>",
+        "> Beyond the wall, the <tap:river-niger>River Niger</tap> was rising, as it rose every year after the rains, spreading brown and slow over the fields. Fishermen poled past with their nets heaped in the bottoms of their boats. Sira sang the names to the river, and the river did not argue."
+      ]
+    },
+    {
+      "scene": "scene-compound",
+      "part": "part-1",
+      "paras": [
+        "Late in the rains, a boat with a striped awning tied up below the compound, and Bakary the merchant climbed the bank with four servants behind him. He was a broad man in a robe so wide it moved like a sail, with a ring of gold on his thumb.",
+        "The servants set down their gifts: a sack of millet, a bolt of indigo cloth, a basket of red kola nuts. Last came a small bundle of white cotton, tied with string, that one servant carried in both hands as though it were heavier than it looked.",
+        "The two men went inside, and Sira was sent to fetch water. She took a long time over it. When she crept back past the doorway, she heard only the end. <say:merchant*>“Sing all of it, old friend. The founding, the journeys, the wells. But not the salt road.”</say>",
+        "> Then there was a silence so long that a lizard ran the whole length of the wall. At last she heard the bundle being untied, and the dry whisper of gold dust pouring into her grandfather’s brass dish. Her grandfather said nothing to stop it."
+      ]
+    },
+    {
+      "scene": "scene-compound",
+      "part": "part-1",
+      "paras": [
+        "A week later, her grandfather’s voice broke in the middle of a song. He coughed, tried again, and nothing came but a dry rasp, like a reed split down its length. By evening he lay on his mat with a fever.",
+        "<say:grandfather*>“Bakary’s grandson is to be named in Djenné in nine days,”</say> he whispered. <say:grandfather>“I promised to sing. You will sing instead. Lamine will play. The gold is paid.”</say> Then, with Lamine at the <tap:balafon>balafon</tap> picking out the old tune, he taught her the history of Bakary’s family, line by line, the whole of it. And at the end he taught her the part that was not to be sung.",
+        "Long ago, Bakary’s grandfather Dramane had crossed the desert with a salt trader named Yaya. A sandstorm buried their camp. Yaya dug Dramane out with his bare hands and carried him to a well. They came home and sold the salt for gold, and Dramane kept all of it. Yaya’s family had been poor ever since.",
+        "> <say:grandfather*>“You must know all of it,”</say> he said, when she had sung it back to him without a mistake. <say:grandfather>“A jeli who knows only the sweet parts is a parrot. Know all of it. Then sing what was paid for.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-compound",
+      "part": "part-1",
+      "paras": [
+        "That night Sira could not sleep. She lay on her mat and listened to the frogs in the flooded fields, and to her grandfather’s breath scraping in and out in the next room. The history went round and round in her head, and every time it came to the salt road, it stopped, like a foot finding a missing step in the dark.",
+        "She thought of Yaya digging in the sand with his bare hands. She thought of the gold dust whispering into the brass dish. She thought of seventy years of a family eating less than they should, so that another family could eat more.",
+        "At last she got up and went to his doorway. The lamp had burned down to a blue bead. <say:apprentice*>“Grandfather,”</say> she said. <say:apprentice>“You always say a jeli’s word is worth more than gold. Why did you take it?”</say>",
+        "> For a long time he did not answer. Outside, a dog barked once and was quiet. Then <name:grandfather>the old man</name> turned on his mat, slowly, as if it hurt him, and lay with his face to the wall."
+      ]
+    },
+    {
+      "scene": "scene-river",
+      "part": "part-2",
+      "paras": [
+        "^Two days later, Sira and Lamine went down to the river with the balafon wrapped in a cloth.",
+        "Her grandfather did not come to the bank. Since the night of the lamp he had spoken to her only to hear the history one last time, and when she reached the salt road he had closed his eyes and nodded, and said nothing at all.",
+        "They rode on a salt boat, long and narrow as a fallen palm, poled by four men who sang to keep time. Grey slabs of rock salt lay stacked in its belly, each one as long as Sira’s arm. The flood had turned the land into a sea of brown water and green rice, with villages standing on their mounds like islands.",
+        "On the third afternoon Djenné rose out of the water, a town of earth on its own island, every wall the colour of the riverbank.",
+        "> Above the flat roofs stood the walls of <tap:mosque-moment>the great mosque</tap>, and the call to prayer drifted out over the water as the boatmen leaned on their poles. Lamine whistled. Sira was looking at the crowd on the landing, and found she could not swallow."
+      ]
+    },
+    {
+      "scene": "scene-river",
+      "part": "part-2",
+      "paras": [
+        "The market began at the water’s edge. Porters carried <tap:salt-and-gold>salt</tap> slabs up the bank on their heads, and traders sat behind them under awnings of matting, weighing gold dust on scales so small that a breath could tip them. There was cloth dyed deep indigo, dried fish in towers, kola nuts in baskets lined with leaves.",
+        "One porter was older than the rest. He was thin as a tent pole, and he walked bent under his slab with his eyes on the ground. A girl of about Sira’s age walked beside him with a water gourd, and each time he set the slab down, she held the gourd to his mouth.",
+        "Sira asked a woman selling fish who he was. The woman shrugged. “That is Fodé, old Yaya’s grandson. They were traders once, that family, or so people say. Now they carry other men’s salt.”",
+        "> Sira stood very still among the baskets. The name had been in her mouth every day since her grandfather fell ill, and here it was, walking past her with a slab of salt on its head. The girl with the gourd glanced back at her once, curious, and then the crowd closed between them."
+      ]
+    },
+    {
+      "scene": "scene-feast",
+      "part": "part-2",
+      "paras": [
+        "Bakary’s house stood near the market, and its courtyard was bigger than Sira’s whole compound. By evening it was full. Guests sat on mats in their best white and indigo, and women in gold earrings carried bowls of rice and mutton among them. Lamps of clay burned in the niches of the walls, though the sky was still pale gold above them.",
+        "The baby had been given his name that morning. Now he slept on his mother’s lap, wrapped in white, while the grown-ups ate and laughed around him and Bakary sat on a raised seat at the far end, his robe embroidered all over with thread the colour of honey.",
+        "When the bowls were cleared, he beckoned Sira to him. He smiled for the guests and spoke so low that only she could hear. <say:merchant*>“Your grandfather and I understand each other. I hope you understand him too.”</say>",
+        "> <say:apprentice*>“I know the whole history, sir,”</say> said <name:apprentice>Sira</name>. It was not quite an answer, but Bakary was already nodding to Lamine at the balafon, and the courtyard was going quiet, row by row, the way a field goes quiet when the wind drops."
+      ]
+    },
+    {
+      "scene": "scene-feast",
+      "part": "part-2",
+      "paras": [
+        "Sira had sung in her grandfather’s courtyard a thousand times. She had never sung to two hundred strangers. Her first line came out thin, and she saw a man near the front lean to whisper to his neighbour. Then Lamine’s balafon came in under her, steady as a pestle in a mortar, and her voice found the ground.",
+        "She sang Bakary’s family from the beginning. The hunter who first cleared land by the river. The woman who stood in her doorway and turned back raiders with a single word. The well, the herds, the first boat, the first gold. She sang the names seven generations deep, and not one was missing.",
+        "The guests began to call out. Old men cried the names back to her. A woman rose and dropped a string of cowrie shells at her feet, and another, and another. Bakary leaned back on his cushions and beamed.",
+        { "path": "M14,66 C70,22 120,84 190,52 C250,26 300,70 388,30", "text": "“Bakary, son of Seku!”" },
+        "> Line by line, she sang the family forward, out of the old days and down the years, nearer and nearer to the grandfather of the man on the cushions. To Dramane. To the desert. To the salt road."
+      ]
+    },
+    {
+      "scene": "scene-feast",
+      "part": "part-2",
+      "paras": [
+        "Then her voice stopped. Lamine played on for a few notes, waiting for her, then lifted his beaters and held them in the air.",
+        "The silence spread from the front of the courtyard to the back. Somewhere a bowl knocked against a bowl, and someone hushed it. The baby stirred in his mother’s lap. Two hundred faces turned to Sira, and Sira stood in the middle of them with her mouth open and nothing coming out of it.",
+        "Bakary’s smile did not move, but his hand closed on his knee. Sira knew what came next in the history. She knew what came next if she skipped it: one easy breath, a jump of seventy years, a song about the new baby, and the gold that was already paid. She thought of her grandfather with his face to the wall.",
+        "> And then, past all the faces, she saw the gate. Someone stood just outside it in the last light, where porters and servants waited for what was left of the feast: a thin old man, bent as if he still carried something, and a girl beside him with a water gourd. They were listening."
+      ]
+    },
+    {
+      "scene": "scene-feast",
+      "part": "part-3",
+      "paras": [
+        "^Sira took a breath that went all the way down to her feet, and sang.",
+        "She sang Dramane and Yaya, two young men with one string of camels, going north to the salt mines in the empty country. She sang the wind that turned the sky brown at noon and buried their camp in a single night. She sang Yaya digging with his hands until his fingers were raw, and dragging his friend to a well.",
+        "Then she sang the salt sold for gold in Timbuktu, and the gold carried home in one man’s saddlebags. She sang the share that was never paid. She sang seventy years of Yaya’s children carrying other men’s salt.",
+        "Nobody called out now. Nobody moved. Somewhere along the way Lamine’s balafon had crept back in beneath her, very softly, and when she stopped, it stopped too.",
+        "> Bakary was on his feet. His great robe swung about him, and his voice, which had been so soft, rang off the earth walls. <say:merchant*>“Enough! Your grandfather was paid. <pop:1.3>You were paid!</pop>”</say> The baby woke and began to wail."
+      ]
+    },
+    {
+      "scene": "scene-feast",
+      "part": "part-3",
+      "paras": [
+        "Sira’s knees were shaking so hard she was sure the whole courtyard could see them through her wrap. She pressed her hands flat against her sides to keep them still.",
+        "<say:apprentice*>“My grandfather was paid,”</say> she said. Her voice came out small, and she made it bigger. <say:apprentice>“But a jeli is paid to remember, not to forget. That is the whole of the work. If I sing your family with a hole in the middle, it is not your history any more. It is a wall with no bricks at the bottom.”</say>",
+        "Bakary said nothing. His jaw was working as if he were chewing something hard. Sira looked past him at the gate, where the old porter had not moved, and then back at Bakary’s face.",
+        "> <say:apprentice*>“Dramane was your grandfather,”</say> she said. <say:apprentice>“What he did is not your shame. You were not born. But the share is still unpaid, and it is still in your house. If you leave it there, that part will be yours.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-feast",
+      "part": "part-3",
+      "paras": [
+        "For a long moment nobody spoke. Then a man rose from the mat nearest the raised seat. It was Bakary’s son, the baby’s father, a young man with a quiet face who had not said ten words all evening. He looked at his father. He looked at the gate.",
+        "“My son was given his name today,” he said. “I want him to have all of his history, not most of it.”",
+        "He walked the length of the courtyard between the mats, and the guests leaned aside to let him through. At the gate he took the old porter by both hands, as a man greets an elder, and led him in. The girl with the gourd came behind them, holding it against her chest.",
+        "He sat Fodé down on his own mat. Then he turned to his father. “The share,” he said. “Will you pay it, or shall I?”",
+        "> Bakary did not answer for a long time. He looked old suddenly, and very tired, and still angry. At last he lifted one heavy hand. <say:merchant*>“I will pay it,”</say> he said, not looking at anyone. <say:merchant>“And the jeli’s family will never sing for mine again.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-dawn",
+      "part": "part-3",
+      "paras": [
+        "Four days later, at dawn, a fisherman’s boat put Sira and Lamine ashore below the compound. Her grandfather was sitting on the bank in his white robe, as if he had been sitting there all night.",
+        "She sat down beside him and told him all of it: the market, the gate, the son, the share. When she came to the last thing Bakary had said, she stopped and looked at her hands.",
+        "Her <name:grandfather>grandfather</name> was quiet for a while. Then he took the bundle of white cotton from inside his robe, knotted again round the gold, and laid it in her lap. <say:grandfather*>“Take it back to him,”</say> he rasped. <say:grandfather>“I took it because I am old, and I was afraid of being poor. I sent you because I hoped you were not afraid yet.”</say>",
+        "<say:apprentice*>“I was,”</say> said <name:apprentice>Sira</name>. <say:apprentice>“The whole time.”</say> He laughed then, a cracked sound like a dry gourd, and put his hand on her shoulder.",
+        "> They sat and watched the river go pink, then gold. Out on the water a fisherman was singing as he poled, and the weaverbirds were shouting in the reeds. After a while Sira began to sing too, quietly, the names of Bakary’s family, every one of them, from the beginning to the end."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "great-mosque-of-djenne",
+      "name": "Great Mosque of Djenné",
+      "era": "modern",
+      "built": {
+        "from": 1906,
+        "to": 1907,
+        "circa": false,
+        "note": "Today’s building, put up by Djenné’s masons in 1906 and 1907 on the site of a mosque that the town’s tradition says was first built in the 13th century. What the older mosque looked like is not certain."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Mali",
+      "place": "Djenné, Mali",
+      "coordinates": { "lat": 13.905, "lon": -4.555 },
+      "region": "african",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A huge building of smooth brown mud, with three tall towers and wooden poles poking from its walls."
+        },
+        "medium": {
+          "line": "A mosque in Djenné, Mali, finished in 1907 and said to be the largest mud-brick building in the world.",
+          "note": "The town’s own masons built it where an older mosque had stood. Every year the people of Djenné climb its walls together and spread on fresh mud."
+        },
+        "advanced": {
+          "line": "A mosque of sun-dried mud brick on a raised platform, built in 1906 and 1907 where older mosques had stood.",
+          "note": "Djenné’s tradition says the first mosque here was built in the 13th century, but nobody knows how it looked. The palm-wood poles left in the walls serve as a ready-made ladder for the yearly re-plastering."
+        }
+      },
+      "art": {
+        "file": "art/great-mosque-of-djenne.heic",
+        "alt": "A great building of smooth brown mud brick on a raised platform, with three tall towers and rows of wooden poles jutting from its walls.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3218",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building in use: presented as architecture and history only (CQ9), and the drawing is to be reviewed by the Mande consultant (CONTENT_PLAN §7).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is an Omramo original story, written for Omramo. It retells no traditional or sacred narrative.",
+    "There is no documented source text; no Gutenberg book was used, so there is nothing to source-check.",
+    "Nothing of the Sunjata epic is told. The jeli card says only that jeliw still sing of Sunjata.",
+    "The plot (the merchant's bribe, the salt road, Dramane and Yaya, the feast) is invented. No real family,",
+    "lineage or historical person is meant. Names were chosen as plain, common Mande given names and avoid",
+    "famous lineage names (Keita, Kante, Kouyate, Diabate, Traore, Konate): Sira, Madi, Lamine, Bakary, Seku,",
+    "Dramane, Yaya, Fode. The consultant must check each name, its spelling and its fit for about 1350.",
+    "Changed from the plan: (1) Sira SINGS and her cousin Lamine (14, minor voice, plain text) PLAYS the",
+    "balafon. In jeli families the balafon, kora and ngoni have mostly been played by men and boys, while",
+    "women (jelimusow) are the great singers. The plan had the girl at the balafon; consultant to confirm.",
+    "(2) region.place says 'inland Niger Delta' instead of 'on the River Niger': Djenne stands on the",
+    "floodplain between the Niger and the Bani, nearer the Bani. The text says only that Sira's home town is",
+    "on the Niger and that she travels by water to Djenne; the route is kept vague on purpose.",
+    "(3) The merchant's grandfather is named Dramane and the partner Yaya; the partner's grandson is Fode,",
+    "an old porter with a granddaughter. Bakary's son, not Bakary, turns the feast, as the plan asks.",
+    "(4) A real cost is kept: Bakary pays the share but says the jeli's family will never sing for his again.",
+    "Grandfather sends the gold back. The ending is bittersweet and the moral is not stated in the text.",
+    "Reviewer to check (cultural): whether a jeli could plausibly be paid to leave out part of a history, and",
+    "how such a breach would be seen; whether a girl of 12 would be sent to sing a patron's history at a",
+    "naming feast; the naming custom (the baby is named that morning; the feast follows); the line 'In",
+    "their family the men played and the women sang'; cowrie shells dropped at a singer's feet as gifts",
+    "(cowries were money in Mali in Ibn Battuta's time, 1350s; the gift custom is our guess); rice and",
+    "mutton at the feast; the praise line 'Bakary, son of Seku!' (pathText) as a form of address.",
+    "Djenne's place in the Mali Empire about 1350 is uncertain (some sources say it stayed outside Mali's",
+    "direct rule); the text does not say who ruled Djenne. Islam is present only as the call to prayer.",
+    "Facts to check: Taghaza salt carried by camel to Timbuktu and by boat up the river; gold from the",
+    "southern goldfields; Mansa Musa's pilgrimage 1324; the Niger over 4,000 km; the inland delta flood;",
+    "Djenne an island at high water; African rice grown in the delta; the Sosso Bala kept at Niagassola,",
+    "Guinea, by a jeli family (UNESCO Masterpiece, 2001); the kora's age uncertain; 'griot' a later word",
+    "used by outsiders (likely via French) for a jeli; jeliw singing at namings and weddings today.",
+    "Landmark facts to check: mosque built 1906-1907 by Djenne's masons' guild during French colonial rule;",
+    "largest mud-brick building in the world (a common claim); yearly re-plastering festival; toron poles",
+    "of rodier palm left in the walls as scaffolding; UNESCO 'Old Towns of Djenne' (1988); first mosque",
+    "said by tradition to date from the 13th century (often linked with Koi Konboro, Djenne's first Muslim",
+    "ruler; not used in the text). The 1907 building appears only on the framed card, never in a scene.",
+    "Word count (writer's count): 14 pages, 165 to 210 words each, about 2,690 words in all.",
+    "Status: DRAFT. Text review pending. Cultural review (required: Mande cultural consultant) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#2A1A10",
+      "shade": "#5A3218",
+      "mid": "#A8683A",
+      "light": "#F4E8D2",
+      "glow": "#E8B04A",
+      "accent": "#2F3F86",
+      "mood": "Mud-brick ochre and warm earth, the pale blue-grey of a wide flooded river, white cotton and deep indigo cloth, with small touches of gold (gold dust, a thumb ring, earrings, honey-coloured embroidery). Dry, warm, hazy light. Calm and grown-up, never busy."
+    },
+    "light": "A LIGHT story: every scene keeps a pale sky or pale wall behind the words on both panes. Early morning in the compound (milky pale sky), hazy gold-white late afternoon on the river, pale gold evening in the courtyard with small lamp flames in wall niches (never night), pale rose dawn on the riverbank. Dark brown text must read on every pane.",
+    "world": [
+      "Mali Empire about 1350, the inland Niger Delta. Houses of banco: sun-dried mud brick plastered smooth with mud, flat roofs, thick walls with rounded buttresses, palm-wood beams whose ends jut from the walls, small doorways, a few pottery water spouts on the roof edge.",
+      "Djenne in the scenes is a town of earth-coloured houses on an island of high ground in the flood. Do NOT draw the Great Mosque of 1907 or its famous three-tower front in any scene; it appears only on its own card.",
+      "The jeli's compound: a mud wall round a sandy courtyard, a ring of small flat-roofed rooms, one or two round mud granaries with conical thatched caps, woven palm-leaf mats, clay water jars, and one great baobab giving shade.",
+      "Men: wide, flowing ankle-length robes (boubou-like) of white or indigo cotton over loose trousers, small round cloth caps; old men bearded. The rich merchant: a huge robe embroidered all over in honey-gold thread, a gold ring on his thumb.",
+      "Women and girls: wrapped skirts and upper cloths of white and indigo cotton, head-wraps, hair in fine braids; rich women in gold earrings and bead necklaces. Feet bare or in simple leather sandals.",
+      "The balafon: about 17 to 21 wooden keys of different lengths tied on a low curved frame of sticks, a row of round gourds of graded sizes hanging beneath, played kneeling or seated with two short padded beaters. Lamine plays it; Sira never does.",
+      "Boats: long, narrow wooden boats of planks (pirogues), some with a low awning of matting, poled by standing men with long poles. Salt boats carry stacks of grey-white rectangular slabs of rock salt, each about an arm's length, tied with rope.",
+      "The market at the water's edge: porters carrying salt slabs on their heads, traders under matting awnings, gold dust on tiny brass hand-scales with small weights, strings of cowrie shells, red and white kola nuts in leaf-lined baskets, stacked dried fish, folded indigo cloth, pottery.",
+      "Landscape: the flood spreads wide and pale brown, with green rice fields and villages on low mounds; doum palms, rodier (Borassus) palms and acacias; herons, egrets and weaverbirds with hanging nests in the reeds.",
+      "Animals near the towns: donkeys, humped cattle, goats, chickens. Camels belong far north near Timbuktu and the desert; none in these scenes.",
+      "The feast: guests on mats in rows, food in wooden and pottery bowls and calabashes, clay oil lamps in wall niches, the merchant on a raised seat of mud brick spread with cushions and a rug.",
+      "Islam is part of daily life in Djenne: the call to prayer is heard; people may be shown at their ordinary business. No religious scene is drawn.",
+      "Avoid: safari animals and savanna cliches (lions, giraffes, elephants, sunsets behind acacias), masks and drums as a shorthand for 'Africa', kente cloth (Ghana), modern cloth prints, plastic, metal roofs, colonial helmets, the 1907 mosque, camels in the delta, any night sky."
+    ],
+    "characters": {
+      "apprentice": "Sira, about 12, slim, about three heads tall, small plain eyes, dark skin, hair in fine braids under an indigo head-wrap; a white cotton wrap with an indigo upper cloth; no gold. Signature detail: when she is afraid she presses her hands flat against her sides and lifts her chin.",
+      "grandfather": "Jeli Madi, an old man, thin and slightly stooped, short white beard, a wide white cotton robe and a small white cap; sits cross-legged on a mat or by the river. Signature detail: the small bundle of white cotton tied with string, and a thin hand resting on the balafon keys.",
+      "merchant": "Bakary, about 60, broad and heavy, close grey beard, in a huge robe embroidered all over in honey-gold thread and a tall cloth cap. Signature detail: the gold ring on his thumb; his smile stays fixed while his hand grips his knee."
+    },
+    "scenes": {
+      "scene-compound": {
+        "unfolded": "Early morning, a wide milky pale sky over the upper 60 percent of both panes. Low on the right half: the baobab inside the compound's mud wall, Lamine kneeling at the balafon, Sira standing beside him singing with her chin up, and the grandfather on a mat by his doorway listening. Far left, low: the top of the wall and a glimpse of the brown flooded river with one pirogue. Serves pages 1 to 5 (page 3: a boat with a striped awning moored below the wall; page 5 reads as the same place before dawn, still pale).",
+        "folded": "Sira singing under the baobab, close, with her grandfather on his mat just behind her; pale sky above for the words."
+      },
+      "scene-river": {
+        "unfolded": "Late afternoon in the flood season, a hazy gold-white sky over the upper 60 percent. The river wide and pale, rice fields and a village mound far off on the left. Low on the right: a long salt boat stacked with grey slabs, four boatmen poling, Sira in the bow and Lamine beside the cloth-wrapped balafon; beyond them Djenne's earth houses on their island, with a landing crowded with porters and traders. No mosque.",
+        "folded": "Sira in the bow of the salt boat, close, the earth houses of Djenne ahead across the water; hazy sky above."
+      },
+      "scene-feast": {
+        "unfolded": "Evening under a pale gold sky over the upper 60 percent; smooth mud walls with small lamp flames in niches. Low on the right: rows of guests on mats in white and indigo, Bakary on his raised seat in the honey-gold robe, Sira standing in the open space singing with Lamine kneeling at the balafon, and far right the open gate with a thin bent old man and a girl with a water gourd just outside.",
+        "folded": "Sira standing and singing in the courtyard, close, Bakary large and watchful on his seat behind her; pale gold sky above."
+      },
+      "scene-dawn": {
+        "unfolded": "Dawn, a wide pale rose sky over the upper 60 percent, the river still and shining below it with one fisherman poling far off. Low on the right: the grandfather and Sira sitting side by side on the bank, the white cotton bundle in her lap, the balafon on the ground beside Lamine a little apart; reeds with weaverbird nests at the edge.",
+        "folded": "The old man and the girl side by side on the bank, his hand on her shoulder, the shining river beyond; pale rose sky above."
+      }
+    },
+    "pictures": {
+      "jeli": "One old singer in a wide white robe and cap, standing, one hand lifted and mouth open in song, on a warm brown ground.",
+      "river-niger": "One long narrow pirogue poled by a standing boatman across a wide pale brown river under a hazy sky.",
+      "balafon": "One balafon seen from the front and a little above: pale wooden keys on a curved frame, a row of round gourds of graded sizes beneath.",
+      "salt-and-gold": "Two grey-white slabs of rock salt standing on end beside a small brass hand-scale holding a pinch of gold dust."
+    },
+    "portraits": {
+      "apprentice": "Half figure of Sira, chin up, hands pressed flat at her sides, indigo head-wrap and white wrap, against a pale ochre mud wall.",
+      "grandfather": "Jeli Madi seated cross-legged on a mat in his white robe and cap, one thin hand on the balafon keys, eyes half closed as if listening; warm brown ground."
+    },
+    "cover": "Sira standing in the merchant's courtyard at pale gold evening, singing with one hand raised, Lamine kneeling at the balafon beside her, guests on mats looking up, and at the far edge the open gate where an old porter and a girl with a water gourd are listening.",
+    "landmarks": {
+      "great-mosque-of-djenne": "Our own drawing of the building as it stands today, in clear daylight: the smooth brown mud-brick mosque on its raised platform, the three tall towers of its front with their rows of jutting palm-wood poles, a few people small in the market square before it. Architecture only; no photograph traced."
+    }
+  }
+}

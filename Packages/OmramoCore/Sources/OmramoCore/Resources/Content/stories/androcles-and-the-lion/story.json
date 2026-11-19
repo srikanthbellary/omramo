@@ -1,0 +1,1170 @@
+{
+  "schemaVersion": 1,
+  "id": "androcles-and-the-lion",
+  "contentVersion": 1,
+  "title": "Androcles and the Lion",
+  "tier": "medium",
+  "language": "en",
+  "region": {
+    "id": "european",
+    "culture": "Roman tale",
+    "place": "Rome, Italy",
+    "label": "Ancient Rome",
+    "pin": {
+      "lat": 41.9,
+      "lon": 12.5
+    },
+    "pinColor": "#F2A007"
+  },
+  "setting": {
+    "period": "The Roman Empire, about 2,000 years ago",
+    "latestYear": 40
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Roman tale, first written down by Aulus Gellius",
+    "sources": [
+      {
+        "author": "Joseph Jacobs",
+        "title": "The Fables of Aesop",
+        "year": 1894,
+        "gutenbergId": 28,
+        "url": "https://www.gutenberg.org/ebooks/28",
+        "verified": true
+      },
+      {
+        "author": "Joseph Jacobs",
+        "title": "Europa’s Fairy Book",
+        "year": 1916,
+        "gutenbergId": 26019,
+        "url": "https://www.gutenberg.org/ebooks/26019",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Roman tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Reader in Roman history"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The Roman Empire lay all round the Mediterranean Sea. The story travels from the dry hills of Roman North Africa, across the sea by grain ship, to the city of Rome.",
+      "factCards": [
+        "north-africa",
+        "empire-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "Rome gathered in huge arenas to watch shows, and some people in the Roman world were owned as slaves; both are said plainly and briefly. The tale itself comes from a Roman writer, Aulus Gellius, and nobody can check it now.",
+      "factCards": [
+        "slavery",
+        "arena-moment",
+        "old-book"
+      ]
+    },
+    "moral": {
+      "lesson": "A kindness done when you are afraid, with nobody watching, can come back years later. The lion remembers, and so in the end do the people of Rome.",
+      "reflectionQuestion": "Androcles was frightened of the lion and helped him anyway. What made him do it, do you think?"
+    }
+  },
+  "moral": "A kindness is never forgotten, by people or by animals.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#2A2033",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A man in a rough tunic kneels and holds the big paw of a dark-maned lion in his lap, at the mouth of a cave in warm ochre rock.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "Part I"
+    },
+    {
+      "id": "part-2",
+      "title": "Part II"
+    }
+  ],
+  "characters": [
+    {
+      "id": "androcles",
+      "name": "Androcles",
+      "color": "#8A4A1C",
+      "face": {
+        "file": "art/face-androcles.png",
+        "alt": "Androcles.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FBE3C4",
+      "card": {
+        "label": "Character · a runaway baker",
+        "title": "Androcles",
+        "traits": [
+          {
+            "text": "Steady hands",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Bakes the bread",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Scared, helps anyway",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "He runs from a hard master with nothing but an empty water skin. When a hurt lion holds out its paw, he is frightened, and he helps all the same.",
+        "portrait": {
+          "file": "art/char-androcles.card.heic",
+          "alt": "Androcles, a wiry man with dark curly hair and a short beard, in a rough pale tunic, holding a long thorn between finger and thumb.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FBE2B8",
+          "#EDB878",
+          "#C9803F"
+        ]
+      }
+    },
+    {
+      "id": "lion",
+      "name": "Lion",
+      "color": "#7A5200",
+      "face": {
+        "file": "art/face-lion.png",
+        "alt": "The Lion.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FFE2A0",
+      "card": {
+        "label": "Character · a lion of the hills",
+        "title": "The Lion",
+        "traits": [
+          {
+            "text": "A Barbary lion",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Shares his catch",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Never forgets",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He is a Barbary lion, the big dark-maned kind that once lived wild in North Africa. His roar shakes dust from a roof, and he remembers a friend for years.",
+        "portrait": {
+          "file": "art/char-lion.card.heic",
+          "alt": "The Lion sitting up with his dark mane round his face, holding out one big front paw wrapped in a strip of pale cloth.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FFE9A8",
+          "#F2C058",
+          "#C98A2B"
+        ]
+      }
+    },
+    {
+      "id": "emperor",
+      "name": "Emperor",
+      "color": "#6B2A7A",
+      "face": {
+        "file": "art/face-emperor.png",
+        "alt": "The Emperor.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#EBD9F2"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "slavery",
+      "kind": "idea",
+      "title": "Slavery",
+      "line": "A slave was a person owned by someone else and made to work without pay.",
+      "cultureNote": {
+        "label": "From ancient Rome",
+        "text": "In the Roman world many people were owned by others and could not choose their work or leave. It was wrong then, and today it is against the law in every country."
+      },
+      "picture": {
+        "file": "art/see-slavery.heic",
+        "alt": "A plain iron bar lying beside a heavy wooden gate that stands a little open, with morning light coming through the gap.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2F26"
+    },
+    {
+      "id": "empire-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "temple-of-artemis-ephesus",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Rome’s empire reached all the way round the sea. In another of its cities, Ephesus, stood a temple so grand that people called it a Wonder of the World."
+        }
+      },
+      "background": "#2A3F5C"
+    },
+    {
+      "id": "north-africa",
+      "kind": "place",
+      "title": "North Africa",
+      "line": "The lands along the south shore of the Mediterranean Sea, across the water from Italy.",
+      "cultureNote": {
+        "label": "From North Africa",
+        "text": "Farms here, in what are now Tunisia, Algeria and Libya, grew much of the wheat for Rome’s bread. Lions lived wild in the hills then, but none do today."
+      },
+      "picture": {
+        "file": "art/see-north-africa.heic",
+        "alt": "A dry ochre hill with thorn bushes and one olive tree, above a strip of golden wheat fields and blue sea.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6B4423"
+    },
+    {
+      "id": "arena-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "colosseum",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "SOON AFTER THIS STORY",
+          "line": "The arena in this story was a long ground built for races. About forty years later, Rome built its greatest arena of all."
+        }
+      },
+      "background": "#5A2E22"
+    },
+    {
+      "id": "old-book",
+      "kind": "idea",
+      "title": "An old book",
+      "line": "A Roman writer named Aulus Gellius wrote this story down about 1,850 years ago.",
+      "cultureNote": {
+        "label": "From ancient Rome",
+        "text": "Gellius said the story came from a man who watched it happen in Rome. Nobody can check that now, so we cannot be sure how much of it is true."
+      },
+      "picture": {
+        "file": "art/see-old-book.heic",
+        "alt": "A half-open scroll with lines of small dark writing, with a reed pen and a little inkpot beside it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3B2A4A"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hills.unfolded.heic",
+          "alt": "Dry ochre hills with thorn bushes and an olive tree under a pale blue and gold sky, with a far wheat plain and a strip of sea. On the right a man in a rough tunic hurries uphill, looking back over his shoulder.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hills.folded.heic",
+          "alt": "A man in a rough tunic climbs among hot ochre rocks and thorn bushes, looking back over his shoulder.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE6F2",
+          "#FBE7BE",
+          "#D9A45F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Androcles",
+              "lead": true,
+              "name": "androcles"
+            },
+            {
+              "t": " was a ",
+              "lead": true
+            },
+            {
+              "t": "slave",
+              "lead": true,
+              "tap": "slavery"
+            },
+            {
+              "t": " in a hot white town beside the sea.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He baked his master’s bread before dawn and carried his master’s water at noon. He owned nothing, not even his own two feet."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His master was a hard man with a hard voice. “Faster!” was the kindest word he ever said."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One night, when the house was asleep, Androcles lifted the bar of the gate. The hinge creaked. A dog turned over in its sleep."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he ran, past the last wall and the last olive tree, up into the dry hills where no road went."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hills.unfolded.heic",
+          "alt": "Dry ochre hills with thorn bushes and an olive tree under a pale blue and gold sky, with a far wheat plain and a strip of sea. On the right a man in a rough tunic hurries uphill, looking back over his shoulder.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hills.folded.heic",
+          "alt": "A man in a rough tunic climbs among hot ochre rocks and thorn bushes, looking back over his shoulder.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE6F2",
+          "#FBE7BE",
+          "#D9A45F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "By noon the rocks were too hot to touch. His water skin was empty, and his tongue felt like a strip of leather."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far below lay the yellow wheat fields and the blue sea. Rome’s "
+            },
+            {
+              "t": "empire",
+              "tap": "empire-moment"
+            },
+            {
+              "t": " ruled every shore of that sea, and its soldiers hunted runaway slaves on all of them."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Then I must go where soldiers will not,”",
+              "say": "androcles",
+              "chip": true
+            },
+            {
+              "t": " said Androcles, and he climbed higher."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Among the thorn bushes he found a cave. Inside, it was dim and cool, and the floor was soft sand. He lay down just to rest his eyes, and slept like a stone."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cave.unfolded.heic",
+          "alt": "The mouth of a cave in warm sunlit rock under a pale gold sky. On the right a big dark-maned lion sits and holds up one paw to a man kneeling in front of him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cave.folded.heic",
+          "alt": "A man kneels with a lion’s big paw in his lap, at the mouth of a cave.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F3E6C8",
+          "#EDBE84",
+          "#B9773F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A sound woke him: a low, rough groan, close by."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The mouth of the cave had gone dark. A "
+            },
+            {
+              "t": "lion",
+              "name": "lion"
+            },
+            {
+              "t": " stood in it, a lion with a black mane that hung to his knees. There was no other way out."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Androcles pressed his back to the rock and waited for the spring. It did not come."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion limped in on three legs. Then he sat down and held out one great paw, the way a child shows a splinter."
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The paw was swollen as round as a loaf. Deep in the pad stuck a thorn as long as a finger."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cave.unfolded.heic",
+          "alt": "The mouth of a cave in warm sunlit rock under a pale gold sky. On the right a big dark-maned lion sits and holds up one paw to a man kneeling in front of him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cave.folded.heic",
+          "alt": "A man kneels with a lion’s big paw in his lap, at the mouth of a cave.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F3E6C8",
+          "#EDBE84",
+          "#B9773F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“So that is your trouble,”",
+              "say": "androcles",
+              "chip": true
+            },
+            {
+              "t": " whispered Androcles. "
+            },
+            {
+              "t": "“I have had thorns of my own.”",
+              "say": "androcles"
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His hands shook. He crept forward and took the heavy paw into his lap. It burned against his knees."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He gripped the thorn with his finger and thumb. "
+            },
+            {
+              "t": "“Hold still, now. One, two…”",
+              "say": "androcles",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He "
+            },
+            {
+              "t": "pulled",
+              "fx": "stretch"
+            },
+            {
+              "t": ". Out came the thorn, and the Lion "
+            },
+            {
+              "t": "roared",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": " so that dust fell from the roof. Androcles shut his eyes."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Something warm and wet rasped across his hand, rough as a scrubbing brush. The Lion was licking him. Androcles laughed out loud, tore a strip from his tunic, and bound the paw up tight."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-cave.unfolded.heic",
+          "alt": "The mouth of a cave in warm sunlit rock under a pale gold sky. On the right a big dark-maned lion sits and holds up one paw to a man kneeling in front of him.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-cave.folded.heic",
+          "alt": "A man kneels with a lion’s big paw in his lap, at the mouth of a cave.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F3E6C8",
+          "#EDBE84",
+          "#B9773F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So began the strangest household in all "
+            },
+            {
+              "t": "North Africa",
+              "tap": "north-africa"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Each morning the Lion went hunting over the hills. Each evening he came back and laid the best of his catch at the man’s feet, like a guest bringing a gift."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Androcles had no fire. He laid his share on a flat rock and let the noon sun cook it."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At night the hills grew cold. Then he slept against the Lion’s side, which was as warm as an oven and rumbled with every breath."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Nobody shouts ‘Faster!’ here,”",
+              "say": "androcles",
+              "chip": true
+            },
+            {
+              "t": " Androcles told him. The Lion yawned. Three summers went by like that."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hills.unfolded.heic",
+          "alt": "Dry ochre hills with thorn bushes and an olive tree under a pale blue and gold sky, with a far wheat plain and a strip of sea. On the right a man in a rough tunic hurries uphill, looking back over his shoulder.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hills.folded.heic",
+          "alt": "A man in a rough tunic climbs among hot ochre rocks and thorn bushes, looking back over his shoulder.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#CFE6F2",
+          "#FBE7BE",
+          "#D9A45F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But a lion never answers, and ",
+              "lead": true
+            },
+            {
+              "t": "Androcles",
+              "lead": true,
+              "name": "androcles"
+            },
+            {
+              "t": " grew hungry for voices.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One morning he scratched the Lion behind the ears and walked down toward the wheat fields. He only wanted to hear people talk about the weather."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He heard soldiers instead. They looked at his torn tunic and bare feet. “A runaway,” said their captain, and tied his wrists."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The law for runaways was cruel. Androcles was put on a grain ship and sent across the sea to Rome. There he must stand in the "
+            },
+            {
+              "t": "arena",
+              "tap": "arena-moment"
+            },
+            {
+              "t": ", the ring of sand where all Rome came to watch, and face a wild beast with empty hands."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-arena.unfolded.heic",
+          "alt": "A long curve of pale raked sand below a plain high wall, with rows of tiny spectators under cloth awnings and a shaded box for the emperor, under a pale bright sky. On the right a man and a lion stand small and alone on the sand.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-arena.folded.heic",
+          "alt": "A man stands alone on pale sand below a high wall crowded with tiny people, facing a lion.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D6E8F4",
+          "#FBEBCB",
+          "#E8C98F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The noise reached him first. Rome was shouting, and it sounded like the sea in a storm."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A guard pushed him through a door into white sunlight. Sand stretched away on every side, raked as smooth as a tablecloth. Above the high wall sat more people than Androcles had seen in his whole life."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In a shaded box, under a purple cloth, sat the "
+            },
+            {
+              "t": "Emperor",
+              "name": "emperor"
+            },
+            {
+              "t": ". He lifted one finger."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The shouting stopped. Across the sand a gate rattled up. Androcles looked at his hands. No stick, no stone, not so much as a thorn."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-arena.unfolded.heic",
+          "alt": "A long curve of pale raked sand below a plain high wall, with rows of tiny spectators under cloth awnings and a shaded box for the emperor, under a pale bright sky. On the right a man and a lion stand small and alone on the sand.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-arena.folded.heic",
+          "alt": "A man stands alone on pale sand below a high wall crowded with tiny people, facing a lion.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D6E8F4",
+          "#FBEBCB",
+          "#E8C98F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Out came a lion. He was huge and thin, for his keepers had kept him hungry, and he crossed the sand in great leaps."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Androcles stood still. A ring has no corners to hide in."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Ten steps away, the lion stopped. His nose went up. He sniffed the air, once, twice. Then he made a low, rough sound that Androcles knew."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The great beast lay down in the sand and licked the man’s dusty feet. Androcles dropped to his knees and put both arms round the black mane."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It is you!”",
+              "say": "androcles",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“They caught you too, old friend. How is the paw?”",
+              "say": "androcles"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-arena.unfolded.heic",
+          "alt": "A long curve of pale raked sand below a plain high wall, with rows of tiny spectators under cloth awnings and a shaded box for the emperor, under a pale bright sky. On the right a man and a lion stand small and alone on the sand.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-arena.folded.heic",
+          "alt": "A man stands alone on pale sand below a high wall crowded with tiny people, facing a lion.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D6E8F4",
+          "#FBEBCB",
+          "#E8C98F"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For one breath all Rome was silent. Then the crowd was on its feet, roaring louder than any lion."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Emperor sent for Androcles. "
+            },
+            {
+              "t": "“That is the fiercest lion in Rome,”",
+              "say": "emperor",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“Why does he spare you?”",
+              "say": "emperor"
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So Androcles told him about the cave, the thorn and the three summers. The story was written in big letters on a board and carried round the arena for all to read."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Free the man! Free the lion!” shouted the people, row after row."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Emperor looked at the lion leaning against the man’s legs. "
+            },
+            {
+              "t": "“Rome has spoken,”",
+              "say": "emperor",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“From today, nobody owns either of you.”",
+              "say": "emperor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-street.unfolded.heic",
+          "alt": "A Roman street of ochre and red walls with tiled roofs, shop awnings and a stone fountain under a pale morning sky, with people throwing flowers from the windows. On the right a man walks with a big lion on a thin leash.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-street.folded.heic",
+          "alt": "A man in a clean tunic walks beside a big lion on a thin leash, with flower petals caught in the lion’s dark mane.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#D9EAF3",
+          "#FCE6C4",
+          "#E2A56B"
+        ]
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "After that, the two of them were seen all over Rome."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Androcles wore a clean tunic. The "
+            },
+            {
+              "t": "Lion",
+              "name": "lion"
+            },
+            {
+              "t": " walked beside him on a leash as thin as a ribbon, which he could have snapped with one yawn."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bakers ran out with coins for the man. Children leaned from windows and threw flowers, until the black mane was pink with petals."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Wherever they went, people nudged each other and pointed. An "
+            },
+            {
+              "t": "old book",
+              "tap": "old-book"
+            },
+            {
+              "t": " still keeps what they said: “There goes the lion who was a man’s friend, and the man who was a lion’s doctor.”"
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The Lion paid no attention. He had smelled the butcher’s shop."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

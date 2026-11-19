@@ -1,0 +1,423 @@
+{
+  "id": "the-snow-house",
+  "title": "The Snow House",
+  "tier": "low",
+  "region": {
+    "id": "arctic",
+    "culture": "Inuit",
+    "place": "Nunavut, Canada",
+    "label": "Inuit · Nunavut",
+    "pin": { "lat": 69.4, "lon": -81.8 },
+    "pinColor": "#2F9BE0"
+  },
+  "setting": {
+    "period": "Nunavut, Canada, today"
+  },
+  "provenance": {
+    "kind": "original",
+    "credit": "Original story written by us (Omramo)",
+    "premise": "On a spring trip to the fishing lakes, a girl helps her grandfather build a snow house for the night. She wants to go fast and her blocks crack; he shows her how to find the right snow, cut each block, lean it on the last one and set the final block at the top, and she sleeps warm inside what she helped build.",
+    "rights": "Original text written for Omramo. No traditional or sacred narrative is used. An Inuit consultant, ideally a co-author, is sought for names, Inuktitut words, clothing, tools and customs (CONTENT_PLAN CQ4)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "Indigenous setting (Inuit, Nunavut). An original story: names, Inuktitut words, clothing, tools and the building method must be checked by an Inuit consultant, ideally a co-author.",
+    "community": "Inuit consultant (Nunavut)",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "Nunavut lies in the far north of Canada: a land of tundra and sea ice with no trees, where the spring sun stays up late into the evening.",
+      "factCards": ["nunavut", "hagia-sophia-moment"]
+    },
+    "culture": {
+      "lesson": "The snow house is Inuit engineering: a spiral of snow blocks that holds itself up, cut with a snow knife and lit by the stone lamp, the qulliq. Children learn it by watching an elder; families in Nunavut live in modern houses today and still teach this skill.",
+      "factCards": ["snow-knife", "qulliq"]
+    },
+    "moral": {
+      "lesson": "Careful work, done patiently, holds together; every block leans on the others. Elisapie's rushed blocks crumble, and her slow ones become part of a house.",
+      "reflectionQuestion": "When did going slowly help you make something that lasted?"
+    }
+  },
+  "moral": "Careful, patient work holds together, because every block leans on the others.",
+  "theme": {
+    "textColor": "#13283F",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "coral",
+    "tap": { "fill": "#FFC43D80", "fill2": "#FFAA3D61", "line": "#F08C14E6", "spark": "#F08A12" },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "A girl in a red parka presses snow into the wall of a half-built snow house, while her grandfather looks out over the top."
+  },
+  "parts": [
+    { "id": "part-1", "title": "Part I" },
+    { "id": "part-2", "title": "Part II" }
+  ],
+  "characters": [
+    {
+      "id": "elisapie",
+      "name": "Elisapie",
+      "color": "#B0362B",
+      "chipBackground": "#FFE1D6",
+      "faceAlt": "Elisapie, a girl in a red parka with a fur-trimmed hood.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Elisapie",
+        "traits": [
+          { "text": "Always in a hurry", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Fills every gap", "fill": "#DCEEFB", "ink": "#1B5687" },
+          { "text": "Loves to fish", "fill": "#FFE9B8", "ink": "#8A4A00" }
+        ],
+        "body": "She wants everything done fast, and her first snow blocks crumble. Then she watches Grandfather, slows down, and helps to build a whole house.",
+        "portraitAlt": "Elisapie in her red parka, hugging a block of snow nearly as big as she is.",
+        "background": ["#CFE9F7", "#FFD9A8", "#F2876B"]
+      }
+    },
+    {
+      "id": "grandfather",
+      "name": "Grandfather",
+      "color": "#1D5A8C",
+      "chipBackground": "#D6EAF8",
+      "faceAlt": "Grandfather, an older man with a lined, smiling face in a dark blue parka hood.",
+      "card": {
+        "label": "Character · in Part I and Part II",
+        "title": "Grandfather",
+        "traits": [
+          { "text": "Never hurries", "fill": "#DCEEFB", "ink": "#1B5687" },
+          { "text": "Few words", "fill": "#E6E3F5", "ink": "#4A3C8C" },
+          { "text": "Likes his tea", "fill": "#FFE9B8", "ink": "#8A4A00" }
+        ],
+        "body": "He can build a house out of snow before the sun goes down. He does not explain much. He says, “Watch,” and he smiles into his hood.",
+        "portraitAlt": "Grandfather in his dark blue parka, holding his long snow knife and a cup of tea.",
+        "background": ["#BFE0F5", "#7FB6E0", "#2F6FA8"]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "nunavut",
+      "kind": "place",
+      "title": "Nunavut",
+      "line": "A wide, cold land in the far north of Canada.",
+      "cultureNote": {
+        "label": "In Nunavut today",
+        "text": "Nunavut is the home of Inuit. No trees grow there. In spring the sea is still frozen, and the sun stays up late into the evening."
+      },
+      "pictureAlt": "A wide land of snow and bare rock beside a frozen sea, under a low golden sun.",
+      "background": "#1B4F7A"
+    },
+    {
+      "id": "snow-knife",
+      "kind": "object",
+      "title": "Snow knife",
+      "line": "A long, flat knife for cutting blocks out of hard snow.",
+      "cultureNote": {
+        "label": "In Nunavut today",
+        "text": "Inuit builders used to make snow knives from bone or antler. Today many use a steel knife or a saw."
+      },
+      "pictureAlt": "A long, flat snow knife with a wooden handle, standing in the snow beside a cut block.",
+      "background": "#2A5D86"
+    },
+    {
+      "id": "hagia-sophia-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "hagia-sophia",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "worldLink",
+          "label": "FAR AWAY, THE SAME IDEA",
+          "line": "Inuit builders make a dome of snow that holds itself up. Far away, other builders made a great dome of brick and stone, and it stands the same way: each piece leans on the next."
+        }
+      },
+      "background": "#3B2A5C"
+    },
+    {
+      "id": "qulliq",
+      "kind": "object",
+      "title": "The qulliq",
+      "line": "A lamp carved from stone that burns oil with a low flame.",
+      "cultureNote": {
+        "label": "In Nunavut today",
+        "text": "The qulliq gives light and heat. Families in Nunavut live in modern houses today, and still teach how to light the lamp and how to build a snow house."
+      },
+      "pictureAlt": "A shallow, half-moon lamp of grey stone with a low line of flame along its straight edge.",
+      "background": "#4A2F1E"
+    }
+  ],
+  "scenes": {
+    "scene-trail": {
+      "unfoldedAlt": "A snowmobile pulls a long wooden sled across a wide white land under a low spring sun. A girl in a red parka rides on the sled.",
+      "foldedAlt": "A girl in a red parka rides on a wooden sled across the snow, under a low golden sun.",
+      "fallbackColors": ["#CDE8F6", "#FFE9C2", "#EEF5FA"]
+    },
+    "scene-cutting": {
+      "unfoldedAlt": "Grandfather cuts a block from hard snow with his long snow knife. Beside him the girl looks down at a block that has cracked in two.",
+      "foldedAlt": "The girl holds a snow block that has cracked in two, while Grandfather cuts with his snow knife behind her.",
+      "fallbackColors": ["#D3EAF5", "#FFE3B8", "#E6F0F7"]
+    },
+    "scene-spiral": {
+      "unfoldedAlt": "A half-built snow house: the wall of snow blocks climbs round in a spiral. Grandfather stands inside it and the girl presses snow into the gaps from outside.",
+      "foldedAlt": "The girl presses soft snow into a gap in the spiral wall of snow blocks, with Grandfather's hood showing over the top.",
+      "fallbackColors": ["#D0E6F4", "#FFDDB0", "#E3EEF6"]
+    },
+    "scene-night": {
+      "unfoldedAlt": "The finished snow house glows gold from inside in the pale blue dusk of an Arctic spring night. The sled rests beside it.",
+      "foldedAlt": "The round snow house glows gold from inside in the pale blue dusk, with the sled beside it.",
+      "fallbackColors": ["#C9DCF2", "#F9DFC4", "#DCE8F4"]
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-trail",
+      "part": "part-1",
+      "paras": [
+        "^<name:elisapie>Elisapie</name> rode across the white land of <tap:nunavut>Nunavut</tap> on a sled.",
+        "The sled was a long wooden qamutiik. It bumped and hissed over the snow behind <name:grandfather>Grandfather</name>’s snowmobile.",
+        "It was a spring evening. The sun sat low and gold, and it would not go down for hours.",
+        "<say:elisapie*>“Faster, Grandfather!”</say> shouted Elisapie. <say:elisapie>“The fish are waiting!”</say>"
+      ]
+    },
+    {
+      "scene": "scene-trail",
+      "part": "part-1",
+      "paras": [
+        "Grandfather did not go faster. Grandfather never went faster.",
+        "They crossed the frozen sea. They crossed a hill of bare brown rock. They crossed more snow than Elisapie could look at.",
+        "At last he stopped beside a frozen lake. <say:grandfather*>“The fishing lakes are far,”</say> he said. <say:grandfather>“Tonight we sleep here.”</say>",
+        "Elisapie looked around. No house. No cabin. Only snow."
+      ]
+    },
+    {
+      "scene": "scene-trail",
+      "part": "part-1",
+      "paras": [
+        "<say:elisapie*>“Sleep in what?”</say> she asked.",
+        "<say:grandfather*>“In a house,”</say> said Grandfather. He patted the snow. <say:grandfather>“We have not built it yet.”</say>",
+        "He meant an iglu. In Inuktitut, the language of Inuit, iglu means a house. This one would be made of snow.",
+        "<say:elisapie*>“I will help! I will be fast!”</say> said Elisapie. Grandfather said only, <say:grandfather>“Hm,”</say> and took out his <tap:snow-knife>snow knife</tap>."
+      ]
+    },
+    {
+      "scene": "scene-cutting",
+      "part": "part-1",
+      "paras": [
+        "Elisapie did not wait. She took the saw and cut a block from the snow at her feet.",
+        "<say:elisapie*>“One!”</say> She heaved it up. <pop:1.3>Crack!</pop> It broke in two.",
+        "<say:elisapie>“Two!”</say> The next block crumbled like cake. <say:elisapie>“Three!”</say> The third fell to powder.",
+        "Grandfather looked at the heap. <say:grandfather*>“A fine pile of snow,”</say> he said. <say:grandfather>“It is not a house.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-cutting",
+      "part": "part-1",
+      "paras": [
+        "<say:elisapie*>“Why do they break?”</say> asked Elisapie.",
+        "Grandfather did not say. He walked off slowly, pushing his knife into the snow. Too soft here. Too soft there.",
+        "Then the knife went in slow and even, all the way down. <pop:1.3>Squeak!</pop>",
+        "<say:grandfather*>“This snow sings,”</say> he said. <say:grandfather>“The wind packed it hard. Soft snow is for jumping in. Singing snow is for houses.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-cutting",
+      "part": "part-1",
+      "paras": [
+        "He cut. Down, down, across, and a push with his boot. Out came a block as long as his arm, straight as a box.",
+        "He gave Elisapie the saw. <say:grandfather*>“Now you. Slowly.”</say>",
+        "Down, down, across. Her tongue stuck out. Her block was smaller, but it came out whole. <say:elisapie*>“It is heavy!”</say> she puffed.",
+        "<say:grandfather*>“Good,”</say> said Grandfather. <say:grandfather>“A house should be.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-cutting",
+      "part": "part-1",
+      "paras": [
+        "Block after block they cut. Grandfather stood them in a ring on the snow, each tight against the next.",
+        "Then he did something strange. He sliced the top of the ring into a slope, low at one end and high at the other.",
+        "<say:elisapie*>“You have spoiled it!”</say> cried Elisapie. <say:elisapie>“It is all crooked!”</say>",
+        "<say:grandfather*>“Crooked on purpose,”</say> said Grandfather. <say:grandfather>“Watch.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-spiral",
+      "part": "part-2",
+      "paras": [
+        "^Grandfather set the next block on the low end of the slope.",
+        "He set another beside it, leaning on the first. Then another, leaning on that. The wall did not go up in rings. It climbed round and round, like a snail’s shell.",
+        "<say:grandfather*>“Each block leans on the last,”</say> said Grandfather. <say:grandfather>“So none of them can fall.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-spiral",
+      "part": "part-2",
+      "paras": [
+        "Grandfather worked inside the wall, cutting blocks from the snow under his boots.",
+        "Elisapie had the outside. <say:grandfather*>“Find every gap,”</say> he said, <say:grandfather>“and fill it with soft snow. Your kind of snow.”</say>",
+        "She pressed snow into the cracks with her mitts. Pat, pat, pat.",
+        "Each new block tipped inward a little more. Nothing fell. Each block leaned on the last."
+      ]
+    },
+    {
+      "scene": "scene-spiral",
+      "part": "part-2",
+      "paras": [
+        "Up went the wall, and in. Soon Elisapie could see only Grandfather’s hood. Then only his knife. Then only a hole with a voice in it.",
+        "<say:elisapie*>“Are you still in there?”</say> she called.",
+        "<say:grandfather*>“I hope so,”</say> said the voice. <say:grandfather>“Somebody is building this house.”</say>",
+        "The wall had become a <tap:hagia-sophia-moment>dome</tap>, round as a bowl turned upside down."
+      ]
+    },
+    {
+      "scene": "scene-spiral",
+      "part": "part-2",
+      "paras": [
+        "He cut the last block too big. He pushed it up through the hole sideways and laid it flat.",
+        "Shave, shave went his knife. The block sank down, snug as a lid.",
+        "<say:elisapie*>“Grandfather! How will you get out?”</say>",
+        "The knife poked through the wall by her boots and sawed a small door. Grandfather looked out. <say:grandfather*>“Same way you get in.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-night",
+      "part": "part-2",
+      "paras": [
+        "Inside, Grandfather unwrapped Grandmother’s stone lamp, the <tap:qulliq>qulliq</tap>. He poured in oil and lit the wick.",
+        "A low flame crept along the edge of the lamp. The white walls turned gold.",
+        "Elisapie looked up at the blocks, winding round to the top. <say:elisapie*>“Which ones are mine?”</say>",
+        "<say:grandfather*>“The ones holding up mine,”</say> said Grandfather. <say:grandfather>“And mine are holding up yours.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-night",
+      "part": "part-2",
+      "paras": [
+        "They ate bannock and drank hot, sweet tea. The wind went round and round the house and found no way in.",
+        "Outside, the spring night stayed pale and blue. The little house glowed like a lamp.",
+        "Elisapie lay warm in her sleeping bag and counted the blocks. One, two, three…",
+        "She was asleep before she reached the top."
+      ]
+    },
+    {
+      "scene": "scene-night",
+      "part": "part-2",
+      "paras": [
+        "In the morning she crawled out into bright sun. There stood the snow house, round and firm. Not one block had moved.",
+        "<say:elisapie*>“Hurry, Grandfather! The fish are waiting!”</say>",
+        "Grandfather sat in the doorway with his tea. <say:grandfather*>“They have waited all winter,”</say> he said. <say:grandfather>“They can wait for one cup.”</say>",
+        "So Elisapie sat down and waited too. Slowly. Well, nearly slowly."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "hagia-sophia",
+      "name": "Hagia Sophia",
+      "era": "medieval",
+      "built": {
+        "from": 532,
+        "to": 537,
+        "circa": false,
+        "note": "The first dome fell after an earthquake in 558 and was rebuilt, a little taller, by about 562. Dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Türkiye",
+      "place": "Istanbul, Türkiye",
+      "coordinates": { "lat": 41.009, "lon": 28.98 },
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A huge old building with a great round dome on top, as high as a hill."
+        },
+        "medium": {
+          "line": "Built in Istanbul about 1,500 years ago, in less than six years. Its great dome was the wonder of its age.",
+          "note": "It has been a church, a mosque and a museum."
+        },
+        "advanced": {
+          "line": "Finished in 537 for the emperor Justinian, with a brick dome about 31 metres across that seems to float on a ring of windows.",
+          "note": "The first dome fell after an earthquake and was rebuilt taller. Over about 1,500 years the building has been a church, a mosque and a museum."
+        }
+      },
+      "art": {
+        "file": "art/hagia-sophia.heic",
+        "alt": "A great building of warm stone and brick with one wide, shallow dome above a ring of small windows, and smaller half-domes stepping down around it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3B2A5C",
+      "rights": "Our own illustration; no photograph. A religious building, presented as architecture and history only (CONTENT_PLAN §5, CQ9). Landmark image rights review pending (PRD Q29).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is an original story written by us (Omramo) from the content plan's premise. It retells no traditional, sacred or restricted Inuit narrative, and it cites no source text.",
+    "Setting: Inuit, Nunavut, Canada, in the present day, in spring (the pin near Igloolik is an example, not a decision).",
+    "Inuktitut words used, for the consultant to check (spelling, sense, use): qamutiik (the sled), iglu (a house; here a house of snow), qulliq (the stone lamp), and the language name Inuktitut. The name Elisapie was chosen as a name in use in Nunavut today; please confirm it. The girl says Grandfather and Grandmother in English.",
+    "Building steps described, for the consultant to check each: testing the snow with the knife until it goes in evenly and the hard, wind-packed snow squeaks; cutting blocks with a snow knife and a saw; a first ring of blocks; the top of the ring cut into a slope so the wall climbs in a spiral; each block leaning on the last and tipping inward; the builder inside cutting blocks from the snow under his feet; the helper outside filling gaps with soft snow; the last block cut too big, passed up through the hole sideways, laid flat and trimmed to fit from inside; the door cut out from inside at the end.",
+    "Other details to check: a snowmobile pulling the qamutiik; crossing sea ice and bare rock to inland fishing lakes; a child using a snow saw; Grandmother's qulliq taken on the trip and lit by Grandfather with oil and a wick; bannock and sweet tea; a pale spring night; fishing through lake ice in the morning.",
+    "Left out on purpose: spirits, shamans, taboos, legends and any ceremony. Nothing frightening happens. The snow house is shown as engineering, and the family as people living today.",
+    "The landmark card (Hagia Sophia, a world link on the word dome) compares two self-supporting domes to honour Inuit engineering; the building is presented as architecture and history only.",
+    "Status: DRAFT. Text review pending. Cultural review (required: Inuit consultant (Nunavut)) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#1B4F7A",
+      "shade": "#6FA3CC",
+      "mid": "#BCD9EE",
+      "light": "#F3F8FC",
+      "glow": "#FFC766",
+      "accent": "#C8402F",
+      "mood": "Clean, wide and quiet: blue-white snow with long blue shadows, one low gold sun, and two small bright parkas."
+    },
+    "light": "A spring evening in the Arctic, the sun low and gold; ONE warm light from the upper left in every picture, with long soft blue shadows falling to the right. In scene-night the sky stays pale blue and the warm light comes from inside the snow house as well.",
+    "world": [
+      "Present-day Nunavut in spring (about April): snow-covered tundra and frozen sea ice, low rounded hills of bare brown-grey rock showing through the snow. NO trees or bushes anywhere.",
+      "The sky is pale in every scene: light blue above, warm cream and peach near the horizon. No dark night, no stars, no northern lights; the spring night here stays light.",
+      "A modern snowmobile (plain, no brand marks) pulls a qamutiik: a long, low wooden sled with two runners and many wooden crosspieces lashed on with rope, carrying a plywood sled box, a fuel can, rolled sleeping bags and caribou skins.",
+      "Clothing is modern and warm: thick parkas with fur-trimmed hoods, snow trousers, big mitts, warm boots; sunglasses or snow goggles pushed up on a hood are a true spring detail. Keep the parkas plain: do not copy trim patterns or designs from real Inuit clothing or from any living artist.",
+      "The snow house is built of large slabs (roughly an arm long, a hand thick) that climb in ONE continuous spiral and lean inward; the seams slope. It must NOT look like a brick wall in level rows, and the blocks are not small cubes. The finished house is a low dome a little taller than Grandfather, with a small door cut low in the wall and chinked seams.",
+      "The snow knife is long, straight and flat with a plain wooden handle, about as long as a forearm and hand; the saw is an ordinary wood saw. The blocks are cut from hard, wind-packed snow, so the cut faces are clean and sharp.",
+      "The qulliq is a shallow, half-moon dish of grey stone with a low, even line of flame along its straight edge: small, never a bonfire. Light inside the snow house is warm gold on white.",
+      "Snow is never flat white: blue-violet shadows, warm cream where the sun touches, wind-ripples on the surface, sled and snowmobile tracks leading back to the horizon.",
+      "AVOID: the look of cartoon igloos (tunnel porch with level bricks, a fishing hole by the door), penguins, polar bears as props, totem poles, tipis, husky-and-fur-suit costume clichés, face tattoos, spirit or shaman imagery, and anything that makes the family look as if they live in the past.",
+      "The Hagia Sophia never appears in a scene; it is drawn only on its own card."
+    ],
+    "characters": {
+      "elisapie": "A girl of about eight, small and sturdy, with a round brown face, dark eyes, red cheeks from the cold and two black braids. A bright red parka with a pale fur-trimmed hood, dark blue snow trousers, big grey mitts, warm boots. Signature details: her hood always half off, and the tip of her tongue showing when she works hard.",
+      "grandfather": "A man of about seventy, broad and unhurried, with a lined brown face, grey hair and a small grey moustache, eyes creased from smiling at the sun. A dark blue parka with a dark fur-trimmed hood, black snow trousers, worn leather mitts, sunglasses pushed up on his hood. Signature details: the long snow knife in his hand and a steel cup of tea never far away."
+    },
+    "scenes": {
+      "scene-trail": {
+        "unfolded": "Far: a flat horizon of sea ice and one low rocky hill, the gold sun low on the upper left. Middle: long blue-white snow with sled tracks curving back to the horizon. Near, low on the trailing (right) half: the snowmobile with Grandfather driving and the long qamutiik behind it, Elisapie sitting on the load in her red parka, leaning forward. The leading (left) pane's upper two thirds are calm pale sky for the words.",
+        "folded": "A tall band: pale sky above, then Elisapie's face in the middle, hood blown back, riding on the sled box; the back of the snowmobile and Grandfather's hood just ahead of her, tracks running down to the bottom edge."
+      },
+      "scene-cutting": {
+        "unfolded": "Far: the frozen lake and the low sun on the left. Middle: the parked snowmobile and sled, small. Near, on the trailing (right) half: Grandfather bending to lift a clean, sharp-edged block from a neat trench in the snow, the snow knife in his other hand; beside him Elisapie stares at a block broken in two at her feet, a heap of crumbled snow behind her, the saw in her mitt. The leading pane's upper two thirds stay pale sky.",
+        "folded": "Elisapie's face in the middle, mouth open in surprise, holding the two halves of a cracked block; Grandfather behind her shoulder, calmly cutting with the snow knife; snow crumbs at the bottom."
+      },
+      "scene-spiral": {
+        "unfolded": "Far: pale sky, the lake, the sun lower on the left. Near, across the trailing (right) half and low into the left: the half-built snow house, its wall of big slabs clearly climbing in a spiral and leaning inward, one end of the wall lower than the other. Grandfather stands inside, seen from the chest up, setting a block; Elisapie kneels outside pressing soft snow into a seam with both mitts. Long blue shadows to the right. The leading pane's upper two thirds stay pale sky.",
+        "folded": "Elisapie's face in the middle, close to the curving wall, patting snow into a gap; the sloping seams of the spiral behind her; Grandfather's hood and the tip of his knife showing over the top of the wall."
+      },
+      "scene-night": {
+        "unfolded": "The sky is PALE: soft blue above, a band of peach and cream along the horizon on the left where the sun has only just dipped. Far: the frozen lake. Near, on the trailing (right) half: the finished snow house, a low dome glowing warm gold from inside, the light showing through the seams and the small door and spilling gold onto blue snow; the qamutiik rests beside it, the snowmobile behind. No figures needed outside. The leading pane's upper two thirds stay calm pale sky.",
+        "folded": "The glowing dome in the middle of the band, the small door a bright gold shape low in the wall, the sled leaning in beside it; pale blue sky above and blue snow below."
+      }
+    },
+    "pictures": {
+      "nunavut": "One centred subject: a wide view of snow-covered land and bare rock beside a frozen sea, the low gold sun on the upper left; no people, no buildings, no trees.",
+      "snow-knife": "One centred subject: a long, flat snow knife with a plain wooden handle standing upright in hard snow, a single clean-cut block beside it for scale.",
+      "qulliq": "One centred subject: a shallow half-moon lamp of grey stone on a snow ledge, with a low, even line of flame along its straight edge and a soft gold glow on the snow wall behind."
+    },
+    "portraits": {
+      "elisapie": "Elisapie from the waist up, hood back, braids out, hugging a snow block nearly as big as her chest and grinning, tongue-tip showing; pale sky behind.",
+      "grandfather": "Grandfather from the waist up in his dark blue parka, snow knife resting on one shoulder, a steel cup of tea in the other hand, a small sideways smile; sunglasses pushed up on his hood."
+    },
+    "cover": "The half-built snow house in the middle, its spiral wall clear to see: Elisapie in her red parka reaching up to press snow into a seam, Grandfather looking out over the top of the wall with the snow knife, the low gold sun on the upper left and a pale sky.",
+    "landmarks": {
+      "hagia-sophia": "Our own drawing of the building by day from a little way off: the wide, shallow main dome above its ring of small windows in the middle, the half-domes and heavy buttresses stepping down around it, warm stone and brick under a pale sky. Drawn as architecture; no people at prayer, no religious symbols picked out, no photograph traced."
+    }
+  }
+}

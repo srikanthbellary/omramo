@@ -1,4 +1,4 @@
-# Art status: concept art drawn in code (round 4: an illustration pass on the round-3 direction)
+# Art status: concept art drawn in code (round 5: twenty-nine more stories and thirty-three landmarks, from a shared kit — the whole catalog)
 
 **No image file listed here exists yet.** The story and landmark JSON name each picture by a
 file path, an alt text and a pixel size; the files are delivered later by the art workstream
@@ -23,6 +23,24 @@ painters, chosen by the picture's *asset name* — the file name without folder 
   sessions had no shell at all): **every number in a round-4 picture is arithmetic, not
   something anyone has looked at.** "What round 4 changed" and "Known shortfalls after
   round 4" below are the list to check on the Mac.
+- **Round 5, batch 1** added the pictures of ten new Low stories and ten landmarks. They
+  are composed from a shared illustration kit (`App/Sources/Art/Kit/`, `enum Kit`;
+  `docs/ART_DIRECTION.md` §11), with each story's heroes and region-true details drawn in its
+  own painter (`App/Sources/Art/Stories/<Name>Art*.swift`); the landmark pictures are in
+  `App/Sources/Art/Landmarks/`. The registry is `ArtLibrary.storyPainter(for:)` in
+  `StoryArt.swift` and the `switch` in `LandmarkArt.paint`. The kit, the ten painters and the
+  ten landmark pictures were written by agents with **no compiler, no renderer and no shell**:
+  like round 4, every number is arithmetic nobody has looked at. See "Round 5, batch 1" below.
+- **Round 5, batch 2** added the pictures of the ten new Medium stories and twelve landmarks,
+  the same way (kit + one painter enum a story + one file a landmark), equally unrendered.
+  Three of the ten are dark stories with light text (every picture night, deep dusk or deep
+  water), like the Anansi prototype. The story painters were begun on Fable 5.2 and, after
+  that session hit its usage limit part-way, finished on Opus 5.5 by a second painter who
+  read the first one's cast and scenes. See "Round 5, batch 2" below.
+- **Round 5, batch 3** added the pictures of the nine new Advanced stories and the last eleven
+  landmarks (all 37 now), the same way and equally unrendered, all on Opus 5.5. Advanced pages
+  carry words on **both** panes, like Urashima, so the scenes put the horizon low and keep a
+  calm sky across the whole width. See "Round 5, batch 3" below.
 - Each picture is rasterised once (`cachedArt()` in `StoryArt.swift`), so page turns, card
   reveals and the library-to-story transition move a cached image, not a redrawn `Canvas`.
 - When a real file is added at the path below, the app shows it and stops drawing the code
@@ -113,9 +131,274 @@ and their card says so.
 | File | Pixels | What it shows | Used by | Drawn by |
 |---|---|---|---|---|
 | `art/taj-mahal.heic` | 1296 × 1212 | The white domed mausoleum with four minarets, mirrored in the long pool, at dawn. | The Monkey and the Crocodile (framed, "then and now") | `LandmarkArt` `taj-mahal` |
-| `art/lighthouse-of-alexandria.heic` | 1296 × 1212 | A reconstruction, drawn to look like an artist's idea: three-level tower on a small island, centred (round 4). | No story yet (exercises the reconstruction rule) | `lighthouse-of-alexandria` |
+| `art/lighthouse-of-alexandria.heic` | 1296 × 1212 | A reconstruction, drawn to look like an artist's idea: three-level tower on a small island, centred (round 4). | The Shipwrecked Sailor (framed, "then and now", on "harbour") | `lighthouse-of-alexandria` |
 | `art/asante-traditional-buildings.heic` | 1296 × 1212 | A low earth-walled house with a steep thatched roof and curling wall patterns. Generic patterns only; for the Akan reviewer. | How Wisdom Became the Property of the Human Race (natural) | `asante-traditional-buildings` |
 | `art/tokyo-skytree.heic` | 1296 × 1212 | A slim pale lattice tower, centred, above a low city and a river, evening; the moon upper left (round 4). Our own stylised drawing; `docs/CONTENT_PLAN.md` §6.6 notes that the operator licenses the name and image (legal review before release, PRD Q29). | The Story of Urashima Taro (framed, "then and now") | `tokyo-skytree` |
+
+| `art/sydney-opera-house.heic` | 1296 × 1212 | Nine pale sail-like roof shells in three groups on a stepped podium at the water, a blue harbour, two small sailing boats. No logo. Name and image are the Trust's trademarks (PRD Q29). | The Shipwrecked Sailor (framed, world link, on "sail") | `LandmarkArt+SydneyOperaHouse.swift` |
+| `art/himeji-castle.heic` | 1296 × 1212 | The white main keep, five tiers of plaster walls and grey tiled roofs with upturned eaves on a curved stone base, a small tower joined to it, pines and a little blossom. | The Tongue-Cut Sparrow (framed, "then and now", on "white heron") | `LandmarkArt+HimejiCastle.swift` |
+| `art/great-wall-of-china.heic` | 1296 × 1212 | A crenellated wall climbing green hills to a square watchtower, then on over a saddle to a second tower and away along a hazy ridge. | The Old Man Who Moved the Mountains (framed, map moment, on "basket by basket") | `LandmarkArt+GreatWall.swift` |
+| `art/machu-picchu.heic` | 1296 × 1212 | Roofless grey stone houses and green terraces on a mountain saddle, the sugar-loaf peak behind, far Andes and a wisp of cloud. | The Old Man Who Moved the Mountains (framed, world link, on "mountain") | `LandmarkArt+MachuPicchu.swift` |
+| `art/hagia-sophia.heic` | 1296 × 1212 | The building from its long side: the wide shallow dome on its ring of windows, half-domes stepping down, rose-ochre walls, four minarets, garden trees. Architecture only. | The Snow House (framed, world link, on "dome") | `LandmarkArt+HagiaSophia.swift` |
+| `art/saint-basils-cathedral.heic` | 1296 × 1212 | Six red-brick towers, each with a different patterned onion dome, round a taller tent-roofed spire; paving in front. Architecture only; finials plain. | The Peasant and the Bear (framed, "then and now", on "onions") | `LandmarkArt+SaintBasils.swift` |
+| `art/bremen-town-hall-roland.heic` | 1296 × 1212 | The stone knight Roland under his Gothic canopy on the market square, the town hall's arcade and green copper roof behind. The modern bronze of the four animals is deliberately not drawn (it may be in copyright). | The Bremen Town Musicians (natural, on "Bremen") | `LandmarkArt+BremenRoland.swift` |
+| `art/colossus-of-rhodes.heic` | 1296 × 1212 | **A reconstruction**, pale and sketched: a bronze sun god, feet together on a tall white pedestal beside (not astride) the harbour, a crown of rays, small square-sailed ships for scale, a height rule in the margin. | The North Wind and the Sun (framed, "then and now", on "Sun") | `LandmarkArt+Colossus.swift` |
+| `art/statue-of-liberty.heic` | 1296 × 1212 | The green copper statue on its stone pedestal and star-shaped base on a small island, torch raised, by day. | The North Wind and the Sun (framed, world link, on "harbour") | `LandmarkArt+StatueOfLiberty.swift` |
+| `art/petra.heic` | 1296 × 1212 | The rose-red rock-cut front known as the Treasury, seen from inside the dark canyon; three tiny camels for scale. | The Lion and the Hare (framed, map moment, on "caravans") | `LandmarkArt+Petra.swift` |
+| `art/great-pyramid-giza.heic` | 1296 × 1212 | The Great Pyramid from a corner by day: the sunlit gold face and the indigo shaded face, fine stone courses and a stepped, weathered edge; two hazier pyramids behind (the middle one with its smooth cap); sand, tiny people and a camel rider. | King Khufu and the Magician (natural, on "great tomb") | `LandmarkArt+GreatPyramid.swift` |
+| `art/chichen-itza.heic` | 1296 × 1212 | El Castillo from a corner: nine grey-cream terraces, a broad stair up the lit face, the square temple on top, a lawn, low Yucatán forest, tiny visitors. No invented carving. | King Khufu and the Magician (framed, world link, on "pyramid") | `LandmarkArt+ChichenItza.swift` |
+| `art/mount-fuji.heic` | 1296 × 1212 | The even cone with its notched summit and a snow cap running down in fingers, blue-violet slopes, a band of mist, wooded hills, a calm lake with its reflection and two small boats; a pine bough top right. Not after any print. | The Bamboo-Cutter and the Moon-Child (natural, on "Mount Fuji") | `LandmarkArt+MountFuji.swift` |
+| `art/golden-gate-bridge.heic` | 1296 × 1212 | The bridge at an angle by day: the near Art Deco tower large, the far one in a bank of fog, the two main cables and hangers, international orange; the blue strait, a small ship, a rocky shore. | The Herd Boy and the Weaving Maiden (framed, world link, on "bridge") | `LandmarkArt+GoldenGate.swift` |
+| `art/novgorod-kremlin.heic` | 1296 × 1212 | Saint Sophia across the Volkhov: the plain white cathedral with five helmet domes (the middle one gold), the red-brick kremlin wall with a round and a square tower, the river with reflections and a rowing boat, birches. Architecture only; finials tiny and plain. | Sadko (natural, on "white cathedral") | `LandmarkArt+Novgorod.swift` |
+| `art/christ-the-redeemer.heic` | 1296 × 1212 | The forested peak of Corcovado with the pale statue small on its summit (no face, no halo, no rays), the bay of Rio with Sugarloaf and rounded hills. Presented as a landmark; image rights claimed by the Archdiocese of Rio (PRD Q29). | Sadko (framed, world link, on "harbour") | `LandmarkArt+ChristRedeemer.swift` |
+| `art/colosseum.heic` | 1296 × 1212 | The curved travertine wall as it stands: three rows of arches and the plain top storey on the left, the broken right side showing the inner ring, umbrella pines, tiny visitors. | Androcles and the Lion (framed, "soon after", on "arena") | `LandmarkArt+Colosseum.swift` |
+| `art/temple-of-artemis-ephesus.heic` | 1296 × 1212 | **A reconstruction**, pale and sketched: a very wide Ionic temple with a forest of columns on a stepped base, a low pediment, a marshy plain; construction lines and a height rule. No statue of the goddess. | Androcles and the Lion (framed, map moment, on "empire") | `LandmarkArt+TempleOfArtemis.swift` |
+| `art/parthenon.heic` | 1296 × 1212 | The temple as it stands, from a corner: eight Doric columns across the front, the receding side, the broken pediment, no roof, on the Acropolis rock with fallen drums and a small olive tree. | The Horse and the Olive (natural, on "marble temple") | `LandmarkArt+Parthenon.swift` |
+| `art/statue-of-zeus-olympia.heic` | 1296 × 1212 | **A reconstruction**, sketched: the seated gold-and-ivory figure on its throne inside the dim temple, staff and small figures, the oil pool in front, one tiny visitor for scale. | The Horse and the Olive (framed, "then and now", on "Zeus") | `LandmarkArt+ZeusOlympia.swift` |
+| `art/hanging-gardens-babylon.heic` | 1296 × 1212 | **A reconstruction of a wonder never found**, sketched: five brick terraces (one band of blue glazed brick) planted with palms and trailing plants, water falling level to level, the river with a round reed boat. | Sindbad's Second Voyage (framed, map moment, on "Baghdad") | `LandmarkArt+HangingGardens.swift` |
+| `art/burj-khalifa.heic` | 1296 × 1212 | The tower centred, narrowing in a spiral of steps to its spire, silver-blue glass, far above the city's other towers; a strip of the Gulf, desert haze, palm fronds. No logo. The owner asserts rights over name and image (PRD Q29). | Sindbad's Second Voyage (framed, "then and now", on "the Gulf") | `LandmarkArt+BurjKhalifa.swift` |
+
+## Round 5, batch 1 — the ten new Low stories
+
+Every story names the same set of files (pixel sizes as the Monkey story's): `art/cover.heic`
+720 × 900; for each of its four scenes `art/scene-<name>.unfolded.heic` 2676 × 2160 and
+`art/scene-<name>.folded.heic` 1296 × 2160; for each ordinary tap target
+`art/see-<id>.heic` 1296 × 1212; for each character `art/face-<id>.png` 144 × 144 and, where
+the character has a card, `art/char-<id>.card.heic` 1296 × 1200. The asset name the painter
+is asked for is the file name without folder and extensions. All ten keep a pale sky behind
+the words in every scene (one dark ink a story).
+
+| Story (painter) | Scenes | Tap pictures | Portraits · faces | Heroes drawn for this story alone |
+|---|---|---|---|---|
+| `shipwrecked-sailor` (`SailorArt`) — ancient Egypt | `scene-ship`, `scene-island`, `scene-serpent`, `scene-home` | `see-red-sea`, `see-incense`, `see-papyrus` | sailor, serpent · sailor, serpent, captain | The great golden Serpent (scaled coils, lapis brows, a king's beard); the ship's crew along the rail; the Nile harbour |
+| `tongue-cut-sparrow` (`SparrowArt`) — Japan | `scene-cottage`, `scene-bamboo`, `scene-sparrow-house`, `scene-road` | `see-bamboo-grove`, `see-rice`, `see-guest` | old-man, sparrow · old-man, sparrow, old-woman | The thatched farmhouse with its porch; the sparrows' house and gate; the two wicker boxes; the heron in the stream |
+| `old-man-who-moved-mountains` (`MountainsArt`) — ancient China | `scene-mountains`, `scene-digging`, `scene-river-bend`, `scene-open-road` | `see-north-china-mountains`, `see-big-family`, `see-carrying-pole` | yu-gong, zhi-sou · yu-gong, wife, boy, zhi-sou | Taihang and Wangwu with cliff bands; the family at work with poles and baskets; the willow at the river bend; the open road |
+| `why-possums-tail-is-bare` (`PossumArt`) — Cherokee ⚑ | `scene-woods`, `scene-combing`, `scene-dance`, `scene-grin` | `see-smoky-mountains`, `see-cricket-barber`, `see-opossum` | possum, rabbit · possum, rabbit, cricket | Possum's tail in three states (silver plume, wrapped in red string, bare and curled); Cricket; Turtle; the layered blue ridges. Animals and forest only — no people, drums, fire, masks, feathers, patterns or lettering |
+| `the-snow-house` (`SnowHouseArt`) — Inuit, Nunavut ⚑ | `scene-trail`, `scene-cutting`, `scene-spiral`, `scene-night` | `see-nunavut`, `see-snow-knife`, `see-qulliq` | elisapie, grandfather · elisapie, grandfather | The snow house as a rising spiral of slabs (half-built, and glowing gold at dusk); the snowmobile and the qamutiik; the snow knife; the qulliq. Plain modern parkas, no patterns |
+| `peasant-and-bear` (`PeasantBearArt`) — Russia | `scene-field`, `scene-turnips`, `scene-rye`, `scene-harvest` | `see-forest`, `see-turnip`, `see-rye` | peasant, bear · peasant, bear, wife | Four seasons of one field; the horse with collar and duga; turnips, tops and roots; the birch-and-spruce forest edge; the far izba |
+| `bremen-town-musicians` (`BremenArt`) — Germany | `scene-road`, `scene-forest`, `scene-window`, `scene-home` | `see-mill`, `see-town-musician`, `see-timber-house` | donkey, rooster · donkey, dog, cat, rooster | The tower of four at the glowing window; the half-timbered house by night and by morning. No robbers in any picture |
+| `north-wind-and-sun` (`WindSunArt`) — ancient Greece | `scene-sky`, `scene-wind`, `scene-sun`, `scene-rest` | `see-fable`, `see-aegean-sea`, `see-cloak` | north-wind, sun · north-wind, sun, traveller | The North Wind (a cloud with a face and moods) and the Sun (a disc with a calm face) — the one story where the sun is a character and sits on the trailing pane; the rust-red cloak in three states; the sheared olive in the gale |
+| `why-sun-and-moon-live-in-sky` (`SunMoonArt`) — Efik, Nigeria ⚑ | `scene-visit`, `scene-building`, `scene-flood`, `scene-sky` | `see-cross-river`, `see-compound`, `see-tide` | sun, moon, water · sun, moon, water | The Water as a person made of water; the Sun and the Moon as people with a gold and a silver glow; the compound going up and under water. Plain cloth only — no signs, masks or regalia |
+| `lion-and-hare` (`LionHareArt`) — Persia ⚑ | `scene-valley`, `scene-council`, `scene-hills`, `scene-well` | `see-persia`, `see-wild-hare`, `see-well` | hare, lion · hare, lion, gazelle, tortoise | The old stone well with the two faces in the water; the Tortoise; the Gazelle's horns; gold hills and a green valley. Animals only |
+
+⚑ = the story is flagged "needs cultural review before release"; its pictures go to the same
+reviewer as its text.
+
+### Known shortfalls after round 5, batch 1 (from the painters' own notes — to check on the Mac)
+
+Across the batch:
+- **Nothing has been rendered.** The kit's people, animals and birds have never been seen; a
+  fault in `Kit.person`, `Kit.beast` or `Kit.bird` shows in most stories at once.
+- Kit figures are **side or three-quarter views** with a fixed set of poses. Painters built a
+  few poses the kit lacks from its internal rig (`Kit.bodyRig`, `Kit.bodyFigure`…), which ties
+  those stories to the rig's field names.
+- Most painters came in under the line budget (about 1,250–1,650 lines a story against the
+  Monkey story's 2,660): the scenes lean on kit calls. Near-plane framing is often
+  `Kit.cornerLeaves` rather than something drawn for the place.
+- Tall iPad windows and the squattest phone windows were checked by arithmetic for the
+  subject only. Several painters note a prop near the hinge strip or a face close to a control
+  at an extreme size (listed below).
+- Some painters did not finish the full "be the compiler" re-read; a reviewer pass followed.
+
+Per story:
+- **Sailor.** The Serpent's coil pile is stacked capsules (a cushion, not a true spiral) and
+  its scale pattern is a flat grid. In both home scenes the ship is the kit boat mirrored, so
+  the hull's light is on the wrong side. `scene-ship` is side-on, not three-quarter. On a tall
+  window the coil pile is cropped by the right edge; on a squat one the bow crosses the hinge.
+- **Sparrow.** The old man is a side-view figure on a front-view porch and his head overlaps
+  the slatted window; the Sparrow is small in the wide cottage scene; her "bow" is the kit's
+  peck tilt; the wicker boxes are the kit's flared basket, not rectangular boxes; both elders
+  wear a long kimono where the author's brief asked for a short jacket and leggings.
+- **Mountains.** Cliff bands are placed by an estimate of the kit mountain's outline; the
+  elders' robes are ankle-length (the brief asks knee-length work robes); the wife has no
+  folded-arms pose; the open-road folded scene cannot show the back view the brief asked for.
+- **Possum.** The upside-down heads in `scene-grin` are rotated kit heads (catchlights not
+  upper-left); the grin shows a small rounded row of teeth, as the story needs; Rabbit's bent
+  ear is not drawn; the silver plume may read soft against the blue ridges; the hollow tree is
+  left out of the folded combing scene.
+- **Snow House.** Near-plane framing is only pale snow banks; on the tallest windows the sled
+  is cropped and the snowmobile's ski crosses the hinge; portrait arms are drawn over the kit
+  bust and may not join the shoulders; Elisapie stands (the kit's kneel puts hands on the
+  ground); the scene-cutting layout is mirrored from the author's brief. **For the Inuit
+  consultant:** the spiral, the knife, the qulliq, the parkas, the sled and the snowmobile.
+- **Peasant and Bear.** The Bear "sits" as a rearing bear half-hidden by his heap; the cart is
+  two-wheeled (a telega has four); the izba roof is low-pitched; on tall windows the horse and
+  the Bear's side drift toward the hinge; the wife appears only as a face chip.
+- **Bremen.** The Donkey stands beside the wall rather than with hooves on the sill; the
+  Rooster's wings stay folded; the Cat's green eyes and white paws are not drawn; the door is
+  small beside the Donkey; birch tops in `scene-window` rise into the leading pane's sky.
+  Kit trap: `Kit.beastFace` draws a lion's ruff for any `mane: true`, so the Donkey's front
+  views use a mane-less copy with a drawn forelock.
+- **Wind and Sun.** The traveller is bare-headed in the gale with the hat in the air; harbour
+  houses are stone and mud-brick colours (the author's brief warns against whitewashed
+  cubes); on the tall cover the two sky characters are small; on the widest cover crop the
+  Sun's face is near the tier pill; the bent olive uses a sheared context.
+- **Sun and Moon.** The two sit shoulder to shoulder in the sky (not hand in hand), in a pale
+  cloud; the Moon's wrapper is the kit's one-shoulder wrap (**for the Efik reader's dress
+  check**); the Sun in the canoe is a sitting figure clipped at the gunwale; on a squat phone
+  the Moon's face is close to the "Aa" capsule in `scene-sky`.
+- **Lion and Hare.** At the well the Lion is a front-view bust behind the rim (he does not
+  hold the Hare); `see-wild-hare` shows the story's Hare rather than a natural-history hare;
+  the Hare's ears do not change with mood; the Tortoise always faces left; the kit lion's mane
+  is the standard ruff.
+- **Landmarks.** Petra's top-left corner is dark canyon, not sky, and its carved front is
+  narrower than 60% of the width; the Sydney shells are a simplified side view about 77% of
+  the width; the Statue of Liberty's figure is a little over half the total height and its
+  face is tiny; Hagia Sophia is a flattened, symmetric side elevation; Saint Basil's shows six
+  of the side chapels and its swirls may read as slanted stripes; Roland and the Colossus are
+  narrow subjects carried by what stands behind them; Himeji shows one small tower of three.
+
+## Round 5, batch 2 — the ten new Medium stories
+
+File names and sizes as for batch 1. Medium look (`docs/ART_DIRECTION.md` §4, the batch notes'
+"Tier look"): `showsEyeWhite: false` on every figure, no rays on portraits, quieter
+saturation, more air. **Light** stories keep a pale sky behind the dark words on every page;
+the three **dark** stories (marked ●) are night, deep dusk or deep water on every page, with
+light text, like Anansi.
+
+| Story (painter) | Scenes | Tap pictures | Portraits · faces | Heroes drawn for this story alone |
+|---|---|---|---|---|
+| `tiger-brahman-jackal` (`TigerArt`) — Punjab | `scene-cage`, `scene-pipal`, `scene-well`, `scene-road` | `see-punjab`, `see-priest-and-teacher`, `see-pipal-tree`, `see-well-wheel` | brahman, jackal · brahman, jackal, tiger | The bamboo cage trap; the Bengal tiger (vain, never bloody); the golden jackal; the pipal with its tipped leaves; the buffalo at the Persian well-wheel with its clay pots; mustard and wheat. The Brahman's idea card shows an old book on a stand, no figure or religious image |
+| `khufu-and-the-magician` (`KhufuArt`) — Old Kingdom Egypt | `scene-court`, `scene-river`, `scene-magic`, `scene-pyramid` | `see-nile`, `see-river-boat`, `see-papyrus-roll` | khufu, dedi · khufu, dedi, prince | The columned hall; tiny old Dedi; the goose (the trick is not shown, only before and after); the square-sailed river boat; the half-built pyramid with its ramp. No chariots, horses or camels; hieroglyphs only as unreadable marks |
+| `bamboo-cutter-and-moon-child` ● (`MoonChildArt`) — Japan | `scene-grove`, `scene-house`, `scene-moon`, `scene-fuji` | `see-bamboo-work`, `see-old-capital`, `see-court-poem`, `see-moon-viewing` | kaguya, bamboo-cutter · kaguya, bamboo-cutter, emperor | The glowing bamboo stem; Kaguya-hime's light; the guards on the roof; the shining cloud and the robed Moon people (no wings); Fuji's cone with its thread of smoke. Heian court dress; no castles, cherry blossom or torii |
+| `herd-boy-and-weaving-maiden` ● (`WeaverArt`) — China | `scene-loom`, `scene-meadow`, `scene-river`, `scene-bridge` | `see-silk`, `see-silver-river`, `see-qixi`, `see-two-stars` | zhinu, niulang · zhinu, niulang, ox | The loom in the clouds trailing dawn-coloured silk; the yellow ox; the Silver River of stars; the magpie bridge. Han-style dress. The Golden Gate Bridge never appears in a scene |
+| `iktomi-and-the-muskrat` (`IktomiArt`) — Dakota ⚑ | `scene-lake`, `scene-race`, `scene-swim`, `scene-tree` | `see-great-plains`, `see-guest-custom`, `see-reed-lodge`, `see-storyteller` | iktomi, muskrat · iktomi, muskrat | The prairie lake, wild rice and the leaning willow; the muskrat (round, dark, a thin tail) and its reed lodge; Iktomi in fringed deerskin with plain bands, the stone in his blanket. No face paint, no sacred objects, no copied beadwork, no stereotype imagery |
+| `long-day-at-fish-camp` (`FishCampArt`) — Yup'ik, Alaska ⚑ | `scene-camp`, `scene-net`, `scene-bank`, `scene-porch` | `see-drying-rack`, `see-kuskokwim`, `see-first-catch`, `see-sod-house` | nick, grandma · nick, grandma, lena | Fish camp in the gold of a northern summer night: plywood cabins, the smokehouse, racks of red salmon strips under a blue tarp, the aluminium skiff, the uluaq, fireweed. Summer only: no snow, no snow houses, no fur parkas. The sod house card shows a sod-and-driftwood house partly in the ground |
+| `sadko` ● (`SadkoArt`) — Novgorod | `scene-novgorod`, `scene-lake`, `scene-ship`, `scene-palace` | `see-gusli`, `see-lake-ilmen`, `see-bylina`, `see-river-roads` | sadko, sea-tsar · sadko, sea-tsar, chernava | The wing-shaped gusli; the green-bearded Sea Tsar (jolly, heavy-footed, never demonic); the red-sailed ships held still; the white palace under the sea. 12th-century Novgorod: log houses, plank streets, helmet domes (not Saint Basil's) |
+| `androcles-and-the-lion` (`AndroclesArt`) — Roman Empire | `scene-hills`, `scene-cave`, `scene-arena`, `scene-street` | `see-slavery`, `see-north-africa`, `see-old-book` | androcles, lion · androcles, lion, emperor | The Barbary lion with its dark mane and the thorn; the cave; a circus-like arena with a plain wall and awnings (**not** the Colosseum, which is later); the Roman street with flowers. The slavery card shows an open gate, no people; no fighting shown |
+| `horse-and-the-olive` (`OliveArt`) — ancient Athens | `scene-hill`, `scene-gods`, `scene-horse`, `scene-olive` | `see-acropolis`, `see-greek-gods`, `see-olive-oil`, `see-olive-wreath` | athena, poseidon · athena, poseidon, cecrops | The first humble town of mud brick and thatch on the rock (no marble, no columns); Poseidon with trident and the white horse leaping from split stone; Athena kneeling by the young olive. Zeus is never drawn as a figure; the horse has no wings |
+| `sindbad-second-voyage` (`SindbadArt`) — Baghdad and the Indian Ocean | `scene-harbour`, `scene-egg`, `scene-valley`, `scene-nest` | `see-dhow`, `see-the-nights`, `see-basra` | sindbad, roc · sindbad, roc, merchant | The lateen-sailed dhow; the Roc felt by its size (wing, shadow, a leg like a palm trunk); the egg like a dome; the diamond valley with the serpents only as far shapes; the eagle's nest. Abbasid dress; no flying carpets, lamps or onion-domed skylines |
+
+⚑ = flagged "needs cultural review before release": its pictures go to the same reviewer as
+its text (Dakota consultant; Yup'ik consultant).
+
+### Known shortfalls after round 5, batch 2 (from the painters' own notes — to check on the Mac)
+
+Across the batch:
+- **Nothing has been rendered**, and the batch-1 kit under it has never been compiled.
+- **Two hands on every story.** The first painter (Fable 5.2) wrote each story's cast and
+  some scenes, then stopped at a usage limit; a second (Opus 5.5) wrote the rest after
+  reading the first's cast. Look for a change of hand between a story's early and late
+  pictures. The fish-camp painter found fifteen helpers the first had called but never written
+  (`FishCampArt+Parts.swift`); Androcles' street parts went to a fifth file
+  (`AndroclesArt+Street.swift`) to keep files under about 750 lines.
+- Kneeling and sitting heights, hands holding props and the faces' look direction were placed
+  by arithmetic on the kit's rig; several painters flag them.
+- Painters stayed nearer the budget than in batch 1 (about 1,640–2,160 lines a story).
+
+Per story:
+- **Tiger.** The Jackal never sits (his dark-tipped tail is pinned to the standing pose); his
+  paw on the latch and his raised hind leg in the portrait are drawn over the kit figure. On a
+  tall iPad the well-wheel's right pots are cropped and the Brahman moves just into the left
+  pane (below the words). The beam over the buffalo is steep; the folded well shows no beam.
+- **Khufu.** Dedi sits up with his hands out at the river (the brief said propped on an
+  elbow); the pyramid scene shows the two in profile (the folded one from behind, drawn by
+  hand: the kit has no back view); the pyramid's top reaches a little above the calm-text line
+  (pale, in haze).
+- **Bamboo-Cutter ●.** The glow on the kneeling old man's face assumes the kit's kneeling head
+  height; the moon in the moon-viewing picture is upper left (light rule) and is not shown
+  rising. The Cast file is a little over 750 lines.
+- **Herd Boy ●.** The Qixi picture's half moon is lit from the right (as a seventh-night moon
+  is), against the one-light rule; `Kit.bodyHand` is called directly for Zhinü's hands.
+- **Iktomi ⚑.** Lighter than budget; the folded scenes leave out the fire and ashes; in an
+  existing scene the Muskrat may look away from Iktomi (the continuation painter mirrored its
+  own figures to fix the look); the storyteller picture is a plum-to-amber dusk, not pale.
+  **For the Dakota consultant:** whether Iktomi may be drawn at all, his dress, braids and
+  bands, the plain bead bands, the book-blanket-fire picture.
+- **Fish camp ⚑.** The skiff in the camp scene lies bow-in-water (usually the reverse); the
+  porch rack and table overhang the bank; Nick's hand on the net and his arms round the bundle
+  are placed by arithmetic. **For the Yup'ik consultant:** the qaspeq-style overshirt, the
+  racks and smokehouse, the uluaq, the cabins, the sod house card.
+- **Sadko ●.** The singer's open mouth may hide under his beard; Sadko's arms round the gusli
+  in the portrait are drawn over the kit bust; low moons were added to three pictures.
+- **Androcles.** Leash end and sandal soles placed from the kit's walking rig; the bandage on
+  the Lion's raised paw assumes the kit's paw shape; in the tallest folded band the cave rock
+  hides the palm.
+- **Horse and Olive.** The closed fist in both portraits is an ellipse over the kit's open
+  hand; Athena's kneeling height is estimated; the oil stream's start is computed from the
+  jug's tilt; the cover's olive canopy reaches the tier-pill corner (no face there).
+- **Sindbad.** The mirrored Sindbad in the folded egg scene draws his head without the
+  mirror flag (the cast helper has none); the Roc's crest and the merchant's turban are
+  cropped by their chip circles; three merchants in the nest scene (the brief suggested more).
+- **Landmarks.** The Zeus statue is about 43% of the picture's width (the colonnade fills the
+  rest); the Temple of Artemis' side recedes by a simple one-point construction; the Golden
+  Gate's cable clears the deck by only a few units near the far tower; the Burj Khalifa's
+  foot sits under the card fade; five files run over 450 lines (Chichén Itzá, Parthenon,
+  Temple of Artemis, Zeus, Hanging Gardens).
+
+## Round 5, batch 3 — the nine new Advanced stories
+
+File names and sizes as for batch 1. Advanced look (`docs/ART_DIRECTION.md` §4): a grown-up
+picture book — atmosphere, a real time of day, haze, true detail, small plain eyes
+(`showsEyeWhite: false`), no rays, expression by posture. **Composition:** the words sit in the
+top of both panes (every scene has `textArea { leadingBottom: 470, trailingBottom: 420 }`), so
+each unfolded scene is built on `Kit.stage(size, ground: ~220)` with a low horizon, a calm pale
+sky across the whole width, and the subject low on the trailing pane. Eight stories are light;
+the Fire-Bird (●) is dark on every page, with light text.
+
+| Story (painter) | Scenes | Tap pictures | Portraits · faces | Heroes drawn for this story alone |
+|---|---|---|---|---|
+| `savitri-and-satyavan` ⚑ (`SavitriArt`) — ancient India | `scene-palace`, `scene-hermitage`, `scene-forest`, `scene-south-road` | `see-her-own-choice`, `see-hermitage`, `see-banyan-tree`, `see-boon` | savitri, satyavan · savitri, satyavan, yama | Carved-timber palace terrace over a lotus pool; reed hermitage with its fire altar; the banyan with pillar and hanging roots; peacocks and chital; the gold-painted chariot. Yama tall and calm, slate-dark skin, red drape, crown, a looped rope, a small light in his hand — no skull, no fire, no buffalo (the Hindu reviewer decides how he is drawn) |
+| `eloquent-peasant` (`EloquentArt`) — Middle Kingdom Egypt | `scene-oasis`, `scene-path`, `scene-river`, `scene-hall` | `see-salt-field`, `see-donkey-caravan`, `see-maat`, `see-scribe` | khunanup, rensi · khunanup, rensi, nemtynakht | The salt lake with its cracked crust; grey donkeys with salt nets; the cloth across the canal path; Rensi's boat with steering oars; a courtyard of closed-bud lotus columns and a cross-legged scribe with a roll of unreadable marks. No camels, horses, chariots or pyramids |
+| `ballad-of-mulan` (`MulanArt`) — northern China | `scene-loom`, `scene-river`, `scene-frontier`, `scene-home` | `see-loom`, `see-yellow-river`, `see-northern-grasslands`, `see-the-ballad` | mulan, father · mulan, father, comrade | Rammed-earth courtyard and slanting loom; loess cliffs and the brown Yellow River; the frontier as a zig-zag **earth** wall with wooden watch-towers (never the stone Great Wall); iron lamellar armour; the bay horse; the two hares. Nothing from any film |
+| `the-two-sisters` ⚑ (`SistersArt`) — Sḵwx̱wú7mesh, Vancouver | `scene-bridge`, `scene-village`, `scene-canoes`, `scene-peaks` | `see-burrard-inlet`, `see-salmon`, `see-feast`, `see-cedar-canoe` | sisters, chief · sisters, chief | Today: the green two-tower bridge, a container ship, the two peaks small and far. Long ago: Coast Salish shed-roof plank houses, cedar dugouts, cedar-bark capes, wool blankets in plain colours. No totem-pole rows, war bonnets, tipis or copied formline; the peaks are kept out of the long-ago scenes before the feast |
+| `woman-who-raised-a-bear` ⚑ (`BearWomanArt`) — Kalaallit, Greenland | `scene-settlement`, `scene-house`, `scene-ice`, `scene-farewell` | `see-greenland`, `see-polar-bear`, `see-kayak`, `see-sharing-the-catch` | woman, bear · woman, bear | Stone-and-turf houses with long entrance passages and gut-skin windows; the soapstone lamp and sleeping platform; kayaks on stands; a hand-drawn polar bear (long neck, small ears — not the kit's round bear), the sinew collar and the soot streak; icebergs. No snow houses, no penguins, no gore |
+| `firebird-and-horse-of-power` ● (`FirebirdArt`) — Russia | `scene-forest`, `scene-palace`, `scene-sea`, `scene-cauldron` | `see-taiga`, `see-tsar-title`, `see-firebird-in-art`, `see-white-sea` | archer, horse · archer, horse, vasilissa, tsar | Night taiga with the glowing feather; a hand-drawn Horse of Power (huge, dark, long mane); the log palace with tiled stove and the Fire-Bird in its gold cage; the white-night shore with the gold-roofed tent and silver boat; the torchlit cauldron. Kizhi never appears in a scene |
+| `daedalus-and-icarus` (`IcarusArt`) — Bronze Age Crete | `scene-workshop`, `scene-palace`, `scene-tower`, `scene-sea` | `see-crete`, `see-labyrinth`, `see-beeswax`, `see-icarian-sea` | daedalus, icarus · daedalus, icarus, minos | Feathers laid out shortest to longest, the wax pot, the tools; Minoan red columns wider at the top, dolphin frieze, horns of consecration; the two winged figures at dawn; Daedalus alone over the sea with feathers on the water (the fall is never shown). The Eiffel Tower never appears in a scene |
+| `the-griots-apprentice` ⚑ (`GriotArt`) — Mande, Djenné | `scene-compound`, `scene-river`, `scene-feast`, `scene-dawn` | `see-jeli`, `see-river-niger`, `see-balafon`, `see-salt-and-gold` | apprentice, grandfather · apprentice, grandfather, merchant | The balafon (wooden keys over graded gourds); the baobab; banco walls with buttresses and jutting beams; the long salt pirogue with grey salt slabs; the feast courtyard with lamp niches; the porter and his granddaughter at the gate. The 1907 mosque never appears in a scene; no kente, masks or safari animals |
+| `zal-and-the-simurgh` (`ZalArt`) — Iran | `scene-court`, `scene-mountain`, `scene-nest`, `scene-meeting` | `see-shahnameh`, `see-alborz`, `see-simurgh-feather`, `see-naqqali` | zal, simurgh · zal, simurgh, sam | Tiled pavilion and pool garden; the Alborz and the white cone of Damavand; the ebony-and-sandalwood nest on its crag; a hand-drawn Simurgh (long sweeping tail, crest, calm eyes — majestic, never menacing); white-haired Zal. No genies, carpets or onion domes |
+
+⚑ = flagged "needs cultural review before release": its pictures go to the same reviewer as
+its text (Hindu reviewer; Sḵwx̱wú7mesh Nation; Kalaallit reviewer; Mande consultant).
+
+**Landmarks (11):** `angkor-wat` (`LandmarkArt+Angkor.swift`), `bibliotheca-alexandrina`
+(`+Bibliotheca`), `forbidden-city` (`+ForbiddenCity`), `lions-gate-bridge` (`+LionsGate`),
+`ilulissat-icefjord` (`+Ilulissat`), `kizhi-pogost` (`+Kizhi`), `palace-of-knossos`
+(`+Knossos`), `eiffel-tower` (`+Eiffel`, by day only: its night lighting is a protected work),
+`great-mosque-of-djenne` (`+Djenne`), `persepolis` (`+Persepolis`), `mausoleum-halicarnassus`
+(`+Mausoleum`, a sketched reconstruction with construction lines and a faint outline of the few
+stones left today). Our own drawings from the buildings' public form; nothing traced.
+
+### Known shortfalls after round 5, batch 3 (from the painters' own notes — to check on the Mac)
+
+Across the batch:
+- **Nothing has been rendered.** One painter wrote each story in one pass (about 1,500–1,775
+  lines a story, under the 1,800–2,500 the brief asked for); each was then read by a
+  "be the compiler" reviewer.
+- **The two-pane composition is new for kit-built scenes.** Several painters report soft
+  things just inside the bottom of the text area (a banyan or baobab crown, palm tops, a mast,
+  bridge towers, the Lions peaks at about y 371 in `scene-peaks`, a low pale sun on the leading
+  pane in several scenes, Yama's crown, Mulan's spear tip). Check every scene with the words on.
+- Several painters reached into kit internals that are not private but were not in the brief
+  (`Kit.bodyRig`, `bodyFrame`, `bodyHeadCentre`, `bodyNeck`, `personLit`, `personTone`) to place
+  helmets, crowns, armour and wings on kit figures. Watch for misplaced headgear.
+- Three heroes are drawn by hand instead of with the kit: the polar bear, the Horse of Power
+  and the Simurgh (and the chicks, nest and crag). Their proportions are the first thing to
+  check.
+
+Per story:
+- **Savitri.** Dyumatsena's blindness shows only as a lifted gaze; chital spots placed by guess;
+  Narada's vina is a rod with two gourds.
+- **Eloquent Peasant.** Rensi's face in the folded river scene sits at x 380 (the boat is the
+  subject); the over-kilt is a flat overlay; pigeons left off the wall to keep the sky clear.
+- **Mulan.** Her home dress is one colour (the kit gives arms and skirt one cloth); the hens are
+  the kit's rooster in hen colours (comb and wattle); the comrade's broad face is the stock head.
+- **Two Sisters.** Inbound canoes are mirrored, so their light falls from the upper right; the
+  canoe passengers are faceless; the two concrete lions are not drawn.
+- **Woman Who Raised a Bear.** `scene-settlement` shows the young bear without his collar, but
+  the scene returns on pages 9 and 14 (collared; gone); the farewell shows her alone (the
+  grieving neighbours of page 13 are not drawn); the soot on her fingertips is a small spot.
+- **Fire-Bird.** The rider sits on a kit sitting pose (legs forward, not astride); the great crab
+  is drawn ordinary-sized; the freed Fire-Bird at the window and the dishes in the tent are not
+  drawn; the white-night band is the lightest sky behind the cream words — check contrast.
+- **Daedalus.** The flight pose is the standing figure tilted 64–72°, likely stiff; the cover's
+  "one wing reaching toward him" is not distinct; the palace scene's sun sits inside the
+  leading text area (pale).
+- **Griot.** Cross-legged sitting is the kit's seated figure lowered to the ground with a cloth
+  lap; Lamine's beaters may miss the keys; overlays on mirrored figures may take light from the
+  wrong side.
+- **Zal.** Sam is in profile, not seen from behind; mail is shown as a mail skirt; the Simurgh
+  glides low (just above the baby) to keep the text area clear.
 
 ## What round 3 changed in the pictures (to check on the Mac)
 
@@ -194,6 +477,19 @@ scenes; unverified portrait arithmetic.
   Urashima is framed to the sash and Otohime to the cuffs.
 
 ## Status
+
+**Round 5, batch 2:** every picture of the ten Medium stories and the twelve new landmarks is
+unrendered and `review.art: pending`. New cultural-review material: every picture of the
+Iktomi story (Dakota consultant) and of the fish-camp story (Yup'ik consultant); the
+religious buildings among the landmarks (Saint Sophia of Novgorod, Christ the Redeemer) as
+architecture only; the three lost or unproven wonders drawn as reconstructions.
+
+**Round 5, batch 1:** every picture of the ten new stories and the ten new landmarks, and
+the whole kit, is unrendered and `review.art: pending`; start with the kit's people and
+animals (`docs/BUILD.md` §7d, step 6). New cultural-review material: every picture of the
+four flagged stories of the batch (Cherokee consultant; Inuit consultant, Nunavut; Efik
+reader; reviewer familiar with Rumi and Sufi tradition), and the religious buildings among
+the landmarks (Hagia Sophia, Saint Basil's) as architecture only.
 
 Every `review.art` field is `pending`. All card copy, lesson wording and fact-card wording in
 the JSON is draft, unreviewed text. After round 4 **every** picture needs a look on the Mac
