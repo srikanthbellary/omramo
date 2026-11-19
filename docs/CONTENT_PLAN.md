@@ -1,6 +1,6 @@
 # Omramo — Content plan: launch story catalog and landmarks (v2)
 
-**Status:** the plan is Srikanth's proposal-as-adopted for the build (round 5 writes it out). **Written and drawn so far: 23 of 32 stories** — the three prototypes and, in round 5 (18 Nov 2026), the ten other Low stories (batch 1) and the ten other Medium stories (batch 2); see §2a. Every text is a draft (`review.text: pending`), every picture is concept art drawn in code (`review.art: pending`), and nothing has been through cultural review, fact-check or legal clearance.
+**Status:** the plan is Srikanth's proposal-as-adopted for the build (round 5 writes it out). **Written and drawn: all 32 stories** — the three prototypes and, in round 5 (18 Nov 2026), the ten other Low stories (batch 1), the ten other Medium stories (batch 2) and the nine other Advanced stories (batch 3), with all 37 landmarks; see §2a. Every text is a draft (`review.text: pending`), every picture is concept art drawn in code (`review.art: pending`), and nothing has been through cultural review, fact-check or legal clearance.
 **Reads with:** `docs/PRD.md` (§4a, §12), `docs/ARCHITECTURE.md` (§6), `docs/DESIGN.md`, `docs/IMPLEMENTATION_PLAN.md` (milestone C1).
 
 **Owner requirements this plan answers (13 Nov 2026):**
@@ -92,8 +92,18 @@ Conventions: **Decided / Assumption / TBD — open question** as in the PRD. No 
 | M9 | `horse-and-the-olive` | Medium | Draft — round 5 batch 2 |
 | M10 | `anansi-wisdom` | Medium | Draft (rounds 2–4; moral polished in round 5) ⚑ Akan reader |
 | M11 | `sindbad-second-voyage` | Medium | Draft — round 5 batch 2 |
-| A1, A2, A4–A10 | the nine other Advanced stories | Advanced | Planned — round 5 batch 3 |
+| A1 | `savitri-and-satyavan` | Advanced | Draft — round 5 batch 3 ⚑ Hindu reviewer |
+| A2 | `eloquent-peasant` | Advanced | Draft — round 5 batch 3 |
 | A3 | `urashima-taro` | Advanced | Draft (rounds 2–4; moral polished in round 5) |
+| A4 | `ballad-of-mulan` | Advanced | Draft — round 5 batch 3 |
+| A5 | `the-two-sisters` | Advanced | Draft — round 5 batch 3 ⚑ Sḵwx̱wú7mesh (Squamish) Nation |
+| A6 | `woman-who-raised-a-bear` | Advanced | Draft — round 5 batch 3 ⚑ Kalaallit (Greenlandic) reviewer |
+| A7 | `firebird-and-horse-of-power` | Advanced | Draft — round 5 batch 3 |
+| A8 | `daedalus-and-icarus` | Advanced | Draft — round 5 batch 3 |
+| A9 | `the-griots-apprentice` | Advanced | Draft (original) — round 5 batch 3 ⚑ Mande consultant, ideally from a jeli family |
+| A10 | `zal-and-the-simurgh` | Advanced | Draft — round 5 batch 3 |
+
+All twelve §7 stories are now in the catalog and carry the flag (`culturalReview { level: required, status: pending, community, reason, notes: "Needs cultural review before release." }`; the release-mode validators refuse them).
 
 Things the drafts of batch 1 did that this plan left open (each is listed in the story's manuscript header, `Content/sources/<id>.txt`, for the reviewers):
 
@@ -116,6 +126,21 @@ Things the drafts of batch 2 did that this plan left open or had wrong (each is 
 - **Softenings (examples).** Khufu: the goose trick happens "behind a cloth, quick as a blink". Tiger: he is carried off into the forest by the villagers. Iktomi: the bone bounces off his nose. Sindbad: the serpents are heard, never fought. Bamboo-Cutter: nobody is hurt or dies; the two last suitors "quietly gave up". Androcles: slavery said plainly in two sentences; no fighting shown in the arena.
 - **Landmarks added to the shared catalog (12; 26 of 37 now):** `great-pyramid-giza`, `chichen-itza`, `mount-fuji` (natural: no built date), `golden-gate-bridge`, `novgorod-kremlin`, `christ-the-redeemer`, `colosseum`, `temple-of-artemis-ephesus` (lost: a reconstruction), `parthenon`, `statue-of-zeus-olympia` (lost: a reconstruction), `hanging-gardens-babylon` (unproven: a reconstruction, and the cards say no trace has been found), `burj-khalifa`. Landmarks outside the ten story regions carry no `region`.
 - **Levelling.** Ten pages in two parts, 86–112 words a page (the tests allow up to 118), four scenes, three or four tap-to-see words (one a place, one "how people live there"), two character cards. Three of the ten are dark stories with light text, like the Anansi prototype (Bamboo-Cutter, Herd Boy, Sadko).
+
+Things the drafts of batch 3 did that this plan left open or had wrong (each is in the story's manuscript header for the reviewers):
+
+- **Levelling.** Fourteen pages in three titled parts, 154–211 words a page (the tests allow 120–240), 2,400–2,760 words a story, text on both panes like Urashima (three or four paragraphs on the leading pane, one on the trailing), four scenes, four or five tap-to-see words, two or three character cards. One dark story (the Fire-Bird). `tools/build_stories.py` learned trailing-pane paragraphs and `pathText` lines (three stories use one curved line: the Fire-Bird, the Griot, Zal).
+- **Sources.** Six sources were read on the Gutenberg mirror for the order of events only (Mackenzie, Petrie, Johnson, Rasmussen/Worster, Baldwin, Renninger); the Fire-Bird was written from the Afanasyev tale without opening Ransome (his wording is protected outside the US until 2038), Mulan from the Chinese ballad itself. A source-check pass compared the wording afterwards (see each header's SOURCE CHECK block).
+- **A1 Savitri.** Mackenzie leaves out her journey to choose; the epic has it, and so do we. Four boons, not five; "a hundred sons" becomes "sons". Yama is drawn calm and dignified; how he is named and drawn is the Hindu reviewer's call.
+- **A2 Eloquent Peasant.** Modern readings of the names (Khunanup, Rensi, Nemtynakht, Nebkaura) for Petrie's (Sekhti, Meruitensa, Hemti); three speeches for nine; the barley, the ten days and the Anubis line follow later translations of the papyri, not Petrie. The peasant is struck once with a stick; the later beating is left out.
+- **A4 Mulan.** Retold from the ballad, no film element; no family name; the camel (one reading) over the swift horse; Mulan ties her hair in a man's knot rather than cutting it. The frontier is an earth wall in the art; the stone wall is only on its card.
+- **A5 Two Sisters.** Opens today on the Lions Gate Bridge (`presentDayNarrator`) and names Chief Joe Capilano and Pauline Johnson as the people through whom the story reached English readers. Johnson does not call the sisters twins: the text says "two daughters". No deity is named ("the story says the sisters were set high on the mountains"); no trade-jargon words; no ceremony details; the peaks' Squamish name is left for the Nation to give. **The Lions Gate Bridge entry carries `region: nativeAmericanFirstNations`** (it stands in Sḵwx̱wú7mesh territory, §6.4): the validators require a landmark outside the story's region to be framed with a world-link or map device, and this one's device is the present-day narrator. It is never presented as a First Nations landmark; the reviewer reads its card.
+- **A6 Woman Who Raised a Bear.** Follows Rasmussen closely: the cub is brought frozen and thawed over the lamp; the bear is collared; a hunter from the north who tries to kill it dies in the storm (told afterwards in one line, open question for ages 10–12); she marks the bear with soot and sends it north; it never comes back. The source mentions people "from beyond Angmagssalik" (east coast): the tale may be East Greenlandic; the reviewer decides the place.
+- **A7 Fire-Bird.** White wheat, not maize; the princess chooses to come (no drugging, no abduction) and chooses the archer at the end; the old tsar leaps out of the cauldron and runs away (he is not boiled); the new tsar frees the Fire-Bird. The tap word "tsar" is `tsar-title` (the character is `tsar`).
+- **A8 Daedalus.** The nephew is one vague line; Baldwin has no tower prison (guards on the ships and roads); the warning is given on the roof the evening before (as Ovid); the fall is two calm sentences; the wings hang in an unnamed temple in Sicily.
+- **A9 Griot's Apprentice (original).** Sira sings and her cousin Lamine plays the balafon ("the men played and the women sang", to confirm); names chosen to avoid famous jeli and noble lineages; the ending has a real cost (the merchant pays the old debt but will never again have this family sing for his).
+- **A10 Zal.** Sam and Rostam for Renninger's Saum and Rustem; the Simurgh is "she" as in Renninger; the mother names the child, the Simurgh calls him Dastan (Ferdowsi); the voice from heaven becomes pity; the mobad becomes "a wise man in a white robe".
+- **Landmarks added (11; all 37 now):** `angkor-wat`, `bibliotheca-alexandrina`, `forbidden-city`, `lions-gate-bridge`, `ilulissat-icefjord` (natural), `kizhi-pogost`, `palace-of-knossos` (natural in its story), `eiffel-tower` (drawn by day), `great-mosque-of-djenne`, `persepolis`, `mausoleum-halicarnassus` (lost: a reconstruction).
 
 ---
 

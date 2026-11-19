@@ -28,13 +28,16 @@ final class StoryArtRegistryTests: XCTestCase {
         return results.known.last
     }
 
+    /// The Advanced prototype: its painter and reader have their own round-2 to round-4 tests.
+    static let urashima = StoryID("urashima-taro")
+
     private func bundledLibrary() throws -> Library {
         try BundledContent.repository().loadLibrary()
     }
 
     func testEveryCatalogStoryHasARegisteredPainter() throws {
         let library = try bundledLibrary()
-        XCTAssertGreaterThanOrEqual(library.stories.count, 23)
+        XCTAssertEqual(library.stories.count, 32)
         for story in library.stories {
             XCTAssertTrue(ArtLibrary.hasPainter(for: story.id), "\(story.id.rawValue) has no painter in ArtLibrary.storyPainter")
         }
@@ -93,7 +96,7 @@ final class StoryArtRegistryTests: XCTestCase {
         let covers: [CGSize] = [CGSize(width: 116, height: 134), CGSize(width: 372, height: 186), CGSize(width: 300, height: 375)]
         var drawn = 0
         var missing: [String] = []
-        for story in library.stories where story.tier != .advanced {
+        for story in library.stories where story.id != StoryArtRegistryTests.urashima {
             let source = ArtSource.story(story.id)
             var scenes = Set<String>()
             for spread in story.spreads where scenes.insert(spread.scene.unfolded.assetName).inserted {
@@ -131,7 +134,7 @@ final class StoryArtRegistryTests: XCTestCase {
         }
         try XCTSkipIf(drawn == 0, "ImageRenderer did not draw the canvases in this environment")
         XCTAssertEqual(missing, [])
-        XCTAssertGreaterThanOrEqual(library.landmarks.landmarks.count, 26)
+        XCTAssertEqual(library.landmarks.landmarks.count, 37)
     }
 
     func testAnUnknownPictureOfAKnownStoryGetsTheStandInAndNeverCrashes() throws {
@@ -160,7 +163,7 @@ final class StoryArtRegistryTests: XCTestCase {
 
     func testFaceChipsRenderForEveryNewCharacter() throws {
         let library = try bundledLibrary()
-        for story in library.stories where story.tier != .advanced {
+        for story in library.stories where story.id != StoryArtRegistryTests.urashima {
             XCTAssertGreaterThanOrEqual(story.characters.count, 2, story.id.rawValue)
             for character in story.characters {
                 let chip = FaceChipRenderer.image(for: character, storyID: story.id, em: 23.5)
@@ -226,7 +229,7 @@ final class BiggerLibraryTests: XCTestCase {
 
     func testEveryNewStoryOpensAndReadsToItsMoral() throws {
         let library = try BundledContent.repository().loadLibrary()
-        for story in library.stories where story.tier != .advanced {
+        for story in library.stories where story.id != StoryArtRegistryTests.urashima {
             let model = ReaderModel(story: story, progress: ReadingProgressStore(fileURL: nil), catalog: library.stories)
             XCTAssertEqual(model.pageNumber, 1, story.id.rawValue)
             while !model.isLastPage {
@@ -252,6 +255,26 @@ final class BiggerLibraryTests: XCTestCase {
         // Light stories and dark ones: the chrome follows the story's own theme.
         XCTAssertTrue(medium.contains { $0.theme.chrome.leading == .dark })
         XCTAssertTrue(medium.contains { $0.theme.chrome.leading == .light })
+    }
+
+    func testTheAdvancedShelfIsFullAndEveryAdvancedStoryHasItsPainter() throws {
+        // Batch 3: ten Advanced stories (the catalog's 32), each with a painter of its own.
+        let library = try BundledContent.repository().loadLibrary()
+        let advanced = library.stories.filter { $0.tier == .advanced }
+        XCTAssertEqual(advanced.count, 10)
+        XCTAssertEqual(library.shelves().map(\.stories.count), [11, 11, 10])
+        for story in advanced {
+            XCTAssertTrue(ArtLibrary.hasPainter(for: story.id), story.id.rawValue)
+        }
+        let shelf = try XCTUnwrap(library.shelves().first { $0.tier == .advanced })
+        XCTAssertEqual(shelf.stories.map(\.id), advanced.map(\.id))
+        // Advanced pages carry words on both panes; the reader turns through every one.
+        for story in advanced where story.id != StoryArtRegistryTests.urashima {
+            XCTAssertTrue(story.spreads.allSatisfy { spread in spread.blocks.contains { $0.pane == .trailing } }, story.id.rawValue)
+        }
+        // Light stories and a dark one.
+        XCTAssertTrue(advanced.contains { $0.theme.chrome.leading == .dark })
+        XCTAssertTrue(advanced.contains { $0.theme.chrome.leading == .light })
     }
 
     func testTheTaglineOfRoundFive() {

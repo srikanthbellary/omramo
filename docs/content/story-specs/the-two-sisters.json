@@ -1,0 +1,523 @@
+{
+  "id": "the-two-sisters",
+  "title": "The Two Sisters",
+  "tier": "advanced",
+  "region": {
+    "id": "nativeAmericanFirstNations",
+    "culture": "Sḵwx̱wú7mesh (Squamish) Nation",
+    "place": "Burrard Inlet and the North Shore mountains, British Columbia, Canada",
+    "label": "Squamish · Vancouver",
+    "pin": { "lat": 49.4, "lon": -123.2 },
+    "pinColor": "#D94F3D"
+  },
+  "setting": {
+    "period": "Vancouver today, and the Sḵwx̱wú7mesh story of long ago that is told about its mountains"
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Sḵwx̱wú7mesh (Squamish) story, as told by Chief Joe Capilano",
+    "sources": [
+      {
+        "author": "E. Pauline Johnson (Tekahionwake)",
+        "title": "Legends of Vancouver",
+        "year": 1911,
+        "gutenbergId": 3478,
+        "url": "https://www.gutenberg.org/ebooks/3478",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a Sḵwx̱wú7mesh (Squamish) story as told by Chief Joe Capilano, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Johnson died in 1913. Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "A First Nations story about a named, living landscape that touches a coming-of-age custom. The Sḵwx̱wú7mesh Nation should be asked directly whether and how it may be retold; if the answer is no, the story is replaced by an original (CQ3). Names, the feast, the art and every card need the Nation’s guidance.",
+    "community": "Sḵwx̱wú7mesh (Squamish) Nation",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "Vancouver stands on Burrard Inlet, a long arm of the Pacific Ocean, with the North Shore mountains rising almost straight from the water. Two rounded peaks above the city carry two names, one far older than the other.",
+      "factCards": ["bridge-moment", "burrard-inlet", "salmon"]
+    },
+    "culture": {
+      "lesson": "The Sḵwx̱wú7mesh Nation has lived around these waters for thousands of years and lives there today. On this coast people travelled by cedar canoe, and a great feast made promises public, because every guest became a witness.",
+      "factCards": ["cedar-canoe", "feast"]
+    },
+    "moral": {
+      "lesson": "The sisters could have asked for anything, and they asked for the hardest thing: an end to a war that was not theirs to end. Their father had to risk his pride and his people’s trust to grant it.",
+      "reflectionQuestion": "The chief had already won every battle. Why might it have been harder for him to invite his enemies than to keep on fighting?"
+    }
+  },
+  "moral": "Peace takes more courage than war, and even the young can ask for it.",
+  "theme": {
+    "textColor": "#12262A",
+    "chrome": { "leading": "light", "trailing": "light", "folded": "light" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "alt": "Two young sisters in woven cedar-bark capes stand hand in hand on a misty shore at dawn, watching long cedar canoes come in across the water, with two rounded snowy peaks side by side on the mountains above."
+  },
+  "parts": [
+    { "id": "part-1", "title": "The Bridge" },
+    { "id": "part-2", "title": "The Sisters’ Wish" },
+    { "id": "part-3", "title": "The Peaks" }
+  ],
+  "characters": [
+    {
+      "id": "sisters",
+      "name": "The Sisters",
+      "color": "#9A3B22",
+      "chipBackground": "#FBE1D3",
+      "faceAlt": "The two sisters.",
+      "card": {
+        "label": "Character · the chief’s daughters",
+        "title": "The Sisters",
+        "traits": [
+          { "text": "Grown up together", "fill": "#FBE1D3", "ink": "#9A3B22" },
+          { "text": "Ask for peace", "fill": "#DDEFE8", "ink": "#145446" },
+          { "text": "Wear cedar-bark capes", "fill": "#F6E7C8", "ink": "#7A4A12" }
+        ],
+        "body": "Two daughters of a great chief, who came of age in the same spring. The story does not give their names, only what they asked for, and what it cost their father to say yes.",
+        "portraitAlt": "Two young women side by side holding hands, with long dark hair and plain woven cedar-bark capes, against a pale misty sky over the sea.",
+        "background": ["#E9EFEE", "#B7CDC9", "#3F6A66"]
+      }
+    },
+    {
+      "id": "chief",
+      "name": "The Chief",
+      "color": "#145446",
+      "chipBackground": "#DDEFE8",
+      "faceAlt": "The chief.",
+      "card": {
+        "label": "Character · a great chief of the coast",
+        "title": "The Chief",
+        "traits": [
+          { "text": "Has won every battle", "fill": "#FBE1D3", "ink": "#9A3B22" },
+          { "text": "Keeps his word", "fill": "#DDEFE8", "ink": "#145446" },
+          { "text": "Lives by the inlet", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "The sisters’ father, a chief of the coast whose canoes had never lost a fight. He was proud, and he loved his daughters, and in this story those two things pull against each other.",
+        "portraitAlt": "A grey-haired man with a strong, calm face, wrapped in a plain mountain-goat-wool blanket, standing on a pebble shore with forested mountains behind him.",
+        "background": ["#E6EEE9", "#A9C4BB", "#2E5A52"]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "bridge-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "lions-gate-bridge",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "presentDayNarrator",
+          "label": "TODAY, WHERE THIS STORY BEGINS",
+          "line": "This retelling starts today, on the bridge. The peaks it looks up at have two names: the Sḵwx̱wú7mesh call them the Two Sisters, and settlers later named them The Lions."
+        }
+      },
+      "background": "#16343A"
+    },
+    {
+      "id": "burrard-inlet",
+      "kind": "place",
+      "title": "Burrard Inlet",
+      "line": "A long, deep arm of the Pacific Ocean that reaches inland between the city and the mountains.",
+      "cultureNote": {
+        "label": "From the Sḵwx̱wú7mesh",
+        "text": "The Sḵwx̱wú7mesh have lived around this water for thousands of years, and their communities stand on its shores today. On the north side, the mountains climb from the shore to more than 1,200 metres within about ten kilometres."
+      },
+      "pictureAlt": "A long, calm arm of grey-green sea with dark forested mountains rising steeply from its far shore.",
+      "background": "#1F4A4A"
+    },
+    {
+      "id": "salmon",
+      "kind": "creature",
+      "title": "Salmon",
+      "line": "A strong silver fish that grows up in the ocean and swims back up the river where it hatched.",
+      "cultureNote": {
+        "label": "From the Pacific coast",
+        "text": "Each year the salmon return up the rivers of this coast in their millions, each kind in its own season. For the peoples of the coast they were, and still are, the heart of the year: food, trade, and a reason to gather."
+      },
+      "pictureAlt": "One large silver salmon leaping clear of a rushing river, water spraying from its tail.",
+      "background": "#3A2E2A"
+    },
+    {
+      "id": "feast",
+      "kind": "idea",
+      "title": "A great feast",
+      "line": "On this coast, a great feast marks the most important moments in the life of a family.",
+      "cultureNote": {
+        "label": "From the Pacific coast",
+        "text": "The guests who share such a feast are witnesses to what is said and promised there, and gifts given are remembered. In this way a feast can make an agreement binding. How each Nation holds these gatherings is its own to tell."
+      },
+      "pictureAlt": "A long row of carved wooden bowls filled with salmon and berries, set out on woven cedar mats.",
+      "background": "#5A3420"
+    },
+    {
+      "id": "cedar-canoe",
+      "kind": "object",
+      "title": "Cedar canoe",
+      "line": "A long canoe carved and shaped from the trunk of one western red cedar tree.",
+      "cultureNote": {
+        "label": "From the Pacific coast",
+        "text": "Before roads, the water was the road, and the coast peoples paddled cedar canoes between villages, islands and fishing places. Great canoe journeys are still made today, when Nations travel by water to meet one another."
+      },
+      "pictureAlt": "One long dugout cedar canoe with a raised bow, drawn up on a pebble beach, its paddles laid inside.",
+      "background": "#4A2A1E"
+    }
+  ],
+  "scenes": {
+    "scene-bridge": {
+      "unfoldedAlt": "Early morning over Vancouver’s First Narrows, with a pale misty sky filling the upper part of the picture. Low on the right, a green suspension bridge with two towers crosses the water above a passing container ship, dark cedars of Stanley Park on one shore and two rounded snowy peaks side by side on the mountains behind.",
+      "foldedAlt": "A green bridge tower in morning mist, with two rounded snowy peaks side by side on the mountains behind it.",
+      "fallbackColors": ["#EEF2EF", "#C9D9D6", "#2F5A55"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-village": {
+      "unfoldedAlt": "Long ago, a village on the shore of the inlet under a pale silver sky, with mist on the water. Low on the right, long cedar-plank houses with single-sloping roofs face the water, canoes drawn up before them and smoke rising, while a chief and his two daughters stand at the water’s edge and forested mountains climb behind.",
+      "foldedAlt": "Two sisters and their father standing at the water’s edge in front of long cedar-plank houses.",
+      "fallbackColors": ["#F1F0EA", "#CFDAD3", "#5A4A3A"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-canoes": {
+      "unfoldedAlt": "The inlet on a bright pale morning, the sky wide and empty above calm water. Low on the right, many long cedar canoes come in from the north with paddles raised and whole families aboard, while people wait on the pebble beach to meet them.",
+      "foldedAlt": "Long cedar canoes full of families gliding in to a beach where people wait to meet them.",
+      "fallbackColors": ["#F3F2EC", "#D2E1DD", "#3E6A62"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-peaks": {
+      "unfoldedAlt": "Evening over the inlet, the sky pale rose and gold across the upper part of the picture. On the right, two rounded rocky peaks stand side by side high above the water, white and clear of cloud, while the first city lights begin along the shore and the bridge shows far and small.",
+      "foldedAlt": "Two rounded snowy peaks side by side under a pale rose evening sky, a thin cloud drifting away from them.",
+      "fallbackColors": ["#F9EDE4", "#F1D2C2", "#4A5A66"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-bridge",
+      "part": "part-1",
+      "paras": [
+        "^If you cross the Lions Gate Bridge on a clear morning, look up.",
+        "Below you, the sea runs fast and green through a narrow gap between two shores. A ship as long as a street slides under the <tap:bridge-moment>bridge</tap>, stacked with steel boxes in red and blue, and its wake spreads behind it in a long white fan. Gulls hang in the wind beside the railing, barely moving their wings, and the air smells of salt and wet cedar.",
+        "At the south end of the bridge, the dark cedars of Stanley Park crowd down to the water. Beyond them, the glass towers of the city stand pale in the mist. At the north end, the mountains of the North Shore rise so steeply that they seem to start in the sea itself.",
+        "> Lift your eyes above the nearest ridges, above the dark firs, to where the snow begins. There, high and far off, two rounded peaks stand side by side against the sky, so close together that from here they look like two people sitting shoulder to shoulder."
+      ]
+    },
+    {
+      "scene": "scene-bridge",
+      "part": "part-1",
+      "paras": [
+        "People in the city call those peaks The Lions. Most of the drivers rushing over the bridge this morning, coffee cups wedged beside them, know them by no other name, if they notice them at all.",
+        "But the peaks had a name long before there was a city here, or a bridge, or a single road. The Sḵwx̱wú7mesh, whose people have lived around these waters for thousands of years, call them the Two Sisters.",
+        "The Sḵwx̱wú7mesh Nation lives here still. Its homes stand near the north end of this bridge, on the shores of <tap:burrard-inlet>Burrard Inlet</tap>, and to the north beside Howe Sound and the Squamish River. Its people still look up at the same two peaks you are looking at now.",
+        "> There is a story about how the sisters came to be up there. It is not a story about lions. It is about a war, and a feast, and two girls who asked their father for the one gift he least wanted to give."
+      ]
+    },
+    {
+      "scene": "scene-bridge",
+      "part": "part-1",
+      "paras": [
+        "The story reached English readers through two friends. One was Chief Joe Capilano, a leader of the Sḵwx̱wú7mesh, who had once crossed an ocean to speak to the king in London on behalf of his people. The other was Pauline Johnson, a Mohawk poet from far in the east, who had come to live in Vancouver.",
+        "More than a hundred years ago, before this bridge was built, the two of them walked together on the North Shore. The chief looked up at the peaks and told her what his people say about them. She listened, and later she wrote it down, and in 1911 it was printed in a book.",
+        "Every telling of a story is a little different. A teller chooses where to begin, and what to leave in the quiet between the words.",
+        "> This is our telling, written with care for the people whose story it is. It begins long before the city, when the only roads on this water were the wakes of canoes, and the only lights on the shore were cooking fires."
+      ]
+    },
+    {
+      "scene": "scene-village",
+      "part": "part-1",
+      "paras": [
+        "Long ago, there was no bridge, and no city, and no ship as long as a street. The same green water ran through the narrows. The same mountains stood behind, furred with fir and cedar to the snowline.",
+        "Along the shores stood villages of long houses built from cedar planks, their roofs sloping down toward the hills and their fronts facing the sea. Smoke rose from them in the still mornings. Before each village lay a beach of grey pebbles, and on it, in rows, the canoes were drawn up out of reach of the tide.",
+        "The year turned on the sea and the rivers. In spring the herring came, so many that the water shivered with them. Then came the berries on the hillsides. And at the end of summer the <tap:salmon>salmon</tap> came home from the ocean, crowding up the rivers until the shallows were more fish than water.",
+        "> On one of those shores, in the largest of the cedar houses, lived a <name:chief>great chief</name> whose name was known all along the coast. His canoes were the fastest on the inlet, and in all his years he had never lost a fight."
+      ]
+    },
+    {
+      "scene": "scene-village",
+      "part": "part-1",
+      "paras": [
+        "For as long as anyone could remember, his people had been at war with peoples of the north coast, many days’ paddling away. The war had no beginning that anyone living had seen. It was simply there, like weather.",
+        "In some summers the long northern canoes came south, riding the tide in through the narrows before dawn. In others the chief’s own canoes went north to answer them. Either way, the young men went, and not all of them came home, and the houses where they had lived fell quiet.",
+        "On summer nights the mothers of the village slept lightly. They listened through the cedar walls for the dip and knock of paddles out on the dark water, and when they heard it, they lay very still until they knew whose canoes they were.",
+        "The chief was not afraid of the northern peoples. He had beaten them too often for that. He spoke of them with scorn, and his warriors laughed when he did.",
+        "> But in his house, through all those years of war, his two <name:sisters>daughters</name> were growing up. They did everything together: they gathered berries side by side, paddled one canoe, and laughed at the same jokes, until the village rarely spoke of one without the other."
+      ]
+    },
+    {
+      "scene": "scene-village",
+      "part": "part-2",
+      "paras": [
+        "^In the same spring, both of the chief’s daughters came of age.",
+        "It was the season when the first fern shoots were uncurling on the forest floor. The chief meant the whole coast to know how proud he was of them. There would be a great <tap:feast>feast</tap> for their coming of age, in the custom of their people, and guests would come from all along the coast.",
+        "For a whole moon the village made ready. Canoes went out and came back low in the water with fish. On the river flats people dug roots and dried berries in the sun, and the weavers made new cedar-bark mats for the guests to sit on.",
+        "Only one thing was left as it was. The war went on. The chief told his warriors to put away their weapons until the feast was over, the way a man sets down a heavy load to rest his arms, meaning to pick it up again.",
+        "> Seven days before the feast, the two sisters came to find their father. He was down on the beach, looking over the canoes. They came across the pebbles together, their shoulders touching, and he saw from their faces that they had come to ask him something."
+      ]
+    },
+    {
+      "scene": "scene-village",
+      "part": "part-2",
+      "paras": [
+        "The <name:chief>chief</name> straightened and smiled. There was nothing in the world he would refuse these two, and he wanted them to know it.",
+        "<say:chief*>“You have a favour to ask,”</say> he said. <say:chief>“Then ask it, and do not be afraid. I have never once refused you two, and I will not begin today. Name the gift, and it is yours: blankets of mountain-goat wool, a canoe carved for you alone.”</say>",
+        "The sisters looked at each other. One of them spoke, but it was clear the words belonged to both of them, and that they had been carrying them for a long time.",
+        "<say:sisters*>“We do not want blankets or canoes, Father,”</say> she said. <say:sisters>“We want guests. Invite the peoples of the north to our feast. Not as enemies. As guests, to sit on our mats and eat our food and see us honoured.”</say>",
+        "> On the beach behind him, a warrior mending a paddle stopped with his knife in the air. Gulls went on crying over the water. The chief said nothing at all. The smile had gone from his face, and in its place was something his daughters had never seen there before."
+      ]
+    },
+    {
+      "scene": "scene-village",
+      "part": "part-2",
+      "paras": [
+        "He was silent for so long that the tide crept up to his feet and began to wet the pebbles around them. His daughters waited. They did not take back a single word.",
+        "He was thinking of many things at once. A chief does not lightly send the first canoe toward an enemy. If he invited the northern peoples and they came, would they come as guests, or as a war party with a feast for an excuse? If he invited them and they laughed, every village on the coast would hear that the great chief had begged for peace.",
+        "Behind him, his warriors were muttering. They had buried brothers in this war. Some of them had fathers who had never come home from the north.",
+        "But he had already said yes. He had said it before he knew what they would ask, and a chief who takes back his word to his own daughters is not a chief anyone should follow.",
+        "> At last he lifted his head. <say:chief*>“Choose our best paddlers,”</say> he said. <say:chief>“Tomorrow they take two canoes up the coast, and they take no weapons. My daughters have asked for guests, and guests they shall have.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-canoes",
+      "part": "part-2",
+      "paras": [
+        "The young men who went north were the best paddlers in the village. They went at first light in two long <tap:cedar-canoe>cedar canoes</tap>, each one carved from the trunk of a single tree, and the whole village came down to the beach to watch them go.",
+        "They carried no spears. They carried the chief’s words, which were simple: the daughters of the chief were to be honoured, and the peoples of the north were asked to come and eat at his fire.",
+        "Fires were kept burning day and night on the points of land near the village, so that anyone paddling south would see the smoke and know it for a welcome.",
+        "Then the waiting began. Each morning the <name:sisters>sisters</name> climbed the rocks above the beach and watched the place where the water met the sky. Each evening they came down again with nothing to tell. The warriors watched too, for different reasons, and they kept their weapons where they could reach them.",
+        "> On the sixth morning, one of the sisters caught the other’s arm and pointed. Far out, where the inlet opened to the sea, a line of dark marks had appeared on the water, and the line was growing longer."
+      ]
+    },
+    {
+      "scene": "scene-canoes",
+      "part": "part-2",
+      "paras": [
+        "They were canoes, more than anyone had ever seen together on that water, and they came on steadily with the tide. In the village, the warriors gathered at the top of the beach. Nobody spoke. The chief stood at the water’s edge with his daughters beside him and waited, his hands empty.",
+        "As the first canoes came close, the people on the beach began to make out who was in them. There were paddlers, and there were warriors. But there were also women sitting among the bundles, and old men wrapped in blankets, and children, small ones, leaning over the sides to look at the strange shore.",
+        "A murmur ran along the beach, and then the warriors’ hands loosened. No one brings their children to a war. The northern peoples had understood the invitation exactly as it was meant, and they had answered it in the only way that could not be mistaken.",
+        "> The canoes grounded one after another on the pebbles. The northern chiefs stepped ashore with gifts in their arms, dried fish and cedar boxes from their own country. The chief walked down to meet them, and the feast began."
+      ]
+    },
+    {
+      "scene": "scene-canoes",
+      "part": "part-3",
+      "paras": [
+        "^The feast lasted for many days, and no one who was there ever forgot it.",
+        "There was salmon roasted on cedar stakes beside the fires, and berries, and roots, and more food than the guests could eat. By day there were songs and games on the beach. Gifts went from hand to hand. Old enemies sat on the same cedar mats and passed the same bowls, and slowly, carefully, they began to talk.",
+        "Every person there was a witness. Each one had eaten the chief’s food and heard his words, and on this coast, what is said before so many witnesses cannot afterwards be unsaid.",
+        "On the last day, the <name:chief>chief</name> stood up before them all, and the northern chiefs stood up to face him. They spoke for a long time, one after another. When they had finished, the war that no one living had seen begin was over.",
+        "> When the guests at last paddled north again, they went as friends, and friends they stayed. In the summers after that, the long canoes still went up and down the coast. But they carried fishing nets, and trade goods, and visiting families, and never again a war party."
+      ]
+    },
+    {
+      "scene": "scene-peaks",
+      "part": "part-3",
+      "paras": [
+        "And the two sisters? The story says that what they had done was not forgotten. Nobody before them had thought to ask for peace as a gift. Nobody had believed it could be asked for at all.",
+        "So, the story says, the <name:sisters>sisters</name> were raised up onto the mountains above the inlet, side by side. From there they could see the whole coast at once: the villages, the narrows, the canoes going to and fro on the water. There they were to stay for ever, two sisters looking down on the peace they had made.",
+        "Snow gathers on their shoulders in winter and melts away in summer. Clouds settle over them and lift again. Eagles turn in the air below them. They do not move.",
+        "Ever since, the people of the inlet have looked up at the two peaks white against the sky and remembered the feast, the canoes full of children, and the two girls who asked.",
+        "> And then, much later, other people came to the inlet, in ships with tall sails, from the far side of the world. They looked up at the peaks too, and they saw something quite different."
+      ]
+    },
+    {
+      "scene": "scene-bridge",
+      "part": "part-3",
+      "paras": [
+        "The settlers thought the two rounded summits looked like a pair of great lions, lying side by side. So that is what they called them: The Lions. They built a city on the shore below, with streets and railways and a harbour full of ships, and the city grew until it filled the land between the water and the hills. Some of it was built where villages of the coast peoples had stood.",
+        "In 1938 they finished a bridge across the narrows, so that people could drive to new houses on the North Shore. They named it for the peaks. At its south end, two lions made of concrete were set on either side of the road, crouched and watchful.",
+        "The bridge is busy from dawn until long after dark. Most of the people on it could tell you the name of the peaks above them. Not many could tell you there is a second name, with a story folded up inside it.",
+        "> Now you are one of the ones who know. Next time you cross and the mist lifts off the mountains, you may still see two lions lying in the snow. But you will see two sisters too, sitting close together, looking down at the water."
+      ]
+    },
+    {
+      "scene": "scene-peaks",
+      "part": "part-3",
+      "paras": [
+        "Come back to the bridge in the evening, when the traffic thins and the water in the narrows turns the colour of pewter. The ships have their lights on now. Along the shore, one window after another begins to glow.",
+        "The city goes into shadow first. Then the forest on the lower slopes, then the ridges, one by one, as if someone were drawing a blanket slowly up the mountains.",
+        "Only the two peaks are still clear of shadow. A thin cloud that has hidden them all afternoon slides away, and there they are, side by side, close enough to touch, small and white above the bridge and the towers and the dark water.",
+        "Somewhere below them a canoe is coming home across the inlet, its paddles dipping in time. Somewhere a child is looking up.",
+        "> The snow fades to grey and then to blue, as slowly as embers cooling on a hearth. The first stars come out above the sisters. But they will be there in the morning, as they have been every morning since the feast, side by side above the water where the war ended."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "lions-gate-bridge",
+      "name": "Lions Gate Bridge",
+      "era": "modern",
+      "built": {
+        "from": 1937,
+        "to": 1938,
+        "circa": false,
+        "note": "Building years of the bridge. It opened to traffic in November 1938 and was formally opened in 1939; exact dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Canada",
+      "place": "Vancouver, British Columbia, Canada",
+      "coordinates": { "lat": 49.315, "lon": -123.139 },
+      "region": "nativeAmericanFirstNations",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A long green bridge hung from cables between two tall towers, high above the sea."
+        },
+        "medium": {
+          "line": "A suspension bridge across the First Narrows of Burrard Inlet in Vancouver, opened in 1938.",
+          "note": "It was built so that people could drive from the city to new houses on the North Shore. Two concrete lions guard its south end."
+        },
+        "advanced": {
+          "line": "A suspension bridge named for The Lions, the twin peaks above the city that the Sḵwx̱wú7mesh call the Two Sisters.",
+          "note": "Plans, photographs and newspapers record how the bridge was built in the 1930s. The peaks’ older name is far older than any of these records, and it has been kept by the Sḵwx̱wú7mesh in their own language."
+        }
+      },
+      "art": {
+        "file": "art/lions-gate-bridge.heic",
+        "alt": "A green suspension bridge with two tall towers crossing a narrow strait between forested shores, with two snowy peaks side by side behind it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#16343A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Believed clear; confirm that the name Lions Gate is not a restricted mark (CONTENT_PLAN §6.6). The concrete lions are sculptures by Charles Marega (died 1955); keep them small and simple. The card goes through the Sḵwx̱wú7mesh reviewer (CONTENT_PLAN §7).",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a Skwxwu7mesh (Squamish) story about the two peaks",
+    "above Vancouver, as Chief Joe Capilano (Sahp-luk) told it. It is not the wording of any earlier edition.",
+    "Documented source: E. Pauline Johnson (Tekahionwake), \"Legends of Vancouver\" (1911), chapter",
+    "\"The Two Sisters\". Project Gutenberg ebook #3478, https://www.gutenberg.org/ebooks/3478",
+    "(US public domain; Johnson died in 1913).",
+    "Source read: the writer fetched the mirror copy (3478.txt; 3478-0.txt answered 404) through a",
+    "summarising tool that returned the ORDER OF EVENTS only, in neutral words.",
+    "No sentence of Johnson's was read for style or kept.",
+    "None of her trade-jargon terms is used (no Sagalie Tyee, tillicum, klootchman), nor 'potlatch'.",
+    "Frame: the present-day narrator on the bridge is ours. Johnson's own frame (an August walk with the",
+    "chief toward the canyon, and her likening of the peaks to the lions of Trafalgar Square) is not used;",
+    "we say only that the two walked on the North Shore and he told her the story looking at the peaks.",
+    "PLAN CORRECTED: the plan calls the sisters twins. The source does not: it says only that the chief's two",
+    "daughters came of age in the same spring ('twin' is used of the peaks). Our text never says twins.",
+    "Follows the source: the war with peoples of the north coast; the chief scornful because he always won;",
+    "the fighting set aside for the feast; the daughters coming to him seven days before it; his yes given",
+    "before he heard the wish; the wish to invite the northern enemy; welcome fires on the headlands; young",
+    "men sent by canoe; the northern peoples arriving with women and children and gifts; a feast of many days;",
+    "lasting peace, canoes used for fishing instead of war; the sisters raised onto the mountains.",
+    "Ours, not the source: the chief's long silence and his weighing of the risk (in the source he agrees at",
+    "once); the warriors' doubts; the herring, fern and preparation details; the mothers listening for",
+    "paddles; two canoes; the sisters watching from the rocks; the sixth morning; the last-day speeches;",
+    "the line 'No one brings their children to a war' (the plan's reading of the arrival).",
+    "Left out: the Creator by Johnson's name and any deity ('the story says the sisters were raised up onto",
+    "the mountains'); the source's opening about the making of the land; the northern peoples near what is now",
+    "Prince Rupert (we do not name any northern Nation); their gifts offered as to an acknowledged ruler; the",
+    "chief named as chief of the Capilanos; the sisters' 'children', Peace and Brotherhood; the dancing;",
+    "any detail of the coming-of-age custom (only 'a great feast for their coming of age, in the custom of",
+    "their people'). War is spoken of plainly and never shown.",
+    "Names: no Skwxwu7mesh Snichim word is used except the Nation's name. The peaks are 'the Two Sisters'",
+    "until the Nation supplies its own name and spelling. CONTENT_PLAN 3.3 gives 'Twin Sisters' and a",
+    "Squamish form (Ch'ich'iyuy Elxwikn); neither is used here: the Nation should confirm both names.",
+    "The Nation's name is spelled as in the plan (Unicode in the text); the reviewer confirms the spelling.",
+    "Reviewer to check (Skwxwu7mesh Nation, required): whether and how the story may be retold at all (CQ3);",
+    "the present-tense claims that the Nation lives near the north end of the bridge (Xwemelch'stn), on",
+    "Burrard Inlet and by Howe Sound and the Squamish River; 'lived around these waters for thousands of",
+    "years'; that the city was partly built where villages had stood (e.g. in Stanley Park); the feast as a",
+    "place where guests are witnesses and what is said cannot be unsaid (page 11 and the feast card); the",
+    "ending, which speaks of the sisters on the peaks in the present tense; the art; every card.",
+    "Facts to check: Chief Joe Capilano's 1906 journey to London to petition King Edward VII; he died in 1910;",
+    "Johnson was Mohawk, from Six Nations in Ontario, and lived in Vancouver from about 1909; the book 1911;",
+    "the bridge 1937-1938, opened November 1938, built so people could reach new houses on the North Shore",
+    "(British Pacific Properties); the two concrete lions at the south end (Charles Marega, about 1939);",
+    "main span about 470 m; tens of thousands of crossings a day ('thousands' in the text);",
+    "the settlers' reason for the name The Lions (said to be the look of two resting lions).",
+    "A source-check agent must still compare this text with Gutenberg #3478 and confirm nothing echoes it.",
+    "SOURCE CHECK (18 Nov 2026, against Johnson on the Gutenberg mirror):",
+    "- Echoes reworded: the spring marker (Johnson's flowering bushes; our earlier 'salmonberry' was hers,",
+    "  not ours, and is now the first fern shoots uncurling); the chief's 'favour granted before asked' line",
+    "  (now 'I have never once refused you two'); his orders (now paddlers and canoes first, the welcome",
+    "  fires a separate narrated line); 'honoured as never before' (now 'the whole coast to know how proud');",
+    "  'thousands cross and do not know' (now the busy bridge and 'a second name'); both 'keeping watch'",
+    "  lines (now 'looking down on the peace' and 'side by side above the water where the war ended');",
+    "  page 14's last-light-on-the-peaks image (now a cloud sliding off them); 'set high' (now 'raised up');",
+    "  the northern gifts of baskets and woven blankets (now dried fish and cedar boxes).",
+    "- Departure: our war has 'no beginning anyone living had seen'; Johnson calls the peoples old enemies but",
+    "  has them at war for weeks before the feast.",
+    "- Departure: Johnson gives the daughters a reason tied to their future sons; left out.",
+    "- Departure: in Johnson the sisters ask, and he speaks of commanding the invitation; left out.",
+    "- Ours: the sisters doing everything together (berries, one canoe, the same jokes).",
+    "- The lead added 'region': 'nativeAmericanFirstNations' to the lions-gate-bridge entry; kept.",
+    "Status: DRAFT. Text review pending. Cultural review (required: Skwxwu7mesh (Squamish) Nation) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#12262A",
+      "shade": "#2F5A55",
+      "mid": "#6E8F86",
+      "light": "#EEF2EF",
+      "glow": "#F3C9A0",
+      "accent": "#A8452A",
+      "mood": "Pacific coast mist: silver-white sky, deep sea green and blue-green water, the dark green of fir and cedar, the warm red-brown of cedar planks and canoes as the one strong colour, and white snow on the two peaks. Calm, wet, wide and quiet; grown-up and atmospheric."
+    },
+    "light": "This is a LIGHT story: every scene keeps a pale sky or mist behind the words on BOTH panes. Early morning mist on the bridge, soft silver daylight in the village, bright pale morning for the canoes, and a pale rose-gold evening on the last pages (never night; the first stars in the text are not drawn). The dark ink #12262A must read on every upper pane.",
+    "world": [
+      "Two time layers. Today: the Lions Gate Bridge at the First Narrows, Stanley Park, Vancouver's glass towers, the North Shore. Long ago: the same water and mountains with no city, no bridge and no roads.",
+      "The peaks: two rounded rocky summits side by side high on the North Shore mountains, snow on them in winter and spring. From the city they read as a close pair; keep them small and far, never towering cartoon shapes.",
+      "The bridge: painted green, a suspension bridge with two tall towers, cables swooping between them, a long viaduct to the north shore. Two small concrete lions at the south end, crouched, plain (pages 1 and 13 at most).",
+      "Plants: Douglas fir and western red cedar (drooping, feathery branches, red-brown stringy bark) down to the shore; sword ferns with young fiddlehead shoots uncurling under the trees in the village pages.",
+      "Animals: bald eagles, gulls, harbour seals, herring flashing in the shallows, salmon. No bears in the scenes.",
+      "Coast Salish houses: long cedar-plank houses with a single-slope (shed) roof, the tall side facing the water, wide horizontal planks lashed between posts, smoke escaping between roof planks. Carved house posts inside or at the front at most.",
+      "Canoes: long dugout canoes carved from one cedar log, raised bow, smooth red-brown wood, paddles with pointed blades. The northern canoes are the same kind, a little larger; no painted designs.",
+      "Dress: woven cedar-bark capes and skirts, conical woven hats against rain, blankets of mountain-goat wool in plain natural colours (cream, grey, brown). Long dark hair, worn loose or tied back. Bare feet on the beach.",
+      "The feast (page 11, scene-canoes reused): people sitting on cedar mats on the beach, salmon roasting on split cedar stakes by fires, carved wooden bowls and woven baskets. No ceremony shown: no masks, no regalia, no dancers, no drums in close-up.",
+      "Gifts: plain woven blankets and baskets carried in the arms. No coins, no metal, no glass beads.",
+      "The present-day canoe on page 14 may be a small far shape only. No present-day Indigenous character is drawn close up; the 'you' of the story is never shown as a person.",
+      "Figures about three heads tall, small plain eyes, expression through posture; warriors are shown only standing at the top of the beach, never fighting, no weapons raised.",
+      "Avoid: totem-pole rows, northern-coast formline designs (no copied or imitated Haida, Tsimshian or Kwakwaka'wakw art), feather war-bonnets, tipis, buckskin fringe, tomahawks, face paint, 'princess' looks, anything from a film; also night scenes, rain storms, and any copied photograph of the bridge."
+    ],
+    "characters": {
+      "sisters": "Two young women of about fifteen, a little different in height, so close they almost always touch: holding hands or shoulder to shoulder. Long straight dark hair, one worn loose, one tied back. Woven cedar-bark capes over plain skirts, bare feet. Signature detail: always together, never drawn apart; on the peaks pages they are not drawn as people at all, only as the two peaks.",
+      "chief": "A strong, grey-haired man in later middle age, broad-shouldered, upright. A plain cream mountain-goat-wool blanket around his shoulders over a cedar-bark garment; no headdress, no feathers. Signature detail: his empty, open hands on page 10, and his stillness: he is shown standing at the water's edge, thinking."
+    },
+    "scenes": {
+      "scene-bridge": {
+        "unfolded": "Early morning, pale mist. The upper 60 percent of both panes is soft silver-white sky. Low across the picture: the green water of the First Narrows; on the right half the green bridge with its two towers, a container ship with red and blue boxes passing beneath; dark cedars of Stanley Park on the left shore; and above the right-hand ridges, small and far, the two rounded snowy peaks side by side. Gulls near the railing.",
+        "folded": "One green bridge tower and its cables low in the frame, mist above for the words, and the two small snowy peaks side by side on the far ridge behind."
+      },
+      "scene-village": {
+        "unfolded": "Long ago, a soft silver morning with mist lying on the inlet. Upper 60 percent: pale sky and the faint shapes of forested mountains. Low on the right: three or four long shed-roof cedar-plank houses facing the water, smoke rising, canoes drawn up in a row on a grey pebble beach, ferns under the cedars; the chief and his two daughters stand at the water's edge. Reused for pages 4 to 8.",
+        "folded": "The chief and his two daughters at the water's edge, the sisters' shoulders touching, a plank house and a drawn-up canoe behind them, pale mist above."
+      },
+      "scene-canoes": {
+        "unfolded": "Bright pale morning on the inlet, the upper 60 percent wide empty sky over calm water. Low on the right: many long cedar canoes coming in from the north (from the left-hand distance toward the right-hand beach), paddles raised, women, old people and small children among the bundles; on the pebble beach people wait, the chief and his daughters at the front. Reused for the waiting page and the feast page (fires and mats on the beach).",
+        "folded": "Two or three long canoes gliding in close, a child leaning over the side, the beach and waiting figures just beyond; pale sky above."
+      },
+      "scene-peaks": {
+        "unfolded": "Evening, pale rose and gold sky over the upper 60 percent. On the right, high above the inlet, the two rounded rocky peaks side by side, white snow, a thin cloud sliding away from them; below, the mountains in blue shadow, the first small lights of the city along the shore, and the green bridge far and small. Quiet; one eagle at most.",
+        "folded": "The two rounded snowy peaks side by side, a thin cloud drifting off them, filling the lower half; pale rose sky above for the words."
+      }
+    },
+    "pictures": {
+      "burrard-inlet": "One long, calm arm of grey-green sea seen from above the water, with steep dark forested mountains rising from its far shore; no buildings.",
+      "salmon": "One large silver salmon leaping clear of a rushing river, centred, spray from its tail, cedar shadows behind.",
+      "feast": "One long row of carved wooden bowls of salmon and berries set out on woven cedar mats; no people, no ceremony objects.",
+      "cedar-canoe": "One long red-brown dugout cedar canoe with a raised bow drawn up on a pebble beach, paddles laid inside; no painted designs."
+    },
+    "portraits": {
+      "sisters": "The two sisters half figure, side by side, holding hands, in cedar-bark capes, looking out over the water with calm faces; pale misty sky behind.",
+      "chief": "The chief head and shoulders in his plain cream wool blanket, grey hair, a calm, weighing look; forested mountains and mist behind."
+    },
+    "cover": "Dawn on the shore: the two sisters stand hand in hand at the water's edge, seen from behind and a little to the side, watching a line of long cedar canoes come in across the misty inlet; high above, the two rounded snowy peaks stand side by side.",
+    "landmarks": {
+      "lions-gate-bridge": "Our own drawing of the bridge as it is today, in clear morning light: the green suspension bridge with its two towers across the narrow First Narrows, forested shores on both sides, and two snowy peaks side by side behind. No photograph traced; the concrete lions, if shown, tiny and simple."
+    }
+  }
+}

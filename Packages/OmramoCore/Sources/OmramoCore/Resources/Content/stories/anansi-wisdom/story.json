@@ -50,7 +50,8 @@
     "level": "required",
     "status": "pending",
     "reason": "A living Akan oral tradition (Anansesem); the story, the names and every kente or symbol drawing need an Akan reader.",
-    "community": "Akan (Asante/Fante) reader"
+    "community": "Akan (Asante/Fante) reader",
+    "notes": "Needs cultural review before release."
   },
   "education": {
     "geography": {

@@ -1,0 +1,1568 @@
+{
+  "schemaVersion": 1,
+  "id": "woman-who-raised-a-bear",
+  "contentVersion": 1,
+  "title": "The Woman Who Raised a Bear",
+  "tier": "advanced",
+  "language": "en",
+  "region": {
+    "id": "arctic",
+    "culture": "Kalaallit (Greenlandic Inuit)",
+    "place": "The west coast of Greenland",
+    "label": "Kalaallit · Greenland",
+    "pin": {
+      "lat": 66.0,
+      "lon": -53.0
+    },
+    "pinColor": "#2F9BE0"
+  },
+  "setting": {
+    "period": "A Kalaallit story, told in Greenland for many generations and still told today"
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Kalaallit (Greenlandic Inuit) story",
+    "sources": [
+      {
+        "author": "Knud Rasmussen (edited and translated by W. Worster)",
+        "title": "Eskimo Folk-Tales",
+        "year": 1921,
+        "gutenbergId": 28932,
+        "url": "https://www.gutenberg.org/ebooks/28932",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Kalaallit (Greenlandic Inuit) story, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Rasmussen died in 1933; Worster's death year not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "An Indigenous story from Greenland. A Kalaallit reviewer checks the telling, the hunting, the houses and clothing in the art, and every card.",
+    "community": "Kalaallit (Greenlandic) reviewer",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "Greenland is the largest island in the world, and most of it lies under an ice sheet, so its people live along the coasts. Sea ice, icebergs and the animals of the ice shape the life of every settlement in this story.",
+      "factCards": [
+        "greenland",
+        "polar-bear",
+        "icefjord-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "In a Kalaallit hunting settlement the catch is shared, so an old woman with no hunter still eats. The kayak, the stone lamp and the sharing of meat are the everyday world the story takes for granted.",
+      "factCards": [
+        "kayak",
+        "sharing-the-catch"
+      ]
+    },
+    "moral": {
+      "lesson": "The old woman loves the bear enough to send him away for good, because staying would get him killed. The story does not soften what that costs her or the settlement.",
+      "reflectionQuestion": "The old woman could have kept the bear a little longer. Why did she send him away, and was she right?"
+    }
+  },
+  "moral": "Loving someone can mean letting them go.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#12233A",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "An old woman in a sealskin anorak stands at the edge of the sea ice under a clear pale sky, one hand raised, while a great white bear walks away from her among blue-white icebergs.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "The Cub"
+    },
+    {
+      "id": "part-2",
+      "title": "The Hunter"
+    },
+    {
+      "id": "part-3",
+      "title": "The Letting Go"
+    }
+  ],
+  "characters": [
+    {
+      "id": "woman",
+      "name": "The Woman",
+      "color": "#7A3B2A",
+      "face": {
+        "file": "art/face-woman.png",
+        "alt": "The old woman.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F6E3CF",
+      "card": {
+        "label": "Character · the old woman by the shore",
+        "title": "The Old Woman",
+        "traits": [
+          {
+            "text": "Lives on shared meat",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Talks to her bear",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Waits for clear skies",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "Her husband is gone and she has no children, so she eats what the hunters give her. Then a frozen cub is put into her hands, and for the first time in years she has someone to feed.",
+        "portrait": {
+          "file": "art/char-woman.card.heic",
+          "alt": "An old woman with grey hair tied up in a top-knot, in a sealskin anorak, sitting beside a half-moon stone lamp whose long low flame lights her face.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FBF3E6",
+          "#F1DFC4",
+          "#D9B98E"
+        ]
+      }
+    },
+    {
+      "id": "bear",
+      "name": "The Bear",
+      "color": "#1F4E6E",
+      "face": {
+        "file": "art/face-bear.png",
+        "alt": "The bear.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E3EEF5",
+      "card": {
+        "label": "Character · the bear she raised",
+        "title": "The Bear",
+        "traits": [
+          {
+            "text": "Keeps his claws in",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Wears a sinew collar",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Hunts in any weather",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He grows up on a sleeping platform beside a lamp and learns to understand every word that is said to him. He becomes the finest hunter in the settlement, and that is what puts him in danger.",
+        "portrait": {
+          "file": "art/char-bear.card.heic",
+          "alt": "A young polar bear lying on sealskins on a sleeping platform, a wide braided collar round his neck, his nose lifted toward someone out of sight.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#EEF4F7",
+          "#CFE0EA",
+          "#8FB4CC"
+        ]
+      }
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "greenland",
+      "kind": "place",
+      "title": "Greenland",
+      "line": "The largest island in the world, most of it buried under a vast sheet of ice.",
+      "cultureNote": {
+        "label": "From Greenland",
+        "text": "About 56,000 people live in Greenland, most of them Kalaallit, the Greenlandic Inuit. Nearly everyone lives along the coasts, because the ice sheet covers about four fifths of the land. Kalaallisut, the Greenlandic language, is the country’s official language."
+      },
+      "picture": {
+        "file": "art/see-greenland.heic",
+        "alt": "The island of Greenland seen from high above, white in the middle and dark at its rocky edges, in a blue sea.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1E3348"
+    },
+    {
+      "id": "polar-bear",
+      "kind": "creature",
+      "title": "Polar bear",
+      "line": "The great white bear of the Arctic, which lives out on the sea ice and hunts seals.",
+      "cultureNote": {
+        "label": "From Greenland",
+        "text": "In Kalaallisut the polar bear is called nanoq. It is the largest meat-eater that lives on land, and a big male can weigh as much as five grown men. Hunters in Greenland may still hunt polar bears, but only a set number each year."
+      },
+      "picture": {
+        "file": "art/see-polar-bear.heic",
+        "alt": "One polar bear standing on a floe of sea ice, looking back over its shoulder.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#24435C"
+    },
+    {
+      "id": "kayak",
+      "kind": "object",
+      "title": "Kayak",
+      "line": "A narrow one-person hunting boat, a wooden frame covered tightly in sealskin and driven with a double paddle.",
+      "cultureNote": {
+        "label": "From the Kalaallit",
+        "text": "The English word kayak comes from the Inuit languages; in Kalaallisut it is qajaq. Frames were often made of driftwood, because few trees grow in Greenland. Greenlanders still build kayaks by hand, and every summer they race them and show off their rolls at a national championship."
+      },
+      "picture": {
+        "file": "art/see-kayak.heic",
+        "alt": "One slim sealskin kayak resting on a stand of wooden posts, a harpoon laid along its deck.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A2A1E"
+    },
+    {
+      "id": "sharing-the-catch",
+      "kind": "idea",
+      "title": "Sharing the catch",
+      "line": "When a hunter brings home a seal, the meat is divided among many households instead of kept by one.",
+      "cultureNote": {
+        "label": "From the Kalaallit",
+        "text": "In Greenland’s hunting settlements a catch was shared out by custom, and those with no hunter of their own, such as widows and the old, were given their part. Sharing food is still a strong value in Greenland today, though the details differ from place to place."
+      },
+      "picture": {
+        "file": "art/see-sharing-the-catch.heic",
+        "alt": "A row of neat bundles of meat and blubber laid out on a flat stone, one bundle for each household.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2E22"
+    },
+    {
+      "id": "icefjord-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "ilulissat-icefjord",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "Icebergs like these drift along Greenland’s west coast. Many of them are born in one fjord, at Ilulissat, where a great glacier meets the sea."
+        }
+      },
+      "background": "#173A52"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-settlement.unfolded.heic",
+          "alt": "A small settlement on a rocky shore in early spring under a wide pale sky, with icebergs resting in the bay. Low on the right half stand a few low houses of stone and turf with long entrance passages, kayaks on stands, a drying rack of fish and a team of dogs; the upper part of both panes is calm pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-settlement.folded.heic",
+          "alt": "The old woman’s low stone and turf house nearest the shore, with a kayak on its stand beside it and an iceberg in the bay behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF4F7",
+          "#C9DCE8",
+          "#5E6F7A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At the very edge of a small settlement, nearest the sea, ",
+              "lead": true
+            },
+            {
+              "t": "an old woman",
+              "lead": true,
+              "name": "woman"
+            },
+            {
+              "t": " lived alone.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her husband was long dead, and she had never had children. No one hunted for her. Yet each time the men came home with a catch, someone cut a share for the old woman too, and on this coast of "
+            },
+            {
+              "t": "Greenland",
+              "tap": "greenland"
+            },
+            {
+              "t": " that share had kept her alive through many winters."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then came a day near the end of winter when the light stayed longer and the dogs began to howl at the ice. The hunters were coming in, and they were dragging something huge and white."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They had killed a she-bear out on the ice. That evening the meat was cut and carried from house to house. The old woman’s share was a rack of ribs, and she put them in her pot to boil over the lamp."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She was still watching the pot when a voice called at her window. Then the wife of the man who had killed the bear came stooping in through the long passage, and in her arms lay something small and stiff with frost."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "Inside the old woman’s house in warm cream lamplight: pale turf walls and a skin-lined roof above, calm and plain. Low on the right, she sits on the sleeping platform among sealskins beside a half-moon stone lamp with a long low flame, feeding a small bear cub from her hands under a drying rack.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "The old woman on the sleeping platform by the stone lamp, holding out food to a small white cub on the skins beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF3E6",
+          "#EED9B8",
+          "#9C7650"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A cub,” the hunter’s wife said. “It was out on the ice with its mother. We thought you might want it.”"
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old woman",
+              "name": "woman"
+            },
+            {
+              "t": " took it in both hands. It weighed no more than a half-grown pup, and it was cold right through. Its eyes were shut. Its fur had frozen into points."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She moved her lamp a little to one side so the flame would not singe it, then laid "
+            },
+            {
+              "t": "the cub",
+              "name": "bear"
+            },
+            {
+              "t": " on the drying rack where the warm air rose. She sat down on the platform to wait."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The hunter’s wife went home. The lamp burned low and steady. Water began to drip from the rack, one drop and then another, and after a long while one hind paw twitched. The old woman lifted the cub down and tucked it inside her anorak, against her own warm skin, and held it there."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Near morning she felt it stir. A cold nose pushed out at the neck of her anorak and snuffed along her chin and cheek, slowly, as if learning her. The old woman laughed aloud in her empty house."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "Inside the old woman’s house in warm cream lamplight: pale turf walls and a skin-lined roof above, calm and plain. Low on the right, she sits on the sleeping platform among sealskins beside a half-moon stone lamp with a long low flame, feeding a small bear cub from her hands under a drying rack.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "The old woman on the sleeping platform by the stone lamp, holding out food to a small white cub on the skins beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF3E6",
+          "#EED9B8",
+          "#9C7650"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bears hunt seals for their fat, the hunters told her, so she warmed blubber for him over the lamp and fed him the soft pieces from her fingers. When they were gone, he licked the oil from her palms."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At night he slept beside her on the platform, pressed against her back like a hot stone. She talked to him while she sewed and while she trimmed the lamp, the way you talk to a person, and she called him her son."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Wake up, son, the day is here,”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " she would say, or "
+            },
+            {
+              "t": "“Mind the lamp, son, you will burn your nose.”",
+              "say": "woman"
+            },
+            {
+              "t": " And because she spoke to him like that, morning and night, he began to understand her."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He grew fast. By the time the first autumn snow came, the cub who had fitted inside her anorak was too heavy to lift, a young "
+            },
+            {
+              "t": "bear",
+              "tap": "polar-bear"
+            },
+            {
+              "t": " with black lips and wide paws. When he was hungry he came and pressed his nose to her cheek."
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The neighbours began to stop at her passage with a strip of blubber or a dried fish. “For your son,” they would say, half joking, and they stooped to peer in at the bear by the lamp, and he peered back."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-settlement.unfolded.heic",
+          "alt": "A small settlement on a rocky shore in early spring under a wide pale sky, with icebergs resting in the bay. Low on the right half stand a few low houses of stone and turf with long entrance passages, kayaks on stands, a drying rack of fish and a team of dogs; the upper part of both panes is calm pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-settlement.folded.heic",
+          "alt": "The old woman’s low stone and turf house nearest the shore, with a kayak on its stand beside it and an iceberg in the bay behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF4F7",
+          "#C9DCE8",
+          "#5E6F7A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every morning now the children of the settlement came crowding to her window. “Let him out!” they called through the skin. “Let him come and play!”"
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Keep your claws in,”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " the old woman told "
+            },
+            {
+              "t": "the bear",
+              "name": "bear"
+            },
+            {
+              "t": " each time, before he went shambling out through the passage. "
+            },
+            {
+              "t": "“They are only small, and you are not.”",
+              "say": "woman"
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And he did keep them in. The children threw themselves on him in heaps, and he rolled them over in the snow and sat on them, gently, until they shrieked. He bit their toy harpoons in two. But when he shoved them, it was always with a soft paw."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A bear does not stay small, though. By his second winter he could knock a boy flat without meaning to, and one by one the children went home crying. Then the young men took their place, wrestling him on the hard snow, until even the strongest of them would not try."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He lay outside her house in the evenings, a great white heap beside the passage, and the men stood round him with their arms folded, looking at those shoulders and saying nothing. They were all thinking the same thing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "Inside the old woman’s house in warm cream lamplight: pale turf walls and a skin-lined roof above, calm and plain. Low on the right, she sits on the sleeping platform among sealskins beside a half-moon stone lamp with a long low flame, feeding a small bear cub from her hands under a drying rack.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "The old woman on the sleeping platform by the stone lamp, holding out food to a small white cub on the skins beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF3E6",
+          "#EED9B8",
+          "#9C7650"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“A bear that size could hunt,” said one of the men at last. “He could smell out a seal’s breathing hole from far across the ice.”"
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old woman said nothing for a long time. Then she sat down with "
+            },
+            {
+              "t": "her son",
+              "name": "bear"
+            },
+            {
+              "t": " by the lamp and spoke to him slowly, as she always did, so that every word would go in."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Go with the men and do what they tell you,”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“Never go near the houses of strangers. They do not know you. To them you are only a bear, and they will come at you with harpoons.”",
+              "say": "woman"
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The bear laid his chin on her knee and listened. She was sure he understood the words. Whether he understood the danger, she could not tell. She told him again, all of it, and then a third time, until the lamp burned low."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At first light the men called at her window. The bear rose, pushed his nose against her face, once, the way he did, and went out through the passage. She heard the dogs barking, and then the crunch of his paws going away over the ice."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-ice.unfolded.heic",
+          "alt": "The sea ice far out from shore under a high pale sky, flat and white to a blue line of open water. Low on the right, the grown bear hauls a seal across the ice toward home, a wide braided collar at his neck, with two hunters and a kayak far behind and the settlement a tiny mark on the shore.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-ice.folded.heic",
+          "alt": "The bear on the white sea ice, dragging a seal by its flipper toward the shore.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#E9F1F6",
+          "#BFD6E4",
+          "#7FA3BA"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Out on the sea ice, the men soon learned what a bear could do.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They showed him how to come at the seals with the breeze in his face, never at his back, and he learned it. He went flat on his belly when they did. He waited at the breathing holes as long as they waited, and longer."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then a seal came up to breathe. Before any man could lift his harpoon, "
+            },
+            {
+              "t": "the bear",
+              "name": "bear"
+            },
+            {
+              "t": " was on it, one blow of a paw, and the seal lay still on the ice. No one had taught him that. It was in him."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The men walked home that evening shaking their heads and laughing. Nobody had ever seen a hunter so patient, or so quick."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The bear did not walk with them. He went ahead, alone, dragging the seal by one flipper all the way across the ice, and he did not stop until he had laid it down at the old woman’s passage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-settlement.unfolded.heic",
+          "alt": "A small settlement on a rocky shore in early spring under a wide pale sky, with icebergs resting in the bay. Low on the right half stand a few low houses of stone and turf with long entrance passages, kayaks on stands, a drying rack of fish and a team of dogs; the upper part of both panes is calm pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-settlement.folded.heic",
+          "alt": "The old woman’s low stone and turf house nearest the shore, with a kayak on its stand beside it and an iceberg in the bay behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF4F7",
+          "#C9DCE8",
+          "#5E6F7A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For the first time in years, the old woman had meat to give away."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She cut up the seal herself, kneeling in the snow outside her house. Then she "
+            },
+            {
+              "t": "shared it out",
+              "tap": "sharing-the-catch"
+            },
+            {
+              "t": " as the hunters had always shared with her. A piece went to this house and a piece to that one, and the best went to the old man who could no longer hunt."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "After that the bear went out with the hunters every day the weather allowed, and on many days when it did not. Wind did not stop him. Fog did not stop him. When the men stayed home mending their gear, he went alone and came back with a seal."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My son brought that,”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " the old woman would say, when anyone praised the meat. She tried to say it plainly. It never came out plainly."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then, one grey afternoon, the bear came home with no seal at all. He came fast, low to the ice, and when he pushed in through the passage she saw a long graze along his shoulder, where a harpoon had passed very close."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "Inside the old woman’s house in warm cream lamplight: pale turf walls and a skin-lined roof above, calm and plain. Low on the right, she sits on the sleeping platform among sealskins beside a half-moon stone lamp with a long low flame, feeding a small bear cub from her hands under a drying rack.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "The old woman on the sleeping platform by the stone lamp, holding out food to a small white cub on the skins beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF3E6",
+          "#EED9B8",
+          "#9C7650"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The hunters of a settlement to the north had seen a bear alone on the ice and done what any hunter would do. Word of it came down the coast a few days later. They had not known he was anyone’s son."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Mark him,” the neighbours told the old woman. “Give him something no one can mistake.”"
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So she sat by the lamp night after night, twisting dried sinew into thread and braiding the thread into a thick collar. When it was done she fastened it round his neck, and he scratched at it for a day and then forgot it."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The collar did its work. Hunters all along that coast came to know it, and when they saw a bear wearing it, they lowered their harpoons. When the water was open he swam out beside the "
+            },
+            {
+              "t": "kayaks",
+              "tap": "kayak"
+            },
+            {
+              "t": ", and when it froze he waited at the breathing holes. He never came home without a catch."
+            }
+          ]
+        },
+        {
+          "id": "s08-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "To look at, he was a bear like any other, people said, yet no one in the settlement could match his strength, and no one had brought home more seals. Seasons turned, and the old woman’s house was never short of meat. But a story like that does not stay in one settlement. It travels."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-settlement.unfolded.heic",
+          "alt": "A small settlement on a rocky shore in early spring under a wide pale sky, with icebergs resting in the bay. Low on the right half stand a few low houses of stone and turf with long entrance passages, kayaks on stands, a drying rack of fish and a team of dogs; the upper part of both panes is calm pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-settlement.folded.heic",
+          "alt": "The old woman’s low stone and turf house nearest the shore, with a kayak on its stand beside it and an iceberg in the bay behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF4F7",
+          "#C9DCE8",
+          "#5E6F7A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Far up the coast, away to the north, people heard of a bear that no one could catch. One hunter there laughed at the story. He swore he would go and kill that bear himself, collar or no collar."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Leave it alone,” his companions told him. “That bear feeds an old woman. Without it she has nothing.” But he would not listen."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The news reached her as news always did, with a traveller’s sledge. He stopped at her house to eat, and before he went on he told her quietly, looking at the lamp instead of at her."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That night she took "
+            },
+            {
+              "t": "the bear",
+              "name": "bear"
+            },
+            {
+              "t": "’s great head between her hands. "
+            },
+            {
+              "t": "“Listen to me,”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“You were raised among people. Treat every one of them as you would treat me. Never hurt a person. Never. Only if someone comes to kill you may you fight.”",
+              "say": "woman"
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He breathed warm against her wrists and did not move. Many days later a storm came down out of the north, and that evening the bear did not come home. She sat up by the lamp, listening to the snow hiss against the window."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "Inside the old woman’s house in warm cream lamplight: pale turf walls and a skin-lined roof above, calm and plain. Low on the right, she sits on the sleeping platform among sealskins beside a half-moon stone lamp with a long low flame, feeding a small bear cub from her hands under a drying rack.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "The old woman on the sleeping platform by the stone lamp, holding out food to a small white cub on the skins beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF3E6",
+          "#EED9B8",
+          "#9C7650"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was nearly morning when she heard him in the passage. He came in slowly, with snow packed in his fur, and pushed his nose against her face as he always did. Then he climbed up to his place at the end of the platform and lay down without a sound."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When the storm blew itself out, the men found a man lying in the snow not far from her house. He was dead. They knew who he was. It was the hunter from the north who had sworn to kill the bear."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Later, his own companions sent word of what had happened. The man had tracked the bear into the storm and given him no peace. He had come at him with his harpoon, again and again, until the bear turned."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The bear had done only what she had told him he might do. But the old woman knew that would not matter to the man’s people, and neither would the collar."
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That night she sat with him by the lamp and talked to him for a long time. The bear lay with his chin on her knee. Now and then she stopped, and he lifted his head to see why."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-house.unfolded.heic",
+          "alt": "Inside the old woman’s house in warm cream lamplight: pale turf walls and a skin-lined roof above, calm and plain. Low on the right, she sits on the sleeping platform among sealskins beside a half-moon stone lamp with a long low flame, feeding a small bear cub from her hands under a drying rack.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-house.folded.heic",
+          "alt": "The old woman on the sleeping platform by the stone lamp, holding out food to a small white cub on the skins beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF3E6",
+          "#EED9B8",
+          "#9C7650"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the end she said it with tears running down her face.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You must go away from here,”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " she told "
+            },
+            {
+              "t": "her son",
+              "name": "bear"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“Far away, where no one knows you. If you stay, they will come for you, and they will kill you, and I will have to watch.”",
+              "say": "woman"
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The bear understood. He sank down before her and hid his face between his paws on the cold stones. A sound came out of him that she had never heard before, low and long, like the wind in the passage."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But she did not send him that day, nor the next. She would not send him out under a sky that might turn. Each morning she crawled out through the passage and studied the sky, and if she found one wisp of cloud anywhere above the mountains, she went back in and said nothing."
+            }
+          ]
+        },
+        {
+          "id": "s11-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then came a morning when the sky was clear from edge to edge and very still. Not one cloud. She stood in the cold a long time, looking at it, before she went back in to wake him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-farewell.unfolded.heic",
+          "alt": "A clear, cloudless pale morning over the sea ice, with blue-white icebergs standing far out. Low on the right, the great bear walks away across the ice toward the icebergs, and on the shore the old woman stands alone at the ice edge with one hand raised; the upper part of both panes is empty pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-farewell.folded.heic",
+          "alt": "The old woman at the edge of the ice with her hand raised, the bear small and white among the icebergs beyond her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F3F6F8",
+          "#CFE0EA",
+          "#8FB4CC"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Before they went out, she rubbed her fingertips along the black crust the lamp had laid on the wall above it. While the bear was turned away, nosing at the passage, she drew those dark fingers once along his flank. He did not see."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Go north,”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " she told him, out on the shore. "
+            },
+            {
+              "t": "“Go to the other bears, out where no hunter goes, and stay with them. Do not come back to people. Not even to me.”",
+              "say": "woman"
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He pushed his nose against her face, slowly, the way he had on that first morning inside her anorak. Then he turned and walked out onto the ice."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She stood at the edge where the shore ice began. He went at a steady pace, not hurrying, out past the places where the men hunted, out toward the "
+            },
+            {
+              "t": "icebergs",
+              "tap": "icefjord-moment"
+            },
+            {
+              "t": " standing white in the still air. Once, far out, he stopped and looked back."
+            }
+          ]
+        },
+        {
+          "id": "s12-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She lifted her hand high. She kept it raised long after her arm began to ache, until he was only a white mark moving far out among the white of the icebergs, and then not even that."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-farewell.unfolded.heic",
+          "alt": "A clear, cloudless pale morning over the sea ice, with blue-white icebergs standing far out. Low on the right, the great bear walks away across the ice toward the icebergs, and on the shore the old woman stands alone at the ice edge with one hand raised; the upper part of both panes is empty pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-farewell.folded.heic",
+          "alt": "The old woman at the edge of the ice with her hand raised, the bear small and white among the icebergs beyond her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F3F6F8",
+          "#CFE0EA",
+          "#8FB4CC"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She did not go in. She stayed on the shore until the light went, crying, and nobody told her to stop."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The whole settlement felt the loss. The children who had tumbled with him in the snow, taller now, came down to the shore and stood a little way off. The hunters who had hunted beside him came too, and said nothing, and looked north."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That evening a neighbour brought her a share of seal, as the hunters had done in the years before the bear. She took it and thanked him. It was good meat. She could not eat it."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The bear never came back. No seal was ever left again at her passage, and no great white shape ever came up from the ice at dusk. She had told him not to come, and he had understood her. He always had."
+            }
+          ]
+        },
+        {
+          "id": "s13-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Winters came and went without him. But stories still came down the coast on travellers’ sledges, as stories always had, and one winter a traveller sat by her lamp and told her one about a bear in the far north."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-settlement.unfolded.heic",
+          "alt": "A small settlement on a rocky shore in early spring under a wide pale sky, with icebergs resting in the bay. Low on the right half stand a few low houses of stone and turf with long entrance passages, kayaks on stands, a drying rack of fish and a team of dogs; the upper part of both panes is calm pale sky.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-settlement.folded.heic",
+          "alt": "The old woman’s low stone and turf house nearest the shore, with a kayak on its stand beside it and an iceberg in the bay behind.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF4F7",
+          "#C9DCE8",
+          "#5E6F7A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Up beyond the last settlements, the traveller said, out on the ice where bears gather, hunters sometimes see one that dwarfs all the rest. From far off they take it for a hill of drifting ice, until it moves."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“And?”",
+              "say": "woman",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "the old woman",
+              "name": "woman"
+            },
+            {
+              "t": ". Her hands were very still in her lap."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“And it has a dark streak down its flank,” said the traveller. “Just one. Long and dark, as if someone had drawn a hand down its fur. No one up there knows where it came from.”"
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The old woman looked down at her own hands for a long while. Then she reached out and trimmed the lamp, and the flame ran long and steady along the edge of the stone."
+            }
+          ]
+        },
+        {
+          "id": "s14-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When spring came and the ice began to loosen, she walked down to the shore on every clear morning. She stood at the very edge, one hand shading her eyes, and looked north past the icebergs, as far as she could see."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -9,7 +9,7 @@ Round 5 adds the 29 remaining stories of `docs/CONTENT_PLAN.md` in three batches
 |---|---|---|
 | 1 | The ten new **Low** stories (L2–L11), the shared illustration kit, the build tool, the library for a big catalog, ten landmarks | written, **uncompiled, unseen** |
 | 2 | The ten new **Medium** stories (M1–M9, M11), twelve landmarks | written, **uncompiled, unseen** (begun on Fable 5.2, finished on Opus 5.5) |
-| 3 | The nine new **Advanced** stories (A1, A2, A4–A10) | to do |
+| 3 | The nine new **Advanced** stories (A1, A2, A4–A10), eleven landmarks, the whole-catalog pass | written, **uncompiled, unseen** (Opus 5.5) |
 
 ## 0. Standing decisions for the round (from Srikanth; do not reopen)
 
@@ -45,6 +45,8 @@ Batch-1 painter enums: `SailorArt`, `SparrowArt`, `MountainsArt`, `PossumArt`, `
 `PeasantBearArt`, `BremenArt`, `WindSunArt`, `SunMoonArt`, `LionHareArt`.
 Batch-2 painter enums: `TigerArt`, `KhufuArt`, `MoonChildArt`, `WeaverArt`, `IktomiArt`,
 `FishCampArt`, `SadkoArt`, `AndroclesArt`, `OliveArt`, `SindbadArt`.
+Batch-3 painter enums: `SavitriArt`, `EloquentArt`, `MulanArt`, `SistersArt`, `BearWomanArt`,
+`FirebirdArt`, `IcarusArt`, `GriotArt`, `ZalArt`.
 
 ## 2. The spec and the build tool
 
@@ -70,10 +72,10 @@ plus short forms:
 - `scenes`: `{ "scene-<name>": { "unfoldedAlt", "foldedAlt", "fallbackColors": [3], "textArea"?, "chrome"? } }`
   → `art/scene-<name>.unfolded.heic` / `.folded.heic`.
 - `pages[]`: `{ "scene", "part", "paras": [marked-up paragraphs] }` → spreads `s01…`, blocks
-  `s01-b1…`, all on the **leading** pane (the tool does not yet write trailing-pane blocks or
-  `pathText`: **batch 3 must extend it** for Advanced stories, which put text on both panes
-  like Urashima — add a per-paragraph pane marker and keep the generated JSON identical in
-  shape to `urashima-taro/story.json`).
+  `s01-b1…`, on the **leading** pane; since batch 3 a paragraph written `"> …"` goes on the
+  **trailing** pane and an object `{ "path": "M… C…", "text": "…" }` is a `pathText` block
+  (trailing unless `"pane": "leading"`); leading paragraphs come first. The JSON is the shape
+  of `urashima-taro/story.json`.
 - `landmarks[]`: full catalog entries for landmarks this story introduces.
 - `sourceNotes[]`: lines for the manuscript header (what the text is, the source, what was
   softened or left out, what a reviewer must check, the status line).
@@ -251,6 +253,43 @@ Batch 2 (18 Nov 2026) followed §5 and added these conventions:
   `eiffel-tower` (draw by day: CONTENT_PLAN §6.6), `great-mosque-of-djenne`, `persepolis`,
   `mausoleum-halicarnassus` (lost: a reconstruction). `great-wall-of-china` and
   `tokyo-skytree` exist.
+
+## 6b. What batch 3 learned (the round is complete)
+
+Batch 3 (18 Nov 2026, Opus 5.5) followed §5–§6 and added:
+
+- **Advanced numbers that worked:** 14 pages in three titled parts (about 5 / 5 / 4), 154–212
+  words a page (tests allow 120–240), about 2,400–2,760 a story; three or four leading
+  paragraphs then one trailing paragraph of 35–60 words that turns the page; every scene's
+  `textArea { leadingBottom: 470, trailingBottom: 420 }`; four scenes; four ordinary taps; two
+  cards and one or two more faces. Writers given a brief that named Sutcliff / McCaughrean as
+  the register wrote prose at the right level first time (`r5-scratch/WRITER_BRIEF_A.md`,
+  `PLANS_A.md`).
+- **The Advanced picture:** `Kit.stage(size, ground: ~220)` (horizon low), a calm sky across
+  BOTH panes, the subject low on the trailing pane (`r5-scratch/PAINTER_BRIEF_A.md`). Painters
+  still let soft things creep into the bottom of the text area: check with the words on.
+- **The source check found echoes in every retelling** (eight of eight), including a
+  recognisable refrain from Ransome and a Waley / Frankel line in Mulan. Sending each finding
+  back to the writer who wrote the story (`SendMessage` to its agent) was quick: all eight
+  were reworded within two minutes, with a SOURCE CHECK block in `sourceNotes`.
+- **Validator surprise:** a landmark outside the story's region may only be framed with
+  `worldLink` or `mapMoment`; the Lions Gate Bridge's device is `presentDayNarrator`, so the
+  entry carries the story's region (it stands in Squamish territory). Enum values are
+  camelCase (`earlyModern`, not `early-modern`).
+- **One painter a story, in one pass, finished in 15–23 minutes** on Opus 5.5 (about 1,500–1,775
+  lines each, under the brief's budget); the eight compiler reviews found two things to fix.
+  Run `r5-scratch/cases_a.py` (every asset has a `paint` case with the right role) and
+  `painter_state_a.py` after the painters.
+
+## 7. Adding a story after round 5
+
+The catalog holds the 32 planned stories. To add one: write `docs/content/story-specs/<id>.json`
+(copy the closest story of its tier), add the id to `catalog.json` and to the test data
+(`ContentPlan` in core `Round5Tests.swift`, `PLAN_ORDER` in `tools/test_build_stories.py`, which
+pin the catalog to the plan: an intended change), run `tools/build_stories.py`, the validator and
+both Python test files, write a painter enum under `App/Sources/Art/Stories/` and register it in
+`ArtLibrary.storyPainter(for:)`. A new landmark: its entry in the spec's `landmarks[]`, a
+`LandmarkArt+<Name>.swift`, a case in `LandmarkArt.paint`, and `ContentPlan.landmarkIDs`.
 
 ## 6a. What batch 2 had to do first (done)
 

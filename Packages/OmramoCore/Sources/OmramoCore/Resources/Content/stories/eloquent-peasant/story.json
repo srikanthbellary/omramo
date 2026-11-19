@@ -1,0 +1,1638 @@
+{
+  "schemaVersion": 1,
+  "id": "eloquent-peasant",
+  "contentVersion": 1,
+  "title": "The Eloquent Peasant",
+  "tier": "advanced",
+  "language": "en",
+  "region": {
+    "id": "egyptian",
+    "culture": "Ancient Egyptian tale (Middle Kingdom)",
+    "place": "Wadi Natrun and Herakleopolis, Egypt",
+    "label": "Ancient Egypt",
+    "pin": {
+      "lat": 29.1,
+      "lon": 30.9
+    },
+    "pinColor": "#F0A81C"
+  },
+  "setting": {
+    "period": "Ancient Egypt, about 4,000 years ago",
+    "latestYear": -1850
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Ancient Egyptian tale (the Eloquent Peasant)",
+    "sources": [
+      {
+        "author": "W. M. Flinders Petrie",
+        "title": "Egyptian Tales, Translated from the Papyri, First Series",
+        "year": 1895,
+        "gutenbergId": 7386,
+        "url": "https://www.gutenberg.org/ebooks/7386",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of an ancient Egyptian tale, the Eloquent Peasant, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Egyptologist (accuracy read)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The peasant walks from the Salt Field, which most scholars place in the Wadi Natrun, a salt valley in the desert west of the Nile Delta, south to Herakleopolis, near today’s Beni Suef. His road runs from dry desert edge into the green, watered valley of the Nile.",
+      "factCards": [
+        "salt-field",
+        "donkey-caravan"
+      ]
+    },
+    "culture": {
+      "lesson": "Ma’at, truth and balance, was the duty every Egyptian official claimed to keep. Scribes wrote on papyrus with reed pens, and pieces of copies of this tale made almost 4,000 years ago still survive.",
+      "factCards": [
+        "maat",
+        "scribe",
+        "library-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "Khunanup wins because he will not stop speaking, but the powerful men who could have helped him at once keep silent on purpose, to enjoy his words. The child can weigh both sides of that silence.",
+      "reflectionQuestion": "Rensi and the king kept silent so that the peasant would keep talking. Was that fair to him, and what would you have done in Rensi’s place?"
+    }
+  },
+  "moral": "Keep speaking up when you are wronged, for those with power must be fair.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#1C2433",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A peasant in a short linen kilt stands with one hand raised, speaking, before a steward seated in a pale courtyard of lotus-bud columns, while a scribe writes on a papyrus roll and two grey donkeys wait by the gate.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "The Salt Road"
+    },
+    {
+      "id": "part-2",
+      "title": "The Speeches"
+    },
+    {
+      "id": "part-3",
+      "title": "The Answer"
+    }
+  ],
+  "characters": [
+    {
+      "id": "khunanup",
+      "name": "Khunanup",
+      "color": "#8A4A12",
+      "face": {
+        "file": "art/face-khunanup.png",
+        "alt": "Khunanup, a peasant of the Salt Field.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#F6E2BC",
+      "card": {
+        "label": "Character · a peasant of the Salt Field",
+        "title": "Khunanup",
+        "traits": [
+          {
+            "text": "Trades salt for grain",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Speaks for ma’at",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Will not give up",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "A man of the Salt Field who walks his donkeys down to the valley to trade. He owns very little, but when a powerful man robs him, he finds that he owns words.",
+        "portrait": {
+          "file": "art/char-khunanup.card.heic",
+          "alt": "A wiry, sun-browned man in a short white kilt, one hand raised as he speaks, a walking stick in the other, against a pale sky over a salt lake.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#FBF3E2",
+          "#F1DDB4",
+          "#D9B77A"
+        ]
+      }
+    },
+    {
+      "id": "rensi",
+      "name": "Rensi",
+      "color": "#1F4E6B",
+      "face": {
+        "file": "art/face-rensi.png",
+        "alt": "Rensi son of Meru, the High Steward.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#D6E8F2",
+      "card": {
+        "label": "Character · the High Steward",
+        "title": "Rensi son of Meru",
+        "traits": [
+          {
+            "text": "Judges for the king",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Wears a broad bead collar",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          },
+          {
+            "text": "Keeps a hard silence",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "The king’s chief steward, who rules great estates and hears the complaints of the people. He is ordered to say nothing to the peasant, and he obeys, day after day.",
+        "portrait": {
+          "file": "art/char-rensi.card.heic",
+          "alt": "A calm middle-aged official in a long white kilt and a broad collar of blue and green beads, seated on a chair with lion legs, holding a staff.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#EEF4F6",
+          "#CFE2EA",
+          "#8FB8CC"
+        ]
+      }
+    },
+    {
+      "id": "nemtynakht",
+      "name": "Nemtynakht",
+      "color": "#6B3A2A",
+      "face": {
+        "file": "art/face-nemtynakht.png",
+        "alt": "Nemtynakht, the man who took the donkeys.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#EBD3C4"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "salt-field",
+      "kind": "place",
+      "title": "The Salt Field",
+      "line": "The peasant’s home country, a salt-crusted desert valley that most scholars place west of the Nile Delta.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Most scholars place it in the Wadi Natrun, a valley named for its natron, though Petrie in 1895 put it beside the Fayum lake. Egyptians used natron, a natural salt, to clean, to make glazed faience and to dry and preserve the bodies of the dead."
+      },
+      "picture": {
+        "file": "art/see-salt-field.heic",
+        "alt": "A shallow lake edged with a white crust of salt, with two date palms on the far bank.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2E4A5E"
+    },
+    {
+      "id": "donkey-caravan",
+      "kind": "creature",
+      "title": "Pack donkeys",
+      "line": "Small, tough grey donkeys that carried loads for Egyptian farmers and traders on every road and path.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "Donkeys were tamed in north-east Africa more than 5,000 years ago, and for thousands of years they were Egypt’s carriers. Horses reached Egypt only after this story was written, and camels came into common use much later still."
+      },
+      "picture": {
+        "file": "art/see-donkey-caravan.heic",
+        "alt": "One small grey donkey with a dark stripe across its shoulders, carrying two bulging packs in rope nets.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A3A28"
+    },
+    {
+      "id": "maat",
+      "kind": "idea",
+      "title": "Ma’at",
+      "line": "The Egyptian word for truth, balance and fairness: the right order of the world that every judge must keep.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "The Egyptians pictured Ma’at as a goddess with an ostrich feather on her head, or as the feather alone. They believed a dead person’s heart was weighed against that feather. Officials boasted in their tombs that they had done ma’at."
+      },
+      "picture": {
+        "file": "art/see-maat.heic",
+        "alt": "A single tall ostrich feather standing upright on one pan of a simple balance.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2C3E5A"
+    },
+    {
+      "id": "scribe",
+      "kind": "idea",
+      "title": "The scribe",
+      "line": "A trained writer who kept records, letters and laws, writing with a reed pen on papyrus.",
+      "cultureNote": {
+        "label": "From ancient Egypt",
+        "text": "A scribe’s palette held two cakes of ink: black for most words, red for headings and dates. Only a few Egyptians in every hundred could read and write, though nobody knows the number exactly, and boys trained for years to learn."
+      },
+      "picture": {
+        "file": "art/see-scribe.heic",
+        "alt": "A scribe’s long wooden palette with two round cakes of ink, one black and one red, and three reed pens.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3A3020"
+    },
+    {
+      "id": "library-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "bibliotheca-alexandrina",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "Egyptians kept words safe on papyrus rolls for thousands of years. Long after this story, a great library of rolls grew in Alexandria, and today a new one stands near the same shore."
+        }
+      },
+      "background": "#1C3A4A"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-oasis.unfolded.heic",
+          "alt": "The Salt Field in early morning under a wide, pale sky: a shallow lake edged with white salt crust, a few date palms and a flat-roofed mud-brick house. Low on the right, Khunanup loads his grey donkeys while his wife and children watch from the doorway.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-oasis.folded.heic",
+          "alt": "Khunanup tying a rope net of salt onto a grey donkey in the morning light, his wife at the door behind him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F8F1E2",
+          "#EEDDBB",
+          "#9FB8C2"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At the edge of the western desert, in a valley of salt, there lived a man named ",
+              "lead": true
+            },
+            {
+              "t": "Khunanup",
+              "lead": true,
+              "name": "khunanup"
+            },
+            {
+              "t": ".",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "His house was mud brick, flat-roofed, with two date palms leaning over it. Beyond them lay a shallow lake, and round its rim the ground had dried into a white crust that cracked under the foot like the top of a loaf. That crust was salt and natron, and it was why people called this place the "
+            },
+            {
+              "t": "Salt Field",
+              "tap": "salt-field"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nothing grew there that a family could live on for long. So when the barley in the store jar ran low, Khunanup loaded his donkeys and went down into the valley of the Nile to trade."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He loaded them with everything the desert edge could give: sacks of salt and natron, bundles of reeds and rushes, pelts of desert animals, bags of seeds, live birds in cages, and straight staves of wood bound with cord."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "To his wife he said, "
+            },
+            {
+              "t": "“Measure out the barley that is left. Keep enough for you and the children until I come back.”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " She measured it into six small heaps on the floor. He looked at them for a long moment, then picked up his stick and whistled the donkeys awake."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-path.unfolded.heic",
+          "alt": "A narrow raised path between a canal and a field of green barley under a pale gold morning sky, with a rich man’s whitewashed house among palms. Low on the right, a fringed cloth lies across the whole path, and Nemtynakht stands beside it with a stick as the peasant’s donkeys halt.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-path.folded.heic",
+          "alt": "Nemtynakht with a stick beside a cloth spread over the path, the first grey donkey stopped at its edge.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF4E0",
+          "#E9DDA8",
+          "#6E9A4E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For days the little "
+            },
+            {
+              "t": "string of donkeys",
+              "tap": "donkey-caravan"
+            },
+            {
+              "t": " picked its way south along the desert edge. The ground was stone and gravel, and the sun stood on their backs from morning until dusk."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then, between one hill and the next, the world turned green. Below lay the valley: barley standing in square fields, canals as straight as ruled lines, and the river beyond, flat and shining."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Here the road shrank to a narrow raised path, with a canal on one side and a field of barley on the other. Beside the path stood a fine house with a garden wall. It belonged to a man called "
+            },
+            {
+              "t": "Nemtynakht",
+              "name": "nemtynakht"
+            },
+            {
+              "t": ", who looked after these lands for a much greater man."
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nemtynakht was standing at his gate when the donkeys came by. He looked at their packs. He looked at the peasant, alone and far from home. And a thought came to him as smooth as oil."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He called a servant. "
+            },
+            {
+              "t": "“Bring me the longest length of linen we have,”",
+              "say": "nemtynakht",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“The good one.”",
+              "say": "nemtynakht"
+            },
+            {
+              "t": " And when it came, he had it laid across the whole path, from the lip of the canal to the first stalks of his barley."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-path.unfolded.heic",
+          "alt": "A narrow raised path between a canal and a field of green barley under a pale gold morning sky, with a rich man’s whitewashed house among palms. Low on the right, a fringed cloth lies across the whole path, and Nemtynakht stands beside it with a stick as the peasant’s donkeys halt.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-path.folded.heic",
+          "alt": "Nemtynakht with a stick beside a cloth spread over the path, the first grey donkey stopped at its edge.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF4E0",
+          "#E9DDA8",
+          "#6E9A4E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup came along the path with his donkeys and stopped. The cloth lay in front of him, fine linen, much too good for the dust."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Mind your feet, peasant,”",
+              "say": "nemtynakht",
+              "chip": true
+            },
+            {
+              "t": " said Nemtynakht. "
+            },
+            {
+              "t": "“That linen is worth more than your whole load.”",
+              "say": "nemtynakht"
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I meant no harm, sir,”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " said Khunanup, and he turned his donkeys up the bank, where the footing was steep and crumbling. But up there the barley grew right to the edge. "
+            },
+            {
+              "t": "“And now you would trample my grain?”",
+              "say": "nemtynakht",
+              "chip": true
+            },
+            {
+              "t": " cried Nemtynakht."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Your cloth is on the road, and your barley is on the bank,”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " said Khunanup. "
+            },
+            {
+              "t": "“Where would you have me walk? In the canal?”",
+              "say": "khunanup"
+            },
+            {
+              "t": " As he spoke, the first donkey stretched out its neck and pulled up one mouthful of barley, ears and all."
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nemtynakht smiled. "
+            },
+            {
+              "t": "“Your donkey eats my barley. So your donkey is mine.”",
+              "say": "nemtynakht",
+              "chip": true
+            },
+            {
+              "t": " He struck the peasant once with a tamarisk switch and drove all the donkeys through his gate. "
+            },
+            {
+              "t": "“Complain if you like. Who listens to a peasant?”",
+              "say": "nemtynakht"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-path.unfolded.heic",
+          "alt": "A narrow raised path between a canal and a field of green barley under a pale gold morning sky, with a rich man’s whitewashed house among palms. Low on the right, a fringed cloth lies across the whole path, and Nemtynakht stands beside it with a stick as the peasant’s donkeys halt.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-path.folded.heic",
+          "alt": "Nemtynakht with a stick beside a cloth spread over the path, the first grey donkey stopped at its edge.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBF4E0",
+          "#E9DDA8",
+          "#6E9A4E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For ten days Khunanup came back to that gate. He stood in the dust outside the garden wall and called through it, morning and evening."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Give me back my donkeys. One mouthful of barley, and you have taken everything I own. My children are waiting for grain.”",
+              "say": "khunanup",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sometimes a servant laughed at him from the roof. Mostly nobody answered at all. Behind the wall, his donkeys brayed when they heard his voice, and that was the worst of it."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On the eleventh morning he asked a boatman whose land this was. The boatman pointed upstream with his chin. All of it, he said, belonged to the household of the High Steward, "
+            },
+            {
+              "t": "Rensi son of Meru",
+              "name": "rensi"
+            },
+            {
+              "t": ", who sat in judgement for the king in the city of Herakleopolis."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup had sold salt in village markets all his life. He had never spoken to anyone greater than a headman. He stood a while by the canal, turning the name over in his mouth like a pebble, and then he began to walk."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The river landing at Herakleopolis under a pale rose-gold sky, the Nile wide and calm, green fields and palms on the far bank. Low on the right, Rensi’s boat with a painted cabin and steering oars is tied at the stone steps, and on the path beyond, small, a man leads loaded donkeys away past the fields.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Rensi’s boat at the landing with its cabin and steering oars, a few officials on the steps beside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFE6",
+          "#F2D9C4",
+          "#7FA7B5"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He found "
+            },
+            {
+              "t": "Rensi",
+              "name": "rensi"
+            },
+            {
+              "t": " at the river landing, coming down the steps of his house to his boat. The boat had a painted cabin and two great steering oars, and a crowd of officials in long white kilts walked behind him, talking all at once."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup pushed to the front and told his story: the cloth, the barley, the single mouthful, the stick, the donkeys behind the wall. Rensi listened without a word. Then he turned to the men around him."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Most likely he is some landowner’s peasant who has run off to a neighbour,” said one. “Is a man like Nemtynakht to be punished because a salt-seller says so? Let the donkeys go back, and that is the end of it.” The others nodded."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Rensi said nothing at all. He stood with one foot on the gangplank, looking at the peasant, and the officials began to shift and cough."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup saw that silence and took it for the end. Something rose in him then that was not fear. He took one step closer, lifted his head, and spoke to the king’s High Steward as if they were the only two men on the bank."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The river landing at Herakleopolis under a pale rose-gold sky, the Nile wide and calm, green fields and palms on the far bank. Low on the right, Rensi’s boat with a painted cabin and steering oars is tied at the stone steps, and on the path beyond, small, a man leads loaded donkeys away past the fields.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Rensi’s boat at the landing with its cabin and steering oars, a few officials on the steps beside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFE6",
+          "#F2D9C4",
+          "#7FA7B5"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The first speech came out of him like water through a broken dyke.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My lord,”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“you stand at the steering oar of this whole land. When you hold the oar true, the boat runs straight and every one of us aboard comes safe to the landing. But if the steersman leans, the whole boat leans with him.”",
+              "say": "khunanup"
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“In my village they say that when a child loses its father, or a woman is left alone, it is to your door they go, and they do not come away empty. I have walked a long way to learn whether that is true.”",
+              "say": "khunanup",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Do ",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": "ma’at",
+              "say": "khunanup",
+              "tap": "maat"
+            },
+            {
+              "t": ", my lord: keep the world level, so the weak do not slide off it. My donkeys are all I have. Give them back, and I will tell every traveller on the salt road that the steward’s word is good.”",
+              "say": "khunanup"
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He stopped, out of breath. The officials had gone quiet. Rensi looked at him for a long time, and his face gave nothing away. Then he stepped down into his boat, and the oarsmen pushed off, and the peasant was left alone on the landing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hall.unfolded.heic",
+          "alt": "Rensi’s courtyard at Herakleopolis, its pale walls and lotus-bud columns under a soft cream sky. Low on the right, Rensi sits on a chair with lion legs, a scribe writes cross-legged on a mat, and the peasant stands before them with one hand raised as he speaks.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hall.folded.heic",
+          "alt": "The peasant standing with one hand raised, speaking, as a seated scribe writes on a papyrus roll beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FAF3E6",
+          "#EADCC4",
+          "#B9A27E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But Rensi did not go about his business that day. He had himself rowed to the palace, and he went in to the king, Nebkaura, with the peasant’s words still going round in his head."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My lord,”",
+              "say": "rensi",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“there is a peasant at my landing who speaks better than any poet at your court. His donkeys were stolen, and he has come to me for justice. And every word he uses is the right one.”",
+              "say": "rensi"
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The king leaned forward and smiled. “Send bread to him each day, and grain to his house in the Salt Field, from a hand he cannot trace,” he said. “But keep your lips shut and let him run on. Put a scribe beside you, and bring me every word.”"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "So the next morning, when Khunanup came back, a "
+            },
+            {
+              "t": "scribe",
+              "tap": "scribe"
+            },
+            {
+              "t": " was waiting in the steward’s courtyard. He sat cross-legged on a mat, a papyrus roll open across his knees and a reed pen behind his ear, and he did not look up."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hall.unfolded.heic",
+          "alt": "Rensi’s courtyard at Herakleopolis, its pale walls and lotus-bud columns under a soft cream sky. Low on the right, Rensi sits on a chair with lion legs, a scribe writes cross-legged on a mat, and the peasant stands before them with one hand raised as he speaks.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hall.folded.heic",
+          "alt": "The peasant standing with one hand raised, speaking, as a seated scribe writes on a papyrus roll beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FAF3E6",
+          "#EADCC4",
+          "#B9A27E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Day after day Khunanup came to the courtyard, and day after day Rensi sat in his chair and said nothing. Each evening a man the peasant did not know pressed a loaf and a jug of beer into his hands at the gate. He thought it was some kindness of the city, and he ate it without asking."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The second time he spoke, his voice was harder. "
+            },
+            {
+              "t": "“You are the scales, my lord. A scale does not lean toward the richer man. You are the plumb line hanging straight beside the wall. If you tip, who will set the world level again? A crooked balance cheats a whole market, and you are the balance for all Egypt.”",
+              "say": "khunanup",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The scribe’s pen scratched. Rensi’s face did not change. Khunanup stared at him and felt the anger climb up his throat."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Do you hear me?”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " he shouted. "
+            },
+            {
+              "t": "“I might as well plead with the river and beg it to run backwards!”",
+              "say": "khunanup"
+            },
+            {
+              "t": " The pigeons on the roof went up all at once, and still the steward said nothing."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The river landing at Herakleopolis under a pale rose-gold sky, the Nile wide and calm, green fields and palms on the far bank. Low on the right, Rensi’s boat with a painted cabin and steering oars is tied at the stone steps, and on the path beyond, small, a man leads loaded donkeys away past the fields.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Rensi’s boat at the landing with its cabin and steering oars, a few officials on the steps beside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFE6",
+          "#F2D9C4",
+          "#7FA7B5"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The days became weeks. The barley in the fields outside the city turned from green to gold, and still Khunanup came, and still the steward was silent."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He spoke a fourth time, and a fifth. He spoke on the steps of the temple, and at the landing as the boat came in. He spoke to Rensi’s back as the steward walked away. People in the market began to know his face. Some of them laughed. A few stopped to listen."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One morning the gatekeeper put his staff across the doorway. "
+            },
+            {
+              "t": "“I have come to speak to the steward,”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Khunanup",
+              "name": "khunanup"
+            },
+            {
+              "t": ". “Not today,” said the gatekeeper. “Not any day. Go home, salt man.”"
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup sat down in the dust outside the gate. He thought of his wife counting out barley that must be gone by now. He thought of going home with nothing."
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he stood up, shook out his kilt, and waited. When the steward came out at noon, Khunanup was there in front of him, as he had been every day. "
+            },
+            {
+              "t": "“My lord,”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " he said, "
+            },
+            {
+              "t": "“I have not finished.”",
+              "say": "khunanup"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hall.unfolded.heic",
+          "alt": "Rensi’s courtyard at Herakleopolis, its pale walls and lotus-bud columns under a soft cream sky. Low on the right, Rensi sits on a chair with lion legs, a scribe writes cross-legged on a mat, and the peasant stands before them with one hand raised as he speaks.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hall.folded.heic",
+          "alt": "The peasant standing with one hand raised, speaking, as a seated scribe writes on a papyrus roll beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FAF3E6",
+          "#EADCC4",
+          "#B9A27E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "This was the ninth time he had stood before Rensi, and he knew it would be the last. He was tired now. His voice was quiet, and the scribe had to lean forward to catch it."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You speak well, my lord, when you speak at all. Your judges speak well. The whole city is full of fine words. But a fine word is not a just deed. A lovely sentence never filled an empty jar or brought a donkey home.”",
+              "say": "khunanup",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I have pleaded with you nine times, and nine times you have looked at me as if I were the wind. So I will stop pleading here. I will take my case to Anubis instead.”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " It was a quiet thing to say, and a fearful one. The Egyptians believed that Anubis led the dead to their judgement, where each heart was weighed and no gift could tip the scales."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then he turned his back on the High Steward and walked out through the gate into the glare of noon. He had gone twenty paces down the street when he heard sandals slapping behind him. Two of Rensi’s guards were running to catch him."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hall.unfolded.heic",
+          "alt": "Rensi’s courtyard at Herakleopolis, its pale walls and lotus-bud columns under a soft cream sky. Low on the right, Rensi sits on a chair with lion legs, a scribe writes cross-legged on a mat, and the peasant stands before them with one hand raised as he speaks.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hall.folded.heic",
+          "alt": "The peasant standing with one hand raised, speaking, as a seated scribe writes on a papyrus roll beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FAF3E6",
+          "#EADCC4",
+          "#B9A27E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup thought they had come to punish him for his words.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He did not run. He let them take his arms and walk him back through the gate and into the courtyard, where "
+            },
+            {
+              "t": "Rensi",
+              "name": "rensi"
+            },
+            {
+              "t": " had risen from his chair for the first time in all those days."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Come, Khunanup. No one here will harm you,”",
+              "say": "rensi",
+              "chip": true
+            },
+            {
+              "t": " said the steward. It was the first time the peasant had heard his voice, and the first time anyone in that city had spoken his name. "
+            },
+            {
+              "t": "“Sit down. There is something you must see.”",
+              "say": "rensi"
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The scribe came forward with his arms full. He knelt and began to unroll the "
+            },
+            {
+              "t": "papyrus",
+              "tap": "library-moment"
+            },
+            {
+              "t": " across the floor, sheet joined to sheet, and it kept on coming: column after column of small black marks, with here and there a line in red."
+            }
+          ]
+        },
+        {
+          "id": "s11-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Your words,”",
+              "say": "rensi",
+              "chip": true
+            },
+            {
+              "t": " said Rensi. "
+            },
+            {
+              "t": "“All of them. The first speech on the landing, and the one about the scales, and what you said today. Nine speeches, every one.”",
+              "say": "rensi"
+            },
+            {
+              "t": " The peasant looked down at the long pale road of writing and could not read a single mark of it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hall.unfolded.heic",
+          "alt": "Rensi’s courtyard at Herakleopolis, its pale walls and lotus-bud columns under a soft cream sky. Low on the right, Rensi sits on a chair with lion legs, a scribe writes cross-legged on a mat, and the peasant stands before them with one hand raised as he speaks.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hall.folded.heic",
+          "alt": "The peasant standing with one hand raised, speaking, as a seated scribe writes on a papyrus roll beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FAF3E6",
+          "#EADCC4",
+          "#B9A27E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then Rensi told him the rest. The king had ordered the silence. The bread at the gate each evening had come from the steward’s own kitchens. And all this time, out in the Salt Field, his wife and children had been sent grain, though no one told them where it came from."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup did not know what to feel first. He had been fed like a guest and treated like a stone. For all those weeks he had believed no one was listening, and the whole time someone had been writing down every breath."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You let me beg,”",
+              "say": "khunanup",
+              "chip": true
+            },
+            {
+              "t": " he said slowly, "
+            },
+            {
+              "t": "“so that the king could enjoy the begging.”",
+              "say": "khunanup"
+            },
+            {
+              "t": " "
+            },
+            {
+              "t": "“I let you speak,”",
+              "say": "rensi",
+              "chip": true
+            },
+            {
+              "t": " said Rensi, "
+            },
+            {
+              "t": "“so that the king could hear you. Now every word is written, and the king himself will read it.”",
+              "say": "rensi"
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The rolls went to the palace that same afternoon. Later the servants said that the king read them through twice, that he laughed aloud at some lines and sat silent a long while over others. Then he sent word back to Rensi: “The case is yours to settle.”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-hall.unfolded.heic",
+          "alt": "Rensi’s courtyard at Herakleopolis, its pale walls and lotus-bud columns under a soft cream sky. Low on the right, Rensi sits on a chair with lion legs, a scribe writes cross-legged on a mat, and the peasant stands before them with one hand raised as he speaks.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-hall.folded.heic",
+          "alt": "The peasant standing with one hand raised, speaking, as a seated scribe writes on a papyrus roll beside him.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FAF3E6",
+          "#EADCC4",
+          "#B9A27E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nemtynakht",
+              "name": "nemtynakht"
+            },
+            {
+              "t": " was brought to the courtyard the next morning. He came in his best linen, with oil in his hair, and he smiled at the officials he knew. Then he saw the peasant standing beside the steward’s chair, and the smile went out of his face."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Rensi did not make a speech. He had heard enough speeches. He had the scribe read out the peasant’s first complaint from the landing, and then he gave his judgement in a few plain words."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“The donkeys go back to their owner, with every sack they carried. And because you took from a man who had almost nothing, Nemtynakht, all that you have goes to him: your house, your fields, your barley, your goods.”",
+              "say": "rensi",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nemtynakht opened his mouth. Then he looked at the long roll on the scribe’s knees, and shut it again."
+            }
+          ]
+        },
+        {
+          "id": "s13-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Khunanup found that he had nothing to say either. He, who had talked through nine long speeches, stood in the courtyard with his hands empty and his throat tight, and all he could do was bow low to the steward, and then, lower, to the scribe."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The river landing at Herakleopolis under a pale rose-gold sky, the Nile wide and calm, green fields and palms on the far bank. Low on the right, Rensi’s boat with a painted cabin and steering oars is tied at the stone steps, and on the path beyond, small, a man leads loaded donkeys away past the fields.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Rensi’s boat at the landing with its cabin and steering oars, a few officials on the steps beside it.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFE6",
+          "#F2D9C4",
+          "#7FA7B5"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He went home by the river road when the heat began to ease, with his own donkeys in front of him and Nemtynakht’s behind. Every pack was heavy with grain, and the sacks swayed as the animals walked."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At the landing he stopped to look back once at the city: the pale walls, the steward’s boat at its post, the palms along the water. Somewhere behind those walls a scribe was already copying the nine speeches onto a fresh roll, his pen dipping and scratching, dipping and scratching."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Other scribes copied that roll, and others copied theirs, because people liked the story and wanted it for themselves. Parts of four of those copies, almost 4,000 years old, lie in museums today, and people still read them."
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But "
+            },
+            {
+              "t": "Khunanup",
+              "name": "khunanup"
+            },
+            {
+              "t": " knew nothing of that. He was walking north, his stick on his shoulder, toward a mud-brick house by a lake of salt, where the six heaps of barley were long gone and a woman stood in the doorway, shading her eyes, counting donkeys."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

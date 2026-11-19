@@ -39,12 +39,34 @@ ORIGINALS = {"the-snow-house", "long-day-at-fish-camp", "the-griots-apprentice"}
 BATCH_ONE_NEW = PLAN_ORDER[1:11]
 # Round 5, batch 2: the ten new Medium stories (the Anansi prototype is the eleventh).
 BATCH_TWO_NEW = [sid for sid in PLAN_ORDER[11:22] if sid != "anansi-wisdom"]
+# Round 5, batch 3: the nine new Advanced stories (the Urashima prototype is the tenth).
+BATCH_THREE_NEW = [sid for sid in PLAN_ORDER[22:32] if sid != "urashima-taro"]
 HAND_WRITTEN = {"monkey-and-crocodile", "anansi-wisdom", "urashima-taro"}
 
 
 class ParagraphMarkup(unittest.TestCase):
     def runs(self, text):
         return bs.parse_paragraph(text, "test")[1]
+
+    def test_trailing_pane_and_path_text_paragraphs(self):
+        spec = {
+            "id": "x", "title": "X", "tier": "advanced", "region": {}, "setting": {}, "provenance": {},
+            "culturalReview": {}, "education": {}, "moral": "M.", "theme": {}, "cover": {"alt": "a"},
+            "parts": [{"id": "part-1", "title": "One"}], "characters": [], "tapTargets": [],
+            "scenes": {"scene-a": {"unfoldedAlt": "u", "foldedAlt": "f", "fallbackColors": ["#000000"] * 3}},
+            "pages": [{"scene": "scene-a", "part": "part-1", "paras": [
+                "^Lead.", "Left.", {"path": "M0,0 C1,1 2,2 3,3", "text": "“Call!”"}, "> Right."]}],
+        }
+        blocks = bs.build_story(spec)["spreads"][0]["blocks"]
+        self.assertEqual([b["pane"] for b in blocks], ["leading", "leading", "trailing", "trailing"])
+        self.assertEqual([b["kind"] for b in blocks], ["paragraph", "paragraph", "pathText", "paragraph"])
+        self.assertEqual(blocks[2]["path"], "M0,0 C1,1 2,2 3,3")
+        self.assertEqual(blocks[3]["runs"], [{"t": "Right."}])
+        self.assertEqual(blocks[0]["runs"], [{"t": "Lead.", "lead": True}])
+        # A leading paragraph after the trailing pane has begun is refused.
+        spec["pages"][0]["paras"] = ["> Right.", "Left."]
+        with self.assertRaises(bs.SpecError):
+            bs.build_story(spec)
 
     def test_plain_text_is_one_run(self):
         self.assertEqual(self.runs("All day he ate sweet fruit."), [{"t": "All day he ate sweet fruit."}])
@@ -122,6 +144,9 @@ class Specs(unittest.TestCase):
             self.assertIn(sid, self.catalog)
         self.assertEqual(len(BATCH_TWO_NEW), 10)
         self.assertGreaterEqual(len(self.catalog), 23)
+        # Batch 3 completes the plan: all 32 stories, in plan order.
+        self.assertEqual(len(BATCH_THREE_NEW), 9)
+        self.assertEqual(self.catalog, PLAN_ORDER)
 
     def test_every_catalog_story_has_a_spec_or_is_hand_written(self):
         for sid in self.catalog:
@@ -231,6 +256,53 @@ class Specs(unittest.TestCase):
             for character in story["characters"]:
                 if character.get("card"):
                     self.assertIn(character["id"], named, "%s: %s is never named" % (sid, character["id"]))
+
+    def test_new_advanced_stories_are_levelled(self):
+        for sid in BATCH_THREE_NEW:
+            story = self.stories[sid]
+            self.assertEqual(story["tier"], "advanced", sid)
+            self.assertEqual(len(story["spreads"]), 14, sid)
+            self.assertEqual(len(story["parts"]), 3, sid)
+            self.assertEqual(len({s["scene"]["unfolded"]["file"] for s in story["spreads"]}), 4, sid)
+            ordinary = [t for t in story["tapTargets"] if t["kind"] != "landmark"]
+            self.assertGreaterEqual(len(ordinary), 4, sid)
+            self.assertTrue(any(t["kind"] == "place" for t in ordinary), sid)
+            self.assertGreaterEqual(len([c for c in story["characters"] if c.get("card")]), 2, sid)
+            chrome = story["theme"]["chrome"]
+            self.assertEqual(len({chrome["leading"], chrome["trailing"], chrome["folded"]}), 1, sid)
+            total = 0
+            for spread in story["spreads"]:
+                where = "%s %s" % (sid, spread["id"])
+                words = sum(len(vc.block_text(b).split()) for b in spread["blocks"])
+                total += words
+                self.assertLessEqual(words, 240, where)
+                self.assertGreaterEqual(words, 120, where)
+                panes = [b["pane"] for b in spread["blocks"]]
+                self.assertEqual(panes[0], "leading", where)
+                self.assertEqual(panes[-1], "trailing", where)
+                self.assertEqual(panes, sorted(panes), where)  # "leading" < "trailing"
+                self.assertEqual(spread["scene"].get("textArea"), {"leadingBottom": 470, "trailingBottom": 420}, where)
+                taps = [r for b in spread["blocks"] for r in b["runs"] if r.get("tap")]
+                self.assertLessEqual(len(taps), 1, where)
+            self.assertTrue(2000 <= total <= 3000, "%s: %d words" % (sid, total))
+            for part in story["parts"]:
+                first = next(s for s in story["spreads"] if s["part"] == part["id"])
+                self.assertTrue(all(r.get("lead") for r in first["blocks"][0]["runs"]), "%s %s" % (sid, part["id"]))
+            named = {r.get("name") for s in story["spreads"] for b in s["blocks"] for r in b["runs"]}
+            for character in story["characters"]:
+                if character.get("card"):
+                    self.assertIn(character["id"], named, "%s: %s is never named" % (sid, character["id"]))
+
+    def test_all_twelve_flagged_stories_are_in_the_catalog(self):
+        flagged = {sid for sid, story in self.stories.items() if story["culturalReview"]["level"] == "required"}
+        self.assertEqual(flagged, REQUIRED_REVIEW)
+        for sid in flagged:
+            self.assertEqual(self.stories[sid]["culturalReview"].get("notes"), "Needs cultural review before release.", sid)
+
+    def test_the_landmark_catalog_holds_all_thirty_seven(self):
+        self.assertEqual(len(self.landmarks["landmarks"]), 37)
+        used = {t["landmark"]["id"] for s in self.stories.values() for t in s["tapTargets"] if t["kind"] == "landmark"}
+        self.assertEqual(used, {lm["id"] for lm in self.landmarks["landmarks"]})
 
     def test_the_fish_camp_story_has_no_snow_house_and_no_midnight_sun(self):
         story = self.stories["long-day-at-fish-camp"]

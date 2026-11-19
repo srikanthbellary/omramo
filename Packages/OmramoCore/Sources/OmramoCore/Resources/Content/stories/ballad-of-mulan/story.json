@@ -1,0 +1,1628 @@
+{
+  "schemaVersion": 1,
+  "id": "ballad-of-mulan",
+  "contentVersion": 1,
+  "title": "The Ballad of Mulan",
+  "tier": "advanced",
+  "language": "en",
+  "region": {
+    "id": "chinese",
+    "culture": "Chinese ballad (the Northern Dynasties)",
+    "place": "Northern China",
+    "label": "Northern China",
+    "pin": {
+      "lat": 35.0,
+      "lon": 111.0
+    },
+    "pinColor": "#E0483A"
+  },
+  "setting": {
+    "period": "Northern China, about 1,500 years ago",
+    "latestYear": 550
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Chinese folk ballad (the Ballad of Mulan)",
+    "sources": [
+      {
+        "author": "Anonymous (the Northern Dynasties)",
+        "title": "The Ballad of Mulan (Mulan ci), kept in Guo Maoqian’s Yuefu Shiji",
+        "year": 1100,
+        "verified": false
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of the anonymous Ballad of Mulan, an ancient Chinese poem in the public domain everywhere, written for Omramo; it follows no translation and nothing from any film version. The title and name need a trademark check before release (CQ2). Legal review pending (PRD Q23)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Chinese reader (and a historian of the Northern Wei period)"
+  },
+  "education": {
+    "geography": {
+      "lesson": "Mulan rides north from a farming village near the Yellow River, through the mountains to the frontier where China’s farmland met the grasslands of the horse-riding peoples. The great stone wall came much later; her frontier was guarded by walls of pounded earth.",
+      "factCards": [
+        "yellow-river",
+        "northern-grasslands",
+        "great-wall-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "In a northern Chinese farmhouse of her time, women wove the family’s cloth, and cloth even paid the household’s taxes. Mulan’s story is a ballad, sung before it was written down, and Chinese children still learn it by heart about 1,500 years later.",
+      "factCards": [
+        "loom",
+        "the-ballad",
+        "forbidden-city-moment"
+      ]
+    },
+    "moral": {
+      "lesson": "Mulan goes to war because her old father cannot, and she does it well for twelve years without anyone guessing she is a girl. Then she turns down every reward to go home. The reader can weigh what she gave and what she chose to keep.",
+      "reflectionQuestion": "Mulan was offered a high post at court and said no. Why do you think she only wanted to go home, and would you have done the same?"
+    }
+  },
+  "moral": "Courage and love of family do not depend on being a boy or a girl.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#1A1F2E",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A young woman in iron armour made of small laced plates rides a sturdy brown horse along a pale earth wall at a winter dawn, her breath white, with bare snowy mountains behind her.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "The Loom"
+    },
+    {
+      "id": "part-2",
+      "title": "Ten Thousand Li"
+    },
+    {
+      "id": "part-3",
+      "title": "Home"
+    }
+  ],
+  "characters": [
+    {
+      "id": "mulan",
+      "name": "Mulan",
+      "color": "#B8322A",
+      "face": {
+        "file": "art/face-mulan.png",
+        "alt": "Mulan.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FADAD3",
+      "card": {
+        "label": "Character · a weaver’s daughter",
+        "title": "Mulan",
+        "traits": [
+          {
+            "text": "Weaves at the door",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Rides in his place",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Keeps her own counsel",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          }
+        ],
+        "body": "A farmer’s daughter from the north who takes her old father’s place in the army. She serves twelve years with no one guessing her secret, and wants nothing for it but the road home.",
+        "portrait": {
+          "file": "art/char-mulan.card.heic",
+          "alt": "A young woman with her hair bound up in a soldier’s knot, in a narrow-sleeved belted tunic, holding a horse’s bridle against a pale yellow sky.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#C8452B",
+          "#7A2A22",
+          "#3A1814"
+        ]
+      }
+    },
+    {
+      "id": "father",
+      "name": "Father",
+      "color": "#3D5A6E",
+      "face": {
+        "file": "art/face-father.png",
+        "alt": "Mulan’s father.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#DCE6EC",
+      "card": {
+        "label": "Character · Mulan’s father, an old soldier",
+        "title": "Mulan’s Father",
+        "traits": [
+          {
+            "text": "Fought when young",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          },
+          {
+            "text": "Named on every scroll",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Knows horses",
+            "fill": "#D9F5E4",
+            "ink": "#0B6B4A"
+          }
+        ],
+        "body": "He marched to the frontier long ago and came home with a cough that never left him. When the army calls him again, he is too old to go, and too proud to say so.",
+        "portrait": {
+          "file": "art/char-father.card.heic",
+          "alt": "An old man with a thin grey beard and a cloth cap, in a plain dark belted tunic, holding a battered iron helmet in both hands.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#4E6B7A",
+          "#2E4250",
+          "#18242E"
+        ]
+      }
+    },
+    {
+      "id": "comrade",
+      "name": "Comrade",
+      "color": "#5E6A2A",
+      "face": {
+        "file": "art/face-comrade.png",
+        "alt": "Mulan’s comrade.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#E6EBCF"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "loom",
+      "kind": "object",
+      "title": "The loom",
+      "line": "A wooden frame for weaving, where a shuttle carries the thread back and forth between rows of stretched threads.",
+      "cultureNote": {
+        "label": "From northern China",
+        "text": "In Mulan’s time, farm families wove their own cloth of hemp, and of silk where mulberry trees grew. Under the Northern Wei rulers, each household paid part of its tax in bolts of cloth, so a loom was as useful as a plough."
+      },
+      "picture": {
+        "file": "art/see-loom.heic",
+        "alt": "A simple wooden loom with a half-woven length of pale cloth and a boat-shaped shuttle resting on it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3A1E"
+    },
+    {
+      "id": "yellow-river",
+      "kind": "place",
+      "title": "Yellow River",
+      "line": "The great river of northern China, about 5,400 kilometres long, named for the yellow earth it carries.",
+      "cultureNote": {
+        "label": "From northern China",
+        "text": "The river crosses a high plateau of soft yellow soil called loess and carries so much of it away that its water runs brown and gold. Farmers along its banks were growing millet more than 7,000 years ago, and Chinese writers call it the mother river."
+      },
+      "picture": {
+        "file": "art/see-yellow-river.heic",
+        "alt": "A wide, muddy golden-brown river flowing between tall cliffs of yellow earth under a pale evening sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6A4A1C"
+    },
+    {
+      "id": "great-wall-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "great-wall-of-china",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "THE WALL, THEN AND LATER",
+          "line": "In Mulan’s time the frontier was guarded by walls of pounded earth. The great stone wall people walk on today was built about 1,000 years later."
+        }
+      },
+      "background": "#3A4048"
+    },
+    {
+      "id": "northern-grasslands",
+      "kind": "place",
+      "title": "The grasslands",
+      "line": "The wide, dry plains north of China, where people have lived for thousands of years by herding horses, sheep and cattle.",
+      "cultureNote": {
+        "label": "From the northern steppe",
+        "text": "The Northern Wei emperors were themselves Xianbei, a horse-riding people from the north, which is why the ballad calls the emperor a Khan. Their enemies beyond the frontier were most likely the Rouran, though the ballad never names them, and historians still argue over its dates."
+      },
+      "picture": {
+        "file": "art/see-northern-grasslands.heic",
+        "alt": "A single sturdy steppe horse with a thick mane standing in wide, wind-bent grassland under a pale sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#3E4A26"
+    },
+    {
+      "id": "forbidden-city-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "forbidden-city",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "LONG AFTER THIS STORY",
+          "line": "Mulan bowed in an emperor’s hall of her own time. About 900 years later, the emperors of China built a palace of their own in Beijing."
+        }
+      },
+      "background": "#5A1E1A"
+    },
+    {
+      "id": "the-ballad",
+      "kind": "idea",
+      "title": "The ballad",
+      "line": "A ballad is a story told in song, passed from singer to singer long before anyone wrote it down.",
+      "cultureNote": {
+        "label": "From China",
+        "text": "Nobody knows who first sang of Mulan, or whether she ever lived. The song was written into a great book of old poems in the 1100s, and Chinese schoolchildren still learn it by heart, most of all its last lines about the two hares."
+      },
+      "picture": {
+        "file": "art/see-the-ballad.heic",
+        "alt": "An open old Chinese book, its columns of brush-written characters running top to bottom, with a small drawing of two running hares.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2430"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-loom.unfolded.heic",
+          "alt": "A farm courtyard in a northern Chinese village on a spring morning, under a wide pale sky that fills the upper part of both panes. Low on the right, behind rammed-earth walls and a gate with a small tiled roof, Mulan sits at a loom set in the open doorway, with a willow above and chickens in the yard.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-loom.folded.heic",
+          "alt": "Mulan at her loom in the open doorway, the shuttle in her hand, a willow branch hanging above.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4EEDC",
+          "#E8D9A8",
+          "#8C9A5A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The shuttle knocked across the loom and back, across and back, in the open doorway.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Mulan",
+              "name": "mulan"
+            },
+            {
+              "t": " wove there every morning, where the light was best, with the willow hanging over the gate and the hens scratching in the dust of the yard. Her hands knew the "
+            },
+            {
+              "t": "loom",
+              "tap": "loom"
+            },
+            {
+              "t": " the way her feet knew the path to the well. Over and under went the thread; down came the beater; back flew the shuttle."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "But this morning the sound stopped. Her mother, crossing the yard with a basket of millet, looked up. The shuttle lay still on the cloth. There was no knock of wood on wood at all, only a long breath let out, and then another, like wind under a door."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The hens went on scratching. The willow went on moving. Mulan sat with her hands folded and stared at the half-made cloth as though something were written in it."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Daughter, what are you thinking of?” her mother asked. “Who are you remembering?” Mulan did not look up. "
+            },
+            {
+              "t": "“I am not thinking of anyone,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " she said at last. "
+            },
+            {
+              "t": "“I am not remembering anything. It is only that last night I saw the army’s notice.”",
+              "say": "mulan"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-loom.unfolded.heic",
+          "alt": "A farm courtyard in a northern Chinese village on a spring morning, under a wide pale sky that fills the upper part of both panes. Low on the right, behind rammed-earth walls and a gate with a small tiled roof, Mulan sits at a loom set in the open doorway, with a willow above and chickens in the yard.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-loom.folded.heic",
+          "alt": "Mulan at her loom in the open doorway, the shuttle in her hand, a willow branch hanging above.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4EEDC",
+          "#E8D9A8",
+          "#8C9A5A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“It was nailed to the gate of the headman’s yard. The Khan is calling up soldiers for the north. There were twelve scrolls of names, Mother, and I read every one, and on every one I found Father’s name.”",
+              "say": "mulan",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her mother set the basket down. Across the yard, in the shade of the wall, "
+            },
+            {
+              "t": "Father",
+              "name": "father"
+            },
+            {
+              "t": " was mending a halter, and as they watched he bent over it and coughed, the dry, deep cough he had brought home from the frontier thirty years before."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“He cannot go,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " Mulan said quietly. "
+            },
+            {
+              "t": "“He has no grown son to send instead. I have no elder brother. My little brother is still small enough to fall off the donkey.”",
+              "say": "mulan"
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She stood up. The shuttle slid off the cloth and swung on its thread, knocking softly against the frame, and nobody reached to stop it."
+            }
+          ]
+        },
+        {
+          "id": "s02-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“So I will buy a horse and a saddle,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " she said, "
+            },
+            {
+              "t": "“and I will go to the north in his place.”",
+              "say": "mulan"
+            },
+            {
+              "t": " Her mother opened her mouth and closed it again. In the shade of the wall, Father had stopped coughing. He was looking at his daughter, and the halter hung forgotten from his hands."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-loom.unfolded.heic",
+          "alt": "A farm courtyard in a northern Chinese village on a spring morning, under a wide pale sky that fills the upper part of both panes. Low on the right, behind rammed-earth walls and a gate with a small tiled roof, Mulan sits at a loom set in the open doorway, with a willow above and chickens in the yard.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-loom.folded.heic",
+          "alt": "Mulan at her loom in the open doorway, the shuttle in her hand, a willow branch hanging above.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4EEDC",
+          "#E8D9A8",
+          "#8C9A5A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Next morning her mother pressed into her hands the string of coins from the clay jar under the bed, the money saved, coin by coin, against a bad year, and Mulan walked to the market town."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the east market she bought a horse, a bay with a thick neck and a white blaze, strong enough to carry armour all day. In the west market she bought a saddle and a saddle-cloth. In the south market she bought a bridle with a bit of iron. In the north market she bought a long whip of plaited leather."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The horse-dealer looked at her twice, and the saddler asked who the saddle was for. "
+            },
+            {
+              "t": "“For my father,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " she told them both, which was true, and was not."
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Coming home, she led the horse through the gate at sunset. The hens scattered. Her little brother ran out shouting and stopped dead, staring up at the bay’s great head."
+            }
+          ]
+        },
+        {
+          "id": "s03-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Father",
+              "name": "father"
+            },
+            {
+              "t": " was waiting under the willow. He had taken his old armour down from the rafters and was trying to buckle it on: rows of small iron plates laced with leather, rusted brown at the edges. The old laces were stiff, and his fingers fumbled at them."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-loom.unfolded.heic",
+          "alt": "A farm courtyard in a northern Chinese village on a spring morning, under a wide pale sky that fills the upper part of both panes. Low on the right, behind rammed-earth walls and a gate with a small tiled roof, Mulan sits at a loom set in the open doorway, with a willow above and chickens in the yard.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-loom.folded.heic",
+          "alt": "Mulan at her loom in the open doorway, the shuttle in her hand, a willow branch hanging above.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4EEDC",
+          "#E8D9A8",
+          "#8C9A5A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I will go,”",
+              "say": "father",
+              "chip": true
+            },
+            {
+              "t": " he said. "
+            },
+            {
+              "t": "“I have done it before. I know the road.”",
+              "say": "father"
+            },
+            {
+              "t": " Then the cough took him, and he had to sit down on the chopping block with the armour half on, while the little brother held the horse."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Mulan knelt and undid the laces for him, one by one. She waited until he could breathe. When he looked into her face, he saw there was nothing left to argue about."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That night, by the fire, the old soldier taught her what the frontier had taught him. "
+            },
+            {
+              "t": "“Keep your horse’s rein looped round your wrist, even asleep. Sleep in your boots. And say little. A quiet soldier is a soldier nobody looks at twice.”",
+              "say": "father",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Last of all, Mulan took the pins out of her hair and laid them on the table, the bone pin and the little copper one shaped like a flower. Father showed her how a man ties his hair in one plain knot on top of his head."
+            }
+          ]
+        },
+        {
+          "id": "s04-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her mother sat sewing until the lamp burned out. When Mulan lay down at last, she found a new pair of padded boots at the foot of her bed, and inside each one a twist of cloth full of dried red dates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The Yellow River at evening under a pale gold sky that fills the upper part of both panes, the wide brown water running between cliffs of yellow earth. Low on the right, on the bank, stand Mulan’s horse, a small fire and her armour laid on the ground beside her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Mulan sitting by a small fire on the river bank at evening, her horse behind her and her armour beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFD2",
+          "#EDCF8E",
+          "#9C7A3E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She left at first light. Her parents walked with her as far as the village gate and no farther. Her mother held the bridle a moment too long, and then let go."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All day she rode, through fields of young millet and down gullies of yellow earth so soft that the horse’s hooves sank into it like a spoon into flour."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At evening she came to the "
+            },
+            {
+              "t": "Yellow River",
+              "tap": "yellow-river"
+            },
+            {
+              "t": ". It was wider than anything she had imagined, a moving plain of brown water, and it carried whole trees past her, roots and all. She hobbled the horse, lit a small fire and laid her armour on the bank beside her."
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every evening of her life, at this hour, she had heard her mother calling her name across the yard to come in and eat. She listened for it now. There was no voice. There was only the river, rushing and slapping against the bank, all night long."
+            }
+          ]
+        },
+        {
+          "id": "s05-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At dawn she left the river, and by the next evening she had climbed to the Black Mountain. Again she listened for her mother’s voice. Again there was none. Only, from the Yan Mountains far ahead, the high, thin whinnying of the northern horsemen’s horses came down on the wind."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-frontier.unfolded.heic",
+          "alt": "The northern frontier at a pale winter dawn, a high white-blue sky over bare mountains streaked with snow. Low across the picture runs a long earth wall with a wooden watch-tower and red banners; on the right, Mulan sits her horse in iron armour, her breath white, while a line of riders moves far off.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-frontier.folded.heic",
+          "alt": "Mulan on her horse in iron armour at dawn, frost on her helmet, her breath white, a watch-tower behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF1F2",
+          "#C9D2D6",
+          "#6E7276"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Ten thousand li she rode to the war, over passes and mountains, as if her horse had wings.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She stopped counting the li, each one about half a kilometre, somewhere after the first thousand. She rode with men from a hundred villages, through passes where the wind never dropped, until the farmland gave out and there was nothing ahead but bare mountains and the "
+            },
+            {
+              "t": "frontier",
+              "tap": "great-wall-moment"
+            },
+            {
+              "t": "."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "It was a long, low wall of pounded earth, running over the hills further than she could see. Every few li stood a wooden watch-tower with a red banner cracking in the wind. Beyond it the land changed colour, from yellow to grey-green, and did not stop."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The cold came down off the mountains so sharp that the iron of her armour burned her fingers. All night the watchmen struck the bronze pots they cooked in by day, one tower answering another, and the sound carried far on the frozen air."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then, at dawn, the first thin light would come sliding along the wall and catch on the iron plates of the soldiers’ coats, row on row of them, glinting like frost. "
+            },
+            {
+              "t": "Mulan",
+              "name": "mulan"
+            },
+            {
+              "t": " would breathe on her hands and tighten her helmet strap and wait for the order."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-frontier.unfolded.heic",
+          "alt": "The northern frontier at a pale winter dawn, a high white-blue sky over bare mountains streaked with snow. Low across the picture runs a long earth wall with a wooden watch-tower and red banners; on the right, Mulan sits her horse in iron armour, her breath white, while a line of riders moves far off.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-frontier.folded.heic",
+          "alt": "Mulan on her horse in iron armour at dawn, frost on her helmet, her breath white, a watch-tower behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF1F2",
+          "#C9D2D6",
+          "#6E7276"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One winter became two, and two became five. She learned the seasons of the frontier the way she had once learned the patterns on the loom."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In winter the snow drifted against the tent until it bowed in the middle, and she woke with frost in her eyebrows. In spring the meltwater roared in every gully. In summer the "
+            },
+            {
+              "t": "grasslands",
+              "tap": "northern-grasslands"
+            },
+            {
+              "t": " beyond the wall turned green to the edge of the sky, and the horsemen came riding out of them, and the drums called the army out to meet them."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Mulan did not talk about the battles afterwards, and neither did anyone else. There were a hundred of them, and generals fell in them. Some of the men who had ridden north beside her did not ride back."
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her bay horse grew grey around the muzzle. She grew too: taller, harder in the arm, brown as a saddle. She could bend a bow that her father could no longer draw."
+            }
+          ]
+        },
+        {
+          "id": "s07-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In autumn the wild geese flew south over the camp, high and calling. Mulan always stopped to watch them go. In the old stories, geese carried letters for people far from home. These carried nothing, and she watched them until the sky was empty."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-frontier.unfolded.heic",
+          "alt": "The northern frontier at a pale winter dawn, a high white-blue sky over bare mountains streaked with snow. Low across the picture runs a long earth wall with a wooden watch-tower and red banners; on the right, Mulan sits her horse in iron armour, her breath white, while a line of riders moves far off.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-frontier.folded.heic",
+          "alt": "Mulan on her horse in iron armour at dawn, frost on her helmet, her breath white, a watch-tower behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#EEF1F2",
+          "#C9D2D6",
+          "#6E7276"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "All those years she kept her secret, and she kept it with small things, done every day without fail."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She slept in her boots, as Father had told her, with her armour on and the rein round her wrist. She washed in the stream before the horns blew, while the camp was still a grey heap of snoring. She spoke little, and when she spoke she kept her voice low and her sentences short, and the men took her for a quiet farm boy."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "There was one soldier she could not keep at arm’s length. He came from a village in the hills not far from hers, and he had attached himself to her on the first day, the way a big, cheerful dog will. He shared his millet cakes with her. He told her terrible jokes on the march."
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You laugh like my sister,”",
+              "say": "comrade",
+              "chip": true
+            },
+            {
+              "t": " he said once, by the fire, and Mulan went still. But he only grinned and threw her another cake. "
+            },
+            {
+              "t": "“She is the only other one who laughs at my jokes.”",
+              "say": "comrade"
+            },
+            {
+              "t": " After that, Mulan laughed lower, into her sleeve."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The Yellow River at evening under a pale gold sky that fills the upper part of both panes, the wide brown water running between cliffs of yellow earth. Low on the right, on the bank, stand Mulan’s horse, a small fire and her armour laid on the ground beside her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Mulan sitting by a small fire on the river bank at evening, her horse behind her and her armour beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFD2",
+          "#EDCF8E",
+          "#9C7A3E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the twelfth year a rider came galloping down the line of towers, and by evening the whole frontier knew. The war was over. The horsemen of the grasslands had made peace, or been beaten, or gone away north. Nobody in the camp was sure which, and nobody cared."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They rode south together, the ones who were left, through the passes and down out of the mountains. Mulan’s comrade sang the whole way, badly. The snow gave way to mud, the mud to yellow dust, and one evening they came down to the Yellow River again and camped on its bank."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Mulan sat by the fire with her helmet in her lap and listened to the water. Twelve years ago it had drowned out her mother’s voice. Tonight she thought she could almost hear that voice under the roar, calling her in to eat."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Twelve years,”",
+              "say": "comrade",
+              "chip": true
+            },
+            {
+              "t": " said her comrade, lying back with his hands behind his head. "
+            },
+            {
+              "t": "“The Son of Heaven will want to thank us. Gold, they say. Rank. What will you ask him for?”",
+              "say": "comrade"
+            },
+            {
+              "t": " Mulan watched the river and did not answer."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The Yellow River at evening under a pale gold sky that fills the upper part of both panes, the wide brown water running between cliffs of yellow earth. Low on the right, on the bank, stand Mulan’s horse, a small fire and her armour laid on the ground beside her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Mulan sitting by a small fire on the river bank at evening, her horse behind her and her armour beside her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#FBEFD2",
+          "#EDCF8E",
+          "#9C7A3E"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "In the capital the emperor, whom people called the Son of Heaven and the northern soldiers called the Khan, sat in "
+            },
+            {
+              "t": "the bright hall",
+              "tap": "forbidden-city-moment"
+            },
+            {
+              "t": " to receive them."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Its pillars were painted red, and the light fell through carved screens in gold bars across the floor. The soldiers knelt in rows while a clerk read their deeds aloud. When he came to Mulan’s, he read for so long that the men around her began to grin: twelve steps up in rank, and coins by the hundred thousand."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then the Khan himself leaned forward. “What do you wish for, soldier? Name it. There is a post at court for a man like you, with a seal and a house.”"
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I want no post, my lord,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " said Mulan, with her forehead to the floor. "
+            },
+            {
+              "t": "“Give me only a swift camel for the long road home.”",
+              "say": "mulan"
+            }
+          ]
+        },
+        {
+          "id": "s10-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The hall went quiet. Somebody laughed and stopped. Then the Khan sat back and waved his hand, and the next morning Mulan rode out of the city gate on a tall pale camel. Her comrade and a few of the others rode with her, because their villages lay along the same road."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "The village in late spring under a soft pale sky that fills the upper part of both panes, with green millet in the fields. Low on the right, the family comes out of the village gate, Mulan sits at a window of the low house combing out her long hair, and two hares run side by side in the field beyond.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "Mulan at her window in a soft red jacket, combing out her long dark hair, with two hares running in the field below.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E2",
+          "#E6DCB4",
+          "#7E9A5C"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Word ran ahead of her down the road, faster than any camel.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When "
+            },
+            {
+              "t": "Father",
+              "name": "father"
+            },
+            {
+              "t": " and her mother heard that their daughter was coming home, they walked out of the village together to the old earth wall, leaning on each other, and stood there in the wind all afternoon, watching the road."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her elder sister heard, and ran indoors to her chest of clothes. She put on her best red skirt and sat in the doorway with a little pot of rouge, painting her cheeks and wiping them clean and painting them again, because nothing looked right for a day like this."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her little brother, who was not little any more, heard too. He was taller than Father now. He took the big knife down from the wall and sat in the yard sharpening it, the blade hissing on the whetstone, for there would be a pig and a sheep roasting tonight, and the whole village would come."
+            }
+          ]
+        },
+        {
+          "id": "s11-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Late in the day, a tall pale shape came swaying up the road out of the dust. Her mother gripped Father’s arm. The camel knelt at the gate, groaning as camels do, and a soldier in dusty iron climbed down. Behind it, her comrades reined in and waited."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "The village in late spring under a soft pale sky that fills the upper part of both panes, with green millet in the fields. Low on the right, the family comes out of the village gate, Mulan sits at a window of the low house combing out her long hair, and two hares run side by side in the field beyond.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "Mulan at her window in a soft red jacket, combing out her long dark hair, with two hares running in the field below.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E2",
+          "#E6DCB4",
+          "#7E9A5C"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She held her parents for a long time and said nothing at all. Then she opened the door of her old room and sat down on her own bed."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nothing had moved. Her mother had dusted it every month for twelve years. The loom stood in the corner, with the same half-woven cloth still on it, gone yellow along the edge."
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She unlaced her armour, plate by plate, and set it down, and it was strange how light her shoulders felt. She took off the coat she had worn to war and put on a jacket and skirt from the old chest, soft with folding. The sleeves were short now. She did not care."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At the window she untied the soldier’s knot, let her hair down and combed it out in the sunlight, slowly. Then at the bronze mirror she pressed a little yellow flower-shape to her forehead, as girls did for a feast."
+            }
+          ]
+        },
+        {
+          "id": "s12-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The face in the mirror looked back at her: brown from twelve years of wind, with a soldier’s shoulders and a pale line across her chin where the helmet strap had been. "
+            },
+            {
+              "t": "Mulan",
+              "name": "mulan"
+            },
+            {
+              "t": " looked at it for a long while. Then she smiled, and went out to the gate."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "The village in late spring under a soft pale sky that fills the upper part of both panes, with green millet in the fields. Low on the right, the family comes out of the village gate, Mulan sits at a window of the low house combing out her long hair, and two hares run side by side in the field beyond.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "Mulan at her window in a soft red jacket, combing out her long dark hair, with two hares running in the field below.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E2",
+          "#E6DCB4",
+          "#7E9A5C"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her comrades were sitting on the wall by the gate in the late sun, passing a water-skin between them, waiting for the feast. They looked up as she came out."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They looked again. The water-skin stopped halfway to somebody’s mouth. One man stood up, sat down, and stood up again. For a long moment the only sound was the sparrows in the willow."
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For twelve years they had shared her fire and her food, slept beside her in the snow, and followed her up the hill on the worst day of all. And in all that time it had never once crossed their minds that their quiet comrade was a woman."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her comrade got up off the wall at last and walked all the way round her, slowly, as if she were a new horse at market. "
+            },
+            {
+              "t": "“My millet cakes,”",
+              "say": "comrade",
+              "chip": true
+            },
+            {
+              "t": " he said faintly. "
+            },
+            {
+              "t": "“My jokes. Twelve years of my terrible jokes. You let me tell you all of them.”",
+              "say": "comrade"
+            }
+          ]
+        },
+        {
+          "id": "s13-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I laughed at all of them, too,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " said Mulan. Then he laughed, and the others with him, until they had to hold on to the gatepost. "
+            },
+            {
+              "t": "“They will make a ",
+              "say": "comrade",
+              "chip": true
+            },
+            {
+              "t": "song",
+              "say": "comrade",
+              "tap": "the-ballad"
+            },
+            {
+              "t": " of this,”",
+              "say": "comrade"
+            },
+            {
+              "t": " he said, wiping his eyes. "
+            },
+            {
+              "t": "“You know that? Somebody will make a song.”",
+              "say": "comrade"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-home.unfolded.heic",
+          "alt": "The village in late spring under a soft pale sky that fills the upper part of both panes, with green millet in the fields. Low on the right, the family comes out of the village gate, Mulan sits at a window of the low house combing out her long hair, and two hares run side by side in the field beyond.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-home.folded.heic",
+          "alt": "Mulan at her window in a soft red jacket, combing out her long dark hair, with two hares running in the field below.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6F1E2",
+          "#E6DCB4",
+          "#7E9A5C"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Mulan pointed past him, out over the field, where the young millet was coming up in green rows."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Look there,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " she said. Two hares were sitting up among the furrows, ears high. "
+            },
+            {
+              "t": "“When you hold a hare up by its ears, you can tell which is which. The buck kicks and kicks with his feet. The doe screws her eyes half shut. Any farm child knows that.”",
+              "say": "mulan"
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "As she spoke, something startled the hares, and they were off together down the field, low and long, their ears laid flat."
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“But once they race off together, low in the grass,”",
+              "say": "mulan",
+              "chip": true
+            },
+            {
+              "t": " said Mulan, "
+            },
+            {
+              "t": "“which of you could point to the buck, and which to the doe?”",
+              "say": "mulan"
+            },
+            {
+              "t": " She looked at her comrade, and he looked at her, and slowly he began to smile."
+            }
+          ]
+        },
+        {
+          "id": "s14-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Out across the spring field the two hares ran, over the furrows and through the young millet, past the willow and the old earth wall. Neck and neck they went, stride for stride, and nobody watching from the gate could have told you which was which."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

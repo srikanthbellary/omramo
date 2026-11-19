@@ -1,0 +1,533 @@
+{
+  "id": "firebird-and-horse-of-power",
+  "title": "The Fire-Bird and the Horse of Power",
+  "tier": "advanced",
+  "region": {
+    "id": "russian",
+    "culture": "Russian wonder tale (collected by Afanasyev)",
+    "place": "The northern forest of Russia",
+    "label": "Russia",
+    "pin": { "lat": 61.0, "lon": 36.0 },
+    "pinColor": "#E8562A"
+  },
+  "setting": {
+    "period": "Folk-tale Russia, in the time of the tsars",
+    "latestYear": 1700
+  },
+  "provenance": {
+    "kind": "publicDomainRetelling",
+    "tradition": "Russian wonder tale (Afanasyev)",
+    "sources": [
+      {
+        "author": "Arthur Ransome",
+        "title": "Old Peter's Russian Tales",
+        "year": 1916,
+        "gutenbergId": 16981,
+        "url": "https://www.gutenberg.org/ebooks/16981",
+        "verified": true
+      }
+    ],
+    "textBasis": "omramoRetelling",
+    "rights": "The text is our own retelling of a traditional Russian wonder tale, written for Omramo; it does not use the wording of the cited edition. The cited edition is in the US public domain (published before 1931); other territories not verified. Ransome died in 1967 and his wording is protected in life + 70 countries until 2038; our text is retold from the traditional tale and uses none of his wording (CONTENT_PLAN CQ2). The underlying tale was collected by Alexander Afanasyev (d. 1871). Legal review pending (PRD Q23)."
+  },
+  "culturalReview": {
+    "level": "standard",
+    "status": "pending",
+    "community": "Russian reader"
+  },
+  "education": {
+    "geography": {
+      "lesson": "The archer rides through the taiga, the vast northern forest that crosses Russia, to a sea where midsummer nights stay light. Wooden building was the great art of that forest north, as the island churches of Kizhi still show.",
+      "factCards": ["taiga", "white-sea", "kizhi-moment"]
+    },
+    "culture": {
+      "lesson": "The Fire-Bird and the wise horse are old figures of Russian wonder tales, and the Fire-Bird lives on in Palekh lacquer painting and Stravinsky’s ballet. A tsar was a real ruler, but the tsar of a wonder tale rules a kingdom on no map.",
+      "factCards": ["firebird-in-art", "tsar-title"]
+    },
+    "moral": {
+      "lesson": "The archer ignores one clear warning, and every trouble that follows grows out of that single choice. He does not run from the cost: he tells the truth, keeps going, and pays it in the cauldron. At the end he lets the bird go.",
+      "reflectionQuestion": "The horse warned the archer only once. Why do you think the archer picked up the feather anyway, and was the trouble worth it?"
+    }
+  },
+  "moral": "Listen to a good friend’s warning, for every choice has a cost.",
+  "theme": {
+    "textColor": "#FBF2E2",
+    "chrome": { "leading": "dark", "trailing": "dark", "folded": "dark" },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D4D",
+      "fill2": "#FFA03D38",
+      "line": "#FFC43D",
+      "spark": "#FFD25A"
+    },
+    "chipGlass": "#1E12468C"
+  },
+  "cover": {
+    "alt": "At night in a dark spruce forest, a young archer in a long belted coat stands beside his huge dark horse, whose hoof rests on the wing of a glowing golden bird, and the bird’s light fills the clearing."
+  },
+  "parts": [
+    { "id": "part-1", "title": "The Feather" },
+    { "id": "part-2", "title": "The Princess" },
+    { "id": "part-3", "title": "The Cauldron" }
+  ],
+  "characters": [
+    {
+      "id": "archer",
+      "name": "The Archer",
+      "color": "#FFC978",
+      "chipBackground": "#B2442A",
+      "faceAlt": "The archer.",
+      "card": {
+        "label": "Character · a huntsman of the tsar",
+        "title": "The Archer",
+        "traits": [
+          { "text": "Sure with a bow", "fill": "#FFE9B8", "ink": "#8A4A00" },
+          { "text": "Wears a belted kaftan", "fill": "#FFE0D6", "ink": "#B33A1C" },
+          { "text": "Slow to listen", "fill": "#DCE9FA", "ink": "#1B4F86" }
+        ],
+        "body": "He is bold enough to pick up a burning feather and not yet wise enough to leave it. He pays for that choice himself, every step of the way, and he never once lies about it.",
+        "portraitAlt": "A young man with brown hair cut round under a fur-trimmed cap, in a long red belted kaftan, a bow over his shoulder, under a dark forest sky.",
+        "background": ["#7A3A22", "#3E2418", "#1A1210"]
+      }
+    },
+    {
+      "id": "horse",
+      "name": "The Horse",
+      "color": "#C9D6F2",
+      "chipBackground": "#3A4A6A",
+      "faceAlt": "The Horse of Power.",
+      "card": {
+        "label": "Character · the archer’s warhorse",
+        "title": "The Horse of Power",
+        "traits": [
+          { "text": "Speaks seldom", "fill": "#DCE9FA", "ink": "#1B4F86" },
+          { "text": "Wise helper of tales", "fill": "#D9F5E4", "ink": "#0B6B4A" },
+          { "text": "Warns only once", "fill": "#FFE9B8", "ink": "#8A4A00" }
+        ],
+        "body": "In Russian wonder tales a hero’s horse often knows far more than the hero. This one gives his warning once, then helps anyway, and waits for his rider to grow into the advice.",
+        "portraitAlt": "A huge dark horse with a long mane falling below his neck, head turned to look calmly out, lit faintly gold from one side in a night forest.",
+        "background": ["#2E3B52", "#1B2436", "#0C121E"]
+      }
+    },
+    {
+      "id": "vasilissa",
+      "name": "Vasilissa",
+      "color": "#F3D3E8",
+      "chipBackground": "#5E4A8A",
+      "faceAlt": "Princess Vasilissa."
+    },
+    {
+      "id": "tsar",
+      "name": "The Tsar",
+      "color": "#E9C46A",
+      "chipBackground": "#7A2E2E",
+      "faceAlt": "The old tsar."
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "taiga",
+      "kind": "place",
+      "title": "The taiga",
+      "line": "The taiga is the great northern forest of spruce, pine, larch and birch that stretches across Russia.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "The taiga crosses Russia from the Baltic almost to the Pacific Ocean. It belongs to a belt of northern forest that also runs through Scandinavia, Canada and Alaska, the largest forest region on Earth. Its summers are short and its winters long and hard."
+      },
+      "pictureAlt": "One tall dark spruce tree beside a white-barked birch, standing on a mossy forest floor under a night sky.",
+      "background": "#173126"
+    },
+    {
+      "id": "tsar-title",
+      "kind": "idea",
+      "title": "Tsar",
+      "line": "Tsar was the title of the rulers of Russia, and it means much the same as emperor.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "The word comes from Caesar, the family name of the first Roman emperors. Ivan the Fourth was the first ruler crowned tsar, in 1547, and the last, Nicholas the Second, gave up the throne in 1917. A wonder-tale tsar rules a kingdom on no map."
+      },
+      "pictureAlt": "An old Russian crown of gold filigree with a rim of dark fur, set with a few red and green stones, resting on a cushion.",
+      "background": "#4A1E1E"
+    },
+    {
+      "id": "firebird-in-art",
+      "kind": "idea",
+      "title": "The Fire-Bird",
+      "line": "The Fire-Bird, zhar-ptitsa in Russian, has feathers that glow like embers, and heroes chase it in many wonder tales.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "Painters in the village of Palekh paint the Fire-Bird in gold on small black lacquer boxes, a craft they began in the 1920s. Igor Stravinsky’s ballet The Firebird opened in Paris in 1910. In the tales, a single feather can light a dark room."
+      },
+      "pictureAlt": "One Fire-Bird with a long trailing tail, its gold and orange feathers glowing against a black ground.",
+      "background": "#4A2410"
+    },
+    {
+      "id": "white-sea",
+      "kind": "place",
+      "title": "The White Sea",
+      "line": "The White Sea is a cold arm of the Arctic Ocean that reaches deep into the north of Russia.",
+      "cultureNote": {
+        "label": "From Russia",
+        "text": "The White Sea lies just south of the Arctic Circle. Around midsummer the sun there sets for only a few hours and the sky never grows fully dark, and Russians call these the white nights. Where the tale’s end of the world lies, the tale never says."
+      },
+      "pictureAlt": "A pale sandy shore beside a still grey sea under a light midnight sky with one faint star.",
+      "background": "#22324A"
+    },
+    {
+      "id": "kizhi-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "kizhi-pogost",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "mapMoment",
+          "label": "FIND IT ON THE MAP",
+          "line": "In the tsar’s palace everything was made of wood. North of here, on an island in Lake Onega, builders raised a whole church of wood with twenty-two domes."
+        }
+      },
+      "background": "#22394A"
+    }
+  ],
+  "scenes": {
+    "scene-forest": {
+      "unfoldedAlt": "The deep taiga at night: tall black spruces and a few pale birches under a dark blue sky with faint stars, which fills the calm upper part of both panes. Low on the right, a narrow path of fallen needles where a young archer on a huge dark horse looks down at a golden feather glowing like a lamp on the ground.",
+      "foldedAlt": "At night among dark spruces, the archer leans from the saddle of his great horse towards a glowing golden feather on the path.",
+      "fallbackColors": ["#0B1424", "#14263A", "#1E3226"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-palace": {
+      "unfoldedAlt": "The tsar’s wooden palace hall at night by candlelight: dark log walls and carved posts rise into deep brown shadow, which fills the calm upper part of both panes. Low on the right, beside a green-tiled stove, the old tsar sits on a carved chair before a golden cage where the Fire-Bird glows, and the archer bows before him.",
+      "foldedAlt": "In a dark wooden hall at night, the old tsar on his carved chair gazes at the Fire-Bird glowing in a golden cage.",
+      "fallbackColors": ["#1A0F0A", "#3A2216", "#6A3A1E"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-sea": {
+      "unfoldedAlt": "The shore at the end of the world under a white-night sky: a still, dark pewter sea and a soft grey-blue midnight sky with one faint star fill the calm upper part of both panes. Low on the right, a golden-roofed tent stands on pale sand with the huge dark horse beside it, and out on the water a girl rows a small silver boat.",
+      "foldedAlt": "On a pale shore at midnight, a golden-roofed tent and a dark horse, with a girl rowing a little silver boat on the dark sea behind.",
+      "fallbackColors": ["#2A3446", "#1C2638", "#141C28"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    },
+    "scene-cauldron": {
+      "unfoldedAlt": "The palace courtyard at night by torchlight: carved wooden gables and tented roofs stand against a black sky, and a column of white steam rises into the calm dark upper part of both panes. Low on the right, a great iron cauldron steams over a fire, a crowd watches from the shadows, and the archer stands at its rim with his dark horse beside him.",
+      "foldedAlt": "By torchlight at night, the archer stands at the rim of a steaming iron cauldron with his dark horse bending its head beside him.",
+      "fallbackColors": ["#0E0A10", "#2A1A16", "#5A2E18"],
+      "textArea": { "leadingBottom": 470, "trailingBottom": 420 }
+    }
+  },
+  "pages": [
+    {
+      "scene": "scene-forest",
+      "part": "part-1",
+      "paras": [
+        "^Long ago, in the north of Russia, a young <name:archer>archer</name> served the tsar.",
+        "He was a huntsman, the best the tsar had. He could put an arrow through a ring at fifty paces, and he could sleep in the saddle and wake at the snap of a twig. But the finest thing he owned was not his bow.",
+        "It was his horse. The <name:horse>Horse of Power</name> stood a head taller than any horse in the royal stables, dark as a wet log, with a mane that hung below his knees. He did not speak often. When he did, the archer had learned, it was wise to listen. Mostly.",
+        "One autumn night the two of them were riding home through the <tap:taiga>great forest</tap>. Spruces stood close on either side, black against a blacker sky, and the path between them was a pale thread of fallen needles. Nothing stirred in the branches, and even the wind had dropped.",
+        "> Then, far ahead, a light. It lay on the path, low and steady, the colour of a candle seen through honey. The horse’s ears went forward. The archer leaned from the saddle to look, and still the light did not flicker. It simply burned."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-1",
+      "paras": [
+        "It was a feather. One long feather from some great bird’s wing lay across the path like a dropped sword, shining from quill to tip with its own gold fire. The spruce trunks around it glowed orange. The archer could have read a letter by it.",
+        "<say:archer*>“A feather of the Fire-Bird,”</say> he breathed. Every child in Russia had heard of that bird, and not one grown man he knew had ever seen it. <say:archer>“The tsar would give me anything for this.”</say>",
+        "The <name:horse>Horse of Power</name> did not lower his head to look. <say:horse*>“Let it be,”</say> he said. <say:horse>“Pick it up, and it will cost you more than you can guess.”</say>",
+        "The archer sat in the saddle with the gold light on his face. He thought of the tsar’s hall, and of the reward a man might earn who walked in with such a thing in his hand. He thought of the horse’s warning too. But the feather was here, and the warning was only words.",
+        "> He swung down, picked it up and tucked it inside his kaftan, where it lay warm against his ribs like a live coal. The horse said nothing more. He walked on into the dark, and the archer rode home with gold light leaking through his coat."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-1",
+      "paras": [
+        "Before dawn the archer climbed the palace steps, knelt before the <tap:tsar-title>tsar</tap> and opened his coat. Gold light spilled across the floor. The courtiers drew back as if he had let a fox loose among them.",
+        "The <name:tsar>tsar</name> was old, with a long grey beard and a crown rimmed with sable, and he loved only the things nobody else had. He turned the feather over and over in his ringed hands. For a moment the archer thought he would smile.",
+        "<say:tsar*>“A feather is a fine thing,”</say> the tsar said at last. <say:tsar>“But a man who can find a feather can find the bird it fell from. Bring me the Fire-Bird, archer. Fail me, and you will lose your head.”</say>",
+        "Nobody laughed. Nobody spoke for him. The archer bowed until his forehead touched the boards, and went out into the yard with the hollow feeling of a man who has put his foot down on a stair that is not there.",
+        "> The Horse of Power was waiting by the stable door. The archer put his arms round the great dark neck and wept into the mane, as he had not wept since he was a boy. The horse let him. Then he blew softly through his nose."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-1",
+      "paras": [
+        "<say:horse*>“Didn’t I warn you?”</say> said the <name:horse>Horse of Power</name>. <say:horse>“I warned you, and you did not listen. But dry your face. This is only the first step. The hard road is still ahead.”</say>",
+        "<say:horse*>“Go back to the tsar. Ask him for a hundred sacks of white wheat, and have them loaded on carts tonight. Then we will go hunting.”</say>",
+        "The tsar grumbled at the cost, but he gave the wheat. At dusk the carts creaked out of the city behind the horse, deep into the forest, to a clearing where the spruces stood back round a circle of grass and the stars looked straight down.",
+        "There the archer slit the sacks and scattered the grain until the whole clearing was pale with it. Then he and the horse stood among the trees at its edge and waited. The archer’s hands were cold. An owl went over without a sound. Midnight came.",
+        "> And with midnight came a wind out of the east, warm as a summer afternoon, and the treetops began to glow. Then the sky above the clearing caught fire from end to end, and the birds came down."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-1",
+      "paras": [
+        "They were firebirds, each the size of a peacock, with a long tail that trailed behind it like the tail of a falling star. Their feathers burned gold and orange, and they did not catch the light. They were the light.",
+        "They settled on the wheat and began to feed, and the clearing was as bright as noon. One was brighter than all the rest. That one, the archer knew, was the <tap:firebird-in-art>Fire-Bird</tap> of the stories, and it was pecking its way closer to the trees.",
+        "The Horse of Power waited until it was a single stride away. Then he stepped out of the shadow and set one great hoof on the tip of its wing, gently, the way a man puts a hand on a letter to stop it blowing away.",
+        "The flock rose with a roar like a bonfire and was gone. The Fire-Bird beat its free wing and shrieked. The archer ran out and bound its legs with soft cord.",
+        "> By evening it was in the palace, in a cage of gold. It lit the hall from end to end, so that no candle was needed. The <name:tsar>tsar</name> sat before it all night, gazing, and did not once look at the archer."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-2",
+      "paras": [
+        "^For a month the Fire-Bird lit the tsar’s hall, and the tsar was almost content.",
+        "It was a <tap:kizhi-moment>wooden</tap> palace, as the great houses of the north were then. Pine logs as thick as a man’s waist were notched together at the corners. The gables were carved with suns and twisting vines, and under the bird’s light every carving seemed to move.",
+        "But the tsar was a man who could never have enough. One night he sent for the archer, and the archer came and knelt where he had knelt before.",
+        "<say:tsar*>“You found me a bird no one could find,”</say> said the tsar, stroking his beard. <say:tsar>“Now find me a bride no one can win. Far away, at the end of the world, where the land stops and the sea begins, lives the Princess <name:vasilissa>Vasilissa</name>. Bring her here. I mean to marry her.”</say>",
+        "> The archer did not argue. He knew by now what came of arguing. He bowed and went out to the stable, and in the dark the Horse of Power turned his long head towards him, as if he had been waiting."
+      ]
+    },
+    {
+      "scene": "scene-sea",
+      "part": "part-2",
+      "paras": [
+        "<say:horse*>“This is still not the hard road,”</say> said the horse. <say:horse>“Ask the tsar for a tent with a roof of gold, and the finest food and drink in his kitchens. Then hold on tight, for it is a long way to the end of the world.”</say>",
+        "They rode for many days. The spruce forest thinned to birch, and the birch to low pines and bog and grey rock, and every river they crossed ran north. Each night the dark came later and left sooner, until at last it did not come at all.",
+        "So they came to <tap:white-sea>the end of the world</tap>. It was a long shore of pale sand beside a sea as still as pewter. Over it hung a midnight sky that was neither night nor day, the grey of milk and ashes, with one faint star.",
+        "The archer pitched the golden tent on the sand, set out the dishes and the jugs, and hid among the rocks with the horse.",
+        { "path": "M14,66 C70,22 120,84 190,52 C250,26 300,70 388,30", "text": "“Silver boat, golden oar…”" },
+        "> Far out on the water something moved. It was a narrow silver boat, and in it sat a girl rowing with a golden oar, slowly, the way a person walks who has nowhere in particular to be. She was singing to herself."
+      ]
+    },
+    {
+      "scene": "scene-sea",
+      "part": "part-2",
+      "paras": [
+        "The girl saw the gold roof shining and stopped singing. She rowed in, pulled her boat up the sand and walked once all round the tent, her head on one side. Then she lifted the flap and went in.",
+        "The archer came out from the rocks. All the way north he had planned what clever things he would say. But when she looked up at him from the honey cakes, with crumbs on her fingers, he found he could only tell the truth.",
+        "<say:archer*>“I am the tsar’s archer,”</say> he said. <say:archer>“He sent me to fetch you to be his bride. He is old and greedy, and he keeps a bird of fire in a golden cage. That is the whole of it.”</say>",
+        "<name:vasilissa>Vasilissa</name> looked at him for a long moment. Then she laughed, and the laugh went out across the still water.",
+        "> <say:vasilissa*>“I have never been past the end of the world,”</say> she said. <say:vasilissa>“I should like to see this tsar for myself. And I should like to see your face when I tell him no.”</say> She brushed the crumbs from her hands and stood up."
+      ]
+    },
+    {
+      "scene": "scene-forest",
+      "part": "part-2",
+      "paras": [
+        "So they rode south together, the princess behind the archer on the broad back of the horse, her arms round his waist and her long braid blowing over his shoulder. The horse went more gently than the archer had ever known him go.",
+        "The nights grew dark again as they came south. They slept by small fires among the birches, and she asked him about everything: what grew in his country, what songs his mother had sung, whether the tsar’s people were happy. He found that he told her things he had told nobody.",
+        "<say:archer*>“They are afraid,”</say> he said, when she asked the last. Then he was quiet, because he had never said it aloud before.",
+        "Once, by the fire, she asked the <name:horse>horse</name> why he served a man who never listened to him. The horse looked at the archer across the flames. <say:horse*>“Because he is learning,”</say> he said.",
+        "> On the last evening they saw the palace roofs rising out of the forest against the dusk, and torches burning at the gate. Vasilissa’s arms tightened round the archer’s waist. Neither of them said a word, and the horse slowed to a walk."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-2",
+      "paras": [
+        "The <name:tsar>tsar</name> came down the steps to meet them in his heaviest robe, his crown set straight and his beard combed out to his belt. He took Vasilissa’s hand in both of his. <say:tsar*>“Tomorrow we shall be married,”</say> he said, <say:tsar>“and the bells will ring for a week.”</say>",
+        "Vasilissa drew her hand away, quite politely.",
+        "<say:vasilissa*>“I shall marry no one,”</say> she said, <say:vasilissa>“without my wedding dress. It lies at the bottom of the sea, beneath a stone as big as a hut, in a casket nobody has opened since my grandmother’s time. When it is brought to me, we can talk of bells.”</say>",
+        "The courtiers looked at their boots. The tsar’s face went slowly red from the collar upwards, like wine filling a cup. Then he smiled, for he had seen the answer, and the answer was standing beside the princess with road dust on its boots.",
+        "> <say:tsar*>“Archer,”</say> he said softly. <say:tsar>“You heard the princess. The sea, the stone, the casket. Fetch it. You know what happens if you fail.”</say> And the hall was so quiet that they heard the Fire-Bird shift on its golden perch."
+      ]
+    },
+    {
+      "scene": "scene-sea",
+      "part": "part-3",
+      "paras": [
+        "^This time the horse did not say that he had told him so.",
+        "<say:horse*>“Now,”</say> said the <name:horse>Horse of Power</name>, <say:horse>“comes the hard road. Get on my back.”</say> And they rode north again, so fast that the trees ran together into one long grey wall, and in three days they came to the shore at the end of the world.",
+        "A great crab was walking along the edge of the water, as broad as a cartwheel, its claws held up in front of it like a man carrying two buckets. The horse put his hoof down on its back and held it there. “Let me go!” creaked the crab, its legs scrabbling at the sand. “I am the eldest crab in all this sea. Let me go, and I will do whatever you ask.”",
+        "<say:horse*>“Bring up the casket from under the great stone,”</say> said the horse, <say:horse>“and you shall go.”</say>",
+        "> The crab gave a shrill whistle, and the whole shallows began to stir. Up out of the water came crabs by the hundred, then by the thousand, clicking and climbing over one another, and between them they pushed a small iron-bound casket up onto the sand."
+      ]
+    },
+    {
+      "scene": "scene-cauldron",
+      "part": "part-3",
+      "paras": [
+        "In the torchlit courtyard, <name:vasilissa>Vasilissa</name> opened the casket and shook out a dress the colour of the sea at dusk, sewn all over with seed pearls. She held it up against herself. The tsar clapped his hands for the musicians.",
+        "<say:vasilissa*>“Not yet,”</say> said Vasilissa. <say:vasilissa>“One thing more. I will marry only when the man who fetched me has stepped into a cauldron of boiling water and climbed out again.”</say> And she glanced, just once, past the archer to the dark horse waiting by the gate.",
+        "The tsar did not even pause. Within the hour a great iron cauldron hung over a fire among the torches, and the water in it rolled and spat, and the steam stood up into the dark like a white tree. The whole city crowded in to watch.",
+        "The <name:archer>archer</name> looked at the water and could not feel his feet. <say:archer*>“Let me say goodbye to my horse,”</say> he said. Nobody refused him that.",
+        "> The Horse of Power bent his head over the cauldron and breathed on the water, three long breaths, as a man blows on hot soup. Then he put his nose to the archer’s ear. <say:horse*>“Go in,”</say> he said. <say:horse>“This is the price of the feather. Pay it, and be done with it.”</say>"
+      ]
+    },
+    {
+      "scene": "scene-cauldron",
+      "part": "part-3",
+      "paras": [
+        "The archer climbed the ladder, shut his eyes and stepped down into the cauldron. The crowd made one sound together, a long breath drawn in, and then nobody breathed at all.",
+        "The water closed over his head. It was not hot. It was like a summer river at evening, when the shallows have held the sun all day. He came up laughing, out of pure surprise.",
+        "When he climbed out, the torchlight seemed to follow him. It was his own face still, but clearer, the way a window is clearer after rain. He stood straighter, and even the tsar’s guards stepped back to let him by.",
+        "The <name:tsar>tsar</name> stared. If one bath could do that for a young archer, what might it not do for an old tsar? He flung off his heavy robe, tossed his crown to a servant, scrambled up the ladder and jumped in with both feet.",
+        "> He came out again faster than he had gone in, like a cork from a bottle, howling and as red as a beetroot. He ran across the courtyard, out of the gate and down the road into the forest, still howling, and he was never seen in that city again."
+      ]
+    },
+    {
+      "scene": "scene-palace",
+      "part": "part-3",
+      "paras": [
+        "The people did not go looking for him. They had been afraid of him for too long. Instead they lifted the archer onto their shoulders and carried him into the hall, and before the torches burned down they had made him tsar.",
+        "He looked for Vasilissa in the crowd. She was standing by the golden cage with the sea-coloured dress over her arm.",
+        "<say:archer*>“I will not send for a bride,”</say> he said. <say:archer>“I have seen how that goes. But if you would choose to stay…”</say> <say:vasilissa*>“I chose,”</say> said <name:vasilissa>Vasilissa</name>, <say:vasilissa>“on the shore. You were too busy telling the truth to notice.”</say>",
+        "They were married at midsummer. And the first thing the new tsar did, on the night of the wedding, was to carry the golden cage to the open window and lift its little door.",
+        "> The Fire-Bird stepped out onto the sill and was gone, a streak of gold over the dark forest, and the hall went back to candlelight. The archer watched until the last spark had gone. Below the window, the Horse of Power blew softly through his nose, and the new tsar leaned out to listen."
+      ]
+    }
+  ],
+  "landmarks": [
+    {
+      "id": "kizhi-pogost",
+      "name": "Kizhi Pogost",
+      "era": "earlyModern",
+      "built": {
+        "from": 1714,
+        "to": 1714,
+        "circa": false,
+        "note": "The year the main Church of the Transfiguration was finished. The smaller Church of the Intercession beside it dates from 1764 and the bell tower from 1862."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Kizhi Island, Lake Onega, Karelia, Russia",
+      "coordinates": { "lat": 62.068, "lon": 35.224 },
+      "region": "russian",
+      "lists": ["other"],
+      "factCards": {
+        "low": {
+          "line": "A tall wooden church with twenty-two silver-grey domes, standing on a grassy island in a lake."
+        },
+        "medium": {
+          "line": "Two wooden churches and a bell tower on Kizhi Island in Lake Onega, in the north-west of Russia.",
+          "note": "Village carpenters finished the tallest church, with its twenty-two domes, in 1714. The whole group is now a UNESCO World Heritage Site."
+        },
+        "advanced": {
+          "line": "The Church of the Transfiguration, finished in 1714, is built of pine and spruce logs, with domes roofed in aspen shingles.",
+          "note": "A legend says it was built without a single nail. That is only a legend: the log walls are held by notched corners, but nails fix the shingles on the domes. The builders’ names are not known for certain."
+        }
+      },
+      "art": {
+        "file": "art/kizhi-pogost.heic",
+        "alt": "A tall wooden church whose silver-grey shingled domes rise in tiers, twenty-two in all, beside a smaller church and a bell tower on a grassy island.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#22394A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building: presented as architecture and history only (CQ9). The main church has been under long restoration, sometimes with scaffolding or inner supports; draw it whole, as it is meant to stand.",
+      "review": { "facts": "pending", "art": "pending" }
+    }
+  ],
+  "sourceNotes": [
+    "This is our own retelling, written for Omramo, of a traditional Russian wonder tale: the archer, the",
+    "Fire-Bird, the wise horse and Princess Vasilissa (Afanasyev's collection, 1855-1863; Afanasyev d. 1871).",
+    "It is not the wording of any earlier edition or translation.",
+    "Documented source for the tale: Arthur Ransome, \"Old Peter's Russian Tales\" (1916), \"The Fire-Bird,",
+    "the Horse of Power, and the Princess Vasilissa\". Project Gutenberg ebook #16981,",
+    "https://www.gutenberg.org/ebooks/16981 (US public domain; Ransome died in 1967, so his wording is",
+    "protected in life + 70 countries until 2038).",
+    "Rights care (CQ2): the writer did NOT open Ransome's text, on purpose, so that no phrase of his could",
+    "carry over. The telling was written from general knowledge of the traditional Afanasyev tale.",
+    "Shape kept from the tale: the horse's warning about the feather; the tsar's demand on pain of death; the",
+    "grain spread at midnight and the horse's hoof on the bird's wing; the gold-roofed tent and food; the",
+    "princess in a silver boat with a golden oar; the wedding dress under a stone in the sea; the crab who",
+    "calls up the others; the bath in boiling water, made harmless by the horse; the tsar's own leap.",
+    "Softened: in the tale the archer lures the princess with food and wine and carries her off while she",
+    "sleeps; here he tells her the truth and she chooses to come. In the tale the tsar is boiled to death;",
+    "here he leaps out howling and runs away into the forest. The tsar's threat is said once.",
+    "Changed from the editorial plan: the grain is 'white wheat', as the writer recalls the Afanasyev tale",
+    "(beloyarovaya pshenitsa; to verify), not maize, which the plan suggested and which may echo an English",
+    "telling; maize also fits old Russia poorly. Please check against the Russian text.",
+    "Changed from the plan: the tap target for the title tsar has the id 'tsar-title', because a character",
+    "id and a tap id must not be equal and the tsar is a character ('tsar').",
+    "Our additions: the ride home and the talk by the fire; Vasilissa's glance at the horse before her",
+    "second demand (so her test reads as trust, not cruelty); her line 'I chose, on the shore'; the new tsar",
+    "freeing the Fire-Bird from its cage at the end (the plan's suggestion: the cost of the feather is paid",
+    "back). The tale ends with the wedding; the freeing is ours.",
+    "The horse's magic: as the writer recalls it, the tale's horse protects the archer with a charm before",
+    "he enters the cauldron (to verify); here the horse breathes on the water. A reviewer may prefer a charm.",
+    "The crab: the tale's word (rak, as recalled) usually means crayfish; English tellings vary. We use crab.",
+    "The 'end of the world' is never placed on a map in the tale; the White Sea card says so plainly.",
+    "Reviewer to check: the forms Vasilissa (Vasilisa), tsar, kaftan, zhar-ptitsa; the bells at the wedding;",
+    "that the wooden palace, carved gables and tiled stove read rightly to a Russian reader.",
+    "Card facts to check: taiga crossing Russia from the Baltic almost to the Pacific, part of the largest",
+    "forest region on Earth; tsar from Caesar, Ivan IV crowned 1547, Nicholas II abdicated 1917; Palekh",
+    "lacquer begun in the 1920s; Stravinsky's The Firebird, Paris, 1910; White Sea just south of the Arctic",
+    "Circle, white nights. Landmark facts to check: Transfiguration 1714, 22 domes, pine and spruce logs,",
+    "aspen shingles fixed with nails; Intercession 1764; bell tower 1862; UNESCO listing (1990);",
+    "builders' names uncertain (a legend names a master Nestor).",
+    "Kizhi is framed as a map moment (CONTENT_PLAN 6.3): folk-tale time versus a church finished in 1714.",
+    "SOURCE CHECK (18 Nov 2026, against Ransome on the Gutenberg mirror, by a separate checker):",
+    "Echoes reworded: the horse's warning over the feather; the tsar's sword oath (now 'Fail me, and you",
+    "will lose your head'); Ransome's 'the trouble is not yet' refrain, replaced in all three places by our",
+    "own 'first step / hard road' device; 'I told you' (now 'Didn't I warn you?'); 'a little silver boat'",
+    "(now 'narrow'); the boiling-water demand; 'under a great grey stone'; 'No bird called'.",
+    "Departures from Ransome: he has no golden cage (the bird is tied and thrown down before the tsar); his",
+    "casket is golden (ours iron-bound); his grain is spread on an open field and the archer hides in an oak",
+    "(ours: a forest clearing, hiding among the trees); in his cauldron scene the horse only advises and the",
+    "PRINCESS waves her hand over the cauldron (ours: the horse breathes on the water); he ends with a",
+    "golden stable for the horse (left out); his princess wakes to wedding bells (dropped). His 'edge of the",
+    "world' versus our 'end of the world' is not treated as an echo.",
+    "Status: DRAFT. Text review pending. Cultural review (standard: Russian reader) pending."
+  ],
+  "artBrief": {
+    "palette": {
+      "deep": "#0B1424",
+      "shade": "#1E3226",
+      "mid": "#3A2216",
+      "light": "#E6E2D6",
+      "glow": "#FFB547",
+      "accent": "#C8452B",
+      "mood": "Night forest blue-black and spruce green, warm brown wood in the palace; the Fire-Bird's gold-orange is the strongest light in every picture it is in. The white-night shore is the one cool, pale-grey scene, still dark enough for light text. Grown-up, quiet and atmospheric."
+    },
+    "light": "This is a DARK story: every scene is night, deep dusk, candlelight, torchlight or the grey midnight of a white night. Never daylight. In the forest the light comes from stars and from the feather or the birds themselves; in the hall from candles and the caged bird; in the courtyard from torches and the fire under the cauldron. Light text must read on the upper part of both panes.",
+    "world": [
+      "The taiga: tall dark spruces close together, with pines and pale-barked birches between; moss and fallen needles underfoot; a narrow earth path. It is autumn, not winter: no snow anywhere in the story.",
+      "Further north on the ride: birch thinning to low pines, bog with tussocks, grey rock, then a long pale sand shore on a still sea. Midsummer white night there: the sky a soft grey-blue at midnight, one faint star, no sun.",
+      "The palace: built of round horizontal pine logs notched at the corners, steep plank or shingle roofs, carved gables and window frames (suns, vines), tent-shaped and small onion-shaped wooden roofs on towers, a raised porch with steps. No stone, no brick, no red walls.",
+      "The hall inside: log walls, carved wooden posts, benches along the walls, a large stove faced with green glazed tiles, candles in iron holders, a carved wooden chair for the tsar. No glass chandeliers, no samovar.",
+      "The archer: a long belted kaftan to below the knee, a cap with a fur rim, soft leather boots, a short recurved bow and a quiver at his hip. Hair cut round, clean-shaven.",
+      "The tsar: old, long grey beard, a gold crown with a dark sable rim, a heavy embroidered robe to the floor, rings on his fingers. Vain and greedy, but drawn as foolish, never as a monster.",
+      "Vasilissa: one long braid, a tall stiff embroidered headdress like a kokoshnik, a long sarafan (a pinafore dress over a white shirt with full sleeves); she rows a small silver boat with one golden oar.",
+      "The Horse of Power: huge, dark brown to black, heavy-boned like a warhorse, with a very long mane and tail; noble and calm. A plain leather bridle and saddle, no armour.",
+      "The Fire-Bird and the flock: peacock-sized birds like a peacock-pheasant, with long trailing tails, every feather glowing gold-orange from within. They light the ground under them.",
+      "The golden tent: a round tent of pale cloth with a gold roof and a gold finial, on the sand; inside, low dishes of honey cakes, fruit and jugs.",
+      "The crab: huge but harmless, broad as a cartwheel, claws raised; the many crabs that follow are ordinary size. Comic, not frightening.",
+      "The cauldron: a great round iron cauldron on a ring of stones over a log fire, a wooden ladder against it, white steam rising. Nobody is ever shown hurt; the tsar's leap is shown only as a comic figure running, or not shown.",
+      "Avoid: copying Bilibin, Disney or the Stravinsky ballet costumes; matryoshka dolls; balalaikas; samovars; troikas; Kremlin red walls and Saint Basil's; snow; Cossack dress; any gore, burns or fear in the cauldron scenes; daylight skies."
+    ],
+    "characters": {
+      "archer": "A young man, about three heads tall, slim and strong, small plain eyes, brown hair cut round, clean-shaven. A long red-brown kaftan with a woven belt, a cap with a brown fur rim, boots; bow over his shoulder. Signature detail: the gold glow of the feather showing through his coat on page 2; after the cauldron, a faint clear light on his face.",
+      "horse": "Huge, much taller than any other horse, dark as a wet log, heavy-boned, with a mane hanging below his neck almost to his knees. Calm, watchful eyes; ears often pricked. Signature detail: his great hoof, gently set on the Fire-Bird's wing and on the crab's back.",
+      "vasilissa": "A young woman about the archer's age, one long dark-gold braid, a tall embroidered headdress, a sea-blue sarafan over a white shirt. Upright and amused. Signature detail: the golden oar, and later the sea-coloured pearl-sewn dress over her arm.",
+      "tsar": "Old and stout, a long grey beard combed to his belt, a gold crown with a sable rim, a heavy robe embroidered in gold and red. Signature detail: ringed hands, always reaching for something."
+    },
+    "scenes": {
+      "scene-forest": {
+        "unfolded": "Night in the taiga. The upper part of both panes is dark blue sky with faint stars between the tops of tall spruces. Low on the right half: the narrow path, the archer on the huge dark horse leaning from the saddle, and the golden feather glowing on the ground, lighting the nearest trunks orange. The same scene serves the clearing at midnight (pages 4 and 5) and the ride south (page 9).",
+        "folded": "The archer leaning from the saddle in the lower middle, the feather's light on his face and the horse's chest, black spruces behind, starry dark sky above for the words."
+      },
+      "scene-palace": {
+        "unfolded": "Night in the tsar's wooden hall. The upper part of both panes is dark log wall and roof beams fading into brown shadow. Low on the right: the green-tiled stove, the carved chair with the old tsar, the golden cage with the Fire-Bird glowing, the archer bowing; candlelight and the bird's gold light on the carved posts. The same scene serves the last page, with the open window and the bird leaving.",
+        "folded": "The old tsar on his carved chair in the lower middle, gazing into the golden cage where the Fire-Bird glows, dark beams above for the words."
+      },
+      "scene-sea": {
+        "unfolded": "The end of the world under a white night. The upper part of both panes is a soft grey-blue midnight sky with one faint star over a still, dark pewter sea. Low on the right: pale sand, the gold-roofed tent, the dark horse beside it, rocks; far out on the water, a girl in a small silver boat with a golden oar. The same scene serves the crab page.",
+        "folded": "The gold-roofed tent and the dark horse on the pale sand in the lower middle, the silver boat small on the sea behind, grey midnight sky above for the words."
+      },
+      "scene-cauldron": {
+        "unfolded": "Night in the palace courtyard. The upper part of both panes is black sky with a soft column of white steam rising into it, framed by carved wooden gables and tented roofs. Low on the right: the great iron cauldron steaming over a log fire on stones, a ladder against it, a crowd in shadow lit by torches, the archer at the rim with the horse bending his head over the water.",
+        "folded": "The horse bending his head to breathe on the steaming cauldron, the archer beside him at the rim, torchlight on both, dark sky above for the words."
+      }
+    },
+    "pictures": {
+      "taiga": "One tall dark spruce beside one white-barked birch on a mossy floor, under a night sky with a few stars.",
+      "tsar-title": "One old gold filigree crown with a dark fur rim and a few red and green stones, resting on a dark red cushion.",
+      "firebird-in-art": "One Fire-Bird in profile with its long tail curving below it, glowing gold and orange on a black ground, in the spirit of a lacquer box but our own drawing.",
+      "white-sea": "A pale sand shore and a still grey sea under a light grey-blue midnight sky with one faint star."
+    },
+    "portraits": {
+      "archer": "Half figure in the red-brown kaftan and fur-rimmed cap, bow over one shoulder, looking down at something glowing in his hands; dark spruce forest behind.",
+      "horse": "Head and neck of the great dark horse, mane falling long, ears pricked, one side lit faintly gold; dark night forest behind."
+    },
+    "cover": "Night in the forest clearing: the huge dark horse with one hoof gently on the wing of the glowing Fire-Bird, the archer beside him reaching out, the bird's gold light filling the clearing and lighting the spruces round it, stars above.",
+    "landmarks": {
+      "kizhi-pogost": "Our own drawing of the place as it is today, in clear evening light: the tall Church of the Transfiguration with its twenty-two silver-grey aspen-shingled domes in tiers, the smaller Church of the Intercession and the bell tower beside it, on a low grassy island with the lake behind. Architecture only; no photograph traced; no scaffolding."
+    }
+  }
+}

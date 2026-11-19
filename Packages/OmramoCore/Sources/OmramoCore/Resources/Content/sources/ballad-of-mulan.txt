@@ -1,0 +1,220 @@
+# The Ballad of Mulan
+# Omramo retelling, Advanced tier. Manuscript for the text-fidelity check.
+#
+# This is our own retelling, written for Omramo, of the anonymous Chinese 'Ballad of Mulan' (Mulan ci).
+# Source: the ballad itself, probably 5th-6th century (Northern Dynasties), kept in Guo Maoqian's anthology
+# Yuefu Shiji (12th century). The year 1100 in provenance is the anthology's, roughly; it is not exact.
+# No pre-1931 English translation is cited (CONTENT_PLAN: unverified; none found on Gutenberg in English).
+# The writer had no web tool and retold from knowledge of the Chinese original, following no translation
+# and nothing from any film. A source-check agent should still compare the text with well-known English
+# versions (for example Waley, Frankel) to confirm that no sentence or turn of phrase echoes them.
+# Kept from the ballad, in its order: the silent loom and the sighing; 'what are you thinking of'; the
+# army notice, the twelve scrolls with her father's name, no elder brother; the four markets (east horse,
+# west saddle, south bridle, north whip); camping by the Yellow River, then the Black Mountain, not hearing
+# her parents, only the river and the horses of the Yan Mountains; ten thousand li, passes crossed as if
+# flying; the night watch struck on the metal cooking pot (jintuo) and cold light on iron armour; generals
+# dying in a hundred battles; the Son of Heaven (also called the Khan) in the bright hall; twelve steps
+# of merit and rewards by the hundred thousand; refusing a court post (shangshu lang) for a mount that runs
+# a thousand li; parents walking out to the town wall holding each other up; the elder sister's make-up at
+# the door; the little brother sharpening the knife for pig and sheep; her old room and bed; armour off,
+# old clothes on; combing her hair at the window and the yellow forehead flower (huahuang) at the mirror;
+# comrades astonished, twelve years together; the two hares.
+# The 'bright camel' (ming tuo) follows the variant reading 'yuan jie ming tuo qian li zu'; other texts
+# read 'yuan chi qian li zu' (a swift steed). Reviewer to confirm the camel is an acceptable choice.
+# Our additions (not in the ballad): the mother as the one who asks; the headman's gate; Father's cough
+# and his old armour; his advice (rein on the wrist, sleep in boots, say little); the hairpins and the man's
+# topknot; the mother's coins and the boots with dates; the seasons and the geese; the comrade's cakes,
+# jokes and sister; the comrades riding home with her; the half-woven cloth still on the loom.
+# Hair: Han Chinese men of the time wore long hair in a topknot, not cut short, so Mulan ties her hair
+# as a man does rather than cutting it (plan said 'cuts/binds'). Reviewer to check.
+# Softened: war is one line ('a hundred battles, and generals fell in them') and men who did not ride
+# back; no wounds, no fighting shown. The feast is a pig and a sheep 'roasting'; no slaughter shown.
+# The ballad's last lines are told as Mulan's spoken riddle; the final question 'who can tell me, male
+# or female' is turned into 'who can tell the buck from the doe?' with the comrade's smile carrying the
+# point, and the last image is the two hares running. The ballad's hares are read in the usual way:
+# held up by the ears, the buck kicks and the doe squints; this reading is traditional, not certain.
+# Kept out on purpose (film material): no dragon, cricket, matchmaker, ancestors, Shan Yu, 'Fa' surname,
+# Hun invasion or avalanche. No family name is given (Hua is a later tradition; uncertain).
+# Historical cautions: the ballad's date is disputed; some lines ('Son of Heaven', 'twelve ranks') may be
+# Sui or Tang revisions. The enemy is never named; the Rouran are the likely foe (said only on the card).
+# The Black Mountain and the Yan Mountains of the ballad may not be today's Yanshan near Beijing;
+# the text names them and does not place them. Ten thousand li and one day from river to
+# mountain are the ballad's poetic distances. The capital is not named (Pingcheng or Luoyang).
+# Card facts to check: Northern Wei household tax paid partly in cloth (from the equal-field reforms of
+# 485); Yellow River about 5,400 km, loess silt, millet farming over 7,000 years ago; Northern Wei rulers
+# were Tuoba Xianbei; ballad in Yuefu Shiji (1100s), learned by Chinese schoolchildren. Landmark facts:
+# Forbidden City 1406-1420 for Yongle; 24 Ming and Qing emperors; nearly 1,000 buildings; yellow tiles
+# for the emperor; last emperor left 1924; Palace Museum since 1925; 9,999 rooms only a legend.
+# Scenes: the four-scene limit means the bright-hall page uses scene-river (the road home), and the hall
+# itself is never drawn. Great Wall framing: earth walls of her time, the stone wall about 1,000 years later.
+# SOURCE CHECK (18 Nov 2026, compared with the Waley and Frankel translations from memory
+# by a separate checker): three lines tracked copyrighted translations (Frankel 1976; Waley, protected until 2036) and were reworded:
+# the hares question (now 'once they race off together, low in the grass, which of you could point to the
+# buck'), the comrades never knowing (now 'never once crossed their minds that their quiet comrade was a
+# woman'), and the camel request (now 'Give me only a swift camel for the long road home').
+# Literal-from-the-Chinese lines (four markets, bright hall, 'what are you thinking of') judged fine.
+# Further additions of ours: 'followed her up the hill on the worst day of all' (implies she led in a
+# battle; not in the ballad); the comrades sitting and waiting at the gate is our staging.
+# Status: DRAFT. Text review pending. Cultural review (standard: Chinese reader, historian) pending.
+#
+# Generated by tools/build_stories.py from docs/content/story-specs/ballad-of-mulan.json; edit the spec,
+# not this file.
+#
+# Format: lines starting with "#" are notes and are not story text. One paragraph per line.
+# A blank line separates paragraphs; a "# --- page" note marks a page (spread) break.
+
+# The Loom
+
+# --- page 1
+The shuttle knocked across the loom and back, across and back, in the open doorway.
+
+Mulan wove there every morning, where the light was best, with the willow hanging over the gate and the hens scratching in the dust of the yard. Her hands knew the loom the way her feet knew the path to the well. Over and under went the thread; down came the beater; back flew the shuttle.
+
+But this morning the sound stopped. Her mother, crossing the yard with a basket of millet, looked up. The shuttle lay still on the cloth. There was no knock of wood on wood at all, only a long breath let out, and then another, like wind under a door.
+
+The hens went on scratching. The willow went on moving. Mulan sat with her hands folded and stared at the half-made cloth as though something were written in it.
+
+“Daughter, what are you thinking of?” her mother asked. “Who are you remembering?” Mulan did not look up. “I am not thinking of anyone,” she said at last. “I am not remembering anything. It is only that last night I saw the army’s notice.”
+
+# --- page 2
+“It was nailed to the gate of the headman’s yard. The Khan is calling up soldiers for the north. There were twelve scrolls of names, Mother, and I read every one, and on every one I found Father’s name.”
+
+Her mother set the basket down. Across the yard, in the shade of the wall, Father was mending a halter, and as they watched he bent over it and coughed, the dry, deep cough he had brought home from the frontier thirty years before.
+
+“He cannot go,” Mulan said quietly. “He has no grown son to send instead. I have no elder brother. My little brother is still small enough to fall off the donkey.”
+
+She stood up. The shuttle slid off the cloth and swung on its thread, knocking softly against the frame, and nobody reached to stop it.
+
+“So I will buy a horse and a saddle,” she said, “and I will go to the north in his place.” Her mother opened her mouth and closed it again. In the shade of the wall, Father had stopped coughing. He was looking at his daughter, and the halter hung forgotten from his hands.
+
+# --- page 3
+Next morning her mother pressed into her hands the string of coins from the clay jar under the bed, the money saved, coin by coin, against a bad year, and Mulan walked to the market town.
+
+In the east market she bought a horse, a bay with a thick neck and a white blaze, strong enough to carry armour all day. In the west market she bought a saddle and a saddle-cloth. In the south market she bought a bridle with a bit of iron. In the north market she bought a long whip of plaited leather.
+
+The horse-dealer looked at her twice, and the saddler asked who the saddle was for. “For my father,” she told them both, which was true, and was not.
+
+Coming home, she led the horse through the gate at sunset. The hens scattered. Her little brother ran out shouting and stopped dead, staring up at the bay’s great head.
+
+Father was waiting under the willow. He had taken his old armour down from the rafters and was trying to buckle it on: rows of small iron plates laced with leather, rusted brown at the edges. The old laces were stiff, and his fingers fumbled at them.
+
+# --- page 4
+“I will go,” he said. “I have done it before. I know the road.” Then the cough took him, and he had to sit down on the chopping block with the armour half on, while the little brother held the horse.
+
+Mulan knelt and undid the laces for him, one by one. She waited until he could breathe. When he looked into her face, he saw there was nothing left to argue about.
+
+That night, by the fire, the old soldier taught her what the frontier had taught him. “Keep your horse’s rein looped round your wrist, even asleep. Sleep in your boots. And say little. A quiet soldier is a soldier nobody looks at twice.”
+
+Last of all, Mulan took the pins out of her hair and laid them on the table, the bone pin and the little copper one shaped like a flower. Father showed her how a man ties his hair in one plain knot on top of his head.
+
+Her mother sat sewing until the lamp burned out. When Mulan lay down at last, she found a new pair of padded boots at the foot of her bed, and inside each one a twist of cloth full of dried red dates.
+
+# --- page 5
+She left at first light. Her parents walked with her as far as the village gate and no farther. Her mother held the bridle a moment too long, and then let go.
+
+All day she rode, through fields of young millet and down gullies of yellow earth so soft that the horse’s hooves sank into it like a spoon into flour.
+
+At evening she came to the Yellow River. It was wider than anything she had imagined, a moving plain of brown water, and it carried whole trees past her, roots and all. She hobbled the horse, lit a small fire and laid her armour on the bank beside her.
+
+Every evening of her life, at this hour, she had heard her mother calling her name across the yard to come in and eat. She listened for it now. There was no voice. There was only the river, rushing and slapping against the bank, all night long.
+
+At dawn she left the river, and by the next evening she had climbed to the Black Mountain. Again she listened for her mother’s voice. Again there was none. Only, from the Yan Mountains far ahead, the high, thin whinnying of the northern horsemen’s horses came down on the wind.
+
+# Ten Thousand Li
+
+# --- page 6
+Ten thousand li she rode to the war, over passes and mountains, as if her horse had wings.
+
+She stopped counting the li, each one about half a kilometre, somewhere after the first thousand. She rode with men from a hundred villages, through passes where the wind never dropped, until the farmland gave out and there was nothing ahead but bare mountains and the frontier.
+
+It was a long, low wall of pounded earth, running over the hills further than she could see. Every few li stood a wooden watch-tower with a red banner cracking in the wind. Beyond it the land changed colour, from yellow to grey-green, and did not stop.
+
+The cold came down off the mountains so sharp that the iron of her armour burned her fingers. All night the watchmen struck the bronze pots they cooked in by day, one tower answering another, and the sound carried far on the frozen air.
+
+Then, at dawn, the first thin light would come sliding along the wall and catch on the iron plates of the soldiers’ coats, row on row of them, glinting like frost. Mulan would breathe on her hands and tighten her helmet strap and wait for the order.
+
+# --- page 7
+One winter became two, and two became five. She learned the seasons of the frontier the way she had once learned the patterns on the loom.
+
+In winter the snow drifted against the tent until it bowed in the middle, and she woke with frost in her eyebrows. In spring the meltwater roared in every gully. In summer the grasslands beyond the wall turned green to the edge of the sky, and the horsemen came riding out of them, and the drums called the army out to meet them.
+
+Mulan did not talk about the battles afterwards, and neither did anyone else. There were a hundred of them, and generals fell in them. Some of the men who had ridden north beside her did not ride back.
+
+Her bay horse grew grey around the muzzle. She grew too: taller, harder in the arm, brown as a saddle. She could bend a bow that her father could no longer draw.
+
+In autumn the wild geese flew south over the camp, high and calling. Mulan always stopped to watch them go. In the old stories, geese carried letters for people far from home. These carried nothing, and she watched them until the sky was empty.
+
+# --- page 8
+All those years she kept her secret, and she kept it with small things, done every day without fail.
+
+She slept in her boots, as Father had told her, with her armour on and the rein round her wrist. She washed in the stream before the horns blew, while the camp was still a grey heap of snoring. She spoke little, and when she spoke she kept her voice low and her sentences short, and the men took her for a quiet farm boy.
+
+There was one soldier she could not keep at arm’s length. He came from a village in the hills not far from hers, and he had attached himself to her on the first day, the way a big, cheerful dog will. He shared his millet cakes with her. He told her terrible jokes on the march.
+
+“You laugh like my sister,” he said once, by the fire, and Mulan went still. But he only grinned and threw her another cake. “She is the only other one who laughs at my jokes.” After that, Mulan laughed lower, into her sleeve.
+
+# --- page 9
+In the twelfth year a rider came galloping down the line of towers, and by evening the whole frontier knew. The war was over. The horsemen of the grasslands had made peace, or been beaten, or gone away north. Nobody in the camp was sure which, and nobody cared.
+
+They rode south together, the ones who were left, through the passes and down out of the mountains. Mulan’s comrade sang the whole way, badly. The snow gave way to mud, the mud to yellow dust, and one evening they came down to the Yellow River again and camped on its bank.
+
+Mulan sat by the fire with her helmet in her lap and listened to the water. Twelve years ago it had drowned out her mother’s voice. Tonight she thought she could almost hear that voice under the roar, calling her in to eat.
+
+“Twelve years,” said her comrade, lying back with his hands behind his head. “The Son of Heaven will want to thank us. Gold, they say. Rank. What will you ask him for?” Mulan watched the river and did not answer.
+
+# --- page 10
+In the capital the emperor, whom people called the Son of Heaven and the northern soldiers called the Khan, sat in the bright hall to receive them.
+
+Its pillars were painted red, and the light fell through carved screens in gold bars across the floor. The soldiers knelt in rows while a clerk read their deeds aloud. When he came to Mulan’s, he read for so long that the men around her began to grin: twelve steps up in rank, and coins by the hundred thousand.
+
+Then the Khan himself leaned forward. “What do you wish for, soldier? Name it. There is a post at court for a man like you, with a seal and a house.”
+
+“I want no post, my lord,” said Mulan, with her forehead to the floor. “Give me only a swift camel for the long road home.”
+
+The hall went quiet. Somebody laughed and stopped. Then the Khan sat back and waved his hand, and the next morning Mulan rode out of the city gate on a tall pale camel. Her comrade and a few of the others rode with her, because their villages lay along the same road.
+
+# Home
+
+# --- page 11
+Word ran ahead of her down the road, faster than any camel.
+
+When Father and her mother heard that their daughter was coming home, they walked out of the village together to the old earth wall, leaning on each other, and stood there in the wind all afternoon, watching the road.
+
+Her elder sister heard, and ran indoors to her chest of clothes. She put on her best red skirt and sat in the doorway with a little pot of rouge, painting her cheeks and wiping them clean and painting them again, because nothing looked right for a day like this.
+
+Her little brother, who was not little any more, heard too. He was taller than Father now. He took the big knife down from the wall and sat in the yard sharpening it, the blade hissing on the whetstone, for there would be a pig and a sheep roasting tonight, and the whole village would come.
+
+Late in the day, a tall pale shape came swaying up the road out of the dust. Her mother gripped Father’s arm. The camel knelt at the gate, groaning as camels do, and a soldier in dusty iron climbed down. Behind it, her comrades reined in and waited.
+
+# --- page 12
+She held her parents for a long time and said nothing at all. Then she opened the door of her old room and sat down on her own bed.
+
+Nothing had moved. Her mother had dusted it every month for twelve years. The loom stood in the corner, with the same half-woven cloth still on it, gone yellow along the edge.
+
+She unlaced her armour, plate by plate, and set it down, and it was strange how light her shoulders felt. She took off the coat she had worn to war and put on a jacket and skirt from the old chest, soft with folding. The sleeves were short now. She did not care.
+
+At the window she untied the soldier’s knot, let her hair down and combed it out in the sunlight, slowly. Then at the bronze mirror she pressed a little yellow flower-shape to her forehead, as girls did for a feast.
+
+The face in the mirror looked back at her: brown from twelve years of wind, with a soldier’s shoulders and a pale line across her chin where the helmet strap had been. Mulan looked at it for a long while. Then she smiled, and went out to the gate.
+
+# --- page 13
+Her comrades were sitting on the wall by the gate in the late sun, passing a water-skin between them, waiting for the feast. They looked up as she came out.
+
+They looked again. The water-skin stopped halfway to somebody’s mouth. One man stood up, sat down, and stood up again. For a long moment the only sound was the sparrows in the willow.
+
+For twelve years they had shared her fire and her food, slept beside her in the snow, and followed her up the hill on the worst day of all. And in all that time it had never once crossed their minds that their quiet comrade was a woman.
+
+Her comrade got up off the wall at last and walked all the way round her, slowly, as if she were a new horse at market. “My millet cakes,” he said faintly. “My jokes. Twelve years of my terrible jokes. You let me tell you all of them.”
+
+“I laughed at all of them, too,” said Mulan. Then he laughed, and the others with him, until they had to hold on to the gatepost. “They will make a song of this,” he said, wiping his eyes. “You know that? Somebody will make a song.”
+
+# --- page 14
+Mulan pointed past him, out over the field, where the young millet was coming up in green rows.
+
+“Look there,” she said. Two hares were sitting up among the furrows, ears high. “When you hold a hare up by its ears, you can tell which is which. The buck kicks and kicks with his feet. The doe screws her eyes half shut. Any farm child knows that.”
+
+As she spoke, something startled the hares, and they were off together down the field, low and long, their ears laid flat.
+
+“But once they race off together, low in the grass,” said Mulan, “which of you could point to the buck, and which to the doe?” She looked at her comrade, and he looked at her, and slowly he began to smile.
+
+Out across the spring field the two hares ran, over the furrows and through the young millet, past the willow and the old earth wall. Neck and neck they went, stride for stride, and nobody watching from the gate could have told you which was which.

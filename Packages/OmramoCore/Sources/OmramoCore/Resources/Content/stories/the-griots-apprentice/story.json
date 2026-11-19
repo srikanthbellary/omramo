@@ -1,0 +1,1532 @@
+{
+  "schemaVersion": 1,
+  "id": "the-griots-apprentice",
+  "contentVersion": 1,
+  "title": "The Griot’s Apprentice",
+  "tier": "advanced",
+  "language": "en",
+  "region": {
+    "id": "african",
+    "culture": "Mande (Mandinka / Malinke)",
+    "place": "Djenné, inland Niger Delta, Mali",
+    "label": "Mande · Mali",
+    "pin": {
+      "lat": 13.9,
+      "lon": -4.6
+    },
+    "pinColor": "#FFA41C"
+  },
+  "setting": {
+    "period": "The Mali Empire, about 700 years ago",
+    "latestYear": 1350
+  },
+  "provenance": {
+    "kind": "original",
+    "credit": "Original story written by us (Omramo)",
+    "premise": "In the Mali Empire, a girl learning to be a jeli, a singer of history, is sent to sing a rich merchant’s family history at a feast in Djenné. The merchant has paid her grandfather to leave out a shameful part, and she must decide what a keeper of memory owes to the truth.",
+    "rights": "Original text written for Omramo. No traditional or sacred narrative is used, and nothing of the Sunjata epic is retold. A Mande cultural consultant, ideally from a jeli family and ideally a co-author, is sought for names, customs and words (CONTENT_PLAN CQ4)."
+  },
+  "review": {
+    "text": {
+      "status": "pending"
+    },
+    "art": {
+      "status": "pending"
+    }
+  },
+  "culturalReview": {
+    "level": "required",
+    "status": "pending",
+    "reason": "A living tradition: jeliya (the griot’s art) belongs to Mande families today. An original story must be accurate about the jeli’s duties, music, names, dress and Djenné; ideally co-written.",
+    "community": "Mande cultural consultant, ideally from a jeli (griot) family",
+    "notes": "Needs cultural review before release."
+  },
+  "education": {
+    "geography": {
+      "lesson": "The River Niger rises in the hills of Guinea, swings north to the edge of the Sahara and back south again. Each year its floods spread over a wide inland delta in Mali, where Djenné stands on an island of high ground.",
+      "factCards": [
+        "river-niger",
+        "salt-and-gold",
+        "mosque-moment"
+      ]
+    },
+    "culture": {
+      "lesson": "In Mande families a jeli, often called a griot, keeps the history of families and of the people in song and speech, learned by ear from older jeliw. Jeliw still sing at namings and weddings in Mali, Guinea, Senegal and The Gambia today.",
+      "factCards": [
+        "jeli",
+        "balafon"
+      ]
+    },
+    "moral": {
+      "lesson": "Sira’s grandfather took the merchant’s gold because he was old and afraid; Sira must choose between the gold and the truth in front of a whole courtyard. Telling the truth costs her and him something real, and it gives a poor family back its place in a story.",
+      "reflectionQuestion": "Sira’s grandfather took the gold and then sent Sira to sing. Was he being a coward, or was he trusting her? What would you have sung?"
+    }
+  },
+  "moral": "Tell the truth, even when a powerful person would pay you to keep quiet.",
+  "sample": {
+    "freeSpreads": 2
+  },
+  "theme": {
+    "textColor": "#2A1A10",
+    "chrome": {
+      "leading": "light",
+      "trailing": "light",
+      "folded": "light"
+    },
+    "accent": "amber",
+    "tap": {
+      "fill": "#FFC43D80",
+      "fill2": "#FFAA3D61",
+      "line": "#F08C14E6",
+      "spark": "#F08A12"
+    },
+    "chipGlass": "#FFFFFFD6"
+  },
+  "cover": {
+    "file": "art/cover.heic",
+    "alt": "A girl of about twelve in an indigo wrap and head-wrap stands singing in a mud-brick courtyard at golden evening, one hand raised, while a boy plays a wooden balafon beside her and guests on mats look up.",
+    "width": 720,
+    "height": 900
+  },
+  "parts": [
+    {
+      "id": "part-1",
+      "title": "The Apprentice"
+    },
+    {
+      "id": "part-2",
+      "title": "The Feast"
+    },
+    {
+      "id": "part-3",
+      "title": "The Truth"
+    }
+  ],
+  "characters": [
+    {
+      "id": "apprentice",
+      "name": "Sira",
+      "color": "#2F3F86",
+      "face": {
+        "file": "art/face-apprentice.png",
+        "alt": "Sira.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#DCE2F7",
+      "card": {
+        "label": "Character · a jeli’s apprentice",
+        "title": "Sira",
+        "traits": [
+          {
+            "text": "Born a jeli",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Never forgets a name",
+            "fill": "#DCE9FA",
+            "ink": "#1B4F86"
+          },
+          {
+            "text": "Afraid, and sings anyway",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "She has spent half her life learning other families’ histories by heart, seven generations deep. At twelve she must decide whether a history can be sold.",
+        "portrait": {
+          "file": "art/char-apprentice.card.heic",
+          "alt": "A girl of about twelve with braided hair under an indigo head-wrap, in a white and indigo cotton wrap, standing very straight with her chin up against a pale ochre wall.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#3A4A8A",
+          "#2A2F5E",
+          "#1A1A38"
+        ]
+      }
+    },
+    {
+      "id": "grandfather",
+      "name": "Grandfather",
+      "color": "#7A3A12",
+      "face": {
+        "file": "art/face-grandfather.png",
+        "alt": "Sira’s grandfather.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#FBE3C4",
+      "card": {
+        "label": "Character · a great jeli, grown old",
+        "title": "Jeli Madi",
+        "traits": [
+          {
+            "text": "Keeper of seven families",
+            "fill": "#FFE9B8",
+            "ink": "#8A4A00"
+          },
+          {
+            "text": "Losing his voice",
+            "fill": "#E6E1F5",
+            "ink": "#4A3A86"
+          },
+          {
+            "text": "Ashamed of the gold",
+            "fill": "#FFE0D6",
+            "ink": "#B33A1C"
+          }
+        ],
+        "body": "For fifty years his voice filled courtyards from Djenné to the river towns. Now it cracks after a few lines, and he has made one bargain he cannot sing his way out of.",
+        "portrait": {
+          "file": "art/char-grandfather.card.heic",
+          "alt": "An old man with a short white beard in a wide white cotton robe and a white cap, sitting cross-legged on a mat, one thin hand resting on the keys of a balafon.",
+          "width": 1296,
+          "height": 1200
+        },
+        "background": [
+          "#8A5A2A",
+          "#5A3218",
+          "#2E1A0C"
+        ]
+      }
+    },
+    {
+      "id": "merchant",
+      "name": "Bakary",
+      "color": "#5A2A6E",
+      "face": {
+        "file": "art/face-merchant.png",
+        "alt": "Bakary the merchant.",
+        "width": 144,
+        "height": 144
+      },
+      "chipBackground": "#EEDDF3"
+    }
+  ],
+  "tapTargets": [
+    {
+      "id": "jeli",
+      "kind": "idea",
+      "title": "Jeli",
+      "line": "A jeli, often called a griot, keeps the history of families and peoples in song and speech.",
+      "cultureNote": {
+        "label": "From the Mande",
+        "text": "The jeli’s art passes down inside jeli families, from parent or grandparent to child, by ear and by heart. Jeliw (the plural) still sing at weddings and namings across West Africa today, and they still sing of Sunjata, the founder of Mali."
+      },
+      "picture": {
+        "file": "art/see-jeli.heic",
+        "alt": "An old singer in a wide white robe, standing with one hand lifted and his mouth open in song.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3218"
+    },
+    {
+      "id": "river-niger",
+      "kind": "place",
+      "title": "The River Niger",
+      "line": "One of Africa’s great rivers, flowing more than 4,000 kilometres through West Africa to the sea.",
+      "cultureNote": {
+        "label": "From Mali",
+        "text": "The Niger bends north to the edge of the Sahara near Timbuktu, then turns south again. In Mali it spreads into a wide inland delta that floods every year, and Djenné stands on high ground there, an island when the water is up."
+      },
+      "picture": {
+        "file": "art/see-river-niger.heic",
+        "alt": "A long, narrow wooden boat poled across a wide, pale brown river under a hazy sky.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2E4A5A"
+    },
+    {
+      "id": "balafon",
+      "kind": "object",
+      "title": "Balafon",
+      "line": "A wooden xylophone with round gourds hung beneath its keys to make each note ring out.",
+      "cultureNote": {
+        "label": "From the Mande",
+        "text": "The Mande say their oldest balafon, the Sosso Bala, is still kept today by a jeli family in a village in Guinea. The kora, a harp with a gourd body, is just as famous, but nobody is sure how old it is."
+      },
+      "picture": {
+        "file": "art/see-balafon.heic",
+        "alt": "A balafon of pale wooden keys on a curved frame, with a row of round gourds of different sizes hanging underneath.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#6A3A1A"
+    },
+    {
+      "id": "salt-and-gold",
+      "kind": "idea",
+      "title": "Salt for gold",
+      "line": "Mali grew rich by trading gold from the south for salt from the desert in the north.",
+      "cultureNote": {
+        "label": "From Mali",
+        "text": "Slabs of rock salt were cut at Taghaza in the Sahara and carried south by camel to Timbuktu, then by boat up the river. Gold came north from the lands near the forests. In 1324 Mali’s king, Mansa Musa, carried so much gold to Mecca that people wrote about it for centuries."
+      },
+      "picture": {
+        "file": "art/see-salt-and-gold.heic",
+        "alt": "Two grey-white slabs of rock salt standing on end beside a small brass scale holding a pinch of gold dust.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A3A2A"
+    },
+    {
+      "id": "mosque-moment",
+      "kind": "landmark",
+      "landmark": {
+        "id": "great-mosque-of-djenne",
+        "appearance": "framed",
+        "framingDevice": {
+          "kind": "thenAndNow",
+          "label": "TODAY’S BUILDING, LONG AFTER",
+          "line": "A great mosque stood in Djenné in Sira’s time, but nobody knows for sure how it looked. The one that stands there today was built in 1907, and the whole town re-plasters it every year."
+        }
+      },
+      "background": "#5A3218"
+    }
+  ],
+  "spreads": [
+    {
+      "id": "s01",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-compound.unfolded.heic",
+          "alt": "A walled mud-brick compound in a river town in the early morning, under a wide pale sky. Low on the right, beneath a great baobab, a girl stands singing while a boy plays a balafon, and an old man in white listens from a mat by the doorway.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-compound.folded.heic",
+          "alt": "Sira singing under the baobab in the early morning, with her grandfather on his mat behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4E8D2",
+          "#E8C99A",
+          "#A8683A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s01-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Every morning before the first cock crowed, Sira’s grandfather made her say the names.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s01-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira",
+              "name": "apprentice"
+            },
+            {
+              "t": " sat on the cold step of his doorway with her knees under her chin, and the names came out of the dark one after another. A father, his father, his father’s father, back seven generations, for each family her grandfather sang for. Who had married whom. Who had crossed which river. Who had dug the first well in which town."
+            }
+          ]
+        },
+        {
+          "id": "s01-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "If she missed one, he did not scold her. He only said "
+            },
+            {
+              "t": "“Again,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " from his mat inside the door, and she began that family from the top."
+            }
+          ]
+        },
+        {
+          "id": "s01-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira was born into a family of "
+            },
+            {
+              "t": "jeliw",
+              "tap": "jeli"
+            },
+            {
+              "t": ", and a jeli keeps what no one writes down. In the great towns, scholars wrote in Arabic, but the deeds of families lived in voices. Lose a name, her "
+            },
+            {
+              "t": "grandfather",
+              "name": "grandfather"
+            },
+            {
+              "t": " said, and you lose a person twice."
+            }
+          ]
+        },
+        {
+          "id": "s01-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "By the time the sky above the wall turned the colour of milk, she had reached the family of Bakary the merchant, and she slowed down. That family she said with special care. That family paid for the roof over their heads and the millet in their pot."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s02",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-compound.unfolded.heic",
+          "alt": "A walled mud-brick compound in a river town in the early morning, under a wide pale sky. Low on the right, beneath a great baobab, a girl stands singing while a boy plays a balafon, and an old man in white listens from a mat by the doorway.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-compound.folded.heic",
+          "alt": "Sira singing under the baobab in the early morning, with her grandfather on his mat behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4E8D2",
+          "#E8C99A",
+          "#A8683A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s02-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When the light came, her cousin Lamine carried out the balafon and set it under the baobab. Its wooden keys sat on a frame of bent sticks, and beneath each key hung a gourd, small ones for the high notes, big as a water pot for the low. Lamine was fourteen and played better than he talked."
+            }
+          ]
+        },
+        {
+          "id": "s02-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira did not play. In their family the men played and the women sang, and her grandfather said her voice could carry across a market without shouting. He taught her the way he had been taught, line by line. He sang; she sang it back. Nothing was written, so nothing could be lost, except by forgetting."
+            }
+          ]
+        },
+        {
+          "id": "s02-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Strangers would one day call people like them griots. Sira had never heard the word. She knew only what her grandfather told her: "
+            },
+            {
+              "t": "“A family without its jeli is a family without a past. And a family without a past has nothing to stand on.”",
+              "say": "grandfather",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s02-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Beyond the wall, the "
+            },
+            {
+              "t": "River Niger",
+              "tap": "river-niger"
+            },
+            {
+              "t": " was rising, as it rose every year after the rains, spreading brown and slow over the fields. Fishermen poled past with their nets heaped in the bottoms of their boats. Sira sang the names to the river, and the river did not argue."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s03",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-compound.unfolded.heic",
+          "alt": "A walled mud-brick compound in a river town in the early morning, under a wide pale sky. Low on the right, beneath a great baobab, a girl stands singing while a boy plays a balafon, and an old man in white listens from a mat by the doorway.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-compound.folded.heic",
+          "alt": "Sira singing under the baobab in the early morning, with her grandfather on his mat behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4E8D2",
+          "#E8C99A",
+          "#A8683A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s03-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Late in the rains, a boat with a striped awning tied up below the compound, and Bakary the merchant climbed the bank with four servants behind him. He was a broad man in a robe so wide it moved like a sail, with a ring of gold on his thumb."
+            }
+          ]
+        },
+        {
+          "id": "s03-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The servants set down their gifts: a sack of millet, a bolt of indigo cloth, a basket of red kola nuts. Last came a small bundle of white cotton, tied with string, that one servant carried in both hands as though it were heavier than it looked."
+            }
+          ]
+        },
+        {
+          "id": "s03-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The two men went inside, and Sira was sent to fetch water. She took a long time over it. When she crept back past the doorway, she heard only the end. "
+            },
+            {
+              "t": "“Sing all of it, old friend. The founding, the journeys, the wells. But not the salt road.”",
+              "say": "merchant",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s03-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then there was a silence so long that a lizard ran the whole length of the wall. At last she heard the bundle being untied, and the dry whisper of gold dust pouring into her grandfather’s brass dish. Her grandfather said nothing to stop it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s04",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-compound.unfolded.heic",
+          "alt": "A walled mud-brick compound in a river town in the early morning, under a wide pale sky. Low on the right, beneath a great baobab, a girl stands singing while a boy plays a balafon, and an old man in white listens from a mat by the doorway.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-compound.folded.heic",
+          "alt": "Sira singing under the baobab in the early morning, with her grandfather on his mat behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4E8D2",
+          "#E8C99A",
+          "#A8683A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s04-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "A week later, her grandfather’s voice broke in the middle of a song. He coughed, tried again, and nothing came but a dry rasp, like a reed split down its length. By evening he lay on his mat with a fever."
+            }
+          ]
+        },
+        {
+          "id": "s04-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Bakary’s grandson is to be named in Djenné in nine days,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he whispered. "
+            },
+            {
+              "t": "“I promised to sing. You will sing instead. Lamine will play. The gold is paid.”",
+              "say": "grandfather"
+            },
+            {
+              "t": " Then, with Lamine at the "
+            },
+            {
+              "t": "balafon",
+              "tap": "balafon"
+            },
+            {
+              "t": " picking out the old tune, he taught her the history of Bakary’s family, line by line, the whole of it. And at the end he taught her the part that was not to be sung."
+            }
+          ]
+        },
+        {
+          "id": "s04-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Long ago, Bakary’s grandfather Dramane had crossed the desert with a salt trader named Yaya. A sandstorm buried their camp. Yaya dug Dramane out with his bare hands and carried him to a well. They came home and sold the salt for gold, and Dramane kept all of it. Yaya’s family had been poor ever since."
+            }
+          ]
+        },
+        {
+          "id": "s04-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“You must know all of it,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he said, when she had sung it back to him without a mistake. "
+            },
+            {
+              "t": "“A jeli who knows only the sweet parts is a parrot. Know all of it. Then sing what was paid for.”",
+              "say": "grandfather"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "part": "part-1",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-compound.unfolded.heic",
+          "alt": "A walled mud-brick compound in a river town in the early morning, under a wide pale sky. Low on the right, beneath a great baobab, a girl stands singing while a boy plays a balafon, and an old man in white listens from a mat by the doorway.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-compound.folded.heic",
+          "alt": "Sira singing under the baobab in the early morning, with her grandfather on his mat behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F4E8D2",
+          "#E8C99A",
+          "#A8683A"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s05-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "That night Sira could not sleep. She lay on her mat and listened to the frogs in the flooded fields, and to her grandfather’s breath scraping in and out in the next room. The history went round and round in her head, and every time it came to the salt road, it stopped, like a foot finding a missing step in the dark."
+            }
+          ]
+        },
+        {
+          "id": "s05-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She thought of Yaya digging in the sand with his bare hands. She thought of the gold dust whispering into the brass dish. She thought of seventy years of a family eating less than they should, so that another family could eat more."
+            }
+          ]
+        },
+        {
+          "id": "s05-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "At last she got up and went to his doorway. The lamp had burned down to a blue bead. "
+            },
+            {
+              "t": "“Grandfather,”",
+              "say": "apprentice",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“You always say a jeli’s word is worth more than gold. Why did you take it?”",
+              "say": "apprentice"
+            }
+          ]
+        },
+        {
+          "id": "s05-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For a long time he did not answer. Outside, a dog barked once and was quiet. Then "
+            },
+            {
+              "t": "the old man",
+              "name": "grandfather"
+            },
+            {
+              "t": " turned on his mat, slowly, as if it hurt him, and lay with his face to the wall."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s06",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The flooded River Niger in late afternoon, wide and pale under a hazy gold-white sky. Low on the right, a long wooden boat stacked with grey slabs of salt is poled towards a town of earth-coloured houses on its island, with a girl sitting in the bow.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Sira sitting in the bow of a salt boat on the wide river, with the earth houses of Djenné ahead.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F2E6CF",
+          "#C9C7B4",
+          "#7A8A86"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s06-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Two days later, Sira and Lamine went down to the river with the balafon wrapped in a cloth.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s06-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her grandfather did not come to the bank. Since the night of the lamp he had spoken to her only to hear the history one last time, and when she reached the salt road he had closed his eyes and nodded, and said nothing at all."
+            }
+          ]
+        },
+        {
+          "id": "s06-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They rode on a salt boat, long and narrow as a fallen palm, poled by four men who sang to keep time. Grey slabs of rock salt lay stacked in its belly, each one as long as Sira’s arm. The flood had turned the land into a sea of brown water and green rice, with villages standing on their mounds like islands."
+            }
+          ]
+        },
+        {
+          "id": "s06-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "On the third afternoon Djenné rose out of the water, a town of earth on its own island, every wall the colour of the riverbank."
+            }
+          ]
+        },
+        {
+          "id": "s06-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Above the flat roofs stood the walls of "
+            },
+            {
+              "t": "the great mosque",
+              "tap": "mosque-moment"
+            },
+            {
+              "t": ", and the call to prayer drifted out over the water as the boatmen leaned on their poles. Lamine whistled. Sira was looking at the crowd on the landing, and found she could not swallow."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-river.unfolded.heic",
+          "alt": "The flooded River Niger in late afternoon, wide and pale under a hazy gold-white sky. Low on the right, a long wooden boat stacked with grey slabs of salt is poled towards a town of earth-coloured houses on its island, with a girl sitting in the bow.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-river.folded.heic",
+          "alt": "Sira sitting in the bow of a salt boat on the wide river, with the earth houses of Djenné ahead.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F2E6CF",
+          "#C9C7B4",
+          "#7A8A86"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s07-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The market began at the water’s edge. Porters carried "
+            },
+            {
+              "t": "salt",
+              "tap": "salt-and-gold"
+            },
+            {
+              "t": " slabs up the bank on their heads, and traders sat behind them under awnings of matting, weighing gold dust on scales so small that a breath could tip them. There was cloth dyed deep indigo, dried fish in towers, kola nuts in baskets lined with leaves."
+            }
+          ]
+        },
+        {
+          "id": "s07-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "One porter was older than the rest. He was thin as a tent pole, and he walked bent under his slab with his eyes on the ground. A girl of about Sira’s age walked beside him with a water gourd, and each time he set the slab down, she held the gourd to his mouth."
+            }
+          ]
+        },
+        {
+          "id": "s07-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira asked a woman selling fish who he was. The woman shrugged. “That is Fodé, old Yaya’s grandson. They were traders once, that family, or so people say. Now they carry other men’s salt.”"
+            }
+          ]
+        },
+        {
+          "id": "s07-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira stood very still among the baskets. The name had been in her mouth every day since her grandfather fell ill, and here it was, walking past her with a slab of salt on its head. The girl with the gourd glanced back at her once, curious, and then the crowd closed between them."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s08",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-feast.unfolded.heic",
+          "alt": "A merchant’s great courtyard of smooth mud-brick walls at evening, under a pale gold sky. Low on the right, guests in white and indigo sit on mats with bowls before them while a girl stands singing and a man in a huge embroidered robe sits on a raised seat watching her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-feast.folded.heic",
+          "alt": "Sira standing in the lamplit courtyard, singing, with the merchant in his embroidered robe behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6E2B8",
+          "#E4B878",
+          "#8A5030"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s08-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bakary’s house stood near the market, and its courtyard was bigger than Sira’s whole compound. By evening it was full. Guests sat on mats in their best white and indigo, and women in gold earrings carried bowls of rice and mutton among them. Lamps of clay burned in the niches of the walls, though the sky was still pale gold above them."
+            }
+          ]
+        },
+        {
+          "id": "s08-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The baby had been given his name that morning. Now he slept on his mother’s lap, wrapped in white, while the grown-ups ate and laughed around him and Bakary sat on a raised seat at the far end, his robe embroidered all over with thread the colour of honey."
+            }
+          ]
+        },
+        {
+          "id": "s08-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "When the bowls were cleared, he beckoned Sira to him. He smiled for the guests and spoke so low that only she could hear. "
+            },
+            {
+              "t": "“Your grandfather and I understand each other. I hope you understand him too.”",
+              "say": "merchant",
+              "chip": true
+            }
+          ]
+        },
+        {
+          "id": "s08-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I know the whole history, sir,”",
+              "say": "apprentice",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Sira",
+              "name": "apprentice"
+            },
+            {
+              "t": ". It was not quite an answer, but Bakary was already nodding to Lamine at the balafon, and the courtyard was going quiet, row by row, the way a field goes quiet when the wind drops."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-feast.unfolded.heic",
+          "alt": "A merchant’s great courtyard of smooth mud-brick walls at evening, under a pale gold sky. Low on the right, guests in white and indigo sit on mats with bowls before them while a girl stands singing and a man in a huge embroidered robe sits on a raised seat watching her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-feast.folded.heic",
+          "alt": "Sira standing in the lamplit courtyard, singing, with the merchant in his embroidered robe behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6E2B8",
+          "#E4B878",
+          "#8A5030"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s09-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira had sung in her grandfather’s courtyard a thousand times. She had never sung to two hundred strangers. Her first line came out thin, and she saw a man near the front lean to whisper to his neighbour. Then Lamine’s balafon came in under her, steady as a pestle in a mortar, and her voice found the ground."
+            }
+          ]
+        },
+        {
+          "id": "s09-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She sang Bakary’s family from the beginning. The hunter who first cleared land by the river. The woman who stood in her doorway and turned back raiders with a single word. The well, the herds, the first boat, the first gold. She sang the names seven generations deep, and not one was missing."
+            }
+          ]
+        },
+        {
+          "id": "s09-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The guests began to call out. Old men cried the names back to her. A woman rose and dropped a string of cowrie shells at her feet, and another, and another. Bakary leaned back on his cushions and beamed."
+            }
+          ]
+        },
+        {
+          "id": "s09-b4",
+          "pane": "trailing",
+          "kind": "pathText",
+          "path": "M14,66 C70,22 120,84 190,52 C250,26 300,70 388,30",
+          "runs": [
+            {
+              "t": "“Bakary, son of Seku!”"
+            }
+          ]
+        },
+        {
+          "id": "s09-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Line by line, she sang the family forward, out of the old days and down the years, nearer and nearer to the grandfather of the man on the cushions. To Dramane. To the desert. To the salt road."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s10",
+      "part": "part-2",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-feast.unfolded.heic",
+          "alt": "A merchant’s great courtyard of smooth mud-brick walls at evening, under a pale gold sky. Low on the right, guests in white and indigo sit on mats with bowls before them while a girl stands singing and a man in a huge embroidered robe sits on a raised seat watching her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-feast.folded.heic",
+          "alt": "Sira standing in the lamplit courtyard, singing, with the merchant in his embroidered robe behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6E2B8",
+          "#E4B878",
+          "#8A5030"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s10-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then her voice stopped. Lamine played on for a few notes, waiting for her, then lifted his beaters and held them in the air."
+            }
+          ]
+        },
+        {
+          "id": "s10-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "The silence spread from the front of the courtyard to the back. Somewhere a bowl knocked against a bowl, and someone hushed it. The baby stirred in his mother’s lap. Two hundred faces turned to Sira, and Sira stood in the middle of them with her mouth open and nothing coming out of it."
+            }
+          ]
+        },
+        {
+          "id": "s10-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bakary’s smile did not move, but his hand closed on his knee. Sira knew what came next in the history. She knew what came next if she skipped it: one easy breath, a jump of seventy years, a song about the new baby, and the gold that was already paid. She thought of her grandfather with his face to the wall."
+            }
+          ]
+        },
+        {
+          "id": "s10-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "And then, past all the faces, she saw the gate. Someone stood just outside it in the last light, where porters and servants waited for what was left of the feast: a thin old man, bent as if he still carried something, and a girl beside him with a water gourd. They were listening."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s11",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-feast.unfolded.heic",
+          "alt": "A merchant’s great courtyard of smooth mud-brick walls at evening, under a pale gold sky. Low on the right, guests in white and indigo sit on mats with bowls before them while a girl stands singing and a man in a huge embroidered robe sits on a raised seat watching her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-feast.folded.heic",
+          "alt": "Sira standing in the lamplit courtyard, singing, with the merchant in his embroidered robe behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6E2B8",
+          "#E4B878",
+          "#8A5030"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s11-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira took a breath that went all the way down to her feet, and sang.",
+              "lead": true
+            }
+          ]
+        },
+        {
+          "id": "s11-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She sang Dramane and Yaya, two young men with one string of camels, going north to the salt mines in the empty country. She sang the wind that turned the sky brown at noon and buried their camp in a single night. She sang Yaya digging with his hands until his fingers were raw, and dragging his friend to a well."
+            }
+          ]
+        },
+        {
+          "id": "s11-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Then she sang the salt sold for gold in Timbuktu, and the gold carried home in one man’s saddlebags. She sang the share that was never paid. She sang seventy years of Yaya’s children carrying other men’s salt."
+            }
+          ]
+        },
+        {
+          "id": "s11-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Nobody called out now. Nobody moved. Somewhere along the way Lamine’s balafon had crept back in beneath her, very softly, and when she stopped, it stopped too."
+            }
+          ]
+        },
+        {
+          "id": "s11-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bakary was on his feet. His great robe swung about him, and his voice, which had been so soft, rang off the earth walls. "
+            },
+            {
+              "t": "“Enough! Your grandfather was paid. ",
+              "say": "merchant",
+              "chip": true
+            },
+            {
+              "t": "You were paid!",
+              "say": "merchant",
+              "fx": "pop",
+              "scale": 1.3
+            },
+            {
+              "t": "”",
+              "say": "merchant"
+            },
+            {
+              "t": " The baby woke and began to wail."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s12",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-feast.unfolded.heic",
+          "alt": "A merchant’s great courtyard of smooth mud-brick walls at evening, under a pale gold sky. Low on the right, guests in white and indigo sit on mats with bowls before them while a girl stands singing and a man in a huge embroidered robe sits on a raised seat watching her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-feast.folded.heic",
+          "alt": "Sira standing in the lamplit courtyard, singing, with the merchant in his embroidered robe behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6E2B8",
+          "#E4B878",
+          "#8A5030"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s12-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Sira’s knees were shaking so hard she was sure the whole courtyard could see them through her wrap. She pressed her hands flat against her sides to keep them still."
+            }
+          ]
+        },
+        {
+          "id": "s12-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My grandfather was paid,”",
+              "say": "apprentice",
+              "chip": true
+            },
+            {
+              "t": " she said. Her voice came out small, and she made it bigger. "
+            },
+            {
+              "t": "“But a jeli is paid to remember, not to forget. That is the whole of the work. If I sing your family with a hole in the middle, it is not your history any more. It is a wall with no bricks at the bottom.”",
+              "say": "apprentice"
+            }
+          ]
+        },
+        {
+          "id": "s12-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bakary said nothing. His jaw was working as if he were chewing something hard. Sira looked past him at the gate, where the old porter had not moved, and then back at Bakary’s face."
+            }
+          ]
+        },
+        {
+          "id": "s12-b4",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“Dramane was your grandfather,”",
+              "say": "apprentice",
+              "chip": true
+            },
+            {
+              "t": " she said. "
+            },
+            {
+              "t": "“What he did is not your shame. You were not born. But the share is still unpaid, and it is still in your house. If you leave it there, that part will be yours.”",
+              "say": "apprentice"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s13",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-feast.unfolded.heic",
+          "alt": "A merchant’s great courtyard of smooth mud-brick walls at evening, under a pale gold sky. Low on the right, guests in white and indigo sit on mats with bowls before them while a girl stands singing and a man in a huge embroidered robe sits on a raised seat watching her.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-feast.folded.heic",
+          "alt": "Sira standing in the lamplit courtyard, singing, with the merchant in his embroidered robe behind her.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F6E2B8",
+          "#E4B878",
+          "#8A5030"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s13-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "For a long moment nobody spoke. Then a man rose from the mat nearest the raised seat. It was Bakary’s son, the baby’s father, a young man with a quiet face who had not said ten words all evening. He looked at his father. He looked at the gate."
+            }
+          ]
+        },
+        {
+          "id": "s13-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“My son was given his name today,” he said. “I want him to have all of his history, not most of it.”"
+            }
+          ]
+        },
+        {
+          "id": "s13-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He walked the length of the courtyard between the mats, and the guests leaned aside to let him through. At the gate he took the old porter by both hands, as a man greets an elder, and led him in. The girl with the gourd came behind them, holding it against her chest."
+            }
+          ]
+        },
+        {
+          "id": "s13-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "He sat Fodé down on his own mat. Then he turned to his father. “The share,” he said. “Will you pay it, or shall I?”"
+            }
+          ]
+        },
+        {
+          "id": "s13-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Bakary did not answer for a long time. He looked old suddenly, and very tired, and still angry. At last he lifted one heavy hand. "
+            },
+            {
+              "t": "“I will pay it,”",
+              "say": "merchant",
+              "chip": true
+            },
+            {
+              "t": " he said, not looking at anyone. "
+            },
+            {
+              "t": "“And the jeli’s family will never sing for mine again.”",
+              "say": "merchant"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "s14",
+      "part": "part-3",
+      "scene": {
+        "unfolded": {
+          "file": "art/scene-dawn.unfolded.heic",
+          "alt": "A riverbank at dawn under a wide pale rose sky, the water still and shining. Low on the right, an old man and a girl sit side by side on the bank looking out over the river, a balafon on the ground beside them.",
+          "width": 2676,
+          "height": 2160
+        },
+        "folded": {
+          "file": "art/scene-dawn.folded.heic",
+          "alt": "Sira and her grandfather sitting together on the riverbank at dawn, the old man’s hand on her shoulder.",
+          "width": 1296,
+          "height": 2160
+        },
+        "fallbackColors": [
+          "#F8E4DC",
+          "#E8C4B0",
+          "#8A7A70"
+        ],
+        "textArea": {
+          "leadingBottom": 470,
+          "trailingBottom": 420
+        }
+      },
+      "blocks": [
+        {
+          "id": "s14-b1",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Four days later, at dawn, a fisherman’s boat put Sira and Lamine ashore below the compound. Her grandfather was sitting on the bank in his white robe, as if he had been sitting there all night."
+            }
+          ]
+        },
+        {
+          "id": "s14-b2",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "She sat down beside him and told him all of it: the market, the gate, the son, the share. When she came to the last thing Bakary had said, she stopped and looked at her hands."
+            }
+          ]
+        },
+        {
+          "id": "s14-b3",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "Her "
+            },
+            {
+              "t": "grandfather",
+              "name": "grandfather"
+            },
+            {
+              "t": " was quiet for a while. Then he took the bundle of white cotton from inside his robe, knotted again round the gold, and laid it in her lap. "
+            },
+            {
+              "t": "“Take it back to him,”",
+              "say": "grandfather",
+              "chip": true
+            },
+            {
+              "t": " he rasped. "
+            },
+            {
+              "t": "“I took it because I am old, and I was afraid of being poor. I sent you because I hoped you were not afraid yet.”",
+              "say": "grandfather"
+            }
+          ]
+        },
+        {
+          "id": "s14-b4",
+          "pane": "leading",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "“I was,”",
+              "say": "apprentice",
+              "chip": true
+            },
+            {
+              "t": " said "
+            },
+            {
+              "t": "Sira",
+              "name": "apprentice"
+            },
+            {
+              "t": ". "
+            },
+            {
+              "t": "“The whole time.”",
+              "say": "apprentice"
+            },
+            {
+              "t": " He laughed then, a cracked sound like a dry gourd, and put his hand on her shoulder."
+            }
+          ]
+        },
+        {
+          "id": "s14-b5",
+          "pane": "trailing",
+          "kind": "paragraph",
+          "runs": [
+            {
+              "t": "They sat and watched the river go pink, then gold. Out on the water a fisherman was singing as he poled, and the weaverbirds were shouting in the reeds. After a while Sira began to sing too, quietly, the names of Bakary’s family, every one of them, from the beginning to the end."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

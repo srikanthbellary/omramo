@@ -643,6 +643,60 @@ fish camp has no snow house and no "midnight sun"), run on the box: pass.
 **Existing assertions changed (intended; nothing weakened):** app `Round5Tests` minimum
 counts raised (23 stories, 26 landmarks). No other existing test was edited.
 
+### Implemented in round 5, batch 3 — the Advanced stories and the whole catalog (code complete, **not yet compiled or seen**)
+
+Batch 3 of three (18 Nov 2026, same branch, on top of batch 2's commit `fc06a4b`; Opus 5.5).
+The catalog is now complete: **32 stories** in plan order (`catalogVersion` 5) and **37
+landmarks**.
+
+- **Nine new Advanced stories**, in plan order around `urashima-taro` — `savitri-and-satyavan` ⚑,
+  `eloquent-peasant`, `ballad-of-mulan`, `the-two-sisters` ⚑, `woman-who-raised-a-bear` ⚑,
+  `firebird-and-horse-of-power` (a dark story), `daedalus-and-icarus`,
+  `the-griots-apprentice` ⚑ (an Omramo original), `zal-and-the-simurgh`. Each: 14 pages in
+  three titled parts (154–211 words a page, 2,400–2,760 a story), **text on both panes like
+  Urashima** (leading paragraphs, then one trailing paragraph; every scene has
+  `textArea { leadingBottom: 470, trailingBottom: 420 }`), four scenes, four or five tap-to-see
+  words, two or three character cards, the plan's landmarks, a one-sentence moral, the
+  `education` block, a manuscript whose header records the source and the source check.
+- **`tools/build_stories.py`** writes trailing-pane paragraphs (`"> …"`) and `pathText` lines
+  (`{ "path", "text" }`), in the same JSON shape as `urashima-taro/story.json`; the earlier
+  specs build byte-identical. Three stories use one curved line each.
+- **Eleven landmarks** (all 37): `angkor-wat`, `bibliotheca-alexandrina`, `forbidden-city`,
+  `lions-gate-bridge`, `ilulissat-icefjord` (natural), `kizhi-pogost`, `palace-of-knossos`,
+  `eiffel-tower` (by day), `great-mosque-of-djenne`, `persepolis`, `mausoleum-halicarnassus`
+  (lost: a reconstruction). Pictures in `App/Sources/Art/Landmarks/`, registered in
+  `LandmarkArt.paint`.
+- **Cultural-review flag: all twelve §7 stories** are in the catalog and flagged; the two
+  hand-written prototypes (Monkey, Anansi) gained the `notes: "Needs cultural review before
+  release."` line the others carry.
+- **Nine story painters** under `App/Sources/Art/Stories/` (`SavitriArt`, `EloquentArt`,
+  `MulanArt`, `SistersArt`, `BearWomanArt`, `FirebirdArt`, `IcarusArt`, `GriotArt`, `ZalArt`),
+  registered in `ArtLibrary.storyPainter(for:)`. Advanced composition: a low horizon, the
+  words in the sky of both panes, the subject low on the trailing pane. No kit change.
+- **No change to the app's code** besides the two registries: the library's shelves (11 / 11 /
+  10), the map (32 pins, only the story being read is named) and `NextStory` take the full
+  catalog as they are (tested).
+
+**Tests added (none of the Swift ones run):** core `Round5Tests.swift` — `ContentPlan.batchThree`
+and the batch-3 landmark map; a new class `AdvancedBatchTests`:
+`testTheCatalogHoldsAllThirtyTwoStoriesInPlanOrder`, `testEveryPlannedAdvancedStoryIsInTheCatalog`
+(one story in every region × level cell), `testTheNewAdvancedStoriesAreLevelledLikeUrashima`,
+`testAllTwelveSectionSevenStoriesAreFlagged`, `testAllThirtySevenLandmarksAreInTheCatalogAndShownHonestly`,
+`testOnlyKnossosBelongsToItsAdvancedStory`, `testTheGreenlandStoryTeachesTheArcticCorrectly`,
+`testTheAdvancedShelfIsFullAndTheNextStoryWalksIt`. App `App/Tests/Round5Tests.swift` —
+`testTheAdvancedShelfIsFullAndEveryAdvancedStoryHasItsPainter`; the three "new story" loops
+now run over every story but the Urashima prototype. UI `ShotTests` — `testR5Advanced…` and
+`testR5LibraryAdvancedLevel…` (9 methods: the Advanced grid, page 1 of all nine in four
+postures, later pages 5 / 10 / 13, eight cards, two finished moments). Python
+`tools/test_build_stories.py` — 25 tests (four new: trailing-pane and pathText mark-up;
+Advanced levelling; all twelve flagged stories in the catalog; the landmark catalog holds all
+37), run on the box: pass.
+
+**Existing assertions changed (intended; nothing weakened):** app `Round5Tests` — the minimum
+counts became exact (32 stories, 37 landmarks) and the loops that skipped every Advanced story
+now skip only Urashima; Python `test_catalog_is_in_plan_order` now also requires the catalog
+to equal the plan.
+
 ### Short of the acceptance criteria (precise leftovers)
 
 Everything marked *[Mac]* in `docs/IMPLEMENTATION_PLAN.md` for M2, M3 and Mi is **unverified**
@@ -930,6 +984,34 @@ Do §7d first if batch 1 has not been compiled: batch 2 leans on the same kit.
 7. Landmarks: the three reconstructions (Artemis, Zeus, Hanging Gardens) must read as
    sketches, not records; Christ the Redeemer and Saint Sophia as architecture only.
 
+## 7f. First-compile checklist for round 5, batch 3
+
+Do §7d and §7e first if batches 1 and 2 have not been compiled: batch 3 leans on the same kit.
+
+1. `python3 tools/build_stories.py --check && python3 tools/validate_content.py` (0 errors),
+   `python3 tools/test_validate_content.py` (62), `python3 tools/test_build_stories.py` (25).
+2. `swift test --package-path Packages/OmramoCore` (`Round5Tests` now covers all 32 stories;
+   `AdvancedBatchTests` is new).
+3. `xcodegen generate` (**required**: 36 story-painter files and 11 landmark files are new),
+   then build. §8f lists the likely errors. If one painter will not compile and time is short,
+   comment its line out of `ArtLibrary.storyPainter(for:)` (the story shows the stand-in; the
+   app test `testEveryCatalogStoryHasARegisteredPainter` will then fail and say which) and go
+   on; a landmark likewise in `LandmarkArt.paint`.
+4. ⌘U, then `ShotTests` (`OmramoShots` scheme) on an iPad and an iPhone: the new
+   `testR5Advanced…` methods write `r5-*-reader-<savitri|eloquent-peasant|mulan|two-sisters|bear-woman|firebird|icarus|griot|zal>-*.png`,
+   `r5-*-library-advanced-*.png`, eight card shots (kayak, balafon, Angkor, Knossos, the
+   Mausoleum, the icefjord, the Simurgh, Mulan) and two finished moments (Icarus, Fire-Bird).
+5. Look first at the **two-pane pages** of all nine on the unfolded iPhone and the iPad held
+   sideways: the words must sit in a calm sky on both panes with the picture below them, as
+   on Urashima's pages; then the same pages folded and on the iPad held upright (all the text
+   in one column above or beside the picture). Check that the longest pages (about 210 words)
+   fit at the default text size without the page-fit shrinking the type too far.
+6. The **dark** story (Fire-Bird): cream words, deep sky on both panes, chrome dark.
+7. Then per story: subject low on the trailing pane, faces clear of the controls, the folded
+   band holding a face, the Advanced look (atmospheric, plain eyes, not babyish).
+8. Landmarks: the Mausoleum must read as a sketch, not a record; the Eiffel Tower by day;
+   Angkor Wat, Kizhi and the Great Mosque of Djenné as architecture only.
+
 ## 8. Known unverified items
 
 Milestone 1 compiled and ran (13 Nov 2026). The table below is the M1 list, kept for the
@@ -1057,6 +1139,25 @@ posture API, per-pane safe areas). The app does not reference any Duo API.
 - **Facts.** Twelve landmark entries and thirty-seven tap-to-see notes: `review.facts`
   pending. The source check (18 Nov, on the Gutenberg mirror) is in each manuscript header.
 - **Library.** Eleven covers on the Medium shelf; 23 pins on the map.
+
+### 8f. Unverified in round 5, batch 3
+
+- **The nine Advanced story painters** (`App/Sources/Art/Stories/{Savitri,Eloquent,Mulan,Sisters,BearWoman,Firebird,Icarus,Griot,Zal}Art*.swift`)
+  and the **eleven landmark pictures**: written blind, checked by script (brackets, duplicate
+  declarations, argument labels of every call into the art types, every function a `paint`
+  switch calls is declared) and by "be the compiler" reading passes.
+- Likely compile errors, as before: `CGFloat` / `Double` mixes; long expressions the
+  type-checker gives up on; a wrong kit enum case or property name; landmark helpers called
+  unqualified inside `Art.group` / `Art.clipped` closures (legal, but new in batch 3:
+  Angkor, Bibliotheca, Persepolis, Knossos, Mausoleum); `CGAffineTransform(a:b:c:d:tx:ty:)` in
+  Persepolis.
+- **The Advanced composition** (horizon low, words in the sky of both panes) is new for the
+  kit-built painters; only Urashima's hand-built scenes have been seen like that.
+- **Page fit.** Advanced pages of up to 211 words (Urashima's longest is about 200) on the
+  folded phone at the largest text sizes.
+- **Facts.** Eleven landmark entries and about forty tap-to-see notes: `review.facts` pending;
+  each spec's `sourceNotes` lists the facts its writer was unsure of.
+- **Library.** Ten covers on the Advanced shelf; 32 pins on the map.
 
 ## 9. Troubleshooting: fonts not loading
 

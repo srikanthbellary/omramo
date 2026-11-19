@@ -26,6 +26,13 @@ Paragraph mark-up (see docs/agent-runs/r5-batch-notes.md):
     <pop:1.3>…</pop>      a word that pops at that scale;  <stretch>…</stretch> a stretched word
 Tags nest (a tap word inside speech). Prose uses typographic quotes (“ ” ‘ ’); a straight
 quote in a paragraph is an error.
+
+Panes (round 5, batch 3 — Advanced stories put text on both panes, like urashima-taro):
+    "> …"                 a paragraph on the trailing pane (the marker comes before any ^)
+    {"path": "M… C…", "text": "…"}
+                          a pathText block drawn along the curve (trailing pane unless
+                          "pane": "leading"); absolute M, L, Q and C commands only
+Leading paragraphs come first on a page, then trailing ones.
 """
 
 import json
@@ -201,9 +208,33 @@ def build_story(spec):
             scene_out["textArea"] = scene["textArea"]
         spread_id = "s%02d" % index
         blocks = []
+        seen_trailing = False
         for b, para in enumerate(page["paras"], start=1):
-            _, runs = parse_paragraph(para, "%s page %d paragraph %d" % (sid, index, b))
-            blocks.append({"id": "%s-b%d" % (spread_id, b), "pane": "leading", "kind": "paragraph", "runs": runs})
+            where = "%s page %d paragraph %d" % (sid, index, b)
+            block_id = "%s-b%d" % (spread_id, b)
+            if isinstance(para, dict):
+                # {"path": "M… C…", "text": "…"} → a pathText block (trailing pane by default).
+                pane = para.get("pane", "trailing")
+                if pane not in ("leading", "trailing"):
+                    raise SpecError("%s: pane must be leading or trailing" % where)
+                if not para.get("path"):
+                    raise SpecError("%s: a pathText paragraph needs a path" % where)
+                _, runs = parse_paragraph(para["text"], where)
+                if pane == "leading" and seen_trailing:
+                    raise SpecError("%s: a leading paragraph after a trailing one" % where)
+                seen_trailing = seen_trailing or pane == "trailing"
+                blocks.append({"id": block_id, "pane": pane, "kind": "pathText", "path": para["path"], "runs": runs})
+                continue
+            pane = "leading"
+            if para.startswith(">"):
+                # "> …" puts the paragraph on the trailing pane (Advanced stories, like Urashima).
+                pane = "trailing"
+                para = para[1:].lstrip(" ")
+            if pane == "leading" and seen_trailing:
+                raise SpecError("%s: a leading paragraph after a trailing one" % where)
+            seen_trailing = seen_trailing or pane == "trailing"
+            _, runs = parse_paragraph(para, where)
+            blocks.append({"id": block_id, "pane": pane, "kind": "paragraph", "runs": runs})
         spread = {"id": spread_id, "part": page["part"], "scene": scene_out}
         if scene.get("chrome"):
             spread["chrome"] = scene["chrome"]

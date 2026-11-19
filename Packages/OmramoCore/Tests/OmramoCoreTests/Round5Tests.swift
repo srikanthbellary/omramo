@@ -42,6 +42,13 @@ enum ContentPlan {
         "androcles-and-the-lion", "horse-and-the-olive", "sindbad-second-voyage",
     ]
 
+    /// Round 5, batch 3: the nine new Advanced stories (A1, A2, A4–A10; A3 is the Urashima prototype).
+    static let batchThree: [String] = [
+        "savitri-and-satyavan", "eloquent-peasant", "ballad-of-mulan", "the-two-sisters",
+        "woman-who-raised-a-bear", "firebird-and-horse-of-power", "daedalus-and-icarus",
+        "the-griots-apprentice", "zal-and-the-simurgh",
+    ]
+
     /// §7: the twelve stories that must carry the flag "needs cultural review before release".
     static let requiredReview: Set<String> = [
         "monkey-and-crocodile", "savitri-and-satyavan", "lion-and-hare", "why-possums-tail-is-bare",
@@ -79,6 +86,16 @@ enum ContentPlan {
         "sindbad-second-voyage": ["hanging-gardens-babylon", "burj-khalifa"],
         "anansi-wisdom": ["asante-traditional-buildings"],
         "urashima-taro": ["tokyo-skytree"],
+        // Batch 3 (§6.3), in the order the story meets them.
+        "savitri-and-satyavan": ["angkor-wat"],
+        "eloquent-peasant": ["bibliotheca-alexandrina"],
+        "ballad-of-mulan": ["great-wall-of-china", "forbidden-city"],
+        "the-two-sisters": ["lions-gate-bridge"],
+        "woman-who-raised-a-bear": ["ilulissat-icefjord"],
+        "firebird-and-horse-of-power": ["kizhi-pogost"],
+        "daedalus-and-icarus": ["palace-of-knossos", "eiffel-tower"],
+        "the-griots-apprentice": ["great-mosque-of-djenne"],
+        "zal-and-the-simurgh": ["persepolis", "mausoleum-halicarnassus"],
     ]
 
     /// §5.1: the 37 landmarks of the plan.
@@ -799,5 +816,185 @@ final class NextStoryCatalogTests: XCTestCase {
         // From the middle of the shelf: the following Medium story.
         let sadko = StoryID("sadko")
         XCTAssertEqual(NextStory.suggestion(after: sadko, in: stories, finished: [sadko])?.id, StoryID("androcles-and-the-lion"))
+    }
+}
+
+// MARK: - Batch 3: the Advanced stories and the whole catalog
+
+final class AdvancedBatchTests: XCTestCase {
+    func testTheCatalogHoldsAllThirtyTwoStoriesInPlanOrder() throws {
+        let catalog = try SampleContent.repository().loadCatalog().stories.map(\.rawValue)
+        XCTAssertEqual(catalog, ContentPlan.order)
+        XCTAssertEqual(ContentPlan.batchThree.count, 9)
+        for id in ContentPlan.batchThree {
+            XCTAssertTrue(catalog.contains(id), "\(id) is missing from the catalog")
+        }
+        // Every planned story has its landmark list in the test's map.
+        XCTAssertEqual(Set(ContentPlan.landmarks.keys), Set(ContentPlan.order))
+    }
+
+    func testEveryPlannedAdvancedStoryIsInTheCatalog() throws {
+        let library = try ContentPlan.bundledLibrary()
+        let advanced = library.stories.filter { $0.tier == .advanced }.map(\.id.rawValue)
+        XCTAssertEqual(advanced, Array(ContentPlan.order[22..<32]))
+        XCTAssertEqual(Set(ContentPlan.batchThree).union(["urashima-taro"]), Set(advanced))
+        // One Advanced story from every region.
+        let regions = library.stories.filter { $0.tier == .advanced }.map(\.region.id)
+        XCTAssertEqual(Set(regions), Set(RegionID.allCases))
+        XCTAssertEqual(regions.count, RegionID.allCases.count)
+        // The whole catalog: a story in every region × level cell (CONTENT_PLAN §1.1).
+        for tier in Tier.allCases {
+            let cell = Set(library.stories.filter { $0.tier == tier }.map(\.region.id))
+            XCTAssertEqual(cell, Set(RegionID.allCases), "\(tier)")
+        }
+        XCTAssertEqual(library.stories.count, 32)
+    }
+
+    func testTheNewAdvancedStoriesAreLevelledLikeUrashima() throws {
+        let library = try ContentPlan.bundledLibrary()
+        for id in ContentPlan.batchThree {
+            let story = try XCTUnwrap(library.story(id: StoryID(id)), id)
+            XCTAssertEqual(story.tier, .advanced, id)
+            // Urashima has 16 pages in three parts; the new stories have 14 in three.
+            XCTAssertEqual(story.spreads.count, 14, id)
+            XCTAssertEqual(story.parts.count, 3, id)
+            XCTAssertEqual(story.sample.freeSpreads, 2, id)
+            XCTAssertEqual(Set(story.spreads.map(\.scene.unfolded.assetName)).count, 4, id)
+            XCTAssertGreaterThanOrEqual(story.tapTargets.filter { $0.kind != .landmark }.count, 4, id)
+            XCTAssertTrue(story.tapTargets.contains { $0.kind == .place }, id)
+            XCTAssertGreaterThanOrEqual(story.characters.filter { $0.card != nil }.count, 2, id)
+            XCTAssertEqual(story.theme.chrome.leading, story.theme.chrome.trailing, id)
+            XCTAssertEqual(story.theme.chrome.leading, story.theme.chrome.folded, id)
+            var total = 0
+            for spread in story.spreads {
+                let place = "\(id) \(spread.id)"
+                total += spread.wordCount
+                // About 190 words a page, never a wall of text.
+                XCTAssertGreaterThanOrEqual(spread.wordCount, 120, place)
+                XCTAssertLessThanOrEqual(spread.wordCount, 240, place)
+                // Text on both panes, like Urashima: leading paragraphs first, then the trailing pane.
+                XCTAssertEqual(spread.blocks.first?.pane, .leading, place)
+                XCTAssertEqual(spread.blocks.last?.pane, .trailing, place)
+                let panes = spread.blocks.map(\.pane)
+                let firstTrailing = panes.firstIndex(of: .trailing) ?? panes.count
+                XCTAssertTrue(panes[firstTrailing...].allSatisfy { $0 == .trailing }, place)
+                for block in spread.blocks where block.kind == .pathText {
+                    XCTAssertFalse((block.path ?? "").isEmpty, place)
+                }
+                // The words sit above the picture on both panes.
+                let area = try XCTUnwrap(spread.scene.textArea, place)
+                XCTAssertNotNil(area.leadingBottom, place)
+                XCTAssertNotNil(area.trailingBottom, place)
+                let taps = spread.blocks.flatMap(\.runs).filter { $0.tapTarget != nil }
+                XCTAssertLessThanOrEqual(taps.count, 1, place)
+            }
+            XCTAssertGreaterThanOrEqual(total, 2_000, id)
+            XCTAssertLessThanOrEqual(total, 3_000, id)
+            // Lead lines open the story and each part.
+            for part in story.parts {
+                let first = try XCTUnwrap(story.spreads.first { $0.part == part.id }, "\(id) \(part.id)")
+                XCTAssertTrue(first.blocks[0].runs.allSatisfy(\.isLead), "\(id) \(part.id)")
+            }
+            // Every character with a card is named (tappable) in the text.
+            let named = Set(story.spreads.flatMap(\.blocks).flatMap(\.runs).compactMap(\.characterName))
+            for character in story.characters where character.card != nil {
+                XCTAssertTrue(named.contains(character.id), "\(id): \(character.id) is never named")
+            }
+        }
+    }
+
+    func testAllTwelveSectionSevenStoriesAreFlagged() throws {
+        let library = try ContentPlan.bundledLibrary()
+        let flagged = Set(library.storiesNeedingCulturalReview.map(\.id.rawValue))
+        XCTAssertEqual(flagged, ContentPlan.requiredReview)
+        XCTAssertEqual(flagged.count, 12)
+        let repository = try SampleContent.repository()
+        let landmarks = try repository.loadLandmarks()
+        for id in ["savitri-and-satyavan", "the-two-sisters", "woman-who-raised-a-bear", "the-griots-apprentice"] {
+            let story = try repository.loadStory(id: StoryID(id))
+            XCTAssertEqual(story.culturalReview.notes, "Needs cultural review before release.", id)
+            let manuscript = try XCTUnwrap(try repository.loadManuscript(id: story.id))
+            let report = StoryValidator(mode: .release).validate(story: story, landmarks: landmarks, manuscript: manuscript)
+            XCTAssertTrue(report.contains(.culturalReviewNotApproved, severity: .error), id)
+        }
+    }
+
+    func testAllThirtySevenLandmarksAreInTheCatalogAndShownHonestly() throws {
+        let catalog = try SampleContent.landmarks()
+        XCTAssertEqual(Set(catalog.landmarks.map(\.id.rawValue)), ContentPlan.landmarkIDs)
+        // A lost wonder is drawn as an idea.
+        let mausoleum = try XCTUnwrap(catalog.landmark(id: LandmarkID("mausoleum-halicarnassus")))
+        XCTAssertEqual(mausoleum.status, .lost)
+        XCTAssertEqual(mausoleum.depiction, .reconstruction)
+        XCTAssertTrue(mausoleum.lists.contains(.ancientSeven))
+        // A fjord was not built.
+        let fjord = try XCTUnwrap(catalog.landmark(id: LandmarkID("ilulissat-icefjord")))
+        XCTAssertEqual(fjord.era, .natural)
+        XCTAssertNil(fjord.built)
+        // All seven Ancient Wonders are there now.
+        XCTAssertEqual(catalog.landmarks.filter { $0.lists.contains(.ancientSeven) }.count, 7)
+    }
+
+    func testOnlyKnossosBelongsToItsAdvancedStory() throws {
+        // §6.3: the palace on the Labyrinth's island is natural; every other Advanced landmark
+        // stands outside its story and says how.
+        let library = try ContentPlan.bundledLibrary()
+        for id in ContentPlan.batchThree {
+            let story = try XCTUnwrap(library.story(id: StoryID(id)), id)
+            for target in story.tapTargets where target.kind == .landmark {
+                let ref = try XCTUnwrap(target.landmark, id)
+                if ref.id.rawValue == "palace-of-knossos" {
+                    XCTAssertEqual(ref.appearance, .natural, id)
+                } else {
+                    XCTAssertEqual(ref.appearance, .framed, "\(id) \(ref.id)")
+                    XCTAssertNotNil(ref.framingDevice, "\(id) \(ref.id)")
+                }
+            }
+        }
+        // The Squamish story opens today, on the bridge.
+        let sisters = try XCTUnwrap(library.story(id: StoryID("the-two-sisters")))
+        let bridge = try XCTUnwrap(sisters.tapTargets.first { $0.landmark?.id.rawValue == "lions-gate-bridge" })
+        XCTAssertEqual(bridge.landmark?.framingDevice?.kind, .presentDayNarrator)
+    }
+
+    func testTheGreenlandStoryTeachesTheArcticCorrectly() throws {
+        // CONTENT_PLAN §1.4: Kalaallit houses of stone and turf; no snow house, nothing of Alaska.
+        let story = try XCTUnwrap(try ContentPlan.bundledLibrary().story(id: StoryID("woman-who-raised-a-bear")))
+        XCTAssertEqual(story.region.id, .arctic)
+        XCTAssertTrue(story.region.culture.contains("Kalaallit"))
+        let text = story.spreads.flatMap(\.blocks).map(\.plainText).joined(separator: " ").lowercased()
+        XCTAssertFalse(text.contains("snow house"))
+        XCTAssertFalse(text.contains("alaska"))
+    }
+
+    func testTheAdvancedShelfIsFullAndTheNextStoryWalksIt() throws {
+        let library = try ContentPlan.bundledLibrary()
+        let shelves = library.shelves()
+        XCTAssertEqual(shelves.map(\.stories.count), [11, 11, 10])
+        XCTAssertEqual(shelves[2].countText, "10 stories")
+        XCTAssertEqual(shelves[2].stories.first?.id, StoryID("savitri-and-satyavan"))
+        XCTAssertEqual(shelves[2].stories.last?.id, StoryID("zal-and-the-simurgh"))
+
+        let stories = library.stories
+        let advanced = stories.filter { $0.tier == .advanced }
+        var finished: Set<StoryID> = []
+        var current = try XCTUnwrap(advanced.first)
+        var walked = [current.id]
+        for _ in 1..<advanced.count {
+            finished.insert(current.id)
+            let next = try XCTUnwrap(NextStory.suggestion(after: current.id, in: stories, finished: finished))
+            XCTAssertEqual(next.tier, .advanced, "after \(current.id)")
+            walked.append(next.id)
+            current = next
+        }
+        XCTAssertEqual(walked, advanced.map(\.id), "catalog order within the level")
+        // With the top shelf read, the reader is offered an unread Medium story, never nothing.
+        finished.insert(current.id)
+        let down = try XCTUnwrap(NextStory.suggestion(after: current.id, in: stories, finished: finished))
+        XCTAssertEqual(down.tier, .medium)
+        XCTAssertFalse(finished.contains(down.id))
+        // Urashima, in the middle of the shelf, leads on to Mulan.
+        let urashima = StoryID("urashima-taro")
+        XCTAssertEqual(NextStory.suggestion(after: urashima, in: stories, finished: [urashima])?.id, StoryID("ballad-of-mulan"))
     }
 }

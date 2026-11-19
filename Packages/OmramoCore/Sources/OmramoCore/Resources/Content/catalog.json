@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": 4,
+  "catalogVersion": 5,
   "stories": [
     "monkey-and-crocodile",
     "shipwrecked-sailor",
@@ -24,6 +24,15 @@
     "horse-and-the-olive",
     "anansi-wisdom",
     "sindbad-second-voyage",
-    "urashima-taro"
+    "savitri-and-satyavan",
+    "eloquent-peasant",
+    "urashima-taro",
+    "ballad-of-mulan",
+    "the-two-sisters",
+    "woman-who-raised-a-bear",
+    "firebird-and-horse-of-power",
+    "daedalus-and-icarus",
+    "the-griots-apprentice",
+    "zal-and-the-simurgh"
   ]
 }

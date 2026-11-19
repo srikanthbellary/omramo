@@ -93,6 +93,16 @@ enum ArtLibrary {
         case "androcles-and-the-lion": return AndroclesArt.paint(_:role:in:size:)
         case "horse-and-the-olive": return OliveArt.paint(_:role:in:size:)
         case "sindbad-second-voyage": return SindbadArt.paint(_:role:in:size:)
+        // Round 5, batch 3: the Advanced stories.
+        case "savitri-and-satyavan": return SavitriArt.paint(_:role:in:size:)
+        case "eloquent-peasant": return EloquentArt.paint(_:role:in:size:)
+        case "ballad-of-mulan": return MulanArt.paint(_:role:in:size:)
+        case "the-two-sisters": return SistersArt.paint(_:role:in:size:)
+        case "woman-who-raised-a-bear": return BearWomanArt.paint(_:role:in:size:)
+        case "firebird-and-horse-of-power": return FirebirdArt.paint(_:role:in:size:)
+        case "daedalus-and-icarus": return IcarusArt.paint(_:role:in:size:)
+        case "the-griots-apprentice": return GriotArt.paint(_:role:in:size:)
+        case "zal-and-the-simurgh": return ZalArt.paint(_:role:in:size:)
         default: return nil
         }
     }

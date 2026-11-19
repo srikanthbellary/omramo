@@ -186,7 +186,10 @@ Both are ours; both wait for Srikanth's eye. The icon is a first design, not a d
 
 The catalog grows from three stories to thirty-two. Three bespoke sets of helpers do not scale
 to that, and thirty-two sets would not look like one app. So round 5 adds a shared kit,
-`enum Kit` in `App/Sources/Art/Kit/` (ten files), on top of `Art` and `ArtStyle`:
+`enum Kit` in `App/Sources/Art/Kit/` (ten files), on top of `Art` and `ArtStyle`. (Advanced
+stories, batch 3: the words sit in the top of **both** panes, so their unfolded scenes use a low
+horizon — `Kit.stage(size, ground: ~220)` — a calm sky across the whole width and the subject
+low on the trailing pane, as Urashima's scenes do.)
 
 - **Frames** — one per picture shape of §5a, so every painter recomposes for a tall window, a
   squat one, the phone's band and both cover crops in the same way: `Kit.stage` /

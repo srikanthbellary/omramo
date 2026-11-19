@@ -1222,6 +1222,526 @@
         "facts": "pending",
         "art": "pending"
       }
+    },
+    {
+      "id": "angkor-wat",
+      "name": "Angkor Wat",
+      "era": "medieval",
+      "built": {
+        "from": 1113,
+        "to": 1150,
+        "circa": true,
+        "note": "Built during the reign of King Suryavarman II, from about 1113 to about 1150. Work seems to have slowed or stopped after his death; some wall carvings were finished centuries later."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Cambodia",
+      "place": "Siem Reap, Cambodia",
+      "coordinates": {
+        "lat": 13.412,
+        "lon": 103.867
+      },
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge stone temple with five towers shaped like lotus buds, beside a wide still pool."
+        },
+        "medium": {
+          "line": "A vast stone temple in Cambodia, built for King Suryavarman II nearly 900 years ago.",
+          "note": "It was first made for the Hindu god Vishnu and later became a Buddhist temple, which it still is today. It is the largest religious monument in the world."
+        },
+        "advanced": {
+          "line": "The largest religious monument in the world, built in the first half of the 1100s and ringed by a wide moat.",
+          "note": "Its long stone galleries are carved with scenes from India’s epics, among them the great battle of the Mahabharata. Its dates are worked out from the reign of the king it was built for. It appears on Cambodia’s flag."
+        }
+      },
+      "art": {
+        "file": "art/angkor-wat.heic",
+        "alt": "A great stone temple with five towers shaped like lotus buds, mirrored in a wide pool, with palm trees on either side.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2C3A22",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building and still a working Buddhist temple: presented as architecture and history only, with respect and no religious teaching (CQ9).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "bibliotheca-alexandrina",
+      "name": "Bibliotheca Alexandrina",
+      "era": "contemporary",
+      "built": {
+        "from": 1995,
+        "to": 2002,
+        "circa": false,
+        "note": "Building years of the new library, which opened in October 2002. The ancient Library of Alexandria it remembers was founded under the Ptolemies about 2,300 years ago and is lost."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Egypt",
+      "place": "Alexandria, Egypt",
+      "coordinates": {
+        "lat": 31.209,
+        "lon": 29.909
+      },
+      "region": "egyptian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge round building tilted toward the sea, its stone wall carved with letters from all over the world."
+        },
+        "medium": {
+          "line": "A great modern library in Alexandria, Egypt, opened in 2002 near where the ancient library once stood.",
+          "note": "Egypt built it with help from many other countries, to a design by Snøhetta, a firm of architects from Norway. Its round roof tilts toward the sea like a rising sun."
+        },
+        "advanced": {
+          "line": "The ancient Library of Alexandria was founded about 2,300 years ago and held many thousands of papyrus rolls.",
+          "note": "No one knows for certain how it was lost. Old stories blame a single great fire, but most historians now think it faded slowly over centuries as money and care ran out. The new library has room for millions of books."
+        }
+      },
+      "art": {
+        "file": "art/bibliotheca-alexandrina.heic",
+        "alt": "A huge round building tilted toward the sea like a rising sun, its grey granite wall carved with letters from many alphabets.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#1C3A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A recent building (opened 2002, designed by Snøhetta): architectural copyright and the rules on depicting buildings differ by country (CONTENT_PLAN §6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "forbidden-city",
+      "name": "Forbidden City",
+      "era": "medieval",
+      "built": {
+        "from": 1406,
+        "to": 1420,
+        "circa": false,
+        "note": "Building years of the palace for the Ming emperor Yongle, who moved his capital to Beijing. Many halls burned and were rebuilt later, so much of what stands today is from the Qing dynasty (1644-1912); dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "China",
+      "place": "Beijing, China",
+      "coordinates": {
+        "lat": 39.916,
+        "lon": 116.397
+      },
+      "region": "chinese",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge palace of red walls and golden-yellow roofs in the middle of Beijing."
+        },
+        "medium": {
+          "line": "The palace of the emperors of China, in Beijing, with nearly 1,000 buildings inside its red walls.",
+          "note": "It was built from 1406 to 1420 for the Ming emperor Yongle. For about 500 years ordinary people could not go in, which is why it was called forbidden."
+        },
+        "advanced": {
+          "line": "Home to 24 emperors of the Ming and Qing dynasties for about 500 years, until the last emperor left in 1924.",
+          "note": "Yellow roof tiles were for the emperor alone. A legend says it has 9,999 rooms, one fewer than a palace in heaven; real counts are far lower. Since 1925 it has been the Palace Museum, open to everyone."
+        }
+      },
+      "art": {
+        "file": "art/forbidden-city.heic",
+        "alt": "A long palace hall with a double roof of golden-yellow tiles on a white marble terrace, behind a wide stone courtyard and red walls.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A1E1A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "lions-gate-bridge",
+      "name": "Lions Gate Bridge",
+      "era": "modern",
+      "built": {
+        "from": 1937,
+        "to": 1938,
+        "circa": false,
+        "note": "Building years of the bridge. It opened to traffic in November 1938 and was formally opened in 1939; exact dates to verify (CONTENT_PLAN §5)."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Canada",
+      "place": "Vancouver, British Columbia, Canada",
+      "coordinates": {
+        "lat": 49.315,
+        "lon": -123.139
+      },
+      "region": "nativeAmericanFirstNations",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long green bridge hung from cables between two tall towers, high above the sea."
+        },
+        "medium": {
+          "line": "A suspension bridge across the First Narrows of Burrard Inlet in Vancouver, opened in 1938.",
+          "note": "It was built so that people could drive from the city to new houses on the North Shore. Two concrete lions guard its south end."
+        },
+        "advanced": {
+          "line": "A suspension bridge named for The Lions, the twin peaks above the city that the Sḵwx̱wú7mesh call the Two Sisters.",
+          "note": "Plans, photographs and newspapers record how the bridge was built in the 1930s. The peaks’ older name is far older than any of these records, and it has been kept by the Sḵwx̱wú7mesh in their own language."
+        }
+      },
+      "art": {
+        "file": "art/lions-gate-bridge.heic",
+        "alt": "A green suspension bridge with two tall towers crossing a narrow strait between forested shores, with two snowy peaks side by side behind it.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#16343A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Believed clear; confirm that the name Lions Gate is not a restricted mark (CONTENT_PLAN §6.6). The concrete lions are sculptures by Charles Marega (died 1955); keep them small and simple. The card goes through the Sḵwx̱wú7mesh reviewer (CONTENT_PLAN §7).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "ilulissat-icefjord",
+      "name": "Ilulissat Icefjord",
+      "era": "natural",
+      "status": "natural",
+      "depiction": "asIs",
+      "country": "Greenland",
+      "place": "Ilulissat, Greenland",
+      "coordinates": {
+        "lat": 69.1,
+        "lon": -49.5
+      },
+      "region": "arctic",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A long fjord so packed with icebergs that from above it looks like a white road to the sea."
+        },
+        "medium": {
+          "line": "A long fjord on Greenland’s west coast, beside the town of Ilulissat, filled with icebergs from one glacier.",
+          "note": "The glacier at its head, Sermeq Kujalleq, pushes ice into the fjord all year round. The icebergs drift out into Disko Bay, and UNESCO made the fjord a World Heritage Site in 2004."
+        },
+        "advanced": {
+          "line": "The fjord where Sermeq Kujalleq, one of the fastest-moving glaciers in the world, breaks apart into the sea.",
+          "note": "Scientists measure the glacier from satellites and on the ice to learn how Greenland’s ice sheet is changing. In recent decades its front has pulled back many kilometres. The town’s name, Ilulissat, means “icebergs” in Kalaallisut."
+        }
+      },
+      "art": {
+        "file": "art/ilulissat-icefjord.heic",
+        "alt": "A fjord packed with white and blue icebergs between dark rocky shores, under a pale sky, with a small red house on the rocks.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#173A52",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A natural place: no rights attach to the place itself; drawn from general knowledge, no photograph traced.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "kizhi-pogost",
+      "name": "Kizhi Pogost",
+      "era": "earlyModern",
+      "built": {
+        "from": 1714,
+        "to": 1714,
+        "circa": false,
+        "note": "The year the main Church of the Transfiguration was finished. The smaller Church of the Intercession beside it dates from 1764 and the bell tower from 1862."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Russia",
+      "place": "Kizhi Island, Lake Onega, Karelia, Russia",
+      "coordinates": {
+        "lat": 62.068,
+        "lon": 35.224
+      },
+      "region": "russian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall wooden church with twenty-two silver-grey domes, standing on a grassy island in a lake."
+        },
+        "medium": {
+          "line": "Two wooden churches and a bell tower on Kizhi Island in Lake Onega, in the north-west of Russia.",
+          "note": "Village carpenters finished the tallest church, with its twenty-two domes, in 1714. The whole group is now a UNESCO World Heritage Site."
+        },
+        "advanced": {
+          "line": "The Church of the Transfiguration, finished in 1714, is built of pine and spruce logs, with domes roofed in aspen shingles.",
+          "note": "A legend says it was built without a single nail. That is only a legend: the log walls are held by notched corners, but nails fix the shingles on the domes. The builders’ names are not known for certain."
+        }
+      },
+      "art": {
+        "file": "art/kizhi-pogost.heic",
+        "alt": "A tall wooden church whose silver-grey shingled domes rise in tiers, twenty-two in all, beside a smaller church and a bell tower on a grassy island.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#22394A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building: presented as architecture and history only (CQ9). The main church has been under long restoration, sometimes with scaffolding or inner supports; draw it whole, as it is meant to stand.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "palace-of-knossos",
+      "name": "Palace of Knossos",
+      "era": "ancient",
+      "built": {
+        "from": -1900,
+        "to": -1400,
+        "circa": true,
+        "note": "Rough dates for the palace in use, about 1900 to 1400 BCE; it was damaged and rebuilt several times, and archaeologists still debate the exact phases."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Greece",
+      "place": "Knossos, Crete, Greece",
+      "coordinates": {
+        "lat": 35.298,
+        "lon": 25.163
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Red columns, wider at the top than the bottom, hold up stone rooms on a hill."
+        },
+        "medium": {
+          "line": "A Bronze Age palace on Crete with hundreds of rooms, corridors and stairs around a great courtyard.",
+          "note": "It was built by the people we now call the Minoans, nearly 4,000 years ago. Its walls were painted with dolphins, lilies and young people leaping over bulls."
+        },
+        "advanced": {
+          "line": "Dug up from 1900 by Arthur Evans, who named the Minoans after Minos and rebuilt parts of the palace in concrete.",
+          "note": "So some of what visitors see is modern. Whether its maze of rooms gave rise to the Labyrinth story is a guess, and the link between the double axe carved there and the word labyrinth is uncertain."
+        }
+      },
+      "art": {
+        "file": "art/palace-of-knossos.heic",
+        "alt": "Red columns that are wider at the top hold up a stone terrace on a hillside, with broad stairs and olive trees.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A2A1E",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). The red columns are Evans’s modern reconstruction; the card says so.",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "eiffel-tower",
+      "name": "Eiffel Tower",
+      "era": "modern",
+      "built": {
+        "from": 1887,
+        "to": 1889,
+        "circa": false,
+        "note": "Built in about two years for the world’s fair held in Paris in 1889."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "France",
+      "place": "Paris, France",
+      "coordinates": {
+        "lat": 48.858,
+        "lon": 2.294
+      },
+      "region": "european",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall iron tower made of criss-crossing beams, wide at its four feet and pointed at the top."
+        },
+        "medium": {
+          "line": "An iron tower about 330 metres tall, built in Paris for the world’s fair of 1889.",
+          "note": "The engineer Gustave Eiffel’s company built it from about 18,000 iron parts and 2.5 million rivets. It was the tallest structure in the world until 1930."
+        },
+        "advanced": {
+          "line": "It was meant to stand for only 20 years, and was 300 metres tall when built; antennas added the rest.",
+          "note": "Eiffel saved it by making it useful. He ran weather and radio work from the top, and dropped objects down a wire from it to measure how air pushes back."
+        }
+      },
+      "art": {
+        "file": "art/eiffel-tower.heic",
+        "alt": "A tall iron tower in a lacy criss-cross pattern, wide at its four feet and narrowing to a point, against a pale daytime sky over trees.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A3A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). Draw it by day: its night lighting is claimed as a protected work (CONTENT_PLAN §6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "great-mosque-of-djenne",
+      "name": "Great Mosque of Djenné",
+      "era": "modern",
+      "built": {
+        "from": 1906,
+        "to": 1907,
+        "circa": false,
+        "note": "Today’s building, put up by Djenné’s masons in 1906 and 1907 on the site of a mosque that the town’s tradition says was first built in the 13th century. What the older mosque looked like is not certain."
+      },
+      "status": "standing",
+      "depiction": "asIs",
+      "country": "Mali",
+      "place": "Djenné, Mali",
+      "coordinates": {
+        "lat": 13.905,
+        "lon": -4.555
+      },
+      "region": "african",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A huge building of smooth brown mud, with three tall towers and wooden poles poking from its walls."
+        },
+        "medium": {
+          "line": "A mosque in Djenné, Mali, finished in 1907 and said to be the largest mud-brick building in the world.",
+          "note": "The town’s own masons built it where an older mosque had stood. Every year the people of Djenné climb its walls together and spread on fresh mud."
+        },
+        "advanced": {
+          "line": "A mosque of sun-dried mud brick on a raised platform, built in 1906 and 1907 where older mosques had stood.",
+          "note": "Djenné’s tradition says the first mosque here was built in the 13th century, but nobody knows how it looked. The palm-wood poles left in the walls serve as a ready-made ladder for the yearly re-plastering."
+        }
+      },
+      "art": {
+        "file": "art/great-mosque-of-djenne.heic",
+        "alt": "A great building of smooth brown mud brick on a raised platform, with three tall towers and rows of wooden poles jutting from its walls.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#5A3218",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A religious building in use: presented as architecture and history only (CQ9), and the drawing is to be reviewed by the Mande consultant (CONTENT_PLAN §7).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "persepolis",
+      "name": "Persepolis",
+      "era": "ancient",
+      "built": {
+        "from": -518,
+        "to": -330,
+        "circa": true,
+        "note": "Begun under Darius the Great about 518 BCE and added to by later kings until the army of Alexander the Great burned it in 330 BCE. The ruins were never wholly lost; a UNESCO World Heritage Site."
+      },
+      "status": "ruins",
+      "depiction": "asIs",
+      "country": "Iran",
+      "place": "Marvdasht, Fars, Iran",
+      "coordinates": {
+        "lat": 29.935,
+        "lon": 52.891
+      },
+      "region": "persianArabian",
+      "lists": [
+        "other"
+      ],
+      "factCards": {
+        "low": {
+          "line": "Rows of tall stone columns and a wide stairway carved with people carrying gifts."
+        },
+        "medium": {
+          "line": "The ruins of a great stone city of the Persian kings, begun about 2,500 years ago in southern Iran.",
+          "note": "Darius the Great began it about 518 BCE, and the kings after him added to it. The army of Alexander the Great burned it in 330 BCE."
+        },
+        "advanced": {
+          "line": "A city of halls on a huge stone terrace, built by Persian kings from about 518 to 330 BCE.",
+          "note": "Its stairways show people from all over the empire bringing gifts to the king. Many think this was for Nowruz, the Persian New Year, but no ancient text says so, and scholars still argue about it."
+        }
+      },
+      "art": {
+        "file": "art/persepolis.heic",
+        "alt": "Tall slender stone columns and a broad double stairway carved with rows of people bringing gifts, on a great stone terrace below bare hills.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#4A2E1C",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
+    },
+    {
+      "id": "mausoleum-halicarnassus",
+      "name": "Mausoleum at Halicarnassus",
+      "era": "ancient",
+      "built": {
+        "from": -353,
+        "to": -350,
+        "circa": true,
+        "note": "Built for Mausolus, a satrap (governor) of Caria for the Persian empire, who died about 353 BCE; finished about 350 BCE under his wife Artemisia and her craftsmen. Dates approximate."
+      },
+      "status": "lost",
+      "depiction": "reconstruction",
+      "country": "Türkiye",
+      "place": "Bodrum, Türkiye",
+      "coordinates": {
+        "lat": 37.038,
+        "lon": 27.424
+      },
+      "lists": [
+        "ancientSeven"
+      ],
+      "factCards": {
+        "low": {
+          "line": "A tall white tomb with columns and a stone chariot on top. It is gone now."
+        },
+        "medium": {
+          "line": "The tomb of Mausolus, a governor for the Persian kings, built about 2,350 years ago where Bodrum in Türkiye is now.",
+          "note": "His wife Artemisia carried the work on after he died. It was so famous that grand tombs have been called mausoleums ever since."
+        },
+        "advanced": {
+          "line": "A tomb about 45 metres tall, one of the Seven Wonders, brought down by earthquakes in the Middle Ages.",
+          "note": "No true picture of it survives, so every drawing is a guess from old Greek and Roman descriptions and the pieces dug up. In about 1494 knights used its stones to build the castle at Bodrum; some of its statues are in the British Museum in London."
+        }
+      },
+      "art": {
+        "file": "art/mausoleum-halicarnassus.heic",
+        "alt": "A drawing of how the Mausoleum may have looked: a tall white tomb on a high base, ringed by columns, with a stepped roof and a statue of a four-horse chariot on top.",
+        "width": 1296,
+        "height": 1212
+      },
+      "background": "#2A3A4A",
+      "rights": "Our own illustration; no photograph. Concept art drawn in code (see ART_PLACEHOLDERS.md). Landmark image rights review pending (PRD Q29). A lost wonder: our own reconstruction from the old descriptions, not traced from any modern drawing or model (CONTENT_PLAN §6.6).",
+      "review": {
+        "facts": "pending",
+        "art": "pending"
+      }
     }
   ]
 }

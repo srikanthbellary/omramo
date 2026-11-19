@@ -1,4 +1,4 @@
-# Art status: concept art drawn in code (round 5, batches 1 and 2: twenty more stories and twenty-two landmarks, from a shared kit)
+# Art status: concept art drawn in code (round 5: twenty-nine more stories and thirty-three landmarks, from a shared kit — the whole catalog)
 
 **No image file listed here exists yet.** The story and landmark JSON name each picture by a
 file path, an alt text and a pixel size; the files are delivered later by the art workstream
@@ -37,6 +37,10 @@ painters, chosen by the picture's *asset name* — the file name without folder 
   water), like the Anansi prototype. The story painters were begun on Fable 5.2 and, after
   that session hit its usage limit part-way, finished on Opus 5.5 by a second painter who
   read the first one's cast and scenes. See "Round 5, batch 2" below.
+- **Round 5, batch 3** added the pictures of the nine new Advanced stories and the last eleven
+  landmarks (all 37 now), the same way and equally unrendered, all on Opus 5.5. Advanced pages
+  carry words on **both** panes, like Urashima, so the scenes put the horizon low and keep a
+  calm sky across the whole width. See "Round 5, batch 3" below.
 - Each picture is rasterised once (`cachedArt()` in `StoryArt.swift`), so page turns, card
   reveals and the library-to-story transition move a cached image, not a redrawn `Canvas`.
 - When a real file is added at the path below, the app shows it and stops drawing the code
@@ -321,6 +325,80 @@ Per story:
   Gate's cable clears the deck by only a few units near the far tower; the Burj Khalifa's
   foot sits under the card fade; five files run over 450 lines (Chichén Itzá, Parthenon,
   Temple of Artemis, Zeus, Hanging Gardens).
+
+## Round 5, batch 3 — the nine new Advanced stories
+
+File names and sizes as for batch 1. Advanced look (`docs/ART_DIRECTION.md` §4): a grown-up
+picture book — atmosphere, a real time of day, haze, true detail, small plain eyes
+(`showsEyeWhite: false`), no rays, expression by posture. **Composition:** the words sit in the
+top of both panes (every scene has `textArea { leadingBottom: 470, trailingBottom: 420 }`), so
+each unfolded scene is built on `Kit.stage(size, ground: ~220)` with a low horizon, a calm pale
+sky across the whole width, and the subject low on the trailing pane. Eight stories are light;
+the Fire-Bird (●) is dark on every page, with light text.
+
+| Story (painter) | Scenes | Tap pictures | Portraits · faces | Heroes drawn for this story alone |
+|---|---|---|---|---|
+| `savitri-and-satyavan` ⚑ (`SavitriArt`) — ancient India | `scene-palace`, `scene-hermitage`, `scene-forest`, `scene-south-road` | `see-her-own-choice`, `see-hermitage`, `see-banyan-tree`, `see-boon` | savitri, satyavan · savitri, satyavan, yama | Carved-timber palace terrace over a lotus pool; reed hermitage with its fire altar; the banyan with pillar and hanging roots; peacocks and chital; the gold-painted chariot. Yama tall and calm, slate-dark skin, red drape, crown, a looped rope, a small light in his hand — no skull, no fire, no buffalo (the Hindu reviewer decides how he is drawn) |
+| `eloquent-peasant` (`EloquentArt`) — Middle Kingdom Egypt | `scene-oasis`, `scene-path`, `scene-river`, `scene-hall` | `see-salt-field`, `see-donkey-caravan`, `see-maat`, `see-scribe` | khunanup, rensi · khunanup, rensi, nemtynakht | The salt lake with its cracked crust; grey donkeys with salt nets; the cloth across the canal path; Rensi's boat with steering oars; a courtyard of closed-bud lotus columns and a cross-legged scribe with a roll of unreadable marks. No camels, horses, chariots or pyramids |
+| `ballad-of-mulan` (`MulanArt`) — northern China | `scene-loom`, `scene-river`, `scene-frontier`, `scene-home` | `see-loom`, `see-yellow-river`, `see-northern-grasslands`, `see-the-ballad` | mulan, father · mulan, father, comrade | Rammed-earth courtyard and slanting loom; loess cliffs and the brown Yellow River; the frontier as a zig-zag **earth** wall with wooden watch-towers (never the stone Great Wall); iron lamellar armour; the bay horse; the two hares. Nothing from any film |
+| `the-two-sisters` ⚑ (`SistersArt`) — Sḵwx̱wú7mesh, Vancouver | `scene-bridge`, `scene-village`, `scene-canoes`, `scene-peaks` | `see-burrard-inlet`, `see-salmon`, `see-feast`, `see-cedar-canoe` | sisters, chief · sisters, chief | Today: the green two-tower bridge, a container ship, the two peaks small and far. Long ago: Coast Salish shed-roof plank houses, cedar dugouts, cedar-bark capes, wool blankets in plain colours. No totem-pole rows, war bonnets, tipis or copied formline; the peaks are kept out of the long-ago scenes before the feast |
+| `woman-who-raised-a-bear` ⚑ (`BearWomanArt`) — Kalaallit, Greenland | `scene-settlement`, `scene-house`, `scene-ice`, `scene-farewell` | `see-greenland`, `see-polar-bear`, `see-kayak`, `see-sharing-the-catch` | woman, bear · woman, bear | Stone-and-turf houses with long entrance passages and gut-skin windows; the soapstone lamp and sleeping platform; kayaks on stands; a hand-drawn polar bear (long neck, small ears — not the kit's round bear), the sinew collar and the soot streak; icebergs. No snow houses, no penguins, no gore |
+| `firebird-and-horse-of-power` ● (`FirebirdArt`) — Russia | `scene-forest`, `scene-palace`, `scene-sea`, `scene-cauldron` | `see-taiga`, `see-tsar-title`, `see-firebird-in-art`, `see-white-sea` | archer, horse · archer, horse, vasilissa, tsar | Night taiga with the glowing feather; a hand-drawn Horse of Power (huge, dark, long mane); the log palace with tiled stove and the Fire-Bird in its gold cage; the white-night shore with the gold-roofed tent and silver boat; the torchlit cauldron. Kizhi never appears in a scene |
+| `daedalus-and-icarus` (`IcarusArt`) — Bronze Age Crete | `scene-workshop`, `scene-palace`, `scene-tower`, `scene-sea` | `see-crete`, `see-labyrinth`, `see-beeswax`, `see-icarian-sea` | daedalus, icarus · daedalus, icarus, minos | Feathers laid out shortest to longest, the wax pot, the tools; Minoan red columns wider at the top, dolphin frieze, horns of consecration; the two winged figures at dawn; Daedalus alone over the sea with feathers on the water (the fall is never shown). The Eiffel Tower never appears in a scene |
+| `the-griots-apprentice` ⚑ (`GriotArt`) — Mande, Djenné | `scene-compound`, `scene-river`, `scene-feast`, `scene-dawn` | `see-jeli`, `see-river-niger`, `see-balafon`, `see-salt-and-gold` | apprentice, grandfather · apprentice, grandfather, merchant | The balafon (wooden keys over graded gourds); the baobab; banco walls with buttresses and jutting beams; the long salt pirogue with grey salt slabs; the feast courtyard with lamp niches; the porter and his granddaughter at the gate. The 1907 mosque never appears in a scene; no kente, masks or safari animals |
+| `zal-and-the-simurgh` (`ZalArt`) — Iran | `scene-court`, `scene-mountain`, `scene-nest`, `scene-meeting` | `see-shahnameh`, `see-alborz`, `see-simurgh-feather`, `see-naqqali` | zal, simurgh · zal, simurgh, sam | Tiled pavilion and pool garden; the Alborz and the white cone of Damavand; the ebony-and-sandalwood nest on its crag; a hand-drawn Simurgh (long sweeping tail, crest, calm eyes — majestic, never menacing); white-haired Zal. No genies, carpets or onion domes |
+
+⚑ = flagged "needs cultural review before release": its pictures go to the same reviewer as
+its text (Hindu reviewer; Sḵwx̱wú7mesh Nation; Kalaallit reviewer; Mande consultant).
+
+**Landmarks (11):** `angkor-wat` (`LandmarkArt+Angkor.swift`), `bibliotheca-alexandrina`
+(`+Bibliotheca`), `forbidden-city` (`+ForbiddenCity`), `lions-gate-bridge` (`+LionsGate`),
+`ilulissat-icefjord` (`+Ilulissat`), `kizhi-pogost` (`+Kizhi`), `palace-of-knossos`
+(`+Knossos`), `eiffel-tower` (`+Eiffel`, by day only: its night lighting is a protected work),
+`great-mosque-of-djenne` (`+Djenne`), `persepolis` (`+Persepolis`), `mausoleum-halicarnassus`
+(`+Mausoleum`, a sketched reconstruction with construction lines and a faint outline of the few
+stones left today). Our own drawings from the buildings' public form; nothing traced.
+
+### Known shortfalls after round 5, batch 3 (from the painters' own notes — to check on the Mac)
+
+Across the batch:
+- **Nothing has been rendered.** One painter wrote each story in one pass (about 1,500–1,775
+  lines a story, under the 1,800–2,500 the brief asked for); each was then read by a
+  "be the compiler" reviewer.
+- **The two-pane composition is new for kit-built scenes.** Several painters report soft
+  things just inside the bottom of the text area (a banyan or baobab crown, palm tops, a mast,
+  bridge towers, the Lions peaks at about y 371 in `scene-peaks`, a low pale sun on the leading
+  pane in several scenes, Yama's crown, Mulan's spear tip). Check every scene with the words on.
+- Several painters reached into kit internals that are not private but were not in the brief
+  (`Kit.bodyRig`, `bodyFrame`, `bodyHeadCentre`, `bodyNeck`, `personLit`, `personTone`) to place
+  helmets, crowns, armour and wings on kit figures. Watch for misplaced headgear.
+- Three heroes are drawn by hand instead of with the kit: the polar bear, the Horse of Power
+  and the Simurgh (and the chicks, nest and crag). Their proportions are the first thing to
+  check.
+
+Per story:
+- **Savitri.** Dyumatsena's blindness shows only as a lifted gaze; chital spots placed by guess;
+  Narada's vina is a rod with two gourds.
+- **Eloquent Peasant.** Rensi's face in the folded river scene sits at x 380 (the boat is the
+  subject); the over-kilt is a flat overlay; pigeons left off the wall to keep the sky clear.
+- **Mulan.** Her home dress is one colour (the kit gives arms and skirt one cloth); the hens are
+  the kit's rooster in hen colours (comb and wattle); the comrade's broad face is the stock head.
+- **Two Sisters.** Inbound canoes are mirrored, so their light falls from the upper right; the
+  canoe passengers are faceless; the two concrete lions are not drawn.
+- **Woman Who Raised a Bear.** `scene-settlement` shows the young bear without his collar, but
+  the scene returns on pages 9 and 14 (collared; gone); the farewell shows her alone (the
+  grieving neighbours of page 13 are not drawn); the soot on her fingertips is a small spot.
+- **Fire-Bird.** The rider sits on a kit sitting pose (legs forward, not astride); the great crab
+  is drawn ordinary-sized; the freed Fire-Bird at the window and the dishes in the tent are not
+  drawn; the white-night band is the lightest sky behind the cream words — check contrast.
+- **Daedalus.** The flight pose is the standing figure tilted 64–72°, likely stiff; the cover's
+  "one wing reaching toward him" is not distinct; the palace scene's sun sits inside the
+  leading text area (pale).
+- **Griot.** Cross-legged sitting is the kit's seated figure lowered to the ground with a cloth
+  lap; Lamine's beaters may miss the keys; overlays on mirrored figures may take light from the
+  wrong side.
+- **Zal.** Sam is in profile, not seen from behind; mail is shown as a mail skirt; the Simurgh
+  glides low (just above the baby) to keep the text area clear.
 
 ## What round 3 changed in the pictures (to check on the Mac)
 
